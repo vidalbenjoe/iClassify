@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundblur"
+    android:gravity="center"
+    android:orientation="vertical" >
+    
+    
+    <RelativeLayout
+     android:id="@+id/rl"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_centerHorizontal="true"
+     android:layout_marginTop="30dp">
+        
+ <TextView 
+     android:id="@+id/datasettext"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:textColor="#fff"
+     android:textStyle="bold"
+     android:textSize="30sp"
+     android:shadowColor="@android:color/black"
+     android:shadowDx="1"
+     android:shadowDy="1"
+     android:shadowRadius="2"
+     android:text="Data Set"/>
+ 
+ 
+    </RelativeLayout>
+    <ImageView  
+     android:id="@+id/slideimgid"
+     android:layout_below="@+id/rl"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:background ="@drawable/slidepng"
+     android:layout_marginLeft="20dp"
+     android:layout_marginRight="20dp"
+     android:layout_centerHorizontal="true"/>
+
+    <com.inqbarna.tablefixheaders.TableFixHeaders 
+    android:id="@+id/table"
+    android:layout_below="@+id/slideimgid"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp" 
+    android:layout_marginTop="30dp"
+    android:textColor="#fff"
+    android:shadowColor="@android:color/black"
+    android:shadowDx="1"
+    android:shadowDy="1"
+    android:shadowRadius="2"  />
+
+      
+    
+    <Button
+    android:id="@+id/calculatebt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="20dp"
+   
+    android:background="@drawable/simulcalculatebt"/>
+        
+    
+     <!-- <TextView 
+     android:id="@+id/datasettextbottom"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:textColor="#fff"
+     android:textStyle="bold"
+     android:textSize="18sp"
+     android:shadowColor="@android:color/black"
+     android:shadowDx="1"
+     android:shadowDy="1"
+     android:shadowRadius="2"
+     android:text="@string/dataset1"
+     android:layout_below="@+id/table"
+     android:layout_alignParentBottom="true"
+     android:layout_marginTop="25dp"
+     android:layout_marginLeft="20dp"
+     android:layout_marginRight="20dp"
+     
+     /> -->
+   
+ 
+    
+    
+</RelativeLayout>
+
+
+

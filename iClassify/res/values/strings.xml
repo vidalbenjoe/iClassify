@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">iClassify</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+	<string name="empty"/>
+    <string name="md__drawerOpenIndicatorDesc">Close drawer</string>
+    <string name="md__drawerClosedIndicatorDesc">Open drawer</string>
+    
+    <string name="ok">Ok</string>
+  	<string name="cancel">Cancel</string>
+    <string name="imgdesc">imgdesc</string>
+	
+    
+    <string-array name="titles">
+        <item>Discussion</item>
+        <item>Videos</item>
+        <item>Simulation</item>
+        <item>Assessment</item>
+        <item>Exit</item>
+    </string-array>
+
+    <array name="icons">
+        <item>@drawable/drawer_discuss</item>
+        <item>@drawable/drawer_videos</item>
+        <item>@drawable/navdrawer_simul</item>
+        <item>@drawable/navdrawer_assess</item>
+         <item>@drawable/navdrawer_exit</item>
+    </array>
+      
+    <string name="action_left">Decision Tree</string>
+    <string name="action_mid">K-Nearest Neighbor</string>
+    <string name="action_right">Native Bayesian</string>
+
+    
+    <string name="pracprob1"><![CDATA[
+ 			Suppose we want the ID3 algorithm to decide whether the weather is amenable to playing baseball. Over the course of 2 weeks, data is collected to help ID3 build a decision tree . 
+ 			]]></string>
+ 			
+    <string name="weathattrib"><![CDATA[
+ 			 The weather attributes are outlook, temperature, humidity, and wind speed. They can have the following values:\n
+			 outlook = { sunny, overcast, rain }\n
+			 temperature = {hot, mild, cool }\n
+			 humidity = { high, normal }\n
+			 wind = {weak, strong }\n
+ 			]]></string>
+      
+    <string name="dataset1"><![CDATA[
+ 			We need to find which attribute will be the root node in our decision tree. The gain is calculated for all four attributes: \n
+ 			Gain(S, Outlook) = 0.246\n
+			Gain(S, Temperature) = 0.029\n
+			Gain(S, Humidity) = 0.151\n
+			Gain(S, Wind) = 0.048 \n
+ 			]]></string>
+    
+    
+</resources>
+

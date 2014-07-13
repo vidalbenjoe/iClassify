@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="holo_blue">#FF33E5B5</color>
+ 	<!-- The default background of the menu. -->
+
+    <color name="shadow_start">#80000000</color>
+    <color name="shadow_end">#00000000</color>
+
+ <!--purple-->
+    <color name="purple_light">#a276eb</color>
+    <color name="purple_darkbackground">#ffa600cf</color>
+    <color name="purple_background">#D100FF</color>
+    <color name="purple_middle">#8658ce</color>
+    <color name="purple_dark">#6a3ab2</color>
+    <color name="icon_color">#411780</color>
+    <color name="drawer_headercolor">#ff27164f</color>
+    <color name="drawer_menucolor">#ff2e185c</color>
+    <color name="edittext_color">#2F1749</color>
+    <color name="mediumdark_purple">#ff2f1546</color>
+    <color name="darkblack_purple">#ff180d27</color>
+    <color name="navsection_purple">#ff0c0a18</color>
+    <color name="divider_color">#16acf9</color>
+
+    <color name="pinklight_background">#ffe51bbe</color>
+    <color name="pink_background">#ffaa1688</color>
+    <color name="header_background">#ff920f71</color>
+    <!--yellow-->
+  
+	<!-- Topics Color -->
+	<color name="intro_bgc">#c43434</color>
+	<color name="knearest_bgc">#d25b19</color>
+	<color name= "decisiontree_bgc">#428e9e</color>
+	<color name="bayesian_bgc">#518b62</color>
+
+    <!--accordion-->
+
+    <color name="border_color">#dedede</color>
+    <color name="header_color">#f6f6f6</color>
+    <color name="header_border_shadow">#ffffff</color>
+    <color name="section_color">#f0f0f0</color>
+
+
+<!--Flat UI-->
+    <color name="flat_background">#394264</color>
+    <color name="fb_colorbg">#1771D5</color>
+    <color name="flat_btred">#ffe6324f</color>
+    <color name="flat_btbluegreen">#ff2ae0ce</color>
+    <color name="flat_btlightblue">#4fc4f6</color>
+
+    <color name="greenStart">#ff33dd44</color>
+    <color name="greenMid">#ff0A8815</color>
+    <color name="greenEnd">#ff1da130</color>
+
+    
+    <color name="green">#75cd00</color>
+    <color name="green_dark">#3c6e02</color>
+    <color name="blue">#0044e1</color>
+    <color name="blue_dark">#00217c</color>
+    <color name="red">#d11e2c</color>
+    <color name="red_dark">#810f19</color>
+    <color name="gray">#b6b1ac</color>
+    <color name="gray_dark">#6d6967</color>
+    <color name="black">#000000</color>
+    <color name="black_pressed">#7b7b7b</color>
+    
+    
+</resources>

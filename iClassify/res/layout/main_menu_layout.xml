@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#ff9100"
+    android:gravity="center_horizontal">
+
+<LinearLayout 
+    
+    android:id="@+id/linelayoutmainmenu"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:background="#ff9100">
+    
+      
+    
+     <ImageView
+         android:id="@+id/mainmenulogo"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_marginTop="20dp"
+         android:gravity="center"
+          />
+
+</LinearLayout>
+
+		<RelativeLayout
+		 android:layout_below="@+id/linelayoutmainmenu"
+     	 android:layout_width="wrap_content"
+         android:layout_height="wrap_content">
+         <ScrollView
+           
+               android:layout_width="fill_parent"
+        	   android:layout_height="wrap_content" >
+
+             <LinearLayout
+		 		
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="vertical"
+                 android:layout_gravity="center"
+                >
+  
+     <Button
+         android:layout_marginTop="220dp"
+         android:id="@+id/disscusionbt"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="right"/>
+	<Button
+         android:id="@+id/videosbt"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+     	 android:layout_marginTop="10dp"/>
+     
+     
+       <Button
+         android:id="@+id/simulbt"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"/>
+     
+       
+         <Button
+         android:id="@+id/assessbt"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+       
+        android:layout_gravity="right"
+         android:layout_marginTop="10dp"/>
+     </LinearLayout>
+         </ScrollView>
+     
+     </RelativeLayout>
+
+</RelativeLayout>

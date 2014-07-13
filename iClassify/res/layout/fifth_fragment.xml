@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/startscreen"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/tvFragFifth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textSize="26sp"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/viewpagerexit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/buttonexit" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center" >
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/startbuttoncircles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tvFragFifth"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/startbutton" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" >
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/viewpagerabout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/startbuttoncircles"
+        android:layout_toLeftOf="@+id/startbuttoncircles"
+        android:background="@drawable/buttonabout"
+        android:paddingRight="50dp" />
+
+    <Button
+        android:id="@+id/viewpagerhelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/viewpagerabout"
+        android:layout_toRightOf="@+id/startbuttoncircles"
+        android:background="@drawable/buttonhelp" />
+
+</RelativeLayout>
