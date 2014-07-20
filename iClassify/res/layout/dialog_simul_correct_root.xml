@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cadllMain"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:ignore="ButtonOrder" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|right"
+            android:clickable="true"
+            android:src="@drawable/buttonskip"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:padding="20dp"
+        android:background="@android:color/white" />
+
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/drawer_menucolor"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:text="Outlook attribute has the highest gain, therefore it is used as the decision attribute in the root node." />
+    
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/drawer_menucolor"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:text="@string/correctdecision1" />
+    
+       
+    <ImageView 
+        android:id="@+id/imgcr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dragtorootimgcorrect"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"/>
+    
+     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#112fdf"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:text="The next question is: What attribute should be tested at the Sunny branch node?" />
+    
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/drawer_menucolor"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:paddingTop="20dp"
+        android:text="@string/correctdecision2" />
+
+    <EditText
+         android:id="@+id/gethumidityands" 
+         android:layout_width="200dp"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         />
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/drawer_menucolor"
+        android:padding="10dp"
+        android:textSize="10sp"
+        android:paddingTop="10dp"
+        android:layout_gravity="center"
+        android:text="(Please put your answer in the textbox)" />
+    
+    
+    
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/translatedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/drawer_menucolor"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:textSize="35dp"
+            />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:id="@+id/cadbtnOk"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/flat_btbluegreen"
+            android:text="@android:string/ok"
+            android:textColor="#fff"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    
+</LinearLayout>

@@ -3,8 +3,10 @@ package com.capstoneii.iclassify.simulation.desiciontree;
 import com.capstoneii.iclassify.R;
 import com.inqbarna.tablefixheaders.TableFixHeaders;
 import com.inqbarna.tablefixheaders.adapters.MatrixTableAdapter;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -17,6 +19,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+@SuppressLint("NewApi")
 public class SimulDatasetActivity extends Fragment {
 private Button calculate;
 	@Override
@@ -42,7 +45,8 @@ private Button calculate;
 				  	Fragment SimulCalculateActivity = new SimulCalculateActivity();
 	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
 	            	ft.replace(R.id.frame_container, SimulCalculateActivity);
-	            	ft.addToBackStack(null);
+	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+ 	            	ft.addToBackStack(SimulCalculateActivity.getTag());
 	            	ft.commit();
 			}
 			 
@@ -152,6 +156,18 @@ private Button calculate;
 		 return rootView;
 	    }
         
-	
+        public void onBackPressed() {
+
+            // See bug: http://stackoverflow.com/questions/13418436/android-4-2-back-stack-behaviour-with-nested-fragments/14030872#14030872
+            // If the fragment exists and has some back-stack entry
+            FragmentManager fm = getFragmentManager();
+            Fragment currentFragment = fm.findFragmentById(R.id.content_frame);
+            if (currentFragment != null && currentFragment.getChildFragmentManager().getBackStackEntryCount() > 0) {
+                // Get the fragment fragment manager - and pop the backstack
+                currentFragment.getChildFragmentManager().popBackStack();
+            }
+       
+           
+            }
 	
 }

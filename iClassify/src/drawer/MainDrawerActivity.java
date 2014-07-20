@@ -87,10 +87,10 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
   frame = (FrameLayout) findViewById(R.id.frame_container);
 
   
-  int width = getResources().getDisplayMetrics().widthPixels/2;
+  /*int width = getResources().getDisplayMetrics().widthPixels/2;
   DrawerLayout.LayoutParams params = (android.support.v4.widget.DrawerLayout.LayoutParams) mDrawerList.getLayoutParams();
   params.width = width;
-  mDrawerList.setLayoutParams(params);
+  mDrawerList.setLayoutParams(params);*/
   
 
   rowItems = new ArrayList<RowItem>();
@@ -127,7 +127,6 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
               invalidateOptionsMenu();
          }
         
-        
         @SuppressLint("NewApi")
         public void onDrawerSlide(View drawerView, float slideOffset)
         {
@@ -143,7 +142,6 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
                 anim.setDuration(0);
                 anim.setFillAfter(true);
                 frame.startAnimation(anim);
-
                 lastTranslate = moveFactor;
             }
         }

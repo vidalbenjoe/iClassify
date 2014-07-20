@@ -22,7 +22,7 @@
              android:background="#242220"
              android:choiceMode="singleChoice"
              android:divider="#16acf9"
-             android:dividerHeight="4dp" /> 
+             android:dividerHeight="2dp" /> 
           
           
   

@@ -48,12 +48,48 @@
       
     <string name="dataset1"><![CDATA[
  			We need to find which attribute will be the root node in our decision tree. The gain is calculated for all four attributes: \n
- 			Gain(S, Outlook) = 0.246\n
-			Gain(S, Temperature) = 0.029\n
-			Gain(S, Humidity) = 0.151\n
-			Gain(S, Wind) = 0.048 \n
+ 			
  			]]></string>
+    <string name ="example2desc"><![CDATA[
+        Suppose S is a set of 14 examples in which one of the attributes is wind speed. The values of Wind can be Weak or Strong. The classification of these 14 examples are 9 YES and 5 NO. For attribute Wind, suppose there are 8 occurrences of Wind = Weak and 6 occurrences of Wind = Strong. For Wind = Weak, 6 of the examples are YES and 2 are NO. For Wind = Strong, 3 are YES and 3 are NO. Therefore
+        ]]></string>
+        
+    <string name = "gainwind"><![CDATA[
+        Suppose S is a set of 14 examples in which one of the attributes is wind speed. The values of Wind can be Weak or Strong. The classification of these 14 examples are 9 YES and 5 NO. For attribute Wind, suppose there are 8 occurrences of Wind = Weak and 6 occurrences of Wind = Strong. For Wind = Weak, 6 of the examples are YES and 2 are NO. For Wind = Strong, 3 are YES and 3 are NO. Therefore
+        ]]></string>
+        
+    <string name = "gaintempe"><![CDATA[
+        Suppose S is a set of 14 examples in which one of the attributes is temperature. The values of Temperature can be Hot, mild and cold. The classification of these 14 examples are 9 YES and 5 NO. For attribute temperature, suppose there are 4 occurrences of Temperature = Hot and 6 occurrences of Temperature = Mild and 4 occurrences of Temperature = Cool. For Wind = Hot, 2 of the examples are YES and 2 are NO. For Wind = Mild, 4 are YES and 2 are NO. Therefore
+        ]]></string>
+        
+    <string name = "gainhumidity"><![CDATA[
+        Suppose S is a set of 14 examples in which one of the attributes is wind speed. The values of Wind can be Weak or Strong. The classification of these 14 examples are 9 YES and 5 NO. For attribute Wind, suppose there are 8 occurrences of Wind = Weak and 6 occurrences of Wind = Strong. For Wind = Weak, 6 of the examples are YES and 2 are NO. For Wind = Strong, 3 are YES and 3 are NO. Therefore
+        ]]></string>
     
     
+    <!-- Wind Calculation -->
+    <string name = "w1"><![CDATA[
+        = 0.940 - (8/14)*0.811 - (6/14)*1.00\n
+        = 0.048
+        ]]></string>
+        
+    <string name = "wweak"><![CDATA[
+        Entropy(Sweak) = - (6/8)*log2(6/8) - (2/8)*log2(2/8) = 0.81
+        ]]></string>
+    
+     <string name = "wstrong"><![CDATA[
+        Entropy(Sstrong) = - (3/6)*log2(3/6) - (3/6)*log2(3/6) = 1.00
+        ]]></string>
+        
+     
+     <string name = "correctdecision1"><![CDATA[
+       Since Outlook has three possible values, the root node has three branches (sunny, overcast, rain)."
+        ]]></string>
+     
+     <string name = "correctdecision2"><![CDATA[
+       Since we`ve used Outlook at the root, we only decide on the remaining three attributes: Humidity, Temperature, or Wind.
+]]></string>
+     
+     
 </resources>
 

@@ -11,6 +11,7 @@ import drawer.MainDrawerActivity;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Color;
@@ -53,18 +54,29 @@ private Button viewsumulation;
 	            	Fragment SimulProcessIntroActivity = new SimulProcessIntroActivity();
  	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
  	            	ft.replace(R.id.frame_container, SimulProcessIntroActivity);
- 	            	ft.addToBackStack(null);
+ 	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+	            	ft.addToBackStack(SimulProcessIntroActivity.getTag());
  	            	ft.commit();
 	              	 
 	            }
 	        });
 	        
-		 	
-	       
 		 return rootView;
 	    }
         
 
-     
+        public void onBackPressed() {
+
+            // See bug: http://stackoverflow.com/questions/13418436/android-4-2-back-stack-behaviour-with-nested-fragments/14030872#14030872
+            // If the fragment exists and has some back-stack entry
+            FragmentManager fm = getFragmentManager();
+            Fragment currentFragment = fm.findFragmentById(R.id.content_frame);
+            if (currentFragment != null && currentFragment.getChildFragmentManager().getBackStackEntryCount() > 0) {
+                // Get the fragment fragment manager - and pop the backstack
+                currentFragment.getChildFragmentManager().popBackStack();
+            }
+       
+           
+            }
        
     }
