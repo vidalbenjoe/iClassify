@@ -33,6 +33,33 @@
     <string name="action_mid">K-Nearest Neighbor</string>
     <string name="action_right">Native Bayesian</string>
 
+    <!-- Video Description -->
+    
+<string name="knnvideodesc"><![CDATA[
+ 			This is how the K-Nearest Neighbour algorithm works. Firstly we have a variable "K". With this, you assign "K" a value from 1 to the total number of examples. The best value to chose for K is a low odd number. With this value of "K", we look at the k closest points on the graph from the location of the new example point. The next part is to assign the new point a class, the class type will be determined from the majority of the closest points.\n\n
+			
+			Algorithm in short:\n
+			1. Assign K a value -- preferably a small odd number.\n
+			2. Find the closest number of K points.\n
+			3. Assign the new point from the majority of classes.\n
+ 			]]></string>
+ 			
+<string name="naivevideodesc"><![CDATA[
+ 			The Naive Bayesian classifier is based on Bayes theorem with independence assumptions between predictors. A Naive Bayesian model is easy to build, with no complicated iterative parameter estimation which makes it particularly useful for very large datasets. Despite its simplicity, the Naive Bayesian classifier often does surprisingly well and is widely used because it often outperforms more sophisticated classification methods.
+
+ 			]]></string>
+ 			
+<string name="treevideodesc"><![CDATA[
+ 			The best way to see a Decision Tree is with an example. A decision tree is like a flowchart diagram where you can read off your decision rules. We can see why such diagrams are called trees, because, while they are admittedly upside down, they start from a root and have branches leading to leaves. The leaves are always decisions, and a particular decision might be at the end of multiple branches.
+
+ 			]]></string>
+ 			
+
+
+
+    
+    
+    
     
     <string name="pracprob1"><![CDATA[
  			Suppose we want the ID3 algorithm to decide whether the weather is amenable to playing baseball. Over the course of 2 weeks, data is collected to help ID3 build a decision tree . 
