@@ -43,6 +43,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        
         >
         
     <ImageView
@@ -52,18 +53,11 @@
         android:background="@drawable/gainimg1" />
     
     <ImageView
-        android:id="@+id/gainid2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gainimg2"
-        android:layout_below="@+id/gainid1" />
-    
-    <ImageView
         android:id="@+id/gainid3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/gainimg3"
-        android:layout_below="@+id/gainid2" />
+        android:layout_below="@+id/gainid1" />
     
     <ImageView
         android:id="@+id/gainid4"

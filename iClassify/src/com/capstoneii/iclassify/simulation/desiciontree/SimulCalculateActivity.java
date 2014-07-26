@@ -29,15 +29,14 @@ import com.capstoneii.iclassify.R;
 
 @SuppressLint("NewApi")
 public class SimulCalculateActivity extends Fragment implements android.view.animation.Animation.AnimationListener{
-	private ImageView gainoutlook,gaintemre,gainhumid,gainwind;
+	private ImageView gainoutlook,gainhumid,gainwind;
 	Animation left, right, leftout, rightout,animFadein,animFadeout;
 	private Button simulnextwithquestion;
 	Button drag;
 	LinearLayout drop;
 	TextView text,sucess;
 	int total , failure = 0;
-	//The "x" and "y" position of the "Show Button" on screen.
-	Point p;
+	Animation animSideDown;
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,18 +61,19 @@ public class SimulCalculateActivity extends Fragment implements android.view.ani
 	    
 	        left.setAnimationListener(this);
 		    right.setAnimationListener(this);
-	       
-	        
+		    //animSideDown.setAnimationListener(this);
+		
 		 drag = (Button)rootView.findViewById(R.id.one);
 	     drop = (LinearLayout)rootView.findViewById(R.id.bottomlinear);
 	     text = (TextView)rootView.findViewById(R.id.Total);
 	     sucess = (TextView)rootView.findViewById(R.id.Sucess);
 		 gainoutlook = (ImageView) rootView.findViewById(R.id.gainid1);
-		 gaintemre = (ImageView) rootView.findViewById(R.id.gainid2);
+		
 		 gainhumid = (ImageView) rootView.findViewById(R.id.gainid3);
 		 gainwind = (ImageView) rootView.findViewById(R.id.gainid4);
 		 simulnextwithquestion = (Button) rootView.findViewById(R.id.simulnextcalculatebt);
 		
+		 
 		 gainoutlook.setOnClickListener( new View.OnClickListener() {
 
 	            @Override
@@ -82,68 +82,196 @@ public class SimulCalculateActivity extends Fragment implements android.view.ani
 	            	final Dialog dialog = new Dialog(getActivity());
 	            	dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	                dialog.setContentView(R.layout.custom_dialog);
-	                dialog.setTitle("Gain Outlook Formula");
+	                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 	                dialog.setCancelable(false);
 	                
-	                TextView formulaS1 = (TextView) dialog.findViewById(R.id.formulas1);
-	                formulaS1.setText(R.string.wweak);
+	              
+	                left = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+	    	                R.anim.left);
+	    	        right = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+	    	                R.anim.right);
+	    	    	// load the animation
+	    	      
+	    			final ImageView formulaimg = (ImageView) dialog.findViewById(R.id.formulaimg);
+	    			final ImageView heirarimg = (ImageView) dialog.findViewById(R.id.heirarimg);
+	    			
+	    			formulaimg.setImageResource(R.drawable.outlookdragimg);
+	                heirarimg.setImageResource(R.drawable.outlookheirar);
 	                
-	                TextView formulaS2 = (TextView) dialog.findViewById(R.id.formulas2);
-	                formulaS2.setText(R.string.wstrong);
+	    			animSideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+	    					R.anim.slide_down);
+	    			
+	    	        Button windweak = (Button) dialog.findViewById(R.id.windweak);
+	    	        Button windstrong = (Button) dialog.findViewById(R.id.windstrong);
+	                windweak.setBackgroundResource(R.drawable.outlookrain);
+	                windstrong.setBackgroundResource(R.drawable.outlooksunny);
+	    	        
+	                windweak.startAnimation(left);
+	                windstrong.startAnimation(right);
 	                
-	                TextView formulatext = (TextView) dialog.findViewById(R.id.formulatext);
-	                formulatext.setText(R.string.w1);
-	                
+	                TextView entropytitle = (TextView) dialog.findViewById(R.id.entropytitle);
+	                entropytitle.setText("Gain(S,Outlook)");
+	                final TextView formulatext = (TextView) dialog.findViewById(R.id.formulatext);
+	                formulatext.setText(R.string.o1);
+	                formulatext.setVisibility(View.INVISIBLE);
 	                dialog.show();
-	                Button declineButton = (Button) dialog.findViewById(R.id.cadbtnOk);
-	                // if decline button is clicked, close the custom dialog
-	                declineButton.setOnClickListener(new OnClickListener() {
-	                    @Override
-	                    public void onClick(View v) {
-	                        dialog.dismiss();
-	                    }
-	                });
-	            }
-   });
-		 gaintemre.setOnClickListener( new View.OnClickListener() {
+	                
+	                formulaimg.setOnClickListener( new View.OnClickListener() {
 
-	            @Override
-	            public void onClick(View v) {
-	            	out();
-	            	final Dialog dialog = new Dialog(getActivity());
-	            	dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-	                dialog.setContentView(R.layout.custom_dialog);
-	                dialog.setTitle("Gain Temperature Formula");
-	                dialog.setCancelable(false);
+	    	            @Override
+	    	            public void onClick(View v) {
+	    	            	heirarimg.setVisibility(View.VISIBLE);
+	    	            	heirarimg.startAnimation(animSideDown);
+	    	            	formulatext.setVisibility(View.VISIBLE);
+	    	            }
+	                });
 	                
-	                TextView formulaS1 = (TextView) dialog.findViewById(R.id.formulas1);
-	                formulaS1.setText(R.string.wweak);
 	                
-	                TextView formulaS2 = (TextView) dialog.findViewById(R.id.formulas2);
-	                formulaS2.setText(R.string.wstrong);
+	                windstrong.setOnClickListener( new View.OnClickListener() {
+
+	    	            @Override
+	    	            public void onClick(View v) {
+	    	            	//show popup
+	    	               
+	    	            	final Dialog dialog = new Dialog(getActivity());
+	    	            	dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
+	    	                dialog.setContentView(R.layout.popup);
+	    	                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+	    	                TextView strongtext = (TextView) dialog.findViewById(R.id.occurence);
+	    	                strongtext.setText(R.string.windoccurencesstrong);
+	    	                dialog.show();
+	    	            }
+	                });
+	           
+	                windweak.setOnClickListener( new View.OnClickListener() {
+
+	    	            @Override
+	    	            public void onClick(View v) {
+	    	            	
+	    	            	final Dialog dialog = new Dialog(getActivity());
+	    	            	dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
+	    	                dialog.setContentView(R.layout.popup);
+	    	                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+	    	                TextView weaktext = (TextView) dialog.findViewById(R.id.occurence);
+	    	                weaktext.setText(R.string.windoccurencesweak);
+	    	                dialog.show();
+	    	            }
+	                });
 	                
-	                TextView formulatext = (TextView) dialog.findViewById(R.id.formulatext);
-	                formulatext.setText(R.string.w1);
-	                
-	                dialog.show();
 	                Button declineButton = (Button) dialog.findViewById(R.id.cadbtnOk);
 	                // if decline button is clicked, close the custom dialog
 	                declineButton.setOnClickListener(new OnClickListener() {
 	                    @Override
 	                    public void onClick(View v) {
 	                        dialog.dismiss();
+	                    
 	                    }
 	                });
+	                
 	            }
+	        	
    });
+		
 		 
 		 gainhumid.setOnClickListener( new View.OnClickListener() {
 			 
 	            @Override
 	            public void onClick(View v) {
 	            	out();
-	            	
+	            	out();
+	            	final Dialog dialog = new Dialog(getActivity());
+	            	dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	                dialog.setContentView(R.layout.custom_dialog);
+	                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+	                dialog.setTitle("Gain Wind Formula");
+	                dialog.setCancelable(false);
+	                
+	              
+	                left = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+	    	                R.anim.left);
+	    	        right = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+	    	                R.anim.right);
+	    	    	// load the animation
+	    	      
+	    		
+	    			final ImageView formulaimg = (ImageView) dialog.findViewById(R.id.formulaimg);
+	    			final ImageView heirarimg = (ImageView) dialog.findViewById(R.id.heirarimg);
+	    			
+	    			
+	    			formulaimg.setImageResource(R.drawable.humiddragimg);
+	                heirarimg.setImageResource(R.drawable.humidityheirar);
+	                
+	    			animSideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+	    					R.anim.slide_down);
+	    	        Button windweak = (Button) dialog.findViewById(R.id.windweak);
+	    	        Button windstrong = (Button) dialog.findViewById(R.id.windstrong);
+	    	        windweak.setBackgroundResource(R.drawable.humidityhighl);
+	                windstrong.setBackgroundResource(R.drawable.humiditynormal);
+	    	        
+	                
+	                windweak.startAnimation(left);
+	                windstrong.startAnimation(right);
+	                
+	                TextView entropytitle = (TextView) dialog.findViewById(R.id.entropytitle);
+	                entropytitle.setText("Gain(S,Humidity)");
+	                final TextView formulatext = (TextView) dialog.findViewById(R.id.formulatext);
+	                formulatext.setText(R.string.h1);
+	                formulatext.setVisibility(View.INVISIBLE);
+	                dialog.show();
+	                
+	                formulaimg.setOnClickListener( new View.OnClickListener() {
+
+	    	            @Override
+	    	            public void onClick(View v) {
+	    	            	heirarimg.setVisibility(View.VISIBLE);
+	    	            	heirarimg.startAnimation(animSideDown);
+	    	            	formulatext.setVisibility(View.VISIBLE);
+	    	            }
+	                });
+	                
+	                windstrong.setOnClickListener( new View.OnClickListener() {
+
+	    	            @Override
+	    	            public void onClick(View v) {
+	    	            	//show popup
+	    	               
+	    	            	final Dialog dialog = new Dialog(getActivity());
+	    	            	dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
+	    	                dialog.setContentView(R.layout.popup);
+	    	                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+	    	                TextView strongtext = (TextView) dialog.findViewById(R.id.occurence);
+	    	                strongtext.setText(R.string.windoccurencesstrong);
+	    	                dialog.show();
+	    	            }
+	                });
+	           
+	                windweak.setOnClickListener( new View.OnClickListener() {
+
+	    	            @Override
+	    	            public void onClick(View v) {
+	    	            	
+	    	            	final Dialog dialog = new Dialog(getActivity());
+	    	            	dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
+	    	                dialog.setContentView(R.layout.popup);
+	    	                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+	    	                TextView weaktext = (TextView) dialog.findViewById(R.id.occurence);
+	    	                weaktext.setText(R.string.windoccurencesweak);
+	    	                dialog.show();
+	    	            }
+	                });
+	                
+	                Button declineButton = (Button) dialog.findViewById(R.id.cadbtnOk);
+	                // if decline button is clicked, close the custom dialog
+	                declineButton.setOnClickListener(new OnClickListener() {
+	                    @Override
+	                    public void onClick(View v) {
+	                        dialog.dismiss();
+	                    
+	                    }
+	                });
+	                
 	            }
+	        	
       });
 		 gainwind.setOnClickListener( new View.OnClickListener() {
 
@@ -157,27 +285,47 @@ public class SimulCalculateActivity extends Fragment implements android.view.ani
 	                dialog.setTitle("Gain Wind Formula");
 	                dialog.setCancelable(false);
 	                
+	              
 	                left = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
 	    	                R.anim.left);
 	    	        right = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
 	    	                R.anim.right);
-	    	       
-	    	        Button windweak = (Button) dialog.findViewById(R.id.windweak);
-	    	        Button windstrong = (Button) dialog.findViewById(R.id.windstrong);
+	    	    	// load the animation
+	    	      
+	    		
+	    			final ImageView formulaimg = (ImageView) dialog.findViewById(R.id.formulaimg);
+	    			final ImageView heirarimg = (ImageView) dialog.findViewById(R.id.heirarimg);
+	    			
+	    			formulaimg.setImageResource(R.drawable.winddragimg);
+	                heirarimg.setImageResource(R.drawable.windheirar);
 	                
+	    			animSideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+	    					R.anim.slide_down);
+	    			 Button windweak = (Button) dialog.findViewById(R.id.windweak);
+		    	     Button windstrong = (Button) dialog.findViewById(R.id.windstrong);
+		    	     windweak.setBackgroundResource(R.drawable.weakwind);
+		             windstrong.setBackgroundResource(R.drawable.strongwind);
+		    	        
 	                windweak.startAnimation(left);
 	                windstrong.startAnimation(right);
 	                
-	                TextView formulaS1 = (TextView) dialog.findViewById(R.id.formulas1);
-	                formulaS1.setText(R.string.wweak);
-	                
-	                TextView formulaS2 = (TextView) dialog.findViewById(R.id.formulas2);
-	                formulaS2.setText(R.string.wstrong);
-	                
-	                TextView formulatext = (TextView) dialog.findViewById(R.id.formulatext);
+	                TextView entropytitle = (TextView) dialog.findViewById(R.id.entropytitle);
+	                entropytitle.setText("Gain(S,Wind)");
+	                final TextView formulatext = (TextView) dialog.findViewById(R.id.formulatext);
 	                formulatext.setText(R.string.w1);
-	                
+	                formulatext.setVisibility(View.INVISIBLE);
 	                dialog.show();
+	                
+	                formulaimg.setOnClickListener( new View.OnClickListener() {
+
+	    	            @Override
+	    	            public void onClick(View v) {
+	    	            	heirarimg.setVisibility(View.VISIBLE);
+	    	            	heirarimg.startAnimation(animSideDown);
+	    	            	formulatext.setVisibility(View.VISIBLE);
+	    	            }
+	                });
+	                
 	                
 	                windstrong.setOnClickListener( new View.OnClickListener() {
 
@@ -243,14 +391,13 @@ public class SimulCalculateActivity extends Fragment implements android.view.ani
 		
 		public void in(){
 			gainoutlook.startAnimation(left);
-			gaintemre.startAnimation(right);
+			
 	        gainhumid.startAnimation(left);
 	        gainwind.startAnimation(right);
 	    }
 		
 		public void out(){
 			gainoutlook.startAnimation(leftout);
-			gaintemre.startAnimation(rightout);
 			gainhumid.startAnimation(leftout);
 			gainwind.startAnimation(rightout);
 	      
@@ -261,20 +408,26 @@ public class SimulCalculateActivity extends Fragment implements android.view.ani
 	            }
 	        }, 1000);
 	    }
-		@Override
-		public void onAnimationStart(Animation animation) {
-			
-			
-		}
-		@Override
-		public void onAnimationEnd(Animation animation) {
-		
-			
-		}
-		@Override
-		public void onAnimationRepeat(Animation animation) {
-		
-			
-		}
+		 @Override
+			public void onAnimationEnd(Animation animation) {
+				// Take any action after completing the animation
+
+				// check for zoom in animation
+				if (animation == animSideDown) {			
+				}
+
+			}
+
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onAnimationStart(Animation animation) {
+				// TODO Auto-generated method stub
+
+			}
 		
 }
