@@ -4,7 +4,7 @@
     android:id="@+id/cadllMain"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#fff"
+    android:background="#01a3ff"
     android:orientation="vertical"
     tools:ignore="ButtonOrder" >
 
@@ -29,16 +29,26 @@
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
         android:padding="20dp"
-        android:background="@android:color/white" />
+        android:background="@android:color/white"
+        android:textColor="#fff"
+    	android:shadowColor="@android:color/black"
+    	android:shadowDx="1"
+   	 	android:shadowDy="1"
+    	android:shadowRadius="2"
+        android:textSize="30sp" />
 
     
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textColor="@color/drawer_menucolor"
         android:padding="10dp"
         android:textSize="18sp"
+        android:textColor="#fff"
+    	android:shadowColor="@android:color/black"
+    	android:shadowDx="1"
+   	 	android:shadowDy="1"
+    	android:shadowRadius="2"
         android:text="Outlook attribute has the highest gain, therefore it is used as the decision attribute in the root node." />
     
     
@@ -46,9 +56,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textColor="@color/drawer_menucolor"
         android:padding="10dp"
         android:textSize="18sp"
+        android:textColor="#fff"
+    	android:shadowColor="@android:color/black"
+    	android:shadowDx="1"
+   	 	android:shadowDy="1"
+    	android:shadowRadius="2"
         android:text="@string/correctdecision1" />
     
        
@@ -77,10 +91,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textColor="@color/drawer_menucolor"
         android:padding="10dp"
         android:textSize="14sp"
         android:paddingTop="20dp"
+        android:textColor="#fff"
+    	android:shadowColor="@android:color/black"
+    	android:shadowDx="1"
+   	 	android:shadowDy="1"
+    	android:shadowRadius="2"
         android:text="@string/correctdecision2" />
 
     <EditText
@@ -93,9 +111,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textColor="@color/drawer_menucolor"
-        android:padding="10dp"
+        android:textColor="#fff"
+    	android:shadowColor="@android:color/black"
+    	android:shadowDx="1"
+   	 	android:shadowDy="1"
+    	android:shadowRadius="2"
         android:textSize="10sp"
+        android:padding="10dp"
         android:paddingTop="10dp"
         android:layout_gravity="center"
         android:text="(Please put your answer in the textbox)" />

@@ -3,6 +3,8 @@ package com.capstoneii.iclassify;
 import bayesdiscussflip.NativeBayesLayoutActivity;
 
 import com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity;
+import com.capstoneii.iclassify.videos.IntroductionVideo;
+
 import descisiondiscussflip.DescTreeLayoutActivity;
 import knearestdiscussflip.KNearestLayoutActivity;
 import android.annotation.SuppressLint;
@@ -103,7 +105,8 @@ Button first_bt;
 	            
 	            switch(i){
 	            case 0:
-	            	
+	            	Intent intent0 = new Intent(InputFragmentView.getContext(), IntroductionVideo.class);
+	           	 	InputFragmentView.getContext().startActivity(intent0);
 	            	break;
 	            	
 	            case 1:

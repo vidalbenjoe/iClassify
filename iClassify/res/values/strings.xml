@@ -109,6 +109,13 @@
        Since we`ve used Outlook at the root, we only decide on the remaining three attributes: Humidity, Temperature, or Wind.
 ]]></string>
 
+      <string name = "restext"><![CDATA[
+    The final decision = tree\n
+	The decision tree can also be expressed in rule format:
+]]></string>
+
+     
+     
      <string name = "windoccurencesweak"><![CDATA[
       Weak Wind\n
       The classification of these 14 examples are 9 YES and 5 NO. For attribute Wind, suppose there are 8 occurrences of Wind = Weak.\n
@@ -119,6 +126,15 @@
         Strong Wind\n
         The classification of these 14 examples are 9 YES and 5 NO. For attribute Wind, suppose there are 6 occurrences of Wind = Strong.\n
 		For Wind = Strong, 3 are YES and 3 are NO. 
+	]]></string>
+	
+     
+      <string name = "humidityresult"><![CDATA[
+       Humidity has the highest gain; therefore, it is used as the decision node. This process goes on until all data is classified perfectly or we run out of attributes.
+	]]></string>
+	
+      <string name = "idrresultdesc"><![CDATA[
+       ID3 has been incorporated in a number of commercial rule-induction packages. Some specific applications include medical diagnosis, credit risk assessment of loan applications, equipment malfunctions by their cause, classification of soybean diseases, and web search classification.
 	]]></string>
      
      

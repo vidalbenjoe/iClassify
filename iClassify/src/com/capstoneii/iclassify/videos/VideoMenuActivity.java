@@ -62,9 +62,7 @@ public class VideoMenuActivity extends ActionBarActivity {
         vv.requestFocus();
         vv.start();
         
-		
         menuOverlay = (ExpandableMenuOverlay) findViewById(R.id.button_menu);
-
         menuOverlay.setOnMenuButtonClickListener(new ExpandableButtonMenu.OnMenuButtonClick() {
             @Override
             public void onClick(ExpandableButtonMenu.MenuButton action) {

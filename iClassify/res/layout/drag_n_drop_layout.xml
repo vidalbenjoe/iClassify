@@ -35,7 +35,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_gravity="center"
-        android:textColor="#112fdf"
+        android:textColor="#fff"
         android:shadowColor="@android:color/white"
         android:shadowDx="1"
         android:shadowDy="1"

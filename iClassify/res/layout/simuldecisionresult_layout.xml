@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backgroundblur" >
+<RelativeLayout
+    android:id="@+id/rlscroll"
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true" >  
+<TextView
+    android:id="@+id/problemtextdesc"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="20dp"
+    android:text="@string/restext"
+    android:textColor="#fff"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:textStyle="bold"
+    android:textSize="20sp"
+    android:shadowColor="@android:color/black"
+    android:shadowDx="1"
+    android:shadowDy="1"
+    android:shadowRadius="2" />
+
+</RelativeLayout>   
+
+<RelativeLayout 
+    android:id="@+id/rl1"
+    android:layout_below="@+id/rlscroll"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="45dp"
+    android:gravity="center"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_centerHorizontal="true"
+    >
+
+    <TextView
+        android:id="@+id/s1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IF outlook = "
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:layout_centerVertical="true"/>
+      
+      <ImageView 
+        android:id="@+id/m1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@+id/s1"
+        android:background="@drawable/outlooksunny"
+        android:padding="3dp"/>
+      
+        <TextView
+        android:id="@+id/h1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/m1"
+        android:text="AND Humidity = "
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"/>
+        
+        
+        <ImageView 
+        android:id="@+id/m2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@+id/h1"
+        android:background="@drawable/humidityhighl"
+        android:padding="3dp"/>
+     
+        <TextView
+        android:id="@+id/h3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/m2"
+        android:text=" THEN playball = no"
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"/>
+</RelativeLayout>
+
+
+<RelativeLayout 
+    android:id="@+id/rl2"
+    android:layout_below="@+id/rl1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:gravity="center"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_centerHorizontal="true"
+    >
+
+    <TextView
+        android:id="@+id/s2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IF outlook = "
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:layout_centerVertical="true"/>
+      
+      <ImageView 
+        android:id="@+id/m2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@+id/s2"
+        android:background="@drawable/outlookrain"
+        android:padding="3dp"/>
+      
+        <TextView
+        android:id="@+id/h2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/m2"
+        android:text="AND Humidity = "
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"/>
+        
+        
+        <ImageView 
+        android:id="@+id/m3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@+id/h2"
+        android:background="@drawable/humidityhighl"
+        android:padding="3dp"/>
+     
+        <TextView
+        android:id="@+id/h4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/m3"
+        android:text=" THEN playball = no"
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"/>
+</RelativeLayout>
+
+
+<RelativeLayout 
+    android:id="@+id/rl3"
+    android:layout_below="@+id/rl2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:gravity="center"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_centerHorizontal="true"
+    >
+
+    <TextView
+        android:id="@+id/s1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IF outlook = "
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:layout_centerVertical="true"/>
+      
+      <ImageView 
+        android:id="@+id/m1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@+id/s1"
+        android:background="@drawable/outlookrain"
+        android:padding="3dp"/>
+      
+        <TextView
+        android:id="@+id/h1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/m1"
+        android:text="AND Wind = "
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"/>
+        
+        
+        <ImageView 
+        android:id="@+id/m3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@+id/h1"
+        android:background="@drawable/strongwind"
+        android:padding="3dp"/>
+     
+        <TextView
+        android:id="@+id/h3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/m3"
+        android:text=" THEN playball = yes"
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"/>
+</RelativeLayout>
+
+
+
+<RelativeLayout 
+    android:id="@+id/rl4"
+    android:layout_below="@+id/rl3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:gravity="center"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_centerHorizontal="true"
+    >
+
+    <TextView
+        android:id="@+id/s5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IF outlook = "
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:layout_centerVertical="true"/>
+      
+      <ImageView 
+        android:id="@+id/m5"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@+id/s5"
+        android:background="@drawable/outlookoevercast"
+        android:padding="3dp"/>
+      
+        <TextView
+        android:id="@+id/h5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/m5"
+        android:text="AND Wind = "
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"/>
+        
+        
+        <ImageView 
+        android:id="@+id/m3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@+id/h5"
+        android:background="@drawable/strongwind"
+        android:padding="3dp"/>
+     
+        <TextView
+        android:id="@+id/h6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/m3"
+        android:text="THEN playball = yes"
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"/>
+</RelativeLayout>
+
+
+
+<RelativeLayout 
+    android:id="@+id/rl5"
+    android:layout_below="@+id/rl4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:gravity="center"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_centerHorizontal="true"
+    >
+
+    <TextView
+        android:id="@+id/s8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IF outlook = "
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:layout_centerVertical="true"/>
+      
+      <ImageView 
+        android:id="@+id/m8"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@+id/s8"
+        android:background="@drawable/outlookrain"
+        android:padding="3dp"/>
+      
+        <TextView
+        android:id="@+id/h8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/m8"
+        android:text="AND Wind = "
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"/>
+        
+        
+        <ImageView 
+        android:id="@+id/m9"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_toRightOf="@+id/h8"
+        android:background="@drawable/weakwind"
+        android:padding="3dp"/>
+     
+        <TextView
+        android:id="@+id/h9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/m9"
+        android:text=" THEN playball = yes"
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"/>
+</RelativeLayout>
+
+
+<RelativeLayout 
+    android:id="@+id/bottomrelative"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_below="@+id/rl5"
+    android:gravity="center"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_centerHorizontal="true"
+    >
+
+ <TextView
+        android:id="@+id/h12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/idrresultdesc"
+        android:layout_centerVertical="true"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"/>
+ 
+</RelativeLayout>
+
+<RelativeLayout 
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_below="@+id/bottomrelative"
+     android:layout_marginTop="30dp"
+     android:layout_centerHorizontal="true">
+<Button
+    android:id="@+id/watchvideoidr"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:text="Watch Video" />
+
+<Button
+    android:id="@+id/takeassess"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="50dp"
+    android:text="Take Assessment" />
+
+</RelativeLayout>
+
+</RelativeLayout>

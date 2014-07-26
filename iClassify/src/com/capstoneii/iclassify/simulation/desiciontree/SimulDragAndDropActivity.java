@@ -93,54 +93,66 @@ public class SimulDragAndDropActivity extends Fragment {
 		                       String ans;
 		 		               getcorrect = (EditText) dialog.findViewById(R.id.gethumidityands);
 		 		               ans = getcorrect.getText().toString();
-		                    	if(ans != "Humidity"){
-		                    		 Toast.makeText(getActivity().getApplicationContext(), "Wrong!",
-		                    				   Toast.LENGTH_SHORT).show();
-		                    	}
-		                    	
-		                    	if(ans != "humidity"){
-		                    		 Toast.makeText(getActivity().getApplicationContext(), "Wrong!",
-		                    				   Toast.LENGTH_SHORT).show();
-		                    	}
-		 		               
+		                    
 		 		               if(ans.matches("Humidity")){
-		                    		 Fragment SimulHeirarchyDataActivity = new SimulHeirarchyDataActivity();
-				    	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
-				    	            	ft.replace(R.id.frame_container, SimulHeirarchyDataActivity);
-				    	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-				     	            	ft.addToBackStack(SimulHeirarchyDataActivity.getTag());
-				    	            	ft.commit();
-				                        dialog.dismiss();
+		 		            	  Fragment SimulDecisionResults = new SimulDecisionResults();
+			    	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
+			    	            	ft.replace(R.id.frame_container, SimulDecisionResults);
+			    	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+			     	            	ft.addToBackStack(SimulDecisionResults.getTag());
+			    	            	ft.commit();
+			                        dialog.dismiss();
 		 		                }
 		                    	 
 		                    	 if(ans.contains("Humidity")){
-		                    		 Fragment SimulHeirarchyDataActivity = new SimulHeirarchyDataActivity();
+		                    		 Fragment SimulDecisionResults = new SimulDecisionResults();
 				    	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
-				    	            	ft.replace(R.id.frame_container, SimulHeirarchyDataActivity);
+				    	            	ft.replace(R.id.frame_container, SimulDecisionResults);
 				    	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-				     	            	ft.addToBackStack(SimulHeirarchyDataActivity.getTag());
+				     	            	ft.addToBackStack(SimulDecisionResults.getTag());
 				    	            	ft.commit();
 				                        dialog.dismiss();
 		                    	 }
 		                    	 if(ans.contains("humidity")){
-		                    		 Fragment SimulHeirarchyDataActivity = new SimulHeirarchyDataActivity();
+		                    		 Fragment SimulDecisionResults = new SimulDecisionResults();
 				    	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
-				    	            	ft.replace(R.id.frame_container, SimulHeirarchyDataActivity);
+				    	            	ft.replace(R.id.frame_container, SimulDecisionResults);
 				    	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-				     	            	ft.addToBackStack(SimulHeirarchyDataActivity.getTag());
+				     	            	ft.addToBackStack(SimulDecisionResults.getTag());
 				    	            	ft.commit();
 				                        dialog.dismiss();
 		                    	 }
 		                    	 
 		                    	 
 		                    	 if(ans.matches("humidity")){
-		                    		 Fragment SimulHeirarchyDataActivity = new SimulHeirarchyDataActivity();
+		                    		 Fragment SimulDecisionResults = new SimulDecisionResults();
 				    	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
-				    	            	ft.replace(R.id.frame_container, SimulHeirarchyDataActivity);
+				    	            	ft.replace(R.id.frame_container, SimulDecisionResults);
 				    	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-				     	            	ft.addToBackStack(SimulHeirarchyDataActivity.getTag());
+				     	            	ft.addToBackStack(SimulDecisionResults.getTag());
 				    	            	ft.commit();
 				                        dialog.dismiss();
+		 		                }
+		                    	 
+		                    	 
+		                    	 if(ans.matches("Temperature")){
+		                    		 Toast.makeText(getActivity().getApplicationContext(), "Sorry your Answers is wrong, please study the algorithm",
+		                    				   Toast.LENGTH_LONG).show();
+		 		                }
+		                    	 
+		                    	 if(ans.matches("temperature")){
+		                    		 Toast.makeText(getActivity().getApplicationContext(), "Sorry your Answers is wrong, please study the algorithm",
+		                    				   Toast.LENGTH_LONG).show();
+		 		                }
+		                    	 
+		                    	 if(ans.matches("Wind")){
+		                    		 Toast.makeText(getActivity().getApplicationContext(), "Sorry your Answers is wrong, please study the algorithm",
+		                    				   Toast.LENGTH_LONG).show();
+		 		                }
+		                    	 
+		                    	 if(ans.matches("wind")){
+		                    		 Toast.makeText(getActivity().getApplicationContext(), "Sorry your Answers is wrong, please study the algorithm",
+		                    				   Toast.LENGTH_LONG).show();
 		 		                }
 		                    	 if(ans.matches("")){
 		                    		 Toast.makeText(getActivity().getApplicationContext(), "Please put your answer in the textbox",

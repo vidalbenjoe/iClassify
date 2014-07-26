@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
- <supports-screens android:smallScreens="false"
+ 	<supports-screens android:smallScreens="false"
                   android:normalScreens="false"
                   android:largeScreens="false"
                   android:xlargeScreens="true"
@@ -76,6 +76,10 @@
       <activity android:name="com.capstoneii.iclassify.videos.VideoKNearestActivity"
            	/>
       <activity android:name="com.capstoneii.iclassify.videos.VideoNAtiveBayesianActivity"
+           	/>
+      
+      <activity android:name="com.capstoneii.iclassify.videos.IntroductionVideo"
+            android:theme="@style/Theme.AppCompat.Light"
            	/>
     
     </application>
