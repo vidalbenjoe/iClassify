@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".MainActivity" 
-    android:background="#12bb00">
+    android:background="@drawable/backgroundblur">
 <LinearLayout
     android:id="@+id/bottomlinear"
     android:layout_width="match_parent"
@@ -26,8 +26,6 @@
         android:shadowDy="1"
         android:shadowRadius="2"
         android:text="After getting the value of each attributes,"/>
-    
-    
     
     <TextView
         android:layout_width="wrap_content"

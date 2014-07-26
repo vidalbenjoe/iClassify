@@ -55,10 +55,6 @@
  			]]></string>
  			
 
-
-
-    
-    
     
     
     <string name="pracprob1"><![CDATA[
@@ -66,11 +62,7 @@
  			]]></string>
  			
     <string name="weathattrib"><![CDATA[
- 			 The weather attributes are outlook, temperature, humidity, and wind speed. They can have the following values:\n
-			 outlook = { sunny, overcast, rain }\n
-			 temperature = {hot, mild, cool }\n
-			 humidity = { high, normal }\n
-			 wind = {weak, strong }\n
+ 			 The weather attributes are outlook, temperature, humidity, and wind speed.\n
  			]]></string>
       
     <string name="dataset1"><![CDATA[
@@ -116,6 +108,20 @@
      <string name = "correctdecision2"><![CDATA[
        Since we`ve used Outlook at the root, we only decide on the remaining three attributes: Humidity, Temperature, or Wind.
 ]]></string>
+
+     <string name = "windoccurencesweak"><![CDATA[
+      Weak Wind\n
+      The classification of these 14 examples are 9 YES and 5 NO. For attribute Wind, suppose there are 8 occurrences of Wind = Weak.\n
+	  For Wind = Weak, 6 of the examples are YES and 2 are NO.
+	]]></string>
+	
+     <string name = "windoccurencesstrong"><![CDATA[
+        Strong Wind\n
+        The classification of these 14 examples are 9 YES and 5 NO. For attribute Wind, suppose there are 6 occurrences of Wind = Strong.\n
+		For Wind = Strong, 3 are YES and 3 are NO. 
+	]]></string>
+     
+     
      
      
 </resources>

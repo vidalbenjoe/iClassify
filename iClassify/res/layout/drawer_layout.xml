@@ -11,20 +11,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
-          
     <!-- The navigation drawer list -->
  
   <ListView
              android:id="@+id/slider_list"
-             android:layout_width="240dp"
+             android:layout_width="260dp"
              android:layout_height="match_parent"
              android:layout_gravity="start"
              android:background="#242220"
              android:choiceMode="singleChoice"
              android:divider="#16acf9"
-             android:dividerHeight="2dp" /> 
+             android:dividerHeight="3dp" /> 
           
-          
-  
-
 </android.support.v4.widget.DrawerLayout>

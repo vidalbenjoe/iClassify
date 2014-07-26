@@ -131,7 +131,7 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
         public void onDrawerSlide(View drawerView, float slideOffset)
         {
             float moveFactor = (mDrawerList.getWidth() * slideOffset);
-
+            
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) 
             {
                 frame.setTranslationX(moveFactor);
