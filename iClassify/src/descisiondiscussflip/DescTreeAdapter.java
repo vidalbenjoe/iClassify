@@ -28,6 +28,9 @@ public class DescTreeAdapter extends BaseAdapter {
   public DescTreeAdapter(Context context) {
     inflater = LayoutInflater.from(context);
     desctreeData = new ArrayList<TopicData.Data>(TopicData.IMG_DESCRIPTIONS);
+    
+  
+    
   }
 
   @Override
@@ -68,19 +71,24 @@ public class DescTreeAdapter extends BaseAdapter {
         .setText(AphidLog.format("%s", data.title));
 
     UI
+
     .<ImageView>findViewById(layout, R.id.photo)
     .setImageBitmap(IO.readBitmap(inflater.getContext().getAssets(), data.imageFilename));
-
+    
+    
     UI
         .<TextView>findViewById(layout, R.id.description)
         .setText(Html.fromHtml(data.description));
-    
+    	
     return layout;
   }
 
   public void removeData(int index) {
     if (desctreeData.size() > 1) {
       desctreeData.remove(index);
+      
     }
   }
+  
+ 
 }

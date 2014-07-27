@@ -26,20 +26,15 @@ private Button calculate;
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);}
 		
-		
-		
-
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	    {
 		 View rootView = inflater .inflate(R.layout.table, container, false);  
 	   
-		 
 		 calculate = (Button) rootView.findViewById(R.id.calculatebt);
 		
 		 calculate.setOnClickListener(new View.OnClickListener()
 	       {
 			
-
 			@Override
 			public void onClick(View v) {
 				  	Fragment SimulCalculateActivity = new SimulCalculateActivity();

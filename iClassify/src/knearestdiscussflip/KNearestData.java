@@ -38,7 +38,6 @@ public class KNearestData {
     public final String imageFilename;
     public final String description;
     
-
  
     private Data(String title, String imageFilename, String description
                  ) {

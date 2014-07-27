@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.MotionEvent;
@@ -45,6 +44,8 @@ public class SimulDragAndDropActivity extends Fragment {
 	        droptoroot = (ImageView) rootView.findViewById(R.id.dragheretoroot);
 	        text = (TextView)rootView.findViewById(R.id.Total);
 	        sucess = (TextView)rootView.findViewById(R.id.Sucess);
+	        
+	        
 	        droptoroot.setOnDragListener(new View.OnDragListener() {
 	            @Override
 	            public boolean onDrag(View v, DragEvent event) {
@@ -52,38 +53,40 @@ public class SimulDragAndDropActivity extends Fragment {
 	            final int action = event.getAction();
 	                  switch(action) {
 	                  case DragEvent.ACTION_DRAG_STARTED:
-	                	  drag1.setVisibility(View.INVISIBLE);
-	                	  
+	                	drag1.setVisibility(View.VISIBLE);
 	            break;
 	                  case DragEvent.ACTION_DRAG_EXITED:
 	                	 
 	                    break;
 	            case DragEvent.ACTION_DRAG_ENTERED:
-	            	
+	            	 
 	              break;
 	            case DragEvent.ACTION_DROP:{
-	            	 drag1.setVisibility(View.VISIBLE);
-	            	 invisibleoutlook.setVisibility(View.VISIBLE);
 	                      failure = failure+1;
 	              return(true);
 	            }
 	            case DragEvent.ACTION_DRAG_ENDED:{
+	            	//http://android-er.blogspot.com/2012/04/drag-and-drop-to-copy-items-between.html
 	            	
 	              total = total +1;
-	              int suc = total - failure;
-	              /*sucess.setText("Sucessful Drops :"+suc);
-	              text.setText("Total Drops: "+total);
-	            */
-	              if(suc >= 1){
-	            	 drag1.setVisibility(View.INVISIBLE);
-	            	 invisibleoutlook.setVisibility(View.VISIBLE);
+	              int suc = 0 + total;
+	             /* sucess.setText("Sucessful Drops :"+suc);
+	              text.setText("Total Drops: "+total);*/
+	           
+	              if(suc == 1){
+	            	   v.post(new Runnable() {
+	            	    	  public void run() {
+	            	    		  invisibleoutlook.setVisibility(View.VISIBLE);
+	            	    		  droptoroot.setVisibility(View.INVISIBLE);
+	            	    	  }
+	            	    	});
+	            	
 	            	  final Dialog dialog = new Dialog(getActivity());
 		                dialog.setContentView(R.layout.dialog_simul_correct_root);
 		                dialog.setTitle("Correct!");
 		                dialog.setCancelable(false);
 		                dialog.show();
 		             
-		               
 		               Button declineButton = (Button) dialog.findViewById(R.id.cadbtnOk);
 		                
 		                declineButton.setOnClickListener(new OnClickListener() {
@@ -171,9 +174,7 @@ public class SimulDragAndDropActivity extends Fragment {
 
 		                        	IF outlook = rain AND wind = weak THEN playball = yes*/
 		                    }
-		                    
 		                });
-		               
 	              }
 	              return(true);
 	            }
@@ -190,18 +191,19 @@ public class SimulDragAndDropActivity extends Fragment {
 	              ClipData data = ClipData.newPlainText("", "");
 	              View.DragShadowBuilder shadow = new View.DragShadowBuilder(drag1);
 	              v.startDrag(data, shadow, null, 0);
-	              return false;
+	              return true;
 	            }
 	          });
-	        
 	        
 	        drag2.setOnTouchListener(new OnTouchListener() {
 	            @Override
 	            public boolean onTouch(View v, MotionEvent arg1) {
 	          
-	              ClipData data = ClipData.newPlainText("", "");
-	              View.DragShadowBuilder shadow = new View.DragShadowBuilder(drag2);
-	              v.startDrag(data, shadow, null, 0);
+
+		              ClipData data = ClipData.newPlainText("", "");
+		              View.DragShadowBuilder shadow = new View.DragShadowBuilder(drag1);
+		              v.startDrag(data, shadow, null, 0);
+	              
 	              return false;
 	            }
 	          });
@@ -209,10 +211,10 @@ public class SimulDragAndDropActivity extends Fragment {
 	        drag3.setOnTouchListener(new OnTouchListener() {
 	            @Override
 	            public boolean onTouch(View v, MotionEvent arg1) {
-	          
-	              ClipData data = ClipData.newPlainText("", "");
-	              View.DragShadowBuilder shadow = new View.DragShadowBuilder(drag3);
-	              v.startDrag(data, shadow, null, 0);
+
+		              ClipData data = ClipData.newPlainText("", "");
+		              View.DragShadowBuilder shadow = new View.DragShadowBuilder(drag1);
+		              v.startDrag(data, shadow, null, 0);
 	              return false;
 	            }
 	          });
@@ -221,9 +223,9 @@ public class SimulDragAndDropActivity extends Fragment {
 	            @Override
 	            public boolean onTouch(View v, MotionEvent arg1) {
 	          
-	              ClipData data = ClipData.newPlainText("", "");
-	              View.DragShadowBuilder shadow = new View.DragShadowBuilder(drag4);
-	              v.startDrag(data, shadow, null, 0);
+		              ClipData data = ClipData.newPlainText("", "");
+		              View.DragShadowBuilder shadow = new View.DragShadowBuilder(drag1);
+		              v.startDrag(data, shadow, null, 0);
 	              return false;
 	            }
 	          });

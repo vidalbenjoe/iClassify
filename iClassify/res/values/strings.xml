@@ -148,9 +148,88 @@
       <string name = "idrresultdesc"><![CDATA[
        ID3 has been incorporated in a number of commercial rule-induction packages. Some specific applications include medical diagnosis, credit risk assessment of loan applications, equipment malfunctions by their cause, classification of soybean diseases, and web search classification.
 	]]></string>
+	
+      
+         <string name = "naiveintrotext"><![CDATA[
+       Hi Students, blah blah blah blah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blahblah blah blah blah blahblah blah blah blah blah
+	]]></string>
+	
      
-     
-     
-     
+      <string name = "naivebayes1"><![CDATA[
+       Lets say we have a table that decided if we should play tennis under certain circumstances. These could be theoutlook of the weather; the temperature; the humidity and the strength of the wind:
+	]]></string>
+	
+      <string name = "naivebayes2"><![CDATA[
+      So here we have 4 attributes. What we need to do is to create “look-up tables” for each of these attributes, and write in the probability that a game of tennis will be played based on this attribute. In these tables we have to note that there are 5 cases of not being able to play a game, and 9 cases of being able to play a game. (tap the icon below to view the specific dataset)
+	]]></string>
+	<string name = "naivetesting1"><![CDATA[
+  	Now, we are in the testing phase. For this, say we were given a new instance, and we want to know if we can play a game or not, then we need to lookup the results from the tables above. So, this new instance is:\n
+	X = (Outlook=Sunny, Temperature=Cool, Humidity=High, Wind=Strong)
+	]]></string>
+    
+	
+	<string name = "naiveplaygame"><![CDATA[
+  	 Firstly we look at the probability that we can play the game, so we use the lookup tables to get:
+	\n\n
+	P(Outlook=Sunny | Play=Yes) = 2/9\n
+	P(Temperature=Cool | Play=Yes) = 3/9 \n
+	P(Humidity=High | Play=Yes) = 3/9 \n
+	P(Wind=Strong | Play=Yes) = 3/9 \n
+	P(Play=Yes) = 9/14 \n
+	]]></string>
+	
+	<string name = "naivedontplaygame"><![CDATA[
+  	Next we consider the fact that we cannot play a game:\n\n
+	P(Outlook=Sunny | Play=No) = 3/5\n
+	P(Temperature=Cool | Play=No) = 1/5\n
+	P(Humidity=High | Play=No) = 4/5\n
+	P(Wind=Strong | Play=No) = 3/5\n
+	P(Play=No) = 5/14\n
+	]]></string>
+	
+	
+	<string name = "calculatenaive1"><![CDATA[
+  	Then, using those results, you have to multiple the whole lot together. So you multiple all the probabilities for Play=Yes such as:\n
+	P(X|Play=Yes)P(Play=Yes) = (2/9) * (3/9) * (3/9) * (3/9) * (9/14) = 0.0053\n
+	And this gives us a value that represents ‘P(X|C)P(C)’, or in this case ‘P(X|Play=Yes)P(Play=Yes)’.
+	
+	]]></string>
+	
+	<string name = "calculatenaive2"><![CDATA[
+  	We also have to do the same thing for Play=No:\n\n
+	P(X|Play=No)P(Play=No) = (3/5) * (1/5) * (4/5) * (3/5) * (5/14) = 0.0206
+	]]></string>
+	
+	
+	<string name = "calculatenaive3"><![CDATA[
+  	Finally, we have to divide both results by the evidence, or ‘P(X)’. The evidence for both equations
+	is the same, and we can find the values we need within the ‘Total’ columns of the look-up tables. Therefore:
+	]]></string>
+	
+	<string name = "calculatenaive4"><![CDATA[
+  	P(X) = P(Outlook=Sunny) * P(Temperature=Cool) * P(Humidity=High) * P(Wind=Strong)\n
+	P(X) = (5/14) * (4/14) * (7/14) * (6/14)\n
+	P(X) = 0.02186\n
+	]]></string>
+	
+	
+	<string name = "calculatenaive5"><![CDATA[
+  	Then, dividing the results by this value:\n
+	P(Play=Yes | X) = 0.0053/0.02186 = 0.2424\n
+	P(Play=No | X) = 0.0206/0.02186 = 0.9421\n
+	]]></string>
+	
+	<string name = "calculatenaive6"><![CDATA[
+  	So, given the probabilities, can we play a game or not? To do this, we look at both probabilities and see which once has the highest value, and that is our answer. Therefore:\n
+	P(Play=Yes | X) = 0.2424\n
+	P(Play=No | X) = 0.9421\n
+	]]></string>
+	
+	
+	<string name = "calculatenaive7"><![CDATA[
+  	Since 0.9421 is greater than 0.2424 then the answer is ‘no’, we cannot play a game of tennis today.
+	]]></string>
+	
+	
 </resources>
 

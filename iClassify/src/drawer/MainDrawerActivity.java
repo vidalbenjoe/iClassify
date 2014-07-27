@@ -9,6 +9,7 @@ import com.capstoneii.iclassify.MainActivityController;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.simulation.desiciontree.SimulProcessIntroActivity;
 import com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity;
+import com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment;
 import com.capstoneii.iclassify.videos.VideoMenuActivity;
 
 import descisiondiscussflip.DescTreeLayoutActivity;
@@ -305,19 +306,24 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
   			switch(position){
   			case 0 :
   				Fragment SimulProcessIntroActivity = new SimulStartActivity();
-            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
-            	ft.replace(R.id.frame_container, SimulProcessIntroActivity);
+            	FragmentTransaction ft0  = getFragmentManager().beginTransaction();
+            	ft0.replace(R.id.frame_container, SimulProcessIntroActivity);
             	//ft.addToBackStack(null);
-            	ft.commit();
+            	ft0.commit();
             	mDrawerLayout.closeDrawer(mDrawerList);
             	pwMyPopWindow.dismiss();
                 getSupportActionBar().setTitle("Decision Tree");
   				break;
   			case 1:
   				
-  				Toast.makeText(MainDrawerActivity.this,
-  				  		moreList.get(position).get("share_key"),
-  				  		Toast.LENGTH_LONG).show();
+  				Fragment SimulNaiveBayesIntroFragment = new SimulNaiveBayesIntroFragment();
+            	FragmentTransaction ft1  = getFragmentManager().beginTransaction();
+            	ft1.replace(R.id.frame_container, SimulNaiveBayesIntroFragment);
+            	//ft.addToBackStack(null);
+            	ft1.commit();
+            	mDrawerLayout.closeDrawer(mDrawerList);
+            	pwMyPopWindow.dismiss();
+                getSupportActionBar().setTitle("Naive Bayesian");
   				
   				break;
   				

@@ -391,15 +391,14 @@ public class SimulCalculateActivity extends Fragment implements android.view.ani
 		
 		public void in(){
 			gainoutlook.startAnimation(left);
-			
-	        gainhumid.startAnimation(left);
-	        gainwind.startAnimation(right);
+	        gainhumid.startAnimation(right);
+	        gainwind.startAnimation(left);
 	    }
 		
 		public void out(){
 			gainoutlook.startAnimation(leftout);
-			gainhumid.startAnimation(leftout);
-			gainwind.startAnimation(rightout);
+			gainhumid.startAnimation(rightout);
+			gainwind.startAnimation(leftout);
 	      
 	        gainoutlook.postDelayed(new Runnable() {
 	            @Override

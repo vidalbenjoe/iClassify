@@ -36,7 +36,7 @@
         android:textStyle="bold"
         android:layout_gravity="center"
         android:textColor="#fff"
-        android:shadowColor="@android:color/white"
+        android:shadowColor="@android:color/black"
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="2"

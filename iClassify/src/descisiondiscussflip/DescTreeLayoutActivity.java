@@ -31,7 +31,6 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
 
     //Use RGB_565 can reduce peak memory usage on large screen device, but it's up to you to choose the best bitmap format 
     flipView.setAnimationBitmapFormat(Bitmap.Config.RGB_565);
-
     flipView.setAdapter(new DescTreeAdapter(this));
 
     setContentView(flipView);
