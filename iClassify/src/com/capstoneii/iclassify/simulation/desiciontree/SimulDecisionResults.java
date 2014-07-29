@@ -8,9 +8,15 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -18,16 +24,19 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.videos.VideoMenuActivity;
 
 @SuppressLint("NewApi")
 public class SimulDecisionResults extends Fragment{
-
+	private VideoView vv;
+	public String videoFile;
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,8 +64,14 @@ public class SimulDecisionResults extends Fragment{
 	           @Override
 	           public void onClick(View InputFragmentView)
 	           {
-	        	   Intent intent = new Intent(getActivity(), VideoMenuActivity.class);
-	                startActivity(intent);
+	        	   
+	                final Dialog dialog = new Dialog(getActivity());
+	            	dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
+	                dialog.setContentView(R.layout.watch_video_popup);
+	                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+	                
+	                dialog.show();
+	                
 	           }
 	       });
 		 
@@ -72,4 +87,26 @@ public class SimulDecisionResults extends Fragment{
 		 
 		 return rootView;
 	    }
+        
+        
+        @Override
+        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        	 getActivity().getMenuInflater().inflate(R.menu.menu, menu);
+            super.onCreateOptionsMenu(menu, inflater);
+        }
+        
+        public boolean onOptionsItemSelected(MenuItem item) {
+        	  switch (item.getItemId()) {
+        	    case R.id.watchvid:
+        	     
+        	      return true;
+        	    case R.id.takeassessment:
+        	     
+        	      return true;
+        	    default:
+        	      return super.onOptionsItemSelected(item);
+        	  }
+        	}
+        
+        
 }

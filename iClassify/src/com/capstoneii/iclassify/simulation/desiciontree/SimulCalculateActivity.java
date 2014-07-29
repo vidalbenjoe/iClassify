@@ -138,7 +138,7 @@ public class SimulCalculateActivity extends Fragment implements android.view.ani
 	    	                dialog.setContentView(R.layout.popup);
 	    	                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 	    	                TextView strongtext = (TextView) dialog.findViewById(R.id.occurence);
-	    	                strongtext.setText(R.string.windoccurencesstrong);
+	    	                strongtext.setText(R.string.outlookoccurencessunny);
 	    	                dialog.show();
 	    	            }
 	                });
@@ -153,8 +153,10 @@ public class SimulCalculateActivity extends Fragment implements android.view.ani
 	    	                dialog.setContentView(R.layout.popup);
 	    	                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 	    	                TextView weaktext = (TextView) dialog.findViewById(R.id.occurence);
-	    	                weaktext.setText(R.string.windoccurencesweak);
+	    	                weaktext.setText(R.string.outlookoccurencesrain);
 	    	                dialog.show();
+	    	                
+	    	                
 	    	            }
 	                });
 	                
@@ -240,7 +242,7 @@ public class SimulCalculateActivity extends Fragment implements android.view.ani
 	    	                dialog.setContentView(R.layout.popup);
 	    	                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 	    	                TextView strongtext = (TextView) dialog.findViewById(R.id.occurence);
-	    	                strongtext.setText(R.string.windoccurencesstrong);
+	    	                strongtext.setText(R.string.humidityoccurencesnormal);
 	    	                dialog.show();
 	    	            }
 	                });
@@ -255,7 +257,7 @@ public class SimulCalculateActivity extends Fragment implements android.view.ani
 	    	                dialog.setContentView(R.layout.popup);
 	    	                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 	    	                TextView weaktext = (TextView) dialog.findViewById(R.id.occurence);
-	    	                weaktext.setText(R.string.windoccurencesweak);
+	    	                weaktext.setText(R.string.humidityoccurenceshigh);
 	    	                dialog.show();
 	    	            }
 	                });

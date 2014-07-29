@@ -218,11 +218,13 @@ public class SimulNaiveBayesTableFragment extends Fragment {
 		            		
 		            		
 		            	case  10:
+		            		
 		            		naivetextsecond.setTypewriterText(getString(R.string.calculatenaive6));
 		            		naivetextsecond.setTextSize(18.0f);
 		            		break;	
 		            		
 		            	case  11:
+		            		viewproblemnext.setVisibility(View.INVISIBLE);
 		            		naivetextsecond.setTypewriterText(getString(R.string.calculatenaive7));
 		            		naivetextsecond.setTextSize(18.0f);
 		            		naiveintrotitle.setText("No Tennis");

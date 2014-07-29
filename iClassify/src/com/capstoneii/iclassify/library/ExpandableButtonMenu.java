@@ -478,13 +478,12 @@ public class ExpandableButtonMenu extends RelativeLayout implements View.OnClick
         mCloseBtn.setVisibility(View.VISIBLE);
 
         ANIMATION_COUNTER = 0;
-
+        
         ViewPropertyAnimator.animate(mMidContainer).setDuration(ANIMATION_DURATION).translationYBy(TRANSLATION_Y).setInterpolator(anticipation).setListener(ON_EXPAND_COLLAPSE_LISTENER);
         ViewPropertyAnimator.animate(mRightContainer).setDuration(ANIMATION_DURATION).translationYBy(TRANSLATION_Y).translationXBy(-TRANSLATION_X).setInterpolator(anticipation).setListener(ON_EXPAND_COLLAPSE_LISTENER);
         ViewPropertyAnimator.animate(mLeftContainer).setDuration(ANIMATION_DURATION).translationYBy(TRANSLATION_Y).translationXBy(TRANSLATION_X).setInterpolator(anticipation).setListener(ON_EXPAND_COLLAPSE_LISTENER);
 
     }
-
     /**
      * Manually invalidate views for pre-Honeycomb devices
      */

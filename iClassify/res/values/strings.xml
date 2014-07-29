@@ -127,6 +127,29 @@
 ]]></string>
 
      
+      	
+      	<string name = "outlookoccurencesrain"><![CDATA[
+        Rain Outlook\n
+		For Outlook = Rain, 3 are YES and 2 are NO. 
+		]]></string>
+		
+      	<string name = "outlookoccurencessunny"><![CDATA[
+        Sunny Outlook\n
+		For Outlook = Sunny, 2 are YES and 3 are NO. 
+		]]></string>
+      	
+      
+       	<string name = "humidityoccurenceshigh"><![CDATA[
+        High Humidity\n
+		For Humidty = High, 3 are YES and 4 are NO. 
+	]]></string>
+	
+      <string name = "humidityoccurencesnormal"><![CDATA[
+        Low Humidity\n
+		For Humidity = Normal, 6 are YES and 1 are NO. 
+	]]></string>
+      
+      
      
      <string name = "windoccurencesweak"><![CDATA[
       Weak Wind\n
@@ -139,6 +162,8 @@
         The classification of these 14 examples are 9 YES and 5 NO. For attribute Wind, suppose there are 6 occurrences of Wind = Strong.\n
 		For Wind = Strong, 3 are YES and 3 are NO. 
 	]]></string>
+	
+     
 	
      
       <string name = "humidityresult"><![CDATA[

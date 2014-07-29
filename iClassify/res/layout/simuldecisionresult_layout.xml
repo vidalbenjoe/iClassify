@@ -26,6 +26,15 @@
     android:shadowDy="1"
     android:shadowRadius="2" />
 
+<Button
+    android:id="@+id/viewfulltreebt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="50dp"
+    android:text="Complete Tree" 
+    android:layout_below="@+id/problemtextdesc"/>
+
 </RelativeLayout>   
 
 <RelativeLayout 
