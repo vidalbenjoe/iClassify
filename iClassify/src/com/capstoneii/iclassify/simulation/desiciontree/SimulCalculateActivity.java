@@ -180,7 +180,6 @@ public class SimulCalculateActivity extends Fragment implements android.view.ani
 	            @Override
 	            public void onClick(View v) {
 	            	out();
-	            	out();
 	            	final Dialog dialog = new Dialog(getActivity());
 	            	dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	                dialog.setContentView(R.layout.custom_dialog);

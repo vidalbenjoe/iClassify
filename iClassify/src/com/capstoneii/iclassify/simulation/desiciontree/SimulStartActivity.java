@@ -36,7 +36,7 @@ private Button viewsumulation;
 	    {
 		 View rootView = inflater .inflate(R.layout.secretetext_layout, container, false);  
 	       
-		 secretTextView = (SecretTextView)rootView.findViewById(R.id.textview);
+		 	secretTextView = (SecretTextView)rootView.findViewById(R.id.textview);
 	        secretTextView.setmDuration(2000);
 	        secretTextView.setIsVisible(false);
 	        secretTextView.toggle();

@@ -256,5 +256,23 @@
 	]]></string>
 	
 	
+	<!-- Knn -->
+	<string name = "knnsimulprocess1"><![CDATA[
+  	1. Determine parameter K = number of nearest neighbors
+	]]></string>
+	<string name = "knnsimulprocess2"><![CDATA[
+  	2. Calculate the distance between the query-instance and all the training samples
+	]]></string>
+	<string name = "knnsimulprocess3"><![CDATA[
+  	3.Sort the distance and determine nearest neighbors based on the K-th minimum distance
+	]]></string>
+	<string name = "knnsimulprocess4"><![CDATA[
+  	4.Gather the category Y of the nearest neighbors
+	]]></string>
+	<string name = "knnsimulprocess5"><![CDATA[
+  	5.Use simple majority of the category of nearest neighbors as the prediction value of the query instance
+	]]></string>
+	
+	
 </resources>
 
