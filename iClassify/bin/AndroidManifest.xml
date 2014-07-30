@@ -23,7 +23,7 @@
         
       
         <activity
-            android:name="com.capstoneii.iclassify.viewpager.ViewPagerIntro"
+            android:name="com.capstoneii.iclassify.SplashScreenActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
              >
@@ -32,6 +32,14 @@
 				<category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        
+         <activity
+            android:name="com.capstoneii.iclassify.viewpager.ViewPagerIntro"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+             >
+          </activity> 
         
 		<activity
             android:name="drawer.MainDrawerActivity"
