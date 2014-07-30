@@ -7,14 +7,17 @@ import com.capstoneii.iclassify.library.ExpandableButtonMenu;
 import com.capstoneii.iclassify.library.ExpandableMenuOverlay;
 
 import drawer.MainDrawerActivity;
-
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.SearchView;
 import android.text.method.ScrollingMovementMethod;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.widget.ImageView;
@@ -149,12 +152,30 @@ public class VideoMenuActivity extends ActionBarActivity {
   	  Intent intent = new Intent(this, MainDrawerActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
-    // app icon in action bar clicked; go home
-    return true;
+        
+    case R.id.action_search:
+        
+        return true;
+    case R.id.action_settings:
+        
+    	return true;
     default:
     return super.onOptionsItemSelected(item); 
         }
     }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+    
 }
 
 

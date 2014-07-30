@@ -11,6 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.PopupMenu;
 import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -88,6 +89,12 @@ public class SimulDecisionResults extends Fragment{
 		 return rootView;
 	    }
         
+        public void showPopup(View v) {
+            PopupMenu popup = new PopupMenu(getActivity(), v);
+            MenuInflater inflater = popup.getMenuInflater();
+            inflater.inflate(R.menu.menu, popup.getMenu());
+            popup.show();
+        }
         
         @Override
         public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -95,18 +102,22 @@ public class SimulDecisionResults extends Fragment{
             super.onCreateOptionsMenu(menu, inflater);
         }
         
-        public boolean onOptionsItemSelected(MenuItem item) {
-        	  switch (item.getItemId()) {
-        	    case R.id.watchvid:
-        	     
-        	      return true;
-        	    case R.id.takeassessment:
-        	     
-        	      return true;
-        	    default:
-        	      return super.onOptionsItemSelected(item);
-        	  }
-        	}
+       
+//        
+//        public boolean onOptionsItemSelected(MenuItem item) {
+//        	  switch (item.getItemId()) {
+//        	    case R.id.watchvid:
+//        	     
+//        	      return true;
+//        	    case R.id.takeassessment:
+//        	     
+//        	      return true;
+//        	    default:
+//        	      return super.onOptionsItemSelected(item);
+//        	  }
+//        	}
         
         
+        
+       
 }

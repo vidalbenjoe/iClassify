@@ -343,6 +343,7 @@ int drawable about_pressed 0x7f020058
 int drawable action_search 0x7f020059
 int drawable adamflint 0x7f02005a
 int drawable backgroundblur 0x7f02005b
+<<<<<<< HEAD
 int drawable baseballplayer 0x7f02005c
 int drawable bg_popupwindow 0x7f02005d
 int drawable buttonabout 0x7f02005e
@@ -476,6 +477,142 @@ int drawable winddataimg 0x7f0200dd
 int drawable winddragimg 0x7f0200de
 int drawable windformula 0x7f0200df
 int drawable windheirar 0x7f0200e0
+=======
+int drawable backgroundblurpurple 0x7f02005c
+int drawable baseballplayer 0x7f02005d
+int drawable bg_popupwindow 0x7f02005e
+int drawable buttonabout 0x7f02005f
+int drawable buttonexit 0x7f020060
+int drawable buttonhelp 0x7f020061
+int drawable buttonskip 0x7f020062
+int drawable buttontakeassess 0x7f020063
+int drawable buttonviewdataset 0x7f020064
+int drawable buttonwatchvideo 0x7f020065
+int drawable calculateimg 0x7f020066
+int drawable calculateimg_pressed 0x7f020067
+int drawable choosedt 0x7f020068
+int drawable chooseintro 0x7f020069
+int drawable chooseknn 0x7f02006a
+int drawable choosenb 0x7f02006b
+int drawable circle_1 0x7f02006c
+int drawable circle_2 0x7f02006d
+int drawable circle_3 0x7f02006e
+int drawable circle_blue 0x7f02006f
+int drawable circle_blue_dark 0x7f020070
+int drawable circle_close 0x7f020071
+int drawable circle_gray 0x7f020072
+int drawable circle_gray_dark 0x7f020073
+int drawable circle_green 0x7f020074
+int drawable circle_green_dark 0x7f020075
+int drawable circle_home 0x7f020076
+int drawable circle_main 0x7f020077
+int drawable circle_main_dark 0x7f020078
+int drawable circle_red 0x7f020079
+int drawable circle_red_dark 0x7f02007a
+int drawable customborder 0x7f02007b
+int drawable dragtorootimg 0x7f02007c
+int drawable dragtorootimgcorrect 0x7f02007d
+int drawable drawer_discuss 0x7f02007e
+int drawable drawer_shadow 0x7f02007f
+int drawable drawer_videos 0x7f020080
+int drawable dt 0x7f020081
+int drawable dt_pressed 0x7f020082
+int drawable edward 0x7f020083
+int drawable edwardtennis 0x7f020084
+int drawable emptyrootnode 0x7f020085
+int drawable exit 0x7f020086
+int drawable exit_pressed 0x7f020087
+int drawable fulltreeid3 0x7f020088
+int drawable gainimg1 0x7f020089
+int drawable gainimg2 0x7f02008a
+int drawable gainimg3 0x7f02008b
+int drawable gainimg4 0x7f02008c
+int drawable greenbackgroundblur 0x7f02008d
+int drawable help 0x7f02008e
+int drawable help_pressed 0x7f02008f
+int drawable humiddragimg 0x7f020090
+int drawable humiditydataimg 0x7f020091
+int drawable humidityheirar 0x7f020092
+int drawable humidityhighl 0x7f020093
+int drawable humiditynormal 0x7f020094
+int drawable ic_action_search 0x7f020095
+int drawable ic_drawer 0x7f020096
+int drawable ic_launcher 0x7f020097
+int drawable ico_list_item_line_popupwindow 0x7f020098
+int drawable imageborder 0x7f020099
+int drawable intro 0x7f02009a
+int drawable intro_pressed 0x7f02009b
+int drawable knn 0x7f02009c
+int drawable knn_pressed 0x7f02009d
+int drawable mainmenubg 0x7f02009e
+int drawable mainmenubgyellow 0x7f02009f
+int drawable navdrawer_assess 0x7f0200a0
+int drawable navdrawer_exit 0x7f0200a1
+int drawable navdrawer_simul 0x7f0200a2
+int drawable nb 0x7f0200a3
+int drawable nb_pressed 0x7f0200a4
+int drawable nextbtred 0x7f0200a5
+int drawable nextbtred_pressed 0x7f0200a6
+int drawable nina 0x7f0200a7
+int drawable ninaintro 0x7f0200a8
+int drawable ninblackboard 0x7f0200a9
+int drawable ninepatch 0x7f0200aa
+int drawable nintennis 0x7f0200ab
+int drawable outlookdataimg 0x7f0200ac
+int drawable outlookdragimg 0x7f0200ad
+int drawable outlookheirar 0x7f0200ae
+int drawable outlookoevercast 0x7f0200af
+int drawable outlookrain 0x7f0200b0
+int drawable outlooksunny 0x7f0200b1
+int drawable popup9 0x7f0200b2
+int drawable separatorimg 0x7f0200b3
+int drawable shadow_bottom 0x7f0200b4
+int drawable shadow_left 0x7f0200b5
+int drawable shadow_right 0x7f0200b6
+int drawable shadow_top 0x7f0200b7
+int drawable simulatebtnnormal 0x7f0200b8
+int drawable simulatebtnpressedl 0x7f0200b9
+int drawable simulcalculatebt 0x7f0200ba
+int drawable simulimgdts1 0x7f0200bb
+int drawable simulnextbt 0x7f0200bc
+int drawable skip 0x7f0200bd
+int drawable skip_pressed 0x7f0200be
+int drawable slidepng 0x7f0200bf
+int drawable slidingmenu_list_selector_background 0x7f0200c0
+int drawable slidingmenu_shadow 0x7f0200c1
+int drawable start 0x7f0200c2
+int drawable start_pressed 0x7f0200c3
+int drawable startbutton 0x7f0200c4
+int drawable startscreen 0x7f0200c5
+int drawable strongwind 0x7f0200c6
+int drawable takeassessnormal 0x7f0200c7
+int drawable takeassesspressed 0x7f0200c8
+int drawable temperaturecold 0x7f0200c9
+int drawable temperaturedataimg 0x7f0200ca
+int drawable temperaturedragimg 0x7f0200cb
+int drawable temperaturehigh 0x7f0200cc
+int drawable temperaturemild 0x7f0200cd
+int drawable tutsimg 0x7f0200ce
+int drawable view_datasetbt 0x7f0200cf
+int drawable viewdatasepressed 0x7f0200d0
+int drawable viewdataset 0x7f0200d1
+int drawable viewdataset_pressed 0x7f0200d2
+int drawable viewdatasetnormal 0x7f0200d3
+int drawable viewsimulationbt 0x7f0200d4
+int drawable watchvideo 0x7f0200d5
+int drawable watchvideopressed 0x7f0200d6
+int drawable wave 0x7f0200d7
+int drawable weakwind 0x7f0200d8
+int drawable weatherdatasetimg 0x7f0200d9
+int drawable welcome3 0x7f0200da
+int drawable welcome4 0x7f0200db
+int drawable welcomeone 0x7f0200dc
+int drawable welcometwo 0x7f0200dd
+int drawable winddataimg 0x7f0200de
+int drawable winddragimg 0x7f0200df
+int drawable windformula 0x7f0200e0
+int drawable windheirar 0x7f0200e1
+>>>>>>> commit
 int id ARGB_4444 0x7f060004
 int id ARGB_8888 0x7f060003
 int id RGB_565 0x7f060005
@@ -492,10 +629,18 @@ int id action_context_bar 0x7f06002b
 int id action_menu_divider 0x7f06001c
 int id action_menu_presenter 0x7f06001d
 int id action_mode_close_button 0x7f060032
+<<<<<<< HEAD
 int id action_settings 0x7f0600d7
 int id activity_chooser_view_content 0x7f060033
 int id always 0x7f060011
 int id assessbt 0x7f060087
+=======
+int id action_search 0x7f0600d9
+int id action_settings 0x7f0600d7
+int id activity_chooser_view_content 0x7f060033
+int id always 0x7f060011
+int id assessbt 0x7f060088
+>>>>>>> commit
 int id auto 0x7f060000
 int id baseballimg 0x7f0600c4
 int id beginning 0x7f060017
@@ -515,7 +660,11 @@ int id default_activity_button 0x7f060036
 int id description 0x7f06005b
 int id dialog 0x7f060014
 int id disableHome 0x7f06000e
+<<<<<<< HEAD
 int id disscusionbt 0x7f060084
+=======
+int id disscusionbt 0x7f060085
+>>>>>>> commit
 int id dragheretoroot 0x7f060064
 int id drawer_layout 0x7f060067
 int id drop 0x7f060061
@@ -536,7 +685,7 @@ int id end 0x7f060019
 int id entropytitle 0x7f060050
 int id expand_activities_button 0x7f060034
 int id expanded_menu 0x7f06003a
-int id fancyCoverFlow 0x7f060080
+int id fancyCoverFlow 0x7f060081
 int id first_bt 0x7f06007f
 int id formulaimg 0x7f060053
 int id formulas1 0x7f06009b
@@ -568,11 +717,15 @@ int id imageView1 0x7f0600c0
 int id imageView2 0x7f060089
 int id imageView_close 0x7f06004f
 int id imgcr 0x7f060058
-int id intronaiveskipbt 0x7f060088
+int id intronaiveskipbt 0x7f060080
 int id left 0x7f060020
 int id left_drawer 0x7f0600c8
 int id lin_lay 0x7f0600c9
+<<<<<<< HEAD
 int id linelayoutmainmenu 0x7f060082
+=======
+int id linelayoutmainmenu 0x7f060083
+>>>>>>> commit
 int id linlaytuts 0x7f0600d2
 int id listMode 0x7f060007
 int id list_item 0x7f060037
@@ -583,7 +736,11 @@ int id m3 0x7f0600ae
 int id m5 0x7f0600b3
 int id m8 0x7f0600b8
 int id m9 0x7f0600ba
+<<<<<<< HEAD
 int id mainmenulogo 0x7f060083
+=======
+int id mainmenulogo 0x7f060084
+>>>>>>> commit
 int id middle 0x7f060018
 int id naivedataimg 0x7f060095
 int id naiveintrotitle 0x7f06008b
@@ -639,7 +796,11 @@ int id shortcut 0x7f06003c
 int id showCustom 0x7f06000d
 int id showHome 0x7f06000a
 int id showTitle 0x7f06000c
+<<<<<<< HEAD
 int id simulbt 0x7f060086
+=======
+int id simulbt 0x7f060087
+>>>>>>> commit
 int id simulnextcalculatebt 0x7f0600a2
 int id simultextcalcu 0x7f06009c
 int id slideimgid 0x7f0600cd
@@ -654,7 +815,10 @@ int id tag_column 0x7f060027
 int id tag_row 0x7f060026
 int id tag_type_view 0x7f060025
 int id takeassess 0x7f0600bf
+<<<<<<< HEAD
 int id takeassessment 0x7f0600d9
+=======
+>>>>>>> commit
 int id temperatureicon 0x7f060090
 int id textview 0x7f060098
 int id three 0x7f06005e
@@ -669,7 +833,11 @@ int id tvFragFirst 0x7f06007c
 int id tvFragFourth 0x7f06007e
 int id tvFragSecond 0x7f060097
 int id tvFragThird 0x7f0600d1
+<<<<<<< HEAD
 int id tv_list_item 0x7f060081
+=======
+int id tv_list_item 0x7f060082
+>>>>>>> commit
 int id two 0x7f060060
 int id up 0x7f06002f
 int id useLogo 0x7f060009
@@ -677,7 +845,11 @@ int id vertical 0x7f060001
 int id videoDesc 0x7f06004c
 int id videoView1 0x7f06004a
 int id videodescpopup 0x7f0600d6
+<<<<<<< HEAD
 int id videosbt 0x7f060085
+=======
+int id videosbt 0x7f060086
+>>>>>>> commit
 int id viewPager 0x7f0600d4
 int id viewdatasetbt 0x7f0600c6
 int id viewdatasetnaive 0x7f06008e
@@ -732,6 +904,7 @@ int layout first_frag 0x7f030021
 int layout fourth_frag 0x7f030022
 int layout fragment_main 0x7f030023
 int layout fragment_sample 0x7f030024
+<<<<<<< HEAD
 int layout layout_inflate 0x7f030025
 int layout list_item 0x7f030026
 int layout list_item_popupwindow 0x7f030027
@@ -757,6 +930,34 @@ int layout third_frag 0x7f03003a
 int layout tutsimg_layout 0x7f03003b
 int layout viewpager_main 0x7f03003c
 int layout watch_video_popup 0x7f03003d
+=======
+int layout knnsimul_firstlayout 0x7f030025
+int layout layout_inflate 0x7f030026
+int layout list_item 0x7f030027
+int layout list_item_popupwindow 0x7f030028
+int layout main_menu_layout 0x7f030029
+int layout naivesimul_firstlayout 0x7f03002a
+int layout naivesimul_secondlayout 0x7f03002b
+int layout naivesimul_thirdlayout 0x7f03002c
+int layout naiveweatherpopup 0x7f03002d
+int layout popup 0x7f03002e
+int layout second_frag 0x7f03002f
+int layout secretetext_layout 0x7f030030
+int layout simul_question_layout_dialog 0x7f030031
+int layout simulcalculate_activity 0x7f030032
+int layout simuldecisionresult_layout 0x7f030033
+int layout simulintroprocess_layout 0x7f030034
+int layout simulproblem_layout 0x7f030035
+int layout slidingmenu 0x7f030036
+int layout splash_screen 0x7f030037
+int layout support_simple_spinner_dropdown_item 0x7f030038
+int layout table 0x7f030039
+int layout task_detail_popupwindow 0x7f03003a
+int layout third_frag 0x7f03003b
+int layout tutsimg_layout 0x7f03003c
+int layout viewpager_main 0x7f03003d
+int layout watch_video_popup 0x7f03003e
+>>>>>>> commit
 int menu main 0x7f0e0000
 int menu menu 0x7f0e0001
 int raw videoidtree 0x7f050000

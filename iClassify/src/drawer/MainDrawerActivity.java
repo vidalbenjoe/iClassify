@@ -9,11 +9,11 @@ import com.capstoneii.iclassify.MainActivityController;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.simulation.desiciontree.SimulProcessIntroActivity;
 import com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity;
+import com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity;
 import com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment;
 import com.capstoneii.iclassify.videos.VideoMenuActivity;
 
 import descisiondiscussflip.DescTreeLayoutActivity;
-
 import android.widget.AdapterView.OnItemClickListener;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -313,6 +313,7 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
             	mDrawerLayout.closeDrawer(mDrawerList);
             	pwMyPopWindow.dismiss();
                 getSupportActionBar().setTitle("Decision Tree");
+                
   				break;
   			case 1:
   				
@@ -327,7 +328,17 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
   				
   				break;
   				
-  			case 3: 
+  			case 2: 
+  				Fragment SimulMainKnnActivity = new SimulMainKnnActivity();
+            	FragmentTransaction ft2  = getFragmentManager().beginTransaction();
+            	ft2.replace(R.id.frame_container, SimulMainKnnActivity);
+            	//ft.addToBackStack(null);
+            	ft2.commit();
+            	mDrawerLayout.closeDrawer(mDrawerList);
+            	pwMyPopWindow.dismiss();
+                getSupportActionBar().setTitle("K - Nearest Neighbor");
+  				
+  				
   				break;
   				
   				default:

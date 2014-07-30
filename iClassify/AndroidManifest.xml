@@ -77,6 +77,7 @@
      //Video
      
       <activity android:name="com.capstoneii.iclassify.videos.VideoMenuActivity"
+           android:label="Videos"
            android:theme="@style/Theme.AppCompat.Light"
            	/>
      <activity android:name="com.capstoneii.iclassify.videos.VideoDecisionTree"
@@ -91,7 +92,6 @@
            	/>
     
     </application>
-    
     
    
 </manifest>
