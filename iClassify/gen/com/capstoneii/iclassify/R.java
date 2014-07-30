@@ -1499,141 +1499,6 @@ containing a value of this type.
         public static final int action_search=0x7f020059;
         public static final int adamflint=0x7f02005a;
         public static final int backgroundblur=0x7f02005b;
-<<<<<<< HEAD
-        public static final int baseballplayer=0x7f02005c;
-        public static final int bg_popupwindow=0x7f02005d;
-        public static final int buttonabout=0x7f02005e;
-        public static final int buttonexit=0x7f02005f;
-        public static final int buttonhelp=0x7f020060;
-        public static final int buttonskip=0x7f020061;
-        public static final int buttontakeassess=0x7f020062;
-        public static final int buttonviewdataset=0x7f020063;
-        public static final int buttonwatchvideo=0x7f020064;
-        public static final int calculateimg=0x7f020065;
-        public static final int calculateimg_pressed=0x7f020066;
-        public static final int choosedt=0x7f020067;
-        public static final int chooseintro=0x7f020068;
-        public static final int chooseknn=0x7f020069;
-        public static final int choosenb=0x7f02006a;
-        public static final int circle_1=0x7f02006b;
-        public static final int circle_2=0x7f02006c;
-        public static final int circle_3=0x7f02006d;
-        public static final int circle_blue=0x7f02006e;
-        public static final int circle_blue_dark=0x7f02006f;
-        public static final int circle_close=0x7f020070;
-        public static final int circle_gray=0x7f020071;
-        public static final int circle_gray_dark=0x7f020072;
-        public static final int circle_green=0x7f020073;
-        public static final int circle_green_dark=0x7f020074;
-        public static final int circle_home=0x7f020075;
-        public static final int circle_main=0x7f020076;
-        public static final int circle_main_dark=0x7f020077;
-        public static final int circle_red=0x7f020078;
-        public static final int circle_red_dark=0x7f020079;
-        public static final int customborder=0x7f02007a;
-        public static final int dragtorootimg=0x7f02007b;
-        public static final int dragtorootimgcorrect=0x7f02007c;
-        public static final int drawer_discuss=0x7f02007d;
-        public static final int drawer_shadow=0x7f02007e;
-        public static final int drawer_videos=0x7f02007f;
-        public static final int dt=0x7f020080;
-        public static final int dt_pressed=0x7f020081;
-        public static final int edward=0x7f020082;
-        public static final int edwardtennis=0x7f020083;
-        public static final int emptyrootnode=0x7f020084;
-        public static final int exit=0x7f020085;
-        public static final int exit_pressed=0x7f020086;
-        public static final int fulltreeid3=0x7f020087;
-        public static final int gainimg1=0x7f020088;
-        public static final int gainimg2=0x7f020089;
-        public static final int gainimg3=0x7f02008a;
-        public static final int gainimg4=0x7f02008b;
-        public static final int greenbackgroundblur=0x7f02008c;
-        public static final int help=0x7f02008d;
-        public static final int help_pressed=0x7f02008e;
-        public static final int humiddragimg=0x7f02008f;
-        public static final int humiditydataimg=0x7f020090;
-        public static final int humidityheirar=0x7f020091;
-        public static final int humidityhighl=0x7f020092;
-        public static final int humiditynormal=0x7f020093;
-        public static final int ic_action_search=0x7f020094;
-        public static final int ic_drawer=0x7f020095;
-        public static final int ic_launcher=0x7f020096;
-        public static final int ico_list_item_line_popupwindow=0x7f020097;
-        public static final int imageborder=0x7f020098;
-        public static final int intro=0x7f020099;
-        public static final int intro_pressed=0x7f02009a;
-        public static final int knn=0x7f02009b;
-        public static final int knn_pressed=0x7f02009c;
-        public static final int mainmenubg=0x7f02009d;
-        public static final int mainmenubgyellow=0x7f02009e;
-        public static final int navdrawer_assess=0x7f02009f;
-        public static final int navdrawer_exit=0x7f0200a0;
-        public static final int navdrawer_simul=0x7f0200a1;
-        public static final int nb=0x7f0200a2;
-        public static final int nb_pressed=0x7f0200a3;
-        public static final int nextbtred=0x7f0200a4;
-        public static final int nextbtred_pressed=0x7f0200a5;
-        public static final int nina=0x7f0200a6;
-        public static final int ninaintro=0x7f0200a7;
-        public static final int ninblackboard=0x7f0200a8;
-        public static final int ninepatch=0x7f0200a9;
-        public static final int nintennis=0x7f0200aa;
-        public static final int outlookdataimg=0x7f0200ab;
-        public static final int outlookdragimg=0x7f0200ac;
-        public static final int outlookheirar=0x7f0200ad;
-        public static final int outlookoevercast=0x7f0200ae;
-        public static final int outlookrain=0x7f0200af;
-        public static final int outlooksunny=0x7f0200b0;
-        public static final int popup9=0x7f0200b1;
-        public static final int separatorimg=0x7f0200b2;
-        public static final int shadow_bottom=0x7f0200b3;
-        public static final int shadow_left=0x7f0200b4;
-        public static final int shadow_right=0x7f0200b5;
-        public static final int shadow_top=0x7f0200b6;
-        public static final int simulatebtnnormal=0x7f0200b7;
-        public static final int simulatebtnpressedl=0x7f0200b8;
-        public static final int simulcalculatebt=0x7f0200b9;
-        public static final int simulimgdts1=0x7f0200ba;
-        public static final int simulnextbt=0x7f0200bb;
-        public static final int skip=0x7f0200bc;
-        public static final int skip_pressed=0x7f0200bd;
-        public static final int slidepng=0x7f0200be;
-        public static final int slidingmenu_list_selector_background=0x7f0200bf;
-        public static final int slidingmenu_shadow=0x7f0200c0;
-        public static final int start=0x7f0200c1;
-        public static final int start_pressed=0x7f0200c2;
-        public static final int startbutton=0x7f0200c3;
-        public static final int startscreen=0x7f0200c4;
-        public static final int strongwind=0x7f0200c5;
-        public static final int takeassessnormal=0x7f0200c6;
-        public static final int takeassesspressed=0x7f0200c7;
-        public static final int temperaturecold=0x7f0200c8;
-        public static final int temperaturedataimg=0x7f0200c9;
-        public static final int temperaturedragimg=0x7f0200ca;
-        public static final int temperaturehigh=0x7f0200cb;
-        public static final int temperaturemild=0x7f0200cc;
-        public static final int tutsimg=0x7f0200cd;
-        public static final int view_datasetbt=0x7f0200ce;
-        public static final int viewdatasepressed=0x7f0200cf;
-        public static final int viewdataset=0x7f0200d0;
-        public static final int viewdataset_pressed=0x7f0200d1;
-        public static final int viewdatasetnormal=0x7f0200d2;
-        public static final int viewsimulationbt=0x7f0200d3;
-        public static final int watchvideo=0x7f0200d4;
-        public static final int watchvideopressed=0x7f0200d5;
-        public static final int wave=0x7f0200d6;
-        public static final int weakwind=0x7f0200d7;
-        public static final int weatherdatasetimg=0x7f0200d8;
-        public static final int welcome3=0x7f0200d9;
-        public static final int welcome4=0x7f0200da;
-        public static final int welcomeone=0x7f0200db;
-        public static final int welcometwo=0x7f0200dc;
-        public static final int winddataimg=0x7f0200dd;
-        public static final int winddragimg=0x7f0200de;
-        public static final int windformula=0x7f0200df;
-        public static final int windheirar=0x7f0200e0;
-=======
         public static final int backgroundblurpurple=0x7f02005c;
         public static final int baseballplayer=0x7f02005d;
         public static final int bg_popupwindow=0x7f02005e;
@@ -1768,7 +1633,6 @@ containing a value of this type.
         public static final int winddragimg=0x7f0200df;
         public static final int windformula=0x7f0200e0;
         public static final int windheirar=0x7f0200e1;
->>>>>>> commit
     }
     public static final class id {
         public static final int ARGB_4444=0x7f060004;
@@ -1787,18 +1651,11 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f06001c;
         public static final int action_menu_presenter=0x7f06001d;
         public static final int action_mode_close_button=0x7f060032;
-<<<<<<< HEAD
-        public static final int action_settings=0x7f0600d7;
-        public static final int activity_chooser_view_content=0x7f060033;
-        public static final int always=0x7f060011;
-        public static final int assessbt=0x7f060087;
-=======
         public static final int action_search=0x7f0600d9;
         public static final int action_settings=0x7f0600d7;
         public static final int activity_chooser_view_content=0x7f060033;
         public static final int always=0x7f060011;
         public static final int assessbt=0x7f060088;
->>>>>>> commit
         public static final int auto=0x7f060000;
         public static final int baseballimg=0x7f0600c4;
         public static final int beginning=0x7f060017;
@@ -1818,11 +1675,7 @@ containing a value of this type.
         public static final int description=0x7f06005b;
         public static final int dialog=0x7f060014;
         public static final int disableHome=0x7f06000e;
-<<<<<<< HEAD
-        public static final int disscusionbt=0x7f060084;
-=======
         public static final int disscusionbt=0x7f060085;
->>>>>>> commit
         public static final int dragheretoroot=0x7f060064;
         public static final int drawer_layout=0x7f060067;
         public static final int drop=0x7f060061;
@@ -1879,11 +1732,7 @@ containing a value of this type.
         public static final int left=0x7f060020;
         public static final int left_drawer=0x7f0600c8;
         public static final int lin_lay=0x7f0600c9;
-<<<<<<< HEAD
-        public static final int linelayoutmainmenu=0x7f060082;
-=======
         public static final int linelayoutmainmenu=0x7f060083;
->>>>>>> commit
         public static final int linlaytuts=0x7f0600d2;
         public static final int listMode=0x7f060007;
         public static final int list_item=0x7f060037;
@@ -1894,11 +1743,7 @@ containing a value of this type.
         public static final int m5=0x7f0600b3;
         public static final int m8=0x7f0600b8;
         public static final int m9=0x7f0600ba;
-<<<<<<< HEAD
-        public static final int mainmenulogo=0x7f060083;
-=======
         public static final int mainmenulogo=0x7f060084;
->>>>>>> commit
         public static final int middle=0x7f060018;
         public static final int naivedataimg=0x7f060095;
         public static final int naiveintrotitle=0x7f06008b;
@@ -1954,11 +1799,7 @@ containing a value of this type.
         public static final int showCustom=0x7f06000d;
         public static final int showHome=0x7f06000a;
         public static final int showTitle=0x7f06000c;
-<<<<<<< HEAD
-        public static final int simulbt=0x7f060086;
-=======
         public static final int simulbt=0x7f060087;
->>>>>>> commit
         public static final int simulnextcalculatebt=0x7f0600a2;
         public static final int simultextcalcu=0x7f06009c;
         public static final int slideimgid=0x7f0600cd;
@@ -1973,10 +1814,6 @@ containing a value of this type.
         public static final int tag_row=0x7f060026;
         public static final int tag_type_view=0x7f060025;
         public static final int takeassess=0x7f0600bf;
-<<<<<<< HEAD
-        public static final int takeassessment=0x7f0600d9;
-=======
->>>>>>> commit
         public static final int temperatureicon=0x7f060090;
         public static final int textview=0x7f060098;
         public static final int three=0x7f06005e;
@@ -1991,11 +1828,7 @@ containing a value of this type.
         public static final int tvFragFourth=0x7f06007e;
         public static final int tvFragSecond=0x7f060097;
         public static final int tvFragThird=0x7f0600d1;
-<<<<<<< HEAD
-        public static final int tv_list_item=0x7f060081;
-=======
         public static final int tv_list_item=0x7f060082;
->>>>>>> commit
         public static final int two=0x7f060060;
         public static final int up=0x7f06002f;
         public static final int useLogo=0x7f060009;
@@ -2003,11 +1836,7 @@ containing a value of this type.
         public static final int videoDesc=0x7f06004c;
         public static final int videoView1=0x7f06004a;
         public static final int videodescpopup=0x7f0600d6;
-<<<<<<< HEAD
-        public static final int videosbt=0x7f060085;
-=======
         public static final int videosbt=0x7f060086;
->>>>>>> commit
         public static final int viewPager=0x7f0600d4;
         public static final int viewdatasetbt=0x7f0600c6;
         public static final int viewdatasetnaive=0x7f06008e;
@@ -2088,33 +1917,6 @@ containing a value of this type.
         public static final int fourth_frag=0x7f030022;
         public static final int fragment_main=0x7f030023;
         public static final int fragment_sample=0x7f030024;
-<<<<<<< HEAD
-        public static final int layout_inflate=0x7f030025;
-        public static final int list_item=0x7f030026;
-        public static final int list_item_popupwindow=0x7f030027;
-        public static final int main_menu_layout=0x7f030028;
-        public static final int naivesimul_firstlayout=0x7f030029;
-        public static final int naivesimul_secondlayout=0x7f03002a;
-        public static final int naivesimul_thirdlayout=0x7f03002b;
-        public static final int naiveweatherpopup=0x7f03002c;
-        public static final int popup=0x7f03002d;
-        public static final int second_frag=0x7f03002e;
-        public static final int secretetext_layout=0x7f03002f;
-        public static final int simul_question_layout_dialog=0x7f030030;
-        public static final int simulcalculate_activity=0x7f030031;
-        public static final int simuldecisionresult_layout=0x7f030032;
-        public static final int simulintroprocess_layout=0x7f030033;
-        public static final int simulproblem_layout=0x7f030034;
-        public static final int slidingmenu=0x7f030035;
-        public static final int splash_screen=0x7f030036;
-        public static final int support_simple_spinner_dropdown_item=0x7f030037;
-        public static final int table=0x7f030038;
-        public static final int task_detail_popupwindow=0x7f030039;
-        public static final int third_frag=0x7f03003a;
-        public static final int tutsimg_layout=0x7f03003b;
-        public static final int viewpager_main=0x7f03003c;
-        public static final int watch_video_popup=0x7f03003d;
-=======
         public static final int knnsimul_firstlayout=0x7f030025;
         public static final int layout_inflate=0x7f030026;
         public static final int list_item=0x7f030027;
@@ -2141,7 +1943,6 @@ containing a value of this type.
         public static final int tutsimg_layout=0x7f03003c;
         public static final int viewpager_main=0x7f03003d;
         public static final int watch_video_popup=0x7f03003e;
->>>>>>> commit
     }
     public static final class menu {
         public static final int main=0x7f0e0000;

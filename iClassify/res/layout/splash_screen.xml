@@ -21,11 +21,7 @@
         android:gravity="center"
         android:text="iClassify"
         android:textColor="#212121"
-<<<<<<< HEAD
-        android:textSize="100sp"
-=======
         android:textSize="90sp"
->>>>>>> commit
-        android:textStyle="bold" />
+        android:textStyle="bold" /> 
 
 </RelativeLayout>

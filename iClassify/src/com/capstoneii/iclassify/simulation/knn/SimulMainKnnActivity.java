@@ -1,10 +1,5 @@
 package com.capstoneii.iclassify.simulation.knn;
 
-<<<<<<< HEAD
-public class SimulMainKnnActivity {
-
-}
-=======
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -39,4 +34,3 @@ public class SimulMainKnnActivity extends Fragment{
 
     }
 
->>>>>>> commit
