@@ -2,7 +2,6 @@ package com.capstoneii.iclassify.simulation.naivebayes;
 
 import android.app.Dialog;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.TypewriterTextView;
-import com.capstoneii.iclassify.simulation.desiciontree.SimulDatasetActivity;
 
 public class SimulNaiveBayesTableFragment extends Fragment {
 	

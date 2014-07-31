@@ -10,6 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.app.FragmentTransaction;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.SecretTextView;
@@ -19,6 +20,7 @@ public class SimulMainKnnActivity extends Fragment implements android.view.anima
     Animation left, right, leftout, rightout,animFadein,animFadeout;
     TextView simulprocess1,simulprocess2,simulprocess3,simulprocess4,simulprocess5;
 	Animation animSideDown;
+	int counter = 0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,37 +71,54 @@ public class SimulMainKnnActivity extends Fragment implements android.view.anima
 	            @Override
 	            public void onClick(View InputFragmentView)
 	            {
-	            
-	            	secretTextView.setmDuration(2000);
-	      	        secretTextView.setIsVisible(false);
-	      	        secretTextView.toggle();
-	      	        
-	      	        secretTextViewDesc.setmDuration(3000);
-	      	        secretTextViewDesc.setIsVisible(false);
-	  	        	secretTextViewDesc.toggle();
-	  	        	
-	  	        	simulprocess1.setVisibility(View.VISIBLE);
-	  	        	simulprocess2.setVisibility(View.VISIBLE);
-	  	        	simulprocess3.setVisibility(View.VISIBLE);
-	  	        	simulprocess4.setVisibility(View.VISIBLE);
-	  	        	simulprocess5.setVisibility(View.VISIBLE);
-	  	        	
-	  	        	simulprocess1.startAnimation(left);
-	  	        	simulprocess2.startAnimation(right);
-	  	        	simulprocess3.startAnimation(left);
-	  	        	simulprocess4.startAnimation(right);
-	  	        	simulprocess5.startAnimation(left);
-	  	        	
-	  	        	secretTextView.setVisibility(View.INVISIBLE);
-	  	        	secretTextViewDesc.setVisibility(View.INVISIBLE);
-	  	        	knnnextbt.setVisibility(View.INVISIBLE);
-	            	/*Fragment SimulProcessIntroActivity = new SimulProcessIntroActivity();
- 	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
- 	            	ft.replace(R.id.frame_container, SimulProcessIntroActivity);
- 	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-	            	ft.addToBackStack(SimulProcessIntroActivity.getTag());
- 	            	ft.commit();*/
-	  	        
+	            	if(InputFragmentView == knnnextbt){
+	            		counter++;	
+	            	}
+	            	
+	            	switch(counter){
+	            	
+	            	case 0:
+	            		
+	            		break;
+	            		
+	            	case 1:
+	            		
+	            		secretTextView.setmDuration(2000);
+		      	        secretTextView.setIsVisible(false);
+		      	        secretTextView.toggle();
+		      	        
+		      	        secretTextViewDesc.setmDuration(3200);
+		      	        secretTextViewDesc.setIsVisible(false);
+		  	        	secretTextViewDesc.toggle();
+		  	        	
+		  	        	simulprocess1.setVisibility(View.VISIBLE);
+		  	        	simulprocess2.setVisibility(View.VISIBLE);
+		  	        	simulprocess3.setVisibility(View.VISIBLE);
+		  	        	simulprocess4.setVisibility(View.VISIBLE);
+		  	        	simulprocess5.setVisibility(View.VISIBLE);
+		  	        	
+		  	        	simulprocess1.startAnimation(left);
+		  	        	simulprocess2.startAnimation(right);
+		  	        	simulprocess3.startAnimation(left);
+		  	        	simulprocess4.startAnimation(right);
+		  	        	simulprocess5.startAnimation(left);
+		  	        	
+		  	        	secretTextView.setVisibility(View.INVISIBLE);
+		  	        	secretTextViewDesc.setVisibility(View.INVISIBLE);
+	            		break;
+	            		
+	            	case 2:
+	            		Fragment SimulMainKnnDataset = new SimulMainKnnDataset();
+	 	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
+	 	            	ft.replace(R.id.frame_container, SimulMainKnnDataset);
+	 	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+		            	ft.addToBackStack(SimulMainKnnDataset.getTag());
+	 	            	ft.commit();
+	            		break;
+	            	default:
+	            		break;
+	            	}
+	            	
 	            }
 	        });
 	        
@@ -140,14 +159,13 @@ public class SimulMainKnnActivity extends Fragment implements android.view.anima
 
 		@Override
 		public void onAnimationRepeat(Animation animation) {
-			// TODO Auto-generated method stub
+		
 
 		}
 
 		@Override
 		public void onAnimationStart(Animation animation) {
-			// TODO Auto-generated method stub
-
+			
 		}
       
     }

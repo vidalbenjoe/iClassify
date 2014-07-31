@@ -31,6 +31,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
@@ -218,10 +219,13 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
      
      }
 
+   
+
      @Override
      public boolean onCreateOptionsMenu(Menu menu) {
-           getMenuInflater().inflate(R.menu.main, menu);
-           return true;
+         MenuInflater inflater = getMenuInflater();
+         inflater.inflate(R.menu.menu, menu);
+         return true;
      }
 
  @Override
@@ -250,6 +254,7 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
                 menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
                 return super.onPrepareOptionsMenu(menu);
       }
+  
 
  /**
   * When using the ActionBarDrawerToggle, you must call it during
@@ -346,7 +351,6 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
   			
   			}
 
-  		
   		}
   		});
 
@@ -357,13 +361,11 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
   		pwMyPopWindow.setHeight((lvPopupList.getMeasuredHeight() + 20)
   		* NUM_OF_VISIBLE_LIST_ROWS);
 
-  		
   		pwMyPopWindow.setBackgroundDrawable(this.getResources().getDrawable(
   		R.drawable.bg_popupwindow));
   		pwMyPopWindow.setOutsideTouchable(true);
   		}
 
  	
-
 
 } 

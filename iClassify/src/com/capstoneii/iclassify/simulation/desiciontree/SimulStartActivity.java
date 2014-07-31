@@ -1,29 +1,19 @@
 package com.capstoneii.iclassify.simulation.desiciontree;
 
-import com.capstoneii.iclassify.ActivityAnimator;
-import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.library.ExpandableButtonMenu;
-import com.capstoneii.iclassify.library.ExpandableMenuOverlay;
-import com.capstoneii.iclassify.library.SecretTextView;
-
-import drawer.MainDrawerActivity;
-
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+
+import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.SecretTextView;
 @SuppressLint("NewApi")
 public class SimulStartActivity extends Fragment {
-private Button viewsumulation;
 
     SecretTextView secretTextView;
 

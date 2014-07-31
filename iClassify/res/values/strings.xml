@@ -273,6 +273,15 @@
   	5.Use simple majority of the category of nearest neighbors as the prediction value of the query instance
 	]]></string>
 	
+	<string name = "knnsimulexample1"><![CDATA[
+  	We have data from the questionnaires survey (to ask people opinion) and objective testing with two attributes (acid durability and strength) to classify whether a special paper tissue is good or not. Here is four training samples
+	]]></string>
+	
+	
+	<string name = "knnsimulexample2"><![CDATA[
+  	Now the factory produces a new paper tissue that pass laboratory test with X1 = 3 and X2 = 7. Without another expensive survey, can we guess what the classification of this new tissue is?
+	]]></string>
+	
 	
 </resources>
 
