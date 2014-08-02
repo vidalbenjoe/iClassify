@@ -78,9 +78,7 @@ public class SimulMainKnnActivity extends Fragment implements android.view.anima
 	            	switch(counter){
 	            	
 	            	case 0:
-	            		
 	            		break;
-	            		
 	            	case 1:
 	            		
 	            		secretTextView.setmDuration(2000);

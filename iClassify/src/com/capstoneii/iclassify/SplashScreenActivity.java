@@ -18,7 +18,7 @@ import android.view.WindowManager;
 
 public class SplashScreenActivity extends Activity {
 
-	 AnimationDrawable frameAnimation;
+	 	AnimationDrawable frameAnimation;
 	    private static String TAG = SplashScreenActivity.class.getName();
 	    private static long SLEEP_TIME = 5;    // Sleep for some time
 
@@ -68,8 +68,6 @@ public class SplashScreenActivity extends Activity {
             SplashScreenActivity.this.startActivity(intent);
             SplashScreenActivity.this.finish();
         }
-
-
 
     }
 }
