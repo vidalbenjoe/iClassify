@@ -1,10 +1,8 @@
 package com.capstoneii.iclassify.simulation.knn;
 
-import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.library.TypewriterTextView;
-
 import android.app.Dialog;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -15,7 +13,9 @@ import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.TypewriterTextView;
 
 public class SimulMainKnnFactoryTissue extends Fragment {
 	  ImageView factoryimg, tissueimg;
@@ -44,7 +44,7 @@ public class SimulMainKnnFactoryTissue extends Fragment {
 		    	 factoryimg.startAnimation(animation);
 		    	 factoryimg.setVisibility(View.VISIBLE);
 		    	 
-		    	 new CountDownTimer(2400, 1000) {
+		    	 new CountDownTimer(2000, 1000) {
 
 				     public void onTick(long millisUntilFinished) {
 				      
@@ -56,19 +56,56 @@ public class SimulMainKnnFactoryTissue extends Fragment {
 					
 					//another timer
 					//after ontouch..move to next activity
-					 final Dialog dialog = new Dialog(getActivity());
-			     	 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
-			         dialog.setContentView(R.layout.transparent_popuptext);
-			         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-			         
-			         dialog.show();
 					
+			         
+			         new CountDownTimer(2800, 1000) {
+
+					     public void onTick(long millisUntilFinished) {
+					      
+					     }
+					     public void onFinish() {
+					
+					    	 new CountDownTimer(3000, 1000) {
+
+							     public void onTick(long millisUntilFinished) {
+							      
+							     }
+							     public void onFinish() {
+					 	            	 final Dialog dialog = new Dialog(getActivity());
+								     	 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
+								         dialog.setContentView(R.layout.transparent_popuptext);
+								         dialog.setCancelable(true);
+								         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+								         final ImageView transpaimage = (ImageView) dialog.findViewById(R.id.transpaimage2);
+								      	
+								         transpaimage.setImageResource(R.drawable.canweguestimg);
+								         transpaimage.setVisibility(View.VISIBLE);
+								         dialog.show();
+								         
+								         new CountDownTimer(4000, 4000) {
+
+										     public void onTick(long millisUntilFinished) {
+										      
+										     }
+										     public void onFinish() {
+										
+										    	 Fragment SimulMainKnnStepProcess = new SimulMainKnnStepProcess();
+								 	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
+								 	            	ft.replace(R.id.frame_container, SimulMainKnnStepProcess);
+									            	ft.addToBackStack(SimulMainKnnStepProcess.getTag());
+								 	            	ft.commit();
+								 	            	dialog.dismiss();
+								    	 }
+								    	 }.start();
+					    	 }
+					    	 }.start();
+			    	 }
+			    	 }.start();
 		    	 }
 		    	 }.start();
     	 }
     	 }.start();
-		 
+    	 
 		 return rootView;
 	    }
-	  
 }

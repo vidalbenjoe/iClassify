@@ -1,11 +1,16 @@
 package bayesdiscussflip;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.widget.ImageView;
+
 import com.aphidmobile.flip.FlipViewController;
 import com.capstoneii.iclassify.R;
 import android.support.v7.app.ActionBarActivity;
@@ -31,6 +36,17 @@ public class NativeBayesLayoutActivity extends ActionBarActivity {
     flipView.setAdapter(new NativeBayesAdapter(this));
 
     setContentView(flipView);
+    final Dialog dialog = new Dialog(this);
+	 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
+   dialog.setContentView(R.layout.transparent_popuptext);
+   dialog.setCancelable(true);
+   dialog.setCanceledOnTouchOutside(true);
+   dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+   final ImageView transpaimage = (ImageView) dialog.findViewById(R.id.transpaimage);
+   transpaimage.setVisibility(View.VISIBLE);
+   transpaimage.setImageResource(R.drawable.tutsimg);
+   
+   dialog.show();
   }
 
   @Override

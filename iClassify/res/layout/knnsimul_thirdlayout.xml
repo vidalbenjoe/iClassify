@@ -11,6 +11,8 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center" >
     
+         
+         
         <com.capstoneii.iclassify.library.TypewriterTextView
     	android:id="@+id/knnthirdext"
 	    android:layout_width="480dp"

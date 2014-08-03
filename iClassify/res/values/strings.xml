@@ -287,5 +287,10 @@
 	]]></string>
 	
 	
+	<string name = "knnsimulexample4"><![CDATA[
+  	1. Determine parameter K = number of nearest neighbors
+	]]></string>
+	
+	
 </resources>
 

@@ -32,11 +32,11 @@ public class SimulNaiveBayesIntroFragment extends Fragment {
 		            @Override
 		            public void onClick(View InputFragmentView)
 		            {
-		            	Fragment SimulNaiveBayesTableFragment = new SimulNaiveBayesTableFragment();
+		            	Fragment SimulNaiveBayesStepFragment = new SimulNaiveBayesStepFragment();
 	 	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
-	 	            	ft.replace(R.id.frame_container, SimulNaiveBayesTableFragment);
+	 	            	ft.replace(R.id.frame_container, SimulNaiveBayesStepFragment);
 	 	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-	 	            	ft.addToBackStack(SimulNaiveBayesTableFragment.getTag());
+	 	            	ft.addToBackStack(SimulNaiveBayesStepFragment.getTag());
 	 	            	ft.commit();
 		            }
 		        });
