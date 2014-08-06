@@ -21,7 +21,7 @@
 	     android:shadowDx="1"
 	     android:shadowDy="1"
 	     android:shadowRadius="2"
-	     android:layout_marginTop="40dp"
+	     android:layout_marginTop="30dp"
 	     android:text="Let's go back to the process"
 	     android:textColor="#fff"
 	     android:textSize="25sp"
@@ -40,9 +40,11 @@
 	    android:layout_below="@id/dd"
 	    android:text="1. Determine parameter K = number of nearest neighbors"
 	    android:textColor="#fff"
-	    android:textSize="25sp" />
+	    android:layout_centerHorizontal="true"
+	    android:textSize="23sp" />
         
          <TextView 
+         android:id="@+id/sup"   
          android:layout_width="wrap_content"
    		 android:layout_height="wrap_content"
    		 android:layout_centerHorizontal="true"
@@ -53,10 +55,35 @@
 	     android:shadowRadius="2"
 	     android:text="Suppose use K = 3"
 	     android:textColor="#fff"
-	     android:textSize="25sp"
+	     android:textSize="22sp"
 	     android:layout_below="@+id/knnfourthext"
-	     
          />
+         
+         <TextView 
+         android:id="@+id/simul5"
+         android:layout_width="wrap_content"
+   		 android:layout_height="wrap_content"
+   		 android:layout_centerHorizontal="true"
+	     android:gravity="center"
+   		 android:shadowColor="@android:color/black"
+	     android:shadowDx="1"
+	     android:shadowDy="1"
+	     android:shadowRadius="2"
+	     android:text="@string/knnsimulexample5"
+	     android:textColor="#fff"
+	     android:textSize="20sp"
+	     android:layout_below="@+id/sup"
+         android:visibility="invisible"
+         />
+         
+        <EditText
+         android:id="@+id/getknnplot" 
+         android:layout_width="230dp"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_below="@+id/simul5"
+         />
+         
     </RelativeLayout>
     
     

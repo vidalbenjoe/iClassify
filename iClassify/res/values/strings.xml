@@ -288,7 +288,12 @@
 	
 	
 	<string name = "knnsimulexample4"><![CDATA[
-  	1. Determine parameter K = number of nearest neighbors
+  	Step 1. Determine parameter K = number of nearest neighbors
+	]]></string>
+	
+	<string name = "knnsimulexample5"><![CDATA[
+  	Step 2. Calculate the Distance between query-instance and all training samples\n
+  	Coordinate of query instance is (3, 7), instead of calculating the distance we compute square distance which is faster to calculate (without square root)
 	]]></string>
 	
 	

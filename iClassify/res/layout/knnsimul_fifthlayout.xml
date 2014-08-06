@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundblurpurple"
+    android:orientation="vertical" >
+    
+     <RelativeLayout
+    android:id="@+id/rls4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" >
+    
+         <TextView 
+         android:id="@+id/simul5"
+         android:layout_width="wrap_content"
+   		 android:layout_height="wrap_content"
+   		 android:layout_centerHorizontal="true"
+	     android:gravity="center"
+   		 android:shadowColor="@android:color/black"
+	     android:shadowDx="1"
+	     android:shadowDy="1"
+	     android:shadowRadius="2"
+	     android:text="@string/knnsimulexample5"
+	     android:textColor="#fff"
+	     android:textSize="20sp"
+         />
+         
+        <ImageView
+    	android:id="@+id/graphimg"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:background="@drawable/knnchart2"
+    	android:layout_centerHorizontal="true"
+    	android:layout_marginTop="30dp"
+    	android:layout_below="@+id/simul5"
+    	/>
+    </RelativeLayout>
+    
+    
+     
+    <LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_gravity="center"
+    android:layout_below="@+id/rls2"
+   	>
+  
+       
+    </LinearLayout>
+    
+</LinearLayout>
+

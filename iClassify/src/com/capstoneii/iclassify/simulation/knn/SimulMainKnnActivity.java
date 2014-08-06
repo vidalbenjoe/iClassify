@@ -32,12 +32,12 @@ public class SimulMainKnnActivity extends Fragment {
 		 	
 		 final ImageView stepknnimg = (ImageView) rootView.findViewById(R.id.stepknnimg);
 		 	secretTextView = (SecretTextView)rootView.findViewById(R.id.knnsecrettext);
-	        secretTextView.setmDuration(1900);
+	        secretTextView.setmDuration(1800);
 	        secretTextView.setIsVisible(false);
 	        secretTextView.toggle();
 	        
 	        secretTextViewDesc = (SecretTextView)rootView.findViewById(R.id.knnsecretdesc);
-	        secretTextViewDesc.setmDuration(3000);
+	        secretTextViewDesc.setmDuration(3200);
 	        secretTextViewDesc.setIsVisible(false);
 	        secretTextViewDesc.toggle();
 	       

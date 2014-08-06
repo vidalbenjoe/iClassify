@@ -32,8 +32,6 @@ public class VideoMenuActivity extends ActionBarActivity {
 	public String videoFile1, videoFile2,videoFile3;
 	public TextView setvideoDesc;
 	
-	
-
     private ExpandableMenuOverlay menuOverlay;
 
     @Override
@@ -152,10 +150,7 @@ public class VideoMenuActivity extends ActionBarActivity {
   	  Intent intent = new Intent(this, MainDrawerActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
-        
-    case R.id.action_search:
-        
-        return true;
+  
     case R.id.action_settings:
         
     	return true;
@@ -169,10 +164,7 @@ public class VideoMenuActivity extends ActionBarActivity {
         // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
-        
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-
+    
         return super.onCreateOptionsMenu(menu);
     }
     

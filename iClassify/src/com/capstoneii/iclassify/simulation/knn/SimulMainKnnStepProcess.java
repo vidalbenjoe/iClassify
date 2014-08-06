@@ -10,7 +10,6 @@ import com.capstoneii.iclassify.library.TypewriterTextView;
 
 public class SimulMainKnnStepProcess extends Fragment {
 
-	  
 	  public void onCreate(Bundle savedInstanceState){
 		  super.onCreate(savedInstanceState);
 	  }

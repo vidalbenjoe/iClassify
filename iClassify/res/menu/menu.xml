@@ -1,14 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" 
      xmlns:iClassify="http://schemas.android.com/apk/res-auto">
-    <!-- Search, should appear as action button -->
-    <item android:id="@+id/action_search"
-          android:icon="@drawable/action_search"
-          android:title="search"
-          iClassify:showAsAction="ifRoom|collapseActionView"
-          iClassify:actionViewClass="android.support.v7.widget.SearchView" />
+   
     <!-- Settings, should always be in the overflow -->
     <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
-          android:icon="@drawable/ic_launcher"
-           android:showAsAction="ifRoom" />
+          android:icon="@drawable/ic_action_ic_action_overflow"
+          iClassify:showAsAction="ifRoom" />
 </menu>
+
+

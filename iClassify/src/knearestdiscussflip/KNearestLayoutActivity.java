@@ -34,10 +34,9 @@ public class KNearestLayoutActivity extends ActionBarActivity {
     flipView.setAnimationBitmapFormat(Bitmap.Config.RGB_565);
 
     flipView.setAdapter(new KNearestAdapter(this));
-
     setContentView(flipView);
     final Dialog dialog = new Dialog(this);
-	 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
+	dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
     dialog.setContentView(R.layout.transparent_popuptext);
     dialog.setCancelable(true);
     dialog.setCanceledOnTouchOutside(true);
@@ -72,5 +71,4 @@ public class KNearestLayoutActivity extends ActionBarActivity {
   return super.onOptionsItemSelected(item); 
       }
   }
-
 }

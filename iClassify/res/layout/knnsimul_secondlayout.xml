@@ -17,6 +17,7 @@
     	android:layout_height="wrap_content"
     	android:background="@drawable/peoplesimg"
     	android:paddingRight="60dp"
+    	android:layout_marginTop="40dp"
     	android:layout_centerHorizontal="true"
     	android:layout_marginRight="30dp"
     	/>
@@ -27,7 +28,7 @@
 	    android:layout_height="204dp"
 	    android:layout_centerHorizontal="true"
 	    android:gravity="center"
-	    android:layout_marginTop="150dp"
+	    android:layout_marginTop="160dp"
 	    android:shadowColor="@android:color/black"
 	    android:shadowDx="1"
 	    android:shadowDy="1"

@@ -67,7 +67,6 @@ public class SimulMainKnnDataset extends Fragment {
 				             knnnextbt.setVisibility(View.VISIBLE);
 					     }
 					  }.start();
-
 			     }
 			  }.start();
 			  
