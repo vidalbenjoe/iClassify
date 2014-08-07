@@ -12,8 +12,8 @@ public final class R {
 		public static final int orientation = 0x7f010006;
 	}
 	public static final class drawable {
-		public static final int ic_action_search = 0x7f020099;
-		public static final int ic_launcher = 0x7f02009b;
+		public static final int ic_action_search = 0x7f02009a;
+		public static final int ic_launcher = 0x7f02009c;
 	}
 	public static final class id {
 		public static final int ARGB_4444 = 0x7f060004;

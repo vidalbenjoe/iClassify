@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="intro">Place the algorithm in order.</string>
+    
+    <string name="idroption_1">Calculate entropy of the target.</string>
+	<string name="idroption_2">The dataset is then split on the different attributes.</string>
+	<string name="idroption_3">Choose attribute with the largest information as the decision node.</string>
+
+	<string name="idrchoices_1">Step 1</string>
+	<string name="idrchoices_2">Step 2</string>
+	<string name="idrchoices_3">Step 3</string>
+	
+	<string name="nboption_4">Step 1: Calculate probabilities for each attribute, conditional on the class value.</string>
+	<string name="nboption_5">Step 2: Use the product rule to obtain a join conditional probability fr the attributes.</string>
+	<string name="nboption_6">Step 3: Use Bayes rule to derive conditional probabilities for the class variable.</string>
+	
+	
+	<string name="nbchoice_4">1</string>
+	<string name="nbchoice_5">2</string>
+	<string name="nbchoice_6">3</string>
+	
+	
+	
+	<string name="knnoption_7">Step 1: Determine parameter K = number of nearest neighbors.</string>
+	<string name="knnoption_8">Step 2: Calculate the distance between the query-instance and all training samples</string>
+	<string name="knnoption_9">Step 3: Sort the distance and determin nearest neigbors based on the K-th minimun distance</string>
+	<string name="knnoption_10">Step 4: Gather the category of the nearest neigbors.</string>
+	<string name="knnoption_111">Step 5: Use simple majority of the category of nearest neigbors as the prediction value of the query instance.</string>
+	
+	<string name="knnchoice_7">1</string>
+	<string name="knnchoice_8">2</string>
+	<string name="knnchoice_9">3</string>
+	
+</resources>

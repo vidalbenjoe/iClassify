@@ -38,12 +38,14 @@ import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 import android.widget.PopupWindow;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 import android.support.v7.app.ActionBarActivity;
 
 
+@SuppressLint("NewApi")
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MainDrawerActivity extends ActionBarActivity  {
 List<Map<String, String>> moreList;
@@ -224,7 +226,7 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
      @Override
      public boolean onCreateOptionsMenu(Menu menu) {
          MenuInflater inflater = getMenuInflater();
-         inflater.inflate(R.menu.menu, menu);
+         inflater.inflate(R.menu.main, menu);
          return true;
      }
 
@@ -235,8 +237,10 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
                      return true;
               }
              // Handle action bar actions click
-             /*switch (item.getItemId()) {
-                    case : R.id.action_settings:
+         /*   switch (item.getItemId()) {
+                    case R.id.menu_overflow:
+                    	
+                  
                                   return true;
                     default :
                              

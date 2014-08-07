@@ -91,7 +91,7 @@ public class SimulDecisionResults extends Fragment{
         
         public boolean onOptionsItemSelected(MenuItem item) {
         	  switch (item.getItemId()) {
-        	    case R.id.watchvid:
+        	    case R.id.action_settings:
         	     
         	      return true;
         	  
