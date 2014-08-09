@@ -1,13 +1,13 @@
 package com.capstoneii.iclassify.assessment.decisionid3;
 
 import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -15,31 +15,37 @@ import android.view.View;
 import android.view.View.DragShadowBuilder;
 import android.view.View.OnDragListener;
 import android.view.View.OnTouchListener;
-import android.view.Window;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.SplashScreenActivity;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
 import descisiondiscussflip.DescTreeLayoutActivity;
 
 @SuppressLint("NewApi")
 public class DecisionTreeAssessmentActivity extends ActionBarActivity {
+	Button checkdropbt;
 	int numDragged = 0;
 	//text views being dragged and dropped onto
 	private TextView option1, option2, option3, choice1, choice2, choice3;
+	 private static String TAG = SplashScreenActivity.class.getName();
+	 private static long SLEEP_TIME = 1;    // Sleep for some time
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.discussassessment_layout);
+		setContentView(R.layout.assessmentdiscuss_layout);
 		 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.divider_color)));
 		 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		 
-		 
 		final TypewriterTextView animated_title = (TypewriterTextView)findViewById(R.id.animatedtitle);
 		animated_title.setTypewriterText(getString(R.string.intro));
+		
+		checkdropbt = (Button) findViewById(R.id.checkdropbt);
+		checkdropbt.setVisibility(View.INVISIBLE);
 		//get both sets of text views
 
 		//views to drag
@@ -61,8 +67,10 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 		choice1.setOnDragListener(new ChoiceDragListener());
 		choice2.setOnDragListener(new ChoiceDragListener());
 		choice3.setOnDragListener(new ChoiceDragListener());
+	
+		
 	}
-
+	
 	/**
 	 * ChoiceTouchListener will handle touch events on draggable views
 	 *
@@ -92,10 +100,10 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 	 * - amending the default behavior for other parts of the drag process
 	 *
 	 */
-	private class ChoiceDragListener implements OnDragListener {
+	public class ChoiceDragListener implements OnDragListener {
 //http://stackoverflow.com/questions/21567086/on-drag-listener-multiple-if-statements
 		@Override
-		public boolean onDrag(View v, DragEvent event) {
+		public boolean onDrag(final View v, DragEvent event) {
 			switch (event.getAction()) {
 			case DragEvent.ACTION_DRAG_STARTED:
 				//no action necessary
@@ -109,7 +117,7 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 			case DragEvent.ACTION_DROP:
 				
 				//handle the dragged view being dropped over a drop view
-				View view = (View) event.getLocalState();
+				final View view = (View) event.getLocalState();
 				//stop displaying the view where it was before it was dragged
 				view.setVisibility(View.INVISIBLE);
 				//view dragged item is being dropped on
@@ -133,36 +141,63 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 				//set the tag in the target view being dropped on - to the ID of the view being dropped
 				dropTarget.setTag(dropped.getId());
 				
-				if (view.getId() == R.id.option_1 && v.getId() == R.id.choice_1) {
+				if (view.getId() == R.id.option_1 && v.getId() != R.id.choice_1) {
+	          //display error if user drop it on the wrong target
+				 Toast.makeText(DecisionTreeAssessmentActivity.this,
+		                    "Sorry, you dropped it on the wrong place", Toast.LENGTH_SHORT)
+		                    .show();
+				} 
+				
+				 if (view.getId() == R.id.option_1 && v.getId() == R.id.choice_1) {
 			        dropTarget.setText("Step 1 " + dropped.getText());
 			   	 Toast.makeText(DecisionTreeAssessmentActivity.this,
 		                    "Correct!", Toast.LENGTH_SHORT)
 		                    .show();
 			        numDragged++;
 		        } 	
-		
-			
-				else if (view.getId() == R.id.option_1 && v.getId() != R.id.choice_1) {
-	          //display error if user drop it on the wrong target
-				 Toast.makeText(DecisionTreeAssessmentActivity.this,
-		                    "Sorry, you dropped it on the wrong place", Toast.LENGTH_SHORT)
-		                    .show();
-
-				} 
 				
-			
-			  if (numDragged >= 4) {
-		            numDragged = 0;
+				if (view.getId() == R.id.option_2 && v.getId() != R.id.choice_2) {
+			          //display error if user drop it on the wrong target
+						 Toast.makeText(DecisionTreeAssessmentActivity.this,
+				                    "Sorry, you dropped it on the wrong place", Toast.LENGTH_SHORT)
+				                    .show();
+						} 
+						
+						else if (view.getId() == R.id.option_2 && v.getId() == R.id.choice_2) {
+					        dropTarget.setText("Step 2 " + dropped.getText());
+					   	 Toast.makeText(DecisionTreeAssessmentActivity.this,
+				                    "Correct!", Toast.LENGTH_SHORT)
+				                    .show();
 
-		            Toast.makeText(DecisionTreeAssessmentActivity.this,
-		                    "All buttons in the Right place", Toast.LENGTH_SHORT)
-		                    .show();
-
-
+					        numDragged++;
+				        } 	
+				if (view.getId() == R.id.option_3 && v.getId() != R.id.choice_3) {
+			          //display error if user drop it on the wrong target
+						 Toast.makeText(DecisionTreeAssessmentActivity.this,
+				                    "Sorry, you dropped it on the wrong place", Toast.LENGTH_SHORT)
+				                    .show();
+						} 
+						else if (view.getId() == R.id.option_3 && v.getId() == R.id.choice_3) {
+					        dropTarget.setText("Step 3 " + dropped.getText());
+					   	 Toast.makeText(DecisionTreeAssessmentActivity.this,
+				                    "Correct!", Toast.LENGTH_SHORT)
+				                    .show();
+					        numDragged++;
+					      
+				        } 	
+			  if (numDragged >= 3) {
+				  checkdropbt.setVisibility(View.VISIBLE);
+				  
+				   if ((view.getId() == R.id.option_1 && v.getId() == R.id.choice_1) || (view.getId() == R.id.option_2 && v.getId() == R.id.choice_2) || (view.getId() == R.id.option_3 && v.getId() == R.id.choice_3)){
+		            	  Toast.makeText(DecisionTreeAssessmentActivity.this,
+		  	                    "All buttons in the Right place", Toast.LENGTH_SHORT)
+		  	                    .show();
+							 checkdropbt.setVisibility(View.VISIBLE);
+					 	    CheckDrop();
+							} 
+				  
 		        }
-
-		
-				
+			  
 				break;
 			case DragEvent.ACTION_DRAG_ENDED:
 				//no action necessary
@@ -173,8 +208,6 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 			return true;
 		}
 	} 
-	
-	
 	
 	 @Override
 	  public boolean onOptionsItemSelected(MenuItem item) { 
@@ -191,10 +224,43 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 	      }
 	  }
 	
-	
-	
-	
-	
-	
-	
-}
+	 	public void CheckDrop(){
+	 		 	
+	 		
+	 		checkdropbt.setOnClickListener(new View.OnClickListener()
+		       {
+		           @Override
+		           public void onClick(View InputFragmentView)
+		           {
+		        	  
+		        	   IntentLauncher launcher = new IntentLauncher();
+				 	     launcher.start();
+		           }
+		       });
+	 	        
+					} 
+	 	
+	 	 private class IntentLauncher extends Thread {
+	         @Override
+	         /**
+	          * Sleep for some time and than start new activity.
+	          */
+	         public void run() {
+	             try {
+	                 // Sleeping
+
+	                 Thread.sleep(SLEEP_TIME*1000);
+
+	             } catch (Exception e) {
+	                 Log.e(TAG, e.getMessage());
+	             }
+
+	             Intent intent = new Intent(DecisionTreeAssessmentActivity.this, DecisionTreeAssessmentDynamicFirstQuestionActivity.class);
+				 DecisionTreeAssessmentActivity.this.startActivity(intent);
+				 DecisionTreeAssessmentActivity.this.finish();
+				 			
+	         }
+
+	     }
+		
+		}

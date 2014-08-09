@@ -94,6 +94,19 @@
        <activity android:name="com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity"
            	android:theme="@style/Theme.AppCompat.Light"
            	/>
+        <activity android:name="com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity"
+           	android:theme="@style/Theme.AppCompat.Light"
+           	/>
+       
+       
+       <activity android:name="com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity"
+           	android:theme="@style/Theme.AppCompat.Light"
+           	/>
+         <activity android:name="com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity"
+           	android:theme="@style/Theme.AppCompat.Light"
+           	/>
+       
+       
       
     
     </application>

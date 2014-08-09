@@ -1,22 +1,31 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
     android:paddingLeft="50dp"
-    android:paddingRight="50dp" >
+    android:paddingRight="50dp"
+    android:background="@drawable/backgroundblurpurple" >
+    
 
-    <com.capstoneii.iclassify.library.TypewriterTextView
+    
+      <com.capstoneii.iclassify.library.TypewriterTextView
         android:id="@+id/animatedtitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingBottom="10dp"
-        android:text="@string/intro" />
-
-
-
+        android:paddingBottom="10dp" />
+      
+      
+    <ImageView
+        android:id="@+id/heirartreeimg"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+        
+   
     <TextView
         android:id="@+id/option_2"
         android:layout_width="fill_parent"
@@ -24,65 +33,57 @@
         android:layout_margin="5dp"
         android:background="@drawable/option"
         android:gravity="center"
-        android:text="@string/idroption_2"
+        android:text="@string/decisionquestionchoice2"
         android:textStyle="bold" />
-
     
-        <TextView
+    
+       
+       <TextView
         android:id="@+id/option_1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:background="@drawable/option"
         android:gravity="center"
-        android:text="@string/idroption_1"
+        android:text="@string/decisionquestionchoice1"
+        android:textStyle="bold" />
+        <TextView
+        android:id="@+id/option_4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/option"
+        android:gravity="center"
+        android:text="@string/decisionquestionchoice4"
         android:textStyle="bold" />
     
-    
-    <TextView
+       <TextView
         android:id="@+id/option_3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:background="@drawable/option"
         android:gravity="center"
-        android:text="@string/idroption_3"
+        android:text="@string/decisionquestionchoice3"
         android:textStyle="bold" />
-
     
-    
-    
-    <TextView
+      <TextView
         android:id="@+id/choice_1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_margin="5dp"
         android:background="@drawable/choice"
         android:gravity="center"
-        android:text="@string/idrchoices_1" />
-
-    <TextView
-        android:id="@+id/choice_2"
-        android:layout_width="fill_parent"
+      
+        android:text="If my parents are visiting" />
+    
+       <Button 
+        android:id="@+id/checkdropbt"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@drawable/choice"
-        android:gravity="center"
-        android:text="@string/idrchoices_2" />
-
-    <TextView
-        android:id="@+id/choice_3"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@drawable/choice"
-        android:gravity="center"
-        android:text="@string/idrchoices_3" />
-
+        android:text="Check"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        />
+    
 </LinearLayout>
-
-
-
-
-
-

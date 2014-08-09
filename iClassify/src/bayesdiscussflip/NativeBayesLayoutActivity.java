@@ -1,4 +1,5 @@
 package bayesdiscussflip;
+import knearestdiscussflip.KNearestLayoutActivity;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 
@@ -6,21 +7,28 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity;
+import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity;
+import com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity;
+
 import android.support.v7.app.ActionBarActivity;
+import descisiondiscussflip.DescTreeLayoutActivity;
 import drawer.MainDrawerActivity;
 
 @SuppressLint("NewApi")
 public class NativeBayesLayoutActivity extends ActionBarActivity {
 
   private FlipViewController flipView;
-
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -62,6 +70,13 @@ public class NativeBayesLayoutActivity extends ActionBarActivity {
   }
   
   @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+      MenuInflater inflater = getMenuInflater();
+      inflater.inflate(R.menu.menu, menu);
+      return true;
+  }
+  
+  @Override
   public boolean onOptionsItemSelected(MenuItem item) { 
     switch (item.getItemId()) {
   case android.R.id.home:
@@ -70,9 +85,47 @@ public class NativeBayesLayoutActivity extends ActionBarActivity {
       startActivity(intent);
   // app icon in action bar clicked; go home
   return true;
+  
+  case R.id.menu_overflow:
+	  View menuItemView = findViewById(R.id.menu_overflow); // SAME ID AS MENU ID
+	    PopupMenu popupMenu = new PopupMenu(this, menuItemView); 
+	    popupMenu.inflate(R.menu.main);
+	    
+	    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            public boolean onMenuItemClick(MenuItem item) {
+               switch(item.getItemId()){
+               case R.id.action_settings:
+            	   //go to assessment
+            	  
+            		 Intent intent = new Intent(NativeBayesLayoutActivity.this, BayesianAssessmentActivity.class);
+            		 NativeBayesLayoutActivity.this.startActivity(intent);
+            		 NativeBayesLayoutActivity.this.finish();
+            	 
+            	   return true;
+               
+               }
+            	
+                return true;
+            }
+        });
+	    
+	    popupMenu.show();
+      return true;
+  
   default:
   return super.onOptionsItemSelected(item); 
       }
   }
+  /***
+   * Called when invalidateOptionsMenu() is triggered
+   */
+     @Override
+      public boolean onPrepareOptionsMenu(Menu menu) {
+              
+                 return super.onPrepareOptionsMenu(menu);
+       }
+   
+  
+  
 
 }
