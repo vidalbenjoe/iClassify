@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.library.TypewriterTextView;
 
 public class SimulKnnPlotDataFragment extends Fragment{
 

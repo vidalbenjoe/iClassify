@@ -1,15 +1,8 @@
 package com.capstoneii.iclassify;
 
-import bayesdiscussflip.NativeBayesLayoutActivity;
-
-import com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity;
-import com.capstoneii.iclassify.videos.IntroductionVideo;
-
-import descisiondiscussflip.DescTreeLayoutActivity;
 import knearestdiscussflip.KNearestLayoutActivity;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +14,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import at.technikum.mti.fancycoverflow.FancyCoverFlow;
 import at.technikum.mti.fancycoverflow.FancyCoverFlowAdapter;
+import bayesdiscussflip.NativeBayesLayoutActivity;
+
+import com.capstoneii.iclassify.videos.IntroductionVideo;
+
+import descisiondiscussflip.DescTreeLayoutActivity;
 
 
 @SuppressLint("NewApi")
@@ -42,11 +40,8 @@ Button first_bt;
 
 	       fancyCoverFlow.setAdapter(new ViewGroupExampleAdapter());
 	        
-	       	
 		 return rootView;
 	    }
-	 
-	 
 	 
 	 private static class ViewGroupExampleAdapter extends FancyCoverFlowAdapter {
 
@@ -62,11 +57,7 @@ Button first_bt;
 	        // Supertype overrides
 	        // =============================================================================
 		
-		 public void onClick(View v) {
-         	
-			
-    		
-        }
+		
 	
 		 
 	        @Override

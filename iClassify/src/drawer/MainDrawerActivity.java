@@ -5,16 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.capstoneii.iclassify.MainActivityController;
-import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.simulation.desiciontree.SimulProcessIntroActivity;
-import com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity;
-import com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity;
-import com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment;
-import com.capstoneii.iclassify.videos.VideoMenuActivity;
-
-import descisiondiscussflip.DescTreeLayoutActivity;
-import android.widget.AdapterView.OnItemClickListener;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Fragment;
@@ -28,6 +18,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -36,13 +27,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.FrameLayout;
 import android.widget.ListView;
-import android.widget.PopupMenu;
 import android.widget.PopupWindow;
 import android.widget.SimpleAdapter;
-import android.widget.Toast;
-import android.support.v7.app.ActionBarActivity;
+
+import com.capstoneii.iclassify.MainActivityController;
+import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity;
+import com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity;
+import com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment;
+import com.capstoneii.iclassify.videos.VideoMenuActivity;
 
 
 @SuppressLint("NewApi")

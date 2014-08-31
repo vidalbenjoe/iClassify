@@ -39,7 +39,7 @@ public class SimulMainKnnDataset extends Fragment {
 			 knnnextbt.setVisibility(View.INVISIBLE);
 			 
 			
-			 new CountDownTimer(4200, 1000) {
+			 new CountDownTimer(5200, 1000) {
 
 			     public void onTick(long millisUntilFinished) {
 			      

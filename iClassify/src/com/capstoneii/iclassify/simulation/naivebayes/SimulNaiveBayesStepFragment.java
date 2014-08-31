@@ -1,7 +1,6 @@
 package com.capstoneii.iclassify.simulation.naivebayes;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,11 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.simulation.desiciontree.SimulProblemActivity;
 
 public class SimulNaiveBayesStepFragment extends Fragment {
 	@Override

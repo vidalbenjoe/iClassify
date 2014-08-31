@@ -1,15 +1,12 @@
 package com.capstoneii.iclassify.assessment.knn;
 
-import knearestdiscussflip.KNearestLayoutActivity;
 import android.annotation.SuppressLint;
 import android.content.ClipData;
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.DragEvent;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.DragShadowBuilder;
@@ -17,12 +14,9 @@ import android.view.View.OnDragListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.TypewriterTextView;
-
-import descisiondiscussflip.DescTreeLayoutActivity;
 
 @SuppressLint("NewApi")
 public class KnnAssessmentActivity extends ActionBarActivity {
@@ -73,7 +67,6 @@ public class KnnAssessmentActivity extends ActionBarActivity {
 		choice9.setOnDragListener(new ChoiceDragListener());
 		choice10.setOnDragListener(new ChoiceDragListener());
 		choice11.setOnDragListener(new ChoiceDragListener());
-	
 			}
 	
 	private final class ChoiceTouchListener implements OnTouchListener {
@@ -90,7 +83,6 @@ public class KnnAssessmentActivity extends ActionBarActivity {
 		}
 	} 
 
-	
 	private class ChoiceDragListener implements OnDragListener {
 		@Override
 		public boolean onDrag(View v, DragEvent event) {

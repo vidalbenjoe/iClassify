@@ -189,9 +189,7 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 				  checkdropbt.setVisibility(View.VISIBLE);
 				  
 				   if ((view.getId() == R.id.option_1 && v.getId() == R.id.choice_1) || (view.getId() == R.id.option_2 && v.getId() == R.id.choice_2) || (view.getId() == R.id.option_3 && v.getId() == R.id.choice_3)){
-		            	  Toast.makeText(DecisionTreeAssessmentActivity.this,
-		  	                    "All buttons in the Right place", Toast.LENGTH_SHORT)
-		  	                    .show();
+		            	
 							 checkdropbt.setVisibility(View.VISIBLE);
 					 	    CheckDrop();
 							} 
@@ -213,10 +211,8 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 	  public boolean onOptionsItemSelected(MenuItem item) { 
 	    switch (item.getItemId()) {
 	  case android.R.id.home:
-		  Intent intent = new Intent(this, DescTreeLayoutActivity.class);
-	      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-	      startActivity(intent);
-	      // app icon in action bar clicked; go home
+		super.onBackPressed();	      
+		// app icon in action bar clicked; go home
 	      return true;
 	 
 	  default:
@@ -225,8 +221,6 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 	  }
 	
 	 	public void CheckDrop(){
-	 		 	
-	 		
 	 		checkdropbt.setOnClickListener(new View.OnClickListener()
 		       {
 		           @Override

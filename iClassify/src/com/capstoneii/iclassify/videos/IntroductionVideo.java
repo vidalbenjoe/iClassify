@@ -1,10 +1,5 @@
 package com.capstoneii.iclassify.videos;
 
-import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.library.ExpandableButtonMenu;
-import com.capstoneii.iclassify.library.ExpandableMenuOverlay;
-
-import drawer.MainDrawerActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
@@ -17,6 +12,10 @@ import android.view.MotionEvent;
 import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
+
+import com.capstoneii.iclassify.R;
+
+import drawer.MainDrawerActivity;
 
 public class IntroductionVideo extends ActionBarActivity {
 	private VideoView vv;

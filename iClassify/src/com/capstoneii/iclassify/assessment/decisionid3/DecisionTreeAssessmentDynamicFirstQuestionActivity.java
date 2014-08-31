@@ -1,9 +1,11 @@
 package com.capstoneii.iclassify.assessment.decisionid3;
 
+import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.DragEvent;
@@ -69,7 +71,7 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends ActionBa
 	           @Override
 	           public void onClick(View InputFragmentView)
 	           {
-	        	  // CheckDrop();
+	        	   new CheckDroped().execute();
 	           }
 	       });
 	}
@@ -150,13 +152,14 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends ActionBa
 					 Toast.makeText(DecisionTreeAssessmentDynamicFirstQuestionActivity.this,
 			                    "Correct!", Toast.LENGTH_SHORT)
 			                    .show();
-					 checkdropbt.setEnabled(true);
+					 			checkdropbt.setEnabled(true);
 					} 
 			if (view.getId() == R.id.option_2 && v.getId() == R.id.choice_1) {
 		          //display error if user drop it on the wrong target
 					 Toast.makeText(DecisionTreeAssessmentDynamicFirstQuestionActivity.this,
 			                    "Sorry, you dropped it on the wrong place", Toast.LENGTH_SHORT)
 			                    .show();
+					 			checkdropbt.setEnabled(false);
 					
 					} 
 			if (view.getId() == R.id.option_3 && v.getId() == R.id.choice_1) {
@@ -164,7 +167,7 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends ActionBa
 					 Toast.makeText(DecisionTreeAssessmentDynamicFirstQuestionActivity.this,
 			                    "Sorry, you dropped it on the wrong place", Toast.LENGTH_SHORT)
 			                    .show();
-					
+					 			checkdropbt.setEnabled(false);
 					} 
 			
 			if (view.getId() == R.id.option_4 && v.getId() == R.id.choice_1) {
@@ -172,9 +175,9 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends ActionBa
 					 Toast.makeText(DecisionTreeAssessmentDynamicFirstQuestionActivity.this,
 			                    "Sorry, you dropped it on the wrong place", Toast.LENGTH_SHORT)
 			                    .show();
+					 			checkdropbt.setEnabled(false);
 					} 
 				
-			
 			
 				break;
 			case DragEvent.ACTION_DRAG_ENDED:
@@ -191,10 +194,8 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends ActionBa
 	  public boolean onOptionsItemSelected(MenuItem item) { 
 	    switch (item.getItemId()) {
 	  case android.R.id.home:
-		  Intent intent = new Intent(this, NativeBayesLayoutActivity.class);
-	      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-	      startActivity(intent);
-	      // app icon in action bar clicked; go home
+		 super.onBackPressed();	  
+		 // app icon in action bar clicked; go home
 	      return true;
 	 
 	  default:
@@ -202,11 +203,63 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends ActionBa
 	      }
 	  }
 	
-	/*	public void CheckDrop(){
-			
-			 			Toast.makeText(DecisionTreeAssessmentActivity.this,
-	                    "Sorry, you dropped it on the wrong place", Toast.LENGTH_SHORT)
-	                    .show();
+		public void CheckDrop(){
+		 new CheckDroped().execute();
+			 			
 					} 
-		*/
+		
+		 private class CheckDroped extends AsyncTask<Void, Void, Void> {
+		        private ProgressDialog progress = null;
+
+		        protected void onError(Exception ex) {
+
+		        }
+		        @Override
+		        protected Void doInBackground(Void... params) {
+		            try {
+
+		                Thread.sleep(1000);
+		            } catch (Exception e) {
+		               
+		                e.printStackTrace();
+		            }
+		            return null;
+
+		        }
+		        @Override
+		        protected void onCancelled() {
+		            super.onCancelled();
+		        }
+
+		        @Override
+		        protected void onPreExecute() {
+		            //start the progress dialog
+		            progress = ProgressDialog.show(DecisionTreeAssessmentDynamicFirstQuestionActivity.this, null, "Checking...");
+		            progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		            progress.setIndeterminate(true);
+		            super.onPreExecute();
+		            
+		        }
+		        @Override
+		        protected void onPostExecute(Void result) {
+		            progress.dismiss();
+		            NextAssess();
+		            super.onPostExecute(result);
+		        }
+
+		        @Override
+		        protected void onProgressUpdate(Void... values) {
+		            super.onProgressUpdate(values);
+		        }
+
+		    }
+		 
+		 public void NextAssess(){
+		       
+			 Toast.makeText(DecisionTreeAssessmentDynamicFirstQuestionActivity.this,
+	                    "what's next?", Toast.LENGTH_SHORT)
+	                    .show();
+
+		    }
+		 
 		}

@@ -3,6 +3,7 @@ package com.capstoneii.iclassify.simulation.desiciontree;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.Fragment;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
@@ -15,13 +16,14 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.VideoView;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity;
+
+import descisiondiscussflip.DescTreeLayoutActivity;
 
 @SuppressLint("NewApi")
 public class SimulDecisionResults extends Fragment{
-	private VideoView vv;
 	public String videoFile;
 
 	@Override
@@ -66,7 +68,8 @@ public class SimulDecisionResults extends Fragment{
 	           @Override
 	           public void onClick(View InputFragmentView)
 	           {
-	        	 //ASSESSMENT
+	        	   Intent intent = new Intent(getActivity(), DecisionTreeAssessmentActivity.class);
+	        	   getActivity().startActivity(intent);
 	           }
 	       });
 		 

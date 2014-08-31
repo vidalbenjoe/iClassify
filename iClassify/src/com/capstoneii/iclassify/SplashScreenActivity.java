@@ -1,19 +1,18 @@
 package com.capstoneii.iclassify;
 
-import com.capstoneii.iclassify.library.Titanic;
-import com.capstoneii.iclassify.library.TitanicTextView;
-import com.capstoneii.iclassify.library.Typefaces;
-import com.capstoneii.iclassify.viewpager.ViewPagerIntro;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.capstoneii.iclassify.library.Titanic;
+import com.capstoneii.iclassify.library.TitanicTextView;
+import com.capstoneii.iclassify.library.Typefaces;
+import com.capstoneii.iclassify.viewpager.ViewPagerIntro;
 
 
 public class SplashScreenActivity extends Activity {

@@ -21,8 +21,6 @@ import bayesdiscussflip.NativeBayesLayoutActivity;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
-import descisiondiscussflip.DescTreeLayoutActivity;
-
 public class BayesianAssessmentActivity extends ActionBarActivity {
 	Button checkdropbt;
 	int numDragged = 0;

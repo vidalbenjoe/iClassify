@@ -15,7 +15,13 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingBottom="10dp" />
+        android:shadowColor="@android:color/black"
+	    android:shadowDx="1"
+	    android:shadowDy="1"
+	    android:shadowRadius="2"
+        android:paddingBottom="10dp"
+        android:textColor="#fff"
+        android:textSize="20sp" />
       
       
     <ImageView
@@ -74,7 +80,6 @@
         android:layout_margin="5dp"
         android:background="@drawable/choice"
         android:gravity="center"
-      
         android:text="If my parents are visiting" />
     
        <Button 

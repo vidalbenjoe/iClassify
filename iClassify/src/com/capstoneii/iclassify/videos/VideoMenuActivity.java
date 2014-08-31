@@ -2,29 +2,26 @@ package com.capstoneii.iclassify.videos;
 
 
 
-import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.library.ExpandableButtonMenu;
-import com.capstoneii.iclassify.library.ExpandableMenuOverlay;
-
-import drawer.MainDrawerActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.SearchView;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
+
+import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.ExpandableButtonMenu;
+import com.capstoneii.iclassify.library.ExpandableMenuOverlay;
+
+import drawer.MainDrawerActivity;
 
 
 public class VideoMenuActivity extends ActionBarActivity {

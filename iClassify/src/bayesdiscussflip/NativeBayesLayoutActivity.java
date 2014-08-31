@@ -1,12 +1,11 @@
 package bayesdiscussflip;
-import knearestdiscussflip.KNearestLayoutActivity;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,11 +17,7 @@ import android.widget.PopupMenu;
 import com.aphidmobile.flip.FlipViewController;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity;
-import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity;
-import com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity;
 
-import android.support.v7.app.ActionBarActivity;
-import descisiondiscussflip.DescTreeLayoutActivity;
 import drawer.MainDrawerActivity;
 
 @SuppressLint("NewApi")
