@@ -105,7 +105,9 @@
          <activity android:name="com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity"
            	android:theme="@style/Theme.AppCompat.Light"
            	/>
-       
+        <activity android:name="com.capstoneii.iclassify.problems.SimpsonsDecisionTreeFragment"
+           	android:theme="@style/Theme.AppCompat.Light"
+           	/>
        
       
     

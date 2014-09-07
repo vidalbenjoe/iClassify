@@ -35,6 +35,12 @@
 
     <!-- Video Description -->
     
+ <string name="introvideodesc"><![CDATA[
+ 			Classification consists of predicting a certain outcome based on a given input. In order to predict the outcome, the algorithm processes a training set containing a set of attributes and the respective outcome, usually called goal or prediction attribute. The algorithm tries to discover relationships between the attributes that would make it possible to predict the outcome. Next the algorithm is given a data set not seen before, called prediction set, which contains the same set of attributes, except for the prediction attribute – not yet known. The algorithm analyses the input and produces a prediction.
+ 			]]></string>
+ 			   
+    
+    
 <string name="knnvideodesc"><![CDATA[
  			This is how the K-Nearest Neighbour algorithm works. Firstly we have a variable "K". With this, you assign "K" a value from 1 to the total number of examples. The best value to chose for K is a low odd number. With this value of "K", we look at the k closest points on the graph from the location of the new example point. The next part is to assign the new point a class, the class type will be determined from the majority of the closest points.\n\n
 			

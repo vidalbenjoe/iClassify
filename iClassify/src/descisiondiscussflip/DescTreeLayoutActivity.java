@@ -41,7 +41,7 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
 
     setContentView(flipView);
     final Dialog dialog = new Dialog(this);
-	 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
+   dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
    dialog.setContentView(R.layout.transparent_popuptext);
    dialog.setCancelable(true);
    dialog.setCanceledOnTouchOutside(true);
@@ -49,6 +49,16 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
    final ImageView transpaimage = (ImageView) dialog.findViewById(R.id.transpaimage);
    transpaimage.setVisibility(View.VISIBLE);
    transpaimage.setImageResource(R.drawable.tutsimg);
+   
+   transpaimage.setOnClickListener(new View.OnClickListener()
+   {
+       @Override
+       public void onClick(View InputFragmentView)
+       {
+    	   transpaimage.setVisibility(View.GONE);
+    	   dialog.cancel();
+       }
+   });
    
    dialog.show();
   }

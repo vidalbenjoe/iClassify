@@ -35,6 +35,7 @@ import android.widget.SimpleAdapter;
 
 import com.capstoneii.iclassify.MainActivityController;
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.problems.ChooseProblemActivity;
 import com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity;
 import com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity;
 import com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment;
@@ -186,7 +187,7 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
                            break;
                case 3://assessment
             	  
-            	  // fragment = new SplashActivity();
+            	  fragment = new ChooseProblemActivity();
                            break;          
                            
                            
@@ -219,13 +220,12 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
 
    
 
-     @Override
+   /*  @Override
      public boolean onCreateOptionsMenu(Menu menu) {
          MenuInflater inflater = getMenuInflater();
-         inflater.inflate(R.menu.main, menu);
+        inflater.inflate(R.menu.main, menu);
          return true;
      }
-
  @Override
  public boolean onOptionsItemSelected(MenuItem item) {
   // toggle nav drawer on selecting action bar app icon/title
@@ -233,27 +233,27 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
                      return true;
               }
              // Handle action bar actions click
-         /*   switch (item.getItemId()) {
+            switch (item.getItemId()) {
                     case R.id.menu_overflow:
                     	
                   
                                   return true;
                     default :
                              
-                }*/
+                }
           return super.onOptionsItemSelected(item);
  }
-
+*/
  /***
   * Called when invalidateOptionsMenu() is triggered
   */
-    @Override
+   /* @Override
      public boolean onPrepareOptionsMenu(Menu menu) {
                // if nav drawer is opened, hide the action items
                 boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
                 menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
                 return super.onPrepareOptionsMenu(menu);
-      }
+      }*/
   
 
  /**

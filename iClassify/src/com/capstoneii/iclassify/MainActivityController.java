@@ -75,8 +75,6 @@ Button first_bt;
 	            return i;
 	        }
 
-	        
-	        
 	        @Override
 	        public View getCoverFlowItem(final int i, View reuseableView, ViewGroup viewGroup) {
 	            CustomViewGroup customViewGroup = null;

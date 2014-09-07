@@ -48,6 +48,17 @@ public class KNearestLayoutActivity extends ActionBarActivity {
     final ImageView transpaimage = (ImageView) dialog.findViewById(R.id.transpaimage);
     transpaimage.setVisibility(View.VISIBLE);
     transpaimage.setImageResource(R.drawable.tutsimg);
+    
+    transpaimage.setOnClickListener(new View.OnClickListener()
+    {
+        @Override
+        public void onClick(View InputFragmentView)
+        {
+     	   transpaimage.setVisibility(View.GONE);
+     	   dialog.cancel();
+        }
+    });
+    
     dialog.show();
     
   }

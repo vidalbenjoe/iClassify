@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundblur"
+    android:orientation="vertical" >
+    
+    
+    <TextView
+         android:id="@+id/headerText"
+	     android:layout_width="match_parent"
+    	 android:layout_height="wrap_content"
+    	 android:layout_marginTop="50dp"
+    	 android:layout_marginLeft="80dp"
+    	 android:layout_marginRight="80dp"
+    	 android:gravity="center"
+    	 android:layout_gravity="center"
+    	 android:textSize="30sp"
+    	 android:textColor="#fff"
+    	 android:textStyle="bold"
+	    />
+	
+    
+	<Button
+	     android:id="@+id/catsheepBT"
+	     android:layout_width="match_parent"
+    	 android:layout_height="100dp"
+    	 android:layout_marginTop="210dp"
+    	 android:layout_marginLeft="80dp"
+    	 android:layout_marginRight="80dp"
+    	 android:layout_gravity="center"
+    	 android:textSize="30sp"
+    	 android:textColor="#fff"
+    	 android:textStyle="bold"
+    	 android:background="@drawable/blue_button"
+	    />
+	
+	<Button
+	     android:id="@+id/patientBT"
+	     android:layout_width="match_parent"
+    	 android:layout_height="100dp"
+    	 android:layout_marginTop="30dp"
+    	 android:layout_marginLeft="80dp"
+    	 android:layout_marginRight="80dp"
+    	 android:textSize="30sp"
+    	 android:textColor="#fff"
+    	 android:textStyle="bold"
+    	 android:background="@drawable/blue_button"
+	    />
+	
+	<Button
+	     android:id="@+id/simpsonBT"
+	     android:layout_width="match_parent"
+    	 android:layout_height="100dp"
+    	 android:layout_marginTop="30dp"
+    	 android:layout_marginLeft="80dp"
+    	 android:layout_marginRight="80dp"
+    	 android:textSize="30sp"
+    	 android:textColor="#fff"
+    	 android:textStyle="bold"
+    	 android:background="@drawable/blue_button"
+	    />
+    
+</LinearLayout>

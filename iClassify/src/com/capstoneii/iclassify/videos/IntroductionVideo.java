@@ -24,17 +24,16 @@ public class IntroductionVideo extends ActionBarActivity {
 	
 	 protected void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
-	        setContentView(R.layout.choose_video_layout);
+	        setContentView(R.layout.introduction_video_layout);
 	        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.divider_color)));
 	        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	        
 	        vv = (VideoView) findViewById(R.id.videoView1);
-			videoFile1 = "android.resource://" + getPackageName() + "/" + R.raw.videoknn;
-			
+			videoFile1 = "android.resource://" + getPackageName() + "/" + R.raw.videointro;
 			
 			setvideoDesc = (TextView) findViewById(R.id.videoDesc);
 			setvideoDesc.setMovementMethod(new ScrollingMovementMethod());
-			setvideoDesc.setText(R.string.knnvideodesc);
+			setvideoDesc.setText(R.string.introvideodesc);
 			
 			MediaController mc = new MediaController(this);
 		    mc.setAnchorView(vv);
