@@ -95,6 +95,7 @@
 # view res/layout/naivesimul_firstlayout.xml #generated:26
 # view res/layout/naivesimul_secondlayout.xml #generated:44
 # view res/layout/naivesimul_thirdlayout.xml #generated:45
+# view res/layout/simpson_dt_next_proc_layout.xml #generated:8
 -keep class com.capstoneii.iclassify.library.TypewriterTextView { <init>(...); }
 
 # view AndroidManifest.xml #generated:108

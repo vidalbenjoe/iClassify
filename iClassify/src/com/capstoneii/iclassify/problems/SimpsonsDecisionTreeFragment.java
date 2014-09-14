@@ -2,6 +2,7 @@ package com.capstoneii.iclassify.problems;
 
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.simulation.desiciontree.SimulProcessIntroActivity;
 
 public class SimpsonsDecisionTreeFragment extends Fragment {
 	Button simpsonNextbt;
@@ -47,12 +49,10 @@ public class SimpsonsDecisionTreeFragment extends Fragment {
 		            	if(InputFragmentView == simpsonNextbt){
 		            		buttonNextClick++;	
 		            	}
-		            	
 		            	switch(buttonNextClick){
 		            	case 0:
 		            		
 		            		break;
-		            		
 		            	case 1:
 		            		gainimage.setVisibility(View.VISIBLE);
 		            		animSideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
@@ -72,7 +72,6 @@ public class SimpsonsDecisionTreeFragment extends Fragment {
 		            		
 		           case 2: 
 		        	   		splittingweight.setVisibility(View.VISIBLE);
-		        	   		
 		        	   		gainimage.setVisibility(View.GONE);
 		        	   		backgroundImage.setVisibility(View.GONE);
 		        	   		simpsonFamilyTreeRoot.setVisibility(View.GONE);
@@ -95,7 +94,12 @@ public class SimpsonsDecisionTreeFragment extends Fragment {
 		        	   break;
 		        	   
 		           case 4:
-		        	  
+		        	    Fragment SimpsonsNextProcedure = new SimpsonsNextProcedure();
+	 	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
+	 	            	ft.replace(R.id.frame_container, SimpsonsNextProcedure);
+	 	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+		            	ft.addToBackStack(SimpsonsNextProcedure.getTag());
+	 	            	ft.commit();
 		        	   break;
 		            		
 		            		default:

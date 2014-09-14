@@ -302,6 +302,12 @@
   	Coordinate of query instance is (3, 7), instead of calculating the distance we compute square distance which is faster to calculate (without square root)
 	]]></string>
 	
+	<string name = "SimpsonWeight"><![CDATA[
+  	Of the 3 features we had, Weight was best. But while people who weigh over 160 are perfectly classified (as males), the under 160 people are not perfectly classified… So we simply recurse!\n\n
+	This time we find that we can split on Hair length, and we are done!
+
+	]]></string>
+	
 	
 </resources>
 

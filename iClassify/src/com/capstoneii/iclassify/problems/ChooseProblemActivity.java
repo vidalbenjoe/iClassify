@@ -62,7 +62,6 @@ public class ChooseProblemActivity extends Fragment {
 	            }
 	        });
 		 
-		 
 		 simpsonBT.setOnClickListener(new View.OnClickListener()
 	        {
 	            @Override
@@ -75,7 +74,6 @@ public class ChooseProblemActivity extends Fragment {
 	            	ft.commit();
 	            }
 	        });
-		 
 		 
 		 return rootView;
 	    }
