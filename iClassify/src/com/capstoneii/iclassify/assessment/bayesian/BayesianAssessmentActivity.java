@@ -34,7 +34,6 @@ public class BayesianAssessmentActivity extends ActionBarActivity {
 		 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.divider_color)));
 		 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		 
-		 
 		final TypewriterTextView animated_title = (TypewriterTextView)findViewById(R.id.animatedtitle);
 		animated_title.setTypewriterText(getString(R.string.intro));
 		
@@ -190,7 +189,6 @@ public class BayesianAssessmentActivity extends ActionBarActivity {
 				                    .show();
 					        numDragged++;
 				        } 	
-				
 				
 			  if (numDragged >= 3) {
 		            numDragged = 0;
