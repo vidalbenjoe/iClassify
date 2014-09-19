@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.simulation.desiciontree.SimulProcessIntroActivity;
 
 public class SimpsonsDecisionTreeFragment extends Fragment {
 	Button simpsonNextbt;
@@ -107,7 +106,6 @@ public class SimpsonsDecisionTreeFragment extends Fragment {
 		            	
 		            	}
 		            	
-		
 		            }
 		        });
 	    	 

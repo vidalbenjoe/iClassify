@@ -308,6 +308,23 @@
 
 	]]></string>
 	
+	<string name = "SimpsonMaleClass"><![CDATA[
+  	We need to keep the data around, just the test conditions.
+
+	]]></string>
+	
+	<string name = "isweight160"><![CDATA[
+  	is Weight <= 160?
+	]]></string>
+	
+	<string name = "ishairlength"><![CDATA[
+  	is Hair length <= 2?
+	]]></string>
+	
+	
+	
+	
+	
 	
 </resources>
 

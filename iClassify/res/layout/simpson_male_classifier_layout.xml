@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backgroundblur" >
+    
+    <com.capstoneii.iclassify.library.TypewriterTextView
+    	android:id="@+id/simpsonMaleClassText"
+	    android:layout_width="480dp"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="40dp"
+	    android:gravity="center"
+	    android:shadowColor="@android:color/black"
+	    android:shadowDx="1"
+	    android:shadowDy="1"
+	    android:shadowRadius="2"
+	    android:textColor="#fff"
+	    android:layout_centerHorizontal="true"
+	    android:textSize="23sp" />
+    
+    
+    <TextView 
+        android:id="@+id/maleTitle"
+        android:layout_below="@+id/simpsonMaleClassText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:text="How would these people be classified?"/>
+    
+    <ImageView 
+        android:id="@+id/malesimpsons"
+        android:layout_below="@+id/maleTitle"
+        android:layout_width="230dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/simpsonfamily"/>
+    
+    <Button 
+        android:id="@+id/isweight"
+        android:layout_below="@+id/malesimpsons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:text="@string/isweight160"/>
+    
+    
+      <Button 
+        android:id="@+id/weightYes"
+        android:layout_below="@+id/isweight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="80dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:text="Yes"/>
+      
+      
+      
+        <Button 
+        android:id="@+id/ishairlenght"
+        android:layout_below="@+id/weightYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="40dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:text="@string/ishairlength"
+        android:visibility="invisible"/>
+        
+        
+        <Button 
+        android:id="@+id/hairlengthYes"
+        android:layout_below="@+id/ishairlenght"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="40dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:text="Yes"
+        android:visibility="invisible"/>
+        
+        
+        <Button 
+        android:id="@+id/hairlengthMale"
+        android:layout_below="@+id/hairlengthYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="40dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:text="Male"
+        android:visibility="invisible"/>
+        
+        
+      <Button 
+        android:id="@+id/hairlengthNo"
+        android:layout_below="@+id/ishairlenght"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/hairlengthYes"
+        android:layout_marginLeft="90dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:text="No"
+        android:visibility="invisible"/>
+      
+      
+         <Button 
+        android:id="@+id/hairlengthFemale"
+        android:layout_below="@+id/hairlengthNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/hairlengthMale"
+        android:layout_marginLeft="40dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:text="Female"
+        android:visibility="invisible"/>
+        
+        <Button 
+        android:id="@+id/weightNo"
+        android:layout_below="@+id/isweight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="80dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:text="No"/>
+      
+    <Button 
+        android:id="@+id/maleResult"
+        android:layout_below="@+id/weightNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="80dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:layout_marginTop="30dp"
+        android:text="Male"
+        android:visibility="invisible"/>
+    
+    
+    <Button
+	     android:id="@+id/simpsonNextbt"
+	     android:layout_width="wrap_content"
+    	 android:layout_height="wrap_content"
+    	 android:layout_centerHorizontal="true"
+    	 android:layout_alignParentBottom="true"
+    	 android:layout_marginBottom="40dp"
+    	 android:text="Go back to Main Menu"/>
+    
+</RelativeLayout>

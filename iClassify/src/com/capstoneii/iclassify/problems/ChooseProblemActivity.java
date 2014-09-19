@@ -82,7 +82,7 @@ public class ChooseProblemActivity extends Fragment {
 
 class chooseAlgocatSheep extends Fragment {
 
-    Button catsheepBT,patientBT,simpsonBT;
+    Button catsheepBT,patientBT,simpsonBT,chooseTopic;
     TextView headerText;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -100,10 +100,26 @@ class chooseAlgocatSheep extends Fragment {
 		 catsheepBT = (Button) rootView.findViewById(R.id.catsheepBT);
 		 patientBT = (Button) rootView.findViewById(R.id.patientBT);
 		 simpsonBT = (Button) rootView.findViewById(R.id.simpsonBT);
+		 
 		 catsheepBT.setText("Decision Tree");
 		 patientBT.setText("K -  Nearest");
 		 simpsonBT.setText("Naive Bayesian");
 		 
+		 chooseTopic = (Button) rootView.findViewById(R.id.chooseTopic);
+		 chooseTopic.setVisibility(View.VISIBLE);
+		 
+		 chooseTopic.setOnClickListener(new View.OnClickListener()
+	        {
+	            @Override
+	            public void onClick(View InputFragmentView)
+	            {
+	            	Fragment ChooseProblemActivity = new ChooseProblemActivity();
+	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
+	            	ft.replace(R.id.frame_container, ChooseProblemActivity);
+	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+	            	ft.commit();
+	            }
+	        });
 		 
 		 catsheepBT.setOnClickListener(new View.OnClickListener()
 	        {
@@ -120,12 +136,12 @@ class chooseAlgocatSheep extends Fragment {
 		 
 		 return rootView;
 	    }
-        
     }
+
 
 class chooseAlgoPatient extends Fragment {
 
-    Button catsheepBT,patientBT,simpsonBT;
+    Button catsheepBT,patientBT,simpsonBT,chooseTopic;
     TextView headerText;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -146,6 +162,22 @@ class chooseAlgoPatient extends Fragment {
 		 patientBT.setText("K -  Nearest");
 		 simpsonBT.setText("Naive Bayesian");
 		 
+		 chooseTopic = (Button) rootView.findViewById(R.id.chooseTopic);
+		 chooseTopic.setVisibility(View.VISIBLE);
+		 
+		 chooseTopic.setOnClickListener(new View.OnClickListener()
+	        {
+	            @Override
+	            public void onClick(View InputFragmentView)
+	            {
+	            	Fragment ChooseProblemActivity = new ChooseProblemActivity();
+	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
+	            	ft.replace(R.id.frame_container, ChooseProblemActivity);
+	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+	            	ft.commit();
+	            }
+	        });
+		 
 		 return rootView;
 	    }
         
@@ -153,7 +185,7 @@ class chooseAlgoPatient extends Fragment {
 
 class chooseAlgoSimpson extends Fragment {
 
-    Button simpsonID3BT,simpsonKNNBT,simpsonNBBT;
+    Button simpsonID3BT,simpsonKNNBT,simpsonNBBT,chooseTopic;
     TextView headerText;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -174,6 +206,21 @@ class chooseAlgoSimpson extends Fragment {
 		 simpsonKNNBT.setText("K -  Nearest");
 		 simpsonNBBT.setText("Naive Bayesian");
 		 
+		 chooseTopic = (Button) rootView.findViewById(R.id.chooseTopic);
+		 chooseTopic.setVisibility(View.VISIBLE);
+		 
+		 chooseTopic.setOnClickListener(new View.OnClickListener()
+	        {
+	            @Override
+	            public void onClick(View InputFragmentView)
+	            {
+	            	Fragment ChooseProblemActivity = new ChooseProblemActivity();
+	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
+	            	ft.replace(R.id.frame_container, ChooseProblemActivity);
+	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+	            	ft.commit();
+	            }
+	        });
 		 
 		 simpsonID3BT.setOnClickListener(new View.OnClickListener()
 	        {
@@ -187,9 +234,6 @@ class chooseAlgoSimpson extends Fragment {
 	            	ft.commit();
 	            }
 	        });
-		 
-		 
-		 
 		 
 		 return rootView;
 	    }
