@@ -13,6 +13,41 @@
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:textStyle="bold"
-        android:textSize="20sp"/>
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
     
+     <TextView 
+        android:id="@+id/textFlu"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+         android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+     <!-- Clickable adam -->
+     <ImageView 
+        android:id="@+id/adamImage"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:contentDescription="@string/app_name"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+     
+     <Button   
+        android:id="@+id/lookupbt"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+     
 </RelativeLayout>

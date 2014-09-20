@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.problems.patient.MainFragmentPatient;
 import com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity;
 @SuppressLint("NewApi")
 public class ChooseProblemActivity extends Fragment {
@@ -35,7 +36,7 @@ public class ChooseProblemActivity extends Fragment {
 		 catsheepBT.setText("Cat and Sheep");
 		 patientBT.setText("Patient Scenarion");
 		 simpsonBT.setText("Simpsons");
-		 
+		 catsheepBT.setVisibility(View.INVISIBLE);
 		 catsheepBT.setOnClickListener(new View.OnClickListener()
 	        {
 	            @Override
@@ -161,6 +162,20 @@ class chooseAlgoPatient extends Fragment {
 		 catsheepBT.setText("Decision Tree");
 		 patientBT.setText("K -  Nearest");
 		 simpsonBT.setText("Naive Bayesian");
+		 
+		 patientBT.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Fragment MainFragmentPatient = new MainFragmentPatient();
+            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
+            	ft.replace(R.id.frame_container, MainFragmentPatient);
+            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            	ft.commit();
+				
+			}
+		});
+		 
 		 
 		 chooseTopic = (Button) rootView.findViewById(R.id.chooseTopic);
 		 chooseTopic.setVisibility(View.VISIBLE);
