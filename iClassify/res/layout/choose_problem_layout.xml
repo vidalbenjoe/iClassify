@@ -73,7 +73,7 @@
     	 android:textStyle="bold"
     	 android:background="@drawable/blue_button"
     	 android:visibility="invisible"
-    	 android:text="Go back"
+    	 android:text="@string/goback"
 	    />
     
 </LinearLayout>

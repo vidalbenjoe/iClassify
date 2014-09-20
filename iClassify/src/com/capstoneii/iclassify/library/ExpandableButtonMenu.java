@@ -38,7 +38,7 @@ import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.view.ViewHelper;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 
-@SuppressWarnings("ConstantConditions")
+//@SuppressWarnings("ConstantConditions")
 public class ExpandableButtonMenu extends RelativeLayout implements View.OnClickListener {
 
     private static final String TAG = "ExpandableButtonMenu";

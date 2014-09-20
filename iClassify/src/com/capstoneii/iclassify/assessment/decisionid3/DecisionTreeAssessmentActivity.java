@@ -23,8 +23,6 @@ import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SplashScreenActivity;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
-import descisiondiscussflip.DescTreeLayoutActivity;
-
 @SuppressLint("NewApi")
 public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 	Button checkdropbt;

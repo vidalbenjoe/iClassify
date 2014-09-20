@@ -33,7 +33,7 @@ import android.widget.RelativeLayout;
 
 public class ExpandableMenuOverlay extends ImageButton implements DialogInterface.OnKeyListener, View.OnClickListener {
 
-    private static final String TAG = "ExpandableMenuOverlay";
+    //private static final String TAG = "ExpandableMenuOverlay";
     private static final float DEFAULT_DIM_AMOUNT = 0.8f;
     private Dialog mDialog;
     private ExpandableButtonMenu mButtonMenu;

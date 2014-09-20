@@ -20,8 +20,6 @@ import android.widget.TextView;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity;
 
-import descisiondiscussflip.DescTreeLayoutActivity;
-
 @SuppressLint("NewApi")
 public class SimulDecisionResults extends Fragment{
 	public String videoFile;

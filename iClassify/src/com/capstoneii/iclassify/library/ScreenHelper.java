@@ -31,7 +31,8 @@ public class ScreenHelper {
         return mHeight;
     }
 
-    private static void calculateScreenDimensions(Context context) {
+    @SuppressWarnings("deprecation")
+	private static void calculateScreenDimensions(Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
 

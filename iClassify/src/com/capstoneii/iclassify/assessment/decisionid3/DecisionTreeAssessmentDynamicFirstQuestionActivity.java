@@ -2,7 +2,6 @@ package com.capstoneii.iclassify.assessment.decisionid3;
 
 import android.app.ProgressDialog;
 import android.content.ClipData;
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
@@ -19,7 +18,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import bayesdiscussflip.NativeBayesLayoutActivity;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.TypewriterTextView;
@@ -211,9 +209,7 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends ActionBa
 		 private class CheckDroped extends AsyncTask<Void, Void, Void> {
 		        private ProgressDialog progress = null;
 
-		        protected void onError(Exception ex) {
-
-		        }
+		       
 		        @Override
 		        protected Void doInBackground(Void... params) {
 		            try {

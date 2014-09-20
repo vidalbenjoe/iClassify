@@ -14,6 +14,7 @@ import android.widget.PopupWindow;
 
 public class PopupHelper {
 
+@SuppressWarnings("deprecation")
 public static PopupWindow newBasicPopupWindow(Context context) {
 final PopupWindow window = new PopupWindow(context);
 
@@ -63,7 +64,9 @@ root.measure(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 int rootWidth = root.getMeasuredWidth();
 int rootHeight = root.getMeasuredHeight();
 
+@SuppressWarnings("deprecation")
 int screenWidth = windowManager.getDefaultDisplay().getWidth();
+@SuppressWarnings({ "unused", "deprecation" })
 int screenHeight = windowManager.getDefaultDisplay().getHeight();
 
 int xPos = ((screenWidth - rootWidth) / 2) + xOffset;
