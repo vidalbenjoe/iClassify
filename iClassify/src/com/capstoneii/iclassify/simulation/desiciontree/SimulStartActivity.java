@@ -66,7 +66,7 @@ public class SimulStartActivity extends Fragment {
                 currentFragment.getChildFragmentManager().popBackStack();
             }
        
-           
             }
+       
        
     }

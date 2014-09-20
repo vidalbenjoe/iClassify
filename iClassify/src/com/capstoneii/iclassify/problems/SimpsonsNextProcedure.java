@@ -69,4 +69,7 @@ public class SimpsonsNextProcedure  extends Fragment {
 	 			     }
 	 			  }.start();
 	        }
+	        public void onBackPressed(){
+	        	
+	        }
 }

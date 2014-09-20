@@ -21,6 +21,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
@@ -85,10 +88,10 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
   frame = (FrameLayout) findViewById(R.id.frame_container);
 
   
-  /*int width = getResources().getDisplayMetrics().widthPixels/2;
+  int width = getResources().getDisplayMetrics().widthPixels/2;
   DrawerLayout.LayoutParams params = (android.support.v4.widget.DrawerLayout.LayoutParams) mDrawerList.getLayoutParams();
   params.width = width;
-  mDrawerList.setLayoutParams(params);*/
+  mDrawerList.setLayoutParams(params);
   
 
   rowItems = new ArrayList<RowItem>();
@@ -212,15 +215,12 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
      public void setTitle(CharSequence title) {
          mTitle = title;
          getSupportActionBar().setTitle(mTitle);
-     
      }
-
-   
-
-   /*  @Override
+    @Override
      public boolean onCreateOptionsMenu(Menu menu) {
-         MenuInflater inflater = getMenuInflater();
+        MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main, menu);
+        
          return true;
      }
  @Override
@@ -230,29 +230,26 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
                      return true;
               }
              // Handle action bar actions click
-            switch (item.getItemId()) {
+           /* switch (item.getItemId()) {
                     case R.id.menu_overflow:
-                    	
-                  
-                                  return true;
+                    	  return true;
                     default :
                              
-                }
+                }*/
           return super.onOptionsItemSelected(item);
  }
-*/
+
  /***
   * Called when invalidateOptionsMenu() is triggered
   */
-   /* @Override
+    @Override
      public boolean onPrepareOptionsMenu(Menu menu) {
                // if nav drawer is opened, hide the action items
                 boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
                 menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
                 return super.onPrepareOptionsMenu(menu);
-      }*/
+      }
   
-
  /**
   * When using the ActionBarDrawerToggle, you must call it during
   * onPostCreate() and onConfigurationChanged()...
@@ -351,7 +348,6 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
   		}
   		});
 
-  	
   		lvPopupList.measure(View.MeasureSpec.UNSPECIFIED,
   		View.MeasureSpec.UNSPECIFIED);
   		pwMyPopWindow.setWidth(lvPopupList.getMeasuredWidth());
@@ -362,7 +358,8 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
   		R.drawable.bg_popupwindow));
   		pwMyPopWindow.setOutsideTouchable(true);
   		}
-
+public void onBackPressed(){
+	
+}
  	
-
 } 

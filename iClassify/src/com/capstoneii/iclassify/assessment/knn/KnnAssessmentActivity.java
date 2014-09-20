@@ -134,6 +134,9 @@ public class KnnAssessmentActivity extends ActionBarActivity {
 			return true;
 		}
 	} 
+	public void onBackPressed(){
+		
+	}
 	
 		}
 	

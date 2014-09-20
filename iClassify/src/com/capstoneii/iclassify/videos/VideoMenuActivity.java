@@ -45,8 +45,6 @@ public class VideoMenuActivity extends ActionBarActivity {
 		 
 		videoFile3 = "android.resource://" + getPackageName() + "/" + R.raw.videonaive;
 		 
-		
-		
 		setvideoDesc = (TextView) findViewById(R.id.videoDesc);
 		setvideoDesc.setMovementMethod(new ScrollingMovementMethod());
 		setvideoDesc.setText(R.string.knnvideodesc);
@@ -164,7 +162,9 @@ public class VideoMenuActivity extends ActionBarActivity {
     
         return super.onCreateOptionsMenu(menu);
     }
-    
+    public void onBackPressed(){
+    	
+    }
 }
 
 

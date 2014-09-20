@@ -91,7 +91,9 @@ public class SimulMainKnnActivity extends Fragment {
 		 return rootView;
 	    }
         
-       
+        public void onBackPressed(){
+        	
+        }
 		
     }
 

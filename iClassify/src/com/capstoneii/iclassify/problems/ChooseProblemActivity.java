@@ -34,7 +34,7 @@ public class ChooseProblemActivity extends Fragment {
 		 simpsonBT = (Button) rootView.findViewById(R.id.simpsonBT);
 		 
 		 catsheepBT.setText("Cat and Sheep");
-		 patientBT.setText("Patient Scenarion");
+		 patientBT.setText("Patient Scenario");
 		 simpsonBT.setText("Simpsons");
 		 catsheepBT.setVisibility(View.INVISIBLE);
 		 catsheepBT.setOnClickListener(new View.OnClickListener()
@@ -96,7 +96,6 @@ class chooseAlgocatSheep extends Fragment {
 	 
 		 headerText =  (TextView) rootView.findViewById(R.id.headerText);
 		 headerText.setText("Choose algorithm you want to simulate");
-		 
 		 
 		 catsheepBT = (Button) rootView.findViewById(R.id.catsheepBT);
 		 patientBT = (Button) rootView.findViewById(R.id.patientBT);
@@ -167,14 +166,24 @@ class chooseAlgoPatient extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				Fragment MainFragmentPatient = new MainFragmentPatient();
-            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
-            	ft.replace(R.id.frame_container, MainFragmentPatient);
-            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            	ft.commit();
+				
 				
 			}
 		});
+		 
+		 
+		 simpsonBT.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					Fragment MainFragmentPatient = new MainFragmentPatient();
+	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
+	            	ft.replace(R.id.frame_container, MainFragmentPatient);
+	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+	            	ft.commit();
+					
+				}
+			});
 		 
 		 
 		 chooseTopic = (Button) rootView.findViewById(R.id.chooseTopic);
@@ -252,5 +261,8 @@ class chooseAlgoSimpson extends Fragment {
 		 
 		 return rootView;
 	    }
+        public void onBackPressed(){
+        	
+        }
         
     }
