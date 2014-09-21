@@ -163,14 +163,11 @@ class chooseAlgoPatient extends Fragment {
 		 simpsonBT.setText("Naive Bayesian");
 		 
 		 patientBT.setOnClickListener(new View.OnClickListener() {
-			
 			@Override
 			public void onClick(View v) {
 				
-				
 			}
 		});
-		 
 		 
 		 simpsonBT.setOnClickListener(new View.OnClickListener() {
 				
@@ -184,7 +181,6 @@ class chooseAlgoPatient extends Fragment {
 					
 				}
 			});
-		 
 		 
 		 chooseTopic = (Button) rootView.findViewById(R.id.chooseTopic);
 		 chooseTopic.setVisibility(View.VISIBLE);
@@ -258,7 +254,6 @@ class chooseAlgoSimpson extends Fragment {
 	            	ft.commit();
 	            }
 	        });
-		 
 		 return rootView;
 	    }
         public void onBackPressed(){

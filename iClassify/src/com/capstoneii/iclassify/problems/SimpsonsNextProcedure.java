@@ -3,7 +3,6 @@ package com.capstoneii.iclassify.problems;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.SecretTextView;
 import com.capstoneii.iclassify.library.TypewriterTextView;
-
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -25,7 +24,6 @@ public class SimpsonsNextProcedure  extends Fragment {
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	    }
-	        
 	        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		    {
 			 View rootView = inflater .inflate(R.layout.simpson_dt_next_proc_layout, container, false);  
@@ -54,9 +52,9 @@ public class SimpsonsNextProcedure  extends Fragment {
 		        });
 			 
 			 delayFamAnim();
+			 
 			 return rootView;
 		    }
-	        
 	        public void delayFamAnim(){
 	        	  new CountDownTimer(6000, 1000) {
 

@@ -22,6 +22,7 @@ public class MainFragmentPatient extends Fragment {
 	ImageView adamImage;
 	Button lookupbt;
 	int nextButton = 0;
+	String getvalueFluNoTextBox,getValueFluTextBox;
 	
 	 public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
@@ -125,15 +126,27 @@ public class MainFragmentPatient extends Fragment {
 	 case 2:
  		textHead.setText("TESTING PHASE");
  		textFlu.setText(R.string.patientmultiply);//zoom animation
- 		
+ 		textFluTextBox.setVisibility(View.VISIBLE);
  		//show add another textView below textFlu then add a textBox below each Text
  		//check if the user answers are correct
  		
  		textFluNo.setVisibility(View.VISIBLE);
  		textFluNo.setText(R.string.textFluNoMultiply);
  		
- 		textFluTextBox.setVisibility(View.VISIBLE);
  		textFluNoTextBox.setVisibility(View.VISIBLE);
+ 		
+ 		
+ 		textFluNoTextBox = (EditText) getActivity().findViewById(R.id.textFluTextBox);
+ 		getvalueFluNoTextBox = textFluNoTextBox.getText().toString(); 	
+ 		
+ 		
+ 		if(getvalueFluNoTextBox.matches("0.0006")||(getvalueFluNoTextBox.matches("0.0158"))){
+ 			//move to next
+
+ 		}else{
+ 			//toast
+ 		}
+ 		
  		
  		break;
  		

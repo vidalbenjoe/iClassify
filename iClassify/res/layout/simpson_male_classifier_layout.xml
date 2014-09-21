@@ -44,30 +44,32 @@
         android:id="@+id/isweight"
         android:layout_below="@+id/malesimpsons"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="28sp"
         android:textColor="#fff"
         android:layout_marginTop="30dp"
-        android:text="@string/isweight160"/>
+        android:background="@drawable/isweighonesixty"/>
     
     
       <Button 
         android:id="@+id/weightYes"
         android:layout_below="@+id/isweight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="90dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="90dp"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="28sp"
         android:textColor="#fff"
         android:layout_marginTop="30dp"
-        android:text="Yes"/>
-      
+		android:background="@drawable/yesimg"/>
       
       
         <Button 
@@ -89,18 +91,17 @@
         <Button 
         android:id="@+id/hairlengthYes"
         android:layout_below="@+id/ishairlenght"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="90dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
         android:gravity="center"
         android:textStyle="bold"
+        android:layout_marginLeft="40dp"
         android:textSize="28sp"
         android:textColor="#fff"
         android:layout_marginTop="30dp"
-        android:text="Yes"
+        android:background="@drawable/yesimg"
         android:visibility="invisible"/>
-        
         
         <Button 
         android:id="@+id/hairlengthMale"
@@ -121,8 +122,8 @@
       <Button 
         android:id="@+id/hairlengthNo"
         android:layout_below="@+id/ishairlenght"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="90dp"
         android:layout_toRightOf="@+id/hairlengthYes"
         android:layout_marginLeft="90dp"
         android:gravity="center"
@@ -130,17 +131,17 @@
         android:textSize="28sp"
         android:textColor="#fff"
         android:layout_marginTop="30dp"
-        android:text="No"
+        android:background="@drawable/noimg"
         android:visibility="invisible"/>
       
       
-         <Button 
+       <Button 
         android:id="@+id/hairlengthFemale"
         android:layout_below="@+id/hairlengthNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/hairlengthMale"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="90dp"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="28sp"
@@ -152,16 +153,17 @@
         <Button 
         android:id="@+id/weightNo"
         android:layout_below="@+id/isweight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="90dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="80dp"
+        android:layout_marginLeft="30dp"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="28sp"
         android:textColor="#fff"
         android:layout_marginTop="30dp"
-        android:text="No"/>
+        android:background="@drawable/noimg"/>
       
     <Button 
         android:id="@+id/maleResult"

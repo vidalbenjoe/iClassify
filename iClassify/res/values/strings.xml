@@ -322,9 +322,9 @@
 	]]></string>
 	
 	<string name = "lookuptextpatient"><![CDATA[
-  	So here we have 4 attributes. What we need to do is to create “look-up tables” \n
-	for each of these attributes, and write in the probability that the patient has flu based \n
-	on this attribute. In these tables we have to note that there are 5 cases of a patient having flu,\n
+  	So here we have 4 attributes. What we need to do is to create “look-up tables” for each of these attributes,\n
+  	 and write in the probability that the patient has flu based on this attribute. In these tables we have to 
+  	 note that there are 5 cases of a patient having flu,\n
 	 and 3 cases of a patient not having a flu.
 	]]></string>
 	
