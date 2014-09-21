@@ -158,9 +158,11 @@ class chooseAlgoPatient extends Fragment {
 		 patientBT = (Button) rootView.findViewById(R.id.patientBT);
 		 simpsonBT = (Button) rootView.findViewById(R.id.simpsonBT);
 		 
-		 catsheepBT.setText("Decision Tree");
-		 patientBT.setText("K -  Nearest");
+		 catsheepBT.setText("");
+		 catsheepBT.setVisibility(View.INVISIBLE);
+		 patientBT.setText("Decision Tree");
 		 simpsonBT.setText("Naive Bayesian");
+	
 		 
 		 patientBT.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -168,7 +170,6 @@ class chooseAlgoPatient extends Fragment {
 				
 			}
 		});
-		 
 		 simpsonBT.setOnClickListener(new View.OnClickListener() {
 				
 				@Override
@@ -221,6 +222,7 @@ class chooseAlgoSimpson extends Fragment {
 		 simpsonID3BT = (Button) rootView.findViewById(R.id.catsheepBT);
 		 simpsonKNNBT = (Button) rootView.findViewById(R.id.patientBT);
 		 simpsonNBBT = (Button) rootView.findViewById(R.id.simpsonBT);
+		 simpsonNBBT.setVisibility(View.INVISIBLE);
 		 
 		 simpsonID3BT.setText("Decision Tree");
 		 simpsonKNNBT.setText("K -  Nearest");

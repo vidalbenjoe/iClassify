@@ -338,11 +338,14 @@
 	]]></string>
 	<string name = "patientmultiply"><![CDATA[
   	Multiply all the probabilities for Flu=Yes such as:\n
-	P(X|Flu=Yes)P(Flu=Yes) 
+	P(X|Flu=Yes)P(Flu=Yes)\n\n
+	(3/5) * (1/5) * (2/5) * (1/5) * (5/8) = 
+	
 	]]></string>
 	
 	<string name = "textFluNoMultiply"><![CDATA[
-  	P(X|Flu=No)P(Flu=No) 
+  	P(X|Flu=No)P(Flu=No) \n\n
+  	(1/3) * (2/3) * (1/3) * (2/3) * (3/8) =
 	]]></string>
 	
 	

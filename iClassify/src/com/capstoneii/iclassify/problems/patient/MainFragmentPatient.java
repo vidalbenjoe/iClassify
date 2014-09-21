@@ -7,6 +7,7 @@ import android.app.Dialog;
 import android.app.Fragment;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 @SuppressLint("NewApi")
 public class MainFragmentPatient extends Fragment {
 	TextView textHead,textFlu,textFluNo;
@@ -22,7 +24,6 @@ public class MainFragmentPatient extends Fragment {
 	ImageView adamImage;
 	Button lookupbt;
 	int nextButton = 0;
-	String getvalueFluNoTextBox,getValueFluTextBox;
 	
 	 public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
@@ -125,28 +126,59 @@ public class MainFragmentPatient extends Fragment {
 		 switch(nextButton){
 	 case 2:
  		textHead.setText("TESTING PHASE");
- 		textFlu.setText(R.string.patientmultiply);//zoom animation
- 		textFluTextBox.setVisibility(View.VISIBLE);
+ 		
+ 		
  		//show add another textView below textFlu then add a textBox below each Text
  		//check if the user answers are correct
  		
+ 		textFlu.setText(R.string.patientmultiply);//zoom animation
  		textFluNo.setVisibility(View.VISIBLE);
  		textFluNo.setText(R.string.textFluNoMultiply);
  		
+ 		textFlu.setGravity(Gravity.LEFT);
+ 		textFluNo.setGravity(Gravity.LEFT);
+ 		
+ 		textFluTextBox.setVisibility(View.VISIBLE);
  		textFluNoTextBox.setVisibility(View.VISIBLE);
  		
- 		
- 		textFluNoTextBox = (EditText) getActivity().findViewById(R.id.textFluTextBox);
- 		getvalueFluNoTextBox = textFluNoTextBox.getText().toString(); 	
- 		
- 		
- 		if(getvalueFluNoTextBox.matches("0.0006")||(getvalueFluNoTextBox.matches("0.0158"))){
- 			//move to next
-
- 		}else{
- 			//toast
- 		}
- 		
+ 		adamImage.setOnClickListener(new View.OnClickListener()
+	        {
+	            @Override
+	            public void onClick(View InputFragmentView)
+	            {
+	            	String getvalueFluNoTextBox = ((EditText) getActivity().findViewById(R.id.textFluNoTextBox)).getText().toString();//get the value of text;
+	         		
+	         		String getValueFluTextBox = ((EditText) getActivity().findViewById(R.id.textFluTextBox)).getText().toString();
+	         		
+	            	/* if(getvalueFluNoTextBox.equals(null)){
+	            		 Toast.makeText(getActivity(), "Please put your answer in the textbox", Toast.LENGTH_SHORT).show();
+	            	 }else if(getvalueFluNoTextBox.matches("")){
+	            		 Toast.makeText(getActivity(), "Please put your answer in the textbox", Toast.LENGTH_SHORT).show();
+	            	 }else if(getvalueFluNoTextBox.isEmpty()){
+	            		 Toast.makeText(getActivity(), "Please put your answer in the textbox", Toast.LENGTH_SHORT).show();
+	            	 }
+	            	 
+	            	 if(getValueFluTextBox.equals(null)){
+	            		 Toast.makeText(getActivity(), "Please put your answer in the textbox", Toast.LENGTH_SHORT).show();
+	            	 }else if(getValueFluTextBox.matches("")){
+	            		 Toast.makeText(getActivity(), "Please put your answer in the textbox", Toast.LENGTH_SHORT).show();
+	            	 }else if(getValueFluTextBox.isEmpty()){
+	            		 Toast.makeText(getActivity(), "Please put your answer in the textbox", Toast.LENGTH_SHORT).show();
+	            	 }*/
+	            	if(getValueFluTextBox.equals("0.006")){
+	            		 Toast.makeText(getActivity().getApplicationContext(), "Next Fragment",
+	              				   Toast.LENGTH_LONG).show();
+	            	 }
+	            	 else if(getvalueFluNoTextBox.equals("0.0185")){
+	            		 Toast.makeText(getActivity().getApplicationContext(), "Next Fragment",
+	              				   Toast.LENGTH_LONG).show();
+	            	 }
+	            	else{
+	            		Toast.makeText(getActivity().getApplicationContext(), "Please provide a correct answer",
+	              				   Toast.LENGTH_LONG).show();
+	         		}
+	            }
+	        });
  		
  		break;
  		

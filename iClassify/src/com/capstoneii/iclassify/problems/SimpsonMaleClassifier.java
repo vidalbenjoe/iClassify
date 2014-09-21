@@ -77,7 +77,7 @@ public class SimpsonMaleClassifier extends Fragment {
 		            public void onClick(View InputFragmentView)
 		            {
 		            	hairlengthMale.setVisibility(View.VISIBLE);
-		            	hairlengthMale.startAnimation(animSideDown);
+		            	
 		            	Toast.makeText(getActivity(),
 			                    "classify as Male", Toast.LENGTH_SHORT)
 			                    .show();
@@ -89,7 +89,7 @@ public class SimpsonMaleClassifier extends Fragment {
 		            public void onClick(View InputFragmentView)
 		            {
 		            	hairlengthFemale.setVisibility(View.VISIBLE);
-		            	hairlengthFemale.startAnimation(animSideDown);
+		            
 		            	Toast.makeText(getActivity(),
 			                    "classify as Female", Toast.LENGTH_SHORT)
 			                    .show();
