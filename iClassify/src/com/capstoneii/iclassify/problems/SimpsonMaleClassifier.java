@@ -20,7 +20,7 @@ public class SimpsonMaleClassifier extends Fragment {
 	 SecretTextView secretTextView;
 	 ImageView malesimpsons;
 	 Button weightYes,weightNo,ishairlenght,hairlengthYes,hairlengthNo,hairlengthMale,hairlengthFemale,maleResult,simpsonNextbt;
-	 Animation animSideDown,animSideUp;
+	 Animation animSideDown,animSideUp,animationZoom,clock;
 	  @Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
@@ -30,17 +30,25 @@ public class SimpsonMaleClassifier extends Fragment {
 		    {
 			 View rootView = inflater .inflate(R.layout.simpson_male_classifier_layout, container, false);  
 			 	
-			 
-			 animSideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+			animationZoom = AnimationUtils.loadAnimation(getActivity(), R.anim.anim_zoom_in);
+			animSideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+ 					R.anim.slide_down);
+			
+			animSideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
  					R.anim.slide_down);
      		
-     		animSideUp = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
- 					R.anim.slide_up);
+			clock = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+ 					R.anim.clockwise);
      		
 			 final TypewriterTextView simpsonMaleClassText = (TypewriterTextView)rootView.findViewById(R.id.simpsonMaleClassText);
 			 simpsonMaleClassText.setTypewriterText(getString(R.string.SimpsonMaleClass));
 			 animSideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
 					R.anim.slide_down);
+			 
+			 malesimpsons = (ImageView) rootView.findViewById(R.id.malesimpsons);
+			 malesimpsons.startAnimation(animationZoom);
+	
+			 
 			 
 			 weightYes = (Button) rootView.findViewById(R.id.weightYes);
 			 weightNo = (Button) rootView.findViewById(R.id.weightNo);

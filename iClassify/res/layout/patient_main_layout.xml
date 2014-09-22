@@ -13,7 +13,7 @@
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:textStyle="bold"
-        android:textSize="25sp"
+        android:textSize="28sp"
         android:textColor="#fff"
         android:layout_centerHorizontal="true"
         android:visibility="invisible"/>
@@ -32,13 +32,14 @@
      
      <EditText 
         android:id="@+id/textFluTextBox"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:inputType="text"
         android:background="#fff"
+        android:padding="5dp"
         android:layout_below="@+id/textFlu"
         android:layout_centerHorizontal="true"
         android:visibility="invisible"/>
@@ -59,11 +60,12 @@
      
      <EditText 
         android:id="@+id/textFluNoTextBox"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
+        android:padding="5dp"
         android:inputType="text"
         android:background="#fff"
         android:layout_centerHorizontal="true"

@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,6 +26,7 @@ public class MainFragmentPatient extends Fragment {
 	ImageView adamImage;
 	Button lookupbt;
 	int nextButton = 0;
+	Animation clock;
 	
 	 public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
@@ -32,6 +35,9 @@ public class MainFragmentPatient extends Fragment {
 	 public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	    {
 		 View rootView = inflater .inflate(R.layout.patient_main_layout, container, false);  
+		 
+		 
+			
 		 
 		 lookupbt = (Button) rootView.findViewById(R.id.lookupbt);
 		 textFluNoTextBox = (EditText) rootView.findViewById(R.id.textFluNoTextBox);
@@ -47,6 +53,10 @@ public class MainFragmentPatient extends Fragment {
 		 textFlu.setText("Flu?");
 		 
 		 adamImage = (ImageView) rootView.findViewById(R.id.adamImage);
+		 clock = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+					R.anim.clockwise);
+		 adamImage.startAnimation(clock);
+		 
 		 adamImage.setVisibility(View.VISIBLE);
 		 adamImage.setBackgroundResource(R.drawable.adamflint);
 		 adamImage.setOnClickListener(new View.OnClickListener()
@@ -57,6 +67,7 @@ public class MainFragmentPatient extends Fragment {
 	            	if(InputFragmentView == adamImage){
 	            		nextButton++;	
 	            	}
+	            	
 	            	switch(nextButton){
 	            	
 	            	case 1:
@@ -150,7 +161,7 @@ public class MainFragmentPatient extends Fragment {
 	         		
 	         		String getValueFluTextBox = ((EditText) getActivity().findViewById(R.id.textFluTextBox)).getText().toString();
 	         		
-	            	/* if(getvalueFluNoTextBox.equals(null)){
+	            	if(getvalueFluNoTextBox.equals(null)){
 	            		 Toast.makeText(getActivity(), "Please put your answer in the textbox", Toast.LENGTH_SHORT).show();
 	            	 }else if(getvalueFluNoTextBox.matches("")){
 	            		 Toast.makeText(getActivity(), "Please put your answer in the textbox", Toast.LENGTH_SHORT).show();
@@ -164,12 +175,8 @@ public class MainFragmentPatient extends Fragment {
 	            		 Toast.makeText(getActivity(), "Please put your answer in the textbox", Toast.LENGTH_SHORT).show();
 	            	 }else if(getValueFluTextBox.isEmpty()){
 	            		 Toast.makeText(getActivity(), "Please put your answer in the textbox", Toast.LENGTH_SHORT).show();
-	            	 }*/
-	            	if(getValueFluTextBox.equals("0.006")){
-	            		 Toast.makeText(getActivity().getApplicationContext(), "Next Fragment",
-	              				   Toast.LENGTH_LONG).show();
 	            	 }
-	            	 else if(getvalueFluNoTextBox.equals("0.0185")){
+	            	if(getValueFluTextBox.equals("0.006")||(getvalueFluNoTextBox.equals("0.0185"))){
 	            		 Toast.makeText(getActivity().getApplicationContext(), "Next Fragment",
 	              				   Toast.LENGTH_LONG).show();
 	            	 }
