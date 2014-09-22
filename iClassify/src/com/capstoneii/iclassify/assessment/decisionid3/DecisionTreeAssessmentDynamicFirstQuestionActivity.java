@@ -253,7 +253,7 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends ActionBa
 		 public void NextAssess(){
 		       
 			 Toast.makeText(DecisionTreeAssessmentDynamicFirstQuestionActivity.this,
-	                    "what's next?", Toast.LENGTH_SHORT)
+	                    R.string.assessmenttetobjectivesid3, Toast.LENGTH_SHORT)
 	                    .show();
 
 		    }

@@ -219,7 +219,7 @@ private int NUM_OF_VISIBLE_LIST_ROWS = 3;
     @Override
      public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main, menu);
+        inflater.inflate(R.menu.tempo_main, menu);
         
          return true;
      }
