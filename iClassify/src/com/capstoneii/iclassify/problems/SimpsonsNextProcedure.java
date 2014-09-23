@@ -56,7 +56,7 @@ public class SimpsonsNextProcedure  extends Fragment {
 			 return rootView;
 		    }
 	        public void delayFamAnim(){
-	        	  new CountDownTimer(6500, 1000) {
+	        	  new CountDownTimer(6300, 1000) {
 
 	 			     public void onTick(long millisUntilFinished) {
 	 			      
