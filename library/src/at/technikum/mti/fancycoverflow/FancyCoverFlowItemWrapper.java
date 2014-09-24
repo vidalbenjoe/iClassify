@@ -40,6 +40,7 @@ import android.view.ViewGroup;
  * Since this class is only used within the FancyCoverFlowAdapter it doesn't need to check if there are multiple
  * children or not (there can only be one at all times).
  */
+@SuppressLint("NewApi")
 @SuppressWarnings("ConstantConditions")
 class FancyCoverFlowItemWrapper extends ViewGroup {
 

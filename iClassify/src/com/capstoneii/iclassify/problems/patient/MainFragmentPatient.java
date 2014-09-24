@@ -37,8 +37,6 @@ public class MainFragmentPatient extends Fragment {
 		 View rootView = inflater .inflate(R.layout.patient_main_layout, container, false);  
 		 
 		 
-			
-		 
 		 lookupbt = (Button) rootView.findViewById(R.id.lookupbt);
 		 textFluNoTextBox = (EditText) rootView.findViewById(R.id.textFluNoTextBox);
 		 textFluTextBox = (EditText) rootView.findViewById(R.id.textFluTextBox);
@@ -58,7 +56,7 @@ public class MainFragmentPatient extends Fragment {
 		 adamImage.startAnimation(clock);
 		 
 		 adamImage.setVisibility(View.VISIBLE);
-		 adamImage.setBackgroundResource(R.drawable.adamflint);
+		 adamImage.setBackgroundResource(R.drawable.adamdoc);
 		 adamImage.setOnClickListener(new View.OnClickListener()
 	        {
 	            @Override

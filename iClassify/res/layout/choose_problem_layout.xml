@@ -5,9 +5,8 @@
     android:background="@drawable/backgroundblur"
     android:orientation="vertical" >
     
-    
-    <TextView
-         android:id="@+id/headerText"
+   <TextView
+         android:id="@+id/problemDesc"
 	     android:layout_width="match_parent"
     	 android:layout_height="wrap_content"
     	 android:layout_marginTop="50dp"
@@ -15,7 +14,22 @@
     	 android:layout_marginRight="80dp"
     	 android:gravity="center"
     	 android:layout_gravity="center"
-    	 android:textSize="30sp"
+    	 android:textSize="33sp"
+    	 android:textColor="#fff"
+    	 android:textStyle="bold"
+	    />
+    
+    
+    <TextView
+         android:id="@+id/headerText"
+	     android:layout_width="match_parent"
+    	 android:layout_height="wrap_content"
+    	 android:layout_marginTop="20dp"
+    	 android:layout_marginLeft="80dp"
+    	 android:layout_marginRight="80dp"
+    	 android:gravity="center"
+    	 android:layout_gravity="center"
+    	 android:textSize="28sp"
     	 android:textColor="#fff"
     	 android:textStyle="bold"
 	    />

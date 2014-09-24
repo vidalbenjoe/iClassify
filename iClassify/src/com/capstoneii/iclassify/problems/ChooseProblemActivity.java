@@ -142,7 +142,7 @@ class chooseAlgocatSheep extends Fragment {
 class chooseAlgoPatient extends Fragment {
 
     Button catsheepBT,patientBT,simpsonBT,chooseTopic;
-    TextView headerText;
+    TextView problemDesc,headerText;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -150,7 +150,11 @@ class chooseAlgoPatient extends Fragment {
         
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	    {
-		 View rootView = inflater .inflate(R.layout.choose_problem_layout, container, false);  
+        	
+		 View rootView = inflater .inflate(R.layout.choose_problem_layout, container, false); 
+		 problemDesc =  (TextView) rootView.findViewById(R.id.problemDesc);
+		 problemDesc.setText(R.string.problempatient);
+		 
 		 headerText =  (TextView) rootView.findViewById(R.id.headerText);
 		 headerText.setText("Choose algorithm you want to simulate");
 		 
@@ -163,7 +167,6 @@ class chooseAlgoPatient extends Fragment {
 		 patientBT.setText("Decision Tree");
 		 simpsonBT.setText("Naive Bayesian");
 	
-		 
 		 patientBT.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -207,7 +210,7 @@ class chooseAlgoPatient extends Fragment {
 class chooseAlgoSimpson extends Fragment {
 
     Button simpsonID3BT,simpsonKNNBT,simpsonNBBT,chooseTopic;
-    TextView headerText;
+    TextView problemDesc,headerText;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -216,6 +219,9 @@ class chooseAlgoSimpson extends Fragment {
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	    {
 		 View rootView = inflater .inflate(R.layout.choose_problem_layout, container, false);  
+		 problemDesc =  (TextView) rootView.findViewById(R.id.problemDesc);
+		 problemDesc.setText(R.string.problemsimpson);
+		 
 		 headerText =  (TextView) rootView.findViewById(R.id.headerText);
 		 headerText.setText("Choose algorithm you want to simulate");
 		 
@@ -249,9 +255,9 @@ class chooseAlgoSimpson extends Fragment {
 	            @Override
 	            public void onClick(View InputFragmentView)
 	            {
-	            	Fragment SimpsonsDecisionTreeFragment = new SimpsonsDecisionTreeFragment();
+	            	Fragment SimpsonTableFragment = new SimpsonTableFragment();
 	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
-	            	ft.replace(R.id.frame_container, SimpsonsDecisionTreeFragment);
+	            	ft.replace(R.id.frame_container, SimpsonTableFragment);
 	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 	            	ft.commit();
 	            }

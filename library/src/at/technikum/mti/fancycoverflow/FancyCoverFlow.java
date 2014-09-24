@@ -27,6 +27,7 @@ import android.view.animation.Transformation;
 import android.widget.Gallery;
 import android.widget.SpinnerAdapter;
 
+@SuppressWarnings("deprecation")
 public class FancyCoverFlow extends Gallery {
 
     // =============================================================================

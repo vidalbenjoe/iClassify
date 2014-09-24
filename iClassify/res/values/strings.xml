@@ -356,9 +356,14 @@
 	]]></string>
 	
 	
+	<string name = "problemsimpson"><![CDATA[
+  	What is comic’s gender? \n
+  	Is comic a male or a female?
+	]]></string>
 	
-	
-	
+	<string name = "problempatient"><![CDATA[
+  	Do Doctor believe that a patient with the following symptoms has a flu?
+	]]></string>
 	
 	
 </resources>
