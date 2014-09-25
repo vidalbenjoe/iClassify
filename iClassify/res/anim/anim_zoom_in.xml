@@ -6,7 +6,7 @@
       android:toXScale="3.0"
       android:fromYScale="0.5"
       android:toYScale="2.0"
-      android:duration="3500"
+      android:duration="2500"
       android:pivotX="50%"
       android:pivotY="50%" >
 
@@ -19,7 +19,7 @@
       android:toXScale="0.5"
       android:fromYScale="2.0"
       android:toYScale="0.5"
-      android:duration="3500"
+      android:duration="2500"
       android:pivotX="50%"
       android:pivotY="50%" >
 

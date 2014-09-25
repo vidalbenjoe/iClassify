@@ -21,7 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 @SuppressLint("NewApi")
 public class MainFragmentPatient extends Fragment {
-	TextView textHead,textFlu,textFluNo;
+	TextView textHead,textFlu,textFluNo,ClickmeText;
 	EditText textFluNoTextBox,textFluTextBox;
 	ImageView adamImage;
 	Button lookupbt;
@@ -51,10 +51,8 @@ public class MainFragmentPatient extends Fragment {
 		 textFlu.setText("Flu?");
 		 
 		 adamImage = (ImageView) rootView.findViewById(R.id.adamImage);
-		 clock = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
-					R.anim.clockwise);
-		 adamImage.startAnimation(clock);
-		 
+		 ClickmeText = (TextView) rootView.findViewById(R.id.ClickmeText);
+		 ClickmeText.setText("Click Me");
 		 adamImage.setVisibility(View.VISIBLE);
 		 adamImage.setBackgroundResource(R.drawable.adamdoc);
 		 adamImage.setOnClickListener(new View.OnClickListener()

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
@@ -27,7 +28,7 @@ public class ChooseProblemActivity extends Fragment {
 		 View rootView = inflater .inflate(R.layout.choose_problem_layout, container, false);  
 	       
 		 headerText =  (TextView) rootView.findViewById(R.id.headerText);
-		 headerText.setText("Please choose problem you want to solve by the algorithm");
+		 headerText.setText("Please choose a scenario");
 		 
 		 catsheepBT = (Button) rootView.findViewById(R.id.catsheepBT);
 		 patientBT = (Button) rootView.findViewById(R.id.patientBT);
@@ -95,7 +96,7 @@ class chooseAlgocatSheep extends Fragment {
 		 View rootView = inflater .inflate(R.layout.choose_problem_layout, container, false);  
 	 
 		 headerText =  (TextView) rootView.findViewById(R.id.headerText);
-		 headerText.setText("Choose algorithm you want to simulate");
+		 headerText.setText(R.string.whatalgoyouwant);
 		 
 		 catsheepBT = (Button) rootView.findViewById(R.id.catsheepBT);
 		 patientBT = (Button) rootView.findViewById(R.id.patientBT);
@@ -156,14 +157,14 @@ class chooseAlgoPatient extends Fragment {
 		 problemDesc.setText(R.string.problempatient);
 		 
 		 headerText =  (TextView) rootView.findViewById(R.id.headerText);
-		 headerText.setText("Choose algorithm you want to simulate");
+		 headerText.setText(R.string.whatalgoyouwant);
 		 
 		 catsheepBT = (Button) rootView.findViewById(R.id.catsheepBT);
 		 patientBT = (Button) rootView.findViewById(R.id.patientBT);
 		 simpsonBT = (Button) rootView.findViewById(R.id.simpsonBT);
 		 
 		 catsheepBT.setText("");
-		 catsheepBT.setVisibility(View.INVISIBLE);
+		 catsheepBT.setVisibility(View.GONE);
 		 patientBT.setText("Decision Tree");
 		 simpsonBT.setText("Naive Bayesian");
 	
@@ -211,6 +212,7 @@ class chooseAlgoSimpson extends Fragment {
 
     Button simpsonID3BT,simpsonKNNBT,simpsonNBBT,chooseTopic;
     TextView problemDesc,headerText;
+    ImageView problemimage;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -222,8 +224,12 @@ class chooseAlgoSimpson extends Fragment {
 		 problemDesc =  (TextView) rootView.findViewById(R.id.problemDesc);
 		 problemDesc.setText(R.string.problemsimpson);
 		 
+		 
+		 problemimage = (ImageView) rootView.findViewById(R.id.problemimage);
+		 problemimage.setBackgroundResource(R.drawable.comicimg);
+		 
 		 headerText =  (TextView) rootView.findViewById(R.id.headerText);
-		 headerText.setText("Choose algorithm you want to simulate");
+		 headerText.setText(R.string.whatalgoyouwant);
 		 
 		 simpsonID3BT = (Button) rootView.findViewById(R.id.catsheepBT);
 		 simpsonKNNBT = (Button) rootView.findViewById(R.id.patientBT);
@@ -233,6 +239,8 @@ class chooseAlgoSimpson extends Fragment {
 		 simpsonID3BT.setText("Decision Tree");
 		 simpsonKNNBT.setText("K -  Nearest");
 		 simpsonNBBT.setText("Naive Bayesian");
+		 simpsonNBBT.setVisibility(View.GONE);
+		 
 		 
 		 chooseTopic = (Button) rootView.findViewById(R.id.chooseTopic);
 		 chooseTopic.setVisibility(View.VISIBLE);
@@ -255,13 +263,24 @@ class chooseAlgoSimpson extends Fragment {
 	            @Override
 	            public void onClick(View InputFragmentView)
 	            {
-	            	Fragment SimpsonTableFragment = new SimpsonTableFragment();
+	            	Fragment SimpsonsDecisionTreeFragment = new SimpsonsDecisionTreeFragment();
 	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
-	            	ft.replace(R.id.frame_container, SimpsonTableFragment);
+	            	ft.replace(R.id.frame_container, SimpsonsDecisionTreeFragment);
 	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 	            	ft.commit();
 	            }
 	        });
+		 
+		
+		 simpsonKNNBT.setOnClickListener(new View.OnClickListener()
+	        {
+	            @Override
+	            public void onClick(View InputFragmentView)
+	            {
+	            //KNearest
+	            }
+	        });
+		 
 		 return rootView;
 	    }
         public void onBackPressed(){

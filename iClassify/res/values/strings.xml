@@ -365,6 +365,10 @@
   	Do Doctor believe that a patient with the following symptoms has a flu?
 	]]></string>
 	
+	<string name = "whatalgoyouwant"><![CDATA[
+  	What algorithm you want \nto solve this problem?
+	]]></string>
+	
 	
 </resources>
 
