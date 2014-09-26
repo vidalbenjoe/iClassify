@@ -1,11 +1,14 @@
 package com.capstoneii.iclassify.problems;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -263,11 +266,12 @@ class chooseAlgoSimpson extends Fragment {
 	            @Override
 	            public void onClick(View InputFragmentView)
 	            {
-	            	Fragment SimpsonTableFragment = new SimpsonTableFragment();
-	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
-	            	ft.replace(R.id.frame_container, SimpsonTableFragment);
-	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-	            	ft.commit();
+			            	Fragment SimpsonTableFragment = new SimpsonTableFragment();
+			            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
+			            	ft.replace(R.id.frame_container, SimpsonTableFragment);
+			            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+			            	ft.commit();
+			        
 	            }
 	        });
 		 

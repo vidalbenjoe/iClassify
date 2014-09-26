@@ -1,11 +1,14 @@
 package com.capstoneii.iclassify.problems;
 
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -36,14 +39,36 @@ public class SimpsonTableFragment  extends Fragment {
 		            @Override
 		            public void onClick(View InputFragmentView)
 		            {
-		            	 	Fragment SimpsonsDecisionTreeFragment = new SimpsonsDecisionTreeFragment();
-		 	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
-		 	            	ft.replace(R.id.frame_container, SimpsonsDecisionTreeFragment);
-		 	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-			            	ft.addToBackStack(SimpsonsDecisionTreeFragment.getTag());
-		 	            	ft.commit();
+
+		            	//dialog box(Comic's Attribute)
+		            	final Dialog dialog = new Dialog(getActivity());
+						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+						dialog.setContentView(R.layout.custom_dialog_image);
+						dialog.getWindow().setBackgroundDrawable(
+								new ColorDrawable(
+										android.graphics.Color.TRANSPARENT));
+						Button cadbtnNext = (Button) dialog.findViewById(R.id.cadbtnNext);
+						
+						dialog.show();
+						
+						cadbtnNext.setOnClickListener(new View.OnClickListener()
+				        {
+				            @Override
+				            public void onClick(View InputFragmentView)
+				            {
+				            	Fragment SimpsonsDecisionTreeFragment = new SimpsonsDecisionTreeFragment();
+				            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
+				            	ft.replace(R.id.frame_container, SimpsonsDecisionTreeFragment);
+				            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+				            	ft.commit();
+				            	dialog.dismiss();
+				            }
+						
+				        });
 		            }
+		            
 		        });
+			 
 			 return rootView;
 		    }
 	        public void onBackPressed(){
