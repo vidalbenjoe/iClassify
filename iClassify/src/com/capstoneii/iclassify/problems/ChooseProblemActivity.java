@@ -226,7 +226,7 @@ class chooseAlgoSimpson extends Fragment {
 		 
 		 
 		 problemimage = (ImageView) rootView.findViewById(R.id.problemimage);
-		 problemimage.setBackgroundResource(R.drawable.comicimg);
+		 problemimage.setBackgroundResource(R.drawable.comicsad);
 		 
 		 headerText =  (TextView) rootView.findViewById(R.id.headerText);
 		 headerText.setText(R.string.whatalgoyouwant);
@@ -263,9 +263,9 @@ class chooseAlgoSimpson extends Fragment {
 	            @Override
 	            public void onClick(View InputFragmentView)
 	            {
-	            	Fragment SimpsonsDecisionTreeFragment = new SimpsonsDecisionTreeFragment();
+	            	Fragment SimpsonTableFragment = new SimpsonTableFragment();
 	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
-	            	ft.replace(R.id.frame_container, SimpsonsDecisionTreeFragment);
+	            	ft.replace(R.id.frame_container, SimpsonTableFragment);
 	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 	            	ft.commit();
 	            }

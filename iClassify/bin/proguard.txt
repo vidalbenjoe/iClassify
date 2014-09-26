@@ -96,6 +96,7 @@
 # view res/layout/naivesimul_secondlayout.xml #generated:44
 # view res/layout/naivesimul_thirdlayout.xml #generated:45
 # view res/layout/simpson_dt_next_proc_layout.xml #generated:8
+# view res/layout/simpson_final_result_layout.xml #generated:8
 # view res/layout/simpson_male_classifier_layout.xml #generated:8
 # view res/layout/simpson_table_fragment.xml #generated:8
 -keep class com.capstoneii.iclassify.library.TypewriterTextView { <init>(...); }

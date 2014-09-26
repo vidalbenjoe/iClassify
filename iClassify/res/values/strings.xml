@@ -4,15 +4,14 @@
     <string name="app_name">iClassify</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-	<string name="empty"/>
+    <string name="empty" />
     <string name="md__drawerOpenIndicatorDesc">Close drawer</string>
     <string name="md__drawerClosedIndicatorDesc">Open drawer</string>
-    
     <string name="ok">Ok</string>
-  	<string name="cancel">Cancel</string>
+    <string name="cancel">Cancel</string>
     <string name="imgdesc">imgdesc</string>
-	
     <string name="goback">Go Back</string>
+
     <string-array name="titles">
         <item>Discussion</item>
         <item>Videos</item>
@@ -26,180 +25,196 @@
         <item>@drawable/drawer_videos</item>
         <item>@drawable/navdrawer_simul</item>
         <item>@drawable/navdrawer_assess</item>
-         <item>@drawable/navdrawer_exit</item>
+        <item>@drawable/navdrawer_exit</item>
     </array>
-      
+
     <string name="action_left">Decision Tree</string>
     <string name="action_mid">K-Nearest Neighbor</string>
     <string name="action_right">Native Bayesian</string>
 
     <!-- Video Description -->
-    
- <string name="introvideodesc"><![CDATA[
+
+    <string name="introvideodesc">
+<![CDATA[
  			Classification consists of predicting a certain outcome based on a given input. In order to predict the outcome, the algorithm processes a training set containing a set of attributes and the respective outcome, usually called goal or prediction attribute. The algorithm tries to discover relationships between the attributes that would make it possible to predict the outcome. Next the algorithm is given a data set not seen before, called prediction set, which contains the same set of attributes, except for the prediction attribute – not yet known. The algorithm analyses the input and produces a prediction.
- 			]]></string>
- 			   
-    
-    
-<string name="knnvideodesc"><![CDATA[
+ 			]]>
+    </string>
+    <string name="knnvideodesc">
+<![CDATA[
  			This is how the K-Nearest Neighbour algorithm works. Firstly we have a variable "K". With this, you assign "K" a value from 1 to the total number of examples. The best value to chose for K is a low odd number. With this value of "K", we look at the k closest points on the graph from the location of the new example point. The next part is to assign the new point a class, the class type will be determined from the majority of the closest points.\n\n
 			
 			Algorithm in short:\n
 			1. Assign K a value -- preferably a small odd number.\n
 			2. Find the closest number of K points.\n
 			3. Assign the new point from the majority of classes.\n
- 			]]></string>
- 			
-<string name="naivevideodesc"><![CDATA[
+ 			]]>
+    </string>
+    <string name="naivevideodesc">
+<![CDATA[
  			The Naive Bayesian classifier is based on Bayes theorem with independence assumptions between predictors. A Naive Bayesian model is easy to build, with no complicated iterative parameter estimation which makes it particularly useful for very large datasets. Despite its simplicity, the Naive Bayesian classifier often does surprisingly well and is widely used because it often outperforms more sophisticated classification methods.
 
- 			]]></string>
- 			
-<string name="treevideodesc"><![CDATA[
+ 			]]>
+    </string>
+    <string name="treevideodesc">
+<![CDATA[
  			The best way to see a Decision Tree is with an example. A decision tree is like a flowchart diagram where you can read off your decision rules. We can see why such diagrams are called trees, because, while they are admittedly upside down, they start from a root and have branches leading to leaves. The leaves are always decisions, and a particular decision might be at the end of multiple branches.
 
- 			]]></string>
- 			
-
-    
-    
-    <string name="pracprob1"><![CDATA[
+ 			]]>
+    </string>
+    <string name="pracprob1">
+<![CDATA[
  			Suppose we want the ID3 algorithm to decide whether the weather is amenable to playing baseball. Over the course of 2 weeks, data is collected to help ID3 build a decision tree . 
- 			]]></string>
- 			
-    <string name="weathattrib"><![CDATA[
+ 			]]>
+    </string>
+    <string name="weathattrib">
+<![CDATA[
  			 The weather attributes are outlook, temperature, humidity, and wind speed.\n
- 			]]></string>
-      
-    <string name="dataset1"><![CDATA[
+ 			]]>
+    </string>
+    <string name="dataset1">
+<![CDATA[
  			We need to find which attribute will be the root node in our decision tree. The gain is calculated for all four attributes: \n
  			
- 			]]></string>
-    <string name ="example2desc"><![CDATA[
+ 			]]>
+    </string>
+    <string name="example2desc">
+<![CDATA[
         Suppose S is a set of 14 examples in which one of the attributes is wind speed. The values of Wind can be Weak or Strong. The classification of these 14 examples are 9 YES and 5 NO. For attribute Wind, suppose there are 8 occurrences of Wind = Weak and 6 occurrences of Wind = Strong. For Wind = Weak, 6 of the examples are YES and 2 are NO. For Wind = Strong, 3 are YES and 3 are NO. Therefore
-        ]]></string>
-        
-    <string name = "gainwind"><![CDATA[
+        ]]>
+    </string>
+    <string name="gainwind">
+<![CDATA[
         Suppose S is a set of 14 examples in which one of the attributes is wind speed. The values of Wind can be Weak or Strong. The classification of these 14 examples are 9 YES and 5 NO. For attribute Wind, suppose there are 8 occurrences of Wind = Weak and 6 occurrences of Wind = Strong. For Wind = Weak, 6 of the examples are YES and 2 are NO. For Wind = Strong, 3 are YES and 3 are NO. Therefore
-        ]]></string>
-        
-    <string name = "gaintempe"><![CDATA[
+        ]]>
+    </string>
+    <string name="gaintempe">
+<![CDATA[
         Suppose S is a set of 14 examples in which one of the attributes is temperature. The values of Temperature can be Hot, mild and cold. The classification of these 14 examples are 9 YES and 5 NO. For attribute temperature, suppose there are 4 occurrences of Temperature = Hot and 6 occurrences of Temperature = Mild and 4 occurrences of Temperature = Cool. For Wind = Hot, 2 of the examples are YES and 2 are NO. For Wind = Mild, 4 are YES and 2 are NO. Therefore
-        ]]></string>
-        
-    <string name = "gainhumidity"><![CDATA[
+        ]]>
+    </string>
+    <string name="gainhumidity">
+<![CDATA[
         Suppose S is a set of 14 examples in which one of the attributes is wind speed. The values of Wind can be Weak or Strong. The classification of these 14 examples are 9 YES and 5 NO. For attribute Wind, suppose there are 8 occurrences of Wind = Weak and 6 occurrences of Wind = Strong. For Wind = Weak, 6 of the examples are YES and 2 are NO. For Wind = Strong, 3 are YES and 3 are NO. Therefore
-        ]]></string>
-    
-    
-    <!--  Calculation -->
-    
-     <string name = "o1"><![CDATA[
+        ]]>
+    </string>
+
+    <!-- Calculation -->
+
+    <string name="o1">
+<![CDATA[
        =0.940-(5/14)*0.971 -(4/14)*0.0 – (5/14)*0.0971
 	   =0.247
-        ]]></string>
-    
-     <string name = "h1"><![CDATA[
+        ]]>
+    </string>
+    <string name="h1">
+<![CDATA[
         =0.940-(7/14)*0.985 – (7/14)*0.592
 		=0.151
-        ]]></string>
-    <string name = "w1"><![CDATA[
+        ]]>
+    </string>
+    <string name="w1">
+<![CDATA[
         = 0.940 - (8/14)*0.811 - (6/14)*1.00\n
         = 0.048
-        ]]></string>
-        
-    
-        
-    <string name = "wweak"><![CDATA[
+        ]]>
+    </string>
+    <string name="wweak">
+<![CDATA[
         Entropy(Sweak) = - (6/8)*log2(6/8) - (2/8)*log2(2/8) = 0.81
-        ]]></string>
-    
-     <string name = "wstrong"><![CDATA[
+        ]]>
+    </string>
+    <string name="wstrong">
+<![CDATA[
         Entropy(Sstrong) = - (3/6)*log2(3/6) - (3/6)*log2(3/6) = 1.00
-        ]]></string>
-        
-     
-     <string name = "correctdecision1"><![CDATA[
+        ]]>
+    </string>
+    <string name="correctdecision1">
+<![CDATA[
        Since Outlook has three possible values, the root node has three branches (sunny, overcast, rain)."
-        ]]></string>
-     
-     <string name = "correctdecision2"><![CDATA[
+        ]]>
+    </string>
+    <string name="correctdecision2">
+<![CDATA[
        Since we`ve used Outlook at the root, we only decide on the remaining three attributes: Humidity, Temperature, or Wind.
-]]></string>
-
-      <string name = "restext"><![CDATA[
+]]>
+    </string>
+    <string name="restext">
+<![CDATA[
     The final decision = tree\n
 	The decision tree can also be expressed in rule format:
-]]></string>
-
-     
-      	
-      	<string name = "outlookoccurencesrain"><![CDATA[
+]]>
+    </string>
+    <string name="outlookoccurencesrain">
+<![CDATA[
         Rain Outlook\n
 		For Outlook = Rain, 3 are YES and 2 are NO. 
-		]]></string>
-		
-      	<string name = "outlookoccurencessunny"><![CDATA[
+		]]>
+    </string>
+    <string name="outlookoccurencessunny">
+<![CDATA[
         Sunny Outlook\n
 		For Outlook = Sunny, 2 are YES and 3 are NO. 
-		]]></string>
-      	
-      
-       	<string name = "humidityoccurenceshigh"><![CDATA[
+		]]>
+    </string>
+    <string name="humidityoccurenceshigh">
+<![CDATA[
         High Humidity\n
 		For Humidty = High, 3 are YES and 4 are NO. 
-	]]></string>
-	
-      <string name = "humidityoccurencesnormal"><![CDATA[
+	]]>
+    </string>
+    <string name="humidityoccurencesnormal">
+<![CDATA[
         Low Humidity\n
 		For Humidity = Normal, 6 are YES and 1 are NO. 
-	]]></string>
-      
-      
-     
-     <string name = "windoccurencesweak"><![CDATA[
+	]]>
+    </string>
+    <string name="windoccurencesweak">
+<![CDATA[
       Weak Wind\n
       The classification of these 14 examples are 9 YES and 5 NO. For attribute Wind, suppose there are 8 occurrences of Wind = Weak.\n
 	  For Wind = Weak, 6 of the examples are YES and 2 are NO.
-	]]></string>
-	
-     <string name = "windoccurencesstrong"><![CDATA[
+	]]>
+    </string>
+    <string name="windoccurencesstrong">
+<![CDATA[
         Strong Wind\n
         The classification of these 14 examples are 9 YES and 5 NO. For attribute Wind, suppose there are 6 occurrences of Wind = Strong.\n
 		For Wind = Strong, 3 are YES and 3 are NO. 
-	]]></string>
-	
-     
-	
-     
-      <string name = "humidityresult"><![CDATA[
+	]]>
+    </string>
+    <string name="humidityresult">
+<![CDATA[
        Humidity has the highest gain; therefore, it is used as the decision node. This process goes on until all data is classified perfectly or we run out of attributes.
-	]]></string>
-	
-      <string name = "idrresultdesc"><![CDATA[
+	]]>
+    </string>
+    <string name="idrresultdesc">
+<![CDATA[
        ID3 has been incorporated in a number of commercial rule-induction packages. Some specific applications include medical diagnosis, credit risk assessment of loan applications, equipment malfunctions by their cause, classification of soybean diseases, and web search classification.
-	]]></string>
-	
-      
-         <string name = "naiveintrotext"><![CDATA[
+	]]>
+    </string>
+    <string name="naiveintrotext">
+<![CDATA[
        Hi Students, blah blah blah blah blah blah blah blah blah blah blah blah blah blah blahblah blah blah blah blahblah blah blah blah blahblah blah blah blah blah
-	]]></string>
-	
-     
-      <string name = "naivebayes1"><![CDATA[
+	]]>
+    </string>
+    <string name="naivebayes1">
+<![CDATA[
        Lets say we have a table that decided if we should play tennis under certain circumstances. These could be theoutlook of the weather; the temperature; the humidity and the strength of the wind:
-	]]></string>
-	
-      <string name = "naivebayes2"><![CDATA[
+	]]>
+    </string>
+    <string name="naivebayes2">
+<![CDATA[
       So here we have 4 attributes. What we need to do is to create “look-up tables” for each of these attributes, and write in the probability that a game of tennis will be played based on this attribute. In these tables we have to note that there are 5 cases of not being able to play a game, and 9 cases of being able to play a game. (tap the icon below to view the specific dataset)
-	]]></string>
-	<string name = "naivetesting1"><![CDATA[
+	]]>
+    </string>
+    <string name="naivetesting1">
+<![CDATA[
   	Now, we are in the testing phase. For this, say we were given a new instance, and we want to know if we can play a game or not, then we need to lookup the results from the tables above. So, this new instance is:\n
 	X = (Outlook=Sunny, Temperature=Cool, Humidity=High, Wind=Strong)
-	]]></string>
-    
-	
-	<string name = "naiveplaygame"><![CDATA[
+	]]>
+    </string>
+    <string name="naiveplaygame">
+<![CDATA[
   	 Firstly we look at the probability that we can play the game, so we use the lookup tables to get:
 	\n\n
 	P(Outlook=Sunny | Play=Yes) = 2/9\n
@@ -207,168 +222,209 @@
 	P(Humidity=High | Play=Yes) = 3/9 \n
 	P(Wind=Strong | Play=Yes) = 3/9 \n
 	P(Play=Yes) = 9/14 \n
-	]]></string>
-	
-	<string name = "naivedontplaygame"><![CDATA[
+	]]>
+    </string>
+    <string name="naivedontplaygame">
+<![CDATA[
   	Next we consider the fact that we cannot play a game:\n\n
 	P(Outlook=Sunny | Play=No) = 3/5\n
 	P(Temperature=Cool | Play=No) = 1/5\n
 	P(Humidity=High | Play=No) = 4/5\n
 	P(Wind=Strong | Play=No) = 3/5\n
 	P(Play=No) = 5/14\n
-	]]></string>
-	
-	
-	<string name = "calculatenaive1"><![CDATA[
+	]]>
+    </string>
+    <string name="calculatenaive1">
+<![CDATA[
   	Then, using those results, you have to multiple the whole lot together. So you multiple all the probabilities for Play=Yes such as:\n
 	P(X|Play=Yes)P(Play=Yes) = (2/9) * (3/9) * (3/9) * (3/9) * (9/14) = 0.0053\n
 	And this gives us a value that represents ‘P(X|C)P(C)’, or in this case ‘P(X|Play=Yes)P(Play=Yes)’.
 	
-	]]></string>
-	
-	<string name = "calculatenaive2"><![CDATA[
+	]]>
+    </string>
+    <string name="calculatenaive2">
+<![CDATA[
   	We also have to do the same thing for Play=No:\n\n
 	P(X|Play=No)P(Play=No) = (3/5) * (1/5) * (4/5) * (3/5) * (5/14) = 0.0206
-	]]></string>
-	
-	
-	<string name = "calculatenaive3"><![CDATA[
+	]]>
+    </string>
+    <string name="calculatenaive3">
+<![CDATA[
   	Finally, we have to divide both results by the evidence, or ‘P(X)’. The evidence for both equations
 	is the same, and we can find the values we need within the ‘Total’ columns of the look-up tables. Therefore:
-	]]></string>
-	
-	<string name = "calculatenaive4"><![CDATA[
+	]]>
+    </string>
+    <string name="calculatenaive4">
+<![CDATA[
   	P(X) = P(Outlook=Sunny) * P(Temperature=Cool) * P(Humidity=High) * P(Wind=Strong)\n
 	P(X) = (5/14) * (4/14) * (7/14) * (6/14)\n
 	P(X) = 0.02186\n
-	]]></string>
-	
-	
-	<string name = "calculatenaive5"><![CDATA[
+	]]>
+    </string>
+    <string name="calculatenaive5">
+<![CDATA[
   	Then, dividing the results by this value:\n
 	P(Play=Yes | X) = 0.0053/0.02186 = 0.2424\n
 	P(Play=No | X) = 0.0206/0.02186 = 0.9421\n
-	]]></string>
-	
-	<string name = "calculatenaive6"><![CDATA[
+	]]>
+    </string>
+    <string name="calculatenaive6">
+<![CDATA[
   	So, given the probabilities, can we play a game or not? To do this, we look at both probabilities and see which once has the highest value, and that is our answer. Therefore:\n
 	P(Play=Yes | X) = 0.2424\n
 	P(Play=No | X) = 0.9421\n
-	]]></string>
-	
-	
-	<string name = "calculatenaive7"><![CDATA[
+	]]>
+    </string>
+    <string name="calculatenaive7">
+<![CDATA[
   	Since 0.9421 is greater than 0.2424 then the answer is ‘no’, we cannot play a game of tennis today.
-	]]></string>
-	
-	
-	<!-- Knn -->
-	<string name = "knnsimulprocess1"><![CDATA[
+	]]>
+    </string>
+
+    <!-- Knn -->
+    <string name="knnsimulprocess1">
+<![CDATA[
   	1. Determine parameter K = number of nearest neighbors
-	]]></string>
-	<string name = "knnsimulprocess2"><![CDATA[
+	]]>
+    </string>
+    <string name="knnsimulprocess2">
+<![CDATA[
   	2. Calculate the distance between the query-instance and all the training samples
-	]]></string>
-	<string name = "knnsimulprocess3"><![CDATA[
+	]]>
+    </string>
+    <string name="knnsimulprocess3">
+<![CDATA[
   	3.Sort the distance and determine nearest neighbors based on the K-th minimum distance
-	]]></string>
-	<string name = "knnsimulprocess4"><![CDATA[
+	]]>
+    </string>
+    <string name="knnsimulprocess4">
+<![CDATA[
   	4.Gather the category Y of the nearest neighbors
-	]]></string>
-	<string name = "knnsimulprocess5"><![CDATA[
+	]]>
+    </string>
+    <string name="knnsimulprocess5">
+<![CDATA[
   	5.Use simple majority of the category of nearest neighbors as the prediction value of the query instance
-	]]></string>
-	
-	<string name = "knnsimulexample1"><![CDATA[
+	]]>
+    </string>
+    <string name="knnsimulexample1">
+<![CDATA[
   	We have data from the questionnaires survey (to ask people opinion) and objective testing with two attributes (acid durability and strength) to classify whether a special paper tissue is good or not.\n 
   	Here is four training samples
-	]]></string>
-	
-	
-	<string name = "knnsimulexample2"><![CDATA[
+	]]>
+    </string>
+    <string name="knnsimulexample2">
+<![CDATA[
   	Now the factory produces a new paper tissue that pass laboratory test with X1 = 3 and X2 = 7.
-	]]></string>
-	<string name = "knnsimulexample3"><![CDATA[
+	]]>
+    </string>
+    <string name="knnsimulexample3">
+<![CDATA[
   	Without another expensive survey, can we guess what the classification of this new tissue is?
-	]]></string>
-	
-	
-	<string name = "knnsimulexample4"><![CDATA[
+	]]>
+    </string>
+    <string name="knnsimulexample4">
+<![CDATA[
   	Step 1. Determine parameter K = number of nearest neighbors
-	]]></string>
-	
-	<string name = "knnsimulexample5"><![CDATA[
+	]]>
+    </string>
+    <string name="knnsimulexample5">
+<![CDATA[
   	Step 2. Calculate the Distance between query-instance and all training samples\n
   	Coordinate of query instance is (3, 7), instead of calculating the distance we compute square distance which is faster to calculate (without square root)
-	]]></string>
-	
-	<string name = "SimpsonWeight"><![CDATA[
+	]]>
+    </string>
+    <string name="SimpsonWeight">
+<![CDATA[
   	Of the 3 features we had, Weight was best. But while people who weigh over 160 are perfectly classified (as males), the under 160 people are not perfectly classified… So we simply recurse!\n\n
 	This time we find that we can split on Hair length, and we are done!
 
-	]]></string>
-	
-	<string name = "SimpsonMaleClass"><![CDATA[
+	]]>
+    </string>
+    <string name="SimpsonMaleClass">
+<![CDATA[
   	We need to keep the data around, just the test conditions.
 
-	]]></string>
-	
-	<string name = "isweight160"><![CDATA[
+	]]>
+    </string>
+    <string name="isweight160">
+<![CDATA[
   	is Weight <= 160?
-	]]></string>
-	
-	<string name = "ishairlength"><![CDATA[
+	]]>
+    </string>
+    <string name="ishairlength">
+<![CDATA[
   	is Hair length <= 2?
-	]]></string>
-	
-	<string name = "lookuptextpatient"><![CDATA[
+	]]>
+    </string>
+    <string name="lookuptextpatient">
+<![CDATA[
   	So here we have 4 attributes. What we need to do is to create “look-up tables” for each of these attributes,\n
   	 and write in the probability that the patient has flu based on this attribute. In these tables we have to 
   	 note that there are 5 cases of a patient having flu,\n
 	 and 3 cases of a patient not having a flu.
-	]]></string>
-	
-	<string name = "patienttesting"><![CDATA[
+	]]>
+    </string>
+    <string name="patienttesting">
+<![CDATA[
   	There is a new patient, and we want to know if the patient has flu or not, based on the patient’s \n
   	symptoms and the previous cases.\n\n\n
   	
   	So, this new instance is:
   	
 	
-	]]></string>
-	<string name = "patientmultiply"><![CDATA[
+	]]>
+    </string>
+    <string name="patientmultiply">
+<![CDATA[
   	Multiply all the probabilities for Flu=Yes such as:\n
 	P(X|Flu=Yes)P(Flu=Yes)\n\n
 	(3/5) * (1/5) * (2/5) * (1/5) * (5/8) = 
 	
-	]]></string>
-	
-	<string name = "textFluNoMultiply"><![CDATA[
+	]]>
+    </string>
+    <string name="textFluNoMultiply">
+<![CDATA[
   	P(X|Flu=No)P(Flu=No) \n\n
   	(1/3) * (2/3) * (1/3) * (2/3) * (3/8) =
-	]]></string>
-	
-	<string name = "assessmenttetobjectivesid3"><![CDATA[
+	]]>
+    </string>
+    <string name="assessmenttetobjectivesid3">
+<![CDATA[
   	DECISION TREE\n
 	1. To identify and arrange the correct step by step process in constructing a decision tree.\n
 	2. To classify and predict the output using the algorithm.\n
 	3.  To practice and test knowledge about the algorithm
-	]]></string>
-	
-	
-	<string name = "problemsimpson"><![CDATA[
+	]]>
+    </string>
+    <string name="problemsimpson">
+<![CDATA[
   	What is comic’s gender? \n
   	Is comic a male or a female?
-	]]></string>
-	
-	<string name = "problempatient"><![CDATA[
+	]]>
+    </string>
+    <string name="simpsonresult">
+<![CDATA[
+  	After getting the attributes of Comic \n
+  	we can now classify Comic as a Male
+  	
+	]]>
+    </string>
+    <string name="tablesimpson">
+<![CDATA[
+  	Based on the table below \n
+  	Can you classify Comic’s gender based on his attributes?
+	]]>
+    </string>
+    <string name="problempatient">
+<![CDATA[
   	Do Doctor believe that a patient with the following symptoms has a flu?
-	]]></string>
-	
-	<string name = "whatalgoyouwant"><![CDATA[
+	]]>
+    </string>
+    <string name="whatalgoyouwant">
+<![CDATA[
   	What algorithm you want \nto solve this problem?
-	]]></string>
-	
-	
-</resources>
+	]]>
+    </string>
 
+</resources>

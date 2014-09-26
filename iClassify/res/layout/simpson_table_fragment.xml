@@ -20,12 +20,15 @@
 	    android:textSize="23sp" />
     <!-- table -->
     <ImageView 
-        android:id="@+id/proceduresimpfamily"
+        android:id="@+id/simpsoneTable"
         android:layout_below="@+id/simpsonAnimatedTextView"
-        android:layout_width="230dp"
-        android:layout_height="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/simpsonfamily"/>
+        android:layout_marginTop="30dp"
+        android:background="@drawable/simpsonstable"/>
     
     <Button
         android:id="@+id/nextProcBt"    

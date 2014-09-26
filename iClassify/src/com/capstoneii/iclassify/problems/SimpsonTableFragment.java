@@ -15,7 +15,7 @@ import com.capstoneii.iclassify.library.TypewriterTextView;
 
 public class SimpsonTableFragment  extends Fragment {
 	 SecretTextView secretTextView;
-	 ImageView proceduresimpfamily;
+	 ImageView simpsoneTable;
 	 Button nextProcBt;
 	  @Override
 	    public void onCreate(Bundle savedInstanceState) {
@@ -26,13 +26,11 @@ public class SimpsonTableFragment  extends Fragment {
 			 View rootView = inflater .inflate(R.layout.simpson_table_fragment, container, false);  
 			 	
 			 final TypewriterTextView simpsonAnimatedTextView = (TypewriterTextView)rootView.findViewById(R.id.simpsonAnimatedTextView);
-			 simpsonAnimatedTextView.setTypewriterText(getString(R.string.SimpsonWeight));
-			
-			 proceduresimpfamily = (ImageView) rootView.findViewById(R.id.proceduresimpfamily);
-			 proceduresimpfamily.setVisibility(View.INVISIBLE);
+			 simpsonAnimatedTextView.setTypewriterText(getString(R.string.tablesimpson));
 			 
+			 simpsoneTable = (ImageView) rootView.findViewById(R.id.simpsoneTable);
+			 simpsoneTable.setVisibility(View.VISIBLE);
 			 nextProcBt = (Button) rootView.findViewById(R.id.nextProcBt);
-			 
 			 nextProcBt.setOnClickListener(new View.OnClickListener()
 		        {
 		            @Override
@@ -46,10 +44,8 @@ public class SimpsonTableFragment  extends Fragment {
 		 	            	ft.commit();
 		            }
 		        });
-			 
 			 return rootView;
 		    }
-	       
 	        public void onBackPressed(){
 	        	
 	        }

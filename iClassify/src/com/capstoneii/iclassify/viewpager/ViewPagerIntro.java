@@ -9,44 +9,46 @@ import android.support.v4.view.ViewPager;
 
 import com.capstoneii.iclassify.R;
 
-
 public class ViewPagerIntro extends FragmentActivity {
 
-	
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.viewpager_main);
-        
-      
-        ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
-        pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.viewpager_main);
 
-    private class MyPagerAdapter extends FragmentPagerAdapter {
+		ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
+		pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+	}
 
-        public MyPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
+	private class MyPagerAdapter extends FragmentPagerAdapter {
 
-        @Override
-        public Fragment getItem(int pos) {
-            switch(pos) {
+		public MyPagerAdapter(FragmentManager fm) {
+			super(fm);
+		}
 
-                case 0: return FirstFragment.newInstance("FirstFragment, Instance 1");
-                case 1: return SecondFragment.newInstance("SecondFragment, Instance 1");
-                case 2: return ThirdFragment.newInstance("ThirdFragment, Instance 1");
-                case 3: return FourthFragment.newInstance("FourthFragment, Instance 2");
-                case 4: return FifthFragment.newInstance("FifthFragment, Instance 2");
+		@Override
+		public Fragment getItem(int pos) {
+			switch (pos) {
 
-                default: return FifthFragment.newInstance("FifthFragment, Default");
-            }
-        }
+			case 0:
+				return FirstFragment.newInstance("FirstFragment, Instance 1");
+			case 1:
+				return SecondFragment.newInstance("SecondFragment, Instance 1");
+			case 2:
+				return ThirdFragment.newInstance("ThirdFragment, Instance 1");
+			case 3:
+				return FourthFragment.newInstance("FourthFragment, Instance 2");
+			case 4:
+				return FifthFragment.newInstance("FifthFragment, Instance 2");
 
-        
-        @Override
-        public int getCount() {
-            return 5;
-        }
-    }
+			default:
+				return FifthFragment.newInstance("FifthFragment, Default");
+			}
+		}
+
+		@Override
+		public int getCount() {
+			return 5;
+		}
+	}
 }

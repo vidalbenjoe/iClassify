@@ -20,158 +20,161 @@ import com.capstoneii.iclassify.videos.IntroductionVideo;
 
 import descisiondiscussflip.DescTreeLayoutActivity;
 
-
 @SuppressLint("NewApi")
 public class MainActivityController extends Fragment {
-Button first_bt;
+	Button first_bt;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	}
-	 public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-	    {
-		 View rootView = inflater .inflate(R.layout.layout_inflate, container, false);  
-	       
 
-		 	FancyCoverFlow fancyCoverFlow = (FancyCoverFlow) rootView.findViewById(R.id.fancyCoverFlow);
-	        fancyCoverFlow.setReflectionEnabled(true);
-	        fancyCoverFlow.setReflectionRatio(0.3f);
-	        fancyCoverFlow.setReflectionGap(0);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View rootView = inflater.inflate(R.layout.layout_inflate, container,
+				false);
 
-	       fancyCoverFlow.setAdapter(new ViewGroupExampleAdapter());
-	        
-		 return rootView;
-	    }
-	 
-	 private static class ViewGroupExampleAdapter extends FancyCoverFlowAdapter {
+		FancyCoverFlow fancyCoverFlow = (FancyCoverFlow) rootView
+				.findViewById(R.id.fancyCoverFlow);
+		fancyCoverFlow.setReflectionEnabled(true);
+		fancyCoverFlow.setReflectionRatio(0.3f);
+		fancyCoverFlow.setReflectionGap(0);
 
-	        // =============================================================================
-	        // Private members
-	        // =============================================================================
+		fancyCoverFlow.setAdapter(new ViewGroupExampleAdapter());
 
-		 private int[] images = {R.drawable.chooseintro, 
-				 R.drawable.choosedt,
-				 R.drawable.chooseknn,
-				 R.drawable.choosenb,};
-	        // =============================================================================
-	        // Supertype overrides
-	        // =============================================================================
-		
-		
-	
-		 
-	        @Override
-	        public int getCount() {
-	            return images.length;
-	        }
+		return rootView;
+	}
 
-	        @Override
-	        public Integer getItem(int i) {
-	            return images[i];
-	        }
+	private static class ViewGroupExampleAdapter extends FancyCoverFlowAdapter {
 
-	        @Override
-	        public long getItemId(int i) {
-	            return i;
-	        }
+		// =============================================================================
+		// Private members
+		// =============================================================================
 
-	        @Override
-	        public View getCoverFlowItem(final int i, View reuseableView, ViewGroup viewGroup) {
-	            CustomViewGroup customViewGroup = null;
+		private int[] images = { R.drawable.chooseintro, R.drawable.choosedt,
+				R.drawable.chooseknn, R.drawable.choosenb, };
 
-	            if (reuseableView != null) {
-	                customViewGroup = (CustomViewGroup) reuseableView;
-	            } else {
-	                customViewGroup = new CustomViewGroup(viewGroup.getContext());
-	                customViewGroup.setLayoutParams(new FancyCoverFlow.LayoutParams(300, 600));
-	            }
+		// =============================================================================
+		// Supertype overrides
+		// =============================================================================
 
-	            customViewGroup.getImageView().setImageResource(this.getItem(i));
-	          
-	            
-	            customViewGroup.setOnClickListener(new View.OnClickListener() {
-	            public void onClick(View InputFragmentView) {
-	            
-	            switch(i){
-	            case 0:
-	            	Intent intent0 = new Intent(InputFragmentView.getContext(), IntroductionVideo.class);
-	           	 	InputFragmentView.getContext().startActivity(intent0);
-	            	break;
-	            	
-	            case 1:
-	            	Intent intent1 = new Intent(InputFragmentView.getContext(), DescTreeLayoutActivity.class);
-	           	 	InputFragmentView.getContext().startActivity(intent1);
-	            	break;
-	            	
-	            case 2:
-	           	 	Intent intent2 = new Intent(InputFragmentView.getContext(), KNearestLayoutActivity.class);
-	           	 	InputFragmentView.getContext().startActivity(intent2);
-	            	break;
-	            	
-	            case 3:
-	            	 Intent intent3 = new Intent(InputFragmentView.getContext(), NativeBayesLayoutActivity.class);
-	            	 InputFragmentView.getContext().startActivity(intent3);
-	            	break;
-	            	
-	            default:
-	            	break;
-	            
-	            }
-	            }
-	            });
-	            return customViewGroup;
-	        }
+		@Override
+		public int getCount() {
+			return images.length;
+		}
 
-	    }
+		@Override
+		public Integer getItem(int i) {
+			return images[i];
+		}
 
-	 
-	    private static class CustomViewGroup extends LinearLayout {
-	    	
-	        // =============================================================================
-	        // Child views
-	        // =============================================================================
+		@Override
+		public long getItemId(int i) {
+			return i;
+		}
 
-	        private ImageView imageView;
+		@Override
+		public View getCoverFlowItem(final int i, View reuseableView,
+				ViewGroup viewGroup) {
+			CustomViewGroup customViewGroup = null;
 
-	        private Button button;
+			if (reuseableView != null) {
+				customViewGroup = (CustomViewGroup) reuseableView;
+			} else {
+				customViewGroup = new CustomViewGroup(viewGroup.getContext());
+				customViewGroup
+						.setLayoutParams(new FancyCoverFlow.LayoutParams(300,
+								600));
+			}
 
-	        // =============================================================================
-	        // Constructor
-	        // =============================================================================
+			customViewGroup.getImageView().setImageResource(this.getItem(i));
 
-	        private CustomViewGroup(Context context) {
-	            super(context);
-	           
-	            this.setOrientation(VERTICAL);
-	            this.setWeightSum(5);
+			customViewGroup.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View InputFragmentView) {
 
-	            this.imageView = new ImageView(context);
-	            this.button = new Button(context);
+					switch (i) {
+					case 0:
+						Intent intent0 = new Intent(InputFragmentView
+								.getContext(), IntroductionVideo.class);
+						InputFragmentView.getContext().startActivity(intent0);
+						break;
 
-	            LayoutParams layoutParams = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+					case 1:
+						Intent intent1 = new Intent(InputFragmentView
+								.getContext(), DescTreeLayoutActivity.class);
+						InputFragmentView.getContext().startActivity(intent1);
+						break;
 
-	            this.imageView.setLayoutParams(layoutParams);
-	            this.button.setLayoutParams(layoutParams);
+					case 2:
+						Intent intent2 = new Intent(InputFragmentView
+								.getContext(), KNearestLayoutActivity.class);
+						InputFragmentView.getContext().startActivity(intent2);
+						break;
 
-	            this.imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-	            this.imageView.setAdjustViewBounds(true);
+					case 3:
+						Intent intent3 = new Intent(InputFragmentView
+								.getContext(), NativeBayesLayoutActivity.class);
+						InputFragmentView.getContext().startActivity(intent3);
+						break;
 
-	           // this.button.setText("More Info");
-	           // this.button.setId(0);
-	       
-	          
+					default:
+						break;
 
-	            this.addView(this.imageView);
-	           // this.addView(this.button);
-	        }
+					}
+				}
+			});
+			return customViewGroup;
+		}
 
-	        // =============================================================================
-	        // Getters
-	        // =============================================================================
+	}
 
-	        private ImageView getImageView() {
-	            return imageView;
-	        }
-	    }
-	 
+	private static class CustomViewGroup extends LinearLayout {
+
+		// =============================================================================
+		// Child views
+		// =============================================================================
+
+		private ImageView imageView;
+
+		private Button button;
+
+		// =============================================================================
+		// Constructor
+		// =============================================================================
+
+		private CustomViewGroup(Context context) {
+			super(context);
+
+			this.setOrientation(VERTICAL);
+			this.setWeightSum(5);
+
+			this.imageView = new ImageView(context);
+			this.button = new Button(context);
+
+			LayoutParams layoutParams = new LayoutParams(
+					ViewGroup.LayoutParams.MATCH_PARENT,
+					ViewGroup.LayoutParams.MATCH_PARENT);
+
+			this.imageView.setLayoutParams(layoutParams);
+			this.button.setLayoutParams(layoutParams);
+
+			this.imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+			this.imageView.setAdjustViewBounds(true);
+
+			// this.button.setText("More Info");
+			// this.button.setId(0);
+
+			this.addView(this.imageView);
+			// this.addView(this.button);
+		}
+
+		// =============================================================================
+		// Getters
+		// =============================================================================
+
+		private ImageView getImageView() {
+			return imageView;
+		}
+	}
+
 }

@@ -179,13 +179,23 @@
         android:background="@drawable/male"
         android:visibility="invisible"/>
     
-    <Button
+   <Button
 	     android:id="@+id/simpsonNextbt"
 	     android:layout_width="200dp"
     	 android:layout_height="60dp"
     	 android:layout_centerHorizontal="true"
     	 android:layout_alignParentBottom="true"
     	 android:layout_marginBottom="40dp"
-    	 android:background="@drawable/backtomainmenu"/>
+    	 android:background="@drawable/simulnextbt"/> 
+    	 
+    	 
+    <!-- <Button
+	     android:id="@+id/simpsonNextbt"
+	     android:layout_width="200dp"
+    	 android:layout_height="60dp"
+    	 android:layout_centerHorizontal="true"
+    	 android:layout_alignParentBottom="true"
+    	 android:layout_marginBottom="40dp"
+    	 android:background="@drawable/backtomainmenu"/> -->
     
 </RelativeLayout>
