@@ -10,7 +10,6 @@ android.support.v4.app.ActionBarDrawerToggle:
     private static final int ID_HOME
     246:255:public void setDrawerIndicatorEnabled(boolean)
     262:262:public boolean isDrawerIndicatorEnabled()
-    289:297:public boolean onOptionsItemSelected(android.view.MenuItem)
 android.support.v4.app.ActionBarDrawerToggleHoneycomb:
     private static final java.lang.String TAG
     39:92:ActionBarDrawerToggleHoneycomb()
@@ -1293,9 +1292,6 @@ android.support.v4.widget.DrawerLayout:
     394:400:public void setDrawerLockMode(int,android.view.View)
     410:417:public int getDrawerLockMode(int)
     540:549:void moveDrawerToOffset(android.view.View,float)
-    1044:1050:public void openDrawer(int)
-    1084:1090:public void closeDrawer(int)
-    1150:1154:public boolean isDrawerVisible(int)
 android.support.v4.widget.DrawerLayout$LayoutParams:
     1509:1511:public DrawerLayout$LayoutParams(int,int,int)
 android.support.v4.widget.DrawerLayout$SimpleDrawerListener
@@ -2213,11 +2209,11 @@ at.technikum.mti.fancycoverflow.FancyCoverFlow:
     public static final float SCALEDOWN_GRAVITY_CENTER
     public static final float SCALEDOWN_GRAVITY_BOTTOM
 at.technikum.mti.fancycoverflow.FancyCoverFlow$LayoutParams:
-    370:371:public FancyCoverFlow$LayoutParams(android.content.Context,android.util.AttributeSet)
-    378:379:public FancyCoverFlow$LayoutParams(android.view.ViewGroup$LayoutParams)
+    371:372:public FancyCoverFlow$LayoutParams(android.content.Context,android.util.AttributeSet)
+    379:380:public FancyCoverFlow$LayoutParams(android.view.ViewGroup$LayoutParams)
 at.technikum.mti.fancycoverflow.FancyCoverFlowItemWrapper:
-    91:93:public FancyCoverFlowItemWrapper(android.content.Context,android.util.AttributeSet)
-    96:98:public FancyCoverFlowItemWrapper(android.content.Context,android.util.AttributeSet,int)
+    92:94:public FancyCoverFlowItemWrapper(android.content.Context,android.util.AttributeSet)
+    97:99:public FancyCoverFlowItemWrapper(android.content.Context,android.util.AttributeSet,int)
 at.technikum.mti.fancycoverflow.R:
     9:9:public R()
 at.technikum.mti.fancycoverflow.R$attr
@@ -2226,9 +2222,9 @@ at.technikum.mti.fancycoverflow.R$string
 at.technikum.mti.fancycoverflow.R$styleable:
     24:24:public R$styleable()
 bayesdiscussflip.NativeBayesAdapter:
-    38:38:public int getRepeatCount()
-    42:43:public void setRepeatCount(int)
-    81:84:public void removeData(int)
+    40:40:public int getRepeatCount()
+    44:45:public void setRepeatCount(int)
+    82:85:public void removeData(int)
 bayesdiscussflip.NativeBayesData:
     9:9:public NativeBayesData()
 com.aphidmobile.flip.Card:
@@ -2300,7 +2296,7 @@ com.aphidmobile.utils.UI:
     57:62:public static java.lang.Object callInMainThread(java.util.concurrent.Callable)
     73:73:public static java.lang.Object findViewById(android.app.Activity,int)
 com.capstoneii.iclassify.ActivityAnimator:
-    9:10:public void unzoomAnimation(android.app.Activity)
+    7:8:public void unzoomAnimation(android.app.Activity)
 com.capstoneii.iclassify.BuildConfig
 com.capstoneii.iclassify.MainActivityController:
     android.widget.Button first_bt
@@ -2321,13 +2317,11 @@ com.capstoneii.iclassify.R$raw
 com.capstoneii.iclassify.R$string
 com.capstoneii.iclassify.R$style
 com.capstoneii.iclassify.R$styleable:
-    2335:2335:public R$styleable()
+    2406:2406:public R$styleable()
 com.capstoneii.iclassify.SplashScreenActivity:
     android.graphics.drawable.AnimationDrawable frameAnimation
 com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity:
-    207:209:public void CheckDrop()
-com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$CheckDroped:
-    216:216:protected void onError(java.lang.Exception)
+    209:211:public void CheckDrop()
 com.capstoneii.iclassify.library.ExpandableButtonMenu:
     private static final java.lang.String TAG
     private static final float DEFAULT_BOTTOM_PADDING
@@ -2347,13 +2341,12 @@ com.capstoneii.iclassify.library.ExpandableButtonMenu:
     252:252:public boolean isAllowOverlayClose()
     42:42:static synthetic int[] $SWITCH_TABLE$com$capstoneii$iclassify$library$ExpandableButtonMenu$MenuButton()
 com.capstoneii.iclassify.library.ExpandableMenuOverlay:
-    private static final java.lang.String TAG
     private static final float DEFAULT_DIM_AMOUNT
 com.capstoneii.iclassify.library.PopupHelper
 com.capstoneii.iclassify.library.PopupHelper$1
 com.capstoneii.iclassify.library.ScreenHelper:
     15:15:public ScreenHelper()
-    50:51:public static float dpToPx(android.content.Context,int)
+    51:52:public static float dpToPx(android.content.Context,int)
 com.capstoneii.iclassify.library.Titanic:
     17:17:public android.animation.Animator$AnimatorListener getAnimatorListener()
     21:22:public void setAnimatorListener(android.animation.Animator$AnimatorListener)
@@ -2369,22 +2362,39 @@ com.capstoneii.iclassify.library.TypewriterTextView:
     private static final float TEXT_CHARACTER_DELAY
     private static final int TEXT_CHARACTER_DELAY_MS
     39:40:public void snapToEnd()
+com.capstoneii.iclassify.problems.SimpsonFinalResult:
+    com.capstoneii.iclassify.library.SecretTextView secretTextView
+    68:68:public void onBackPressed()
+com.capstoneii.iclassify.problems.SimpsonMaleClassifier:
+    com.capstoneii.iclassify.library.SecretTextView secretTextView
+    android.view.animation.Animation animSideUp
+com.capstoneii.iclassify.problems.SimpsonTableFragment:
+    com.capstoneii.iclassify.library.SecretTextView secretTextView
+    80:80:public void onBackPressed()
+com.capstoneii.iclassify.problems.SimpsonsDecisionTreeFragment:
+    116:116:public void onBackPressed()
 com.capstoneii.iclassify.problems.SimpsonsNextProcedure:
     com.capstoneii.iclassify.library.SecretTextView secretTextView
+    72:72:public void onBackPressed()
+com.capstoneii.iclassify.problems.chooseAlgoSimpson:
+    283:283:public void onBackPressed()
+com.capstoneii.iclassify.problems.patient.MainFragmentPatient:
+    android.view.animation.Animation clock
+    219:219:public void onBackPressed()
 com.capstoneii.iclassify.simulation.desiciontree.SimulCalculateActivity:
     int total
 com.capstoneii.iclassify.simulation.desiciontree.SimulDatasetActivity:
-    153:161:public void onBackPressed()
+    84:93:public void onBackPressed()
 com.capstoneii.iclassify.simulation.desiciontree.SimulDecisionResults:
     public java.lang.String videoFile
-    81:85:public void showPopup(android.view.View)
+    77:81:public void showPopup(android.view.View)
 com.capstoneii.iclassify.simulation.desiciontree.SimulHeirarchyDataActivity
 com.capstoneii.iclassify.simulation.desiciontree.SimulProblemActivity:
     64:72:public void onBackPressed()
 com.capstoneii.iclassify.simulation.desiciontree.SimulProcessIntroActivity:
-    61:69:public void onBackPressed()
+    66:75:public void onBackPressed()
 com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity:
-    62:70:public void onBackPressed()
+    62:71:public void onBackPressed()
 com.capstoneii.iclassify.simulation.knn.SimulKnnPlotDataFragment
 com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity:
     android.view.animation.Animation left
@@ -2399,6 +2409,7 @@ com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity:
     android.widget.TextView simulprocess4
     android.widget.TextView simulprocess5
     android.view.animation.Animation animSideDown
+    96:96:public void onBackPressed()
 com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset:
     android.widget.ImageView factoryimg
     android.widget.ImageView tissueimg
@@ -2407,10 +2418,12 @@ com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue:
     android.widget.ImageView factoryimg
     android.widget.ImageView tissueimg
 com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesCalculateFragment
+com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment:
+    48:48:public void onBackPressed()
 com.capstoneii.iclassify.videos.IntroductionVideo:
     51:54:public void onCompletion(android.media.MediaPlayer)
 com.capstoneii.iclassify.videos.VideoMenuActivity:
-    120:123:public void onCompletion(android.media.MediaPlayer)
+    118:121:public void onCompletion(android.media.MediaPlayer)
 com.inqbarna.tablefixheaders.adapters.BaseTableAdapter:
     30:31:public void notifyDataSetChanged()
     39:40:public void notifyDataSetInvalidated()
@@ -2773,8 +2786,8 @@ descisiondiscussflip.DescTreeAdapter:
 descisiondiscussflip.TopicData:
     10:10:public TopicData()
 drawer.RowItem:
-    17:18:public void setTitle(java.lang.String)
-    25:26:public void setIcon(int)
+    18:19:public void setTitle(java.lang.String)
+    26:27:public void setIcon(int)
 knearestdiscussflip.KNearestAdapter:
     39:39:public int getRepeatCount()
     43:44:public void setRepeatCount(int)

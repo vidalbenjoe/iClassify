@@ -34,7 +34,7 @@ public class SimpsonMaleClassifier extends Fragment {
 				R.layout.simpson_male_classifier_layout, container, false);
 
 		animationZoom = AnimationUtils.loadAnimation(getActivity(),
-				R.anim.anim_zoom_in);
+				R.anim.unzoom_in);
 		animSideDown = AnimationUtils.loadAnimation(getActivity()
 				.getApplicationContext(), R.anim.slide_down);
 

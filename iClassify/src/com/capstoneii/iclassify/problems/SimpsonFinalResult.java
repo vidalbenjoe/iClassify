@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -20,9 +22,10 @@ import com.capstoneii.iclassify.library.TypewriterTextView;
 
 public class SimpsonFinalResult extends Fragment {
 	SecretTextView secretTextView;
-	ImageView simpsoneTable;
+	ImageView simpsoneTable,comictable;
 	Button backtomain;
-
+	Animation animationZoom;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,7 +35,11 @@ public class SimpsonFinalResult extends Fragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.simpson_final_result_layout,
 				container, false);
-
+		animationZoom = AnimationUtils.loadAnimation(getActivity(),
+				R.anim.unzoom_in);
+		comictable = (ImageView) rootView.findViewById(R.id.comictable);
+		comictable.startAnimation(animationZoom);
+		
 		final TypewriterTextView simpsonAnimatedTextView = (TypewriterTextView) rootView
 				.findViewById(R.id.simpsonAnimatedTextView);
 		simpsonAnimatedTextView

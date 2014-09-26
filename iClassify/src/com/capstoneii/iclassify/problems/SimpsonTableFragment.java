@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.SecretTextView;
@@ -47,8 +48,11 @@ public class SimpsonTableFragment  extends Fragment {
 						dialog.getWindow().setBackgroundDrawable(
 								new ColorDrawable(
 										android.graphics.Color.TRANSPARENT));
-						Button cadbtnNext = (Button) dialog.findViewById(R.id.cadbtnNext);
 						
+						TextView nameof = (TextView) dialog.findViewById(R.id.nameof);
+						nameof.setText("Comic's Attribute");
+						
+						Button cadbtnNext = (Button) dialog.findViewById(R.id.cadbtnNext);
 						dialog.show();
 						
 						cadbtnNext.setOnClickListener(new View.OnClickListener()

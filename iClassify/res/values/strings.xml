@@ -399,15 +399,14 @@
     </string>
     <string name="problemsimpson">
 <![CDATA[
-  	What is comic’s gender? \n
-  	Is comic a male or a female?
+  	What is Comic’s gender? \n
+  	Is Comic a male or a female?
 	]]>
     </string>
     <string name="simpsonresult">
 <![CDATA[
-  	After getting the attributes of Comic \n
-  	we can now classify Comic as a Male
-  	
+  	After getting Comic’s attribute \n
+  	We can now classify Comic as a Male
 	]]>
     </string>
     <string name="tablesimpson">
