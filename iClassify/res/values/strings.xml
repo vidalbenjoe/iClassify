@@ -425,5 +425,10 @@
   	What algorithm you want \nto solve this problem?
 	]]>
     </string>
+    
+    <string name="jumbleid3question1">
+        It characterizes the impurity of an arbitrary 
+		collection of examples.</string>
+    
 
 </resources>

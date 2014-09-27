@@ -1,12 +1,16 @@
 package com.capstoneii.iclassify.assessment.decisionid3;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.ClipData;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -20,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.SplashScreenActivity;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
 public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends
@@ -28,7 +33,8 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends
 	int numDragged = 0;
 	// text views being dragged and dropped onto
 	private TextView option1, option2, option3, option4, choice1;
-
+	private static String TAG = SplashScreenActivity.class.getName();
+	private static long SLEEP_TIME = 1; // Sleep for some time
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -73,7 +79,6 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends
 			}
 		});
 	}
-
 	/**
 	 * ChoiceTouchListener will handle touch events on draggable views
 	 * 
@@ -205,10 +210,10 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends
 		}
 	}
 
-	public void CheckDrop() {
+/*	public void CheckDrop() {
 		new CheckDroped().execute();
 
-	}
+	}*/
 
 	private class CheckDroped extends AsyncTask<Void, Void, Void> {
 		private ProgressDialog progress = null;
@@ -223,9 +228,7 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends
 				e.printStackTrace();
 			}
 			return null;
-
 		}
-
 		@Override
 		protected void onCancelled() {
 			super.onCancelled();
@@ -240,7 +243,6 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends
 			progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 			progress.setIndeterminate(true);
 			super.onPreExecute();
-
 		}
 
 		@Override
@@ -254,14 +256,41 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends
 		protected void onProgressUpdate(Void... values) {
 			super.onProgressUpdate(values);
 		}
-
 	}
 
 	public void NextAssess() {
+		//http://www.java2s.com/Open-Source/Java_Open_Source_App/Game/Puzzle.htm
+		//http://www.java2s.com/Open-Source/Android_Free_Code/Game/List_of_Free_code_Game.htm
+		
+		/*Toast.makeText(DecisionTreeAssessmentDynamicFirstQuestionActivity.this,
+				R.string.assessmenttetobjectivesid3, Toast.LENGTH_SHORT).show();*/
+		IntentLauncher launcher = new IntentLauncher();
+		launcher.start();
+	}
+	
+	
+	private class IntentLauncher extends Thread {
+		@Override
+		/**
+		 * Sleep for some time and than start new activity.
+		 */
+		public void run() {
+			try {
+				// Sleeping
 
-		Toast.makeText(DecisionTreeAssessmentDynamicFirstQuestionActivity.this,
-				R.string.assessmenttetobjectivesid3, Toast.LENGTH_SHORT).show();
+				Thread.sleep(SLEEP_TIME * 800);
+
+			} catch (Exception e) {
+				Log.e(TAG, e.getMessage());
+			}
+			Intent intent = new Intent(DecisionTreeAssessmentDynamicFirstQuestionActivity.this,
+					DecisionTreeAssessmentJumbleWord.class);
+			DecisionTreeAssessmentDynamicFirstQuestionActivity.this.startActivity(intent);
+			DecisionTreeAssessmentDynamicFirstQuestionActivity.this.finish();
+			
+		}
 
 	}
+
 
 }

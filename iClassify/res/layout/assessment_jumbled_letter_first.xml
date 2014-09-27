@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundblur"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/jumblequestionText"
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentTop="true"
+        android:shadowColor="@android:color/black"
+	    android:shadowDx="1"
+	    android:shadowDy="1"
+	    android:shadowRadius="2"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:ems="10"/>
+    
+    
+    <LinearLayout
+    android:id="@+id/linearjumbler"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_centerInParent="true"
+    android:gravity="center" >
+
+    <ImageView
+        android:id="@+id/imgt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/jumblet"
+        android:layout_margin="5dp" />
+
+    <ImageView
+        android:id="@+id/imgr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/jumbler"
+        android:layout_margin="5dp"/>
+    
+    <ImageView
+        android:id="@+id/imgy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/jumbley"
+        android:layout_margin="5dp"/>
+    
+    <ImageView
+        android:id="@+id/imgp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/jumblep"
+        android:layout_margin="5dp"/>
+    
+     <ImageView
+        android:id="@+id/imgn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/jumblen"
+        android:layout_margin="5dp"/>
+     
+      <ImageView
+        android:id="@+id/imge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/jumblee"
+        android:layout_margin="5dp"/>
+      
+      
+       <ImageView
+        android:id="@+id/imgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/jumbleo"
+        android:layout_margin="5dp"/>
+
+</LinearLayout>
+    
+    <EditText 
+        android:id="@+id/jumbleedittext"
+        android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_height="70dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:ems="10"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/linearjumbler"
+        android:background="@drawable/roundededittext"
+        android:padding="12dp"/>
+    
+    
+     <LinearLayout
+    android:id="@+id/checkbuttons"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/jumbleedittext"
+    android:layout_alignParentRight="true"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="30dp" >
+
+    <Button
+        android:id="@+id/checkbt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/checkpressed"
+        android:layout_margin="5dp" />
+    
+    <Button
+        android:id="@+id/clearbt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/clearbtpressed"
+        android:layout_margin="5dp" />
+
+
+</LinearLayout>
+
+</RelativeLayout>

@@ -233,13 +233,11 @@ class chooseAlgoSimpson extends Fragment {
 		simpsonID3BT = (Button) rootView.findViewById(R.id.catsheepBT);
 		simpsonKNNBT = (Button) rootView.findViewById(R.id.patientBT);
 		simpsonNBBT = (Button) rootView.findViewById(R.id.simpsonBT);
-		simpsonNBBT.setVisibility(View.INVISIBLE);
-
+		simpsonNBBT.setVisibility(View.GONE);
 		simpsonID3BT.setText("Decision Tree");
 		simpsonKNNBT.setText("K -  Nearest");
 		simpsonNBBT.setText("Naive Bayesian");
-		simpsonNBBT.setVisibility(View.GONE);
-
+		
 		chooseTopic = (Button) rootView.findViewById(R.id.chooseTopic);
 		chooseTopic.setVisibility(View.VISIBLE);
 

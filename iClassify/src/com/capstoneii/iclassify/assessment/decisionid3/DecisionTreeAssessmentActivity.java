@@ -231,7 +231,6 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 				launcher.start();
 			}
 		});
-
 	}
 
 	private class IntentLauncher extends Thread {

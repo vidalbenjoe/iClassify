@@ -97,7 +97,10 @@
         <activity android:name="com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity"
            	android:theme="@style/Theme.AppCompat.Light"
            	/>
-       
+        
+         <activity android:name="com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord"
+           	android:theme="@style/Theme.AppCompat.Light"
+           	/>
        
        <activity android:name="com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity"
            	android:theme="@style/Theme.AppCompat.Light"

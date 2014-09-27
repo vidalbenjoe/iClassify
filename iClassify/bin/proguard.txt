@@ -61,7 +61,7 @@
 # view AndroidManifest.xml #generated:23
 -keep class com.capstoneii.iclassify.SplashScreenActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:105
+# view AndroidManifest.xml #generated:108
 -keep class com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:94
@@ -70,7 +70,10 @@
 # view AndroidManifest.xml #generated:97
 -keep class com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:102
+# view AndroidManifest.xml #generated:101
+-keep class com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord { <init>(...); }
+
+# view AndroidManifest.xml #generated:105
 -keep class com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity { <init>(...); }
 
 # view res/layout/choose_video_layout.xml #generated:50
@@ -100,7 +103,7 @@
 # view res/layout/simpson_table_fragment.xml #generated:8
 -keep class com.capstoneii.iclassify.library.TypewriterTextView { <init>(...); }
 
-# view AndroidManifest.xml #generated:108
+# view AndroidManifest.xml #generated:111
 -keep class com.capstoneii.iclassify.problems.SimpsonsDecisionTreeFragment { <init>(...); }
 
 # view AndroidManifest.xml #generated:72
