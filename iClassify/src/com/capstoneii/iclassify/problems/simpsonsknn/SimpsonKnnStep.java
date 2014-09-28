@@ -23,7 +23,6 @@ public class SimpsonKnnStep extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-        //http://people.revoledu.com/kardi/tutorial/KNN/KNN_Numerical-example.html
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	    {
 		 View rootView = inflater .inflate(R.layout.knnsimul_firstlayout, container, false);  

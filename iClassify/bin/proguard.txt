@@ -80,8 +80,8 @@
 # view res/layout/choose_video_layout.xml #generated:50
 -keep class com.capstoneii.iclassify.library.ExpandableMenuOverlay { <init>(...); }
 
-# view res/layout/knnsimul_firstlayout.xml #generated:45
-# view res/layout/knnsimul_firstlayout.xml #generated:59
+# view res/layout/knnsimul_firstlayout.xml #generated:46
+# view res/layout/knnsimul_firstlayout.xml #generated:60
 # view res/layout/secretetext_layout.xml #generated:11
 -keep class com.capstoneii.iclassify.library.SecretTextView { <init>(...); }
 

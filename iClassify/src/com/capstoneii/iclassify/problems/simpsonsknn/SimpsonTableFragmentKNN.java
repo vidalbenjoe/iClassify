@@ -9,8 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
@@ -26,13 +29,17 @@ public class SimpsonTableFragmentKNN extends Fragment {
 	    }
 	        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		    {
-			 View rootView = inflater .inflate(R.layout.simpson_table_fragment, container, false);  
-			 	
+			 View rootView = inflater .inflate(R.layout.simpson_table_fragment, container, false); 
+			 RelativeLayout relativeknnfirst = (RelativeLayout)rootView.findViewById(R.id.relativeknnfirst);
+			 relativeknnfirst.setBackgroundResource(R.drawable.backgroundblur);
+			 
+			 Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.unzoom_in);
 			 final TypewriterTextView simpsonAnimatedTextView = (TypewriterTextView)rootView.findViewById(R.id.simpsonAnimatedTextView);
 			 simpsonAnimatedTextView.setTypewriterText(getString(R.string.tablesimpson));
 			 
 			 simpsoneTable = (ImageView) rootView.findViewById(R.id.simpsoneTable);
 			 simpsoneTable.setVisibility(View.VISIBLE);
+			 simpsoneTable.startAnimation(animation);
 			 nextProcBt = (Button) rootView.findViewById(R.id.nextProcBt);
 			 nextProcBt.setOnClickListener(new View.OnClickListener()
 		        {
