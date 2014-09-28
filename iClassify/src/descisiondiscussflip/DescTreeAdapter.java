@@ -29,8 +29,6 @@ public class DescTreeAdapter extends BaseAdapter {
     inflater = LayoutInflater.from(context);
     desctreeData = new ArrayList<TopicData.Data>(TopicData.IMG_DESCRIPTIONS);
     
-  
-    
   }
 
   @Override
@@ -74,7 +72,6 @@ public class DescTreeAdapter extends BaseAdapter {
 
     .<ImageView>findViewById(layout, R.id.photo)
     .setImageBitmap(IO.readBitmap(inflater.getContext().getAssets(), data.imageFilename));
-    
     
     UI
         .<TextView>findViewById(layout, R.id.description)

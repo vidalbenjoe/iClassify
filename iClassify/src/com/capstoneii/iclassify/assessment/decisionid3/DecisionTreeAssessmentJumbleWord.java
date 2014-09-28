@@ -26,7 +26,6 @@ public class DecisionTreeAssessmentJumbleWord extends ActionBarActivity {
 	Button checkbt,clearbt;
 	Animation animationZoom,zoomOut;
 	
-	
 	  @Override
 	  protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
@@ -111,7 +110,7 @@ public class DecisionTreeAssessmentJumbleWord extends ActionBarActivity {
 			  String ans;
 			  ans = jumbleedittext.getText().toString();
 			  
-			  if (ans.contains("T")  || (ans.contains("t"))) {
+			  if (ans.contentEquals("T")  || (ans.contentEquals("t"))) {
 				  imgt.startAnimation(zoomOut);
 				  new CountDownTimer(500, 500) {
 					     public void onTick(long millisUntilFinished) {
@@ -124,7 +123,7 @@ public class DecisionTreeAssessmentJumbleWord extends ActionBarActivity {
 				}
 			  
 			  
-			  else if (ans.contains("R")  || (ans.contains("r"))) {
+			if (ans.contentEquals("R")  || (ans.contentEquals("r"))) {
 				  imgr.startAnimation(zoomOut);
 				  new CountDownTimer(500, 500) {
 					     public void onTick(long millisUntilFinished) {
@@ -137,7 +136,7 @@ public class DecisionTreeAssessmentJumbleWord extends ActionBarActivity {
 				}
 			  
 			  
-			  else if (ans.contains("Y")  || (ans.contains("y"))) {
+			  if (ans.contentEquals("Y")  || (ans.contentEquals("y"))) {
 				  imgy.startAnimation(zoomOut);
 				  new CountDownTimer(500, 500) {
 					     public void onTick(long millisUntilFinished) {
@@ -149,7 +148,7 @@ public class DecisionTreeAssessmentJumbleWord extends ActionBarActivity {
 					  }.start();
 				}
 			  
-			  else  if (ans.contains("P")  || (ans.contains("p"))) {
+			  if (ans.contentEquals("P")  || (ans.contentEquals("p"))) {
 				  imgp.startAnimation(zoomOut);
 				  new CountDownTimer(500, 500) {
 					     public void onTick(long millisUntilFinished) {
@@ -161,7 +160,7 @@ public class DecisionTreeAssessmentJumbleWord extends ActionBarActivity {
 					  }.start();
 				}
 			  
-			  else if (ans.contains("N")  || (ans.contains("n"))) {
+			 if (ans.contentEquals("N")  || (ans.contentEquals("n"))) {
 				  imgn.startAnimation(zoomOut);
 				  new CountDownTimer(500, 500) {
 					     public void onTick(long millisUntilFinished) {
@@ -173,7 +172,7 @@ public class DecisionTreeAssessmentJumbleWord extends ActionBarActivity {
 					  }.start();
 				}
 			  
-			  else if (ans.contains("E")  || (ans.contains("e"))) {
+			  if (ans.contentEquals("E")  || (ans.contentEquals("e"))) {
 				  imge.startAnimation(zoomOut);
 				  new CountDownTimer(500, 500) {
 					     public void onTick(long millisUntilFinished) {
@@ -185,7 +184,7 @@ public class DecisionTreeAssessmentJumbleWord extends ActionBarActivity {
 					  }.start();
 				}
 			  
-			  else if (ans.contains("O")  || (ans.contains("o"))) {
+			  if (ans.contentEquals("O")  || (ans.contentEquals("o"))) {
 				  imgo.startAnimation(zoomOut);
 				  new CountDownTimer(500, 500) {
 					     public void onTick(long millisUntilFinished) {
@@ -195,7 +194,7 @@ public class DecisionTreeAssessmentJumbleWord extends ActionBarActivity {
 					    	 imgo.setVisibility(View.GONE);
 					     }
 					  }.start();
-				}else{
+				}if(ans.isEmpty()){
 					imgt.setVisibility(View.VISIBLE);
 					imgr.setVisibility(View.VISIBLE);
 					imgy.setVisibility(View.VISIBLE);

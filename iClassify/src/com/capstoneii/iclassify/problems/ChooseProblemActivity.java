@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.problems.patient.MainFragmentPatient;
+import com.capstoneii.iclassify.problems.simpsonsknn.SimpsonTableFragmentKNN;
 import com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity;
 
 @SuppressLint("NewApi")
@@ -269,7 +270,13 @@ class chooseAlgoSimpson extends Fragment {
 		simpsonKNNBT.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View InputFragmentView) {
-				// KNearest
+				Fragment SimpsonTableFragmentKNN = new SimpsonTableFragmentKNN();
+				FragmentTransaction ft = getFragmentManager()
+						.beginTransaction();
+				ft.replace(R.id.frame_container, SimpsonTableFragmentKNN);
+				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+				ft.commit();
+			
 			}
 		});
 

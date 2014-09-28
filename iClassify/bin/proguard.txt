@@ -44,6 +44,7 @@
 -keep class android.support.v7.internal.widget.LinearLayoutICS { <init>(...); }
 
 # view v11\res/layout-v11/abc_action_bar_decor.xml #generated:17
+# view v11\res/layout-v11/abc_simple_decor.xml #generated:17
 -keep class android.support.v7.internal.widget.NativeActionModeAwareLayout { <init>(...); }
 
 # view res/layout/abc_action_bar_tab.xml #generated:17
@@ -97,6 +98,7 @@
 # view res/layout/naivesimul_firstlayout.xml #generated:26
 # view res/layout/naivesimul_secondlayout.xml #generated:44
 # view res/layout/naivesimul_thirdlayout.xml #generated:45
+# view res/layout/simpson_chart_layout.xml #generated:16
 # view res/layout/simpson_dt_next_proc_layout.xml #generated:8
 # view res/layout/simpson_final_result_layout.xml #generated:8
 # view res/layout/simpson_male_classifier_layout.xml #generated:8

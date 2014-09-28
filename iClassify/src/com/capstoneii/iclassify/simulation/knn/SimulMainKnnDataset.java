@@ -85,7 +85,6 @@ public class SimulMainKnnDataset extends Fragment {
 		            }
 		            });
 			 
-
 			 return rootView;
 			 
 		    }
