@@ -3,31 +3,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cadllMain"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="#01a3ff"
+    android:layout_height="500dp"
+    android:background="@drawable/backgroundblur"
     android:layout_marginLeft="25dp"
     android:layout_marginRight="25dp"
     android:orientation="vertical"
+    
     tools:ignore="ButtonOrder" >
 
     <FrameLayout
+        android:id="@+id/table_imgFrame"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
-
-        <ImageView
+        
+        <TextView 
+            android:id="@+id/nameof"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:textStyle="bold"/>
+        
+        <!-- <ImageView
             android:id="@+id/imageView_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|right"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
             android:clickable="true"
-            android:src="@drawable/buttonskip"
-            android:visibility="gone"
-            tools:ignore="ContentDescription" />
+            android:src="@drawable/comicavatar"
+            tools:ignore="ContentDescription" /> -->
+           <ImageView
+             android:id="@+id/imageView_close"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             tools:ignore="ContentDescription" />
     </FrameLayout>
-
-       
-
-
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,13 +49,13 @@
         android:orientation="vertical"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="30dp">
+        
         <Button
             android:id="@+id/cadbtnNext"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+       		android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_margin="10dp"
-            android:gravity="center"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/simulnextbt"

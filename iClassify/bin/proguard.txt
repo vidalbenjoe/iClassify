@@ -81,6 +81,8 @@
 
 # view res/layout/knnsimul_firstlayout.xml #generated:46
 # view res/layout/knnsimul_firstlayout.xml #generated:60
+# view res/layout/patient_main_layout.xml #generated:25
+# view res/layout/patient_main_layout.xml #generated:8
 # view res/layout/secretetext_layout.xml #generated:11
 -keep class com.capstoneii.iclassify.library.SecretTextView { <init>(...); }
 

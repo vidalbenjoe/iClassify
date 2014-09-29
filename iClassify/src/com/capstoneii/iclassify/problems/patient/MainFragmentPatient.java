@@ -1,6 +1,7 @@
 package com.capstoneii.iclassify.problems.patient;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.SecretTextView;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -21,13 +23,13 @@ import android.widget.Toast;
 
 @SuppressLint("NewApi")
 public class MainFragmentPatient extends Fragment {
-	TextView textHead, textFlu, textFluNo, ClickmeText;
+	SecretTextView textHead,textFlu; 
+	TextView textFluNo, ClickmeText;
 	EditText textFluNoTextBox, textFluTextBox;
-	ImageView adamImage;
+	ImageView adamImage,imageView_close,tableflu;
 	Button lookupbt;
 	int nextButton = 0;
-	Animation clock;
-
+	Animation clock,animation;
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	}
@@ -36,23 +38,41 @@ public class MainFragmentPatient extends Fragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.patient_main_layout,
 				container, false);
-
+		animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.unzoom_in);
+		 	
+		 	
 		lookupbt = (Button) rootView.findViewById(R.id.lookupbt);
 		textFluNoTextBox = (EditText) rootView
 				.findViewById(R.id.textFluNoTextBox);
 		textFluTextBox = (EditText) rootView.findViewById(R.id.textFluTextBox);
 
-		textHead = (TextView) rootView.findViewById(R.id.textHead);
-		textFlu = (TextView) rootView.findViewById(R.id.textFlu);
+		textHead = (SecretTextView) rootView.findViewById(R.id.textHead);
+		
+		textFlu = (SecretTextView) rootView.findViewById(R.id.textFlu);
+		
 		textFluNo = (TextView) rootView.findViewById(R.id.textFluNo);
 		textHead.setVisibility(View.VISIBLE);
 		textFlu.setVisibility(View.VISIBLE);
 		textHead.setText("Do I believe that a patient with the following symptoms has a flu?");
+		
+		textHead.setmDuration(1800);
+		textHead.setIsVisible(false);
+		textHead.toggle();
+		
+		
 		textFlu.setText("Flu?");
-
+		textFlu.setmDuration(1200);
+		textFlu.setIsVisible(false);
+		textFlu.toggle();
+		
+		tableflu = (ImageView) rootView.findViewById(R.id.tableflu);
+		tableflu.setImageResource(R.drawable.patientguesslookuptabe);
 		adamImage = (ImageView) rootView.findViewById(R.id.adamImage);
+		
+		adamImage.startAnimation(animation);
 		ClickmeText = (TextView) rootView.findViewById(R.id.ClickmeText);
 		ClickmeText.setText("Click Me");
+		ClickmeText.startAnimation(animation);
 		adamImage.setVisibility(View.VISIBLE);
 		adamImage.setBackgroundResource(R.drawable.adamdoc);
 		adamImage.setOnClickListener(new View.OnClickListener() {
@@ -66,12 +86,17 @@ public class MainFragmentPatient extends Fragment {
 
 				case 1:
 					textHead.setText("Lookup Table");
+					
 					textFlu.setText(R.string.lookuptextpatient);
-					textFlu.setVisibility(View.VISIBLE);
+					
 					textHead.setVisibility(View.VISIBLE);
+				
 					adamImage.setVisibility(View.INVISIBLE);
+					tableflu.setVisibility(View.GONE);
 					lookupbt.setVisibility(View.VISIBLE);
-					lookupbt.setText("Lookup");
+					lookupbt.setBackgroundResource(R.drawable.lookupgreen);
+					lookupbt.startAnimation(animation);
+					ClickmeText.setVisibility(View.GONE);
 					lookupbt.setOnClickListener(new View.OnClickListener() {
 						@Override
 						public void onClick(View InputFragmentView) {
@@ -85,6 +110,9 @@ public class MainFragmentPatient extends Fragment {
 											new ColorDrawable(
 													android.graphics.Color.TRANSPARENT));
 
+							imageView_close = (ImageView) dialog.findViewById(R.id.imageView_close);
+							imageView_close.setImageResource(R.drawable.patientlookuptablestart);
+							
 							Button cadbtnNext = (Button) dialog
 									.findViewById(R.id.cadbtnNext);
 							cadbtnNext
@@ -95,7 +123,9 @@ public class MainFragmentPatient extends Fragment {
 											dialog.dismiss();
 											textHead.setText("TESTING");
 											textFlu.setText(R.string.patienttesting);
-
+											textFlu.startAnimation(animation);
+											tableflu.setVisibility(View.VISIBLE);
+											
 											/*
 											 * set image computation for
 											 * adamImage X = (Chills=Yes, Runny
@@ -145,15 +175,19 @@ public class MainFragmentPatient extends Fragment {
 			// check if the user answers are correct
 
 			textFlu.setText(R.string.patientmultiply);// zoom animation
+			
 			textFluNo.setVisibility(View.VISIBLE);
 			textFluNo.setText(R.string.textFluNoMultiply);
-
+			
 			textFlu.setGravity(Gravity.LEFT);
 			textFluNo.setGravity(Gravity.LEFT);
 
 			textFluTextBox.setVisibility(View.VISIBLE);
 			textFluNoTextBox.setVisibility(View.VISIBLE);
 
+			textFlu.setVisibility(View.VISIBLE);
+			
+			tableflu.setVisibility(View.INVISIBLE);
 			adamImage.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View InputFragmentView) {
@@ -194,8 +228,28 @@ public class MainFragmentPatient extends Fragment {
 					}
 					if (getValueFluTextBox.equals("0.006")
 							|| (getvalueFluNoTextBox.equals("0.0185"))) {
-						Toast.makeText(getActivity().getApplicationContext(),
-								"Next Fragment", Toast.LENGTH_LONG).show();
+						
+					
+						final Dialog dialog = new Dialog(getActivity());
+						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+						dialog.setContentView(R.layout.correct_dialog);
+						dialog.getWindow().setBackgroundDrawable(
+								new ColorDrawable(
+										android.graphics.Color.TRANSPARENT));
+						ImageView correctcheck = (ImageView) dialog.findViewById(R.id.correctcheck);
+						
+						correctcheck.setOnClickListener(new View.OnClickListener() {
+							@Override
+							public void onClick(View InputFragmentView) {
+								Toast.makeText(getActivity().getApplicationContext(),
+										"Next Fragment",
+										Toast.LENGTH_LONG).show();
+							}
+						});
+						
+						dialog.show();
+					
+					
 					} else {
 						Toast.makeText(getActivity().getApplicationContext(),
 								"Please provide a correct answer",

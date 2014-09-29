@@ -5,26 +5,32 @@
     android:orientation="vertical"
     android:background="@drawable/backgroundblur" >
     
-    <TextView 
+    <com.capstoneii.iclassify.library.SecretTextView
         android:id="@+id/textHead"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_marginTop="40dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:textStyle="bold"
         android:textSize="28sp"
-        android:textColor="#fff"
+        android:shadowColor="@android:color/black"
+	    android:shadowDx="1"
+	    android:shadowDy="1"
+	    android:shadowRadius="2"
+	    android:textColor="#fff"
         android:layout_centerHorizontal="true"
         android:visibility="invisible"/>
     
-     <TextView 
+     <com.capstoneii.iclassify.library.SecretTextView
         android:id="@+id/textFlu"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
-        android:textSize="20sp"
+        android:textSize="28sp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:textColor="#fff"
         android:layout_below="@+id/textHead"
         android:layout_centerHorizontal="true"
@@ -32,14 +38,14 @@
      
      <EditText 
         android:id="@+id/textFluTextBox"
-        android:layout_height="40dp"
+        android:layout_height="55dp"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:inputType="text"
-        android:background="#fff"
-        android:padding="5dp"
+        android:background="@drawable/roundededittext"
+        android:padding="15dp"
         android:layout_below="@+id/textFlu"
         android:layout_centerHorizontal="true"
         android:visibility="invisible"/>
@@ -60,17 +66,30 @@
      
      <EditText 
         android:id="@+id/textFluNoTextBox"
-        android:layout_height="40dp"
+        android:layout_height="55dp"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
-        android:padding="5dp"
+        android:padding="15dp"
         android:inputType="text"
-        android:background="#fff"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/roundededittext"
         android:layout_below="@+id/textFluNo"
         android:visibility="invisible"/>
+     
+     
+      <ImageView 
+        android:id="@+id/tableflu"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/textFlu"
+        android:contentDescription="@string/app_name"
+        android:layout_centerHorizontal="true"/>
+     
      
      <!-- Clickable adam -->
      <ImageView 
@@ -91,7 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_marginTop="5dp"
         android:textStyle="bold"
-        android:textSize="16sp"
+        android:textSize="22sp"
         android:textColor="#fff"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
