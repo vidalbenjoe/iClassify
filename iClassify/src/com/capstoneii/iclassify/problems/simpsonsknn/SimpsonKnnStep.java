@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
@@ -26,7 +27,11 @@ public class SimpsonKnnStep extends Fragment {
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	    {
 		 View rootView = inflater .inflate(R.layout.knnsimul_firstlayout, container, false);  
-		 	
+		 
+		 
+		 	RelativeLayout relativeknnfirst = (RelativeLayout)rootView.findViewById(R.id.relativeknnfirst);
+		 	relativeknnfirst.setBackgroundResource(R.drawable.backgroundblur);
+		 
 		 	final ImageView stepknnimg = (ImageView) rootView.findViewById(R.id.stepknnimg);
 		 	secretTextView = (SecretTextView)rootView.findViewById(R.id.knnsecrettext);
 	        secretTextView.setmDuration(1800);
@@ -43,7 +48,6 @@ public class SimpsonKnnStep extends Fragment {
     		secretTextView.setmDuration(2000);
   	        secretTextView.setIsVisible(false);
   	        secretTextView.toggle();
-  	        
   	        secretTextView.setVisibility(View.INVISIBLE);
 	        secretTextViewDesc.setVisibility(View.INVISIBLE);
 	        

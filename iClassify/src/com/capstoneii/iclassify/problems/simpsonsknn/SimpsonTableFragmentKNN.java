@@ -30,9 +30,7 @@ public class SimpsonTableFragmentKNN extends Fragment {
 	        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		    {
 			 View rootView = inflater .inflate(R.layout.simpson_table_fragment, container, false); 
-			 RelativeLayout relativeknnfirst = (RelativeLayout)rootView.findViewById(R.id.relativeknnfirst);
-			 relativeknnfirst.setBackgroundResource(R.drawable.backgroundblur);
-			 
+			
 			 Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.unzoom_in);
 			 final TypewriterTextView simpsonAnimatedTextView = (TypewriterTextView)rootView.findViewById(R.id.simpsonAnimatedTextView);
 			 simpsonAnimatedTextView.setTypewriterText(getString(R.string.tablesimpson));

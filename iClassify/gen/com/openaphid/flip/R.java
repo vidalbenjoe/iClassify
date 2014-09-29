@@ -8,8 +8,8 @@ package com.openaphid.flip;
 
 public final class R {
 	public static final class attr {
-		public static final int animationBitmapFormat = 0x7f010075;
-		public static final int orientation = 0x7f010074;
+		public static final int animationBitmapFormat = 0x7f010071;
+		public static final int orientation = 0x7f010070;
 	}
 	public static final class drawable {
 		public static final int ic_action_search = 0x7f0200b4;
@@ -26,10 +26,10 @@ public final class R {
 		public static final int app_name = 0x7f0b000d;
 	}
 	public static final class style {
-		public static final int AppTheme = 0x7f0c008b;
+		public static final int AppTheme = 0x7f0c0083;
 	}
 	public static final class styleable {
-		public static final int[] FlipViewController = { 0x7f010074, 0x7f010075 };
+		public static final int[] FlipViewController = { 0x7f010070, 0x7f010071 };
 		public static final int FlipViewController_animationBitmapFormat = 1;
 		public static final int FlipViewController_orientation = 0;
 	}
