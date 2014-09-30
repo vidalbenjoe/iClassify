@@ -87,11 +87,7 @@ public class DecisionTreeAssessmentJumbleWord extends ActionBarActivity {
 							}
 					}
 				});
-			 
 	  }
-	  
-	  
-	  
 	  TextWatcher watch = new TextWatcher(){
 		  @Override
 		  public void afterTextChanged(Editable arg0) {

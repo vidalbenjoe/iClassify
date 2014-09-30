@@ -44,10 +44,8 @@ public class SimpsonMaleClassifier extends Fragment {
 		clock = AnimationUtils.loadAnimation(getActivity()
 				.getApplicationContext(), R.anim.clockwise);
 
-		final TypewriterTextView simpsonMaleClassText = (TypewriterTextView) rootView
-				.findViewById(R.id.simpsonMaleClassText);
-		simpsonMaleClassText
-				.setTypewriterText(getString(R.string.SimpsonMaleClass));
+		final TypewriterTextView simpsonMaleClassText = (TypewriterTextView) rootView.findViewById(R.id.simpsonMaleClassText);
+		simpsonMaleClassText.setTypewriterText(getString(R.string.SimpsonMaleClass));
 		animSideDown = AnimationUtils.loadAnimation(getActivity()
 				.getApplicationContext(), R.anim.slide_down);
 

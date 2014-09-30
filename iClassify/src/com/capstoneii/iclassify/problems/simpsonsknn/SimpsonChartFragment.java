@@ -1,16 +1,21 @@
 package com.capstoneii.iclassify.problems.simpsonsknn;
 
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.graphics.Matrix;
 import android.graphics.PointF;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.text.method.ScrollingMovementMethod;
 import android.util.FloatMath;
 import android.view.MotionEvent;
 import com.capstoneii.iclassify.R;
@@ -154,13 +159,35 @@ public class SimpsonChartFragment extends Fragment {
 		            		knnnextbt.setOnClickListener(new View.OnClickListener() {
 		            			@Override
 		            			public void onClick(View InputFragmentView) {
-		            				Fragment ChooseProblemActivity = new ChooseProblemActivity();
+		            				/*Fragment ChooseProblemActivity = new ChooseProblemActivity();
 		            				FragmentTransaction ft = getFragmentManager()
 		            						.beginTransaction();
 		            				ft.replace(R.id.frame_container, ChooseProblemActivity);
 		            				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 		            				ft.addToBackStack(ChooseProblemActivity.getTag());
-		            				ft.commit();
+		            				ft.commit();*/
+		            				
+		            				final Dialog dialog = new Dialog(getActivity());
+		        					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		        					dialog.setContentView(R.layout.analysis_layout);
+		        					dialog.setCancelable(false);
+		        					dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+		        					
+		        					
+		        					final TextView analysisdesc = (TextView)dialog.findViewById(R.id.analysisdesc);
+		        					analysisdesc.setText(R.string.probabio);
+		        					analysisdesc.setMovementMethod(new ScrollingMovementMethod());
+		        					
+		        					
+		        					ImageView cadbtnNext = (ImageView) dialog.findViewById(R.id.cadbtnNext);
+		        					cadbtnNext.setOnClickListener(new View.OnClickListener() {
+		        						@Override
+		        						public void onClick(View InputFragmentView) {
+		        							//next
+		        		 	            	dialog.dismiss();
+		        						}
+		        					});
+		        					dialog.show();
 		            			}
 		            		});
 

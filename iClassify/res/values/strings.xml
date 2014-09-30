@@ -430,12 +430,61 @@
         It characterizes the impurity of an arbitrary 
 		collection of examples.</string>
     
+    <string name="patientcomputestatement1">
+	<![CDATA[
+  	Firstly we look at the probability that we can play the game, so we use the lookup tables to get:
+	]]>
+    </string>
+    <string name="patientcomputestatement2">
+	<![CDATA[
+  	Next we consider the fact that we cannot play a game:
+	]]>
+    </string>
+     <string name="patientcomputestatement3">
+	<![CDATA[
+  	Then, using those results, you have to multiply the whole lot together. So you multiply all the probabilities for Flu=Yes such as:
+	]]>
+    </string>
+     <string name="patientcomputestatement4">
+	<![CDATA[
+  	We also have to do the same thing for Flu=No:
+	]]>
+    </string>
     
-     <string name="patientcomputestatement1">
-        Firstly we look at the probability that we can play the game, so we use the lookup tables to get:</string>
-        
-       <string name="patientcomputestatement2">
-        Next we consider the fact that we cannot play a game:</string>
+    <string name="patientcomputestatement5">
+	<![CDATA[
+  	Finally, we have to divide both results by the evidence, or ‘P(X)’.
+	]]>
+    </string>
+     
+     <string name="patientcomputestatement6">
+        Then, dividing the results by this value:
+	</string>
     
+      <string name="probabio">
+	<![CDATA[
+  	So, given the probabilities, does the patient have flu? To do this, we look at both probabilities \n 
+  	and see which once has the highest value, and that is our answer. Since 0.701 is greater \n
+  	than 0.227 then the answer is ‘no’, the patient does not have flu.
+	]]>
+    </string>
+     
+      
+    <string name="whydecisiontree">
+	<![CDATA[
+  	Why Decision Tree?
+	Decision Tree works on data of any type. The DT algorithm is well-poised for analyzing very large databases  because it does not require loading all the data in machine main memory simultaneously. That is why, both problems we presented can be solved by Decision tree!
+	Decision Tree algorithm helps solving the task of classifying cases into multiple categories. In many cases, this is the fastest, as well as easily interpreted machine learning algorithm. The DT algorithm provides intuitive rules for solving a great variety of classification tasks ranging from predicting buyers/non-buyers in database marketing, to automatically diagnosing patient in medicine, and to determining customer attrition causes in banking and insurance. No wonder the algorithm worked well on both our completely different scenarios – either with numerical or categorical data.
+	\nCheck our reference on the web:\n
+	http://www.bandmservices.com/DecisionTrees.htm
 
+	]]>
+    </string>   
+      
+      
+      
+      
+      
+      
+ 
 </resources>

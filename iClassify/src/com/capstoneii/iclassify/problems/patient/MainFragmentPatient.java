@@ -250,8 +250,6 @@ public class MainFragmentPatient extends Fragment {
 								Fragment PatientProbabilityComputationFragment = new PatientProbabilityComputationFragment();
 			 	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
 			 	            	ft.replace(R.id.frame_container, PatientProbabilityComputationFragment);
-			 	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-				            	ft.addToBackStack(PatientProbabilityComputationFragment.getTag());
 			 	            	ft.commit();
 			 	            	dialog.dismiss();
 								
