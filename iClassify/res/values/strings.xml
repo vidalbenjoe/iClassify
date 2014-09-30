@@ -430,5 +430,12 @@
         It characterizes the impurity of an arbitrary 
 		collection of examples.</string>
     
+    
+     <string name="patientcomputestatement1">
+        Firstly we look at the probability that we can play the game, so we use the lookup tables to get:</string>
+        
+       <string name="patientcomputestatement2">
+        Next we consider the fact that we cannot play a game:</string>
+    
 
 </resources>

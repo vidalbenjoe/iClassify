@@ -2,10 +2,12 @@ package com.capstoneii.iclassify.problems.patient;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.SecretTextView;
+import com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -225,9 +227,12 @@ public class MainFragmentPatient extends Fragment {
 						Toast.makeText(getActivity(),
 								"Please put your answer in the textbox",
 								Toast.LENGTH_SHORT).show();
+						
+						
+						
 					}
 					if (getValueFluTextBox.equals("0.006")
-							|| (getvalueFluNoTextBox.equals("0.0185"))) {
+							&& (getvalueFluNoTextBox.equals("0.0185"))) {
 						
 					
 						final Dialog dialog = new Dialog(getActivity());
@@ -237,23 +242,45 @@ public class MainFragmentPatient extends Fragment {
 								new ColorDrawable(
 										android.graphics.Color.TRANSPARENT));
 						ImageView correctcheck = (ImageView) dialog.findViewById(R.id.correctcheck);
-						
+						correctcheck.setImageResource(R.drawable.correctcircle);
 						correctcheck.setOnClickListener(new View.OnClickListener() {
 							@Override
 							public void onClick(View InputFragmentView) {
-								Toast.makeText(getActivity().getApplicationContext(),
-										"Next Fragment",
-										Toast.LENGTH_LONG).show();
+								
+								Fragment PatientProbabilityComputationFragment = new PatientProbabilityComputationFragment();
+			 	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
+			 	            	ft.replace(R.id.frame_container, PatientProbabilityComputationFragment);
+			 	            	ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+				            	ft.addToBackStack(PatientProbabilityComputationFragment.getTag());
+			 	            	ft.commit();
+			 	            	dialog.dismiss();
+								
 							}
 						});
 						
 						dialog.show();
-					
-					
 					} else {
 						Toast.makeText(getActivity().getApplicationContext(),
 								"Please provide a correct answer",
 								Toast.LENGTH_LONG).show();
+						
+						final Dialog dialog = new Dialog(getActivity());
+						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+						dialog.setContentView(R.layout.correct_dialog);
+						dialog.setCancelable(false);
+						dialog.getWindow().setBackgroundDrawable(
+								new ColorDrawable(
+										android.graphics.Color.TRANSPARENT));
+						ImageView correctcheck = (ImageView) dialog.findViewById(R.id.correctcheck);
+						correctcheck.setImageResource(R.drawable.wrongcircle);
+						correctcheck.setOnClickListener(new View.OnClickListener() {
+							@Override
+							public void onClick(View InputFragmentView) {
+			 	            	dialog.dismiss();
+							}
+						});
+						
+						dialog.show();
 					}
 				}
 			});
