@@ -155,17 +155,11 @@ public class SimpsonChartFragment extends Fragment {
 		            		simpsonschartimage.setImageResource(R.drawable.simpsoncharttree);
 		            		simpsonschartimage.startAnimation(zoomIn);
 		            		
-		            		knnnextbt.setImageResource(R.drawable.backtomainmenu);
+		            		
 		            		knnnextbt.setOnClickListener(new View.OnClickListener() {
 		            			@Override
 		            			public void onClick(View InputFragmentView) {
-		            				/*Fragment ChooseProblemActivity = new ChooseProblemActivity();
-		            				FragmentTransaction ft = getFragmentManager()
-		            						.beginTransaction();
-		            				ft.replace(R.id.frame_container, ChooseProblemActivity);
-		            				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-		            				ft.addToBackStack(ChooseProblemActivity.getTag());
-		            				ft.commit();*/
+		            				
 		            				
 		            				final Dialog dialog = new Dialog(getActivity());
 		        					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -175,15 +169,23 @@ public class SimpsonChartFragment extends Fragment {
 		        					
 		        					
 		        					final TextView analysisdesc = (TextView)dialog.findViewById(R.id.analysisdesc);
-		        					analysisdesc.setText(R.string.probabio);
+		        					analysisdesc.setText(R.string.whyknn);
 		        					analysisdesc.setMovementMethod(new ScrollingMovementMethod());
 		        					
 		        					
 		        					ImageView cadbtnNext = (ImageView) dialog.findViewById(R.id.cadbtnNext);
+		        					cadbtnNext.setImageResource(R.drawable.backtomainmenu);
 		        					cadbtnNext.setOnClickListener(new View.OnClickListener() {
 		        						@Override
 		        						public void onClick(View InputFragmentView) {
 		        							//next
+		        							Fragment ChooseProblemActivity = new ChooseProblemActivity();
+				            				FragmentTransaction ft = getFragmentManager()
+				            						.beginTransaction();
+				            				ft.replace(R.id.frame_container, ChooseProblemActivity);
+				            				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+				            				ft.addToBackStack(ChooseProblemActivity.getTag());
+				            				ft.commit();
 		        		 	            	dialog.dismiss();
 		        						}
 		        					});

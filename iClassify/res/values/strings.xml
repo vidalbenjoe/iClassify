@@ -480,10 +480,42 @@
 
 	]]>
     </string>   
+    
+    
+       <string name="whynaive">
+	<![CDATA[
+  	Why Naive Bayes? \n 
+	Naive Byes algorithms are among the most successful known algorithms for probabilistic classification. It predicts by reading a set of examples in attribute value-representation and then by using the Bayes Theorem to estimate the posterior probabilities of all qualifications. For each instance of the example, a classification with the highest posterier probability is chosen as the prediction. 
+
+	In our Patient Scenario, Naive Bayes Classifier was a good choice because our data consist of flu symptoms described by their headache, runny nose, chills and fever. Bayesian Classifiers operate by saying, “If the patient has headache, runny nose, chills and fever, then the patient is most likely to have flu based on the observed data sample.”
+	A difficulty arises when you have more than a few variables and classes with numerical data -- you would require an enormous number of observations (records) to estimate these probabilities.
+	In other words, Naïve Bayes classifiers assume that the effect of an variable value on a given class is independent of the values of other variable. This assumption is called class conditional independence. It is made to simplify the computation and in this sense considered to be “Naïve”.
+	This assumption is a fairly strong assumption and is often not applicable.  Naive bayes’s determine the classification based on the order of the probabilities, not their exact values. Naive bayes counts the frequency of the cases, so if the data contains unsimilar values, like in the Simpson Scenario, the classifier will not be able to perform accurately. 
+	Check out these references: \n
+	http://www.dmg.org/pmmlspecs_v2/NaiveBayes.html\n
+	http://www.cs.iastate.edu/~patterbj/cs/cs572/algs/naive.html \n
+	http://www.resample.com/xlminer/help/NaiveBC/classiNB_intro.htm \n
+	]]>
+    </string>
       
       
-      
-      
+       
+    <string name="whyknn">
+	<![CDATA[
+  	Why KNN \n
+	The goal of K-Nearest Neighbor is to simply separate the data based on the assumed similarities between various classes.Thus, the classes can be differentiated from one another by searching for similarities between the data provided. In the Simpsons Scenario, we searched for the similarities of Comics Attribute to male or female attributes. 
+	The K Nearest Neighbor is suitable for data with NUMERICAL values, like in our Simpsons Scenario. KNN finds the K neighbors nearest to the new samples from the training space based on some suitable similarity or distance metric.
+	KNN is a good choice when simplicity and accuracy are the predominant issues. K-Nearest Neighbor is useful when there are less than 20 attributes per instance, there is lots of training data, training is very fast, learning complex target functions and dont want to loose information. Like in our Simpsons Scenario, there are only two numerical attributes per instance, which made KNN a suitable algorithm to use. 
+	The disadvantage of using such function is that it does not handle categorical data effectively, such as in the Patient Scenario, because KNN does not rely on prior probabilities, but with distance. 
+	 
+	
+	Check out these references on the web: \n
+	http://cs.hbg.psu.edu/~ding/publications/PAKDD02_KNN.pdf \n
+	http://wwwcsif.cs.ucdavis.edu/~liaoy/research/text_ss02_html/node4.html \n
+	http://www.cs.tufts.edu/~emower/KNN.html \n
+	http://www4.cs.umanitoba.ca/~jacky/Teaching/Courses/74.436/current/Lectures/L07_Instance_Based_Learning.pdf \n
+	]]>
+    </string>
       
       
  

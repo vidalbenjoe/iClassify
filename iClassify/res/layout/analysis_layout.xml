@@ -58,6 +58,7 @@
     android:shadowDy="1"
     android:shadowRadius="2"
     android:text="@string/whydecisiontree"
+    android:visibility="gone"
     android:paddingTop="14dp" />
    </RelativeLayout>
    
