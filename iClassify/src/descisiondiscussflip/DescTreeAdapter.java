@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.Matrix;
+import android.graphics.PointF;
 import android.text.Html;
+import android.util.FloatMath;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -69,14 +73,14 @@ public class DescTreeAdapter extends BaseAdapter {
         .setText(AphidLog.format("%s", data.title));
 
     UI
-
     .<ImageView>findViewById(layout, R.id.photo)
     .setImageBitmap(IO.readBitmap(inflater.getContext().getAssets(), data.imageFilename));
+    
     
     UI
         .<TextView>findViewById(layout, R.id.description)
         .setText(Html.fromHtml(data.description));
-    	
+    
     return layout;
   }
 

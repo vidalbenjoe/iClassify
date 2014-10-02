@@ -4,11 +4,9 @@
     android:id="@+id/cadllMain"
     android:layout_width="wrap_content"
     android:layout_height="500dp"
-    android:background="@drawable/backgroundblur"
     android:layout_marginLeft="25dp"
     android:layout_marginRight="25dp"
     android:orientation="vertical"
-    
     tools:ignore="ButtonOrder" >
 
     <FrameLayout

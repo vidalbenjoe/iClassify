@@ -27,7 +27,6 @@ public class SimpsonChartFragment extends Fragment {
 	Animation zoomIn,zoomOut;
 	int counter = 0;
 	
-	
 	 Matrix matrix = new Matrix();
 	 Matrix savedMatrix = new Matrix();
 	 PointF startPoint = new PointF();
@@ -55,6 +54,7 @@ public class SimpsonChartFragment extends Fragment {
 			 
 			 final TypewriterTextView simpsonAnimatedTextViewChart = (TypewriterTextView)rootView.findViewById(R.id.simpsonAnimatedTextViewChart);
 			 simpsonAnimatedTextViewChart.setTypewriterText(getString(R.string.problemsimpson));
+			 
 			 
 			 simpsonschartimage = (ImageView) rootView.findViewById(R.id.simpsonschartimage);
 			 simpsonschartimage.startAnimation(zoomIn);
@@ -144,7 +144,6 @@ public class SimpsonChartFragment extends Fragment {
 		            		break;
 		           
 		            	case 1:
-		            		
 		            		simpsonAnimatedTextViewChart.setText("The table belows is a solution for the problem using KNN/ K Nearest Neighbor ");
 		            		
 		            		simpsonschartimage.setImageResource(R.drawable.simpsongknncompute);
@@ -155,43 +154,40 @@ public class SimpsonChartFragment extends Fragment {
 		            		simpsonschartimage.setImageResource(R.drawable.simpsoncharttree);
 		            		simpsonschartimage.startAnimation(zoomIn);
 		            		
+		            	case 3:
+
+		            		final Dialog dialog = new Dialog(getActivity());
+		    				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		    				dialog.setContentView(R.layout.custom_dialog_text);
+		    				dialog.setCancelable(false);
+		    				dialog.getWindow().setBackgroundDrawable(
+		    						new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
+		    				final TypewriterTextView customtextindialog = (TypewriterTextView) dialog
+		    						.findViewById(R.id.customtextindialog);
+		    				customtextindialog.setText(R.string.whyknn);
+		    				customtextindialog.setMovementMethod(new ScrollingMovementMethod());
+
+		    				ImageView cadbtnNext = (ImageView) dialog.findViewById(R.id.cadbtnNext);
+		    				cadbtnNext.setImageResource(R.drawable.backtomainmenu);
+
+		    				cadbtnNext.setOnClickListener(new View.OnClickListener() {
+		    					@Override
+		    					public void onClick(View InputFragmentView) {
+		    						// next
+		    						Fragment ChooseProblemActivity = new ChooseProblemActivity();
+		    						FragmentTransaction ft = getFragmentManager().beginTransaction();
+		    						ft.replace(R.id.frame_container,ChooseProblemActivity);
+		    						ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+		    						ft.addToBackStack(ChooseProblemActivity.getTag());
+		    						ft.commit();
+		    						dialog.dismiss();
+		    					}
+		    				});
+		    				dialog.show();
+
 		            		
-		            		knnnextbt.setOnClickListener(new View.OnClickListener() {
-		            			@Override
-		            			public void onClick(View InputFragmentView) {
-		            				
-		            				
-		            				final Dialog dialog = new Dialog(getActivity());
-		        					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		        					dialog.setContentView(R.layout.analysis_layout);
-		        					dialog.setCancelable(false);
-		        					dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-		        					
-		        					
-		        					final TextView analysisdesc = (TextView)dialog.findViewById(R.id.analysisdesc);
-		        					analysisdesc.setText(R.string.whyknn);
-		        					analysisdesc.setMovementMethod(new ScrollingMovementMethod());
-		        					
-		        					
-		        					ImageView cadbtnNext = (ImageView) dialog.findViewById(R.id.cadbtnNext);
-		        					cadbtnNext.setImageResource(R.drawable.backtomainmenu);
-		        					cadbtnNext.setOnClickListener(new View.OnClickListener() {
-		        						@Override
-		        						public void onClick(View InputFragmentView) {
-		        							//next
-		        							Fragment ChooseProblemActivity = new ChooseProblemActivity();
-				            				FragmentTransaction ft = getFragmentManager()
-				            						.beginTransaction();
-				            				ft.replace(R.id.frame_container, ChooseProblemActivity);
-				            				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-				            				ft.addToBackStack(ChooseProblemActivity.getTag());
-				            				ft.commit();
-		        		 	            	dialog.dismiss();
-		        						}
-		        					});
-		        					dialog.show();
-		            			}
-		            		});
+		            		break;
 
 		            	default:
 		            		break;

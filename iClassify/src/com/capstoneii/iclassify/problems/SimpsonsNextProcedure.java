@@ -55,6 +55,7 @@ public class SimpsonsNextProcedure  extends Fragment {
 			 
 			 return rootView;
 		    }
+	        
 	        public void delayFamAnim(){
 	        	  new CountDownTimer(6000, 1000) {
 
@@ -67,6 +68,7 @@ public class SimpsonsNextProcedure  extends Fragment {
 	 			     }
 	 			  }.start();
 	        }
+	        
 	        public void onBackPressed(){
 	        	
 	        }

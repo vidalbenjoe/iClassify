@@ -22,15 +22,12 @@ import drawer.MainDrawerActivity;
 
 @SuppressLint("NewApi")
 public class DescTreeLayoutActivity extends ActionBarActivity {
-
   private FlipViewController flipView;
-
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    
     getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.divider_color)));
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     flipView = new FlipViewController(this);
@@ -39,8 +36,8 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
     flipView.setAnimationBitmapFormat(Bitmap.Config.RGB_565);
     flipView.setAdapter(new DescTreeAdapter(this));
 
-    setContentView(flipView);
-    final Dialog dialog = new Dialog(this);
+   setContentView(flipView);
+   final Dialog dialog = new Dialog(this);
    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE); 
    dialog.setContentView(R.layout.transparent_popuptext);
    dialog.setCancelable(true);
@@ -102,7 +99,6 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
                switch(item.getItemId()){
                case R.id.action_settings:
             	   //go to assessment
-            	  
             		 Intent intent = new Intent(DescTreeLayoutActivity.this, DecisionTreeAssessmentActivity.class);
             		 DescTreeLayoutActivity.this.startActivity(intent);
             		 DescTreeLayoutActivity.this.finish();

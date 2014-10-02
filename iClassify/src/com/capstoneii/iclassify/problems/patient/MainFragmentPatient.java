@@ -25,13 +25,14 @@ import android.widget.Toast;
 
 @SuppressLint("NewApi")
 public class MainFragmentPatient extends Fragment {
-	SecretTextView textHead,textFlu; 
+	SecretTextView textHead, textFlu;
 	TextView textFluNo, ClickmeText;
 	EditText textFluNoTextBox, textFluTextBox;
-	ImageView adamImage,imageView_close,tableflu;
+	ImageView adamImage, imageView_close, tableflu;
 	Button lookupbt;
 	int nextButton = 0;
-	Animation clock,animation;
+	Animation clock, animation;
+
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	}
@@ -40,37 +41,36 @@ public class MainFragmentPatient extends Fragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.patient_main_layout,
 				container, false);
-		animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.unzoom_in);
-		 	
-		 	
+		animation = AnimationUtils.loadAnimation(getActivity()
+				.getApplicationContext(), R.anim.unzoom_in);
+
 		lookupbt = (Button) rootView.findViewById(R.id.lookupbt);
 		textFluNoTextBox = (EditText) rootView
 				.findViewById(R.id.textFluNoTextBox);
 		textFluTextBox = (EditText) rootView.findViewById(R.id.textFluTextBox);
 
 		textHead = (SecretTextView) rootView.findViewById(R.id.textHead);
-		
+
 		textFlu = (SecretTextView) rootView.findViewById(R.id.textFlu);
-		
+
 		textFluNo = (TextView) rootView.findViewById(R.id.textFluNo);
 		textHead.setVisibility(View.VISIBLE);
 		textFlu.setVisibility(View.VISIBLE);
 		textHead.setText("Do I believe that a patient with the following symptoms has a flu?");
-		
+
 		textHead.setmDuration(1800);
 		textHead.setIsVisible(false);
 		textHead.toggle();
-		
-		
+
 		textFlu.setText("Flu?");
 		textFlu.setmDuration(1200);
 		textFlu.setIsVisible(false);
 		textFlu.toggle();
-		
+
 		tableflu = (ImageView) rootView.findViewById(R.id.tableflu);
 		tableflu.setImageResource(R.drawable.patientguesslookuptabe);
 		adamImage = (ImageView) rootView.findViewById(R.id.adamImage);
-		
+
 		adamImage.startAnimation(animation);
 		ClickmeText = (TextView) rootView.findViewById(R.id.ClickmeText);
 		ClickmeText.setText("Click Me");
@@ -88,11 +88,8 @@ public class MainFragmentPatient extends Fragment {
 
 				case 1:
 					textHead.setText("Lookup Table");
-					
 					textFlu.setText(R.string.lookuptextpatient);
-					
 					textHead.setVisibility(View.VISIBLE);
-				
 					adamImage.setVisibility(View.INVISIBLE);
 					tableflu.setVisibility(View.GONE);
 					lookupbt.setVisibility(View.VISIBLE);
@@ -112,9 +109,11 @@ public class MainFragmentPatient extends Fragment {
 											new ColorDrawable(
 													android.graphics.Color.TRANSPARENT));
 
-							imageView_close = (ImageView) dialog.findViewById(R.id.imageView_close);
-							imageView_close.setImageResource(R.drawable.patientlookuptablestart);
-							
+							imageView_close = (ImageView) dialog
+									.findViewById(R.id.imageView_close);
+							imageView_close
+									.setImageResource(R.drawable.patientlookuptablestart);
+
 							Button cadbtnNext = (Button) dialog
 									.findViewById(R.id.cadbtnNext);
 							cadbtnNext
@@ -127,12 +126,13 @@ public class MainFragmentPatient extends Fragment {
 											textFlu.setText(R.string.patienttesting);
 											textFlu.startAnimation(animation);
 											tableflu.setVisibility(View.VISIBLE);
-											
+
 											/*
 											 * set image computation for
 											 * adamImage X = (Chills=Yes, Runny
 											 * Nose=No, Headache=Mild, Fever=No)
 											 */
+											
 											lookupbt.setVisibility(View.INVISIBLE);
 											adamImage
 													.setVisibility(View.VISIBLE);
@@ -177,10 +177,10 @@ public class MainFragmentPatient extends Fragment {
 			// check if the user answers are correct
 
 			textFlu.setText(R.string.patientmultiply);// zoom animation
-			
+
 			textFluNo.setVisibility(View.VISIBLE);
 			textFluNo.setText(R.string.textFluNoMultiply);
-			
+
 			textFlu.setGravity(Gravity.LEFT);
 			textFluNo.setGravity(Gravity.LEFT);
 
@@ -188,7 +188,7 @@ public class MainFragmentPatient extends Fragment {
 			textFluNoTextBox.setVisibility(View.VISIBLE);
 
 			textFlu.setVisibility(View.VISIBLE);
-			
+
 			tableflu.setVisibility(View.INVISIBLE);
 			adamImage.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -227,41 +227,41 @@ public class MainFragmentPatient extends Fragment {
 						Toast.makeText(getActivity(),
 								"Please put your answer in the textbox",
 								Toast.LENGTH_SHORT).show();
-						
-						
-						
+
 					}
 					if (getValueFluTextBox.equals("0.006")
 							&& (getvalueFluNoTextBox.equals("0.0185"))) {
-						
-					
 						final Dialog dialog = new Dialog(getActivity());
 						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 						dialog.setContentView(R.layout.correct_dialog);
 						dialog.getWindow().setBackgroundDrawable(
 								new ColorDrawable(
 										android.graphics.Color.TRANSPARENT));
-						ImageView correctcheck = (ImageView) dialog.findViewById(R.id.correctcheck);
+						ImageView correctcheck = (ImageView) dialog
+								.findViewById(R.id.correctcheck);
 						correctcheck.setImageResource(R.drawable.correctcircle);
-						correctcheck.setOnClickListener(new View.OnClickListener() {
-							@Override
-							public void onClick(View InputFragmentView) {
-								
-								Fragment PatientProbabilityComputationFragment = new PatientProbabilityComputationFragment();
-			 	            	FragmentTransaction ft  = getFragmentManager().beginTransaction();
-			 	            	ft.replace(R.id.frame_container, PatientProbabilityComputationFragment);
-			 	            	ft.commit();
-			 	            	dialog.dismiss();
-								
-							}
-						});
-						
+						correctcheck
+								.setOnClickListener(new View.OnClickListener() {
+									@Override
+									public void onClick(View InputFragmentView) {
+
+										Fragment PatientProbabilityComputationFragment = new PatientProbabilityComputationFragment();
+										FragmentTransaction ft = getFragmentManager()
+												.beginTransaction();
+										ft.replace(R.id.frame_container,
+												PatientProbabilityComputationFragment);
+										ft.commit();
+										dialog.dismiss();
+
+									}
+								});
+
 						dialog.show();
 					} else {
 						Toast.makeText(getActivity().getApplicationContext(),
 								"Please provide a correct answer",
 								Toast.LENGTH_LONG).show();
-						
+
 						final Dialog dialog = new Dialog(getActivity());
 						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 						dialog.setContentView(R.layout.correct_dialog);
@@ -269,15 +269,17 @@ public class MainFragmentPatient extends Fragment {
 						dialog.getWindow().setBackgroundDrawable(
 								new ColorDrawable(
 										android.graphics.Color.TRANSPARENT));
-						ImageView correctcheck = (ImageView) dialog.findViewById(R.id.correctcheck);
+						ImageView correctcheck = (ImageView) dialog
+								.findViewById(R.id.correctcheck);
 						correctcheck.setImageResource(R.drawable.wrongcircle);
-						correctcheck.setOnClickListener(new View.OnClickListener() {
-							@Override
-							public void onClick(View InputFragmentView) {
-			 	            	dialog.dismiss();
-							}
-						});
-						
+						correctcheck
+								.setOnClickListener(new View.OnClickListener() {
+									@Override
+									public void onClick(View InputFragmentView) {
+										dialog.dismiss();
+									}
+								});
+
 						dialog.show();
 					}
 				}

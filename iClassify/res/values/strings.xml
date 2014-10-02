@@ -469,6 +469,14 @@
 	]]>
     </string>
      
+      <string name="comparisonanalysis">
+	<![CDATA[
+  	Comparing the two problems, why is it that the K Nearest Neighbor Classifier can be used on the Simpsons Scenario but not on the Patient Scenario? Why is Naive Bayes Classifier can be used in the Patient Scenario but not in the Simpson Scenario?
+	\n\n
+	Here is the complete analysis
+	]]>
+    </string>
+      
       
     <string name="whydecisiontree">
 	<![CDATA[
@@ -518,5 +526,6 @@
     </string>
       
       
+    
  
 </resources>

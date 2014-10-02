@@ -22,10 +22,7 @@ import drawer.MainDrawerActivity;
 
 @SuppressLint("NewApi")
 public class KNearestLayoutActivity extends ActionBarActivity {
-
   private FlipViewController flipView;
-
-
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

@@ -27,10 +27,10 @@ import com.capstoneii.iclassify.library.TypewriterTextView;
 
 public class SimpsonFinalResult extends Fragment {
 	SecretTextView secretTextView;
-	ImageView simpsoneTable,comictable;
-	Button backtomain;
+	ImageView simpsoneTable, comictable;
+	ImageView backtomain;
 	Animation animationZoom;
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -44,7 +44,7 @@ public class SimpsonFinalResult extends Fragment {
 				R.anim.unzoom_in);
 		comictable = (ImageView) rootView.findViewById(R.id.comictable);
 		comictable.startAnimation(animationZoom);
-		
+
 		final TypewriterTextView simpsonAnimatedTextView = (TypewriterTextView) rootView
 				.findViewById(R.id.simpsonAnimatedTextView);
 		simpsonAnimatedTextView
@@ -52,65 +52,42 @@ public class SimpsonFinalResult extends Fragment {
 
 		simpsoneTable = (ImageView) rootView.findViewById(R.id.simpsoneTable);
 		simpsoneTable.setVisibility(View.VISIBLE);
-		backtomain = (Button) rootView.findViewById(R.id.backtomain);
+		backtomain = (ImageView) rootView.findViewById(R.id.backtomain);
+		backtomain.setImageResource(R.drawable.simulnextbt);
 		backtomain.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View InputFragmentView) {
-				
+
 				final Dialog dialog = new Dialog(getActivity());
 				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 				dialog.setContentView(R.layout.custom_dialog_text);
 				dialog.setCancelable(false);
-				dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-				
-				
-				final TypewriterTextView customtextindialog = (TypewriterTextView)dialog.findViewById(R.id.customtextindialog);
+				dialog.getWindow().setBackgroundDrawable(
+						new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
+				final TypewriterTextView customtextindialog = (TypewriterTextView) dialog
+						.findViewById(R.id.customtextindialog);
 				customtextindialog.setText(R.string.whydecisiontree);
 				customtextindialog.setMovementMethod(new ScrollingMovementMethod());
-				
-				
+
 				ImageView cadbtnNext = (ImageView) dialog.findViewById(R.id.cadbtnNext);
-				cadbtnNext.setImageResource(R.drawable.simulnextbt);
+				cadbtnNext.setImageResource(R.drawable.backtomainmenu);
+
 				cadbtnNext.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View InputFragmentView) {
-						//next
-						final Dialog dialog = new Dialog(getActivity());
-    					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-    					dialog.setContentView(R.layout.analysis_layout);
-    					dialog.setCancelable(false);
-    					dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-    					
-    					
-    					final TextView analysisdesc = (TextView)dialog.findViewById(R.id.analysisdesc);
-    					analysisdesc.setText(R.string.whydecisiontree);
-    					analysisdesc.setMovementMethod(new ScrollingMovementMethod());
-    					
-    					
-    					ImageView cadbtnNext = (ImageView) dialog.findViewById(R.id.cadbtnNext);
-    					cadbtnNext.setImageResource(R.drawable.backtomainmenu);
-    					cadbtnNext.setOnClickListener(new View.OnClickListener() {
-    						@Override
-    						public void onClick(View InputFragmentView) {
-    							//next
-    							Fragment ChooseProblemActivity = new ChooseProblemActivity();
-	            				FragmentTransaction ft = getFragmentManager()
-	            						.beginTransaction();
-	            				ft.replace(R.id.frame_container, ChooseProblemActivity);
-	            				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-	            				ft.addToBackStack(ChooseProblemActivity.getTag());
-	            				ft.commit();
-    		 	            	dialog.dismiss();
-    						}
-    					});
-    					dialog.show();
+						// next
+						Fragment ChooseProblemActivity = new ChooseProblemActivity();
+						FragmentTransaction ft = getFragmentManager().beginTransaction();
+						ft.replace(R.id.frame_container,ChooseProblemActivity);
+						ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+						ft.addToBackStack(ChooseProblemActivity.getTag());
+						ft.commit();
+						dialog.dismiss();
 					}
 				});
 				dialog.show();
-				
-				
-				
-				
+
 			}
 		});
 		return rootView;
