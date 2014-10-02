@@ -11,7 +11,7 @@
     <string name="cancel">Cancel</string>
     <string name="imgdesc">imgdesc</string>
     <string name="goback">Go Back</string>
-
+ 	<string name="str_next">Next</string>
     <string-array name="titles">
         <item>Discussion</item>
         <item>Videos</item>

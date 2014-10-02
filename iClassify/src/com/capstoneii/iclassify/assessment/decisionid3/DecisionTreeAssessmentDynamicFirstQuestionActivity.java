@@ -53,6 +53,9 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends
 
 		checkdropbt = (Button) findViewById(R.id.checkdropbt);
 		checkdropbt.setEnabled(false);
+		
+		
+		
 		// get both sets of text views
 
 		// views to drag

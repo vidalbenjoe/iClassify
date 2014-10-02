@@ -8,8 +8,6 @@
     android:paddingRight="50dp"
     android:background="@drawable/backgroundblurpurple" >
     
-
-    
       <com.capstoneii.iclassify.library.TypewriterTextView
         android:id="@+id/animatedtitle"
         android:layout_width="fill_parent"
@@ -86,7 +84,7 @@
         android:id="@+id/checkdropbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check"
+        android:background="@drawable/checkpressed"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         />

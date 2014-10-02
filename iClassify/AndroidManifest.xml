@@ -101,6 +101,10 @@
          <activity android:name="com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord"
            	android:theme="@style/Theme.AppCompat.Light"
            	/>
+         
+         <activity android:name="com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeQuestionSets"
+           	android:theme="@style/Theme.AppCompat.Light"
+           	/>
        
        <activity android:name="com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity"
            	android:theme="@style/Theme.AppCompat.Light"
@@ -112,8 +116,11 @@
            	android:theme="@style/Theme.AppCompat.Light"
            	/>
        
-      
-    
+        
+        <activity android:name="com.capstoneii.iclassify.QuizResultActivity"
+           	android:theme="@style/Theme.AppCompat.Light"
+           	/>
+        
     </application>
     
    

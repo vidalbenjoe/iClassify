@@ -107,8 +107,7 @@ public class NativeBayesLayoutActivity extends ActionBarActivity {
 							case R.id.action_settings:
 								// go to assessment
 
-								Intent intent = new Intent(
-										NativeBayesLayoutActivity.this,
+								Intent intent = new Intent(NativeBayesLayoutActivity.this,
 										BayesianAssessmentActivity.class);
 								NativeBayesLayoutActivity.this
 										.startActivity(intent);

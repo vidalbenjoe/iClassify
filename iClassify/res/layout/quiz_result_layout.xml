@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundblur"
+    tools:context="com.capstoneii.iclassify.QuizResultActivity" >
+    
+    
+    <ImageView
+        android:id="@+id/resultimage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+    
+
+        <RatingBar
+            android:id="@+id/ratingBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:numStars="5"
+            android:stepSize="1.0"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:isIndicator="true"
+			android:focusable="false"
+			android:clickable="false"
+            android:rating="0.0"/>
+
+        
+        <com.capstoneii.iclassify.library.TypewriterTextView
+        android:id="@+id/textResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:textColor="#fff"
+        android:layout_below="@+id/ratingBar1"
+        android:textSize="25sp" />
+        
+      
+  
+
+</RelativeLayout>
