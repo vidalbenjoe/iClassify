@@ -80,7 +80,7 @@ public class NativeBayesAdapter extends BaseAdapter {
 
 		UI.<TextView> findViewById(layout, R.id.title).setText(
 				AphidLog.format("%s", data.title));
-		
+
 		UI.<ImageView> findViewById(layout, R.id.photo).setImageBitmap(
 				IO.readBitmap(inflater.getContext().getAssets(),
 						data.imageFilename));
@@ -158,9 +158,6 @@ public class NativeBayesAdapter extends BaseAdapter {
 		UI.<com.capstoneii.iclassify.library.TypewriterTextView> findViewById(
 				layout, R.id.description).setTypewriterText(
 				Html.fromHtml(data.description));
-		
-	
-		
 
 		return layout;
 	}

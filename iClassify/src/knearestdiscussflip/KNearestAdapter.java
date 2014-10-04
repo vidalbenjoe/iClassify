@@ -2,10 +2,12 @@ package knearestdiscussflip;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.PointF;
+import android.speech.tts.TextToSpeech;
 import android.text.Html;
 import android.util.FloatMath;
 import android.view.LayoutInflater;
@@ -22,7 +24,7 @@ import com.aphidmobile.utils.UI;
 import com.capstoneii.iclassify.R;
 
 public class KNearestAdapter extends BaseAdapter {
-
+	public TextToSpeech tts;
 	private LayoutInflater inflater;
 
 	private int repeatCount = 1;
@@ -42,6 +44,16 @@ public class KNearestAdapter extends BaseAdapter {
 		inflater = LayoutInflater.from(context);
 		desctreeData = new ArrayList<KNearestData.Data>(
 				KNearestData.IMG_DESCRIPTIONS);
+
+		tts = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
+			@Override
+			public void onInit(int status) {
+				if (status != TextToSpeech.ERROR) {
+					tts.setLanguage(Locale.US);
+				}
+			}
+		});
+
 	}
 
 	@Override
@@ -73,6 +85,7 @@ public class KNearestAdapter extends BaseAdapter {
 		if (convertView == null) {
 			layout = inflater.inflate(R.layout.discusstopic_layout, null);
 			AphidLog.d("created new view from adapter: %d", position);
+
 		}
 
 		final KNearestData.Data data = desctreeData.get(position
@@ -158,7 +171,14 @@ public class KNearestAdapter extends BaseAdapter {
 		UI.<com.capstoneii.iclassify.library.TypewriterTextView> findViewById(
 				layout, R.id.description).setTypewriterText(
 				Html.fromHtml(data.description));
-
+		
+		
+		String toSpeak = UI
+				.<com.capstoneii.iclassify.library.TypewriterTextView> findViewById(
+						layout, R.id.description).getText().toString();
+		tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+		
+		
 		return layout;
 	}
 
@@ -167,4 +187,12 @@ public class KNearestAdapter extends BaseAdapter {
 			desctreeData.remove(index);
 		}
 	}
+
+	public void onPause() {
+		if (tts != null) {
+			tts.stop();
+			tts.shutdown();
+		}
+	}
+
 }
