@@ -17,7 +17,7 @@ import android.widget.PopupMenu;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity;
+import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop;
 
 import drawer.MainDrawerActivity;
 
@@ -108,7 +108,7 @@ public class NativeBayesLayoutActivity extends ActionBarActivity {
 								// go to assessment
 
 								Intent intent = new Intent(NativeBayesLayoutActivity.this,
-										BayesianAssessmentActivity.class);
+										BayesianAssessmentDragAndDrop.class);
 								NativeBayesLayoutActivity.this
 										.startActivity(intent);
 								NativeBayesLayoutActivity.this.finish();

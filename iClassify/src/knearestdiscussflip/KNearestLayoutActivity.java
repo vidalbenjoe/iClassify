@@ -16,7 +16,7 @@ import android.widget.PopupMenu;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity;
+import com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop;
 
 import drawer.MainDrawerActivity;
 
@@ -99,7 +99,7 @@ public class KNearestLayoutActivity extends ActionBarActivity {
                case R.id.action_settings:
             	   //go to assessment
             	  
-            		 Intent intent = new Intent(KNearestLayoutActivity.this, KnnAssessmentActivity.class);
+            		 Intent intent = new Intent(KNearestLayoutActivity.this, KNNAssessmentDragAndDrop.class);
             		 KNearestLayoutActivity.this.startActivity(intent);
             		 KNearestLayoutActivity.this.finish();
             	 

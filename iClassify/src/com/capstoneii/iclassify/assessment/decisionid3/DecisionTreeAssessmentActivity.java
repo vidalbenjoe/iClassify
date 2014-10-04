@@ -21,11 +21,12 @@ import android.widget.Toast;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SplashScreenActivity;
+import com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
 @SuppressLint("NewApi")
 public class DecisionTreeAssessmentActivity extends ActionBarActivity {
-	Button checkdropbt;
+	Button checkdropbt, clearbt;
 	int numDragged = 0;
 	// text views being dragged and dropped onto
 	private TextView option1, option2, option3, choice1, choice2, choice3;
@@ -43,7 +44,7 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 
 		final TypewriterTextView animated_title = (TypewriterTextView) findViewById(R.id.animatedtitle);
 		animated_title.setTypewriterText(getString(R.string.intro));
-
+		clearbt = (Button) findViewById(R.id.clearbt);
 		checkdropbt = (Button) findViewById(R.id.checkdropbt);
 		checkdropbt.setVisibility(View.INVISIBLE);
 		// get both sets of text views
@@ -53,10 +54,18 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 		option2 = (TextView) findViewById(R.id.option_2);
 		option3 = (TextView) findViewById(R.id.option_3);
 
+		option1.setText(R.string.idroption_1);
+		option2.setText(R.string.idroption_2);
+		option3.setText(R.string.idroption_3);
+
 		// views to drop onto
 		choice1 = (TextView) findViewById(R.id.choice_1);
 		choice2 = (TextView) findViewById(R.id.choice_2);
 		choice3 = (TextView) findViewById(R.id.choice_3);
+
+		choice1.setText(R.string.idrchoices_1);
+		choice2.setText(R.string.idrchoices_2);
+		choice3.setText(R.string.idrchoices_3);
 
 		// set touch listeners
 		option1.setOnTouchListener(new ChoiceTouchListener());
@@ -67,6 +76,17 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 		choice1.setOnDragListener(new ChoiceDragListener());
 		choice2.setOnDragListener(new ChoiceDragListener());
 		choice3.setOnDragListener(new ChoiceDragListener());
+
+		clearbt.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View InputFragmentView) {
+
+				Intent intent = new Intent(DecisionTreeAssessmentActivity.this,
+						DecisionTreeAssessmentActivity.class);
+				DecisionTreeAssessmentActivity.this.startActivity(intent);
+				DecisionTreeAssessmentActivity.this.finish();
+			}
+		});
 
 	}
 

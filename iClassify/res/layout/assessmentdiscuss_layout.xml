@@ -1,11 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundblurpurple"
     android:orientation="vertical"
     android:padding="10dp"
     android:paddingLeft="50dp"
-    android:paddingRight="50dp"
-    android:background="@drawable/backgroundblurpurple" >
+    android:paddingRight="50dp" >
 
     <com.capstoneii.iclassify.library.TypewriterTextView
         android:id="@+id/animatedtitle"
@@ -25,7 +25,7 @@
         android:text="@string/idroption_2"
         android:textStyle="bold" />
 
-        <TextView
+    <TextView
         android:id="@+id/option_1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
         android:gravity="center"
         android:text="@string/idroption_1"
         android:textStyle="bold" />
-    
+
     <TextView
         android:id="@+id/option_3"
         android:layout_width="fill_parent"
@@ -71,16 +71,21 @@
         android:background="@drawable/choice"
         android:gravity="center"
         android:text="@string/idrchoices_3" />
-    
-    <Button 
+
+    <Button
         android:id="@+id/checkdropbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:background="@drawable/simulnextbt"
-        />
+        android:background="@drawable/simulnextbt" />
+
+    <Button
+        android:id="@+id/clearbt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/clearbtpressed" />
 
 </LinearLayout>
-
-
