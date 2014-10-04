@@ -36,7 +36,7 @@ public class DecisionTreeQuestionSets extends ActionBarActivity {
 						.getColor(R.color.divider_color)));
 		//getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-		DBHelperIdTree db = new DBHelperIdTree(this);
+		final DBHelperIdTree db = new DBHelperIdTree(this);
 		quesList = db.getAllQuestions();
 		currentQ = quesList.get(qid);
 		txtQuestion = (TypewriterTextView) findViewById(R.id.textView1);
@@ -60,7 +60,7 @@ public class DecisionTreeQuestionSets extends ActionBarActivity {
 					Log.d("score", "Your score" + score);
 				}
 				
-				if (qid < 10) {
+				if (qid < quesList.size()) {
 						currentQ = quesList.get(qid);
 						setQuestionView();   
 					
@@ -72,6 +72,7 @@ public class DecisionTreeQuestionSets extends ActionBarActivity {
 					intent.putExtras(b); // Put your score to your next Intent
 					startActivity(intent);
 					finish();
+					db.close();
 					}
 			}
 		});

@@ -27,8 +27,9 @@ public class KnnAssessmentActivity extends ActionBarActivity {
 	TypewriterTextView txtQuestion;
 	RadioButton rda, rdb, rdc;
 	Button butNext;
-	Random randomQuestion;
-	int qid = 0;
+	 Random randomQuestion = new Random();
+	/*int qid = randomQuestion.nextInt((9 - 1) + 1) + 1;*/
+	 int qid = 0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,7 +39,8 @@ public class KnnAssessmentActivity extends ActionBarActivity {
 						.getColor(R.color.divider_color)));
 		//getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-		DBHelperKnn db = new DBHelperKnn(this);
+		
+		final DBHelperKnn db = new DBHelperKnn(this);
 		quesList = db.getAllQuestions();
 		currentQ = quesList.get(qid);
 		txtQuestion = (TypewriterTextView) findViewById(R.id.textView1);
@@ -46,9 +48,6 @@ public class KnnAssessmentActivity extends ActionBarActivity {
 		rdb = (RadioButton) findViewById(R.id.radio1);
 		rdc = (RadioButton) findViewById(R.id.radio2);
 		butNext = (Button) findViewById(R.id.button1);
-		
-		
-		
 		
 		setQuestionView();
 		butNext.setOnClickListener(new View.OnClickListener() {
@@ -62,12 +61,11 @@ public class KnnAssessmentActivity extends ActionBarActivity {
 					score++;
 					Log.d("score", "Your score" + score);
 				}
-				
-				if (qid < 10) {
-						currentQ = quesList.get(qid);
-						setQuestionView();   
-					
-				} else {
+				if (qid < quesList.size()) {
+					currentQ = quesList.get(qid);
+					setQuestionView();   
+				}
+				else {
 					Intent intent = new Intent(KnnAssessmentActivity.this,
 							QuizResultActivity.class);
 					Bundle b = new Bundle();
@@ -75,6 +73,7 @@ public class KnnAssessmentActivity extends ActionBarActivity {
 					intent.putExtras(b); // Put your score to your next Intent
 					startActivity(intent);
 					finish();
+					db.close();
 					}
 			}
 		});

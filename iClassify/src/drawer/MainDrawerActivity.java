@@ -215,13 +215,13 @@ public class MainDrawerActivity extends ActionBarActivity {
 		getSupportActionBar().setTitle(mTitle);
 	}
 
-	@Override
+	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.tempo_main, menu);
-
+	
 		return true;
-	}
+	}*/
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -242,13 +242,14 @@ public class MainDrawerActivity extends ActionBarActivity {
 	/***
 	 * Called when invalidateOptionsMenu() is triggered
 	 */
-	@Override
+/*	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
 		// if nav drawer is opened, hide the action items
 		boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
 		menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+		
 		return super.onPrepareOptionsMenu(menu);
-	}
+	}*/
 
 	/**
 	 * When using the ActionBarDrawerToggle, you must call it during

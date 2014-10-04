@@ -40,7 +40,7 @@ public class DBHelperKnn extends SQLiteOpenHelper {
 		addQuestions();
 		//db.close();
 	}
-	private void addQuestions()
+	public void addQuestions()
 	{
 		Question q1=new Question("It was a method first described in the early 1950’s"
 				,"Naive Bayesian", "Decision Tree", "K-Nearest-Neighbor Method", "K-Nearest-Neighbor Method");

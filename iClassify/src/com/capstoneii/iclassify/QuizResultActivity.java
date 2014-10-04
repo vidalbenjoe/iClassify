@@ -1,22 +1,14 @@
 package com.capstoneii.iclassify;
 
-import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity;
-
-import descisiondiscussflip.DescTreeLayoutActivity;
-import drawer.MainDrawerActivity;
-import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
-import android.view.Menu;
-import android.view.MenuInflater;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.PopupMenu;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import drawer.MainDrawerActivity;
 
 public class QuizResultActivity extends ActionBarActivity {
 	ImageView resultimage;
@@ -61,12 +53,6 @@ public class QuizResultActivity extends ActionBarActivity {
 	
 	
 	
-	@Override
-	  public boolean onCreateOptionsMenu(Menu menu) {
-	      MenuInflater inflater = getMenuInflater();
-	      inflater.inflate(R.menu.menu, menu);
-	      return true;
-	  }
 	  
 	  @Override
 	  public boolean onOptionsItemSelected(MenuItem item) { 
@@ -84,16 +70,5 @@ public class QuizResultActivity extends ActionBarActivity {
 	  return super.onOptionsItemSelected(item); 
 	      }
 	  }
-	  
-
-	  /***
-	   * Called when invalidateOptionsMenu() is triggered
-	   */
-	     @Override
-	      public boolean onPrepareOptionsMenu(Menu menu) {
-	              
-	                 return super.onPrepareOptionsMenu(menu);
-	       }
-	   
 	  
 }
