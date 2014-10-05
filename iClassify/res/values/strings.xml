@@ -11,7 +11,8 @@
     <string name="cancel">Cancel</string>
     <string name="imgdesc">imgdesc</string>
     <string name="goback">Go Back</string>
- 	<string name="str_next">Next</string>
+    <string name="str_next">Next</string>
+
     <string-array name="titles">
         <item>Discussion</item>
         <item>Videos</item>
@@ -425,61 +426,50 @@
   	What algorithm you want \nto solve this problem?
 	]]>
     </string>
-    
-    <string name="jumbleid3question1">
-        It characterizes the impurity of an arbitrary 
+    <string name="jumbleid3question1">        It characterizes the impurity of an arbitrary 
 		collection of examples.</string>
-    
     <string name="patientcomputestatement1">
-	<![CDATA[
+<![CDATA[
   	Firstly we look at the probability that we can play the game, so we use the lookup tables to get:
 	]]>
     </string>
     <string name="patientcomputestatement2">
-	<![CDATA[
+<![CDATA[
   	Next we consider the fact that we cannot play a game:
 	]]>
     </string>
-     <string name="patientcomputestatement3">
-	<![CDATA[
+    <string name="patientcomputestatement3">
+<![CDATA[
   	Then, using those results, you have to multiply the whole lot together. So you multiply all the probabilities for Flu=Yes such as:
 	]]>
     </string>
-     <string name="patientcomputestatement4">
-	<![CDATA[
+    <string name="patientcomputestatement4">
+<![CDATA[
   	We also have to do the same thing for Flu=No:
 	]]>
     </string>
-    
     <string name="patientcomputestatement5">
-	<![CDATA[
+<![CDATA[
   	Finally, we have to divide both results by the evidence, or ‘P(X)’.
 	]]>
     </string>
-     
-     <string name="patientcomputestatement6">
-        Then, dividing the results by this value:
-	</string>
-    
-      <string name="probabio">
-	<![CDATA[
+    <string name="patientcomputestatement6">        Then, dividing the results by this value:</string>
+    <string name="probabio">
+<![CDATA[
   	So, given the probabilities, does the patient have flu? To do this, we look at both probabilities \n 
   	and see which once has the highest value, and that is our answer. Since 0.701 is greater \n
   	than 0.227 then the answer is ‘no’, the patient does not have flu.
 	]]>
     </string>
-     
-      <string name="comparisonanalysis">
-	<![CDATA[
+    <string name="comparisonanalysis">
+<![CDATA[
   	Comparing the two problems, why is it that the K Nearest Neighbor Classifier can be used on the Simpsons Scenario but not on the Patient Scenario? Why is Naive Bayes Classifier can be used in the Patient Scenario but not in the Simpson Scenario?
 	\n\n
 	Here is the complete analysis
 	]]>
     </string>
-      
-      
     <string name="whydecisiontree">
-	<![CDATA[
+<![CDATA[
   	Why Decision Tree?
 	Decision Tree works on data of any type. The DT algorithm is well-poised for analyzing very large databases  because it does not require loading all the data in machine main memory simultaneously. That is why, both problems we presented can be solved by Decision tree!
 	Decision Tree algorithm helps solving the task of classifying cases into multiple categories. In many cases, this is the fastest, as well as easily interpreted machine learning algorithm. The DT algorithm provides intuitive rules for solving a great variety of classification tasks ranging from predicting buyers/non-buyers in database marketing, to automatically diagnosing patient in medicine, and to determining customer attrition causes in banking and insurance. No wonder the algorithm worked well on both our completely different scenarios – either with numerical or categorical data.
@@ -487,11 +477,9 @@
 	http://www.bandmservices.com/DecisionTrees.htm
 
 	]]>
-    </string>   
-    
-    
-       <string name="whynaive">
-	<![CDATA[
+    </string>
+    <string name="whynaive">
+<![CDATA[
   	Why Naive Bayes? \n 
 	Naive Byes algorithms are among the most successful known algorithms for probabilistic classification. It predicts by reading a set of examples in attribute value-representation and then by using the Bayes Theorem to estimate the posterior probabilities of all qualifications. For each instance of the example, a classification with the highest posterier probability is chosen as the prediction. 
 
@@ -505,11 +493,8 @@
 	http://www.resample.com/xlminer/help/NaiveBC/classiNB_intro.htm \n
 	]]>
     </string>
-      
-      
-       
     <string name="whyknn">
-	<![CDATA[
+<![CDATA[
   	Why KNN \n
 	The goal of K-Nearest Neighbor is to simply separate the data based on the assumed similarities between various classes.Thus, the classes can be differentiated from one another by searching for similarities between the data provided. In the Simpsons Scenario, we searched for the similarities of Comics Attribute to male or female attributes. 
 	The K Nearest Neighbor is suitable for data with NUMERICAL values, like in our Simpsons Scenario. KNN finds the K neighbors nearest to the new samples from the training space based on some suitable similarity or distance metric.
@@ -524,8 +509,51 @@
 	http://www4.cs.umanitoba.ca/~jacky/Teaching/Courses/74.436/current/Lectures/L07_Instance_Based_Learning.pdf \n
 	]]>
     </string>
-      
-      
+    <string name="doibelieve">
+<![CDATA[
+  	Do I believe that a patient with the following symptoms has a flu?
+	]]>
+    </string>
+
+    <!-- PATIENT DECISION TREE PROBLEM SOLUTION -->
+
+    <string name="patientprobid31">
+  	The first thing we need to do is work out which attribute will be put into the node at the top of our tree: either fever, chills, runny nose or headache. To do this, we need to calculate:\n
+	Entropy(S) = -(5/8)*log2(5/8)-(3/8)*log2(3/8)\n
+    	=   0.955
+    </string>
+    <string name="patientprobid32">
+<![CDATA[
+  	and we need to determine the best of:\n
+	Gain(S,Chills) = 0.955-(4/8)*(-(3/4)*log2(3/4))(-(1/4)*log2(1/4))-(4/8)*(-(2/4)*log2(2/4))(-(2/4)*log2(2/4))\n
+	= 0.455
+	]]>
+    </string>
+    <string name="patientprobid33">
+  	Gain(S,Runny Nose) = 0.955-(5/8)*(-(4/4)*log2(4/4))-(3/8)*(-(1/3)*log2(1/3))(-(2/3)*log2(2/3))\n
+	 = 0.255
+    </string>
+    <string name="patientprobid34">
+  	Gain(S,Fever) = 0.955-(5/8)*(-(4/5)*log2(4/5))(-(1/5)*log2(1/5))-(3/8)*(-(1/3)*log2(1/3))(-(2/3)*log2(2/3))\n
+	= 0.635
+    </string>
     
- 
+       <string name="patientprobid35">
+<![CDATA[
+  	Gain(S,Headache) = 0.955-(3/8)*(-(2/3)*log2(2/3))(-(1/3)*log2(1/3))\n
+		 =  0.955-(0.375)*0.39+0.528-(2/8)*(-(1/2)*log2(1/2))(-(1/2)*log2(1/2))\n
+		 = 0.955-(0.375)*0.39+0.528-(0.25)*0.5+0.5-(3/8)*(-(2/3)*log2(2/3))(-(1/3)*log2(1/3))\n
+		 = 0.955-(0.375)*0.39+0.528-(0.25)*0.5+0.5-(0.375)*0.39+0.528\n
+		 = 0.255
+	]]>
+    </string>
+    
+        <string name="thismeans">
+<![CDATA[
+  	This means that the first node in the decision tree will be the fever attribute. As an exercise, convince yourself why this scored (slightly) higher than the parents attribute - remember what entropy means and look at the way information gain is calculated
+	]]>
+    </string>
+       
+    
+    
 </resources>

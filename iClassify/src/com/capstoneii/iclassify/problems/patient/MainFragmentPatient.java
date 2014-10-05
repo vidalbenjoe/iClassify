@@ -55,14 +55,14 @@ public class MainFragmentPatient extends Fragment {
 		textFluNo = (TextView) rootView.findViewById(R.id.textFluNo);
 		textHead.setVisibility(View.VISIBLE);
 		textFlu.setVisibility(View.VISIBLE);
-		textHead.setText("Do I believe that a patient with the following symptoms has a flu?");
+		textHead.setText(R.string.doibelieve);
 
-		textHead.setmDuration(1800);
+		textHead.setmDuration(1400);
 		textHead.setIsVisible(false);
 		textHead.toggle();
 
 		textFlu.setText("Flu?");
-		textFlu.setmDuration(1200);
+		textFlu.setmDuration(1000);
 		textFlu.setIsVisible(false);
 		textFlu.toggle();
 
@@ -84,7 +84,6 @@ public class MainFragmentPatient extends Fragment {
 				}
 
 				switch (nextButton) {
-
 				case 1:
 					textHead.setText("Lookup Table");
 					textFlu.setText(R.string.lookuptextpatient);
@@ -102,19 +101,16 @@ public class MainFragmentPatient extends Fragment {
 							// box
 							final Dialog dialog = new Dialog(getActivity());
 							dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-							dialog.setContentView(R.layout.dialog_patient_lookup);
-							dialog.getWindow()
-									.setBackgroundDrawable(
-											new ColorDrawable(
-													android.graphics.Color.TRANSPARENT));
+							dialog.setContentView(R.layout.custom_dialog_image);
+							dialog.getWindow().setBackgroundDrawable(new ColorDrawable
+									(android.graphics.Color.TRANSPARENT));
 
 							imageView_close = (ImageView) dialog.findViewById(R.id.imageView_close);
 							imageView_close.setImageResource(R.drawable.patientlookuptablestart);
 
-							Button cadbtnNext = (Button) dialog
-									.findViewById(R.id.cadbtnNext);
-							cadbtnNext
-									.setOnClickListener(new View.OnClickListener() {
+							Button cadbtnNext = (Button) dialog.findViewById(R.id.cadbtnNext);
+							cadbtnNext.setBackgroundResource(R.drawable.simulnextbt);
+							cadbtnNext.setOnClickListener(new View.OnClickListener() {
 										@Override
 										public void onClick(
 												View InputFragmentView) {
@@ -129,7 +125,7 @@ public class MainFragmentPatient extends Fragment {
 											 * adamImage X = (Chills=Yes, Runny
 											 * Nose=No, Headache=Mild, Fever=No)
 											 */
-											
+
 											lookupbt.setVisibility(View.INVISIBLE);
 											adamImage
 													.setVisibility(View.VISIBLE);

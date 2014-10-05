@@ -2,16 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cadllMain"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="500dp"
     android:layout_marginLeft="25dp"
     android:layout_marginRight="25dp"
     android:orientation="vertical"
     tools:ignore="ButtonOrder" >
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/table_imgFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/nameof"
@@ -23,27 +23,15 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <!--
-             <ImageView
-            android:id="@+id/imageView_close"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:clickable="true"
-            android:src="@drawable/comicavatar"
-            tools:ignore="ContentDescription" />
-        -->
-
         <ImageView
             android:id="@+id/imageView_close"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             tools:ignore="ContentDescription" />
-    </FrameLayout>
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="wrap_content"

@@ -2,9 +2,11 @@ package com.capstoneii.iclassify.problems.patientdectree;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.SecretTextView;
+import com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment;
 
 import android.app.Dialog;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -127,12 +129,9 @@ public class PatientProblemsDecisionTreeFragment extends Fragment {
 											 */
 
 											lookupbt.setVisibility(View.INVISIBLE);
-											adamImage
-													.setVisibility(View.VISIBLE);
-											adamImage
-													.setBackgroundResource(R.drawable.nextbtred);
-											adamImage
-													.setOnClickListener(new View.OnClickListener() {
+											adamImage.setVisibility(View.VISIBLE);
+											adamImage.setBackgroundResource(R.drawable.nextbtred);
+											adamImage.setOnClickListener(new View.OnClickListener() {
 														@Override
 														public void onClick(
 																View InputFragmentView) {
@@ -151,14 +150,6 @@ public class PatientProblemsDecisionTreeFragment extends Fragment {
 					});
 					break;
 
-				case 2:
-
-					break;
-
-				case 3:
-
-					break;
-
 				default:
 
 					break;
@@ -168,10 +159,22 @@ public class PatientProblemsDecisionTreeFragment extends Fragment {
 			}
 		});
 		return rootView;
-
 	}
 
 	public void case2() {
 
+		switch (nextButton) {
+		case 2:
+			Fragment PAtientProblemDecTreeComputation = new PAtientProblemDecTreeComputation();
+			FragmentTransaction ft = getFragmentManager()
+					.beginTransaction();
+			ft.replace(R.id.frame_container,
+					PAtientProblemDecTreeComputation);
+			ft.commit();
+			break;
+
+		default:
+			break;
+		}
 	}
 }
