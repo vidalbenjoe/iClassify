@@ -2,10 +2,14 @@ package descisiondiscussflip;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.PointF;
+import android.media.MediaPlayer;
+import android.speech.tts.TextToSpeech;
 import android.text.Html;
 import android.util.FloatMath;
 import android.view.LayoutInflater;
@@ -21,8 +25,9 @@ import com.aphidmobile.utils.IO;
 import com.aphidmobile.utils.UI;
 import com.capstoneii.iclassify.R;
 
+@SuppressLint("FloatMath")
 public class DescTreeAdapter extends BaseAdapter {
-
+	public TextToSpeech tts;
 	private LayoutInflater inflater;
 
 	private int repeatCount = 1;
@@ -38,11 +43,24 @@ public class DescTreeAdapter extends BaseAdapter {
 	static final int DRAG = 1;
 	static final int ZOOM = 2;
 	int mode = NONE;
+	MediaPlayer dtone, dttwo, dtthree, dtfour;
 
 	public DescTreeAdapter(Context context) {
 		inflater = LayoutInflater.from(context);
 		desctreeData = new ArrayList<TopicData.Data>(TopicData.IMG_DESCRIPTIONS);
-
+		tts = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
+			@Override
+			public void onInit(int status) {
+				if (status != TextToSpeech.ERROR) {
+					tts.setLanguage(Locale.US);
+				}
+			}
+		});
+		
+		dtone = MediaPlayer.create(context, R.raw.dtone);
+		dttwo = MediaPlayer.create(context, R.raw.dttwo);
+		dtthree = MediaPlayer.create(context, R.raw.dtthree);
+		dtfour = MediaPlayer.create(context, R.raw.dtfour);
 	}
 
 	@Override
@@ -160,6 +178,35 @@ public class DescTreeAdapter extends BaseAdapter {
 				layout, R.id.description).setTypewriterText(
 				Html.fromHtml(data.description));
 
+		/*
+		 * String toSpeak = UI
+		 * .<com.capstoneii.iclassify.library.TypewriterTextView> findViewById(
+		 * layout, R.id.description).getText().toString(); tts.speak(toSpeak,
+		 * TextToSpeech.QUEUE_FLUSH, null);
+		 */
+
+		if (position == 1) {
+			dtone.start();
+		}
+		if (position == 2) {
+			dtone.stop();
+			dttwo.start();
+			dtthree.stop();
+			dtfour.stop();
+		}
+		if (position == 3) {
+			dtone.stop();
+			dttwo.stop();
+			dtthree.start();
+			dtfour.stop();
+		}
+		if (position == 4) {
+			dtone.stop();
+			dttwo.stop();
+			dtthree.stop();
+			dtfour.start();
+		}
+
 		return layout;
 	}
 
@@ -167,6 +214,13 @@ public class DescTreeAdapter extends BaseAdapter {
 		if (desctreeData.size() > 1) {
 			desctreeData.remove(index);
 
+		}
+	}
+
+	public void onPause() {
+		if (tts != null) {
+			tts.stop();
+			tts.shutdown();
 		}
 	}
 

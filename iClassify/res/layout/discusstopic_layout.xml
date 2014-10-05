@@ -37,7 +37,7 @@
             android:background="@drawable/imageborder" />
     </RelativeLayout>
 
-    <com.capstoneii.iclassify.library.TypewriterTextView
+    <com.capstoneii.iclassify.library.SecretTextView
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="2"
-        android:textSize="18sp"
+        android:textSize="23sp"
         android:textAppearance="@android:style/TextAppearance.Medium"
         android:textColor="@android:color/white" />
 

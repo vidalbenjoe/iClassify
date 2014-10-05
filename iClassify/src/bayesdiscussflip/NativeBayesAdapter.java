@@ -2,10 +2,13 @@ package bayesdiscussflip;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.PointF;
+import android.media.MediaPlayer;
+import android.speech.tts.TextToSpeech;
 import android.text.Html;
 import android.util.FloatMath;
 import android.view.LayoutInflater;
@@ -37,11 +40,19 @@ public class NativeBayesAdapter extends BaseAdapter {
 	static final int DRAG = 1;
 	static final int ZOOM = 2;
 	int mode = NONE;
+	public TextToSpeech tts;
+	MediaPlayer nbone, nbtwo, nbthree, nbfour;
 
 	public NativeBayesAdapter(Context context) {
 		inflater = LayoutInflater.from(context);
 		desctreeData = new ArrayList<NativeBayesData.Data>(
 				NativeBayesData.IMG_DESCRIPTIONS);
+
+		nbone = MediaPlayer.create(context, R.raw.nbone);
+		nbtwo = MediaPlayer.create(context, R.raw.nbtwo);
+		nbthree = MediaPlayer.create(context, R.raw.nbthree);
+		nbfour = MediaPlayer.create(context, R.raw.nbfour);
+
 	}
 
 	@Override
@@ -159,12 +170,46 @@ public class NativeBayesAdapter extends BaseAdapter {
 				layout, R.id.description).setTypewriterText(
 				Html.fromHtml(data.description));
 
+		String toSpeak = UI
+				.<com.capstoneii.iclassify.library.TypewriterTextView> findViewById(
+						layout, R.id.description).getText().toString();
+		tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+
+		if (position == 1) {
+			nbone.start();
+		}
+		if (position == 2) {
+			nbone.stop();
+			nbtwo.start();
+			nbthree.stop();
+			nbfour.stop();
+		}
+		if (position == 3) {
+			nbone.stop();
+			nbtwo.stop();
+			nbthree.start();
+			nbfour.stop();
+		}
+		if (position == 4) {
+			nbone.stop();
+			nbtwo.stop();
+			nbthree.stop();
+			nbfour.start();
+		}
+
 		return layout;
 	}
 
 	public void removeData(int index) {
 		if (desctreeData.size() > 1) {
 			desctreeData.remove(index);
+		}
+	}
+
+	public void onPause() {
+		if (tts != null) {
+			tts.stop();
+			tts.shutdown();
 		}
 	}
 }
