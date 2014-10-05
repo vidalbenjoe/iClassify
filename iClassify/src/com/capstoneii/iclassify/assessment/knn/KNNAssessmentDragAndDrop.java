@@ -1,5 +1,6 @@
 package com.capstoneii.iclassify.assessment.knn;
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -21,8 +22,6 @@ import android.widget.Toast;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SplashScreenActivity;
 import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity;
-import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity;
-import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
 public class KNNAssessmentDragAndDrop extends ActionBarActivity {
@@ -84,17 +83,14 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 		choice3.setOnDragListener(new ChoiceDragListener());
 		choice4.setOnDragListener(new ChoiceDragListener());
 		choice5.setOnDragListener(new ChoiceDragListener());
-		
-		
+
 		clearbt.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View InputFragmentView) {
 
-				Intent intent = new Intent(
-						KNNAssessmentDragAndDrop.this,
+				Intent intent = new Intent(KNNAssessmentDragAndDrop.this,
 						KNNAssessmentDragAndDrop.class);
-				KNNAssessmentDragAndDrop.this
-						.startActivity(intent);
+				KNNAssessmentDragAndDrop.this.startActivity(intent);
 				KNNAssessmentDragAndDrop.this.finish();
 			}
 		});
@@ -105,7 +101,7 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 	 * ChoiceTouchListener will handle touch events on draggable views
 	 * 
 	 */
-	private final class ChoiceTouchListener implements OnTouchListener {
+	@SuppressLint("ClickableViewAccessibility") private final class ChoiceTouchListener implements OnTouchListener {
 		public boolean onTouch(View view, MotionEvent motionEvent) {
 			if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
 				/*

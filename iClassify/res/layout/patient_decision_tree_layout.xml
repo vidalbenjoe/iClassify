@@ -1,8 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundblur"
     android:orientation="vertical" >
     
+    
+       
+    <com.capstoneii.iclassify.library.SecretTextView
+        android:id="@+id/textHead"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:shadowColor="@android:color/black"
+	    android:shadowDx="1"
+	    android:shadowDy="1"
+	    android:shadowRadius="2"
+	    android:textColor="#fff"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+    
+     <com.capstoneii.iclassify.library.SecretTextView
+        android:id="@+id/textFlu"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#fff"
+        android:layout_below="@+id/textHead"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+     
+     <EditText 
+        android:id="@+id/textFluTextBox"
+        android:layout_height="55dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/roundededittext"
+        android:padding="15dp"
+        android:layout_below="@+id/textFlu"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+     
+     <TextView 
+        android:id="@+id/textFluNo"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/textFluTextBox"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+     
+     <EditText 
+        android:id="@+id/textFluNoTextBox"
+        android:layout_height="55dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:padding="15dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/roundededittext"
+        android:layout_below="@+id/textFluNo"
+        android:visibility="invisible"/>
+     
+     
+      <ImageView 
+        android:id="@+id/tableflu"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/textFlu"
+        android:contentDescription="@string/app_name"
+        android:layout_centerHorizontal="true"/>
+     
+     
+     <!-- Clickable adam -->
+     <ImageView 
+        android:id="@+id/adamImage"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/textFluNoTextBox"
+        android:contentDescription="@string/app_name"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+     
+      <TextView 
+        android:id="@+id/ClickmeText"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="#fff"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/adamImage"
+        android:layout_centerHorizontal="true"/>
+     
+     <Button   
+        android:id="@+id/lookupbt"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textFlu"
+        android:visibility="invisible"/>
 
-</LinearLayout>
+</RelativeLayout>

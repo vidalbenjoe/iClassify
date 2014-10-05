@@ -12,14 +12,16 @@ import drawer.MainDrawerActivity;
 
 public class QuizResultActivity extends ActionBarActivity {
 	ImageView resultimage;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.quiz_result_layout);
 		getSupportActionBar().setBackgroundDrawable(
-				new ColorDrawable(getResources().getColor(R.color.divider_color)));
+				new ColorDrawable(getResources()
+						.getColor(R.color.divider_color)));
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		
+
 		resultimage = (ImageView) findViewById(R.id.resultimage);
 		// get rating bar object
 		RatingBar bar = (RatingBar) findViewById(R.id.ratingBar1);
@@ -34,41 +36,37 @@ public class QuizResultActivity extends ActionBarActivity {
 		bar.setRating(score);
 		switch (score) {
 		case 1:
-		case 2:
 			t.setText("Oopsie! Better Luck Next Time!");
-			resultimage.setImageResource(R.drawable.adamflint);
+		case 2:
+
+			t.setText("Please study more ! :(");
 			break;
 		case 3:
-			
+			t.setText("Practice makes perfect!");
 		case 4:
 			t.setText("Hmmmm.. Someone's been reading a lot of trivia");
-			resultimage.setImageResource(R.drawable.edward);
+
 			break;
 		case 5:
 			t.setText("Who are you? A trivia wizard???");
-			resultimage.setImageResource(R.drawable.nina);
+
 			break;
 		}
 	}
-	
-	
-	
-	  
-	  @Override
-	  public boolean onOptionsItemSelected(MenuItem item) { 
-	    switch (item.getItemId()) {
-	  case android.R.id.home:
-		  Intent intent = new Intent(this, MainDrawerActivity.class);
-	      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-	      startActivity(intent);
-	      // app icon in action bar clicked; go home
-	  return true;
-	  
-	 
-	  
-	  default:
-	  return super.onOptionsItemSelected(item); 
-	      }
-	  }
-	  
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			Intent intent = new Intent(this, MainDrawerActivity.class);
+			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			// app icon in action bar clicked; go home
+			return true;
+
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
 }

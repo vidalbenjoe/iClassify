@@ -2,7 +2,6 @@ package com.capstoneii.iclassify.problems.patient;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.SecretTextView;
-import com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -109,10 +108,8 @@ public class MainFragmentPatient extends Fragment {
 											new ColorDrawable(
 													android.graphics.Color.TRANSPARENT));
 
-							imageView_close = (ImageView) dialog
-									.findViewById(R.id.imageView_close);
-							imageView_close
-									.setImageResource(R.drawable.patientlookuptablestart);
+							imageView_close = (ImageView) dialog.findViewById(R.id.imageView_close);
+							imageView_close.setImageResource(R.drawable.patientlookuptablestart);
 
 							Button cadbtnNext = (Button) dialog
 									.findViewById(R.id.cadbtnNext);

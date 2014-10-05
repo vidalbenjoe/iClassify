@@ -1,5 +1,6 @@
 package com.capstoneii.iclassify.problems.simpsonsknn;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -7,17 +8,17 @@ import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
+import android.util.FloatMath;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.text.method.ScrollingMovementMethod;
-import android.util.FloatMath;
-import android.view.MotionEvent;
+
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 import com.capstoneii.iclassify.problems.ChooseProblemActivity;
@@ -42,7 +43,7 @@ public class SimpsonChartFragment extends Fragment {
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	    }
-	        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+	        @SuppressLint({ "ClickableViewAccessibility", "FloatMath" }) public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		    {
 			 View rootView = inflater .inflate(R.layout.simpson_chart_layout, container, false);  
 			 	

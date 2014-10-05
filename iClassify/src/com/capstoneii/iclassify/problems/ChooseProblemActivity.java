@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.problems.patient.MainFragmentPatient;
+import com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment;
 import com.capstoneii.iclassify.problems.simpsonsknn.SimpsonTableFragmentKNN;
-import com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity;
 
 @SuppressLint("NewApi")
 public class ChooseProblemActivity extends Fragment {
@@ -43,17 +43,6 @@ public class ChooseProblemActivity extends Fragment {
 		patientBT.setText("Patient Scenario");
 		simpsonBT.setText("Simpsons");
 		catsheepBT.setVisibility(View.INVISIBLE);
-		catsheepBT.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View InputFragmentView) {
-				Fragment chooseAlgocatSheep = new chooseAlgocatSheep();
-				FragmentTransaction ft = getFragmentManager()
-						.beginTransaction();
-				ft.replace(R.id.frame_container, chooseAlgocatSheep);
-				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-				ft.commit();
-			}
-		});
 
 		patientBT.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -74,64 +63,6 @@ public class ChooseProblemActivity extends Fragment {
 				FragmentTransaction ft = getFragmentManager()
 						.beginTransaction();
 				ft.replace(R.id.frame_container, chooseAlgoSimpson);
-				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-				ft.commit();
-			}
-		});
-
-		return rootView;
-	}
-
-}
-
-class chooseAlgocatSheep extends Fragment {
-
-	Button catsheepBT, patientBT, simpsonBT, chooseTopic;
-	TextView headerText;
-
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
-
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.choose_problem_layout,
-				container, false);
-
-		headerText = (TextView) rootView.findViewById(R.id.headerText);
-		headerText.setText(R.string.whatalgoyouwant);
-
-		catsheepBT = (Button) rootView.findViewById(R.id.catsheepBT);
-		patientBT = (Button) rootView.findViewById(R.id.patientBT);
-		simpsonBT = (Button) rootView.findViewById(R.id.simpsonBT);
-
-		catsheepBT.setText("Decision Tree");
-		patientBT.setText("K -  Nearest");
-		simpsonBT.setText("Naive Bayesian");
-
-		chooseTopic = (Button) rootView.findViewById(R.id.chooseTopic);
-		chooseTopic.setVisibility(View.VISIBLE);
-
-		chooseTopic.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View InputFragmentView) {
-				Fragment ChooseProblemActivity = new ChooseProblemActivity();
-				FragmentTransaction ft = getFragmentManager()
-						.beginTransaction();
-				ft.replace(R.id.frame_container, ChooseProblemActivity);
-				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-				ft.commit();
-			}
-		});
-
-		catsheepBT.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View InputFragmentView) {
-				Fragment SimulStartActivity = new SimulStartActivity();
-				FragmentTransaction ft = getFragmentManager()
-						.beginTransaction();
-				ft.replace(R.id.frame_container, SimulStartActivity);
 				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 				ft.commit();
 			}
@@ -174,6 +105,13 @@ class chooseAlgoPatient extends Fragment {
 		patientBT.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				Fragment PatientProblemsDecisionTreeFragment = new PatientProblemsDecisionTreeFragment();
+				FragmentTransaction ft = getFragmentManager()
+						.beginTransaction();
+				ft.replace(R.id.frame_container,
+						PatientProblemsDecisionTreeFragment);
+				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+				ft.commit();
 
 			}
 		});
@@ -238,7 +176,7 @@ class chooseAlgoSimpson extends Fragment {
 		simpsonID3BT.setText("Decision Tree");
 		simpsonKNNBT.setText("K -  Nearest");
 		simpsonNBBT.setText("Naive Bayesian");
-		
+
 		chooseTopic = (Button) rootView.findViewById(R.id.chooseTopic);
 		chooseTopic.setVisibility(View.VISIBLE);
 
@@ -276,7 +214,7 @@ class chooseAlgoSimpson extends Fragment {
 				ft.replace(R.id.frame_container, SimpsonTableFragmentKNN);
 				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 				ft.commit();
-			
+
 			}
 		});
 

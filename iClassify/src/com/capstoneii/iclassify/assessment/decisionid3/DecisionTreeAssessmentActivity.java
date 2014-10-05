@@ -21,7 +21,6 @@ import android.widget.Toast;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SplashScreenActivity;
-import com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
 @SuppressLint("NewApi")
@@ -94,7 +93,7 @@ public class DecisionTreeAssessmentActivity extends ActionBarActivity {
 	 * ChoiceTouchListener will handle touch events on draggable views
 	 * 
 	 */
-	private final class ChoiceTouchListener implements OnTouchListener {
+	@SuppressLint("ClickableViewAccessibility") private final class ChoiceTouchListener implements OnTouchListener {
 		public boolean onTouch(View view, MotionEvent motionEvent) {
 			if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
 				/*

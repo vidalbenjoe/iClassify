@@ -90,7 +90,7 @@ public class KNearestAdapter extends BaseAdapter {
 		return position;
 	}
 
-	@SuppressLint("FloatMath")
+	@SuppressLint({ "FloatMath", "InflateParams", "ClickableViewAccessibility" })
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View layout = convertView;
@@ -98,11 +98,8 @@ public class KNearestAdapter extends BaseAdapter {
 			layout = inflater.inflate(R.layout.discusstopic_layout, null);
 			AphidLog.d("created new view from adapter: %d", position);
 			System.out.printf("Position: %d", position);
-			
-			
+
 		}
-		
-		
 
 		final KNearestData.Data data = desctreeData.get(position
 				% desctreeData.size());
@@ -169,11 +166,13 @@ public class KNearestAdapter extends BaseAdapter {
 						view.setImageMatrix(matrix);
 						return true;
 					}
+
 					private float spacing(MotionEvent event) {
 						float x = event.getX(0) - event.getX(1);
 						float y = event.getY(0) - event.getY(1);
 						return FloatMath.sqrt(x * x + y * y);
 					}
+
 					private void midPoint(PointF point, MotionEvent event) {
 						float x = event.getX(0) + event.getX(1);
 						float y = event.getY(0) + event.getY(1);
@@ -185,45 +184,28 @@ public class KNearestAdapter extends BaseAdapter {
 				layout, R.id.description).setText(
 				Html.fromHtml(data.description));
 		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
-				layout, R.id.description).setmDuration(1800);
+				layout, R.id.description).setmDuration(500);
 		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 				layout, R.id.description).setIsVisible(false);
 		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 				layout, R.id.description).toggle();
 
-		/*String toSpeak = UI
-				.<com.capstoneii.iclassify.library.TypewriterTextView> findViewById(
-						layout, R.id.description).getText().toString();
-		tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);*/
-
-		if (position == 1) {
-			knnone.start();
-		} if (position == 2) {
-			knnone.stop();
-			knntwo.start();
-			knnthree.stop();
-			knnfour.stop();
-			knnfive.stop();
-		} if (position == 3) {
-			knnone.stop();
-			knntwo.stop();
-			knnthree.start();
-			knnfour.stop();
-			knnfive.stop();
-		} if (position == 4) {
-			knnone.stop();
-			knntwo.stop();
-			knnthree.stop();
-			knnfour.start();
-			knnfive.stop();
-		} else if (position == 5) {
-			knnone.stop();
-			knntwo.stop();
-			knnthree.stop();
-			knnfour.stop();
-			knnfive.start();
+		for (int i = 0; i < position; i++) {
+			String toSpeak = UI
+					.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+							layout, R.id.description).getText().toString();
+			tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
 		}
 
+		/*
+		 * if (position == 1) { knnone.start(); } if (position == 2) {
+		 * knnone.stop(); knntwo.start(); knnthree.stop(); knnfour.stop();
+		 * knnfive.stop(); } if (position == 3) { knnone.stop(); knntwo.stop();
+		 * knnthree.start(); knnfour.stop(); knnfive.stop(); } if (position ==
+		 * 4) { knnone.stop(); knntwo.stop(); knnthree.stop(); knnfour.start();
+		 * knnfive.stop(); } else if (position == 5) { knnone.stop();
+		 * knntwo.stop(); knnthree.stop(); knnfour.stop(); knnfive.start(); }
+		 */
 		return layout;
 	}
 

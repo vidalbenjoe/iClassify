@@ -2,8 +2,7 @@ package bayesdiscussflip;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.PointF;
@@ -78,7 +77,7 @@ public class NativeBayesAdapter extends BaseAdapter {
 		return position;
 	}
 
-	@Override
+	@SuppressLint({ "InflateParams", "ClickableViewAccessibility", "FloatMath" }) @Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View layout = convertView;
 		if (convertView == null) {
@@ -166,35 +165,21 @@ public class NativeBayesAdapter extends BaseAdapter {
 					}
 				});
 
-		UI.<com.capstoneii.iclassify.library.TypewriterTextView> findViewById(
-				layout, R.id.description).setTypewriterText(
+		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+				layout, R.id.description).setText(
 				Html.fromHtml(data.description));
+		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+				layout, R.id.description).setmDuration(500);
+		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+				layout, R.id.description).setIsVisible(false);
+		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+				layout, R.id.description).toggle();
 
-		String toSpeak = UI
-				.<com.capstoneii.iclassify.library.TypewriterTextView> findViewById(
-						layout, R.id.description).getText().toString();
-		tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-
-		if (position == 1) {
-			nbone.start();
-		}
-		if (position == 2) {
-			nbone.stop();
-			nbtwo.start();
-			nbthree.stop();
-			nbfour.stop();
-		}
-		if (position == 3) {
-			nbone.stop();
-			nbtwo.stop();
-			nbthree.start();
-			nbfour.stop();
-		}
-		if (position == 4) {
-			nbone.stop();
-			nbtwo.stop();
-			nbthree.stop();
-			nbfour.start();
+		for (int i = 0; i < position; i++) {
+			String toSpeak = UI
+					.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+							layout, R.id.description).getText().toString();
+			tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
 		}
 
 		return layout;
@@ -211,5 +196,20 @@ public class NativeBayesAdapter extends BaseAdapter {
 			tts.stop();
 			tts.shutdown();
 		}
+	}
+
+	public void onDestroy() {
+		if (tts != null) {
+			tts.stop();
+			tts.shutdown();
+		}
+	}
+
+	public void onStop() {
+		if (tts != null) {
+			tts.stop();
+			tts.shutdown();
+		}
+
 	}
 }

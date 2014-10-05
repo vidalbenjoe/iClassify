@@ -21,8 +21,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
@@ -285,7 +283,7 @@ public class MainDrawerActivity extends ActionBarActivity {
 		moreList.add(map);
 	}
 
-	private void iniPopupWindow() {
+	@SuppressLint("InflateParams") private void iniPopupWindow() {
 
 		LayoutInflater inflater = (LayoutInflater) this
 				.getSystemService(LAYOUT_INFLATER_SERVICE);

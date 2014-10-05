@@ -25,7 +25,7 @@ import com.aphidmobile.utils.IO;
 import com.aphidmobile.utils.UI;
 import com.capstoneii.iclassify.R;
 
-@SuppressLint("FloatMath")
+@SuppressLint({ "FloatMath", "InflateParams", "ClickableViewAccessibility" })
 public class DescTreeAdapter extends BaseAdapter {
 	public TextToSpeech tts;
 	private LayoutInflater inflater;
@@ -56,7 +56,7 @@ public class DescTreeAdapter extends BaseAdapter {
 				}
 			}
 		});
-		
+
 		dtone = MediaPlayer.create(context, R.raw.dtone);
 		dttwo = MediaPlayer.create(context, R.raw.dttwo);
 		dtthree = MediaPlayer.create(context, R.raw.dtthree);
@@ -174,37 +174,21 @@ public class DescTreeAdapter extends BaseAdapter {
 					}
 				});
 
-		UI.<com.capstoneii.iclassify.library.TypewriterTextView> findViewById(
-				layout, R.id.description).setTypewriterText(
+		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+				layout, R.id.description).setText(
 				Html.fromHtml(data.description));
+		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+				layout, R.id.description).setmDuration(500);
+		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+				layout, R.id.description).setIsVisible(false);
+		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+				layout, R.id.description).toggle();
 
-		/*
-		 * String toSpeak = UI
-		 * .<com.capstoneii.iclassify.library.TypewriterTextView> findViewById(
-		 * layout, R.id.description).getText().toString(); tts.speak(toSpeak,
-		 * TextToSpeech.QUEUE_FLUSH, null);
-		 */
-
-		if (position == 1) {
-			dtone.start();
-		}
-		if (position == 2) {
-			dtone.stop();
-			dttwo.start();
-			dtthree.stop();
-			dtfour.stop();
-		}
-		if (position == 3) {
-			dtone.stop();
-			dttwo.stop();
-			dtthree.start();
-			dtfour.stop();
-		}
-		if (position == 4) {
-			dtone.stop();
-			dttwo.stop();
-			dtthree.stop();
-			dtfour.start();
+		for (int i = 0; i < position; i++) {
+			String toSpeak = UI
+					.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+							layout, R.id.description).getText().toString();
+			tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
 		}
 
 		return layout;
@@ -218,6 +202,20 @@ public class DescTreeAdapter extends BaseAdapter {
 	}
 
 	public void onPause() {
+		if (tts != null) {
+			tts.stop();
+			tts.shutdown();
+		}
+	}
+
+	public void onDestroy() {
+		if (tts != null) {
+			tts.stop();
+			tts.shutdown();
+		}
+	}
+
+	public void onStop() {
 		if (tts != null) {
 			tts.stop();
 			tts.shutdown();
