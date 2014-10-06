@@ -35,13 +35,11 @@ public class PAtientProblemDecTreeComputation extends Fragment {
 				container, false);
 		animZoom = AnimationUtils
 				.loadAnimation(getActivity(), R.anim.unzoom_in);
-		final TypewriterTextView textcompute = (TypewriterTextView) rootView
-				.findViewById(R.id.textcompute);
-		textcompute.setTypewriterText(getString(R.string.patientprobid31));
+		final TypewriterTextView textcomputehaha = (TypewriterTextView) rootView.findViewById(R.id.textcomputehaha);
+		textcomputehaha.setText(R.string.patientprobid31);
 
-		textcompute2 = (SecretTextView) rootView
-				.findViewById(R.id.textcompute2);
-		textcompute.setVisibility(View.VISIBLE);
+		textcompute2 = (SecretTextView) rootView.findViewById(R.id.textcompute2);
+		textcomputehaha.setVisibility(View.VISIBLE);
 
 		treepatient = (ImageView) rootView.findViewById(R.id.treepatient);
 		treepatient.setVisibility(View.INVISIBLE);
@@ -58,7 +56,7 @@ public class PAtientProblemDecTreeComputation extends Fragment {
 
 				switch (counter) {
 				case 1:
-					textcompute.setVisibility(View.GONE);
+					textcomputehaha.setVisibility(View.GONE);
 					textcompute2.setVisibility(View.VISIBLE);
 					textcompute2.setText(R.string.patientprobid32);
 					textcompute2.setmDuration(2200);
@@ -67,18 +65,18 @@ public class PAtientProblemDecTreeComputation extends Fragment {
 					break;
 
 				case 2:
-					textcompute.setVisibility(View.VISIBLE);
-					textcompute
-							.setTypewriterText(getString(R.string.patientprobid33));
+					textcomputehaha.setVisibility(View.VISIBLE);
+					textcomputehaha
+							.setText(R.string.patientprobid33);
 					textcompute2.setVisibility(View.GONE);
 					break;
 				case 3:
-					textcompute.setVisibility(View.VISIBLE);
-					textcompute
-							.setTypewriterText(getString(R.string.patientprobid34));
+					textcomputehaha.setVisibility(View.VISIBLE);
+					textcomputehaha
+							.setText(R.string.patientprobid34);
 					break;
 				case 4:
-					textcompute.setVisibility(View.GONE);
+					textcomputehaha.setVisibility(View.GONE);
 					textcompute2.setVisibility(View.VISIBLE);
 					textcompute2.setText(R.string.patientprobid35);
 					textcompute2.setmDuration(1200);
@@ -87,17 +85,16 @@ public class PAtientProblemDecTreeComputation extends Fragment {
 					break;
 
 				case 5:
-					textcompute.setVisibility(View.VISIBLE);
+					textcomputehaha.setVisibility(View.VISIBLE);
 					textcompute2.setVisibility(View.GONE);
-					textcompute
-							.setTypewriterText(getString(R.string.thismeans));
+					textcomputehaha
+							.setText(R.string.thismeans);
 
 					treepatient.setVisibility(View.VISIBLE);
 					treepatient.setImageResource(R.drawable.patienttree);
 					treepatient.startAnimation(animZoom);
 
-					patientnextbt
-							.setOnClickListener(new View.OnClickListener() {
+					patientnextbt.setOnClickListener(new View.OnClickListener() {
 
 								@Override
 								public void onClick(View v) {
@@ -106,24 +103,15 @@ public class PAtientProblemDecTreeComputation extends Fragment {
 									dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 									dialog.setContentView(R.layout.custom_dialog_text);
 									dialog.setCancelable(false);
-									dialog.getWindow()
-											.setBackgroundDrawable(
-													new ColorDrawable(
-															android.graphics.Color.TRANSPARENT));
+									dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
-									final TypewriterTextView customtextindialog = (TypewriterTextView) dialog
-											.findViewById(R.id.customtextindialog);
-									customtextindialog
-											.setText(R.string.probabio);
-									customtextindialog
-											.setMovementMethod(new ScrollingMovementMethod());
+									final TypewriterTextView customtextindialog = (TypewriterTextView) dialog.findViewById(R.id.customtextindialog);
+									customtextindialog.setText(R.string.whydecisiontree);
+									customtextindialog.setMovementMethod(new ScrollingMovementMethod());
 
-									ImageView cadbtnNext = (ImageView) dialog
-											.findViewById(R.id.cadbtnNext);
-									cadbtnNext
-											.setImageResource(R.drawable.backtomainmenu);
-									cadbtnNext
-											.setOnClickListener(new View.OnClickListener() {
+									ImageView cadbtnNext = (ImageView) dialog.findViewById(R.id.cadbtnNext);
+									cadbtnNext.setImageResource(R.drawable.backtomainmenu);
+									cadbtnNext.setOnClickListener(new View.OnClickListener() {
 												@Override
 												public void onClick(
 														View InputFragmentView) {

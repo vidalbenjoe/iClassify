@@ -1,5 +1,6 @@
 package com.capstoneii.iclassify.assessment.decisionid3;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.view.DragEvent;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.View.DragShadowBuilder;
 import android.view.View.OnDragListener;
 import android.view.View.OnTouchListener;
@@ -167,6 +169,26 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends
 							"Sorry, you dropped it on the wrong place",
 							Toast.LENGTH_SHORT).show();
 					checkdropbt.setEnabled(false);
+					
+					final Dialog dialog = new Dialog(DecisionTreeAssessmentDynamicFirstQuestionActivity.this);
+					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+					dialog.setContentView(R.layout.correct_dialog);
+					dialog.setCancelable(false);
+					dialog.getWindow().setBackgroundDrawable(
+							new ColorDrawable(
+									android.graphics.Color.TRANSPARENT));
+					ImageView correctcheck = (ImageView) dialog
+							.findViewById(R.id.correctcheck);
+					correctcheck.setImageResource(R.drawable.wrongcircle);
+					correctcheck
+							.setOnClickListener(new View.OnClickListener() {
+								@Override
+								public void onClick(View InputFragmentView) {
+									dialog.dismiss();
+								}
+							});
+
+					dialog.show();
 
 				}
 				if (view.getId() == R.id.option_3 && v.getId() == R.id.choice_1) {
@@ -176,6 +198,26 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends
 							"Sorry, you dropped it on the wrong place",
 							Toast.LENGTH_SHORT).show();
 					checkdropbt.setEnabled(false);
+					
+					final Dialog dialog = new Dialog(DecisionTreeAssessmentDynamicFirstQuestionActivity.this);
+					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+					dialog.setContentView(R.layout.correct_dialog);
+					dialog.setCancelable(false);
+					dialog.getWindow().setBackgroundDrawable(
+							new ColorDrawable(
+									android.graphics.Color.TRANSPARENT));
+					ImageView correctcheck = (ImageView) dialog
+							.findViewById(R.id.correctcheck);
+					correctcheck.setImageResource(R.drawable.wrongcircle);
+					correctcheck
+							.setOnClickListener(new View.OnClickListener() {
+								@Override
+								public void onClick(View InputFragmentView) {
+									dialog.dismiss();
+								}
+							});
+
+					dialog.show();
 				}
 
 				if (view.getId() == R.id.option_4 && v.getId() == R.id.choice_1) {
@@ -185,6 +227,26 @@ public class DecisionTreeAssessmentDynamicFirstQuestionActivity extends
 							"Sorry, you dropped it on the wrong place",
 							Toast.LENGTH_SHORT).show();
 					checkdropbt.setEnabled(false);
+					
+					final Dialog dialog = new Dialog(DecisionTreeAssessmentDynamicFirstQuestionActivity.this);
+					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+					dialog.setContentView(R.layout.correct_dialog);
+					dialog.setCancelable(false);
+					dialog.getWindow().setBackgroundDrawable(
+							new ColorDrawable(
+									android.graphics.Color.TRANSPARENT));
+					ImageView correctcheck = (ImageView) dialog
+							.findViewById(R.id.correctcheck);
+					correctcheck.setImageResource(R.drawable.wrongcircle);
+					correctcheck
+							.setOnClickListener(new View.OnClickListener() {
+								@Override
+								public void onClick(View InputFragmentView) {
+									dialog.dismiss();
+								}
+							});
+
+					dialog.show();
 				}
 
 				break;

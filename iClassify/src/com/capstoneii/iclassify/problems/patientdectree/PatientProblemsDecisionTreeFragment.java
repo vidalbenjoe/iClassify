@@ -24,7 +24,7 @@ public class PatientProblemsDecisionTreeFragment extends Fragment {
 	SecretTextView textHead, textFlu;
 	TextView textFluNo, ClickmeText;
 	EditText textFluNoTextBox, textFluTextBox;
-	ImageView adamImage, imageView_close, tableflu;
+	ImageView adamImage, imageView_close, tableflu,table_img;
 	Button lookupbt;
 	int nextButton = 0;
 	Animation clock, animation;
@@ -39,7 +39,7 @@ public class PatientProblemsDecisionTreeFragment extends Fragment {
 				container, false);
 		animation = AnimationUtils.loadAnimation(getActivity()
 				.getApplicationContext(), R.anim.unzoom_in);
-
+		
 		lookupbt = (Button) rootView.findViewById(R.id.lookupbt);
 		textFluNoTextBox = (EditText) rootView
 				.findViewById(R.id.textFluNoTextBox);
@@ -98,21 +98,17 @@ public class PatientProblemsDecisionTreeFragment extends Fragment {
 							// box
 							final Dialog dialog = new Dialog(getActivity());
 							dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-							dialog.setContentView(R.layout.dialog_patient_lookup);
-							dialog.getWindow()
-									.setBackgroundDrawable(
-											new ColorDrawable(
-													android.graphics.Color.TRANSPARENT));
+							dialog.setContentView(R.layout.custom_dialog_image);
+							dialog.getWindow().setBackgroundDrawable(new ColorDrawable
+									(android.graphics.Color.TRANSPARENT));
 
-							imageView_close = (ImageView) dialog
-									.findViewById(R.id.imageView_close);
-							imageView_close
-									.setImageResource(R.drawable.patientlookuptablestart);
-
-							Button cadbtnNext = (Button) dialog
-									.findViewById(R.id.cadbtnNext);
-							cadbtnNext
-									.setOnClickListener(new View.OnClickListener() {
+							imageView_close = (ImageView) dialog.findViewById(R.id.imageView_close);
+							imageView_close.setImageResource(R.drawable.patientlookuptablestart);
+							table_img = (ImageView) dialog.findViewById(R.id.table_img);
+							table_img.setVisibility(View.GONE);
+							Button cadbtnNext = (Button) dialog.findViewById(R.id.cadbtnNext);
+							cadbtnNext.setBackgroundResource(R.drawable.simulnextbt);
+							cadbtnNext.setOnClickListener(new View.OnClickListener() {
 										@Override
 										public void onClick(
 												View InputFragmentView) {

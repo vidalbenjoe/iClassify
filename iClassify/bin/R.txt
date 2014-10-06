@@ -870,8 +870,8 @@ int id textFluTextBox 0x7f0600e0
 int id textHead 0x7f0600de
 int id textResult 0x7f0600f6
 int id textView1 0x7f0600ee
-int id textcompute 0x7f0600e8
 int id textcompute2 0x7f0600e9
+int id textcomputehaha 0x7f0600e8
 int id textknntitle 0x7f0600b7
 int id textview 0x7f0600f8
 int id three 0x7f06008b

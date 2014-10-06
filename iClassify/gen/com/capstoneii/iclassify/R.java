@@ -1940,8 +1940,8 @@ containing a value of this type.
         public static final int textHead=0x7f0600de;
         public static final int textResult=0x7f0600f6;
         public static final int textView1=0x7f0600ee;
-        public static final int textcompute=0x7f0600e8;
         public static final int textcompute2=0x7f0600e9;
+        public static final int textcomputehaha=0x7f0600e8;
         public static final int textknntitle=0x7f0600b7;
         public static final int textview=0x7f0600f8;
         public static final int three=0x7f06008b;

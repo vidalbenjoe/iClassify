@@ -258,7 +258,7 @@ public class PatientProbabilityComputationFragment extends Fragment {
 
 					final TypewriterTextView customtextindialog = (TypewriterTextView) dialog
 							.findViewById(R.id.customtextindialog);
-					customtextindialog.setText(R.string.probabio);
+					customtextindialog.setText(R.string.whynaive);
 					customtextindialog
 							.setMovementMethod(new ScrollingMovementMethod());
 

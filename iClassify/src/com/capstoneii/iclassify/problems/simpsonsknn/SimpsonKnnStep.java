@@ -28,7 +28,6 @@ public class SimpsonKnnStep extends Fragment {
 	    {
 		 View rootView = inflater .inflate(R.layout.knnsimul_firstlayout, container, false);  
 		 
-		 
 		 	RelativeLayout relativeknnfirst = (RelativeLayout)rootView.findViewById(R.id.relativeknnfirst);
 		 	relativeknnfirst.setBackgroundResource(R.drawable.backgroundblur);
 		 

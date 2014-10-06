@@ -27,7 +27,7 @@ public class MainFragmentPatient extends Fragment {
 	SecretTextView textHead, textFlu;
 	TextView textFluNo, ClickmeText;
 	EditText textFluNoTextBox, textFluTextBox;
-	ImageView adamImage, imageView_close, tableflu;
+	ImageView adamImage, imageView_close, tableflu,table_img;
 	Button lookupbt;
 	int nextButton = 0;
 	Animation clock, animation;
@@ -35,7 +35,7 @@ public class MainFragmentPatient extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	}
-
+	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.patient_main_layout,
@@ -82,7 +82,6 @@ public class MainFragmentPatient extends Fragment {
 				if (InputFragmentView == adamImage) {
 					nextButton++;
 				}
-
 				switch (nextButton) {
 				case 1:
 					textHead.setText("Lookup Table");
@@ -107,9 +106,11 @@ public class MainFragmentPatient extends Fragment {
 
 							imageView_close = (ImageView) dialog.findViewById(R.id.imageView_close);
 							imageView_close.setImageResource(R.drawable.patientlookuptablestart);
-
+							table_img = (ImageView) dialog.findViewById(R.id.table_img);
+							table_img.setVisibility(View.GONE);
 							Button cadbtnNext = (Button) dialog.findViewById(R.id.cadbtnNext);
 							cadbtnNext.setBackgroundResource(R.drawable.simulnextbt);
+							
 							cadbtnNext.setOnClickListener(new View.OnClickListener() {
 										@Override
 										public void onClick(
