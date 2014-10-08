@@ -5,6 +5,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -12,6 +13,21 @@ import drawer.MainDrawerActivity;
 
 public class QuizResultActivity extends ActionBarActivity {
 	ImageView resultimage;
+	int score;
+	int setq;
+	String ncourse;
+	String qdetails;
+	TextView correct;
+	TextView wrong;
+	TextView mesg;
+	Button bscorelog, bqresult;
+	int correctans, wrongans;
+	
+	int totalsumof;
+	int sumOf;
+	double jsper;
+	int retake;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +38,17 @@ public class QuizResultActivity extends ActionBarActivity {
 						.getColor(R.color.divider_color)));
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+		Bundle g = getIntent().getExtras();
+		setq= g.getInt("qno");
+		score = g.getInt("score");
+		ncourse = g.getString("course");
+		qdetails = g.getString("quizdetails");
+		
+		wrongans = 10 - score;
+		correct.setText( score + "");
+		wrong.setText(wrongans + "");
+		mesg.setText(score+"/10");
+		
 		resultimage = (ImageView) findViewById(R.id.resultimage);
 		// get rating bar object
 		RatingBar bar = (RatingBar) findViewById(R.id.ratingBar1);

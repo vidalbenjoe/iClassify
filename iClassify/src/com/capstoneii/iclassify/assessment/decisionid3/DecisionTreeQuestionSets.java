@@ -1,5 +1,7 @@
 package com.capstoneii.iclassify.assessment.decisionid3;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -26,7 +28,11 @@ public class DecisionTreeQuestionSets extends ActionBarActivity {
 	RadioButton rda, rdb, rdc;
 	Button butNext;
 	Random randomQuestion;
+	String ncourse = "Decision";
 	int qid = 0;
+	int qset = 1;
+	private Date date;
+	String finalDate;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,7 +41,6 @@ public class DecisionTreeQuestionSets extends ActionBarActivity {
 				new ColorDrawable(getResources()
 						.getColor(R.color.divider_color)));
 		//getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 		final DBHelperIdTree db = new DBHelperIdTree(this);
 		quesList = db.getAllQuestions();
 		currentQ = quesList.get(qid);
@@ -63,10 +68,26 @@ public class DecisionTreeQuestionSets extends ActionBarActivity {
 				if (qid < quesList.size()) {
 						currentQ = quesList.get(qid);
 						setQuestionView();   
-					
+						date = new Date();
+						SimpleDateFormat timeFormat = new SimpleDateFormat("MMM dd, yyyy");
+					    finalDate = timeFormat.format(date);
 				} else {
 					Intent intent = new Intent(DecisionTreeQuestionSets.this,
 							QuizResultActivity.class);
+					
+					/*<!--ADDED->*/
+					Intent in = getIntent();
+					int retake = in.getExtras().getInt("retakeNum");
+					
+					date = new Date();
+					SimpleDateFormat timeFormat = new SimpleDateFormat("MMM dd, yyyy");
+				    finalDate = timeFormat.format(date);
+				    String subj = ncourse +" "+qset;
+				    String qdetails = "Quiz Retake "+retake;
+				    db.addscores(3, retake, subj, qdetails, score, finalDate);
+				    //ncourse String ncourse = "Decision";
+				    
+				    ///add the
 					Bundle b = new Bundle();
 					b.putInt("score", score); // Your score
 					intent.putExtras(b); // Put your score to your next Intent

@@ -160,7 +160,7 @@ public class SimpsonChartFragment extends Fragment {
 		            		final Dialog dialog = new Dialog(getActivity());
 		    				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		    				dialog.setContentView(R.layout.custom_dialog_text);
-		    				dialog.setCancelable(false);
+		    				dialog.setCancelable(true);
 		    				dialog.getWindow().setBackgroundDrawable(
 		    						new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
@@ -171,7 +171,6 @@ public class SimpsonChartFragment extends Fragment {
 
 		    				ImageView cadbtnNext = (ImageView) dialog.findViewById(R.id.cadbtnNext);
 		    				cadbtnNext.setImageResource(R.drawable.backtomainmenu);
-
 		    				cadbtnNext.setOnClickListener(new View.OnClickListener() {
 		    					@Override
 		    					public void onClick(View InputFragmentView) {

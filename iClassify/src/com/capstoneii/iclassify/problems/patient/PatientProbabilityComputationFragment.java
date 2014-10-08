@@ -251,7 +251,7 @@ public class PatientProbabilityComputationFragment extends Fragment {
 					final Dialog dialog = new Dialog(getActivity());
 					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 					dialog.setContentView(R.layout.custom_dialog_text);
-					dialog.setCancelable(false);
+					dialog.setCancelable(true);
 					dialog.getWindow().setBackgroundDrawable(
 							new ColorDrawable(
 									android.graphics.Color.TRANSPARENT));
@@ -275,7 +275,6 @@ public class PatientProbabilityComputationFragment extends Fragment {
 							ft.replace(R.id.frame_container,
 									ChooseProblemActivity);
 							ft.commit();
-							dialog.dismiss();
 							dialog.dismiss();
 						}
 					});

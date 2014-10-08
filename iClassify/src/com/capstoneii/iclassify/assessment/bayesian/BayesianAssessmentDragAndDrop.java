@@ -30,10 +30,11 @@ public class BayesianAssessmentDragAndDrop extends ActionBarActivity {
 	private static String TAG = SplashScreenActivity.class.getName();
 	private static long SLEEP_TIME = 1; // Sleep for some time
 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.assessmentdiscuss_layout);
+		setContentView(R.layout.assessmentbayesian_layout);
 		getSupportActionBar().setBackgroundDrawable(
 				new ColorDrawable(getResources()
 						.getColor(R.color.divider_color)));

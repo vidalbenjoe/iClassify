@@ -26,9 +26,37 @@ public class DBHelperIdTree extends SQLiteOpenHelper {
 	private static final String KEY_OPTC= "optc"; //option c
 	private SQLiteDatabase dbase;
 	
+	
+	
+
+	public static final String SCORE_TABLE = "scoretableiclassify";
+	public static final String _ID = "_id";
+	public static final String _RID = "rid";
+	public static final String _CCID = "ccid";
+	public static final String _NAME = "score_name";
+	public static final String _QDETAILS = "quiz_details";
+	public static final String _SCORE = "spoint";
+	//public static final String _TOTAL = "stotal";
+	public static final String _DATE = "sdate";
+	
+	public static final String[] ALL_KEYS = new String[] { _ID, _RID, _CCID, _NAME, _QDETAILS, _SCORE,  _DATE};
+	public static final String SCORE_TABLE_SQL = "CREATE TABLE " + SCORE_TABLE + "("
+			+ _ID + " INTEGER PRIMARY KEY autoincrement, "		
+			+ _RID + " INTEGER not null, "
+			+ _CCID + " INTEGER not null, "
+			+ _NAME + " TEXT not null, "
+			+ _QDETAILS + " TEXT not null, "
+			+ _SCORE + " TEXT not null, "
+			+ _DATE + " TEXT not null " + ");";
+	
+	
+	
 	public DBHelperIdTree(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
+	
+	
+	
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		dbase=db;
@@ -40,6 +68,9 @@ public class DBHelperIdTree extends SQLiteOpenHelper {
 		addQuestions();
 		//db.close();
 	}
+	
+	
+	
 	private void addQuestions()
 	{
 		Question q1=new Question("It is a flow-chart-like tree structure, where each node denotes a test on " +
@@ -90,6 +121,42 @@ public class DBHelperIdTree extends SQLiteOpenHelper {
 		// Inserting Row
 		dbase.insert(TABLE_QUEST, null, values);		
 	}
+	
+	public long addScores(int rid, String _name, int _score, String _date){
+		ContentValues vl = new ContentValues();
+		vl.put(_RID, rid);
+		vl.put(_NAME, _name);
+		vl.put(_SCORE, _score);
+	//	vl.put(_TOTAL, _total);
+		vl.put(_DATE, _date);
+		return dbase.insert(SCORE_TABLE, null, vl);
+	}
+	
+	
+	public long addscores(int rid, int ccid, String _name, String _qdetails, int _score, String _date){
+		ContentValues vl = new ContentValues();
+		vl.put(_RID, rid);
+		vl.put(_CCID, ccid);
+		vl.put(_NAME, _name);
+		vl.put(_QDETAILS, _qdetails);
+		vl.put(_SCORE, _score);
+	//	vl.put(_TOTAL, _total);
+		vl.put(_DATE, _date);
+		return dbase.insert(SCORE_TABLE, null, vl);
+	}
+	
+	//GET ALL SCORE ROWS WITH ID
+			public Cursor getAllScoreWith(long rid){
+				String where = _RID + "=" + rid;
+				Cursor cr = dbase.query(true, SCORE_TABLE, ALL_KEYS, where, null, null, null, null, null);
+				if (cr != null) {
+					cr.moveToFirst();
+				}
+				return cr;
+			}
+	
+	
+	
 	public List<Question> getAllQuestions() {
 		List<Question> quesList = new ArrayList<Question>();
 		// Select All Query

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cadllMain"
     android:layout_width="wrap_content"
-    android:layout_height="700dp"
+    android:layout_height="820dp"
     android:layout_marginLeft="25dp"
     android:layout_marginRight="25dp"
     android:background="@drawable/backgroundblur"
@@ -85,7 +85,7 @@
             android:layout_marginBottom="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="5dp" />
     </RelativeLayout>
 
 </LinearLayout>
