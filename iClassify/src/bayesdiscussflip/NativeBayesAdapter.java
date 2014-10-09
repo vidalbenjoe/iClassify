@@ -6,7 +6,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.PointF;
-import android.media.MediaPlayer;
 import android.speech.tts.TextToSpeech;
 import android.text.Html;
 import android.util.FloatMath;
@@ -40,17 +39,11 @@ public class NativeBayesAdapter extends BaseAdapter {
 	static final int ZOOM = 2;
 	int mode = NONE;
 	public TextToSpeech tts;
-	MediaPlayer nbone, nbtwo, nbthree, nbfour;
 
 	public NativeBayesAdapter(Context context) {
 		inflater = LayoutInflater.from(context);
 		desctreeData = new ArrayList<NativeBayesData.Data>(
 				NativeBayesData.IMG_DESCRIPTIONS);
-
-		nbone = MediaPlayer.create(context, R.raw.nbone);
-		nbtwo = MediaPlayer.create(context, R.raw.nbtwo);
-		nbthree = MediaPlayer.create(context, R.raw.nbthree);
-		nbfour = MediaPlayer.create(context, R.raw.nbfour);
 
 	}
 
@@ -175,13 +168,6 @@ public class NativeBayesAdapter extends BaseAdapter {
 		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 				layout, R.id.description).toggle();
 
-		for (int i = 0; i < position; i++) {
-			String toSpeak = UI
-					.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
-							layout, R.id.description).getText().toString();
-			tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-		}
-
 		return layout;
 	}
 
@@ -191,25 +177,5 @@ public class NativeBayesAdapter extends BaseAdapter {
 		}
 	}
 
-	public void onPause() {
-		if (tts != null) {
-			tts.stop();
-			tts.shutdown();
-		}
-	}
 
-	public void onDestroy() {
-		if (tts != null) {
-			tts.stop();
-			tts.shutdown();
-		}
-	}
-
-	public void onStop() {
-		if (tts != null) {
-			tts.stop();
-			tts.shutdown();
-		}
-
-	}
 }

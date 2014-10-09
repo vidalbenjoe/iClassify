@@ -13,12 +13,23 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/ninblackboard" />
 
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:text="7/10"
+        android:textColor="#fff"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
     <RatingBar
         android:id="@+id/ratingBar1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         android:clickable="false"
         android:focusable="false"
         android:isIndicator="true"
@@ -33,16 +44,14 @@
         android:layout_below="@+id/ratingBar1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
+        android:enabled="true"
         android:gravity="center"
         android:shadowColor="@android:color/black"
         android:shadowDx="1"
-        android:enabled="true"
         android:shadowDy="1"
         android:shadowRadius="2"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#fff"
         android:textSize="25sp" />
-
-    
 
 </RelativeLayout>

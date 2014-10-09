@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/FrameLayout1"
+    android:layout_width="match_parent"
+    android:background="@drawable/backgroundblur"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff" >
+
+            <ImageButton
+            	android:id="@+id/basessment"
+            	android:layout_width="wrap_content"
+           		android:layout_height="wrap_content" 
+            	android:layout_gravity="right|center"
+            	android:layout_marginLeft="1dp"
+            	android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/menu_list"
+                android:src="@drawable/ic_assessment"
+                android:contentDescription="@string/menulist" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" >
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" >
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_launcher" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tvchapterName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ems="5"
+                        android:text="Basic JavaScript"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Last Quiz Session:"
+                        android:textColor="#000"  />
+
+                    <TextView
+                        android:id="@+id/tvlastquizhistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last quiz taken: 6/15/2014"
+                        android:textColor="#000"  />
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/listofhistory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#8b9dc3"
+                android:dividerHeight="1sp" >
+            </ListView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

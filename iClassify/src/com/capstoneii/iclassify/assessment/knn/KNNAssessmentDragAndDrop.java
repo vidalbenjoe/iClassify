@@ -21,7 +21,6 @@ import android.widget.Toast;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SplashScreenActivity;
-import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
 public class KNNAssessmentDragAndDrop extends ActionBarActivity {
@@ -303,10 +302,10 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 				Log.e(TAG, e.getMessage());
 			}
 
-			Intent intent = new Intent(KNNAssessmentDragAndDrop.this,
+			/*Intent intent = new Intent(KNNAssessmentDragAndDrop.this,
 					BayesianAssessmentActivity.class);
 			KNNAssessmentDragAndDrop.this.startActivity(intent);
-			KNNAssessmentDragAndDrop.this.finish();
+			KNNAssessmentDragAndDrop.this.finish();*/
 
 		}
 

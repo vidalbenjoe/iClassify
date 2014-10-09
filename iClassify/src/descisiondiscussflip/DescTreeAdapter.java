@@ -48,14 +48,14 @@ public class DescTreeAdapter extends BaseAdapter {
 	public DescTreeAdapter(Context context) {
 		inflater = LayoutInflater.from(context);
 		desctreeData = new ArrayList<TopicData.Data>(TopicData.IMG_DESCRIPTIONS);
-		tts = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
+		/*tts = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
 			@Override
 			public void onInit(int status) {
 				if (status != TextToSpeech.ERROR) {
 					tts.setLanguage(Locale.US);
 				}
 			}
-		});
+		});*/
 
 		dtone = MediaPlayer.create(context, R.raw.dtone);
 		dttwo = MediaPlayer.create(context, R.raw.dttwo);
@@ -184,12 +184,12 @@ public class DescTreeAdapter extends BaseAdapter {
 		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 				layout, R.id.description).toggle();
 
-		for (int i = 0; i < position; i++) {
+		/*for (int i = 0; i < position; i++) {
 			String toSpeak = UI
 					.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 							layout, R.id.description).getText().toString();
 			tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-		}
+		}*/
 
 		return layout;
 	}
@@ -201,7 +201,7 @@ public class DescTreeAdapter extends BaseAdapter {
 		}
 	}
 
-	public void onPause() {
+/*	public void onPause() {
 		if (tts != null) {
 			tts.stop();
 			tts.shutdown();
@@ -220,6 +220,6 @@ public class DescTreeAdapter extends BaseAdapter {
 			tts.stop();
 			tts.shutdown();
 		}
-	}
+	}*/
 
 }

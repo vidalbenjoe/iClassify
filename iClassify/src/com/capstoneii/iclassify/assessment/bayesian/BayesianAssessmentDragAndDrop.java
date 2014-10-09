@@ -266,10 +266,10 @@ public class BayesianAssessmentDragAndDrop extends ActionBarActivity {
 				Log.e(TAG, e.getMessage());
 			}
 
-			Intent intent = new Intent(BayesianAssessmentDragAndDrop.this,
+		/*	Intent intent = new Intent(BayesianAssessmentDragAndDrop.this,
 					BayesianAssessmentActivity.class);
 			BayesianAssessmentDragAndDrop.this.startActivity(intent);
-			BayesianAssessmentDragAndDrop.this.finish();
+			BayesianAssessmentDragAndDrop.this.finish();*/
 
 		}
 

@@ -22,7 +22,13 @@
     <style name="MyTextView">
     </style>
     
-    
+    <style name="DialogAnim" parent="@android:style/Theme.Dialog">
+        <item name="android:windowAnimationStyle">@style/DefaultDialogAnimation</item>        
+    </style>
+     <style name="DefaultDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out</item>
+    </style>
     
     <style name="MyTheme.ActionBar.TitleTextStyle" parent="AppBaseTheme">
     <item name="android:textColor">#fff</item>

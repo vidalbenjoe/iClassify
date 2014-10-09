@@ -106,6 +106,17 @@
         <activity
             android:name="com.capstoneii.iclassify.QuizResultActivity"
             android:theme="@style/Theme.AppCompat.Light" />
+        
+         <activity
+            android:name="com.capstoneii.iclassify.assessment.bayesian.QuizResultAssessment"
+            android:theme="@style/Theme.AppCompat.Light" />
+          <activity
+            android:name="com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz"
+            android:theme="@style/Theme.AppCompat.Light" />
+        
     </application>
+    
+    
+    
 
 </manifest>

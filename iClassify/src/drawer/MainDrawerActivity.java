@@ -33,11 +33,14 @@ import android.widget.SimpleAdapter;
 
 import com.capstoneii.iclassify.MainActivityController;
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz;
 import com.capstoneii.iclassify.problems.ChooseProblemActivity;
 import com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity;
 import com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity;
 import com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment;
 import com.capstoneii.iclassify.videos.VideoMenuActivity;
+
+import descisiondiscussflip.DescTreeLayoutActivity;
 
 @SuppressLint("NewApi")
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -167,6 +170,8 @@ public class MainDrawerActivity extends ActionBarActivity {
 			fragment = new MainActivityController();
 			break;
 		case 1:// videos
+			
+			
 			Intent intent1 = new Intent(this, VideoMenuActivity.class);
 			this.startActivity(intent1);
 

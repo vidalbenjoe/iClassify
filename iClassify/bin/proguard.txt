@@ -70,6 +70,9 @@
 # view AndroidManifest.xml #generated:103
 -keep class com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop { <init>(...); }
 
+# view AndroidManifest.xml #generated:113
+-keep class com.capstoneii.iclassify.assessment.bayesian.QuizResultAssessment { <init>(...); }
+
 # view AndroidManifest.xml #generated:82
 -keep class com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity { <init>(...); }
 
@@ -81,6 +84,9 @@
 
 # view AndroidManifest.xml #generated:91
 -keep class com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeQuestionSets { <init>(...); }
+
+# view AndroidManifest.xml #generated:116
+-keep class com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz { <init>(...); }
 
 # view AndroidManifest.xml #generated:97
 -keep class com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop { <init>(...); }
@@ -120,7 +126,7 @@
 # view res/layout/naivesimul_thirdlayout.xml #generated:45
 # view res/layout/patient_dectree_compute.xml #generated:17
 # view res/layout/quiz_multiple_question_layout.xml #generated:7
-# view res/layout/quiz_result_layout.xml #generated:29
+# view res/layout/quiz_result_layout.xml #generated:40
 # view res/layout/simpson_chart_layout.xml #generated:17
 # view res/layout/simpson_dt_next_proc_layout.xml #generated:8
 # view res/layout/simpson_final_result_layout.xml #generated:8
