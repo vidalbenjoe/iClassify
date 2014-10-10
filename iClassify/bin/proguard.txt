@@ -70,6 +70,9 @@
 # view AndroidManifest.xml #generated:103
 -keep class com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop { <init>(...); }
 
+# view AndroidManifest.xml #generated:119
+-keep class com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz { <init>(...); }
+
 # view AndroidManifest.xml #generated:113
 -keep class com.capstoneii.iclassify.assessment.bayesian.QuizResultAssessment { <init>(...); }
 
@@ -90,6 +93,9 @@
 
 # view AndroidManifest.xml #generated:97
 -keep class com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop { <init>(...); }
+
+# view AndroidManifest.xml #generated:123
+-keep class com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz { <init>(...); }
 
 # view AndroidManifest.xml #generated:94
 -keep class com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity { <init>(...); }
@@ -114,7 +120,7 @@
 
 # view res/layout/assessment_bayes_drag.xml #generated:10
 # view res/layout/assessment_knn_drag.xml #generated:10
-# view res/layout/assessmentbayesian_layout.xml #generated:11
+# view res/layout/assessmentbayesian_layout.xml #generated:10
 # view res/layout/assessmentdecision_tree_layout.xml #generated:11
 # view res/layout/assessmentdiscuss_layout.xml #generated:10
 # view res/layout/custom_dialog_text.xml #generated:51

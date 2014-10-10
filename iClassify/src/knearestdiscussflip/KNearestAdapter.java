@@ -5,17 +5,19 @@ import java.util.List;
 import java.util.Locale;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Matrix;
-import android.graphics.PointF;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.speech.tts.TextToSpeech;
 import android.text.Html;
-import android.util.FloatMath;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,15 +34,11 @@ public class KNearestAdapter extends BaseAdapter {
 	private int repeatCount = 1;
 
 	private List<KNearestData.Data> desctreeData;
-	Matrix matrix = new Matrix();
-	Matrix savedMatrix = new Matrix();
-	PointF startPoint = new PointF();
-	PointF midPoint = new PointF();
-	float oldDist = 1f;
-	static final int NONE = 0;
-	static final int DRAG = 1;
-	static final int ZOOM = 2;
-	int mode = NONE;
+	
+	   private ImageView zoomerImageZoom;
+	   private Matrix matrix = new Matrix();
+	   private float scale = 1f;
+	   private ScaleGestureDetector SGD;
 
 	MediaPlayer knnone, knntwo, knnthree, knnfour, knnfive;
 
@@ -111,74 +109,36 @@ public class KNearestAdapter extends BaseAdapter {
 				IO.readBitmap(inflater.getContext().getAssets(),
 						data.imageFilename));
 
-		UI.<ImageView> findViewById(layout, R.id.photo).setOnTouchListener(
-				new View.OnTouchListener() {
-
-					@Override
-					public boolean onTouch(View v, MotionEvent event) {
-
-						ImageView view = (ImageView) v;
-						System.out.println("matrix=" + savedMatrix.toString());
-						switch (event.getAction() & MotionEvent.ACTION_MASK) {
-						case MotionEvent.ACTION_DOWN:
-
-							savedMatrix.set(matrix);
-							startPoint.set(event.getX(), event.getY());
-							mode = DRAG;
-							break;
-
-						case MotionEvent.ACTION_POINTER_DOWN:
-
-							oldDist = spacing(event);
-
-							if (oldDist > 10f) {
-								savedMatrix.set(matrix);
-								midPoint(midPoint, event);
-								mode = ZOOM;
+		UI.<ImageView> findViewById(layout, R.id.photo).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View InputFragmentView)
+            {
+				final Dialog dialog = new Dialog(InputFragmentView.getContext());
+				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+				dialog.setContentView(R.layout.image_zoomer_dialog);
+				dialog.setCancelable(true);
+				dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+			    SGD = new ScaleGestureDetector(InputFragmentView.getContext(),new ScaleListener());
+				zoomerImageZoom = (ImageView) dialog.findViewById(R.id.zoomerImageZoom);
+				
+				zoomerImageZoom.setImageBitmap(
+						IO.readBitmap(inflater.getContext().getAssets(),
+								data.imageFilename));
+				
+				
+				zoomerImageZoom.setOnClickListener(new View.OnClickListener() {
+							@Override
+							public void onClick(
+									View InputFragmentView) {
+								// next
+								
+								dialog.dismiss();
 							}
-							break;
-
-						case MotionEvent.ACTION_UP:
-
-						case MotionEvent.ACTION_POINTER_UP:
-							mode = NONE;
-
-							break;
-
-						case MotionEvent.ACTION_MOVE:
-							if (mode == DRAG) {
-								matrix.set(savedMatrix);
-								matrix.postTranslate(event.getX()
-										- startPoint.x, event.getY()
-										- startPoint.y);
-							} else if (mode == ZOOM) {
-								float newDist = spacing(event);
-								if (newDist > 10f) {
-									matrix.set(savedMatrix);
-									float scale = newDist / oldDist;
-									matrix.postScale(scale, scale, midPoint.x,
-											midPoint.y);
-								}
-							}
-							break;
-
-						}
-						view.setImageMatrix(matrix);
-						return true;
-					}
-
-					private float spacing(MotionEvent event) {
-						float x = event.getX(0) - event.getX(1);
-						float y = event.getY(0) - event.getY(1);
-						return FloatMath.sqrt(x * x + y * y);
-					}
-
-					private void midPoint(PointF point, MotionEvent event) {
-						float x = event.getX(0) + event.getX(1);
-						float y = event.getY(0) + event.getY(1);
-						point.set(x / 2, y / 2);
-					}
-				});
+						});
+				dialog.show();
+            }
+        });
 
 		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 				layout, R.id.description).setText(
@@ -190,22 +150,11 @@ public class KNearestAdapter extends BaseAdapter {
 		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 				layout, R.id.description).toggle();
 
-		for (int i = 0; i < position; i++) {
-			String toSpeak = UI
-					.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
-							layout, R.id.description).getText().toString();
-			tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-		}
-
-		/*
-		 * if (position == 1) { knnone.start(); } if (position == 2) {
-		 * knnone.stop(); knntwo.start(); knnthree.stop(); knnfour.stop();
-		 * knnfive.stop(); } if (position == 3) { knnone.stop(); knntwo.stop();
-		 * knnthree.start(); knnfour.stop(); knnfive.stop(); } if (position ==
-		 * 4) { knnone.stop(); knntwo.stop(); knnthree.stop(); knnfour.start();
-		 * knnfive.stop(); } else if (position == 5) { knnone.stop();
-		 * knntwo.stop(); knnthree.stop(); knnfour.stop(); knnfive.start(); }
-		 */
+		String toSpeak = UI
+				.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+						layout, R.id.description).getText().toString();
+		tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+		
 		return layout;
 	}
 
@@ -221,5 +170,30 @@ public class KNearestAdapter extends BaseAdapter {
 			tts.shutdown();
 		}
 	}
+	public void onDestroy() {
+		if (tts != null) {
+			tts.stop();
+			tts.shutdown();
+		}
+	
+	
+	
+	
+	   public boolean onTouchEvent(MotionEvent ev) {
+		      SGD.onTouchEvent(ev);
+		      return true;
+		   }
+
+		 private class ScaleListener extends ScaleGestureDetector.
+		   SimpleOnScaleGestureListener {
+		   @Override
+		   public boolean onScale(ScaleGestureDetector detector) {
+		      scale *= detector.getScaleFactor();
+		      scale = Math.max(0.1f, Math.min(scale, 5.0f));
+		      matrix.setScale(scale, scale);
+		      zoomerImageZoom.setImageMatrix(matrix);
+		      return true;
+		   }
+		}
 
 }

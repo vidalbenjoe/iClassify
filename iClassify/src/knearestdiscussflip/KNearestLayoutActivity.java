@@ -85,6 +85,7 @@ public class KNearestLayoutActivity extends ActionBarActivity {
 	  Intent intent = new Intent(this, MainDrawerActivity.class);
       intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
       startActivity(intent);
+      this.finish();
   // app icon in action bar clicked; go home
   return true;
   

@@ -16,6 +16,7 @@ import android.widget.PopupMenu;
 
 import com.aphidmobile.flip.FlipViewController;
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity;
 import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz;
 
 import drawer.MainDrawerActivity;
@@ -86,6 +87,7 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
 	  Intent intent = new Intent(this, MainDrawerActivity.class);
       intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
       startActivity(intent);
+      this.finish();
   // app icon in action bar clicked; go home
   return true;
   
@@ -99,14 +101,11 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
                switch(item.getItemId()){
                case R.id.action_settings:
             	   //go to assessment
-            		 Intent intent = new Intent(DescTreeLayoutActivity.this, DecisionTreeRandomQuiz.class);
+            		 Intent intent = new Intent(DescTreeLayoutActivity.this, DecisionTreeAssessmentActivity.class);
             		 DescTreeLayoutActivity.this.startActivity(intent);
             		 DescTreeLayoutActivity.this.finish();
-            	 
             	   return true;
-               
                }
-            	
                 return true;
             }
         });

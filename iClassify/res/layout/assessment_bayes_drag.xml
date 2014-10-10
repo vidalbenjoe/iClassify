@@ -70,7 +70,7 @@
         android:text="@string/idrchoices_3" />
 
     <Button
-        android:id="@+id/checkdropbt"
+        android:id="@+id/checkdropbtbayes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

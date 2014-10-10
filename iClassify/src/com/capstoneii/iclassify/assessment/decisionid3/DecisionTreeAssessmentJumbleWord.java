@@ -444,11 +444,11 @@ public class DecisionTreeAssessmentJumbleWord extends ActionBarActivity {
 		 * Toast.makeText(DecisionTreeAssessmentJumbleWord.this,
 		 * R.string.assessmenttetobjectivesid3, Toast.LENGTH_SHORT).show();
 		 */
-		/*Intent intent = new Intent(DecisionTreeAssessmentJumbleWord.this,
-				DecisionTreeQuestionSets.class);
+		Intent intent = new Intent(DecisionTreeAssessmentJumbleWord.this,
+				DecisionTreeRandomQuiz.class);
 
 		startActivity(intent);
-		finish();*/
+		finish();
 	}
 
 	public void onBackPressed() {

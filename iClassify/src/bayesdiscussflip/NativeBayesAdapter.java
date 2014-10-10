@@ -2,17 +2,21 @@ package bayesdiscussflip;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Matrix;
-import android.graphics.PointF;
+import android.graphics.drawable.ColorDrawable;
 import android.speech.tts.TextToSpeech;
 import android.text.Html;
-import android.util.FloatMath;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -29,21 +33,27 @@ public class NativeBayesAdapter extends BaseAdapter {
 	private int repeatCount = 1;
 
 	private List<NativeBayesData.Data> desctreeData;
-	Matrix matrix = new Matrix();
-	Matrix savedMatrix = new Matrix();
-	PointF startPoint = new PointF();
-	PointF midPoint = new PointF();
-	float oldDist = 1f;
-	static final int NONE = 0;
-	static final int DRAG = 1;
-	static final int ZOOM = 2;
-	int mode = NONE;
+
 	public TextToSpeech tts;
+
+	private ImageView zoomerImageZoom;
+	private Matrix matrix = new Matrix();
+	private float scale = 1f;
+	private ScaleGestureDetector SGD;
 
 	public NativeBayesAdapter(Context context) {
 		inflater = LayoutInflater.from(context);
 		desctreeData = new ArrayList<NativeBayesData.Data>(
 				NativeBayesData.IMG_DESCRIPTIONS);
+		
+		tts = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
+			@Override
+			public void onInit(int status) {
+				if (status != TextToSpeech.ERROR) {
+					tts.setLanguage(Locale.US);
+				}
+			}
+		});
 
 	}
 
@@ -70,8 +80,9 @@ public class NativeBayesAdapter extends BaseAdapter {
 		return position;
 	}
 
-	@SuppressLint({ "InflateParams", "ClickableViewAccessibility", "FloatMath" }) @Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+	@SuppressLint({ "InflateParams", "ClickableViewAccessibility", "FloatMath" })
+	@Override
+	public View getView(final int position, View convertView, ViewGroup parent) {
 		View layout = convertView;
 		if (convertView == null) {
 			layout = inflater.inflate(R.layout.discusstopic_layout, null);
@@ -88,73 +99,36 @@ public class NativeBayesAdapter extends BaseAdapter {
 				IO.readBitmap(inflater.getContext().getAssets(),
 						data.imageFilename));
 
-		UI.<ImageView> findViewById(layout, R.id.photo).setOnTouchListener(
-				new View.OnTouchListener() {
-
+		UI.<ImageView> findViewById(layout, R.id.photo).setOnClickListener(
+				new View.OnClickListener() {
 					@Override
-					public boolean onTouch(View v, MotionEvent event) {
+					public void onClick(View InputFragmentView) {
+						final Dialog dialog = new Dialog(InputFragmentView
+								.getContext());
+						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+						dialog.setContentView(R.layout.image_zoomer_dialog);
+						dialog.setCancelable(true);
+						dialog.getWindow().setBackgroundDrawable(
+								new ColorDrawable(
+										android.graphics.Color.TRANSPARENT));
+						SGD = new ScaleGestureDetector(InputFragmentView
+								.getContext(), new ScaleListener());
+						zoomerImageZoom = (ImageView) dialog
+								.findViewById(R.id.zoomerImageZoom);
 
-						ImageView view = (ImageView) v;
-						System.out.println("matrix=" + savedMatrix.toString());
-						switch (event.getAction() & MotionEvent.ACTION_MASK) {
-						case MotionEvent.ACTION_DOWN:
+						zoomerImageZoom.setImageBitmap(IO.readBitmap(inflater
+								.getContext().getAssets(), data.imageFilename));
 
-							savedMatrix.set(matrix);
-							startPoint.set(event.getX(), event.getY());
-							mode = DRAG;
-							break;
+						zoomerImageZoom
+								.setOnClickListener(new View.OnClickListener() {
+									@Override
+									public void onClick(View InputFragmentView) {
+										// next
 
-						case MotionEvent.ACTION_POINTER_DOWN:
-
-							oldDist = spacing(event);
-
-							if (oldDist > 10f) {
-								savedMatrix.set(matrix);
-								midPoint(midPoint, event);
-								mode = ZOOM;
-							}
-							break;
-
-						case MotionEvent.ACTION_UP:
-
-						case MotionEvent.ACTION_POINTER_UP:
-							mode = NONE;
-
-							break;
-
-						case MotionEvent.ACTION_MOVE:
-							if (mode == DRAG) {
-								matrix.set(savedMatrix);
-								matrix.postTranslate(event.getX()
-										- startPoint.x, event.getY()
-										- startPoint.y);
-							} else if (mode == ZOOM) {
-								float newDist = spacing(event);
-								if (newDist > 10f) {
-									matrix.set(savedMatrix);
-									float scale = newDist / oldDist;
-									matrix.postScale(scale, scale, midPoint.x,
-											midPoint.y);
-								}
-							}
-							break;
-
-						}
-						view.setImageMatrix(matrix);
-
-						return true;
-					}
-
-					private float spacing(MotionEvent event) {
-						float x = event.getX(0) - event.getX(1);
-						float y = event.getY(0) - event.getY(1);
-						return FloatMath.sqrt(x * x + y * y);
-					}
-
-					private void midPoint(PointF point, MotionEvent event) {
-						float x = event.getX(0) + event.getX(1);
-						float y = event.getY(0) + event.getY(1);
-						point.set(x / 2, y / 2);
+										dialog.dismiss();
+									}
+								});
+						dialog.show();
 					}
 				});
 
@@ -168,6 +142,10 @@ public class NativeBayesAdapter extends BaseAdapter {
 		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 				layout, R.id.description).toggle();
 
+		String toSpeak = UI
+				.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+						layout, R.id.description).getText().toString();
+		tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
 		return layout;
 	}
 
@@ -177,5 +155,34 @@ public class NativeBayesAdapter extends BaseAdapter {
 		}
 	}
 
+	public void onPause() {
+		if (tts != null) {
+			tts.stop();
+			tts.shutdown();
+		}
+	}
 
+	public void onDestroy() {
+		if (tts != null) {
+			tts.stop();
+			tts.shutdown();
+		}
+	}
+
+	public boolean onTouchEvent(MotionEvent ev) {
+		SGD.onTouchEvent(ev);
+		return true;
+	}
+
+	private class ScaleListener extends
+			ScaleGestureDetector.SimpleOnScaleGestureListener {
+		@Override
+		public boolean onScale(ScaleGestureDetector detector) {
+			scale *= detector.getScaleFactor();
+			scale = Math.max(0.1f, Math.min(scale, 5.0f));
+			matrix.setScale(scale, scale);
+			zoomerImageZoom.setImageMatrix(matrix);
+			return true;
+		}
+	}
 }

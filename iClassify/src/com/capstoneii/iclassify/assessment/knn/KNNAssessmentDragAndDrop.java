@@ -302,10 +302,10 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 				Log.e(TAG, e.getMessage());
 			}
 
-			/*Intent intent = new Intent(KNNAssessmentDragAndDrop.this,
-					BayesianAssessmentActivity.class);
+			Intent intent = new Intent(KNNAssessmentDragAndDrop.this,
+					KNNRandomQuiz.class);
 			KNNAssessmentDragAndDrop.this.startActivity(intent);
-			KNNAssessmentDragAndDrop.this.finish();*/
+			KNNAssessmentDragAndDrop.this.finish();
 
 		}
 

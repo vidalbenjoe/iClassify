@@ -113,7 +113,15 @@
           <activity
             android:name="com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz"
             android:theme="@style/Theme.AppCompat.Light" />
-        
+         <activity
+            android:name="com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz"
+            android:theme="@style/Theme.AppCompat.Light" />
+          
+         <activity
+            android:name="com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz"
+            android:theme="@style/Theme.AppCompat.Light" />
+         
+         
     </application>
     
     

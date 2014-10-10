@@ -1,27 +1,27 @@
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundblurpurple"
     android:orientation="vertical"
     android:padding="10dp"
     android:paddingLeft="50dp"
-    android:paddingRight="50dp"
-    android:background="@drawable/backgroundblurpurple" >
+    android:paddingRight="50dp" >
 
     <com.capstoneii.iclassify.library.TypewriterTextView
-        android:id="@+id/animatedtitle"
+        android:id="@+id/animatedtitlebayes"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingBottom="10dp"
-        android:text="@string/intro"
+        android:shadowColor="@android:color/black"
         android:shadowDx="1"
-	    android:shadowDy="1"
-	    android:shadowRadius="2"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:text="@string/intro"
         android:textColor="#fff"
-        android:textSize="15sp" />
+        android:textSize="25sp"/>
 
- <TextView
+   <TextView
         android:id="@+id/option_1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -81,18 +81,24 @@
         android:gravity="center"
         android:text="@string/nbchoice_6" />
     
-    <Button 
-        android:id="@+id/checkdropbt"
+
+    <Button
+        android:id="@+id/checkdropbtbayes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        />
+        android:background="@drawable/simulnextbt" />
+
+    <Button
+        android:id="@+id/clearbtbayes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/clearbtpressed" />
 
 </LinearLayout>
-
-
 
 
 
