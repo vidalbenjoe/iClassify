@@ -224,7 +224,7 @@ public class KNNRandomQuiz extends Activity {
 				String qdetails = "Quiz Retake " + retake;
 				myDb.addscores(3, retake, subj, qdetails, score, finalDate);
 
-				myDb.deleteQuiz("Flash Chapter 1");
+				//myDb.deleteQuiz("Flash Chapter 1");
 
 				Intent intent = new Intent(KNNRandomQuiz.this,
 						QuizResultActivity.class);

@@ -175,6 +175,7 @@ public class KNearestAdapter extends BaseAdapter {
 			tts.stop();
 			tts.shutdown();
 		}
+	}
 	
 	
 	

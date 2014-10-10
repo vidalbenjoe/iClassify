@@ -147,7 +147,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 						String qdetails = "Quiz Retake "+retake;
 						myDb.addscores(3, retake, subj, qdetails, score, finalDate);
 						//myDb.addScores(3, subj , score, finalDate);
-						myDb.deleteQuiz("Flash Chapter 4");
+						//myDb.deleteQuiz("Flash Chapter 4");
 						
 						Intent intent = new Intent(DecisionTreeRandomQuiz.this,QuizResultActivity.class);
 						Bundle b = new Bundle();
@@ -243,9 +243,9 @@ public class DecisionTreeRandomQuiz extends Activity {
 	public void addQuestions4() {	
 			
 		myDb.addQuestions4(new Question("0",
-				"Which of the following would best describe about TLF?",
-				"It is a more recent and more powerful text engine.",
-				"It is the process of creating a continuous motion and shape change.","It is a more recent and more powerful text engine.","It display of a sequence of static images that minimally differ from each other.","It build a motion path animating the frames between that frame and the next keyframe.")); //1
+				"It is a flow-chart-like tree structure, where each node denotes a test on an attribute value, each branch represents an outcome of the test, and tree leaves represent classes or class distributions. ",
+				"Decision Tree",
+				"Bamboo Tree","Decision Tree","Decision Tree Classifier","Pine Tree")); //1
 						// 2
 						myDb.addQuestions4(new Question("0",
 				"It is more recent and more powerful text engine", 
