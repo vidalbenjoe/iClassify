@@ -1,5 +1,6 @@
 package bayesdiscussflip;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -26,6 +27,7 @@ import com.aphidmobile.utils.AphidLog;
 import com.aphidmobile.utils.IO;
 import com.aphidmobile.utils.UI;
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.TouchImageView;
 
 public class NativeBayesAdapter extends BaseAdapter {
 
@@ -37,22 +39,14 @@ public class NativeBayesAdapter extends BaseAdapter {
 
 	public TextToSpeech tts;
 
-	private ImageView zoomerImageZoom;
-	Matrix matrix = new Matrix();
-	Matrix savedMatrix = new Matrix();
-	PointF startPoint = new PointF();
-	PointF midPoint = new PointF();
-	float oldDist = 1f;
-	static final int NONE = 0;
-	static final int DRAG = 1;
-	static final int ZOOM = 2;
-	int mode = NONE;
+	private TouchImageView zoomerImageZoom;
 
+	private DecimalFormat df;
 	public NativeBayesAdapter(Context context) {
 		inflater = LayoutInflater.from(context);
 		desctreeData = new ArrayList<NativeBayesData.Data>(
 				NativeBayesData.IMG_DESCRIPTIONS);
-
+		df = new DecimalFormat("#.##");
 		tts = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
 			@Override
 			public void onInit(int status) {
@@ -119,99 +113,18 @@ public class NativeBayesAdapter extends BaseAdapter {
 								new ColorDrawable(
 										android.graphics.Color.TRANSPARENT));
 
-						zoomerImageZoom = (ImageView) dialog
+						zoomerImageZoom = (TouchImageView) dialog
 								.findViewById(R.id.zoomerImageZoom);
 
 						zoomerImageZoom.setImageBitmap(IO.readBitmap(inflater
 								.getContext().getAssets(), data.imageFilename));
 
-						zoomerImageZoom
-								.setOnClickListener(new View.OnClickListener() {
+						zoomerImageZoom.setOnClickListener(new View.OnClickListener() {
 									@Override
 									public void onClick(View InputFragmentView) {
 										// next
 
 										dialog.dismiss();
-									}
-								});
-
-						zoomerImageZoom
-								.setOnTouchListener(new View.OnTouchListener() {
-
-									@Override
-									public boolean onTouch(View v,
-											MotionEvent event) {
-
-										ImageView view = (ImageView) v;
-										System.out.println("matrix="
-												+ savedMatrix.toString());
-										switch (event.getAction()
-												& MotionEvent.ACTION_MASK) {
-										case MotionEvent.ACTION_DOWN:
-
-											savedMatrix.set(matrix);
-											startPoint.set(event.getX(),
-													event.getY());
-											mode = DRAG;
-											break;
-
-										case MotionEvent.ACTION_POINTER_DOWN:
-
-											oldDist = spacing(event);
-
-											if (oldDist > 10f) {
-												savedMatrix.set(matrix);
-												midPoint(midPoint, event);
-												mode = ZOOM;
-											}
-											break;
-
-										case MotionEvent.ACTION_UP:
-
-										case MotionEvent.ACTION_POINTER_UP:
-											mode = NONE;
-
-											break;
-
-										case MotionEvent.ACTION_MOVE:
-											if (mode == DRAG) {
-												matrix.set(savedMatrix);
-												matrix.postTranslate(
-														event.getX()
-																- startPoint.x,
-														event.getY()
-																- startPoint.y);
-											} else if (mode == ZOOM) {
-												float newDist = spacing(event);
-												if (newDist > 10f) {
-													matrix.set(savedMatrix);
-													float scale = newDist
-															/ oldDist;
-													matrix.postScale(scale,
-															scale, midPoint.x,
-															midPoint.y);
-												}
-											}
-											break;
-
-										}
-										view.setImageMatrix(matrix);
-
-										return true;
-									}
-
-									@SuppressLint("FloatMath")
-									private float spacing(MotionEvent event) {
-										float x = event.getX(0) - event.getX(1);
-										float y = event.getY(0) - event.getY(1);
-										return FloatMath.sqrt(x * x + y * y);
-									}
-
-									private void midPoint(PointF point,
-											MotionEvent event) {
-										float x = event.getX(0) + event.getX(1);
-										float y = event.getY(0) + event.getY(1);
-										point.set(x / 2, y / 2);
 									}
 								});
 						dialog.show();

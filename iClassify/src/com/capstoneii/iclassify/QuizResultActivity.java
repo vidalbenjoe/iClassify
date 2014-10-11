@@ -78,30 +78,8 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 			}
 		});
 
-		HashMap<String, String> totalSum = QuizSession.getTotalSum();
-		sumOf = Integer.parseInt(totalSum.get(SessionCache.JS_MAX_ITEM1));
-		retake = Integer.parseInt(totalSum.get(SessionCache.REPEATING1));
-
-		totalsumof = myDb.getallRowswithName("Flash 1");
-
-		if (totalsumof != 0) {
-			double psDiv = (double) totalsumof / sumOf;
-			jsper = psDiv * 100.0;
-		} else {
-			jsper = 0;
-		}
-		DecimalFormat df = new DecimalFormat("00.00");
-		String quizaverage = df.format(jsper) + "%";
-
-		if (retake == 1) {
-			quizdetails = "Quiz has been taken for the first time";
-		} else if (retake == 4) {
-			quizdetails = "Quiz overwrite the first quiz try";
-		} else {
-			quizdetails = "Quiz has been taken " + retake + " times";
-		}
-
-		myDb.addjsquiz(1, "Flash Chapter", quizdetails, quizaverage);
+		
+		//myDb.addjsquiz(1, "Flash Chapter", quizdetails, quizaverage);
 
 		tvcorrect = (TextView) findViewById(R.id.txtcorrect);
 		tvwrong = (TextView) findViewById(R.id.txtwrong);
@@ -112,20 +90,8 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 		bqresult = (Button) findViewById(R.id.bQview);
 
 		Bundle g = getIntent().getExtras();
-		setq = g.getInt("qno");
 		score = g.getInt("score");
-		ncourse = g.getString("course");
-		qdetails = g.getString("quizdetails");
-
-		wrongans = 10 - score;
-		correct.setText(score + "");
-		wrong.setText(wrongans + "");
-		mesg.setText(score + "/10");
-
-		tdate = totalSum.get(SessionCache.FL_QUIZ_TAKE);
-
-		QuizSession.StoredLastScore(mesg.getText().toString(), qdetails,
-				ncourse + " 1");
+		
 
 		push_up_in = AnimationUtils.loadAnimation(getApplicationContext(),
 				R.anim.push_up_in);
@@ -149,17 +115,7 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 		bscorelog.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
-				/*
-				 * Bundle b =new Bundle(); b.putInt("refID", 3);
-				 * //b.putString("showScore",ncourse); b.putString("Course",
-				 * "JavaScript"); b.putString("lastdate", tdate); Intent intent
-				 * = new Intent(JsResult1Activity.this,
-				 * ListCourseScoreActivity2.class); intent.putExtras(b);
-				 * startActivity(intent);
-				 * overridePendingTransition(R.anim.slide_in_left,
-				 * R.anim.slide_out_left);
-				 */
+				
 				openDB();
 				populateSwithdb();
 			}

@@ -1,6 +1,11 @@
 package com.capstoneii.iclassify.assessment.knn;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -13,14 +18,18 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.DragShadowBuilder;
+import android.view.View.OnClickListener;
 import android.view.View.OnDragListener;
 import android.view.View.OnTouchListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.SessionCache;
 import com.capstoneii.iclassify.SplashScreenActivity;
+import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
 public class KNNAssessmentDragAndDrop extends ActionBarActivity {
@@ -31,7 +40,15 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 			choice2, choice3, choice4, choice5;
 	private static String TAG = SplashScreenActivity.class.getName();
 	private static long SLEEP_TIME = 1; // Sleep for some time
-
+	DBAdapter myDb;
+	SessionCache QuizSession;
+	
+	int retake;
+	int prevTotal;
+	int curTotal;
+	String finalDate;
+	Intent intent;
+	String initVal = "1";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -41,6 +58,14 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 						.getColor(R.color.divider_color)));
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+		intent = new Intent();
+		QuizSession = new SessionCache(KNNAssessmentDragAndDrop.this);
+		openDB();
+		
+		Date date = new Date();
+		SimpleDateFormat timeFormat = new SimpleDateFormat("MMM dd, yyyy");
+	    finalDate = timeFormat.format(date);
+		
 		final TypewriterTextView animated_title = (TypewriterTextView) findViewById(R.id.animatedtitle);
 		animated_title.setTypewriterText(getString(R.string.intro));
 
@@ -301,14 +326,105 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 			} catch (Exception e) {
 				Log.e(TAG, e.getMessage());
 			}
+			
+			if(QuizSession.hasFlQuiz1()){
+				
+				final Dialog dialog = new Dialog(KNNAssessmentDragAndDrop.this, R.style.DialogAnim);
+				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+				dialog.setContentView(R.layout.validate_message);
+				
+				Button bYes = (Button) dialog.findViewById(R.id.buttonOk);
+				Button bNo = (Button) dialog.findViewById(R.id.buttonCancel);
+				TextView tvalertmessage = (TextView) dialog.findViewById(R.id.tvalertmessage);
+				
+				HashMap<String, String> quizRecord = QuizSession.getTotalSum();
+				retake = Integer.parseInt(quizRecord.get(SessionCache.REPEATING1));
+				prevTotal = Integer.parseInt(quizRecord.get(SessionCache.JS_MAX_ITEM1));
+				
+				if(retake == 3){
+					tvalertmessage.setText("You have taken this 3 times, Do you want to take this quiz? the first try you have taken will overwrite");
+					bYes.setOnClickListener(new OnClickListener() {
+						@Override
+						public void onClick(View v) {
+								
+						//delete the record
+							myDb.deleteQuiz("Flash Chapter 1");
+							//store last quiz session for JS and for all the records
+							QuizSession.StoreFlLastQuizTaken(finalDate);
+							QuizSession.StoreAllLastQuizTaken(finalDate);
+							//delete the scorerow if the user wants to overwrite the first take of quiz
+							myDb.deletescorerowSet(1,"Flash 1");
+							
+							int sum = retake + 1;
+							myDb.addjsquiz(1,"Flash Chapter 1", "","0 %");
+							QuizSession.FinishSessionNum1(Integer.toString(sum));
+							
+							intent = new Intent(KNNAssessmentDragAndDrop.this, KNNRandomQuiz.class);
+							intent.putExtra("retakeNum", sum);
+							startActivity(intent);
+							dialog.dismiss();
+							KNNAssessmentDragAndDrop.this.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+							KNNAssessmentDragAndDrop.this.finish();
+						
+					}
+				});
+					
+					bNo.setOnClickListener(new OnClickListener() {
+						@Override
+						public void onClick(View v) {
+								dialog.dismiss();	
+							}
+						});
+									
+						dialog.show();
+					
+					
+					
+				}else{
+					//this condition will use if retake is value 1 to 2
+					myDb.deleteQuiz("Flash Chapter 1");
+					QuizSession.StoreFlLastQuizTaken(finalDate);
+					QuizSession.StoreAllLastQuizTaken(finalDate);
+					
+					int sum = retake + 1;
+					myDb.addjsquiz(1,"Flash Chapter 1", "","0 %");
+					
+					curTotal = prevTotal + 10;
+					QuizSession.StoreTotal1(Integer.toString(curTotal));									
+					QuizSession.FinishSessionNum1(Integer.toString(sum));
+					intent = new Intent(KNNAssessmentDragAndDrop.this, KNNRandomQuiz.class);
+					intent.putExtra("retakeNum", sum);
+					startActivity(intent);
+					KNNAssessmentDragAndDrop.this.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+					KNNAssessmentDragAndDrop.this.finish();
+		}
+			}
+				
+				else{
+					QuizSession.StoreFlLastQuizTaken(finalDate);
+					QuizSession.StoreAllLastQuizTaken(finalDate);
+					
+					int passVal = Integer.parseInt(initVal);
+					myDb.addjsquiz(1,"Flash Chapter 1", initVal,"0 %");
+					
+					curTotal = prevTotal + 10;
+					QuizSession.StoreTotal1(Integer.toString(curTotal));
+					QuizSession.FinishSessionNum1(initVal);
+					intent = new Intent(KNNAssessmentDragAndDrop.this, KNNRandomQuiz.class);
+					intent.putExtra("retakeNum", passVal);
+					startActivity(intent);
+					KNNAssessmentDragAndDrop.this.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+					KNNAssessmentDragAndDrop.this.finish();
 
-			Intent intent = new Intent(KNNAssessmentDragAndDrop.this,
-					KNNRandomQuiz.class);
-			KNNAssessmentDragAndDrop.this.startActivity(intent);
-			KNNAssessmentDragAndDrop.this.finish();
-
+			}
+				
+			}
 		}
 
+	
+	private void openDB() {
+		
+		myDb = new DBAdapter(KNNAssessmentDragAndDrop.this);
+		myDb.open();
 	}
-
 }

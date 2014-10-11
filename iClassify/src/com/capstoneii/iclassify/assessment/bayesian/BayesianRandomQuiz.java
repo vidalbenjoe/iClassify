@@ -135,6 +135,7 @@ public class BayesianRandomQuiz extends Activity {
 					grp.clearCheck();
 					tvPage.setText(page+"");
 					bnext.setEnabled(false);
+					
 				}else {
 					  	Intent in = getIntent();
 					    int retake = in.getExtras().getInt("retakeNum");
@@ -149,12 +150,12 @@ public class BayesianRandomQuiz extends Activity {
 					    myDb.deleteQuiz("Flash Chapter 1");
 					    
 						Intent intent = new Intent(BayesianRandomQuiz.this,QuizResultActivity.class);									
-						Bundle b = new Bundle();	
+						/*Bundle b = new Bundle();	
 						b.putInt("qno", qset);
 						b.putInt("score", score);
 						b.putString("course", ncourse);// Your score
 						b.putString("quizdetails", qdetails);
-						intent.putExtras(b);
+						intent.putExtras(b);*/
 						startActivity(intent);
 						BayesianRandomQuiz.this.finish();
 						closeDB();
@@ -210,11 +211,11 @@ public class BayesianRandomQuiz extends Activity {
 				Intent in = getIntent();
 			    int retake = in.getExtras().getInt("retakeNum");
 			    
-			    String subj = ncourse +" "+qset;
+			   // String subj = ncourse +" "+qset;
 			    String qdetails = "Quiz Retake "+retake;
-			    myDb.addscores(3, retake, subj, qdetails, score, finalDate);
+			    //myDb.addscores(3, retake, subj, qdetails, score, finalDate);
 			    
-			    myDb.deleteQuiz("Flash Chapter 1");
+			    //myDb.deleteQuiz("Flash Chapter 1");
 			    
 				Intent intent = new Intent(BayesianRandomQuiz.this,QuizResultActivity.class);									
 				Bundle b = new Bundle();	
@@ -242,207 +243,64 @@ public class BayesianRandomQuiz extends Activity {
 
 	public void addQuestions1() {
 			
-		
 		myDb.addQuestions1(new Question("1",
-				"It engaged for integrating video, sound, graphics and animation.",
-				"Flash","Sparkle","Flare","Flash","New Flash")); //1
+				"It provides a way of calculating the posterior probability.",
+				"Bayes theorem","Naive Theorem","Flare","Bayes theorem","Naive Bayes")); //1
 		// 2
 		myDb.addQuestions1(new Question("4",
-				"__________ displays the menu bar, Timeline, Stage, Tools Panel,  Property Inspector.",
-				"Flash","Vision", "Illustrator","Spark","Flash")); //3
+				"What do you call when the classifier assume that the effect of the value of a predictor on a given class is independent of the values of other predictors?",
+				"Conditional independence","Conditional dependence", "Unconditional independence","Unconditional dependence","Conditional independence")); //3
 		// 3
 		myDb.addQuestions1(new Question("5",
-				"An area that used or allocated one’s work or a panel that arrange for the better suit of the users.",
-				"Workspace","White board","Workspace","Canvas","Property Layout")); //4
+				"What is the class with the highest posterior probability?",
+				"Outcome of prediction","Outcome of probability","Outcome of prediction","Outcome of classification","Outcome of data")); //4
 		// 4
 		myDb.addQuestions1(new Question("13",
-				"Flash indicates the selected frame number, the current frame rate (how many frames play per second), and the time that ________ has elapsed so far in the movie.",
-				"Timeline","Timeline","Stage","Layers","Tools panel")); // 11
+				"In this process you add 1 to the count for every attribute value-class combination when an attribute value doesn’t occur with every class value",
+				"Zero-frequency problem","Zero-frequency problem","One-Frequency problem","Frequency problem","Addition-Frequency")); // 11
 		// 5
 		myDb.addQuestions1(new Question("10",
-				"Accessible from a tab just to the right of the Properties Inspector.",
-               "Library Panel","Property Panel","Library Panel","Property Panel","Layout Panel")); //9
+				"What are the two parameters that define density function for the normal distribution?",
+               "Mean and standard deviation","Mean and frequency","Mean and standard deviation","Frequency and standard deviation","None of the above")); //9
 		// 6
 		myDb.addQuestions1(new Question("2",
-				"Which of the following correct extension of flash?", 
-				".fla","-fla","*flash","*fla",".fla")); //2
+				"The contribution of predictors can also be visualized by plotting ___________", 
+				"Nomograms","Monograms","Polygrams","Octagrams","Nomograms")); //2
 		// 7
 		myDb.addQuestions1(new Question("10",
-				"What is the possible shortcut for Library Panel?",
-				"CTRL+ L","CTRL+ L","Windows + D","CTRL + ALT+ D","SHFT + L"));//9
+				"____________ information gain as a sum of information contributed by each attribute can offer an explanation on how values of the predictors influence the class probability.",
+				"Kononenko’s","Kononenko’s","Konenko's","Koneko's","Konoko's"));//9
 		// 8
 		myDb.addQuestions1(new Question("22",
-				"A black dot in the Timeline indicates a single keyframe.",
-				"Keyframe","Frame","Keyframe","Timeline","Tween"));//20
+				"Calculate explicit probabilities for hypothesis, among the most practical approaches to certain types of learning problems",
+				"Probabilistic learning","Probabilistic training","Probabilistic learning","Probabilistic gaining","Probabilistic plotting"));//20
 		// 9
 		myDb.addQuestions1(new Question("12",
-				"It is a panel that you can store your imported images.",
-				"Library Panel","Memory Panel","Library Panel","Property Panel","Control Panel"));//10
+				"Predict multiple hypotheses, weighted by their probabilities",
+				"Probabilistic prediction","Probabilistic measures","Probabilistic learning","Probabilistic hypotheses","Probabilistic prediction"));//10
 		// 10
 		myDb.addQuestions1(new Question("12",
-				"Right format for importing image into Library Panel.",
-				"JPEG","JPEG","PNG","GIF","BMP")); //10
+				"It is calculated first,constructing a frequency table for each attribute against the target. ",
+				"posterior probability","posterior probability","interior probability","inferior probability","superior probability")); //10
 		// 11
 		myDb.addQuestions1(new Question("13",
-				"It contains layers which help you to organize the artwork in your document.",
-				"Timeline","Canvas","Workspace","Timeline","Layer")); // 11
+				"It needs to be transformed to their categorical counterparts before constructing their frequency tables.",
+				"Numerical variable","Numerical data","Numerical constant","Numerical variable","Numberical information")); // 11
 		// 12
 		myDb.addQuestions1(new Question("9",
-				"_____________  that can set your stage.",
-				"Property Inspector","Library Panel","Property Inspector","Tool Panel","Image Panel")); //8
+				"_____________ is applied to decision making and inferential statistics that deals with probability inference.",
+				"Bayesian reasoning","Probability reasoning","Bayesian reasoning","Decision reasoning","Inferential reasoning")); //8
 		// 13
 		myDb.addQuestions1(new Question("4",
-				"It includes the command menus at the top of the screen and a variety of tools and panels for editing and adding elements to your movie.",
-				"Adobe Professional","Adobe Professional","Adobe Flash Professional","Flash Professional","Professional")); //3
+				"It assumes that the presence or absence of a particular feature of a class is unrelated to the presence or absence of any other feature.",
+				"Bayes classifier","Bayes classifier","Decision Tree","K Nearest Neighbor","Classification")); //3
 		// 14
 		myDb.addQuestions1(new Question("1",
-				"What is the latest version of Flash’s scripting language, which you can use to add interactivity?",
-				"ActionScript 3.0","ActionScript 1.0", "ActionScript 2.0","ActionScript 3.0","ActionScript 4.0"));//1
+				"Bayesian methods are called __________",
+				"eager learners","lazy learners", "active learners","eager learners","passive learners"));//1
 		// 15
 		myDb.addQuestions1(new Question("13",
-				"It  indicates the selected frame number, the current frame rate (how many frames play per second), and the time that has elapsed so far in the movie.  ",
-				"Flash","Fireworks","Photoshop","Flash","Java")); //11
-        // 16
-		myDb.addQuestions1(new Question("1",
-				"It is use for graphics and animation and its application.",
-				"Flash","Sparkle","Animation","Flash","Movie")); //1
-		// 17
-		myDb.addQuestions1(new Question("4",
-				"It has the menu bar, Timeline, Stage, Tools Panel, Property Inspector",
-				"Flash","Vision","New Flash","Spark","Flash")); //3
-		// 18
-		myDb.addQuestions1(new Question("5",
-				"__________ that used or allocated one’s work or a panel that arrange for the better suit of the users.",
-				"Workspace","White board","Workspace","Canvas","Property Layout"));//4
-		// 19
-		myDb.addQuestions1(new Question("13",
-				"It indicates the selected frame number in flash. ",
-				"Timeline","Timeline","Stage","Layers","Tools")); //11
-		// 20
-		myDb.addQuestions1(new Question("10",
-				"It can found to the right of the Properties Inspector.",
-				"Library Panel","Property Panel","Library Panel","Property Pallet","Layout Panel")); //9
-		// 21
-		myDb.addQuestions1(new Question("2",
-				"It is the File Extension of Flash?",
-				".fla","fla","*flash","*fla",".fla")); //2
-		// 22
-		myDb.addQuestions1(new Question("10",
-				"It is the shortcut key for Library Panel?",
-				"CTRL+ L","CTRL+ L", "Windows + D","CTRL + ALT+ D","SHFT + L"));//9
-		// 23
-		myDb.addQuestions1(new Question("22",
-				"A black dot in the timeline that signify a single keyframe?",
-				"Keyframe","Frame","Keyframe","Timeline","Tweening")); //20
-		// 24
-		myDb.addQuestions1(new Question("9",
-				"______________ displays information about the currently selected sprite or cast member, or about the movie if you click on an occupied area of the Stage.",
-				"Property Inspector","Property","Library Panel","Property Inspector","Library Property")); //10
-		// 25
-		myDb.addQuestions1(new Question("12",
-				"It is the right format importing image into Library Panel.",
-				"JPEG", "JPEG", "PNG", "GIF","BMP")); //10
-		// 26
-		myDb.addQuestions1(new Question("13",
-				"The layers that will  help you to set up the artwork in your document.",
-				"Timeline","Canvas","Workspace","Timeline","Layer"));//11
-		// 27
-		myDb.addQuestions1(new Question("9",
-				"What panel that can set your stage?",
-				"Property Inspector","Library Panel","Property Inspector","Tool Panel","Image Panel")); //8
-		// 28
-		myDb.addQuestions1(new Question("3",
-                "A command menus at the top of the screen and a variety of tools and panels for editing and adding elements to your movie. ",
-		        "Adobe Flash Professional","Adobe Professional","Adobe Flash Professional","Flash Professional","Professional")); //3
-		// 29
-		myDb.addQuestions1(new Question("1",
-				"It is the latest version of Flash’s scripting language.",
-				"ActionScript 3.0", "ActionScript 1.0", "ActionScript 2.0","ActionScript 3.0","ActionScript 4.0")); //1
-		// 30
-		myDb.addQuestions1(new Question("13",
-				"An application that indicates the selected frame number?",
-				"Flash", "Fireworks", "Photoshop", "Flash","Java"));//11
-		// 31
-		myDb.addQuestions1(new Question("10",
-				" In the right of the Properties Inspector, what panel can be found?",
-				"Library Panel", "Property Panel", "Library Panel", "Property Pallet","Layout Panel")); //9
-		// 32
-		myDb.addQuestions1(new Question("2",
-				"In flash, which of the following is the correct File Extension?",
-		    	".fla","fla'",".fla","*fla","fla")); //2
-		// 33
-		myDb.addQuestions1(new Question("10",
-				"__________ is the correct shortcut key for Library Panel?",
-				"CTRL+ L","SHFT + L","CTRL + ALT+ D","Windows + D","CTRL+ L")); //9
-		// 34
-		myDb.addQuestions1(new Question("22",
-				"A _____________ is the black dot in the timeline",
-				"Keyframe","Frame","Keyframe","Timeline","Tween"));//20
-		// 35
-		myDb.addQuestions1(new Question("4",
-				"Its automatically displays information about the currently selected sprite?",
-				"Property Inspector","Property","Library Panel","Library Property","Property Inspector")); //3
-		// 36
-		myDb.addQuestions1(new Question("12",
-				"Which of the following is the correct format for importing image into Library Panel?",
-				"JPEG","JPEG","BMP","GIF","PNG")); //10
-		// 37
-		myDb.addQuestions1(new Question("13",
-				"What tools or layer will help to organize the artwork in your document?",
-				"Timeline", "Canvas", "Workspace", "Timeline","Layer")); //11
-                   	// 38
-		myDb.addQuestions1(new Question("9",
-				"It is the panel that can set your stage?",
-				"Property Inspector", "Library Panel", "Property Inspector", "Tool Panel","Panel"));//8
-		// 39
-		myDb.addQuestions1(new Question("4",
-				"A tools and panels in flash for editing and adding elements to your movie.",
-				"Adobe Flash Professional", "Adobe Professional", "Flash Professional", "Adobe Flash Professional","Professional")); //3
-		// 40
-		myDb.addQuestions1(new Question("1",
-				"Which of the following is the latest version of Flash’s scripting language?",
-				"ActionScript 3.0","ActionScript 4.0","ActionScript 3.0","ActionScript 2.0","ActionScript 1.0")); //1
-		// 41
-		myDb.addQuestions1(new Question("10",
-				"What can be found in the right Properties Inspector, that can import pictures?",
-				"Library Panel","Property Panel","Library Panel","Property Pallet","Layout Panel")); //2
-		// 42
-		myDb.addQuestions1(new Question("2",
-				"Which of the following is the correct File Extension of Flash?",
-				".fla", ".fla","*flash","*fla","fla"));//2
-		// 43
-		myDb.addQuestions1(new Question("10",
-				"Which of the following is the right shortcut key for Library Panel?",
-				"CTRL+ L", "CTRL + ALT+ D", "Windows + D", "SHFT + L","CTRL+ L")); //9
-		// 44
-
-		myDb.addQuestions1(new Question("22",
-				"It indicates a single keyframe in timeline.",
-                "Keyframe","Keyframe","Frame","Timeline","Tween")); //20
-		// 45
-		myDb.addQuestions1(new Question("9",
-				"___________ displays information about the currently selected sprite or cast member.",
-				"Property Inspector", "Property", "Library Panel", "Library Property","Property Inspector")); //8
-		// 46
-		myDb.addQuestions1(new Question("12",
-				"Which of the following is the correct format for importing image into Library Panel?",
-				"JPEG", "16 Color Bitmap","GIF","JPEG","TIFF"));//10
-		// 47
-		myDb.addQuestions1(new Question("13",
-				"Which of the following layer will help to organize the artwork in your document?",
-				"Timeline","Workspace","Canvas","Timeline","Layer")); //11
-		// 48
-		myDb.addQuestions1(new Question("9",
-				"What tools in panel that can set your stage and import picture, text etc.? ",
-				"Property Inspector","Library Panel","Property Inspector","Tool Panel","Image Panel")); //8
-		// 49
-		myDb.addQuestions1(new Question("4",
-				"__________ is an application for editing and adding elements to your movie?",
-				"Adobe Flash Professional","Adobe Professional CS6","Adobe Flash Professional","Flash Professional","Professional")); //3
-		// 50
-		myDb.addQuestions1(new Question("1",
-				"____________ is a latest version of Flash’s scripting language.",
-				"ActionScript 3.0","ActionScript 0.0","ActionScript 1.0","ActionScript 2.0","ActionScript 3.0"));//1
-		
+				"This theorem is the cornerstone of all Bayesian methods",
+				"Bayes Theorem","Classification theorem","Bayes Theorem","Probability theorem","Euclidean theorem")); //11
 	}
 }
