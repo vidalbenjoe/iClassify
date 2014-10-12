@@ -16,8 +16,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -28,10 +28,6 @@ import android.widget.Toast;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SessionCache;
-import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop;
-import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
-import com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop;
-import com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 
 public class DecisionTreeAssessmentJumbleWord extends ActionBarActivity {

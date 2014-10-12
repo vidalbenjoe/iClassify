@@ -5,8 +5,10 @@ import java.util.Date;
 import java.util.List;
 
 import com.capstoneii.iclassify.QuizResultActivity;
+import com.capstoneii.iclassify.QuizResultBayesian;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SessionCache;
+import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.dbclasses.Question;
 import com.capstoneii.iclassify.dbclasses.TempQuestion;
@@ -28,13 +30,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class KNNRandomQuiz extends Activity {
-
 	List<Question> quesList;
 	int score;
 	int page = 1;
 	int qid = 0;
 	int qset = 1;
-	String ncourse = "K- Nearest";
+	String ncourse = "K Nearest Neighbor";
 	Question question;
 	SQLiteDatabase mdb;
 	TextView tvQue, tvPage, tvRef;
@@ -50,7 +51,10 @@ public class KNNRandomQuiz extends Activity {
 		super.onCreate(savedInstanceState);	
 		
 		setContentView(R.layout.activity_quiz);
-		
+
+		getActionBar().setBackgroundDrawable(
+				new ColorDrawable(getResources()
+						.getColor(R.color.divider_color)));
 		QuizSession = new SessionCache(getApplicationContext());
 		openDB();
 		
@@ -62,7 +66,6 @@ public class KNNRandomQuiz extends Activity {
 		}else{
 			Log.d("database not empty", "queslist with setno");
 		}
-		
 		question = quesList.get(qid);
 		tvRef = (TextView)findViewById(R.id.tvRef);
 		tvQue = (TextView)findViewById(R.id.tvQuestion);
@@ -217,9 +220,7 @@ public class KNNRandomQuiz extends Activity {
 			    String subj = ncourse +" "+qset;
 			    String qdetails = "Quiz Retake "+retake;
 			    myDb.addscores(3, retake, subj, qdetails, score, finalDate);
-			    
 			    myDb.deleteQuiz("K Nearest Neighbor");
-			    
 				Intent intent = new Intent(KNNRandomQuiz.this,QuizResultActivity.class);									
 				Bundle b = new Bundle();	
 				b.putInt("qno", qset);
@@ -243,6 +244,7 @@ public class KNNRandomQuiz extends Activity {
 		
 		dialog.show();
 	}
+
 
 	public void addQuestions1() {
 

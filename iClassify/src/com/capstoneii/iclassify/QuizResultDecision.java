@@ -17,6 +17,7 @@ import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -67,21 +68,13 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 		getActionBar().setBackgroundDrawable(
 				new ColorDrawable(getResources()
 						.getColor(R.color.divider_color)));
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		setContentView(R.layout.activity_result);
 		 
 		openDB();
 		QuizSession = new SessionCache(getApplicationContext());
 		
-		backbutton = (ImageButton)findViewById(R.id.backbutton);  	      	
-		backbutton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent(QuizResultDecision.this, DescTreeLayoutActivity.class);
-				startActivity(i);
-				overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
-				finish();	    
-			}  	  	
-		});
+		
 		
 	    HashMap<String, String> totalSum = QuizSession.getTotalSum();
 	    sumOf = Integer.parseInt(totalSum.get(SessionCache.JS_MAX_ITEM1));
@@ -308,5 +301,20 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 	@Override
 	public void onBackPressed() {
 		Toast.makeText(getApplicationContext(), "Press 'back' on the top", Toast.LENGTH_SHORT).show();
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			Intent i = new Intent(QuizResultDecision.this, DescTreeLayoutActivity.class);
+			startActivity(i);
+			overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+			finish();	
+			return true;
+
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 }

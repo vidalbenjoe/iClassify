@@ -55,55 +55,58 @@
 # view res/layout/layout_inflate.xml #generated:11
 -keep class at.technikum.mti.fancycoverflow.FancyCoverFlow { <init>(...); }
 
-# view AndroidManifest.xml #generated:52
+# view AndroidManifest.xml #generated:63
 -keep class bayesdiscussflip.NativeBayesLayoutActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:112
+# view AndroidManifest.xml #generated:67
+-keep class bayesdiscussflip.NativeBayesObjectives { <init>(...); }
+
+# view AndroidManifest.xml #generated:127
 -keep class com.capstoneii.iclassify.QuizResultActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:115
+# view AndroidManifest.xml #generated:130
 -keep class com.capstoneii.iclassify.QuizResultBayesian { <init>(...); }
 
-# view AndroidManifest.xml #generated:118
+# view AndroidManifest.xml #generated:133
 -keep class com.capstoneii.iclassify.QuizResultDecision { <init>(...); }
 
 # view AndroidManifest.xml #generated:23
 -keep class com.capstoneii.iclassify.SplashScreenActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:103
+# view AndroidManifest.xml #generated:118
 -keep class com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:106
+# view AndroidManifest.xml #generated:121
 -keep class com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop { <init>(...); }
 
-# view AndroidManifest.xml #generated:127
+# view AndroidManifest.xml #generated:142
 -keep class com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz { <init>(...); }
 
-# view AndroidManifest.xml #generated:121
+# view AndroidManifest.xml #generated:136
 -keep class com.capstoneii.iclassify.assessment.bayesian.QuizResultAssessment { <init>(...); }
 
-# view AndroidManifest.xml #generated:85
+# view AndroidManifest.xml #generated:100
 -keep class com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:88
+# view AndroidManifest.xml #generated:103
 -keep class com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:91
+# view AndroidManifest.xml #generated:106
 -keep class com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord { <init>(...); }
 
-# view AndroidManifest.xml #generated:94
+# view AndroidManifest.xml #generated:109
 -keep class com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeQuestionSets { <init>(...); }
 
-# view AndroidManifest.xml #generated:124
+# view AndroidManifest.xml #generated:139
 -keep class com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz { <init>(...); }
 
-# view AndroidManifest.xml #generated:100
+# view AndroidManifest.xml #generated:115
 -keep class com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop { <init>(...); }
 
-# view AndroidManifest.xml #generated:130
+# view AndroidManifest.xml #generated:145
 -keep class com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz { <init>(...); }
 
-# view AndroidManifest.xml #generated:97
+# view AndroidManifest.xml #generated:112
 -keep class com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity { <init>(...); }
 
 # view res/layout/choose_video_layout.xml #generated:50
@@ -139,6 +142,7 @@
 # view res/layout/naivesimul_firstlayout.xml #generated:26
 # view res/layout/naivesimul_secondlayout.xml #generated:44
 # view res/layout/naivesimul_thirdlayout.xml #generated:45
+# view res/layout/objective_layout_menu.xml #generated:40
 # view res/layout/patient_dectree_compute.xml #generated:17
 # view res/layout/quiz_multiple_question_layout.xml #generated:7
 # view res/layout/quiz_result_layout.xml #generated:40
@@ -149,34 +153,34 @@
 # view res/layout/simpson_table_fragment.xml #generated:9
 -keep class com.capstoneii.iclassify.library.TypewriterTextView { <init>(...); }
 
-# view AndroidManifest.xml #generated:109
+# view AndroidManifest.xml #generated:124
 -keep class com.capstoneii.iclassify.problems.SimpsonsDecisionTreeFragment { <init>(...); }
 
-# view AndroidManifest.xml #generated:68
+# view AndroidManifest.xml #generated:83
 -keep class com.capstoneii.iclassify.simulation.desiciontree.SimulDatasetActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:65
+# view AndroidManifest.xml #generated:80
 -keep class com.capstoneii.iclassify.simulation.desiciontree.SimulProblemActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:62
+# view AndroidManifest.xml #generated:77
 -keep class com.capstoneii.iclassify.simulation.desiciontree.SimulProcessIntroActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:59
+# view AndroidManifest.xml #generated:74
 -keep class com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:79
+# view AndroidManifest.xml #generated:94
 -keep class com.capstoneii.iclassify.videos.IntroductionVideo { <init>(...); }
 
-# view AndroidManifest.xml #generated:76
+# view AndroidManifest.xml #generated:91
 -keep class com.capstoneii.iclassify.videos.VideoDecisionTree { <init>(...); }
 
-# view AndroidManifest.xml #generated:77
+# view AndroidManifest.xml #generated:92
 -keep class com.capstoneii.iclassify.videos.VideoKNearestActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:72
+# view AndroidManifest.xml #generated:87
 -keep class com.capstoneii.iclassify.videos.VideoMenuActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:78
+# view AndroidManifest.xml #generated:93
 -keep class com.capstoneii.iclassify.videos.VideoNAtiveBayesianActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:33
@@ -188,9 +192,15 @@
 # view AndroidManifest.xml #generated:44
 -keep class descisiondiscussflip.DescTreeLayoutActivity { <init>(...); }
 
+# view AndroidManifest.xml #generated:49
+-keep class descisiondiscussflip.DescTreeObjectives { <init>(...); }
+
 # view AndroidManifest.xml #generated:38
 -keep class drawer.MainDrawerActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:48
+# view AndroidManifest.xml #generated:55
 -keep class knearestdiscussflip.KNearestLayoutActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:59
+-keep class knearestdiscussflip.KNearestObjectives { <init>(...); }
 

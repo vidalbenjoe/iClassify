@@ -3,6 +3,8 @@ package com.capstoneii.iclassify;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 
+import knearestdiscussflip.KNearestLayoutActivity;
+
 import bayesdiscussflip.NativeBayesLayoutActivity;
 
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
@@ -15,6 +17,7 @@ import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -69,19 +72,12 @@ public class QuizResultBayesian extends Activity implements AnimationListener {
 		getActionBar().setBackgroundDrawable(
 				new ColorDrawable(getResources()
 						.getColor(R.color.divider_color)));
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		openDB();
 		QuizSession = new SessionCache(getApplicationContext());
 		
-		backbutton = (ImageButton)findViewById(R.id.backbutton);  	      	
-		backbutton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent(QuizResultBayesian.this, NativeBayesLayoutActivity.class);
-				startActivity(i);
-				overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
-				finish();	    
-			}  	  	
-		});
+		
 		
 	    HashMap<String, String> totalSum = QuizSession.getTotalSum();
 	    sumOf = Integer.parseInt(totalSum.get(SessionCache.JS_MAX_ITEM1));
@@ -308,5 +304,20 @@ public class QuizResultBayesian extends Activity implements AnimationListener {
 	@Override
 	public void onBackPressed() {
 		Toast.makeText(getApplicationContext(), "Press 'back' on the top", Toast.LENGTH_SHORT).show();
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			Intent i = new Intent(QuizResultBayesian.this, NativeBayesLayoutActivity.class);
+			startActivity(i);
+			overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+			finish();	
+			return true;
+
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 }

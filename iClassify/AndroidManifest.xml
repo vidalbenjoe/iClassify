@@ -45,12 +45,27 @@
             android:name="descisiondiscussflip.DescTreeLayoutActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light" />
+        
+        <activity
+            android:name="descisiondiscussflip.DescTreeObjectives"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light" />
+        
+        
         <activity
             android:name="knearestdiscussflip.KNearestLayoutActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity
+            android:name="knearestdiscussflip.KNearestObjectives"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
             android:name="bayesdiscussflip.NativeBayesLayoutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name="bayesdiscussflip.NativeBayesObjectives"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light" />
           //Simulation

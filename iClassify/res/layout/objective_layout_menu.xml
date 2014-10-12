@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundblur"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/t"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:textColor="#fff"
+        android:textSize="30sp" 
+        android:text="Objectives" 
+        android:textStyle="bold" />
+    
+      <TextView
+          android:id="@+id/titleobjectives"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_marginTop="10dp"
+         android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:layout_below="@+id/t"
+        android:textColor="#fff"
+        android:textSize="30sp" 
+        android:textStyle="bold" />
+
+    <com.capstoneii.iclassify.library.TypewriterTextView
+        android:id="@+id/objectivedesc"
+        android:layout_width="480dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="left"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:layout_below="@+id/titleobjectives"
+        android:shadowRadius="2"
+        android:textColor="#fff"
+        android:textSize="23sp" />
+
+    <ImageView
+        android:id="@+id/startdiscussionbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/watchvideosbutton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/startdiscussionbutton" />
+
+    <ImageView
+        android:id="@+id/watchvideosbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/startdiscussionbutton"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="115dp"
+        android:background="@drawable/watchvideosobjectives" />
+
+</RelativeLayout>

@@ -23,16 +23,17 @@ import android.view.View.OnDragListener;
 import android.view.View.OnTouchListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.capstoneii.iclassify.QuizResultActivity;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SessionCache;
 import com.capstoneii.iclassify.SplashScreenActivity;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
+@SuppressLint("SimpleDateFormat")
 public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 	Button checkdropbt, clearbt;
 	int numDragged = 0;
@@ -64,11 +65,11 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 		intent = new Intent();
 		QuizSession = new SessionCache(KNNAssessmentDragAndDrop.this);
 		openDB();
-
+		
 		Date date = new Date();
 		SimpleDateFormat timeFormat = new SimpleDateFormat("MMM dd, yyyy");
-		finalDate = timeFormat.format(date);
-		
+	    finalDate = timeFormat.format(date);
+
 		final TypewriterTextView animated_title = (TypewriterTextView) findViewById(R.id.animatedtitle);
 		animated_title.setTypewriterText(getString(R.string.intro));
 
@@ -203,6 +204,26 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 					Toast.makeText(KNNAssessmentDragAndDrop.this,
 							"Sorry, you dropped it on the wrong place",
 							Toast.LENGTH_SHORT).show();
+
+					final Dialog dialog = new Dialog(
+							KNNAssessmentDragAndDrop.this);
+					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+					dialog.setContentView(R.layout.correct_dialog);
+					dialog.setCancelable(false);
+					dialog.getWindow().setBackgroundDrawable(
+							new ColorDrawable(
+									android.graphics.Color.TRANSPARENT));
+					ImageView correctcheck = (ImageView) dialog
+							.findViewById(R.id.correctcheck);
+					correctcheck.setImageResource(R.drawable.wrongcircle);
+					correctcheck.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View InputFragmentView) {
+							dialog.dismiss();
+						}
+					});
+
+					dialog.show();
 				}
 
 				if (view.getId() == R.id.option_1 && v.getId() == R.id.choice_1) {
@@ -210,6 +231,7 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 					Toast.makeText(KNNAssessmentDragAndDrop.this, "Correct!",
 							Toast.LENGTH_SHORT).show();
 					numDragged++;
+
 				}
 
 				if (view.getId() == R.id.option_2 && v.getId() != R.id.choice_2) {
@@ -217,6 +239,26 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 					Toast.makeText(KNNAssessmentDragAndDrop.this,
 							"Sorry, you dropped it on the wrong place",
 							Toast.LENGTH_SHORT).show();
+
+					final Dialog dialog = new Dialog(
+							KNNAssessmentDragAndDrop.this);
+					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+					dialog.setContentView(R.layout.correct_dialog);
+					dialog.setCancelable(false);
+					dialog.getWindow().setBackgroundDrawable(
+							new ColorDrawable(
+									android.graphics.Color.TRANSPARENT));
+					ImageView correctcheck = (ImageView) dialog
+							.findViewById(R.id.correctcheck);
+					correctcheck.setImageResource(R.drawable.wrongcircle);
+					correctcheck.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View InputFragmentView) {
+							dialog.dismiss();
+						}
+					});
+
+					dialog.show();
 				}
 
 				else if (view.getId() == R.id.option_2
@@ -232,6 +274,26 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 					Toast.makeText(KNNAssessmentDragAndDrop.this,
 							"Sorry, you dropped it on the wrong place",
 							Toast.LENGTH_SHORT).show();
+
+					final Dialog dialog = new Dialog(
+							KNNAssessmentDragAndDrop.this);
+					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+					dialog.setContentView(R.layout.correct_dialog);
+					dialog.setCancelable(false);
+					dialog.getWindow().setBackgroundDrawable(
+							new ColorDrawable(
+									android.graphics.Color.TRANSPARENT));
+					ImageView correctcheck = (ImageView) dialog
+							.findViewById(R.id.correctcheck);
+					correctcheck.setImageResource(R.drawable.wrongcircle);
+					correctcheck.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View InputFragmentView) {
+							dialog.dismiss();
+						}
+					});
+
+					dialog.show();
 				} else if (view.getId() == R.id.option_3
 						&& v.getId() == R.id.choice_3) {
 					dropTarget.setText("Step 3 " + dropped.getText());
@@ -246,6 +308,25 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 					Toast.makeText(KNNAssessmentDragAndDrop.this,
 							"Sorry, you dropped it on the wrong place",
 							Toast.LENGTH_SHORT).show();
+					final Dialog dialog = new Dialog(
+							KNNAssessmentDragAndDrop.this);
+					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+					dialog.setContentView(R.layout.correct_dialog);
+					dialog.setCancelable(false);
+					dialog.getWindow().setBackgroundDrawable(
+							new ColorDrawable(
+									android.graphics.Color.TRANSPARENT));
+					ImageView correctcheck = (ImageView) dialog
+							.findViewById(R.id.correctcheck);
+					correctcheck.setImageResource(R.drawable.wrongcircle);
+					correctcheck.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View InputFragmentView) {
+							dialog.dismiss();
+						}
+					});
+
+					dialog.show();
 				} else if (view.getId() == R.id.option_4
 						&& v.getId() == R.id.choice_4) {
 					dropTarget.setText("Step 4 " + dropped.getText());
@@ -260,6 +341,7 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 					Toast.makeText(KNNAssessmentDragAndDrop.this,
 							"Sorry, you dropped it on the wrong place",
 							Toast.LENGTH_SHORT).show();
+
 				} else if (view.getId() == R.id.option_5
 						&& v.getId() == R.id.choice_5) {
 					dropTarget.setText("Step 5 " + dropped.getText());
@@ -477,7 +559,7 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 					dialog.show();
 				} else {
 					// this condition will use if retake is value 1 to 2
-					myDb.deleteQuiz("Flash Chapter 1");
+					myDb.deleteQuiz("K Nearest Neighbor");
 					QuizSession.StoreFlLastQuizTaken(finalDate);
 					QuizSession.StoreAllLastQuizTaken(finalDate);
 
@@ -498,10 +580,8 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 			} else {
 				QuizSession.StoreFlLastQuizTaken(finalDate);
 				QuizSession.StoreAllLastQuizTaken(finalDate);
-
 				int passVal = Integer.parseInt(initVal);
 				myDb.addjsquiz(1, "K Nearest Neighbor", initVal, "0 %");
-
 				curTotal = prevTotal + 10;
 				QuizSession.StoreTotal1(Integer.toString(curTotal));
 				QuizSession.FinishSessionNum1(initVal);
@@ -516,13 +596,15 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 			}
 
 		}
-	}private void openDB() {
-		
+	}
+
+	private void openDB() {
+
 		myDb = new DBAdapter(KNNAssessmentDragAndDrop.this);
 		myDb.open();
 	}
-	
-	public void onBackPressed(){
-	
+
+	public void onBackPressed() {
+
 	}
 }

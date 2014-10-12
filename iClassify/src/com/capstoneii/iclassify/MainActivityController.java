@@ -1,6 +1,6 @@
 package com.capstoneii.iclassify;
 
-import knearestdiscussflip.KNearestLayoutActivity;
+import knearestdiscussflip.KNearestObjectives;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.content.Context;
@@ -14,11 +14,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import at.technikum.mti.fancycoverflow.FancyCoverFlow;
 import at.technikum.mti.fancycoverflow.FancyCoverFlowAdapter;
-import bayesdiscussflip.NativeBayesLayoutActivity;
+import bayesdiscussflip.NativeBayesObjectives;
 
 import com.capstoneii.iclassify.videos.IntroductionVideo;
 
-import descisiondiscussflip.DescTreeLayoutActivity;
+import descisiondiscussflip.DescTreeObjectives;
 
 @SuppressLint("NewApi")
 public class MainActivityController extends Fragment {
@@ -101,19 +101,19 @@ public class MainActivityController extends Fragment {
 
 					case 1:
 						Intent intent1 = new Intent(InputFragmentView
-								.getContext(), DescTreeLayoutActivity.class);
+								.getContext(), DescTreeObjectives.class);
 						InputFragmentView.getContext().startActivity(intent1);
 						break;
 
 					case 2:
 						Intent intent2 = new Intent(InputFragmentView
-								.getContext(), KNearestLayoutActivity.class);
+								.getContext(), KNearestObjectives.class);
 						InputFragmentView.getContext().startActivity(intent2);
 						break;
 
 					case 3:
 						Intent intent3 = new Intent(InputFragmentView
-								.getContext(), NativeBayesLayoutActivity.class);
+								.getContext(), NativeBayesObjectives.class);
 						InputFragmentView.getContext().startActivity(intent3);
 						break;
 
