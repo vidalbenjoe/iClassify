@@ -53,7 +53,7 @@
             android:name="bayesdiscussflip.NativeBayesLayoutActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light" />
-          //Simulation
+          //Simulation
         <activity
             android:name="com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity"
             android:screenOrientation="portrait" />
@@ -64,7 +64,7 @@
             android:name="com.capstoneii.iclassify.simulation.desiciontree.SimulProblemActivity"
             android:screenOrientation="portrait" />
         <activity android:name="com.capstoneii.iclassify.simulation.desiciontree.SimulDatasetActivity" />
-     //Video
+     //Video
         <activity
             android:name="com.capstoneii.iclassify.videos.VideoMenuActivity"
             android:label="Videos"
@@ -75,7 +75,7 @@
         <activity
             android:name="com.capstoneii.iclassify.videos.IntroductionVideo"
             android:theme="@style/Theme.AppCompat.Light" />
-      //Assessment
+      //Assessment
         <activity
             android:name="com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity"
             android:theme="@style/Theme.AppCompat.Light" />
@@ -105,26 +105,25 @@
             android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name="com.capstoneii.iclassify.QuizResultActivity"
+            android:theme="@style/Theme.AppCompat.Light"  />
+        <activity
+            android:name="com.capstoneii.iclassify.QuizResultBayesian"
             android:theme="@style/Theme.AppCompat.Light" />
-        
-         <activity
+        <activity
+            android:name="com.capstoneii.iclassify.QuizResultDecision"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
             android:name="com.capstoneii.iclassify.assessment.bayesian.QuizResultAssessment"
             android:theme="@style/Theme.AppCompat.Light" />
-          <activity
+        <activity
             android:name="com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz"
             android:theme="@style/Theme.AppCompat.Light" />
-         <activity
+        <activity
             android:name="com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz"
             android:theme="@style/Theme.AppCompat.Light" />
-          
-         <activity
+        <activity
             android:name="com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz"
             android:theme="@style/Theme.AppCompat.Light" />
-         
-         
     </application>
-    
-    
-    
 
 </manifest>

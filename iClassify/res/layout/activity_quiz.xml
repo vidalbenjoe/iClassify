@@ -30,23 +30,23 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="Reference Lesson"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="#fff"
                     android:textStyle="bold"
-                    android:visibility="gone"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:visibility="gone" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:background="@drawable/rd_bg" >
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rd_bg" >
 
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="8"
-                        android:layout_margin="5dp">
-                       
+                        android:layout_margin="5dp"
+                        android:layout_weight="8" >
+
                         <TextView
                             android:id="@+id/tvPage"
                             android:layout_width="match_parent"
@@ -54,27 +54,23 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text="10"
-                            android:textStyle="bold"
-                            android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textStyle="bold" />
                     </FrameLayout>
-
-                    
 
                     <TextView
                         android:id="@+id/tvQuestion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
                         android:layout_weight="1"
                         android:paddingTop="3dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginBottom="3dp"
                         android:text="Question"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -94,40 +90,64 @@
                             android:id="@+id/rd1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:layout_marginTop="5dp"
                             android:background="@drawable/rd_bg"
-                            android:layout_marginTop="1dp"
-                            android:text="Choice 1" />
+                            android:padding="15dp"
+                            android:shadowColor="@android:color/black"
+                            android:shadowDx="1"
+                            android:shadowDy="1"
+                            android:shadowRadius="2"
+                            android:text="Choice 1"
+                            android:textColor="#fff"
+                            android:textStyle="bold" />
 
                         <RadioButton
                             android:id="@+id/rd2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:layout_marginTop="5dp"
                             android:background="@drawable/rd_bg"
-                            android:layout_marginTop="1dp"
-                            android:text="Choice 2" />
+                            android:padding="15dp"
+                            android:shadowColor="@android:color/black"
+                            android:shadowDx="1"
+                            android:shadowDy="1"
+                            android:shadowRadius="2"
+                            android:text="Choice 2"
+                            android:textColor="#fff"
+                            android:textStyle="bold" />
 
                         <RadioButton
                             android:id="@+id/rd3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:layout_marginTop="5dp"
                             android:background="@drawable/rd_bg"
-                            android:layout_marginTop="1dp"
-                            android:text="Choice 3" />
+                            android:padding="15dp"
+                            android:shadowColor="@android:color/black"
+                            android:shadowDx="1"
+                            android:shadowDy="1"
+                            android:shadowRadius="2"
+                            android:text="Choice 3"
+                            android:textColor="#fff"
+                            android:textStyle="bold" />
+
                         <RadioButton
                             android:id="@+id/rd4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:layout_marginTop="5dp"
                             android:background="@drawable/rd_bg"
-                            android:layout_marginTop="1dp"
-                            android:text="Choice 4" />
+                            android:padding="15dp"
+                            android:shadowColor="@android:color/black"
+                            android:shadowDx="1"
+                            android:shadowDy="1"
+                            android:shadowRadius="2"
+                            android:text="Choice 4"
+                            android:textColor="#fff"
+                            android:textStyle="bold" />
                     </RadioGroup>
                 </LinearLayout>
             </LinearLayout>
-
         </ScrollView>
 
         <LinearLayout
@@ -140,7 +160,7 @@
 
             <Button
                 android:id="@+id/bnext"
-            	style="?android:attr/textAppearanceMedium"
+                style="?android:attr/textAppearanceMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -149,9 +169,8 @@
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
                 android:paddingTop="15dp"
-            	android:textColor="#fff"
-            	android:textScaleX="1.2" />
-
+                android:textColor="#fff"
+                android:textScaleX="1.2" />
         </LinearLayout>
     </LinearLayout>
 

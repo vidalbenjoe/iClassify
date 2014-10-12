@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import com.capstoneii.iclassify.QuizResultActivity;
+import com.capstoneii.iclassify.QuizResultDecision;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SessionCache;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
@@ -16,6 +16,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,8 +33,8 @@ public class DecisionTreeRandomQuiz extends Activity {
 	int score;
 	int page = 1;
 	int qid = 0;
-	int qset = 4;
-	String ncourse = "Flash";
+	int qset = 1;
+	String ncourse = "Decision Tree";
 	Question question;
 	SQLiteDatabase mdb;
 	TextView tvQue, tvPage, tvRef;
@@ -44,24 +45,23 @@ public class DecisionTreeRandomQuiz extends Activity {
 	private Date date;
 	String finalDate;
 
-	int totalsumof;
-	int sumOf;
-	double jsper;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_quiz);
 
+		getActionBar().setBackgroundDrawable(
+				new ColorDrawable(getResources()
+						.getColor(R.color.divider_color)));
 		QuizSession = new SessionCache(getApplicationContext());
 		openDB();
 
 		myDb.delAllTempRows();
-		quesList = myDb.getAllQuestions4();
+		quesList = myDb.getAllQuestions3();
 		if (quesList.size() == 0) {
-			addQuestions4();
-			quesList = myDb.getAllQuestions4();
+			addQuestions3();
+			quesList = myDb.getAllQuestions3();
 		} else {
 			Log.d("database not empty", "queslist with setno");
 		}
@@ -75,6 +75,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 		rd3 = (RadioButton) findViewById(R.id.rd3);
 		rd4 = (RadioButton) findViewById(R.id.rd4);
 		bnext = (Button) findViewById(R.id.bnext);
+
 		bnext.setEnabled(false);
 		setQuestionView();
 		tvPage.setText(page + "");
@@ -85,26 +86,29 @@ public class DecisionTreeRandomQuiz extends Activity {
 				bnext.setEnabled(true);
 			}
 		});
+
 		rd2.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				bnext.setEnabled(true);
 			}
 		});
+
 		rd3.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				bnext.setEnabled(true);
 			}
 		});
+
 		rd4.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				bnext.setEnabled(true);
 			}
 		});
+
 		bnext.setOnClickListener(new View.OnClickListener() {
-			private Date date;
 
 			@SuppressLint("SimpleDateFormat")
 			@Override
@@ -118,9 +122,8 @@ public class DecisionTreeRandomQuiz extends Activity {
 					String lid = tvRef.getText().toString();
 					String qitem = tvQue.getText().toString();
 					String qans = question.getQans().toString();
-					;
 					String quserans = answer.getText().toString();
-					myDb.addtempQuestion(new TempQuestion("4", lid, qitem,
+					myDb.addtempQuestion(new TempQuestion("1", lid, qitem,
 							qans, quserans));
 					score++;
 					Log.d("score result", "Your score is " + score);
@@ -129,7 +132,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 					String qitem = tvQue.getText().toString();
 					String qans = question.getQans().toString();
 					String quserans = answer.getText().toString();
-					myDb.addtempQuestion(new TempQuestion("4", lid, qitem,
+					myDb.addtempQuestion(new TempQuestion("1", lid, qitem,
 							qans, quserans));
 					Log.d("wrong answer", answer.getText() + " is incorrect");
 				}
@@ -140,7 +143,6 @@ public class DecisionTreeRandomQuiz extends Activity {
 					grp.clearCheck();
 					tvPage.setText(page + "");
 					bnext.setEnabled(false);
-					bnext.setVisibility(View.GONE);
 				} else {
 					Intent in = getIntent();
 					int retake = in.getExtras().getInt("retakeNum");
@@ -148,19 +150,21 @@ public class DecisionTreeRandomQuiz extends Activity {
 					date = new Date();
 					SimpleDateFormat timeFormat = new SimpleDateFormat(
 							"MMM dd, yyyy");
-					String finalDate = timeFormat.format(date);
+					finalDate = timeFormat.format(date);
 					String subj = ncourse + " " + qset;
 					String qdetails = "Quiz Retake " + retake;
 					myDb.addscores(3, retake, subj, qdetails, score, finalDate);
 					// myDb.addScores(3, subj , score, finalDate);
-					// myDb.deleteQuiz("Flash Chapter 4");
+
+					myDb.deleteQuiz("Decision Tree");
 
 					Intent intent = new Intent(DecisionTreeRandomQuiz.this,
-							QuizResultActivity.class);
+							QuizResultDecision.class);
 					Bundle b = new Bundle();
 					b.putInt("qno", qset);
 					b.putInt("score", score);
 					b.putString("course", ncourse);// Your score
+					b.putString("quizdetails", qdetails);
 					intent.putExtras(b);
 					startActivity(intent);
 					DecisionTreeRandomQuiz.this.finish();
@@ -186,6 +190,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 	}
 
 	private void openDB() {
+
 		myDb = new DBAdapter(this);
 		myDb.open();
 	}
@@ -224,14 +229,16 @@ public class DecisionTreeRandomQuiz extends Activity {
 				String subj = ncourse + " " + qset;
 				String qdetails = "Quiz Retake " + retake;
 				myDb.addscores(3, retake, subj, qdetails, score, finalDate);
-				myDb.deleteQuiz("Flash Chapter");
+
+				myDb.deleteQuiz("Decision Tree");
 
 				Intent intent = new Intent(DecisionTreeRandomQuiz.this,
-						QuizResultActivity.class);
+						QuizResultDecision.class);
 				Bundle b = new Bundle();
 				b.putInt("qno", qset);
 				b.putInt("score", score);
 				b.putString("course", ncourse);// Your score
+				b.putString("quizdetails", qdetails);
 				intent.putExtras(b);
 				startActivity(intent);
 				DecisionTreeRandomQuiz.this.finish();
@@ -248,82 +255,81 @@ public class DecisionTreeRandomQuiz extends Activity {
 		});
 
 		dialog.show();
-
 	}
 
-	public void addQuestions4() {
-		myDb.addQuestions4(new Question(
+	public void addQuestions3() {
+		myDb.addQuestions3(new Question(
 				"0",
 				"It is a flow-chart-like tree structure, where each node denotes a test on an attribute value, each branch represents an outcome of the test, and tree leaves represent classes or class distributions. ",
 				"Decision Tree", "Classification", "Decision Tree",
 				"Decision Tree Classifier", "Naive Bayesian")); // 1
 		// 2
 
-		myDb.addQuestions4(new Question(
+		myDb.addQuestions3(new Question(
 				"2",
 				"It constructs a flowchart like structure where each internal nonleaf node denotes a test on an attribute, each branch corresponds to an outcome of the test, and each external leaf node denotes a class prediction.",
 				"Decision Tree Induction", "Decision Tree Networks",
 				"Decision Tree Deduction", "Decision Tree Induction",
 				"Decision Tree Classification")); // 1
 		// 4
-		myDb.addQuestions4(new Question(
+		myDb.addQuestions3(new Question(
 				"32",
 				"It is the learning of decision trees from class-labeled training tuples.",
 				"Decision Tree Induction", "Decision Tree Deduction",
 				"Decision Tree Induction", "Deduction", "Induction")); // 21
 		// 5
-		myDb.addQuestions4(new Question(
+		myDb.addQuestions3(new Question(
 				"4",
 				"It does not require any domain knowledge or parameter setting, and therefore is appropriate for exploratory knowledge discovery.",
 				"Decision Tree Classifiers ", "Decision Tree Classifiers ",
 				"Decision Tree", "Decision Tree Classification",
 				"Classification")); // 4
 		// 6
-		myDb.addQuestions4(new Question(
+		myDb.addQuestions3(new Question(
 				"4",
 				"It attempts to identify and remove such branches, with the goal of improving classification accuracy on unseen data. ",
 				"Tree Pruning", "Tree Pruning", "Tree Planning",
 				" Tree Induction", "Tree Prepruning")); // 4
 		// 7
 
-		myDb.addQuestions4(new Question(
+		myDb.addQuestions3(new Question(
 				"6",
 				"It is the number of instances gets smaller as you traverse down the tree.",
 				"Data Fragmentation", "Data Scanning", "Data Classification",
 				"Data Segmentation", "Data Fragmentation"));// 7
 		// 9
-		myDb.addQuestions4(new Question(
+		myDb.addQuestions3(new Question(
 				"17",
 				"This approach considers the cost complexity of a tree to be a function of the number of leaves in the tree and the error rate of the tree. ",
 				"CART", "PART", "SORT", "CASE", "CART"));// 18
 		// 10
-		myDb.addQuestions4(new Question(
+		myDb.addQuestions3(new Question(
 				"36",
 				"It is an approach that a tree is “pruned” by halting its construction early.",
 				"Prepruning ", "Postpruning", "Decision Tree ", "Prepruning ",
 				"Classification")); // 23
 		// 11
-		myDb.addQuestions4(new Question(
+		myDb.addQuestions3(new Question(
 				"9",
 				"It is an approach which removes subtrees from a “fully grown” tree",
 				"Postpruning", "Decision Tree", "Postpruning",
 				"Classification", "Prepruning")); // 7
 		// 12
-		myDb.addQuestions4(new Question(
+		myDb.addQuestions3(new Question(
 				"0",
 				"Decision tree can be seen as rules for performing a _________ .",
 				"Categorisation", "Categorisation", "Organization",
 				"Preparation", "Selection")); // 1
 		// 13
-		myDb.addQuestions4(new Question("4",
+		myDb.addQuestions3(new Question("4",
 				"ID3 uses a measure called _________", "Information Gain",
 				"Data Gain", "Term Gain", "Information Gain", "Gain")); // 4
 		// 14
-		myDb.addQuestions4(new Question("32",
+		myDb.addQuestions3(new Question("32",
 				"Node with the __________ information gain is chosen",
 				"Highest", "Lowest", "Largest", "Smallest", "Highest"));// 21
 		// 15
-		myDb.addQuestions4(new Question(
+		myDb.addQuestions3(new Question(
 				"19",
 				"In decision tree learning, ID3 is an algorithm invented by __________",
 				"Ross Quinlan", "Rose Quinlan", "Ross Quinlan", "Rod Quinlan ",

@@ -5,8 +5,11 @@ import java.util.Date;
 import java.util.List;
 
 import com.capstoneii.iclassify.QuizResultActivity;
+import com.capstoneii.iclassify.QuizResultBayesian;
+import com.capstoneii.iclassify.QuizResultDecision;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SessionCache;
+import com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.dbclasses.Question;
 import com.capstoneii.iclassify.dbclasses.TempQuestion;
@@ -16,6 +19,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,7 +37,7 @@ public class BayesianRandomQuiz extends Activity {
 	int page = 1;
 	int qid = 0;
 	int qset = 1;
-	String ncourse = "Flash";
+	String ncourse = "Naive Bayesian";
 	Question question;
 	SQLiteDatabase mdb;
 	TextView tvQue, tvPage, tvRef;
@@ -49,15 +53,18 @@ public class BayesianRandomQuiz extends Activity {
 		super.onCreate(savedInstanceState);	
 		
 		setContentView(R.layout.activity_quiz);
-		
+
+		getActionBar().setBackgroundDrawable(
+				new ColorDrawable(getResources()
+						.getColor(R.color.divider_color)));
 		QuizSession = new SessionCache(getApplicationContext());
 		openDB();
 		
 		myDb.delAllTempRows();
-		quesList = myDb.getAllQuestions1();
+		quesList = myDb.getAllQuestions2();
 		if(quesList.size() == 0){
-			addQuestions1();
-			quesList = myDb.getAllQuestions1();	
+			addQuestions2();
+			quesList = myDb.getAllQuestions2();	
 		}else{
 			Log.d("database not empty", "queslist with setno");
 		}
@@ -135,10 +142,10 @@ public class BayesianRandomQuiz extends Activity {
 					grp.clearCheck();
 					tvPage.setText(page+"");
 					bnext.setEnabled(false);
-					
 				}else {
 					  	Intent in = getIntent();
 					    int retake = in.getExtras().getInt("retakeNum");
+					
 						date = new Date();
 						SimpleDateFormat timeFormat = new SimpleDateFormat("MMM dd, yyyy");
 					    finalDate = timeFormat.format(date);
@@ -147,15 +154,15 @@ public class BayesianRandomQuiz extends Activity {
 					    myDb.addscores(3, retake, subj, qdetails, score, finalDate);
 					    //myDb.addScores(3, subj , score, finalDate);
 					    
-					    myDb.deleteQuiz("Flash Chapter 1");
+					    myDb.deleteQuiz("Naive Bayesian");
 					    
-						Intent intent = new Intent(BayesianRandomQuiz.this,QuizResultActivity.class);									
-						/*Bundle b = new Bundle();	
+						Intent intent = new Intent(BayesianRandomQuiz.this,QuizResultBayesian.class);									
+						Bundle b = new Bundle();	
 						b.putInt("qno", qset);
 						b.putInt("score", score);
 						b.putString("course", ncourse);// Your score
 						b.putString("quizdetails", qdetails);
-						intent.putExtras(b);*/
+						intent.putExtras(b);
 						startActivity(intent);
 						BayesianRandomQuiz.this.finish();
 						closeDB();
@@ -163,6 +170,7 @@ public class BayesianRandomQuiz extends Activity {
 			}
 		});
 	}
+	
 	private void setQuestionView() {
 		tvRef.setText(question.getLid());
 		tvQue.setText(question.getQitem());
@@ -179,6 +187,7 @@ public class BayesianRandomQuiz extends Activity {
 	}
 
 	private void openDB() {
+		
 		myDb = new DBAdapter(this);
 		myDb.open();
 	}
@@ -211,13 +220,13 @@ public class BayesianRandomQuiz extends Activity {
 				Intent in = getIntent();
 			    int retake = in.getExtras().getInt("retakeNum");
 			    
-			   // String subj = ncourse +" "+qset;
+			    String subj = ncourse +" "+qset;
 			    String qdetails = "Quiz Retake "+retake;
-			    //myDb.addscores(3, retake, subj, qdetails, score, finalDate);
+			    myDb.addscores(3, retake, subj, qdetails, score, finalDate);
 			    
-			    //myDb.deleteQuiz("Flash Chapter 1");
+			    myDb.deleteQuiz("Naive Bayesian");
 			    
-				Intent intent = new Intent(BayesianRandomQuiz.this,QuizResultActivity.class);									
+				Intent intent = new Intent(BayesianRandomQuiz.this,QuizResultBayesian.class);									
 				Bundle b = new Bundle();	
 				b.putInt("qno", qset);
 				b.putInt("score", score);
@@ -241,65 +250,65 @@ public class BayesianRandomQuiz extends Activity {
 		dialog.show();
 	}
 
-	public void addQuestions1() {
+	public void addQuestions2() {
 			
-		myDb.addQuestions1(new Question("1",
+		myDb.addQuestions2(new Question("1",
 				"It provides a way of calculating the posterior probability.",
 				"Bayes theorem","Naive Theorem","Flare","Bayes theorem","Naive Bayes")); //1
 		// 2
-		myDb.addQuestions1(new Question("4",
+		myDb.addQuestions2(new Question("4",
 				"What do you call when the classifier assume that the effect of the value of a predictor on a given class is independent of the values of other predictors?",
 				"Conditional independence","Conditional dependence", "Unconditional independence","Unconditional dependence","Conditional independence")); //3
 		// 3
-		myDb.addQuestions1(new Question("5",
+		myDb.addQuestions2(new Question("5",
 				"What is the class with the highest posterior probability?",
 				"Outcome of prediction","Outcome of probability","Outcome of prediction","Outcome of classification","Outcome of data")); //4
 		// 4
-		myDb.addQuestions1(new Question("13",
+		myDb.addQuestions2(new Question("13",
 				"In this process you add 1 to the count for every attribute value-class combination when an attribute value doesn’t occur with every class value",
 				"Zero-frequency problem","Zero-frequency problem","One-Frequency problem","Frequency problem","Addition-Frequency")); // 11
 		// 5
-		myDb.addQuestions1(new Question("10",
+		myDb.addQuestions2(new Question("10",
 				"What are the two parameters that define density function for the normal distribution?",
                "Mean and standard deviation","Mean and frequency","Mean and standard deviation","Frequency and standard deviation","None of the above")); //9
 		// 6
-		myDb.addQuestions1(new Question("2",
+		myDb.addQuestions2(new Question("2",
 				"The contribution of predictors can also be visualized by plotting ___________", 
 				"Nomograms","Monograms","Polygrams","Octagrams","Nomograms")); //2
 		// 7
-		myDb.addQuestions1(new Question("10",
+		myDb.addQuestions2(new Question("10",
 				"____________ information gain as a sum of information contributed by each attribute can offer an explanation on how values of the predictors influence the class probability.",
 				"Kononenko’s","Kononenko’s","Konenko's","Koneko's","Konoko's"));//9
 		// 8
-		myDb.addQuestions1(new Question("22",
+		myDb.addQuestions2(new Question("22",
 				"Calculate explicit probabilities for hypothesis, among the most practical approaches to certain types of learning problems",
 				"Probabilistic learning","Probabilistic training","Probabilistic learning","Probabilistic gaining","Probabilistic plotting"));//20
 		// 9
-		myDb.addQuestions1(new Question("12",
+		myDb.addQuestions2(new Question("12",
 				"Predict multiple hypotheses, weighted by their probabilities",
 				"Probabilistic prediction","Probabilistic measures","Probabilistic learning","Probabilistic hypotheses","Probabilistic prediction"));//10
 		// 10
-		myDb.addQuestions1(new Question("12",
+		myDb.addQuestions2(new Question("12",
 				"It is calculated first,constructing a frequency table for each attribute against the target. ",
 				"posterior probability","posterior probability","interior probability","inferior probability","superior probability")); //10
 		// 11
-		myDb.addQuestions1(new Question("13",
+		myDb.addQuestions2(new Question("13",
 				"It needs to be transformed to their categorical counterparts before constructing their frequency tables.",
 				"Numerical variable","Numerical data","Numerical constant","Numerical variable","Numberical information")); // 11
 		// 12
-		myDb.addQuestions1(new Question("9",
+		myDb.addQuestions2(new Question("9",
 				"_____________ is applied to decision making and inferential statistics that deals with probability inference.",
 				"Bayesian reasoning","Probability reasoning","Bayesian reasoning","Decision reasoning","Inferential reasoning")); //8
 		// 13
-		myDb.addQuestions1(new Question("4",
+		myDb.addQuestions2(new Question("4",
 				"It assumes that the presence or absence of a particular feature of a class is unrelated to the presence or absence of any other feature.",
 				"Bayes classifier","Bayes classifier","Decision Tree","K Nearest Neighbor","Classification")); //3
 		// 14
-		myDb.addQuestions1(new Question("1",
+		myDb.addQuestions2(new Question("1",
 				"Bayesian methods are called __________",
 				"eager learners","lazy learners", "active learners","eager learners","passive learners"));//1
 		// 15
-		myDb.addQuestions1(new Question("13",
+		myDb.addQuestions2(new Question("13",
 				"This theorem is the cornerstone of all Bayesian methods",
 				"Bayes Theorem","Classification theorem","Bayes Theorem","Probability theorem","Euclidean theorem")); //11
 	}

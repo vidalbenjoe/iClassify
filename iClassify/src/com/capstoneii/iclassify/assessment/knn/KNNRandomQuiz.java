@@ -16,6 +16,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,7 +34,7 @@ public class KNNRandomQuiz extends Activity {
 	int page = 1;
 	int qid = 0;
 	int qset = 1;
-	String ncourse = "Flash";
+	String ncourse = "K- Nearest";
 	Question question;
 	SQLiteDatabase mdb;
 	TextView tvQue, tvPage, tvRef;
@@ -147,7 +148,7 @@ public class KNNRandomQuiz extends Activity {
 					    myDb.addscores(3, retake, subj, qdetails, score, finalDate);
 					    //myDb.addScores(3, subj , score, finalDate);
 					    
-					    myDb.deleteQuiz("Flash Chapter 1");
+					    myDb.deleteQuiz("K Nearest Neighbor");
 					    
 						Intent intent = new Intent(KNNRandomQuiz.this,QuizResultActivity.class);									
 						Bundle b = new Bundle();	
@@ -217,7 +218,7 @@ public class KNNRandomQuiz extends Activity {
 			    String qdetails = "Quiz Retake "+retake;
 			    myDb.addscores(3, retake, subj, qdetails, score, finalDate);
 			    
-			    myDb.deleteQuiz("Flash Chapter 1");
+			    myDb.deleteQuiz("K Nearest Neighbor");
 			    
 				Intent intent = new Intent(KNNRandomQuiz.this,QuizResultActivity.class);									
 				Bundle b = new Bundle();	
