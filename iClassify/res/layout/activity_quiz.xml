@@ -70,7 +70,8 @@
                         android:paddingTop="3dp"
                         android:text="Question"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="#000" />
+                        android:textColor="#000"
+                        android:textSize="20sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -91,7 +92,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:background="@drawable/rd_bg"
+                            android:background="@color/divider_color"
                             android:padding="15dp"
                             android:shadowColor="@android:color/black"
                             android:shadowDx="1"
@@ -99,6 +100,7 @@
                             android:shadowRadius="2"
                             android:text="Choice 1"
                             android:textColor="#fff"
+                            android:textSize="25sp"
                             android:textStyle="bold" />
 
                         <RadioButton
@@ -106,7 +108,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:background="@drawable/rd_bg"
+                            android:background="@color/divider_color"
                             android:padding="15dp"
                             android:shadowColor="@android:color/black"
                             android:shadowDx="1"
@@ -114,6 +116,7 @@
                             android:shadowRadius="2"
                             android:text="Choice 2"
                             android:textColor="#fff"
+                            android:textSize="25sp"
                             android:textStyle="bold" />
 
                         <RadioButton
@@ -121,7 +124,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:background="@drawable/rd_bg"
+                            android:background="@color/divider_color"
                             android:padding="15dp"
                             android:shadowColor="@android:color/black"
                             android:shadowDx="1"
@@ -129,6 +132,7 @@
                             android:shadowRadius="2"
                             android:text="Choice 3"
                             android:textColor="#fff"
+                            android:textSize="25sp"
                             android:textStyle="bold" />
 
                         <RadioButton
@@ -136,7 +140,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:background="@drawable/rd_bg"
+                            android:background="@color/divider_color"
                             android:padding="15dp"
                             android:shadowColor="@android:color/black"
                             android:shadowDx="1"
@@ -144,6 +148,7 @@
                             android:shadowRadius="2"
                             android:text="Choice 4"
                             android:textColor="#fff"
+                            android:textSize="25sp"
                             android:textStyle="bold" />
                     </RadioGroup>
                 </LinearLayout>

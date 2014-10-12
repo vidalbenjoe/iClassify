@@ -101,7 +101,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
         	quizdetails = "Quiz has been taken "+retake+" times";
         }
         
-        myDb.addjsquiz(1,"Flash Chapter 1", quizdetails, quizaverage);
+        myDb.addjsquiz(1,"Decision Tree 1", quizdetails, quizaverage);
 	    
 		tvcorrect = (TextView) findViewById(R.id.txtcorrect);
 		tvwrong = (TextView) findViewById(R.id.txtwrong);		
@@ -188,7 +188,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 		TextView tvQuizChapter = (TextView)dialog.findViewById(R.id.tvchapterName);
 		TextView tvLastQuiz = (TextView)dialog.findViewById(R.id.tvlastquizhistory);
 		ListView myList = (ListView) dialog.findViewById(R.id.listofhistory);
-		cr = myDb.getAllscorewithChapter("Flash 1");
+		cr = myDb.getAllscorewithChapter("Decision Tree 1");
 		startManagingCursor(cr);
 		
 		tvQuizChapter.setText(""+ncourse+" Chapter 1");
