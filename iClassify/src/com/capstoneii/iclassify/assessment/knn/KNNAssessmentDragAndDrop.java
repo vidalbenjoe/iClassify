@@ -30,6 +30,8 @@ import android.widget.Toast;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SessionCache;
 import com.capstoneii.iclassify.SplashScreenActivity;
+import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop;
+import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
@@ -65,10 +67,10 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 		intent = new Intent();
 		QuizSession = new SessionCache(KNNAssessmentDragAndDrop.this);
 		openDB();
-		
+
 		Date date = new Date();
 		SimpleDateFormat timeFormat = new SimpleDateFormat("MMM dd, yyyy");
-	    finalDate = timeFormat.format(date);
+		finalDate = timeFormat.format(date);
 
 		final TypewriterTextView animated_title = (TypewriterTextView) findViewById(R.id.animatedtitle);
 		animated_title.setTypewriterText(getString(R.string.intro));
@@ -559,7 +561,7 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 					dialog.show();
 				} else {
 					// this condition will use if retake is value 1 to 2
-					myDb.deleteQuiz("K Nearest Neighbor");
+					myDb.deleteQuiz("Naive Bayesian");
 					QuizSession.StoreFlLastQuizTaken(finalDate);
 					QuizSession.StoreAllLastQuizTaken(finalDate);
 
@@ -607,4 +609,5 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 	public void onBackPressed() {
 
 	}
+
 }

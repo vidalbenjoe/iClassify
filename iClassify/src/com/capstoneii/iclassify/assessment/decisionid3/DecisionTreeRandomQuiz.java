@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -44,7 +45,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 	DBAdapter myDb;
 	private Date date;
 	String finalDate;
-
+	LinearLayout quizlin;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -65,7 +66,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 		} else {
 			Log.d("database not empty", "queslist with setno");
 		}
-
+		quizlin = (LinearLayout) findViewById(R.id.quizlin);
 		question = quesList.get(qid);
 		tvRef = (TextView) findViewById(R.id.tvRef);
 		tvQue = (TextView) findViewById(R.id.tvQuestion);
@@ -125,6 +126,8 @@ public class DecisionTreeRandomQuiz extends Activity {
 					String quserans = answer.getText().toString();
 					myDb.addtempQuestion(new TempQuestion("1", lid, qitem,
 							qans, quserans));
+					
+					
 					score++;
 					Log.d("score result", "Your score is " + score);
 				} else {
@@ -182,6 +185,19 @@ public class DecisionTreeRandomQuiz extends Activity {
 		rd3.setText(question.getOptc());
 		rd4.setText(question.getOptd());
 		qid++;
+		
+		if (tvRef.getText().toString().equals("2")) {
+			quizlin.setBackgroundResource(R.drawable.decisiontreequestionimage);
+			quizlin.setVisibility(View.VISIBLE);
+			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
+		}
+		else if (tvRef.getText().toString().equals("17")) {
+			quizlin.setBackgroundResource(R.drawable.decisiontreequestionimage);
+			quizlin.setVisibility(View.VISIBLE);
+			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
+		}else{
+			quizlin.setVisibility(View.GONE);
+		}
 	}
 
 	@Override
@@ -267,10 +283,10 @@ public class DecisionTreeRandomQuiz extends Activity {
 
 		myDb.addQuestions3(new Question(
 				"2",
-				"It constructs a flowchart like structure where each internal nonleaf node denotes a test on an attribute, each branch corresponds to an outcome of the test, and each external leaf node denotes a class prediction.",
-				"Decision Tree Induction", "Decision Tree Networks",
-				"Decision Tree Deduction", "Decision Tree Induction",
-				"Decision Tree Classification")); // 1
+				"Based on the decision tree, which one of the following statements is correct?",
+				"If Weight greater than 160, classify as Male", "If Weight greater than 160, classify as Male",
+				"If Hair Length less than or equal to 2, classify as Female", "If Hair Length less than 160, classify as Male",
+				"If Weight greater than 160, classify as Female")); // 1
 		// 4
 		myDb.addQuestions3(new Question(
 				"32",
@@ -300,8 +316,8 @@ public class DecisionTreeRandomQuiz extends Activity {
 		// 9
 		myDb.addQuestions3(new Question(
 				"17",
-				"This approach considers the cost complexity of a tree to be a function of the number of leaves in the tree and the error rate of the tree. ",
-				"CART", "PART", "SORT", "CASE", "CART"));// 18
+				"2.	Based on the decision tree, what could be the gender of this Simpson’s Character:\nOtto has a hair length of 10 inches and a weight of 180 lbs. ",
+				"Male", "Female", "Male", "None of these", "Unknown"));// 18
 		// 10
 		myDb.addQuestions3(new Question(
 				"36",

@@ -36,6 +36,15 @@
                     android:visibility="gone" />
 
                 <LinearLayout
+                    android:id="@+id/quizlin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -68,7 +77,6 @@
                         android:layout_marginTop="5dp"
                         android:layout_weight="1"
                         android:paddingTop="3dp"
-                        android:text="Question"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textColor="#000"
                         android:textSize="20sp" />

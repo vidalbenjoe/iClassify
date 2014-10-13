@@ -35,7 +35,7 @@ public class KNNRandomQuiz extends Activity {
 	int page = 1;
 	int qid = 0;
 	int qset = 1;
-	String ncourse = "K Nearest Neighbor";
+	String ncourse = "Naive Bayesian";
 	Question question;
 	SQLiteDatabase mdb;
 	TextView tvQue, tvPage, tvRef;
@@ -45,11 +45,11 @@ public class KNNRandomQuiz extends Activity {
 	DBAdapter myDb;
 	private Date date;
 	String finalDate;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);	
-		
+		super.onCreate(savedInstanceState);
+
 		setContentView(R.layout.activity_quiz);
 
 		getActionBar().setBackgroundDrawable(
@@ -57,28 +57,29 @@ public class KNNRandomQuiz extends Activity {
 						.getColor(R.color.divider_color)));
 		QuizSession = new SessionCache(getApplicationContext());
 		openDB();
-		
+
 		myDb.delAllTempRows();
 		quesList = myDb.getAllQuestions1();
-		if(quesList.size() == 0){
+		if (quesList.size() == 0) {
 			addQuestions1();
-			quesList = myDb.getAllQuestions1();	
-		}else{
+			quesList = myDb.getAllQuestions1();
+		} else {
 			Log.d("database not empty", "queslist with setno");
 		}
+
 		question = quesList.get(qid);
-		tvRef = (TextView)findViewById(R.id.tvRef);
-		tvQue = (TextView)findViewById(R.id.tvQuestion);
-		tvPage = (TextView)findViewById(R.id.tvPage);
+		tvRef = (TextView) findViewById(R.id.tvRef);
+		tvQue = (TextView) findViewById(R.id.tvQuestion);
+		tvPage = (TextView) findViewById(R.id.tvPage);
 		rd1 = (RadioButton) findViewById(R.id.rd1);
 		rd2 = (RadioButton) findViewById(R.id.rd2);
 		rd3 = (RadioButton) findViewById(R.id.rd3);
 		rd4 = (RadioButton) findViewById(R.id.rd4);
 		bnext = (Button) findViewById(R.id.bnext);
-		
+
 		bnext.setEnabled(false);
 		setQuestionView();
-		tvPage.setText(page+"");
+		tvPage.setText(page + "");
 
 		rd1.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -86,21 +87,21 @@ public class KNNRandomQuiz extends Activity {
 				bnext.setEnabled(true);
 			}
 		});
-		
+
 		rd2.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				bnext.setEnabled(true);
 			}
 		});
-		
+
 		rd3.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				bnext.setEnabled(true);
 			}
 		});
-		
+
 		rd4.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -109,120 +110,174 @@ public class KNNRandomQuiz extends Activity {
 		});
 
 		bnext.setOnClickListener(new View.OnClickListener() {
-			
-			@SuppressLint("SimpleDateFormat") @Override
-			public void onClick(View v) {			
+
+			@SuppressLint("SimpleDateFormat")
+			@Override
+			public void onClick(View v) {
 				RadioGroup grp = (RadioGroup) findViewById(R.id.radioGroup1);
-				RadioButton answer = (RadioButton) findViewById(grp.getCheckedRadioButtonId());	
+				RadioButton answer = (RadioButton) findViewById(grp
+						.getCheckedRadioButtonId());
 				grp.clearCheck();
-				page++;				
-				if(question.getQans().equals(answer.getText())){
+				page++;
+				if (question.getQans().equals(answer.getText())) {
 					String lid = tvRef.getText().toString();
 					String qitem = tvQue.getText().toString();
 					String qans = question.getQans().toString();
 					String quserans = answer.getText().toString();
-					myDb.addtempQuestion(new TempQuestion("1", lid, qitem, qans, quserans));
+					myDb.addtempQuestion(new TempQuestion("1", lid, qitem,
+							qans, quserans));
 					score++;
-					Log.d("score result", "Your score is "+score);					
-				}else{
+					Log.d("score result", "Your score is " + score);
+				} else {
 					String lid = tvRef.getText().toString();
 					String qitem = tvQue.getText().toString();
 					String qans = question.getQans().toString();
 					String quserans = answer.getText().toString();
-					myDb.addtempQuestion(new TempQuestion("1", lid, qitem, qans, quserans));
-					Log.d("wrong answer", answer.getText() +" is incorrect");			
+					myDb.addtempQuestion(new TempQuestion("1", lid, qitem,
+							qans, quserans));
+					Log.d("wrong answer", answer.getText() + " is incorrect");
 				}
-				
 				if (qid < 10) {
-					question = quesList.get(qid);
-					setQuestionView();					
-					grp.clearCheck();
-					tvPage.setText(page+"");
-					bnext.setEnabled(false);
-				}else {
-					  	Intent in = getIntent();
-					    int retake = in.getExtras().getInt("retakeNum");
 					
-						date = new Date();
-						SimpleDateFormat timeFormat = new SimpleDateFormat("MMM dd, yyyy");
-					    finalDate = timeFormat.format(date);
-					    String subj = ncourse +" "+qset;
-					    String qdetails = "Quiz Retake "+retake;
-					    myDb.addscores(3, retake, subj, qdetails, score, finalDate);
-					    //myDb.addScores(3, subj , score, finalDate);
-					    
-					    myDb.deleteQuiz("K Nearest Neighbor");
-					    
-						Intent intent = new Intent(KNNRandomQuiz.this,QuizResultActivity.class);									
-						Bundle b = new Bundle();	
-						b.putInt("qno", qset);
-						b.putInt("score", score);
-						b.putString("course", ncourse);// Your score
-						b.putString("quizdetails", qdetails);
-						intent.putExtras(b);
-						startActivity(intent);
-						KNNRandomQuiz.this.finish();
-						closeDB();
+					question = quesList.get(qid);
+					setQuestionView();
+					grp.clearCheck();
+					tvPage.setText(page + "");
+					bnext.setEnabled(false);
+					
+					
+				} else {
+					Intent in = getIntent();
+					int retake = in.getExtras().getInt("retakeNum");
+					date = new Date();
+					SimpleDateFormat timeFormat = new SimpleDateFormat(
+							"MMM dd, yyyy");
+					finalDate = timeFormat.format(date);
+					String subj = ncourse + " " + qset;
+					String qdetails = "Quiz Retake " + retake;
+					myDb.addscores(3, retake, subj, qdetails, score, finalDate);
+					// myDb.addScores(3, subj , score, finalDate);
+
+					myDb.deleteQuiz("K Nearest Neighbor");
+					Intent intent = new Intent(KNNRandomQuiz.this,
+							QuizResultActivity.class);
+					Bundle b = new Bundle();
+					b.putInt("qno", qset);
+					b.putInt("score", score);
+					b.putString("course", ncourse);// Your score
+					b.putString("quizdetails", qdetails);
+					intent.putExtras(b);
+					startActivity(intent);
+					KNNRandomQuiz.this.finish();
+					closeDB();
 				}
 			}
 		});
 	}
-	
+
 	private void setQuestionView() {
 		tvRef.setText(question.getLid());
 		tvQue.setText(question.getQitem());
+		
+		if(question.getLid() == "10"){
+			tvQue.setBackgroundResource(R.drawable.simulnextbt);
+		}
+		
+		if(question.getLid() == "5"){
+			tvQue.setBackgroundResource(R.drawable.simulnextbt);
+		}
+		
+		if(question.getLid() == "1"){
+			tvQue.setBackgroundResource(R.drawable.simulnextbt);
+		}
+		
+		if(question.getLid() == "13"){
+			tvQue.setBackgroundResource(R.drawable.simulnextbt);
+		}
+		
+		if(question.getLid() == "22"){
+			tvQue.setBackgroundResource(R.drawable.simulnextbt);
+		}
+		
+		if(question.getLid() == "9"){
+			tvQue.setBackgroundResource(R.drawable.simulnextbt);
+		}
+		
+		if(question.getLid() == "12"){
+			tvQue.setBackgroundResource(R.drawable.simulnextbt);
+		}
+
+		if(question.getLid() == "4"){
+			tvQue.setBackgroundResource(R.drawable.simulnextbt);
+		}
+		
+		if(question.getLid() == "10"){
+			tvQue.setBackgroundResource(R.drawable.simulnextbt);
+		}
+		if(question.getLid() == "6"){
+			tvQue.setBackgroundResource(R.drawable.simulnextbt);
+			
+		}
+		
+		
 		rd1.setText(question.getOpta());
 		rd2.setText(question.getOptb());
 		rd3.setText(question.getOptc());
 		rd4.setText(question.getOptd());
 		qid++;
 	}
-	
+
 	@Override
 	protected void onDestroy() {
-		super.onDestroy();	
+		super.onDestroy();
 	}
 
 	private void openDB() {
-		
+
 		myDb = new DBAdapter(this);
 		myDb.open();
 	}
+
 	private void closeDB() {
 		myDb.close();
 	}
-	
-	@SuppressLint("SimpleDateFormat") @Override
+
+	@SuppressLint("SimpleDateFormat")
+	@Override
 	public void onBackPressed() {
-		
-		final Dialog dialog = new Dialog(KNNRandomQuiz.this,R.style.DialogAnim);
-		
+
+		final Dialog dialog = new Dialog(KNNRandomQuiz.this,
+				R.style.DialogAnim);
+
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		dialog.setContentView(R.layout.validate_message);
-		
+
 		date = new Date();
 		SimpleDateFormat timeFormat = new SimpleDateFormat("MMM dd, yyyy");
-	    finalDate = timeFormat.format(date);
-		
+		finalDate = timeFormat.format(date);
+
 		Button bOk = (Button) dialog.findViewById(R.id.buttonOk);
 		Button bCancel = (Button) dialog.findViewById(R.id.buttonCancel);
 		TextView question = (TextView) dialog.findViewById(R.id.tvalertmessage);
-		
+
 		question.setText("Are you sure? You want to Exit?");
-		
-		bOk.setOnClickListener(new OnClickListener() {	
-			
+
+		bOk.setOnClickListener(new OnClickListener() {
+
 			@Override
-			public void onClick(View v) {				
+			public void onClick(View v) {
 				Intent in = getIntent();
-			    int retake = in.getExtras().getInt("retakeNum");
-			    
-			    String subj = ncourse +" "+qset;
-			    String qdetails = "Quiz Retake "+retake;
-			    myDb.addscores(3, retake, subj, qdetails, score, finalDate);
-			    myDb.deleteQuiz("K Nearest Neighbor");
-				Intent intent = new Intent(KNNRandomQuiz.this,QuizResultActivity.class);									
-				Bundle b = new Bundle();	
+				int retake = in.getExtras().getInt("retakeNum");
+
+				String subj = ncourse + " " + qset;
+				String qdetails = "Quiz Retake " + retake;
+				myDb.addscores(3, retake, subj, qdetails, score, finalDate);
+
+				myDb.deleteQuiz("K Nearest Neighbor");
+
+				Intent intent = new Intent(KNNRandomQuiz.this,
+						QuizResultActivity.class);
+				Bundle b = new Bundle();
 				b.putInt("qno", qset);
 				b.putInt("score", score);
 				b.putString("course", ncourse);// Your score
@@ -234,14 +289,14 @@ public class KNNRandomQuiz extends Activity {
 				dialog.dismiss();
 			}
 		});
-		
-		bCancel.setOnClickListener(new OnClickListener() {	
+
+		bCancel.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				dialog.dismiss();										
+				dialog.dismiss();
 			}
 		});
-		
+
 		dialog.show();
 	}
 
