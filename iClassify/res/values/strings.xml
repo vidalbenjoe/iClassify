@@ -546,17 +546,19 @@
   	This means that the first node in the decision tree will be the fever attribute. As an exercise, convince yourself why this scored (slightly) higher than the parents attribute - remember what entropy means and look at the way information gain is calculated
 	]]>
     </string>
-    <string name="decisiontreeonjectives">At the end of this discussion, students should be able to: \n
-1. Familiarize themselves with basic classification algorithm.\n
-2. Demonstrate the correct step by step process in constructing a decision tree\n
-3. Apply the algorithm to classify and predict the outcome of a given problem using the classifier.\n</string>
-    <string name="naivebayesobjectives">At the end of this discussion, students should be able to:\n
-1. Familiarize themselves with basic classification algorithm. \n
-2. Demonstrate the correct step by step process in problem solving using naive bayesian classifier (NBC).\n
-3. Apply the algorithm to classify and predict the outcome of a given problem using the classifier.\n</string>
-    <string name="knearestobjectives">At the end of this discussion, students should be able to: \n
-1. Familiarize themselves with basic classification algorithm.\n
-2. Demonstrate the correct step by step process in problem solving using k-nearest neighbor (KNN).\n
-3. Apply the algorithm to classify and predict the outcome of a given problem using the classifier.\n</string>
+    <string name="decisiontreeonjectives">By the end of this discussion, the student will be able to:\n
+•	Discover the different characteristics of the classification model – Decision Tree.\n
+•	Analyze a given data using the correct step by step process of the algorithm\n
+•	Examine a decision tree to determine the possible outcome of a scenario.\n
+</string>
+    <string name="naivebayesobjectives">By the end of this discussion, the student will be able to:\n
+•	Discover the different characteristics of the classification model – Naïve Bayes. \n
+•	Analyze a given data using the correct step by step process of the algorithm;\n
+•	Examine a given data to determine the possible outcome of a scenario.\n
+</string>
+    <string name="knearestobjectives">By the end of this discussion, the student will be able to:\n
+•	Discover the different characteristics of the classification model – K-Nearest neighbor.\n
+•	Calculate the distance of the k-nearest neighbor class of a given data;\n
+•	Analyze a given problem using the correct step by step process of the algorithm.\n</string>
 
 </resources>

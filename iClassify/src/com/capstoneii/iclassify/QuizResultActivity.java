@@ -59,6 +59,13 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 	
 	String quizdetails;
 	
+
+	int prevTotal;
+	int curTotal;
+	String finalDate;
+	Intent intent;
+	String initVal = "1";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

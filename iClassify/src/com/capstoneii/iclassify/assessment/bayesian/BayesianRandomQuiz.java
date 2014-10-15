@@ -192,7 +192,6 @@ public class BayesianRandomQuiz extends Activity {
 		tvRef.setText(question.getLid());
 		tvQue.setText(question.getQitem());
 
-		
 		rd1.setText(question.getOpta());
 		rd2.setText(question.getOptb());
 		rd3.setText(question.getOptc());
@@ -207,7 +206,22 @@ public class BayesianRandomQuiz extends Activity {
 			quizlin.setBackgroundResource(R.drawable.naivebayesquestionimage);
 			quizlin.setVisibility(View.VISIBLE);
 			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
-		}else{
+			
+		}else if (tvRef.getText().toString().equals("6")) {
+			quizlin.setBackgroundResource(R.drawable.naivebayesquestionimage);
+			quizlin.setVisibility(View.VISIBLE);
+			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
+			
+		}else if (tvRef.getText().toString().equals("7")) {
+			quizlin.setBackgroundResource(R.drawable.naivebayesquestionimage);
+			quizlin.setVisibility(View.VISIBLE);
+			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
+			
+		}
+		
+		
+		
+		else{
 			quizlin.setVisibility(View.GONE);
 		}
 		
@@ -340,7 +354,7 @@ public class BayesianRandomQuiz extends Activity {
 				"Probabilistic learning", "Probabilistic gaining",
 				"Probabilistic plotting"));// 20
 		// 9
-		myDb.addQuestions2(new Question("12",
+		myDb.addQuestions2(new Question("6",
 				"Based on the decision tree, what are the ‘attributes’?",
 				"HAIR LENGTH and WEIGHT", "HAIR LENGTH and FEMALE",
 				"MALE and WEIGHT", "MALE and FEMALE",
@@ -348,14 +362,14 @@ public class BayesianRandomQuiz extends Activity {
 		// 10
 		myDb.addQuestions2(new Question(
 				"12",
-				"4.	In the picture is Officer Drew. Is Officer Drew a Male or a Female? Based on the table",
+				"In the picture is Officer Drew. Is Officer Drew a Male or a Female? Based on the table",
 				"2 out of 8", "3 out of 8",
 				"2 out of 8", "4 out of 8",
 				"1 out of 8")); // 10
 		// 11
 		myDb.addQuestions2(new Question(
-				"13",
-				"4.	Based on the decision tree, are these decision rules correct? \nIf Weight greater than 160, classify as Male\nElseif Hair Length less than or equal to 2, classify as Male\nElse classify as Female",
+				"7",
+				"Based on the decision tree, are these decision rules correct? \nIf Weight greater than 160, classify as Male\nElseif Hair Length less than or equal to 2, classify as Male\nElse classify as Female",
 				"TRUE", "FALSE", "Last Statement is True",
 				"TRUE", "First Statement is True")); // 11
 		// 12
