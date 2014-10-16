@@ -25,13 +25,12 @@ import android.widget.TextView;
 import com.aphidmobile.flip.FlipViewController;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SessionCache;
-import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop;
 import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 
 import drawer.MainDrawerActivity;
 
-@SuppressLint("NewApi")
+@SuppressLint({ "NewApi", "SimpleDateFormat" })
 public class NativeBayesLayoutActivity extends ActionBarActivity {
 
 	DBAdapter myDb;

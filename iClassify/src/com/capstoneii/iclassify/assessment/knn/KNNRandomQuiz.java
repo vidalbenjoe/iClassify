@@ -9,6 +9,7 @@ import com.capstoneii.iclassify.QuizResultBayesian;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SessionCache;
 import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
+import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.dbclasses.Question;
 import com.capstoneii.iclassify.dbclasses.TempQuestion;
@@ -25,6 +26,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -45,7 +48,7 @@ public class KNNRandomQuiz extends Activity {
 	DBAdapter myDb;
 	private Date date;
 	String finalDate;
-
+	LinearLayout quizlin;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -55,6 +58,8 @@ public class KNNRandomQuiz extends Activity {
 		getActionBar().setBackgroundDrawable(
 				new ColorDrawable(getResources()
 						.getColor(R.color.divider_color)));
+		
+		instructionDialog();
 		QuizSession = new SessionCache(getApplicationContext());
 		openDB();
 
@@ -66,6 +71,8 @@ public class KNNRandomQuiz extends Activity {
 		} else {
 			Log.d("database not empty", "queslist with setno");
 		}
+		
+		quizlin = (LinearLayout) findViewById(R.id.quizlin);
 
 		question = quesList.get(qid);
 		tvRef = (TextView) findViewById(R.id.tvRef);
@@ -179,44 +186,23 @@ public class KNNRandomQuiz extends Activity {
 		tvRef.setText(question.getLid());
 		tvQue.setText(question.getQitem());
 		
-		if(question.getLid() == "10"){
-			tvQue.setBackgroundResource(R.drawable.simulnextbt);
-		}
+		String refNumber = tvRef.getText().toString();
+		int refInt = Integer.parseInt(refNumber);
 		
-		if(question.getLid() == "5"){
-			tvQue.setBackgroundResource(R.drawable.simulnextbt);
-		}
-		
-		if(question.getLid() == "1"){
-			tvQue.setBackgroundResource(R.drawable.simulnextbt);
-		}
-		
-		if(question.getLid() == "13"){
-			tvQue.setBackgroundResource(R.drawable.simulnextbt);
-		}
-		
-		if(question.getLid() == "22"){
-			tvQue.setBackgroundResource(R.drawable.simulnextbt);
-		}
-		
-		if(question.getLid() == "9"){
-			tvQue.setBackgroundResource(R.drawable.simulnextbt);
-		}
-		
-		if(question.getLid() == "12"){
-			tvQue.setBackgroundResource(R.drawable.simulnextbt);
-		}
-
-		if(question.getLid() == "4"){
-			tvQue.setBackgroundResource(R.drawable.simulnextbt);
-		}
-		
-		if(question.getLid() == "10"){
-			tvQue.setBackgroundResource(R.drawable.simulnextbt);
-		}
-		if(question.getLid() == "6"){
-			tvQue.setBackgroundResource(R.drawable.simulnextbt);
+		if(refInt <= 3){
+			quizlin.setBackgroundResource(R.drawable.decisiontreequestionimage);
+			quizlin.setVisibility(View.VISIBLE);
+			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
 			
+		}else if(refInt >= 4 || refInt <= 9){
+			quizlin.setBackgroundResource(R.drawable.decisiontreequestionimageoutlook);
+			quizlin.setVisibility(View.VISIBLE);
+			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
+		}else if(refInt == 10){
+			quizlin.setVisibility(View.GONE);
+		}
+		else{
+			quizlin.setVisibility(View.GONE);
 		}
 		
 		
@@ -389,5 +375,27 @@ public class KNNRandomQuiz extends Activity {
 				"Expensive Learners", "Eager Learners", "Lazy Learners",
 				"Classification Learners")); // 11
 
+	}
+	public void instructionDialog(){
+		final Dialog dialog = new Dialog(KNNRandomQuiz.this);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.dialog_assessment_instruction);
+		dialog.setCancelable(true);
+		dialog.getWindow().setBackgroundDrawable(
+				new ColorDrawable(
+						android.graphics.Color.TRANSPARENT));
+
+		ImageView insokbt = (ImageView) dialog
+				.findViewById(R.id.insokbt);
+		insokbt.setImageResource(R.drawable.backtomainmenu);
+		insokbt.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View InputFragmentView) {
+				// next
+				
+				dialog.dismiss();
+			}
+		});
+		dialog.show();
 	}
 }

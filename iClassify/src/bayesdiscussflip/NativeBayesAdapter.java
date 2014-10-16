@@ -8,14 +8,10 @@ import java.util.Locale;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Matrix;
-import android.graphics.PointF;
 import android.graphics.drawable.ColorDrawable;
 import android.speech.tts.TextToSpeech;
 import android.text.Html;
-import android.util.FloatMath;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -41,7 +37,7 @@ public class NativeBayesAdapter extends BaseAdapter {
 
 	private TouchImageView zoomerImageZoom;
 
-	private DecimalFormat df;
+	public DecimalFormat df;
 	public NativeBayesAdapter(Context context) {
 		inflater = LayoutInflater.from(context);
 		desctreeData = new ArrayList<NativeBayesData.Data>(

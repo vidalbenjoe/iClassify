@@ -13,6 +13,7 @@
     <string name="goback">Go Back</string>
     <string name="str_next">Next</string>
     <string name="menulist">Menu List</string>
+     <string name="assessmentinstrucdesc">Directions: Analyze the problem carefully, choose the best answer from the choices</string>
 
     <string-array name="titles">
         <item>Discussion</item>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="intro">Place the algorithm in order.</string>
+    <string name="intro">Drag and drop the steps of algorithm in order.</string>
     
     <string name="idroption_1">Calculate entropy of the target.</string>
 	<string name="idroption_2">The dataset is then split on the different attributes.</string>

@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -60,6 +61,7 @@ public class BayesianRandomQuiz extends Activity {
 		getActionBar().setBackgroundDrawable(
 				new ColorDrawable(getResources()
 						.getColor(R.color.divider_color)));
+		instructionDialog();
 		QuizSession = new SessionCache(getApplicationContext());
 		openDB();
 
@@ -395,5 +397,28 @@ public class BayesianRandomQuiz extends Activity {
 				"This theorem is the cornerstone of all Bayesian methods",
 				"Bayes Theorem", "Classification theorem", "Bayes Theorem",
 				"Probability theorem", "Euclidean theorem")); // 11
+	}
+	
+	public void instructionDialog(){
+		final Dialog dialog = new Dialog(BayesianRandomQuiz.this);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.dialog_assessment_instruction);
+		dialog.setCancelable(true);
+		dialog.getWindow().setBackgroundDrawable(
+				new ColorDrawable(
+						android.graphics.Color.TRANSPARENT));
+
+		ImageView insokbt = (ImageView) dialog
+				.findViewById(R.id.insokbt);
+		insokbt.setImageResource(R.drawable.backtomainmenu);
+		insokbt.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View InputFragmentView) {
+				// next
+				
+				dialog.dismiss();
+			}
+		});
+		dialog.show();
 	}
 }

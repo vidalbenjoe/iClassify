@@ -10,19 +10,25 @@ import com.capstoneii.iclassify.SessionCache;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.dbclasses.Question;
 import com.capstoneii.iclassify.dbclasses.TempQuestion;
+import com.capstoneii.iclassify.library.TypewriterTextView;
+import com.capstoneii.iclassify.problems.ChooseProblemActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -55,6 +61,8 @@ public class DecisionTreeRandomQuiz extends Activity {
 		getActionBar().setBackgroundDrawable(
 				new ColorDrawable(getResources()
 						.getColor(R.color.divider_color)));
+		
+		instructionDialog();
 		QuizSession = new SessionCache(getApplicationContext());
 		openDB();
 
@@ -186,18 +194,29 @@ public class DecisionTreeRandomQuiz extends Activity {
 		rd4.setText(question.getOptd());
 		qid++;
 		
-		if (tvRef.getText().toString().equals("2")) {
+		String refNumber = tvRef.getText().toString();
+		int refInt = Integer.parseInt(refNumber);
+		
+		if(refInt <= 4){
 			quizlin.setBackgroundResource(R.drawable.decisiontreequestionimage);
 			quizlin.setVisibility(View.VISIBLE);
 			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
-		}
-		else if (tvRef.getText().toString().equals("17")) {
-			quizlin.setBackgroundResource(R.drawable.decisiontreequestionimage);
+			
+		}else if(refInt >= 5 || refInt <= 10){
+			quizlin.setBackgroundResource(R.drawable.decisiontreequestionimageoutlook);
 			quizlin.setVisibility(View.VISIBLE);
 			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
-		}else{
+		}else if(refInt == 11){
 			quizlin.setVisibility(View.GONE);
 		}
+		else{
+			quizlin.setVisibility(View.GONE);
+		}
+		
+		/*if (tvRef.getText().toString().equals("")) {
+			
+		}*/
+		
 	}
 
 	@Override
@@ -275,81 +294,101 @@ public class DecisionTreeRandomQuiz extends Activity {
 
 	public void addQuestions3() {
 		myDb.addQuestions3(new Question(
-				"0",
-				"It is a flow-chart-like tree structure, where each node denotes a test on an attribute value, each branch represents an outcome of the test, and tree leaves represent classes or class distributions. ",
-				"Decision Tree", "Classification", "Decision Tree",
-				"Decision Tree Classifier", "Naive Bayesian")); // 1
+				"1",
+				"Based on the decision tree, what could be the gender of this Simpson’s Character:Marge has a hair length of 10 inches and a weight of 250 lbs.",
+				"Female", "Male", "Female",
+				"Unknown", "None of these")); // 1
 		// 2
 
 		myDb.addQuestions3(new Question(
-				"2",
-				"Based on the decision tree, which one of the following statements is correct?",
-				"If Weight greater than 160, classify as Male", "If Weight greater than 160, classify as Male",
-				"If Hair Length less than or equal to 2, classify as Female", "If Hair Length less than 160, classify as Male",
-				"If Weight greater than 160, classify as Female")); // 1
+				"22",
+				"Based on the decision tree, what could be the gender of this Simpson’s Character:Otto has a hair length of 10 inches and a weight of 180 lbs",
+				"Male", "Male",
+				"Female", "Unknown",
+				"None of these")); 
 		// 4
 		myDb.addQuestions3(new Question(
-				"32",
-				"It is the learning of decision trees from class-labeled training tuples.",
-				"Decision Tree Induction", "Decision Tree Deduction",
-				"Decision Tree Induction", "Deduction", "Induction")); // 21
-		// 5
+				"3",
+				"Based on the decision tree, which one of the following statements is correct?",
+				"If Weight greater than 160, classify as Male", "If Weight greater than 160, classify as Female",
+				"If Hair Length less than or equal to 2, classify as Female", "If Weight greater than 160, classify as Male", "If Hair Length less than 160, classify as Male")); 
+		
 		myDb.addQuestions3(new Question(
 				"4",
-				"It does not require any domain knowledge or parameter setting, and therefore is appropriate for exploratory knowledge discovery.",
-				"Decision Tree Classifiers ", "Decision Tree Classifiers ",
-				"Decision Tree", "Decision Tree Classification",
-				"Classification")); // 4
-		// 6
+				"Based on the decision tree, are these decision rules correct?\nIf Weight greater than 160, classify as Male\nElseif Hair Length less than or equal to 2, classify as Male \nElse classify as Female ",
+				"TRUE", "TRUE",
+				"First Statement is True", "FALSE",
+				"Last Statement is True"));
+		
+		//OTHER SET OF QUESTION IMAGE --- WEATHER OUTLOOK
 		myDb.addQuestions3(new Question(
-				"4",
-				"It attempts to identify and remove such branches, with the goal of improving classification accuracy on unseen data. ",
-				"Tree Pruning", "Tree Pruning", "Tree Planning",
-				" Tree Induction", "Tree Prepruning")); // 4
-		// 7
+				"5",
+				"Based on the decision tree, what are the ‘attributes’?",
+				"HAIR LENGTH and WEIGHT", "MALE and FEMALE", "HAIR LENGTH and WEIGHT",
+				"HAIR LENGTH and FEMALE", "MALE and WEIGHT")); // 4
+	
 
 		myDb.addQuestions3(new Question(
 				"6",
-				"It is the number of instances gets smaller as you traverse down the tree.",
-				"Data Fragmentation", "Data Scanning", "Data Classification",
-				"Data Segmentation", "Data Fragmentation"));// 7
+				"Based on the decision tree, should we play tennis under these circumstances:\nIt is a sunny day with high humidity. ",
+				"NO, we cannot play tennis.", "YES we can play tennis.", "I don’t know",
+				"NO, we cannot play tennis.", "Maybe"));// 7
 		// 9
 		myDb.addQuestions3(new Question(
-				"17",
-				"2.	Based on the decision tree, what could be the gender of this Simpson’s Character:\nOtto has a hair length of 10 inches and a weight of 180 lbs. ",
-				"Male", "Female", "Male", "None of these", "Unknown"));// 18
-		// 10
+				"7",
+				"Based on the decision tree, should we play tennis under these circumstances:\nIt is a rainy day with strong winds",
+				"NO, we cannot play tennis.", "YES, we can play tennis", "NO, we cannot play tennis.", "I don’t know", "Maybe"));
+		
 		myDb.addQuestions3(new Question(
-				"36",
-				"It is an approach that a tree is “pruned” by halting its construction early.",
-				"Prepruning ", "Postpruning", "Decision Tree ", "Prepruning ",
-				"Classification")); // 23
-		// 11
+				"8",
+				"Based on the decision tree, which one of the following statements is correct?",
+				"All of the above.", "If the outlook is rainy and the wind is weak, then we can play tennis.", "If the outlook is rainy and the wind is strong, then we cannot play tennis.", "If the outlook is sunny and the humidity is high, then we cannot play tennis.",
+				"All of the above.")); // 23
+		
 		myDb.addQuestions3(new Question(
 				"9",
-				"It is an approach which removes subtrees from a “fully grown” tree",
-				"Postpruning", "Decision Tree", "Postpruning",
-				"Classification", "Prepruning")); // 7
-		// 12
+				"Based on the decision tree, what are the attribute values of OUTLOOK?",
+				"SUNNY, OVERCAST, RAINY", "HIGH, NORMAL", "OUTLOOK, HUMIDITY and WIND",
+				"SUNNY, OVERCAST, RAINY", "STRONG, WEAK")); 
+		
 		myDb.addQuestions3(new Question(
-				"0",
-				"Decision tree can be seen as rules for performing a _________ .",
-				"Categorisation", "Categorisation", "Organization",
-				"Preparation", "Selection")); // 1
-		// 13
-		myDb.addQuestions3(new Question("4",
-				"ID3 uses a measure called _________", "Information Gain",
-				"Data Gain", "Term Gain", "Information Gain", "Gain")); // 4
-		// 14
-		myDb.addQuestions3(new Question("32",
-				"Node with the __________ information gain is chosen",
-				"Highest", "Lowest", "Largest", "Smallest", "Highest"));// 21
-		// 15
+				"10",
+				"Based on the decision tree, what are the ‘attributes’?",
+				"OUTLOOK, HUMIDITY and WIND", "OUTLOOK, HUMIDITY and WIND", "SUNNY, OVERCAST, RAINY",
+				"STRONG, WEAK", "HIGH, NORMAL")); 
+		
 		myDb.addQuestions3(new Question(
-				"19",
+				"11",
 				"In decision tree learning, ID3 is an algorithm invented by __________",
 				"Ross Quinlan", "Rose Quinlan", "Ross Quinlan", "Rod Quinlan ",
 				"Ruth Quinlan")); // 13
 
 	}
+	public void instructionDialog(){
+		final Dialog dialog = new Dialog(DecisionTreeRandomQuiz.this);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.dialog_assessment_instruction);
+		dialog.setCancelable(true);
+		dialog.getWindow().setBackgroundDrawable(
+				new ColorDrawable(
+						android.graphics.Color.TRANSPARENT));
+
+		
+
+		ImageView insokbt = (ImageView) dialog
+				.findViewById(R.id.insokbt);
+		insokbt.setImageResource(R.drawable.backtomainmenu);
+		insokbt.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View InputFragmentView) {
+				// next
+				
+				dialog.dismiss();
+			}
+		});
+		dialog.show();
+	}
+	
+	
+	
 }
