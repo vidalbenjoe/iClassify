@@ -1,9 +1,5 @@
 package com.capstoneii.iclassify.assessment.knn;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.ClipData;
@@ -18,7 +14,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.DragShadowBuilder;
-import android.view.View.OnClickListener;
 import android.view.View.OnDragListener;
 import android.view.View.OnTouchListener;
 import android.view.Window;
@@ -28,11 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.SessionCache;
 import com.capstoneii.iclassify.SplashScreenActivity;
-import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop;
-import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
-import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
 @SuppressLint("SimpleDateFormat")

@@ -1,9 +1,5 @@
 package com.capstoneii.iclassify.problems.patientdectree;
 
-import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.library.SecretTextView;
-import com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment;
-
 import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -19,6 +15,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.SecretTextView;
 
 public class PatientProblemsDecisionTreeFragment extends Fragment {
 	SecretTextView textHead, textFlu;

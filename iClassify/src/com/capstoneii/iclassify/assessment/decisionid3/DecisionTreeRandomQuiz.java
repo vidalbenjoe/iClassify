@@ -4,25 +4,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import com.capstoneii.iclassify.QuizResultDecision;
-import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.SessionCache;
-import com.capstoneii.iclassify.dbclasses.DBAdapter;
-import com.capstoneii.iclassify.dbclasses.Question;
-import com.capstoneii.iclassify.dbclasses.TempQuestion;
-import com.capstoneii.iclassify.library.TypewriterTextView;
-import com.capstoneii.iclassify.problems.ChooseProblemActivity;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,6 +21,13 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.capstoneii.iclassify.QuizResultDecision;
+import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.SessionCache;
+import com.capstoneii.iclassify.dbclasses.DBAdapter;
+import com.capstoneii.iclassify.dbclasses.Question;
+import com.capstoneii.iclassify.dbclasses.TempQuestion;
 
 public class DecisionTreeRandomQuiz extends Activity {
 
@@ -295,14 +290,14 @@ public class DecisionTreeRandomQuiz extends Activity {
 	public void addQuestions3() {
 		myDb.addQuestions3(new Question(
 				"1",
-				"Based on the decision tree, what could be the gender of this Simpson’s Character:Marge has a hair length of 10 inches and a weight of 250 lbs.",
+				"Based on the decision tree, what could be the gender of this Simpsonï¿½s Character:Marge has a hair length of 10 inches and a weight of 250 lbs.",
 				"Female", "Male", "Female",
 				"Unknown", "None of these")); // 1
 		// 2
 
 		myDb.addQuestions3(new Question(
 				"22",
-				"Based on the decision tree, what could be the gender of this Simpson’s Character:Otto has a hair length of 10 inches and a weight of 180 lbs",
+				"Based on the decision tree, what could be the gender of this Simpsonï¿½s Character:Otto has a hair length of 10 inches and a weight of 180 lbs",
 				"Male", "Male",
 				"Female", "Unknown",
 				"None of these")); 
@@ -323,7 +318,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 		//OTHER SET OF QUESTION IMAGE --- WEATHER OUTLOOK
 		myDb.addQuestions3(new Question(
 				"5",
-				"Based on the decision tree, what are the ‘attributes’?",
+				"Based on the decision tree, what are the ï¿½attributesï¿½?",
 				"HAIR LENGTH and WEIGHT", "MALE and FEMALE", "HAIR LENGTH and WEIGHT",
 				"HAIR LENGTH and FEMALE", "MALE and WEIGHT")); // 4
 	
@@ -331,13 +326,13 @@ public class DecisionTreeRandomQuiz extends Activity {
 		myDb.addQuestions3(new Question(
 				"6",
 				"Based on the decision tree, should we play tennis under these circumstances:\nIt is a sunny day with high humidity. ",
-				"NO, we cannot play tennis.", "YES we can play tennis.", "I don’t know",
+				"NO, we cannot play tennis.", "YES we can play tennis.", "I donï¿½t know",
 				"NO, we cannot play tennis.", "Maybe"));// 7
 		// 9
 		myDb.addQuestions3(new Question(
 				"7",
 				"Based on the decision tree, should we play tennis under these circumstances:\nIt is a rainy day with strong winds",
-				"NO, we cannot play tennis.", "YES, we can play tennis", "NO, we cannot play tennis.", "I don’t know", "Maybe"));
+				"NO, we cannot play tennis.", "YES, we can play tennis", "NO, we cannot play tennis.", "I donï¿½t know", "Maybe"));
 		
 		myDb.addQuestions3(new Question(
 				"8",
@@ -353,15 +348,41 @@ public class DecisionTreeRandomQuiz extends Activity {
 		
 		myDb.addQuestions3(new Question(
 				"10",
-				"Based on the decision tree, what are the ‘attributes’?",
+				"Based on the decision tree, what are the ï¿½attributesï¿½?",
 				"OUTLOOK, HUMIDITY and WIND", "OUTLOOK, HUMIDITY and WIND", "SUNNY, OVERCAST, RAINY",
 				"STRONG, WEAK", "HIGH, NORMAL")); 
-		
+		//TRHID SET
 		myDb.addQuestions3(new Question(
 				"11",
-				"In decision tree learning, ID3 is an algorithm invented by __________",
-				"Ross Quinlan", "Rose Quinlan", "Ross Quinlan", "Rod Quinlan ",
-				"Ruth Quinlan")); // 13
+				"Based on the decision tree, what are the â€˜attributesâ€™?",
+				"TYPE, DOORS, TIRES", "TYPE, DOORS, TIRES", "CAR, MINI VAN, SUV", "BLACKWALL, WHITEWALL",
+				"ALL OF THE ABOVE")); 
+		
+		
+		
+		myDb.addQuestions3(new Question(
+				"12",
+				"Based on the decision tree, what are the attribute values of â€˜TYPEâ€™?",
+				"CAR, MINI VAN, SUV", "NEGATIVE, POSITIVE", "CAR, MINI VAN, SUV", "TYPE, DOORS, TIRES",
+				"DOORS, TIRES")); 
+		
+		myDb.addQuestions3(new Question(
+				"13",
+				"Based on the decision tree, which one of the following statements is correct?",
+				"All of the above", "If type is car and doors are 2 then it is positive", "if type is SUV and tires are blackwall it is negative.", "if type is mini van then it is negative.",
+				"All of the above")); 
+		
+		myDb.addQuestions3(new Question(
+				"14",
+				"14. Based on the decision tree, what is the class under these circumstances: It is a SUV with a blackwall tires.",
+				"NEGATIVE", "POSITIVE", "CANNOT BE", "WHITEWALL",
+				"NEGATIVE")); 
+		
+		myDb.addQuestions3(new Question(
+				"15",
+				"Based on the decision tree, what is the class under these circumstances: It is a car with 2 doors.",
+				"POSITIVE", "CANNOT BE", "negative", "WHITEWALL",
+				"POSITIVE")); 
 
 	}
 	public void instructionDialog(){
@@ -374,7 +395,6 @@ public class DecisionTreeRandomQuiz extends Activity {
 						android.graphics.Color.TRANSPARENT));
 
 		
-
 		ImageView insokbt = (ImageView) dialog
 				.findViewById(R.id.insokbt);
 		insokbt.setImageResource(R.drawable.backtomainmenu);

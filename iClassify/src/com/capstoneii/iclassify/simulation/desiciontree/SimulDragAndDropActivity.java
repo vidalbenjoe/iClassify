@@ -11,12 +11,12 @@ import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
 import android.view.View.DragShadowBuilder;
 import android.view.View.OnClickListener;
 import android.view.View.OnDragListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,7 +24,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity;
 
 @SuppressLint("NewApi")
 public class SimulDragAndDropActivity extends Fragment {
@@ -296,6 +295,7 @@ public class SimulDragAndDropActivity extends Fragment {
 				// original place
 				if (tag != null) {
 					// the tag is the view id already dropped here
+					@SuppressWarnings("unused")
 					int existingID = (Integer) tag;
 					// set the original view visible again
 					//findViewById(existingID).setVisibility(View.VISIBLE);

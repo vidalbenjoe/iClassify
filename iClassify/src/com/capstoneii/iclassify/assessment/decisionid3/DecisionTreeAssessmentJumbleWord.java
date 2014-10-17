@@ -1,9 +1,5 @@
 package com.capstoneii.iclassify.assessment.decisionid3;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,7 +12,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -26,10 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.capstoneii.iclassify.QuizResultDecision;
 import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.SessionCache;
-import com.capstoneii.iclassify.dbclasses.DBAdapter;
 
 import descisiondiscussflip.DescTreeObjectives;
 

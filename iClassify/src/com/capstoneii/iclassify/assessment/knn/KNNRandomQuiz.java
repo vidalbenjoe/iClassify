@@ -4,16 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import com.capstoneii.iclassify.QuizResultActivity;
-import com.capstoneii.iclassify.QuizResultBayesian;
-import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.SessionCache;
-import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
-import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz;
-import com.capstoneii.iclassify.dbclasses.DBAdapter;
-import com.capstoneii.iclassify.dbclasses.Question;
-import com.capstoneii.iclassify.dbclasses.TempQuestion;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
@@ -31,6 +21,13 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.capstoneii.iclassify.QuizResultActivity;
+import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.SessionCache;
+import com.capstoneii.iclassify.dbclasses.DBAdapter;
+import com.capstoneii.iclassify.dbclasses.Question;
+import com.capstoneii.iclassify.dbclasses.TempQuestion;
 
 public class KNNRandomQuiz extends Activity {
 	List<Question> quesList;
@@ -290,7 +287,7 @@ public class KNNRandomQuiz extends Activity {
 	public void addQuestions1() {
 
 		myDb.addQuestions1(new Question("1",
-				"It was a method first described in the early 1950’s. ",
+				"It was a method first described in the early 1950ï¿½s. ",
 				"K-Nearest-Neighbor Method", "Decision Tree", "Classification",
 				"Naive Bayesian", "K-Nearest-Neighbor Method")); // 1
 		// 2

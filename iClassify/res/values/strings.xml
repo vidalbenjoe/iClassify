@@ -13,7 +13,7 @@
     <string name="goback">Go Back</string>
     <string name="str_next">Next</string>
     <string name="menulist">Menu List</string>
-     <string name="assessmentinstrucdesc">Directions: Analyze the problem carefully, choose the best answer from the choices</string>
+    <string name="assessmentinstrucdesc">Directions: Analyze the problem carefully, choose the best answer from the choices</string>
 
     <string-array name="titles">
         <item>Discussion</item>
@@ -547,19 +547,17 @@
   	This means that the first node in the decision tree will be the fever attribute. As an exercise, convince yourself why this scored (slightly) higher than the parents attribute - remember what entropy means and look at the way information gain is calculated
 	]]>
     </string>
-    <string name="decisiontreeonjectives">By the end of this discussion, the student will be able to:\n
-•	Discover the different characteristics of the classification model – Decision Tree.\n
-•	Analyze a given data using the correct step by step process of the algorithm\n
-•	Examine a decision tree to determine the possible outcome of a scenario.\n
-</string>
-    <string name="naivebayesobjectives">By the end of this discussion, the student will be able to:\n
-•	Discover the different characteristics of the classification model – Naïve Bayes. \n
+    <string name="decisiontreeonjectives">By the end of this discussion, the student will be able to:\n\n
+•	Distinguish the different characteristics of the classification model – Decision Tree.\n
 •	Analyze a given data using the correct step by step process of the algorithm;\n
-•	Examine a given data to determine the possible outcome of a scenario.\n
-</string>
-    <string name="knearestobjectives">By the end of this discussion, the student will be able to:\n
-•	Discover the different characteristics of the classification model – K-Nearest neighbor.\n
+•	Examine a decision tree to determine the possible outcome of a scenario.\n</string>
+    <string name="naivebayesobjectives">By the end of this discussion, the student will be able to:\n\n
+•	Distinguish the different characteristics of the classification model – Naïve Bayes. \n
+•	Analyze a given data using the correct step by step process of the algorithm;\n
+•	Examine a given data to determine the possible outcome of a scenario.\n</string>
+    <string name="knearestobjectives">By the end of this discussion, the student will be able to:\n\n
+•	Distinguish the different characteristics of the classification model – K-Nearest neighbor.\n
 •	Calculate the distance of the k-nearest neighbor class of a given data;\n
-•	Analyze a given problem using the correct step by step process of the algorithm.\n</string>
+•	Analyze a given data to determine the k-nearest neighbor of a sample.\n</string>
 
 </resources>

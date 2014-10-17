@@ -4,16 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import com.capstoneii.iclassify.QuizResultActivity;
-import com.capstoneii.iclassify.QuizResultBayesian;
-import com.capstoneii.iclassify.QuizResultDecision;
-import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.SessionCache;
-import com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz;
-import com.capstoneii.iclassify.dbclasses.DBAdapter;
-import com.capstoneii.iclassify.dbclasses.Question;
-import com.capstoneii.iclassify.dbclasses.TempQuestion;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
@@ -31,6 +21,13 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.capstoneii.iclassify.QuizResultBayesian;
+import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.SessionCache;
+import com.capstoneii.iclassify.dbclasses.DBAdapter;
+import com.capstoneii.iclassify.dbclasses.Question;
+import com.capstoneii.iclassify.dbclasses.TempQuestion;
 
 public class BayesianRandomQuiz extends Activity {
 
@@ -326,7 +323,7 @@ public class BayesianRandomQuiz extends Activity {
 		// 4
 		myDb.addQuestions2(new Question(
 				"13",
-				"In this process you add 1 to the count for every attribute value-class combination when an attribute value doesn’t occur with every class value",
+				"In this process you add 1 to the count for every attribute value-class combination when an attribute value doesnï¿½t occur with every class value",
 				"Zero-frequency problem", "Zero-frequency problem",
 				"One-Frequency problem", "Frequency problem",
 				"Addition-Frequency")); // 11
@@ -346,7 +343,7 @@ public class BayesianRandomQuiz extends Activity {
 		myDb.addQuestions2(new Question(
 				"10",
 				"____________ information gain as a sum of information contributed by each attribute can offer an explanation on how values of the predictors influence the class probability.",
-				"Kononenko’s", "Kononenko’s", "Konenko's", "Koneko's",
+				"Kononenkoï¿½s", "Kononenkoï¿½s", "Konenko's", "Koneko's",
 				"Konoko's"));// 9
 		// 8
 		myDb.addQuestions2(new Question(
@@ -357,7 +354,7 @@ public class BayesianRandomQuiz extends Activity {
 				"Probabilistic plotting"));// 20
 		// 9
 		myDb.addQuestions2(new Question("6",
-				"Based on the decision tree, what are the ‘attributes’?",
+				"Based on the decision tree, what are the ï¿½attributesï¿½?",
 				"HAIR LENGTH and WEIGHT", "HAIR LENGTH and FEMALE",
 				"MALE and WEIGHT", "MALE and FEMALE",
 				"HAIR LENGTH and WEIGHT"));// 10

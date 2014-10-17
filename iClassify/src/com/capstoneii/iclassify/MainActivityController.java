@@ -27,6 +27,8 @@ public class MainActivityController extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		
 	}
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

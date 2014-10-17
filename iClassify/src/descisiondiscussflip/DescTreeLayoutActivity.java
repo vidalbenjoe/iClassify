@@ -14,8 +14,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
@@ -24,8 +24,6 @@ import android.widget.TextView;
 import com.aphidmobile.flip.FlipViewController;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SessionCache;
-import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity;
-import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord;
 import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 
