@@ -28,7 +28,6 @@ import com.capstoneii.iclassify.SessionCache;
 import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 
-import drawer.MainDrawerActivity;
 
 @SuppressLint({ "NewApi", "SimpleDateFormat" })
 public class NativeBayesLayoutActivity extends ActionBarActivity {
@@ -115,7 +114,7 @@ public class NativeBayesLayoutActivity extends ActionBarActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
-			Intent intent2 = new Intent(this, MainDrawerActivity.class);
+			Intent intent2 = new Intent(this, NativeBayesObjectives.class);
 			intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent2);
 			this.finish();

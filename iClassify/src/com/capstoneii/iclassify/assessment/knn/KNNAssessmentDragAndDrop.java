@@ -26,6 +26,8 @@ import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SplashScreenActivity;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
+import drawer.MainDrawerActivity;
+
 @SuppressLint("SimpleDateFormat")
 public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 	Button checkdropbt, clearbt;
@@ -392,7 +394,10 @@ public class KNNAssessmentDragAndDrop extends ActionBarActivity {
 				Log.e(TAG, e.getMessage());
 			}
 
-			
+			Intent intent = new Intent(KNNAssessmentDragAndDrop.this,
+					MainDrawerActivity.class);
+			KNNAssessmentDragAndDrop.this.startActivity(intent);
+			KNNAssessmentDragAndDrop.this.finish();
 
 		}
 	}

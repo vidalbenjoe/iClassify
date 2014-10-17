@@ -38,7 +38,6 @@ import com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity;
 import com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity;
 import com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment;
 import com.capstoneii.iclassify.videos.VideoMenuActivity;
-import com.sriramramani.droid.inspector.server.ViewServer;
 
 @SuppressLint("NewApi")
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -75,7 +74,7 @@ public class MainDrawerActivity extends ActionBarActivity {
 
 		setContentView(R.layout.drawer_layout);
 
-		ViewServer.get(this).addWindow(this);
+		
 		
 		iniData();
 		iniPopupWindow();
@@ -369,15 +368,5 @@ public class MainDrawerActivity extends ActionBarActivity {
 
 	}
 
-	@Override
-	public void onDestroy() {
-        super.onDestroy();
-        ViewServer.get(this).removeWindow(this);
-    }
 	
-	 @Override
-	    public void onResume() {
-	        super.onResume();
-	        ViewServer.get(this).setFocusedWindow(this);
-	    }
 }

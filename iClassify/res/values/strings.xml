@@ -560,4 +560,28 @@
 •	Calculate the distance of the k-nearest neighbor class of a given data;\n
 •	Analyze a given data to determine the k-nearest neighbor of a sample.\n</string>
 
+     <string name="assessmentintrodecision"> The following questions support the attainment of the following objectives:\n\n
+•	Distinguish the different characteristics of the classification model – Decision Tree.\n
+•	Examine a decision tree to determine the possible outcome of a scenario.\n
+</string>
+
+     <string name="assessmentintronaive"> The following questions support the attainment of the following objectives:\n\n
+•	Distinguish the different characteristics of the classification model – Naïve Bayes \n
+•	Examine a given data to determine the possible outcome of a scenario.\n
+
+</string>
+
+<string name="assessmentintroknn">The following questions support the attainment of the following objectives:\n\n
+•	Distinguish the different characteristics of the classification model – K-Nearest neighbor.\n
+•	Calculate the distance of the k-nearest neighbor class of a given data;\n
+•	Analyze a given data to determine the k-nearest neighbor of a sample.\n
+
+
+
+</string>
+     
+      
+       
+   
+    
 </resources>

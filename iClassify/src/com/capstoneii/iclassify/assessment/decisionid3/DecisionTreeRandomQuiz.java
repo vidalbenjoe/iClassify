@@ -39,7 +39,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 	String ncourse = "Decision Tree";
 	Question question;
 	SQLiteDatabase mdb;
-	TextView tvQue, tvPage, tvRef;
+	TextView tvQue, tvPage, tvRef, instructiondesc;
 	RadioButton rd1, rd2, rd3, rd4;
 	Button bnext;
 	SessionCache QuizSession;
@@ -47,6 +47,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 	private Date date;
 	String finalDate;
 	LinearLayout quizlin;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -56,7 +57,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 		getActionBar().setBackgroundDrawable(
 				new ColorDrawable(getResources()
 						.getColor(R.color.divider_color)));
-		
+
 		instructionDialog();
 		QuizSession = new SessionCache(getApplicationContext());
 		openDB();
@@ -129,8 +130,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 					String quserans = answer.getText().toString();
 					myDb.addtempQuestion(new TempQuestion("1", lid, qitem,
 							qans, quserans));
-					
-					
+
 					score++;
 					Log.d("score result", "Your score is " + score);
 				} else {
@@ -188,30 +188,33 @@ public class DecisionTreeRandomQuiz extends Activity {
 		rd3.setText(question.getOptc());
 		rd4.setText(question.getOptd());
 		qid++;
-		
+
 		String refNumber = tvRef.getText().toString();
 		int refInt = Integer.parseInt(refNumber);
-		
-		if(refInt <= 4){
+
+		if (refInt <= 5) {
 			quizlin.setBackgroundResource(R.drawable.decisiontreequestionimage);
 			quizlin.setVisibility(View.VISIBLE);
 			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
-			
-		}else if(refInt >= 5 || refInt <= 10){
+
+		} else if (refInt >= 6) {
 			quizlin.setBackgroundResource(R.drawable.decisiontreequestionimageoutlook);
 			quizlin.setVisibility(View.VISIBLE);
 			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
-		}else if(refInt == 11){
+		} else if (refInt >= 11) {
+			quizlin.setBackgroundResource(R.drawable.decisiontreequestiontypecardoor);
+			quizlin.setVisibility(View.VISIBLE);
+			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
+		} else {
 			quizlin.setVisibility(View.GONE);
 		}
-		else{
-			quizlin.setVisibility(View.GONE);
-		}
-		
-		/*if (tvRef.getText().toString().equals("")) {
-			
-		}*/
-		
+
+		/*
+		 * if (tvRef.getText().toString().equals("")) {
+		 * 
+		 * }
+		 */
+
 	}
 
 	@Override
@@ -291,124 +294,122 @@ public class DecisionTreeRandomQuiz extends Activity {
 		myDb.addQuestions3(new Question(
 				"1",
 				"Based on the decision tree, what could be the gender of this Simpson�s Character:Marge has a hair length of 10 inches and a weight of 250 lbs.",
-				"Female", "Male", "Female",
-				"Unknown", "None of these")); // 1
+				"Female", "Male", "Female", "Unknown", "None of these")); // 1
 		// 2
 
 		myDb.addQuestions3(new Question(
 				"22",
 				"Based on the decision tree, what could be the gender of this Simpson�s Character:Otto has a hair length of 10 inches and a weight of 180 lbs",
-				"Male", "Male",
-				"Female", "Unknown",
-				"None of these")); 
+				"Male", "Male", "Female", "Unknown", "None of these"));
 		// 4
 		myDb.addQuestions3(new Question(
 				"3",
 				"Based on the decision tree, which one of the following statements is correct?",
-				"If Weight greater than 160, classify as Male", "If Weight greater than 160, classify as Female",
-				"If Hair Length less than or equal to 2, classify as Female", "If Weight greater than 160, classify as Male", "If Hair Length less than 160, classify as Male")); 
-		
+				"If Weight greater than 160, classify as Male",
+				"If Weight greater than 160, classify as Female",
+				"If Hair Length less than or equal to 2, classify as Female",
+				"If Weight greater than 160, classify as Male",
+				"If Hair Length less than 160, classify as Male"));
+
 		myDb.addQuestions3(new Question(
 				"4",
 				"Based on the decision tree, are these decision rules correct?\nIf Weight greater than 160, classify as Male\nElseif Hair Length less than or equal to 2, classify as Male \nElse classify as Female ",
-				"TRUE", "TRUE",
-				"First Statement is True", "FALSE",
+				"TRUE", "TRUE", "First Statement is True", "FALSE",
 				"Last Statement is True"));
-		
-		//OTHER SET OF QUESTION IMAGE --- WEATHER OUTLOOK
-		myDb.addQuestions3(new Question(
-				"5",
+
+		// OTHER SET OF QUESTION IMAGE --- WEATHER OUTLOOK
+		myDb.addQuestions3(new Question("5",
 				"Based on the decision tree, what are the �attributes�?",
-				"HAIR LENGTH and WEIGHT", "MALE and FEMALE", "HAIR LENGTH and WEIGHT",
-				"HAIR LENGTH and FEMALE", "MALE and WEIGHT")); // 4
-	
+				"HAIR LENGTH and WEIGHT", "MALE and FEMALE",
+				"HAIR LENGTH and WEIGHT", "HAIR LENGTH and FEMALE",
+				"MALE and WEIGHT")); // 4
 
 		myDb.addQuestions3(new Question(
 				"6",
 				"Based on the decision tree, should we play tennis under these circumstances:\nIt is a sunny day with high humidity. ",
-				"NO, we cannot play tennis.", "YES we can play tennis.", "I don�t know",
-				"NO, we cannot play tennis.", "Maybe"));// 7
+				"NO, we cannot play tennis.", "YES we can play tennis.",
+				"I don�t know", "NO, we cannot play tennis.", "Maybe"));// 7
 		// 9
 		myDb.addQuestions3(new Question(
 				"7",
 				"Based on the decision tree, should we play tennis under these circumstances:\nIt is a rainy day with strong winds",
-				"NO, we cannot play tennis.", "YES, we can play tennis", "NO, we cannot play tennis.", "I don�t know", "Maybe"));
-		
+				"NO, we cannot play tennis.", "YES, we can play tennis",
+				"NO, we cannot play tennis.", "I don�t know", "Maybe"));
+
 		myDb.addQuestions3(new Question(
 				"8",
 				"Based on the decision tree, which one of the following statements is correct?",
-				"All of the above.", "If the outlook is rainy and the wind is weak, then we can play tennis.", "If the outlook is rainy and the wind is strong, then we cannot play tennis.", "If the outlook is sunny and the humidity is high, then we cannot play tennis.",
+				"All of the above.",
+				"If the outlook is rainy and the wind is weak, then we can play tennis.",
+				"If the outlook is rainy and the wind is strong, then we cannot play tennis.",
+				"If the outlook is sunny and the humidity is high, then we cannot play tennis.",
 				"All of the above.")); // 23
-		
+
 		myDb.addQuestions3(new Question(
 				"9",
 				"Based on the decision tree, what are the attribute values of OUTLOOK?",
-				"SUNNY, OVERCAST, RAINY", "HIGH, NORMAL", "OUTLOOK, HUMIDITY and WIND",
-				"SUNNY, OVERCAST, RAINY", "STRONG, WEAK")); 
-		
-		myDb.addQuestions3(new Question(
-				"10",
+				"SUNNY, OVERCAST, RAINY", "HIGH, NORMAL",
+				"OUTLOOK, HUMIDITY and WIND", "SUNNY, OVERCAST, RAINY",
+				"STRONG, WEAK"));
+
+		myDb.addQuestions3(new Question("10",
 				"Based on the decision tree, what are the �attributes�?",
-				"OUTLOOK, HUMIDITY and WIND", "OUTLOOK, HUMIDITY and WIND", "SUNNY, OVERCAST, RAINY",
-				"STRONG, WEAK", "HIGH, NORMAL")); 
-		//TRHID SET
-		myDb.addQuestions3(new Question(
-				"11",
+				"OUTLOOK, HUMIDITY and WIND", "OUTLOOK, HUMIDITY and WIND",
+				"SUNNY, OVERCAST, RAINY", "STRONG, WEAK", "HIGH, NORMAL"));
+		// TRHID SET
+		myDb.addQuestions3(new Question("11",
 				"Based on the decision tree, what are the ‘attributes’?",
-				"TYPE, DOORS, TIRES", "TYPE, DOORS, TIRES", "CAR, MINI VAN, SUV", "BLACKWALL, WHITEWALL",
-				"ALL OF THE ABOVE")); 
-		
-		
-		
+				"TYPE, DOORS, TIRES", "TYPE, DOORS, TIRES",
+				"CAR, MINI VAN, SUV", "BLACKWALL, WHITEWALL",
+				"ALL OF THE ABOVE"));
+
 		myDb.addQuestions3(new Question(
 				"12",
 				"Based on the decision tree, what are the attribute values of ‘TYPE’?",
-				"CAR, MINI VAN, SUV", "NEGATIVE, POSITIVE", "CAR, MINI VAN, SUV", "TYPE, DOORS, TIRES",
-				"DOORS, TIRES")); 
-		
+				"CAR, MINI VAN, SUV", "NEGATIVE, POSITIVE",
+				"CAR, MINI VAN, SUV", "TYPE, DOORS, TIRES", "DOORS, TIRES"));
+
 		myDb.addQuestions3(new Question(
 				"13",
 				"Based on the decision tree, which one of the following statements is correct?",
-				"All of the above", "If type is car and doors are 2 then it is positive", "if type is SUV and tires are blackwall it is negative.", "if type is mini van then it is negative.",
-				"All of the above")); 
-		
+				"All of the above",
+				"If type is car and doors are 2 then it is positive",
+				"if type is SUV and tires are blackwall it is negative.",
+				"if type is mini van then it is negative.", "All of the above"));
+
 		myDb.addQuestions3(new Question(
 				"14",
 				"14. Based on the decision tree, what is the class under these circumstances: It is a SUV with a blackwall tires.",
-				"NEGATIVE", "POSITIVE", "CANNOT BE", "WHITEWALL",
-				"NEGATIVE")); 
-		
+				"NEGATIVE", "POSITIVE", "CANNOT BE", "WHITEWALL", "NEGATIVE"));
+
 		myDb.addQuestions3(new Question(
 				"15",
 				"Based on the decision tree, what is the class under these circumstances: It is a car with 2 doors.",
-				"POSITIVE", "CANNOT BE", "negative", "WHITEWALL",
-				"POSITIVE")); 
+				"POSITIVE", "CANNOT BE", "negative", "WHITEWALL", "POSITIVE"));
 
 	}
-	public void instructionDialog(){
+
+	public void instructionDialog() {
 		final Dialog dialog = new Dialog(DecisionTreeRandomQuiz.this);
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		dialog.setContentView(R.layout.dialog_assessment_instruction);
 		dialog.setCancelable(true);
 		dialog.getWindow().setBackgroundDrawable(
-				new ColorDrawable(
-						android.graphics.Color.TRANSPARENT));
+				new ColorDrawable(android.graphics.Color.TRANSPARENT));
+		instructiondesc = (TextView) dialog.findViewById(R.id.instructiondesc);
+		instructiondesc.setText(R.string.assessmentintronaive);
 
-		
-		ImageView insokbt = (ImageView) dialog
-				.findViewById(R.id.insokbt);
-		insokbt.setImageResource(R.drawable.backtomainmenu);
+		ImageView insokbt = (ImageView) dialog.findViewById(R.id.insokbt);
+		insokbt.setImageResource(R.drawable.okbutton);
 		insokbt.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View InputFragmentView) {
 				// next
-				
+
 				dialog.dismiss();
 			}
 		});
 		dialog.show();
 	}
-	
-	
-	
+
 }

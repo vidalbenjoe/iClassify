@@ -4,9 +4,6 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 
 import knearestdiscussflip.KNearestLayoutActivity;
-
-import com.capstoneii.iclassify.dbclasses.DBAdapter;
-import com.capstoneii.iclassify.dbclasses.TempQuestion;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -29,12 +26,17 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop;
+import com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz;
+import com.capstoneii.iclassify.dbclasses.DBAdapter;
+import com.capstoneii.iclassify.dbclasses.TempQuestion;
+
 public class QuizResultActivity extends Activity implements AnimationListener {
 	ImageButton backbutton;
 	TextView correct;
 	TextView wrong;
 	TextView mesg;
-	Button bscorelog, bqresult;
+	Button bscorelog, bqresult, retakequiz;
 	int correctans, wrongans;
 	String me;
 	int score;
@@ -113,7 +115,7 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 			mesg =(TextView) findViewById(R.id.tvMesg);
 			bscorelog = (Button) findViewById(R.id.bSlog);
 			bqresult = (Button)	findViewById(R.id.bQview);
-			
+			retakequiz = (Button) findViewById(R.id.retakequiz);
 			Bundle g = getIntent().getExtras();
 			setq= g.getInt("qno");
 			score = g.getInt("score");
@@ -124,6 +126,10 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 			correct.setText( score + "");
 			wrong.setText(wrongans + "");
 			mesg.setText(score+"/10");
+			
+			if (score < 5) {
+				obtlDialog();
+			}
 			
 	        tdate = totalSum.get(SessionCache.FL_QUIZ_TAKE);        
 	        
@@ -170,6 +176,194 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 					populateQwithdb();
 				}
 			});	
+			
+			retakequiz.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					if (QuizSession.hasFlQuiz1()) {
+
+	       				final Dialog dialog = new Dialog(QuizResultActivity.this,
+	       						R.style.DialogAnim);
+	       				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+	       				dialog.setContentView(R.layout.validate_message);
+
+	       				Button bYes = (Button) dialog.findViewById(R.id.buttonOk);
+	       				Button bNo = (Button) dialog.findViewById(R.id.buttonCancel);
+	       				TextView tvalertmessage = (TextView) dialog
+	       						.findViewById(R.id.tvalertmessage);
+
+	       				HashMap<String, String> quizRecord = QuizSession.getTotalSum();
+	       				retake = Integer.parseInt(quizRecord
+	       						.get(SessionCache.REPEATING1));
+	       				prevTotal = Integer.parseInt(quizRecord
+	       						.get(SessionCache.JS_MAX_ITEM1));
+
+	       				if (retake == 3) {
+	       					tvalertmessage
+	       							.setText("You have taken this 3 times, Do you want to take this quiz? the first try you have taken will overwrite");
+	       					bYes.setOnClickListener(new OnClickListener() {
+	       						@Override
+	       						public void onClick(View v) {
+
+	       							// delete the record
+	       							myDb.deleteQuiz("K Nearest Neighbor");
+
+	       							// store last quiz session for JS and for all the
+	       							// records
+	       							QuizSession.StoreFlLastQuizTaken(finalDate);
+	       							QuizSession.StoreAllLastQuizTaken(finalDate);
+
+	       							// delete the scorerow if the user wants to
+	       							// overwrite the first take of quiz
+	       							myDb.deletescorerowSet(1, "K Nearest Neighbor 1");
+
+	       							// get the retake value + 1
+	       							// sum is 4 so when the user try to take the quiz
+	       							// again, he will not able to take it any more, he
+	       							// will the next condition which will appear
+	       							// "You have taken this 4 times"
+	       							int sum = retake + 1;
+	       							myDb.addjsquiz(1, "K Nearest Neighbor", "", "0 %");
+
+	       							QuizSession.FinishSessionNum1(Integer.toString(sum));
+	       							intent = new Intent(QuizResultActivity.this,
+	       									KNNRandomQuiz.class);
+	       							intent.putExtra("retakeNum", sum);
+	       							startActivity(intent);
+	       							dialog.dismiss();
+	       							QuizResultActivity.this
+	       									.overridePendingTransition(
+	       											R.anim.slide_in_left,
+	       											R.anim.slide_out_left);
+	       							QuizResultActivity.this.finish();
+	       						}
+	       					});
+	       					bNo.setOnClickListener(new OnClickListener() {
+	       						@Override
+	       						public void onClick(View v) {
+	       							dialog.dismiss();
+	       						}
+	       					});
+
+	       					dialog.show();
+
+	       				} else if (retake == 4) {
+	       					tvalertmessage
+	       							.setText("You have taken this 4 times, Do you want to take this quiz? the second try you have taken will overwrite");
+
+	       					bYes.setOnClickListener(new OnClickListener() {
+	       						@Override
+	       						public void onClick(View v) {
+	       							myDb.deleteQuiz("K Nearest Neighbor");
+
+	       							QuizSession.StoreFlLastQuizTaken(finalDate);
+	       							QuizSession.StoreAllLastQuizTaken(finalDate);
+
+	       							myDb.deletescorerowSet(2, "K Nearest Neighbor 1");
+
+	       							int sum = retake + 1;// 5
+	       							myDb.addjsquiz(1, "K Nearest Neighbor", "", "0 %");
+
+	       							QuizSession.FinishSessionNum1(Integer.toString(sum));
+	       							intent = new Intent(QuizResultActivity.this,
+	       									KNNRandomQuiz.class);
+	       							intent.putExtra("retakeNum", sum);
+	       							startActivity(intent);
+	       							dialog.dismiss();
+	       							QuizResultActivity.this
+	       									.overridePendingTransition(
+	       											R.anim.slide_in_left,
+	       											R.anim.slide_out_left);
+	       							QuizResultActivity.this.finish();
+
+	       						}
+	       					});
+	       					bNo.setOnClickListener(new OnClickListener() {
+	       						@Override
+	       						public void onClick(View v) {
+	       							dialog.dismiss();
+	       						}
+	       					});
+	       					dialog.show();
+	       				}
+
+	       				else if (retake == 5) {
+	       					tvalertmessage
+	       							.setText("You have taken this 5 times, Do you want to take this quiz? the second try you have taken will overwrite");
+
+	       					bYes.setOnClickListener(new OnClickListener() {
+	       						@Override
+	       						public void onClick(View v) {
+	       							myDb.deleteQuiz("K Nearest Neighbor");
+
+	       							QuizSession.StoreFlLastQuizTaken(finalDate);
+	       							QuizSession.StoreAllLastQuizTaken(finalDate);
+
+	       							myDb.deletescorerowSet(2, "K Nearest Neighbor 1");
+
+	       							int sum = retake + 1;// 5
+	       							myDb.addjsquiz(1, "K Nearest Neighbor", "", "0 %");
+
+	       							QuizSession.FinishSessionNum1(Integer.toString(sum));
+	       							intent = new Intent(QuizResultActivity.this,
+	       									KNNRandomQuiz.class);
+	       							intent.putExtra("retakeNum", sum);
+	       							startActivity(intent);
+	       							dialog.dismiss();
+	       							QuizResultActivity.this
+	       									.overridePendingTransition(
+	       											R.anim.slide_in_left,
+	       											R.anim.slide_out_left);
+	       							QuizResultActivity.this.finish();
+	       						}
+	       					});
+	       					bNo.setOnClickListener(new OnClickListener() {
+	       						@Override
+	       						public void onClick(View v) {
+	       							dialog.dismiss();
+	       						}
+	       					});
+	       					dialog.show();
+	       				} else {
+	       					// this condition will use if retake is value 1 to 2
+	       					myDb.deleteQuiz("Naive Bayesian");
+	       					QuizSession.StoreFlLastQuizTaken(finalDate);
+	       					QuizSession.StoreAllLastQuizTaken(finalDate);
+
+	       					int sum = retake + 1;
+	       					myDb.addjsquiz(1, "K Nearest Neighbor", "", "0 %");
+
+	       					curTotal = prevTotal + 10;
+	       					QuizSession.StoreTotal1(Integer.toString(curTotal));
+	       					QuizSession.FinishSessionNum1(Integer.toString(sum));
+	       					intent = new Intent(QuizResultActivity.this,
+	       							KNNRandomQuiz.class);
+	       					intent.putExtra("retakeNum", sum);
+	       					startActivity(intent);
+	       					QuizResultActivity.this.overridePendingTransition(
+	       							R.anim.slide_in_left, R.anim.slide_out_left);
+	       					QuizResultActivity.this.finish();
+	       				}
+	       			} else {
+	       				QuizSession.StoreFlLastQuizTaken(finalDate);
+	       				QuizSession.StoreAllLastQuizTaken(finalDate);
+	       				int passVal = Integer.parseInt(initVal);
+	       				myDb.addjsquiz(1, "K Nearest Neighbor", initVal, "0 %");
+	       				curTotal = prevTotal + 10;
+	       				QuizSession.StoreTotal1(Integer.toString(curTotal));
+	       				QuizSession.FinishSessionNum1(initVal);
+	       				intent = new Intent(QuizResultActivity.this,
+	       						KNNRandomQuiz.class);
+	       				intent.putExtra("retakeNum", passVal);
+	       				startActivity(intent);
+	       				QuizResultActivity.this.overridePendingTransition(
+	       						R.anim.slide_in_left, R.anim.slide_out_left);
+	       				QuizResultActivity.this.finish();
+
+	       			}
+				}
+			});
 		}
 		
 		@Override
@@ -320,5 +514,41 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	}
+	
+	public void obtlDialog() {
+		final Dialog dialog = new Dialog(QuizResultActivity.this,
+				R.style.DialogAnim);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.validate_message);
+		dialog.setCancelable(false);
+		Button bOk = (Button) dialog.findViewById(R.id.buttonOk);
+		Button bCancel = (Button) dialog.findViewById(R.id.buttonCancel);
+		bOk.setText("Yes");
+		bCancel.setText("No");
+		TextView question = (TextView) dialog.findViewById(R.id.tvalertmessage);
+
+		question.setText("Would you like to try extra activity?");
+
+		bOk.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(QuizResultActivity.this,
+						KNNAssessmentDragAndDrop.class);
+				QuizResultActivity.this.startActivity(intent);
+				QuizResultActivity.this.finish();
+				dialog.dismiss();
+			}
+		});
+
+		bCancel.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+
+		dialog.show();
+
 	}
 }

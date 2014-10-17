@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity;
+import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz;
 import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.dbclasses.TempQuestion;
@@ -41,7 +42,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 	TextView correct;
 	TextView wrong;
 	TextView mesg;
-	Button bscorelog, bqresult;
+	Button bscorelog, bqresult,retakequiz;
 	int correctans, wrongans;
 	String me;
 	int score;
@@ -120,7 +121,8 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 		mesg = (TextView) findViewById(R.id.tvMesg);
 		bscorelog = (Button) findViewById(R.id.bSlog);
 		bqresult = (Button) findViewById(R.id.bQview);
-
+		retakequiz = (Button) findViewById(R.id.retakequiz);
+		
 		Bundle g = getIntent().getExtras();
 		setq = g.getInt("qno");
 		score = g.getInt("score");
@@ -186,7 +188,207 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 				populateQwithdb();
 			}
 		});
+		
+		retakequiz.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				if (QuizSession.hasFlQuiz2()) {
+
+					final Dialog dialog = new Dialog(QuizResultDecision.this,
+							R.style.DialogAnim);
+					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+					dialog.setContentView(R.layout.validate_message);
+
+					Button bYes = (Button) dialog.findViewById(R.id.buttonOk);
+					Button bNo = (Button) dialog
+							.findViewById(R.id.buttonCancel);
+					TextView tvalertmessage = (TextView) dialog
+							.findViewById(R.id.tvalertmessage);
+					HashMap<String, String> quizRecord = QuizSession
+							.getTotalSum();
+					retake = Integer.parseInt(quizRecord
+							.get(SessionCache.REPEATING1));
+					prevTotal = Integer.parseInt(quizRecord
+							.get(SessionCache.JS_MAX_ITEM1));
+
+					if (retake == 3) {
+						tvalertmessage
+								.setText("You have taken this 3 times, Do you want to take this quiz? the first try you have taken will overwrite");
+						bYes.setOnClickListener(new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+
+								// delete the record
+								myDb.deleteQuiz("Naive Bayesian");
+
+								// store last quiz session for
+								// JS and for all the
+								// records
+								QuizSession.StoreFlLastQuizTaken(finalDate);
+								QuizSession.StoreAllLastQuizTaken(finalDate);
+
+								// delete the scorerow if the
+								// user wants to
+								// overwrite the first take of
+								// quiz
+								myDb.deletescorerowSet(1, "Naive Bayesian 1");
+
+								// get the retake value + 1
+								// sum is 4 so when the user try
+								// to take the quiz
+								// again, he will not able to
+								// take it any more, he
+								// will the next condition which
+								// will appear
+								// "You have taken this 4 times"
+								int sum = retake + 1;
+								myDb.addjsquiz(1, "Naive Bayesian", "", "0 %");
+
+								QuizSession.FinishSessionNum1(Integer
+										.toString(sum));
+								intent = new Intent(QuizResultDecision.this,
+										DecisionTreeRandomQuiz.class);
+								intent.putExtra("retakeNum", sum);
+								startActivity(intent);
+								dialog.dismiss();
+								QuizResultDecision.this
+										.overridePendingTransition(
+												R.anim.slide_in_left,
+												R.anim.slide_out_left);
+								QuizResultDecision.this.finish();
+							}
+						});
+						bNo.setOnClickListener(new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								dialog.dismiss();
+							}
+						});
+
+						dialog.show();
+
+					} else if (retake == 4) {
+						tvalertmessage
+								.setText("You have taken this 4 times, Do you want to take this quiz? the second try you have taken will overwrite");
+
+						bYes.setOnClickListener(new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								myDb.deleteQuiz("Naive Bayesian");
+
+								QuizSession.StoreFlLastQuizTaken(finalDate);
+								QuizSession.StoreAllLastQuizTaken(finalDate);
+
+								myDb.deletescorerowSet(2, "Naive Bayesian 1");
+
+								int sum = retake + 1;// 5
+								myDb.addjsquiz(1, "Naive Bayesian", "", "0 %");
+
+								QuizSession.FinishSessionNum1(Integer
+										.toString(sum));
+								intent = new Intent(QuizResultDecision.this,
+										DecisionTreeRandomQuiz.class);
+								intent.putExtra("retakeNum", sum);
+								startActivity(intent);
+								dialog.dismiss();
+								QuizResultDecision.this
+										.overridePendingTransition(
+												R.anim.slide_in_left,
+												R.anim.slide_out_left);
+								QuizResultDecision.this.finish();
+							}
+						});
+						bNo.setOnClickListener(new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								dialog.dismiss();
+							}
+						});
+						dialog.show();
+					}
+
+					else if (retake == 5) {
+						tvalertmessage
+								.setText("You have taken this 5 times, Do you want to take this quiz? the second try you have taken will overwrite");
+
+						bYes.setOnClickListener(new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								myDb.deleteQuiz("Naive Bayesian");
+
+								QuizSession.StoreFlLastQuizTaken(finalDate);
+								QuizSession.StoreAllLastQuizTaken(finalDate);
+
+								myDb.deletescorerowSet(2, "Naive Bayesian 1");
+
+								int sum = retake + 1;// 5
+								myDb.addjsquiz(1, "Naive Bayesian", "", "0 %");
+
+								QuizSession.FinishSessionNum1(Integer
+										.toString(sum));
+								intent = new Intent(QuizResultDecision.this,
+										DecisionTreeRandomQuiz.class);
+								intent.putExtra("retakeNum", sum);
+								startActivity(intent);
+								dialog.dismiss();
+								QuizResultDecision.this
+										.overridePendingTransition(
+												R.anim.slide_in_left,
+												R.anim.slide_out_left);
+								QuizResultDecision.this.finish();
+							}
+						});
+						bNo.setOnClickListener(new OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								dialog.dismiss();
+							}
+						});
+						dialog.show();
+					} else {
+						// this condition will use if retake is
+						// value 1 to 2
+						myDb.deleteQuiz("Naive Bayesian");
+						QuizSession.StoreFlLastQuizTaken(finalDate);
+						QuizSession.StoreAllLastQuizTaken(finalDate);
+
+						int sum = retake + 1;
+						myDb.addjsquiz(1, "Naive Bayesian", "", "0 %");
+
+						curTotal = prevTotal + 10;
+						QuizSession.StoreTotal1(Integer.toString(curTotal));
+						QuizSession.FinishSessionNum1(Integer.toString(sum));
+						intent = new Intent(QuizResultDecision.this,
+								DecisionTreeRandomQuiz.class);
+						intent.putExtra("retakeNum", sum);
+						startActivity(intent);
+						QuizResultDecision.this.overridePendingTransition(
+								R.anim.slide_in_left, R.anim.slide_out_left);
+						QuizResultDecision.this.finish();
+					}
+				} else {
+					QuizSession.StoreFlLastQuizTaken(finalDate);
+					QuizSession.StoreAllLastQuizTaken(finalDate);
+					int passVal = Integer.parseInt(initVal);
+					myDb.addjsquiz(1, "Naive Bayesian", initVal, "0 %");
+					curTotal = prevTotal + 10;
+					QuizSession.StoreTotal1(Integer.toString(curTotal));
+					QuizSession.FinishSessionNum1(initVal);
+					intent = new Intent(QuizResultDecision.this,
+							DecisionTreeRandomQuiz.class);
+					intent.putExtra("retakeNum", passVal);
+					startActivity(intent);
+					QuizResultDecision.this.overridePendingTransition(
+							R.anim.slide_in_left, R.anim.slide_out_left);
+					QuizResultDecision.this.finish();
+
+				}
+			}
+		});
 	}
+	
+	
 
 	@Override
 	protected void onDestroy() {
@@ -348,8 +550,8 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 		dialog.setCancelable(false);
 		Button bOk = (Button) dialog.findViewById(R.id.buttonOk);
 		Button bCancel = (Button) dialog.findViewById(R.id.buttonCancel);
-		bOk.setText("YES");
-		bCancel.setText("Retake the Quiz");
+		bOk.setText("Yes");
+		bCancel.setText("No");
 		TextView question = (TextView) dialog.findViewById(R.id.tvalertmessage);
 
 		question.setText("Would you like to try extra activity?");
@@ -369,198 +571,6 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 		bCancel.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-
-				if (QuizSession.hasFlQuiz2()) {
-
-					final Dialog dialog = new Dialog(QuizResultDecision.this,
-							R.style.DialogAnim);
-					dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-					dialog.setContentView(R.layout.validate_message);
-
-					Button bYes = (Button) dialog.findViewById(R.id.buttonOk);
-					Button bNo = (Button) dialog
-							.findViewById(R.id.buttonCancel);
-					TextView tvalertmessage = (TextView) dialog
-							.findViewById(R.id.tvalertmessage);
-					HashMap<String, String> quizRecord = QuizSession
-							.getTotalSum();
-					retake = Integer.parseInt(quizRecord
-							.get(SessionCache.REPEATING1));
-					prevTotal = Integer.parseInt(quizRecord
-							.get(SessionCache.JS_MAX_ITEM1));
-
-					if (retake == 3) {
-						tvalertmessage
-								.setText("You have taken this 3 times, Do you want to take this quiz? the first try you have taken will overwrite");
-						bYes.setOnClickListener(new OnClickListener() {
-							@Override
-							public void onClick(View v) {
-
-								// delete the record
-								myDb.deleteQuiz("Naive Bayesian");
-
-								// store last quiz session for
-								// JS and for all the
-								// records
-								QuizSession.StoreFlLastQuizTaken(finalDate);
-								QuizSession.StoreAllLastQuizTaken(finalDate);
-
-								// delete the scorerow if the
-								// user wants to
-								// overwrite the first take of
-								// quiz
-								myDb.deletescorerowSet(1, "Naive Bayesian 1");
-
-								// get the retake value + 1
-								// sum is 4 so when the user try
-								// to take the quiz
-								// again, he will not able to
-								// take it any more, he
-								// will the next condition which
-								// will appear
-								// "You have taken this 4 times"
-								int sum = retake + 1;
-								myDb.addjsquiz(1, "Naive Bayesian", "", "0 %");
-
-								QuizSession.FinishSessionNum1(Integer
-										.toString(sum));
-								intent = new Intent(QuizResultDecision.this,
-										BayesianRandomQuiz.class);
-								intent.putExtra("retakeNum", sum);
-								startActivity(intent);
-								dialog.dismiss();
-								QuizResultDecision.this
-										.overridePendingTransition(
-												R.anim.slide_in_left,
-												R.anim.slide_out_left);
-								QuizResultDecision.this.finish();
-							}
-						});
-						bNo.setOnClickListener(new OnClickListener() {
-							@Override
-							public void onClick(View v) {
-								dialog.dismiss();
-							}
-						});
-
-						dialog.show();
-
-					} else if (retake == 4) {
-						tvalertmessage
-								.setText("You have taken this 4 times, Do you want to take this quiz? the second try you have taken will overwrite");
-
-						bYes.setOnClickListener(new OnClickListener() {
-							@Override
-							public void onClick(View v) {
-								myDb.deleteQuiz("Naive Bayesian");
-
-								QuizSession.StoreFlLastQuizTaken(finalDate);
-								QuizSession.StoreAllLastQuizTaken(finalDate);
-
-								myDb.deletescorerowSet(2, "Naive Bayesian 1");
-
-								int sum = retake + 1;// 5
-								myDb.addjsquiz(1, "Naive Bayesian", "", "0 %");
-
-								QuizSession.FinishSessionNum1(Integer
-										.toString(sum));
-								intent = new Intent(QuizResultDecision.this,
-										BayesianRandomQuiz.class);
-								intent.putExtra("retakeNum", sum);
-								startActivity(intent);
-								dialog.dismiss();
-								QuizResultDecision.this
-										.overridePendingTransition(
-												R.anim.slide_in_left,
-												R.anim.slide_out_left);
-								QuizResultDecision.this.finish();
-							}
-						});
-						bNo.setOnClickListener(new OnClickListener() {
-							@Override
-							public void onClick(View v) {
-								dialog.dismiss();
-							}
-						});
-						dialog.show();
-					}
-
-					else if (retake == 5) {
-						tvalertmessage
-								.setText("You have taken this 5 times, Do you want to take this quiz? the second try you have taken will overwrite");
-
-						bYes.setOnClickListener(new OnClickListener() {
-							@Override
-							public void onClick(View v) {
-								myDb.deleteQuiz("Naive Bayesian");
-
-								QuizSession.StoreFlLastQuizTaken(finalDate);
-								QuizSession.StoreAllLastQuizTaken(finalDate);
-
-								myDb.deletescorerowSet(2, "Naive Bayesian 1");
-
-								int sum = retake + 1;// 5
-								myDb.addjsquiz(1, "Naive Bayesian", "", "0 %");
-
-								QuizSession.FinishSessionNum1(Integer
-										.toString(sum));
-								intent = new Intent(QuizResultDecision.this,
-										BayesianRandomQuiz.class);
-								intent.putExtra("retakeNum", sum);
-								startActivity(intent);
-								dialog.dismiss();
-								QuizResultDecision.this
-										.overridePendingTransition(
-												R.anim.slide_in_left,
-												R.anim.slide_out_left);
-								QuizResultDecision.this.finish();
-							}
-						});
-						bNo.setOnClickListener(new OnClickListener() {
-							@Override
-							public void onClick(View v) {
-								dialog.dismiss();
-							}
-						});
-						dialog.show();
-					} else {
-						// this condition will use if retake is
-						// value 1 to 2
-						myDb.deleteQuiz("Naive Bayesian");
-						QuizSession.StoreFlLastQuizTaken(finalDate);
-						QuizSession.StoreAllLastQuizTaken(finalDate);
-
-						int sum = retake + 1;
-						myDb.addjsquiz(1, "Naive Bayesian", "", "0 %");
-
-						curTotal = prevTotal + 10;
-						QuizSession.StoreTotal1(Integer.toString(curTotal));
-						QuizSession.FinishSessionNum1(Integer.toString(sum));
-						intent = new Intent(QuizResultDecision.this,
-								BayesianRandomQuiz.class);
-						intent.putExtra("retakeNum", sum);
-						startActivity(intent);
-						QuizResultDecision.this.overridePendingTransition(
-								R.anim.slide_in_left, R.anim.slide_out_left);
-						QuizResultDecision.this.finish();
-					}
-				} else {
-					QuizSession.StoreFlLastQuizTaken(finalDate);
-					QuizSession.StoreAllLastQuizTaken(finalDate);
-					int passVal = Integer.parseInt(initVal);
-					myDb.addjsquiz(1, "Naive Bayesian", initVal, "0 %");
-					curTotal = prevTotal + 10;
-					QuizSession.StoreTotal1(Integer.toString(curTotal));
-					QuizSession.FinishSessionNum1(initVal);
-					intent = new Intent(QuizResultDecision.this,
-							BayesianRandomQuiz.class);
-					intent.putExtra("retakeNum", passVal);
-					startActivity(intent);
-					QuizResultDecision.this.overridePendingTransition(
-							R.anim.slide_in_left, R.anim.slide_out_left);
-					QuizResultDecision.this.finish();
-
-				}
 				dialog.dismiss();
 			}
 		});

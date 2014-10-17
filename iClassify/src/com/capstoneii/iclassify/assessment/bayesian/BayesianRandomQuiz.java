@@ -48,6 +48,8 @@ public class BayesianRandomQuiz extends Activity {
 	String finalDate;
 
 	LinearLayout quizlin;
+	// Dialog object
+	TextView instructiondesc, headerte;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -82,8 +84,7 @@ public class BayesianRandomQuiz extends Activity {
 		rd3 = (RadioButton) findViewById(R.id.rd3);
 		rd4 = (RadioButton) findViewById(R.id.rd4);
 		bnext = (Button) findViewById(R.id.bnext);
-		
-		
+
 		bnext.setEnabled(false);
 		setQuestionView();
 		tvPage.setText(page + "");
@@ -126,7 +127,7 @@ public class BayesianRandomQuiz extends Activity {
 						.getCheckedRadioButtonId());
 				grp.clearCheck();
 				page++;
-				
+
 				if (question.getQans().equals(answer.getText())) {
 					String lid = tvRef.getText().toString();
 					String qitem = tvQue.getText().toString();
@@ -134,9 +135,7 @@ public class BayesianRandomQuiz extends Activity {
 					String quserans = answer.getText().toString();
 					myDb.addtempQuestion(new TempQuestion("1", lid, qitem,
 							qans, quserans));
-					
-					
-					
+
 					score++;
 					Log.d("score result", "Your score is " + score);
 				} else {
@@ -146,8 +145,7 @@ public class BayesianRandomQuiz extends Activity {
 					String quserans = answer.getText().toString();
 					myDb.addtempQuestion(new TempQuestion("1", lid, qitem,
 							qans, quserans));
-					
-					
+
 					Log.d("wrong answer", answer.getText() + " is incorrect");
 				}
 				if (qid < 10) {
@@ -195,36 +193,27 @@ public class BayesianRandomQuiz extends Activity {
 		rd2.setText(question.getOptb());
 		rd3.setText(question.getOptc());
 		rd4.setText(question.getOptd());
-		
-		if (tvRef.getText().toString().equals("2")) {
+
+		String refNumber = tvRef.getText().toString();
+		int refInt = Integer.parseInt(refNumber);
+
+		if (refInt <= 5) {
 			quizlin.setBackgroundResource(R.drawable.naivebayesquestionimage);
 			quizlin.setVisibility(View.VISIBLE);
 			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
-		}
-		else if (tvRef.getText().toString().equals("12")) {
-			quizlin.setBackgroundResource(R.drawable.naivebayesquestionimage);
+
+		} else if (refInt >= 6) {
+			quizlin.setBackgroundResource(R.drawable.naivebayesquestiontable);
 			quizlin.setVisibility(View.VISIBLE);
 			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
-			
-		}else if (tvRef.getText().toString().equals("6")) {
-			quizlin.setBackgroundResource(R.drawable.naivebayesquestionimage);
+		} else if (refInt >= 11) {
+			quizlin.setBackgroundResource(R.drawable.naivebayesquestiondomestic);
 			quizlin.setVisibility(View.VISIBLE);
 			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
-			
-		}else if (tvRef.getText().toString().equals("7")) {
-			quizlin.setBackgroundResource(R.drawable.naivebayesquestionimage);
-			quizlin.setVisibility(View.VISIBLE);
-			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
-			
-		}
-		
-		
-		
-		else{
+		} else {
 			quizlin.setVisibility(View.GONE);
 		}
-		
-		
+
 		qid++;
 	}
 
@@ -303,116 +292,115 @@ public class BayesianRandomQuiz extends Activity {
 
 	public void addQuestions2() {
 
-		myDb.addQuestions2(new Question("1",
-				"It provides a way of calculating the posterior probability.",
-				"Bayes theorem", "Naive Theorem", "Flare", "Bayes theorem",
-				"Naive Bayes")); // 1
-		// 2
+		// NAIVE BAYESIAN
+
 		myDb.addQuestions2(new Question(
-				"4",
-				"What do you call when the classifier assume that the effect of the value of a predictor on a given class is independent of the values of other predictors?",
-				"Conditional independence", "Conditional dependence",
-				"Unconditional independence", "Unconditional dependence",
-				"Conditional independence")); // 3
-		// 3
-		myDb.addQuestions2(new Question("5",
-				"Based on the decision tree, which one of the following statements is correct?",
-				"If Weight greater than 160, classify as Male", "If Weight greater than 160, classify as Female",
-				"If Hair Length less than or equal to 2, classify as Female", "If Weight greater than 160, classify as Male",
-				"If Hair Length less than 160, classify as Male")); // 4
-		// 4
-		myDb.addQuestions2(new Question(
-				"13",
-				"In this process you add 1 to the count for every attribute value-class combination when an attribute value doesnï¿½t occur with every class value",
-				"Zero-frequency problem", "Zero-frequency problem",
-				"One-Frequency problem", "Frequency problem",
-				"Addition-Frequency")); // 11
-		// 5
-		myDb.addQuestions2(new Question(
-				"10",
-				"What are the two parameters that define density function for the normal distribution?",
-				"Mean and standard deviation", "Mean and frequency",
-				"Mean and standard deviation",
-				"Frequency and standard deviation", "None of the above")); // 9
-		// 6
+				"1",
+				"In the picture is Officer Drew. Is Officer Drew a Male or a Female? Based on the table, with names and gender, what is the frequency of the Name DREW as a FEMALE?",
+				"2", "1", "2", "3", "4"));
+
 		myDb.addQuestions2(new Question(
 				"2",
-				"In the picture is Officer Drew. Is Officer Drew a Male or a Female? \nBased on the table, with names and gender, what is the frequency of the Name DREW as a FEMALE?",
-				"2", "4", "1", "2", "3")); // 2
-		// 7
+				"In the picture is Officer Drew. Is Officer Drew a Male or a Female? Based on the table, how many are the total cases?",
+				"8", "2", "4", "6", "8"));
+
 		myDb.addQuestions2(new Question(
-				"10",
-				"____________ information gain as a sum of information contributed by each attribute can offer an explanation on how values of the predictors influence the class probability.",
-				"Kononenkoï¿½s", "Kononenkoï¿½s", "Konenko's", "Koneko's",
-				"Konoko's"));// 9
-		// 8
-		myDb.addQuestions2(new Question(
-				"22",
-				"Calculate explicit probabilities for hypothesis, among the most practical approaches to certain types of learning problems",
-				"Probabilistic learning", "Probabilistic training",
-				"Probabilistic learning", "Probabilistic gaining",
-				"Probabilistic plotting"));// 20
-		// 9
-		myDb.addQuestions2(new Question("6",
-				"Based on the decision tree, what are the ï¿½attributesï¿½?",
-				"HAIR LENGTH and WEIGHT", "HAIR LENGTH and FEMALE",
-				"MALE and WEIGHT", "MALE and FEMALE",
-				"HAIR LENGTH and WEIGHT"));// 10
-		// 10
-		myDb.addQuestions2(new Question(
-				"12",
-				"In the picture is Officer Drew. Is Officer Drew a Male or a Female? Based on the table",
-				"2 out of 8", "3 out of 8",
-				"2 out of 8", "4 out of 8",
-				"1 out of 8")); // 10
-		// 11
-		myDb.addQuestions2(new Question(
-				"7",
-				"Based on the decision tree, are these decision rules correct? \nIf Weight greater than 160, classify as Male\nElseif Hair Length less than or equal to 2, classify as Male\nElse classify as Female",
-				"TRUE", "FALSE", "Last Statement is True",
-				"TRUE", "First Statement is True")); // 11
-		// 12
-		myDb.addQuestions2(new Question(
-				"9",
-				"_____________ is applied to decision making and inferential statistics that deals with probability inference.",
-				"Bayesian reasoning", "Probability reasoning",
-				"Bayesian reasoning", "Decision reasoning",
-				"Inferential reasoning")); // 8
-		// 13
+				"3",
+				"In the picture is Officer Drew. Is Officer Drew a Male or a Female? Based on the table, with names and gender, what is the frequency of the Name DREW as a MALE?",
+				"1", "1", "2", "3", "4"));
+
 		myDb.addQuestions2(new Question(
 				"4",
-				"It assumes that the presence or absence of a particular feature of a class is unrelated to the presence or absence of any other feature.",
-				"Bayes classifier", "Bayes classifier", "Decision Tree",
-				"K Nearest Neighbor", "Classification")); // 3
-		// 14
-		myDb.addQuestions2(new Question("1",
-				"Bayesian methods are called __________", "eager learners",
-				"lazy learners", "active learners", "eager learners",
-				"passive learners"));// 1
-		// 15
-		myDb.addQuestions2(new Question("14",
-				"This theorem is the cornerstone of all Bayesian methods",
-				"Bayes Theorem", "Classification theorem", "Bayes Theorem",
-				"Probability theorem", "Euclidean theorem")); // 11
+				"In the picture is Officer Drew. Is Officer Drew a Male or a Female? Based on the table, with names and gender, what is the probability that Drew is a female?",
+				"2 out of 8", "1 out of 8", "2 out of 8", "3 out of 8",
+				"4 out of 8"));
+
+		myDb.addQuestions2(new Question(
+				"5",
+				"Given the following probabilities from the data, is Officer Drew a male or a female? \n p(male | drew) = 0.33 \n p(female | drew) = 0.67",
+				"Female, because a probability of 0.67 is higher than 0.33.",
+				"Female, because a probability of 0.67 is higher than 0.33.",
+				"Male, because a probability of 0.33 is less than 0.67.",
+				"None of the above, because the probabilities are too low to classify.",
+				"Drew is an officer."));
+
+		// JO BAGONG PICTURE NAMAN NA DITO SA MGA SUMUNOD NA QUESTION HA. BAKA
+		// LANG MALITO KA
+
+		myDb.addQuestions2(new Question("6",
+				"How many attributes are there from the given table?", "4",
+				"1", "2", "3", "4"));
+
+		myDb.addQuestions2(new Question(
+				"7",
+				"In these tables we have to note that there are _ cases of not being able to play a game, and _ cases of being able to play a game.",
+				"5, 9", "5, 9", "5, 8", "9, 5", "8, 5"));
+
+		myDb.addQuestions2(new Question("8",
+				"Based on the table, how many frequency of the outlook=sunny?",
+				"5", "4", "5", "6", "7"));
+
+		myDb.addQuestions2(new Question(
+				"9",
+				"Given the following probabilities of the data, can we play a game or not? \n P(Play=Yes | X) = 0.2424 \n P(Play=No | X) = 0.9421",
+				"Since 0.9421 is greater than 0.2424 then the answer is ‘no’, we cannot play a game of tennis today.",
+				"Since 0.9421 is greater than 0.2424 then the answer is ‘no’, we cannot play a game of tennis today.",
+				"Since 0.9421 is less than 0.2424 then the answer is ‘yes’, we can play a game of tennis today.",
+				"None of the above because the probabilities are too low to classify",
+				"The probabilities of the data are wrong "));
+
+		myDb.addQuestions2(new Question(
+				"10",
+				"Are the following probabilities correct?  P(Play=Yes) = 9/14 and P(Play=No) = 5/14",
+				"True", "True", "False", "Maybe", "Unknown"));
+
+		// BAGONG PICTURE ULIT TO
+
+		myDb.addQuestions2(new Question("11",
+				"Based on the table, how many attributes are there?", "4", "1",
+				"2", "3", "4"));
+
+		myDb.addQuestions2(new Question(
+				"12",
+				"In these table we have to note that there are _ cases of not stolen, and _ cases of stolen.",
+				"5, 5", "5, 5", "5, 6", "5, 7", "5, 8"));
+
+		myDb.addQuestions2(new Question("13",
+				"Based on the table, how many frequency of the type = sports?",
+				"6", "6", "7", "8", "9"));
+
+		myDb.addQuestions2(new Question(
+				"14",
+				"Given the following probabilities of the data, is the car stolen or not? \n P(STOLEN=Yes | X) = 0.037 \n P(STOLEN=No | X) = 0.069",
+				"Since 0.069 is greater than 0.037 then the answer is ‘no’, the car is not stolen",
+				"Since 0.069 is greater than 0.037 then the answer is ‘no’, the car is not stolen",
+				"Since 0.069 is less than 0.037 then the answer is ‘yes’, the car is stolen",
+				"None of the above because the probabilities are too low to classify",
+				"The probabilities of the data are wrong "));
+
+		myDb.addQuestions2(new Question("15",
+				"What are the attributes of ORIGIN?", "IMPORTED, DOMESTIC",
+				"IMPORTED, DOMESTIC", "SPORTS, SUV", "RED, YELLOW", "YES, NO"));
+
 	}
-	
-	public void instructionDialog(){
+
+	public void instructionDialog() {
 		final Dialog dialog = new Dialog(BayesianRandomQuiz.this);
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		dialog.setContentView(R.layout.dialog_assessment_instruction);
 		dialog.setCancelable(true);
 		dialog.getWindow().setBackgroundDrawable(
-				new ColorDrawable(
-						android.graphics.Color.TRANSPARENT));
+				new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
-		ImageView insokbt = (ImageView) dialog
-				.findViewById(R.id.insokbt);
-		insokbt.setImageResource(R.drawable.backtomainmenu);
+		instructiondesc = (TextView) dialog.findViewById(R.id.instructiondesc);
+		instructiondesc.setText(R.string.assessmentintronaive);
+
+		ImageView insokbt = (ImageView) dialog.findViewById(R.id.insokbt);
+		insokbt.setImageResource(R.drawable.okbutton);
 		insokbt.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View InputFragmentView) {
 				// next
-				
 				dialog.dismiss();
 			}
 		});

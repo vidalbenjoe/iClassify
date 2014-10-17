@@ -38,7 +38,7 @@ public class KNNRandomQuiz extends Activity {
 	String ncourse = "Naive Bayesian";
 	Question question;
 	SQLiteDatabase mdb;
-	TextView tvQue, tvPage, tvRef;
+	TextView tvQue, tvPage, tvRef, instructiondesc;
 	RadioButton rd1, rd2, rd3, rd4;
 	Button bnext;
 	SessionCache QuizSession;
@@ -46,6 +46,7 @@ public class KNNRandomQuiz extends Activity {
 	private Date date;
 	String finalDate;
 	LinearLayout quizlin;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -55,7 +56,7 @@ public class KNNRandomQuiz extends Activity {
 		getActionBar().setBackgroundDrawable(
 				new ColorDrawable(getResources()
 						.getColor(R.color.divider_color)));
-		
+
 		instructionDialog();
 		QuizSession = new SessionCache(getApplicationContext());
 		openDB();
@@ -68,7 +69,7 @@ public class KNNRandomQuiz extends Activity {
 		} else {
 			Log.d("database not empty", "queslist with setno");
 		}
-		
+
 		quizlin = (LinearLayout) findViewById(R.id.quizlin);
 
 		question = quesList.get(qid);
@@ -142,14 +143,13 @@ public class KNNRandomQuiz extends Activity {
 					Log.d("wrong answer", answer.getText() + " is incorrect");
 				}
 				if (qid < 10) {
-					
+
 					question = quesList.get(qid);
 					setQuestionView();
 					grp.clearCheck();
 					tvPage.setText(page + "");
 					bnext.setEnabled(false);
-					
-					
+
 				} else {
 					Intent in = getIntent();
 					int retake = in.getExtras().getInt("retakeNum");
@@ -182,27 +182,27 @@ public class KNNRandomQuiz extends Activity {
 	private void setQuestionView() {
 		tvRef.setText(question.getLid());
 		tvQue.setText(question.getQitem());
-		
+
 		String refNumber = tvRef.getText().toString();
 		int refInt = Integer.parseInt(refNumber);
-		
-		if(refInt <= 3){
-			quizlin.setBackgroundResource(R.drawable.decisiontreequestionimage);
+
+		if (refInt <= 5) {
+			quizlin.setBackgroundResource(R.drawable.knnquestionimage);
 			quizlin.setVisibility(View.VISIBLE);
 			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
-			
-		}else if(refInt >= 4 || refInt <= 9){
-			quizlin.setBackgroundResource(R.drawable.decisiontreequestionimageoutlook);
+
+		} else if (refInt >= 6) {
+			quizlin.setBackgroundResource(R.drawable.knnquestionsix);
 			quizlin.setVisibility(View.VISIBLE);
 			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
-		}else if(refInt == 10){
+		} else if (refInt >= 11) {
+			quizlin.setBackgroundResource(R.drawable.knnquestionlast);
+			quizlin.setVisibility(View.VISIBLE);
+			Log.d("REFERENCE NUMBER:", tvRef.getText().toString());
+		} else {
 			quizlin.setVisibility(View.GONE);
 		}
-		else{
-			quizlin.setVisibility(View.GONE);
-		}
-		
-		
+
 		rd1.setText(question.getOpta());
 		rd2.setText(question.getOptb());
 		rd3.setText(question.getOptc());
@@ -229,8 +229,7 @@ public class KNNRandomQuiz extends Activity {
 	@Override
 	public void onBackPressed() {
 
-		final Dialog dialog = new Dialog(KNNRandomQuiz.this,
-				R.style.DialogAnim);
+		final Dialog dialog = new Dialog(KNNRandomQuiz.this, R.style.DialogAnim);
 
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		dialog.setContentView(R.layout.validate_message);
@@ -283,113 +282,106 @@ public class KNNRandomQuiz extends Activity {
 		dialog.show();
 	}
 
-
 	public void addQuestions1() {
 
-		myDb.addQuestions1(new Question("1",
-				"It was a method first described in the early 1950ï¿½s. ",
-				"K-Nearest-Neighbor Method", "Decision Tree", "Classification",
-				"Naive Bayesian", "K-Nearest-Neighbor Method")); // 1
-		// 2
-		myDb.addQuestions1(new Question(
-				"4",
-				"This are based on learning by analogy, that is, by comparing a given test tuple with training tuples that are similar to it.",
-				"Nearest-Neighbor Classifiers", "Nearest-Neighbor Classifiers",
-				"Decision Tree Deduction", "Decision Tree Classification",
-				"Decision Tree Induction")); // 3
-		// 3
-		myDb.addQuestions1(new Question(
-				"5",
-				"It is the task of predicting continuous (or ordered) values for given input.",
-				"Numeric Prediction", "Decision Tree", "Numeric Prediction",
-				"Decision Tree Classification", "Naive Bayesian")); // 4
-		// 4
-		myDb.addQuestions1(new Question(
-				"13",
-				"It has since been widely used in the area of pattern recognition",
-				"K-Nearest-Neighbor Method", "K-Nearest-Neighbor Method",
-				"Decision Tree Classification", "Naive Bayesian",
-				"Decision Tree")); // 11
-		// 5
-		myDb.addQuestions1(new Question(
-				"10",
-				"K-Nearest-Neighbour Method is labor intensive when given large training sets, and did not gain popularity until the _______ when increased computing power became available.",
-				"1960s", "1960s", "1970s", "1980s", "1990s")); // 9
-		// 6
-		myDb.addQuestions1(new Question(
-				"2",
-				"For k-nearest-neighbor classification, the unknown tuple is assigned the most common class among its k nearest neighbors.",
-				"True", "It depends", "maybe", "false", "True")); // 2
-		// 7
-		myDb.addQuestions1(new Question(
-				"10",
-				"Nearest-neighbor classifiers can be extremely fast when classifying test tuples.",
-				"False", "False", "True", "Maybe", "It Depends"));// 9
-		// 8
-		myDb.addQuestions1(new Question(
-				"22",
-				"It use distance-based comparisons that intrinsically assign equal weight to each attribute. ",
-				"Nearest-Neighbor Classifiers", "Nearest-Neighbor Classifiers",
-				"Decision Tree Classification", "Decision Tree Deduction",
-				"Decision Tree Induction"));// 20
-		// 9
-		myDb.addQuestions1(new Question(
-				"12",
-				"A method to speed up classification time that compute the distance based on a subset of the n attributes.",
-				"Partial Distance Method", "Nearest-Neighbor Classifiers",
-				"Partial Distance Method", "Decision Tree Induction",
-				"Decision Tree"));// 10
-		// 10
-		myDb.addQuestions1(new Question(
-				"12",
-				"A method to speed up classification time that removes training tuples that prove useless.",
-				"Editing Method", "Editing Method", "Partial Method",
-				"General Method", "Changing Method")); // 10
-		// 11
-		myDb.addQuestions1(new Question(
-				"13",
-				"A commonly used distance metric for continuous variables is ____________",
-				"Euclidean distance", "Hamming distance", "Nearest distance",
-				"Euclidean distance", "Bayesian Distance")); // 11
-		// 12
-		myDb.addQuestions1(new Question(
-				"9",
-				"For discrete variables, such as for text classification, another metric can be used, such as the overlap metric",
-				"Hamming distance", "Euclidean distance", "Hamming distance",
-				"Nearest distance", "Bayesian Distance")); // 8
-		// 13
-		myDb.addQuestions1(new Question("4",
-				"If k is too ______, sensitive to noise points", "Small",
-				"High", "Small", "Low", "Large")); // 3
-		// 14
 		myDb.addQuestions1(new Question(
 				"1",
-				"If k is too ______, neighborhood may include points from other classes",
-				"Large", "Small", "Low", "Large", "High"));// 1
-		// 15
-		myDb.addQuestions1(new Question("13",
-				"k-NN classifiers are __________", "Lazy Learners",
-				"Expensive Learners", "Eager Learners", "Lazy Learners",
-				"Classification Learners")); // 11
+				"What is the square to query instance (3,7) of x1 = 7 and x2 = 7 ?",
+				"16", "16", "17", "18", "19"));
+
+		myDb.addQuestions1(new Question(
+				"2",
+				"What is the square to query instance (3,7) of x1 = 7 and x2 = 4 ?",
+				"25", "25", "25", "26", "27"));
+
+		myDb.addQuestions1(new Question(
+				"3",
+				"What is the square to query instance (3,7) of x1= 3 and x2 = 4 ?",
+				"9", "7", "8", "9", "10"));
+
+		myDb.addQuestions1(new Question(
+				"4",
+				"What is the square to query instance (3,7) of x1 = 1 and x2 = 4 ?",
+				"13", "10", "11", "12", "13"));
+
+		myDb.addQuestions1(new Question("5",
+				"Which one is not included in 3-Nearest neighbors?",
+				"Second row", "First row", "Second row", "Third row",
+				"Fourth row"));
+
+		// BAGONG PICTURE
+
+		myDb.addQuestions1(new Question(
+				"6",
+				"According to the illustration, what is the size of K in Figure A?",
+				"1", "1", "2", "3", "4"));
+
+		myDb.addQuestions1(new Question(
+				"7",
+				"According to the illustration, what is the size of K in Figure B?",
+				"2", "1", "2", "3", "4"));
+
+		myDb.addQuestions1(new Question(
+				"8",
+				"According to the illustration, what is the size of K in Figure C?",
+				"3", "1", "2", "3", "4"));
+
+		myDb.addQuestions1(new Question("9",
+				"In Figure C, the unknown record ‘x’ can be classified as?",
+				"Positive", "Male", "Negative", "Female", "Positive"));
+
+		myDb.addQuestions1(new Question("10",
+				"In Figure A, the unknown record ‘x’ can be classified as?",
+				"Positive", "Male", "Negative", "Female", "Positive"));
+
+		// BAGONG PICTURE
+
+		myDb.addQuestions1(new Question("11",
+				"According to the illustration, what is the size of K?", "5",
+				"5", "2", "3", "4"));
+
+		myDb.addQuestions1(new Question("12",
+				"According to the illustration, what is the unknown class?",
+				"Xq", "+", "-", "Xq", "none of these"));
+
+		myDb.addQuestions1(new Question(
+				"13",
+				"According to the illustration, what is the size the training data?",
+				"13", "10", "11", "12", "13"));
+
+		myDb.addQuestions1(new Question(
+				"14",
+				"According to the illustration, if k=5, the unknown record ‘Xq’ can be classified as?",
+				"Negative", "Male", "Female", "Positive", "Negative"));
+
+		myDb.addQuestions1(new Question(
+				"15",
+				"According to the illustration, which of the following statements is true?",
+				"Since K = 5, then in this case query instance xq will be classified as negative since three of its nearest neighbors are classified as negative.",
+				"Since K = 2, then in this case query instance xq will be classified as negative since three of its nearest neighbors are classified as negative.",
+				"Since K = 5, then in this case query instance xq will be classified as negative since three of its nearest neighbors are classified as negative.",
+				"Since K = 3, then in this case query instance xq will be classified as negative since three of its nearest neighbors are classified as negative.",
+				"None of these."));
 
 	}
-	public void instructionDialog(){
+
+	public void instructionDialog() {
 		final Dialog dialog = new Dialog(KNNRandomQuiz.this);
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		dialog.setContentView(R.layout.dialog_assessment_instruction);
 		dialog.setCancelable(true);
 		dialog.getWindow().setBackgroundDrawable(
-				new ColorDrawable(
-						android.graphics.Color.TRANSPARENT));
+				new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
-		ImageView insokbt = (ImageView) dialog
-				.findViewById(R.id.insokbt);
-		insokbt.setImageResource(R.drawable.backtomainmenu);
+		instructiondesc = (TextView) dialog.findViewById(R.id.instructiondesc);
+		instructiondesc.setText(R.string.assessmentintronaive);
+		ImageView insokbt = (ImageView) dialog.findViewById(R.id.insokbt);
+		insokbt.setImageResource(R.drawable.okbutton);
 		insokbt.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View InputFragmentView) {
 				// next
-				
+
 				dialog.dismiss();
 			}
 		});

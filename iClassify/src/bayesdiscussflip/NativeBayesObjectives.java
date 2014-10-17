@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 import com.capstoneii.iclassify.videos.VideoMenuActivity;
+
+import drawer.MainDrawerActivity;
 
 public class NativeBayesObjectives extends ActionBarActivity {
 	TextView titleobjectives;
@@ -56,5 +59,19 @@ public class NativeBayesObjectives extends ActionBarActivity {
 			}
 		});
 		
+	}
+	
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			Intent intent2 = new Intent(this, MainDrawerActivity.class);
+			intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent2);
+			this.finish();
+			// app icon in action bar clicked; go home
+			return true;
+			
+		}
+		return true;
 	}
 }

@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:orientation="vertical"
-    android:background="#E8CB8B" >
+    android:background="@color/divider_color" >
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -18,7 +18,8 @@
         android:gravity="center"
         android:text="You have taken this quiz, Do you want overwrite your previous record?"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#000" />
+        android:textStyle="bold"
+        android:textColor="#fff" />
 </FrameLayout>
 
     <LinearLayout

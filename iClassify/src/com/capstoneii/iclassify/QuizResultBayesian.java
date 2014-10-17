@@ -5,16 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 
-import knearestdiscussflip.KNearestLayoutActivity;
-
-import bayesdiscussflip.NativeBayesLayoutActivity;
-
-import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop;
-import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
-import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord;
-import com.capstoneii.iclassify.dbclasses.DBAdapter;
-import com.capstoneii.iclassify.dbclasses.TempQuestion;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
@@ -37,6 +27,12 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import bayesdiscussflip.NativeBayesLayoutActivity;
+
+import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop;
+import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
+import com.capstoneii.iclassify.dbclasses.DBAdapter;
+import com.capstoneii.iclassify.dbclasses.TempQuestion;
 
 public class QuizResultBayesian extends Activity implements AnimationListener {
 
@@ -44,7 +40,7 @@ public class QuizResultBayesian extends Activity implements AnimationListener {
 	TextView correct;
 	TextView wrong;
 	TextView mesg;
-	Button bscorelog, bqresult;
+	Button bscorelog, bqresult, retakequiz;
 	int correctans, wrongans;
 	String me;
 	int score;
@@ -125,7 +121,7 @@ public class QuizResultBayesian extends Activity implements AnimationListener {
 		mesg = (TextView) findViewById(R.id.tvMesg);
 		bscorelog = (Button) findViewById(R.id.bSlog);
 		bqresult = (Button) findViewById(R.id.bQview);
-
+		retakequiz = (Button) findViewById(R.id.retakequiz);
 		Bundle g = getIntent().getExtras();
 		setq = g.getInt("qno");
 		score = g.getInt("score");
@@ -191,164 +187,11 @@ public class QuizResultBayesian extends Activity implements AnimationListener {
 				populateQwithdb();
 			}
 		});
-	}
-
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-	}
-
-	private void openDB() {
-		myDb = new DBAdapter(this);
-		myDb.open();
-	}
-
-	@SuppressWarnings("deprecation")
-	private void populateSwithdb() {
-
-		final Dialog dialog = new Dialog(this, R.style.DialogAnim);
-		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		dialog.setContentView(R.layout.activity_quizhistory);
-
-		TextView tvQuizChapter = (TextView) dialog
-				.findViewById(R.id.tvchapterName);
-		TextView tvLastQuiz = (TextView) dialog
-				.findViewById(R.id.tvlastquizhistory);
-		ListView myList = (ListView) dialog.findViewById(R.id.listofhistory);
-		cr = myDb.getAllscorewithChapter("Naive Bayesian 1");
-		startManagingCursor(cr);
-
-		tvQuizChapter.setText("" + ncourse + " Chapter 1");
-		tvLastQuiz.setText(" " + tdate + "");
-
-		String[] fromFieldNames = new String[] { DBAdapter._NAME,
-				DBAdapter._QDETAILS, DBAdapter._DATE, DBAdapter._SCORE };
-		int[] toViewIDs = new int[] { R.id.tvQuiztitle, R.id.tvQdetails,
-				R.id.tvQdatetaken, R.id.tvQscore };
-
-		SimpleCursorAdapter myCursorAdapter = new SimpleCursorAdapter(this,
-				R.layout.history_layout, cr, fromFieldNames, toViewIDs);
-		myList.setAdapter(myCursorAdapter);
-		dialog.show();
-	}
-
-	@SuppressWarnings("deprecation")
-	private void populateQwithdb() {
-
-		final Dialog dialog = new Dialog(this, R.style.DialogAnim);
-		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		dialog.setContentView(R.layout.activity_summary);
-		ListView myList = (ListView) dialog.findViewById(R.id.listquest);
-		Cursor cr = myDb.getAlltempRows();
-		startManagingCursor(cr);
-
-		String[] fromFieldNames = new String[] { DBAdapter.TEMP_Q_ITEM,
-				DBAdapter.TEMP_UANS, DBAdapter.TEMP_ANS };
-		int[] toViewIDs = new int[] { R.id.questiontv, R.id.useranswertv,
-				R.id.trueanswertv };
-
-		SimpleCursorAdapter myCursorAdapter = new SimpleCursorAdapter(this, // Context
-				R.layout.question_item, // Row layout template
-				cr, // cursor (set of DB records to map)
-				fromFieldNames, // DB Column names
-				toViewIDs // View IDs to put information in
-		);
-		myList.setAdapter(myCursorAdapter);
-		myList.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-
-				Cursor cursor = myDb.getRow(id);
-				if (cursor.moveToFirst()) {
-					long idDb = cursor.getLong(DBAdapter.COL_ROWID);
-					int qset = Integer.parseInt(cursor
-							.getString(DBAdapter.COL_SETID));
-					int item = Integer.parseInt(cursor
-							.getString(DBAdapter.COL_REFID));
-					String qitem = cursor.getString(DBAdapter.COL_QITEM);
-					String qans = cursor.getString(DBAdapter.COL_QANS);
-					String quans = cursor.getString(DBAdapter.COL_QUANS);
-
-					String Message = "Lesson" + (item + 1) + ".";
-
-					Toast.makeText(getApplicationContext(), Message,
-							Toast.LENGTH_LONG).show();
-					Bundle b = new Bundle();
-					b.putInt("item", item);
-					Intent intent = new Intent(getApplicationContext(),
-							NativeBayesLayoutActivity.class);
-					intent.putExtras(b);
-					startActivity(intent);
-				}
-				cursor.close();
-			}
-		});
-		dialog.show();
-	}
-
-	@Override
-	public void onAnimationStart(Animation animation) {
-
-		if (animation == bounce_in1) {
-			correct.setVisibility(View.VISIBLE);
-		}
-		if (animation == bounce_in2) {
-			wrong.setVisibility(View.VISIBLE);
-		}
-		if (animation == fade_in) {
-			bscorelog.setVisibility(View.VISIBLE);
-			bqresult.setVisibility(View.VISIBLE);
-		}
-	}
-
-	@Override
-	public void onAnimationEnd(Animation animation) {
-		if (animation == bounce_in1) {
-			wrong.clearAnimation();
-			wrong.startAnimation(bounce_in2);
-		}
-		if (animation == bounce_in2) {
-			bscorelog.startAnimation(fade_in);
-			bqresult.startAnimation(fade_in);
-		}
-		if (animation == bounce_in2) {
-			tvcorrect.startAnimation(bounce_in3);
-			tvwrong.startAnimation(bounce_in3);
-		}
-	}
-
-	public void obtlDialog() {
-		final Dialog dialog = new Dialog(QuizResultBayesian.this,
-				R.style.DialogAnim);
-		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		dialog.setContentView(R.layout.validate_message);
-		dialog.setCancelable(false);
-		Button bOk = (Button) dialog.findViewById(R.id.buttonOk);
-		bOk.setText("YES");
-		Button bCancel = (Button) dialog.findViewById(R.id.buttonCancel);
-		bOk.setText("YES");
-		bCancel.setText("Retake the Quiz");
-		TextView question = (TextView) dialog.findViewById(R.id.tvalertmessage);
-
-		question.setText("Would you like to try extra activity?");
-
-		bOk.setOnClickListener(new OnClickListener() {
-
+		
+		retakequiz.setOnClickListener(new OnClickListener() {
+			
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(QuizResultBayesian.this,
-						BayesianAssessmentDragAndDrop.class);
-				QuizResultBayesian.this.startActivity(intent);
-				QuizResultBayesian.this.finish();
-				dialog.dismiss();
-			}
-		});
-
-		bCancel.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-
 				if (QuizSession.hasFlQuiz2()) {
 
 					final Dialog dialog = new Dialog(QuizResultBayesian.this,
@@ -540,6 +383,164 @@ public class QuizResultBayesian extends Activity implements AnimationListener {
 					QuizResultBayesian.this.finish();
 
 				}
+			}
+		});
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+	}
+
+	private void openDB() {
+		myDb = new DBAdapter(this);
+		myDb.open();
+	}
+
+	@SuppressWarnings("deprecation")
+	private void populateSwithdb() {
+
+		final Dialog dialog = new Dialog(this, R.style.DialogAnim);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.activity_quizhistory);
+
+		TextView tvQuizChapter = (TextView) dialog
+				.findViewById(R.id.tvchapterName);
+		TextView tvLastQuiz = (TextView) dialog
+				.findViewById(R.id.tvlastquizhistory);
+		ListView myList = (ListView) dialog.findViewById(R.id.listofhistory);
+		cr = myDb.getAllscorewithChapter("Naive Bayesian 1");
+		startManagingCursor(cr);
+
+		tvQuizChapter.setText("" + ncourse + " Chapter 1");
+		tvLastQuiz.setText(" " + tdate + "");
+
+		String[] fromFieldNames = new String[] { DBAdapter._NAME,
+				DBAdapter._QDETAILS, DBAdapter._DATE, DBAdapter._SCORE };
+		int[] toViewIDs = new int[] { R.id.tvQuiztitle, R.id.tvQdetails,
+				R.id.tvQdatetaken, R.id.tvQscore };
+
+		SimpleCursorAdapter myCursorAdapter = new SimpleCursorAdapter(this,
+				R.layout.history_layout, cr, fromFieldNames, toViewIDs);
+		myList.setAdapter(myCursorAdapter);
+		dialog.show();
+	}
+
+	@SuppressWarnings("deprecation")
+	private void populateQwithdb() {
+
+		final Dialog dialog = new Dialog(this, R.style.DialogAnim);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.activity_summary);
+		ListView myList = (ListView) dialog.findViewById(R.id.listquest);
+		Cursor cr = myDb.getAlltempRows();
+		startManagingCursor(cr);
+
+		String[] fromFieldNames = new String[] { DBAdapter.TEMP_Q_ITEM,
+				DBAdapter.TEMP_UANS, DBAdapter.TEMP_ANS };
+		int[] toViewIDs = new int[] { R.id.questiontv, R.id.useranswertv,
+				R.id.trueanswertv };
+
+		SimpleCursorAdapter myCursorAdapter = new SimpleCursorAdapter(this, // Context
+				R.layout.question_item, // Row layout template
+				cr, // cursor (set of DB records to map)
+				fromFieldNames, // DB Column names
+				toViewIDs // View IDs to put information in
+		);
+		myList.setAdapter(myCursorAdapter);
+		myList.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+
+				Cursor cursor = myDb.getRow(id);
+				if (cursor.moveToFirst()) {
+					long idDb = cursor.getLong(DBAdapter.COL_ROWID);
+					int qset = Integer.parseInt(cursor
+							.getString(DBAdapter.COL_SETID));
+					int item = Integer.parseInt(cursor
+							.getString(DBAdapter.COL_REFID));
+					String qitem = cursor.getString(DBAdapter.COL_QITEM);
+					String qans = cursor.getString(DBAdapter.COL_QANS);
+					String quans = cursor.getString(DBAdapter.COL_QUANS);
+
+					String Message = "Lesson" + (item + 1) + ".";
+
+					Toast.makeText(getApplicationContext(), Message,
+							Toast.LENGTH_LONG).show();
+					Bundle b = new Bundle();
+					b.putInt("item", item);
+					Intent intent = new Intent(getApplicationContext(),
+							NativeBayesLayoutActivity.class);
+					intent.putExtras(b);
+					startActivity(intent);
+				}
+				cursor.close();
+			}
+		});
+		dialog.show();
+	}
+
+	@Override
+	public void onAnimationStart(Animation animation) {
+
+		if (animation == bounce_in1) {
+			correct.setVisibility(View.VISIBLE);
+		}
+		if (animation == bounce_in2) {
+			wrong.setVisibility(View.VISIBLE);
+		}
+		if (animation == fade_in) {
+			bscorelog.setVisibility(View.VISIBLE);
+			bqresult.setVisibility(View.VISIBLE);
+		}
+	}
+
+	@Override
+	public void onAnimationEnd(Animation animation) {
+		if (animation == bounce_in1) {
+			wrong.clearAnimation();
+			wrong.startAnimation(bounce_in2);
+		}
+		if (animation == bounce_in2) {
+			bscorelog.startAnimation(fade_in);
+			bqresult.startAnimation(fade_in);
+		}
+		if (animation == bounce_in2) {
+			tvcorrect.startAnimation(bounce_in3);
+			tvwrong.startAnimation(bounce_in3);
+		}
+	}
+
+	public void obtlDialog() {
+		final Dialog dialog = new Dialog(QuizResultBayesian.this,
+				R.style.DialogAnim);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.validate_message);
+		dialog.setCancelable(false);
+		Button bOk = (Button) dialog.findViewById(R.id.buttonOk);
+		Button bCancel = (Button) dialog.findViewById(R.id.buttonCancel);
+		bOk.setText("Yes");
+		bCancel.setText("No");
+		TextView question = (TextView) dialog.findViewById(R.id.tvalertmessage);
+
+		question.setText("Would you like to try extra activity?");
+
+		bOk.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(QuizResultBayesian.this,
+						BayesianAssessmentDragAndDrop.class);
+				QuizResultBayesian.this.startActivity(intent);
+				QuizResultBayesian.this.finish();
+				dialog.dismiss();
+			}
+		});
+
+		bCancel.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
 				dialog.dismiss();
 			}
 		});

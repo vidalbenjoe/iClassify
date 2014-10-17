@@ -12,7 +12,7 @@
     
     <LinearLayout 
         android:layout_width="match_parent"
-        android:layout_height="25dp"
+        android:layout_height="50dp"
         android:layout_weight="0"
         android:background="@color/divider_color"
         >
@@ -21,17 +21,17 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:textColor="#fff"
-            android:textSize="12sp"
+            android:textSize="25sp"
             android:gravity="center"
             android:layout_gravity="center"
-            android:text="Instruction"
+            android:text="Introduction"
             android:layout_weight="1"
             android:textStyle="bold"/>
         
         </LinearLayout>
 
     <FrameLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" >
         
      
@@ -49,13 +49,12 @@
            <TextView 
             android:id="@+id/instructiondesc"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:textColor="#fff"
             android:textSize="20sp"
             android:layout_gravity="center"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:text="@string/assessmentinstrucdesc"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
             android:textStyle="bold"/>
@@ -69,17 +68,15 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="30dp">
         
-      
         <ImageView
             android:id="@+id/insokbt"
             android:layout_width="wrap_content"
        		android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_margin="10dp"
-            android:layout_below="@+id/table_img"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:background="@drawable/simulnextbt"
+            android:background="@drawable/okbutton"
             android:layout_marginBottom="30dp" />
     </RelativeLayout>
    

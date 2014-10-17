@@ -27,9 +27,8 @@ import com.capstoneii.iclassify.SessionCache;
 import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 
-import drawer.MainDrawerActivity;
 
-@SuppressLint("NewApi")
+@SuppressLint({ "NewApi", "SimpleDateFormat" })
 public class DescTreeLayoutActivity extends ActionBarActivity {
   private FlipViewController flipView;
   	DBAdapter myDb;
@@ -110,7 +109,7 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
   public boolean onOptionsItemSelected(MenuItem item) { 
     switch (item.getItemId()) {
   case android.R.id.home:
-	  Intent intent3 = new Intent(this, MainDrawerActivity.class);
+	  Intent intent3 = new Intent(this, DescTreeObjectives.class);
       intent3.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
       startActivity(intent3);
       this.finish();
