@@ -381,10 +381,34 @@ public class KNNRandomQuiz extends Activity {
 			@Override
 			public void onClick(View InputFragmentView) {
 				// next
-
+				directionAssess();
 				dialog.dismiss();
 			}
 		});
 		dialog.show();
 	}
+	
+	public void directionAssess(){
+		final Dialog dialog1 = new Dialog(this);
+		dialog1.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog1.setContentView(R.layout.transparent_popuptext);
+		dialog1.setCancelable(true);
+		dialog1.setCanceledOnTouchOutside(true);
+		dialog1.getWindow().setBackgroundDrawable(
+				new ColorDrawable(android.graphics.Color.TRANSPARENT));
+		final ImageView transpaimage = (ImageView) dialog1
+				.findViewById(R.id.transpaimage2);
+		transpaimage.setVisibility(View.VISIBLE);
+		transpaimage.setImageResource(R.drawable.directionassimage);
+		transpaimage.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View InputFragmentView) {
+				transpaimage.setVisibility(View.GONE);
+				dialog1.cancel();
+			}
+		});
+	}
+	
+	
+	
 }

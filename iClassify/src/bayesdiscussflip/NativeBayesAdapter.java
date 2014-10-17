@@ -16,8 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.BaseAdapter;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.aphidmobile.utils.AphidLog;
 import com.aphidmobile.utils.IO;
@@ -26,6 +28,9 @@ import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.TouchImageView;
 
 public class NativeBayesAdapter extends BaseAdapter {
+
+	boolean isChecked;
+	ToggleButton toggleButton;
 
 	private LayoutInflater inflater;
 
@@ -38,6 +43,7 @@ public class NativeBayesAdapter extends BaseAdapter {
 	private TouchImageView zoomerImageZoom;
 
 	public DecimalFormat df;
+
 	public NativeBayesAdapter(Context context) {
 		inflater = LayoutInflater.from(context);
 		desctreeData = new ArrayList<NativeBayesData.Data>(
@@ -115,11 +121,10 @@ public class NativeBayesAdapter extends BaseAdapter {
 						zoomerImageZoom.setImageBitmap(IO.readBitmap(inflater
 								.getContext().getAssets(), data.imageFilename));
 
-						zoomerImageZoom.setOnClickListener(new View.OnClickListener() {
+						zoomerImageZoom
+								.setOnClickListener(new View.OnClickListener() {
 									@Override
 									public void onClick(View InputFragmentView) {
-										// next
-
 										dialog.dismiss();
 									}
 								});
@@ -137,10 +142,33 @@ public class NativeBayesAdapter extends BaseAdapter {
 		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 				layout, R.id.description).toggle();
 
-		String toSpeak = UI
+		final String toSpeak = UI
 				.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 						layout, R.id.description).getText().toString();
-		tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+
+		UI.<ToggleButton> findViewById(layout, R.id.toggleButton);
+		UI.<ToggleButton> findViewById(layout, R.id.toggleButton)
+				.setOnCheckedChangeListener(
+						new CompoundButton.OnCheckedChangeListener() {
+
+							@Override
+							public void onCheckedChanged(
+									CompoundButton buttonView, boolean isChecked) {
+
+								if (isChecked) {
+									
+									tts.speak(toSpeak,
+											TextToSpeech.QUEUE_ADD, null);
+
+								} else {
+
+									tts.stop();
+									tts.shutdown();
+
+								}
+							}
+						});
+
 		return layout;
 	}
 
@@ -162,6 +190,7 @@ public class NativeBayesAdapter extends BaseAdapter {
 			tts.stop();
 			tts.shutdown();
 		}
+
 	}
 
 }

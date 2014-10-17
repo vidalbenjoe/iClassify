@@ -293,13 +293,13 @@ public class DecisionTreeRandomQuiz extends Activity {
 	public void addQuestions3() {
 		myDb.addQuestions3(new Question(
 				"1",
-				"Based on the decision tree, what could be the gender of this Simpson�s Character:Marge has a hair length of 10 inches and a weight of 250 lbs.",
+				"Based on the decision tree, what could be the gender of this Simpson's Character:Marge has a hair length of 10 inches and a weight of 150 lbs.",
 				"Female", "Male", "Female", "Unknown", "None of these")); // 1
 		// 2
 
 		myDb.addQuestions3(new Question(
-				"22",
-				"Based on the decision tree, what could be the gender of this Simpson�s Character:Otto has a hair length of 10 inches and a weight of 180 lbs",
+				"2",
+				"Based on the decision tree, what could be the gender of this Simpson's Character:Otto has a hair length of 10 inches and a weight of 180 lbs",
 				"Male", "Male", "Female", "Unknown", "None of these"));
 		// 4
 		myDb.addQuestions3(new Question(
@@ -319,7 +319,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 
 		// OTHER SET OF QUESTION IMAGE --- WEATHER OUTLOOK
 		myDb.addQuestions3(new Question("5",
-				"Based on the decision tree, what are the �attributes�?",
+				"Based on the decision tree, what are the 'attributes'",
 				"HAIR LENGTH and WEIGHT", "MALE and FEMALE",
 				"HAIR LENGTH and WEIGHT", "HAIR LENGTH and FEMALE",
 				"MALE and WEIGHT")); // 4
@@ -353,7 +353,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 				"STRONG, WEAK"));
 
 		myDb.addQuestions3(new Question("10",
-				"Based on the decision tree, what are the �attributes�?",
+				"Based on the decision tree, what are the 'attributes'",
 				"OUTLOOK, HUMIDITY and WIND", "OUTLOOK, HUMIDITY and WIND",
 				"SUNNY, OVERCAST, RAINY", "STRONG, WEAK", "HIGH, NORMAL"));
 		// TRHID SET
@@ -365,7 +365,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 
 		myDb.addQuestions3(new Question(
 				"12",
-				"Based on the decision tree, what are the attribute values of ‘TYPE’?",
+				"Based on the decision tree, what are the attribute values of '�TYPE'?",
 				"CAR, MINI VAN, SUV", "NEGATIVE, POSITIVE",
 				"CAR, MINI VAN, SUV", "TYPE, DOORS, TIRES", "DOORS, TIRES"));
 
@@ -405,11 +405,32 @@ public class DecisionTreeRandomQuiz extends Activity {
 			@Override
 			public void onClick(View InputFragmentView) {
 				// next
-
+				directionAssess();
 				dialog.dismiss();
 			}
 		});
 		dialog.show();
+	}
+	
+	public void directionAssess(){
+		final Dialog dialog2 = new Dialog(this);
+		dialog2.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog2.setContentView(R.layout.transparent_popuptext);
+		dialog2.setCancelable(false);
+		dialog2.setCanceledOnTouchOutside(false);
+		dialog2.getWindow().setBackgroundDrawable(
+				new ColorDrawable(android.graphics.Color.TRANSPARENT));
+		final ImageView transpaimage = (ImageView) dialog2
+				.findViewById(R.id.transpaimage2);
+		transpaimage.setVisibility(View.VISIBLE);
+		transpaimage.setImageResource(R.drawable.directionassimage);
+		transpaimage.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View InputFragmentView) {
+				transpaimage.setVisibility(View.GONE);
+				dialog2.dismiss();
+			}
+		});
 	}
 
 }

@@ -18,7 +18,26 @@
         android:textColor="@android:color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
-
+    
+    
+     <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+     <ToggleButton
+                android:id="@+id/toggleButton"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:background="@drawable/bttogglespeech"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:button="@null"
+                android:textOff=""
+                android:textOn="" />
+    
+</RelativeLayout>
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,6 +54,9 @@
             android:scaleType="matrix"
             android:layout_centerHorizontal="true"
             android:background="@drawable/imageborder" />
+        
+         
+   
     </RelativeLayout>
 
     <com.capstoneii.iclassify.library.SecretTextView
@@ -50,4 +72,6 @@
         android:textAppearance="@android:style/TextAppearance.Medium"
         android:textColor="@android:color/white" />
 
+   
+    
 </LinearLayout>

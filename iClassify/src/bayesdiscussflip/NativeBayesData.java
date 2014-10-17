@@ -3,9 +3,6 @@ package bayesdiscussflip;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public class NativeBayesData {
 
   public static final List<Data> IMG_DESCRIPTIONS = new ArrayList<Data>();
@@ -33,24 +30,19 @@ public class NativeBayesData {
             "The <b>contribution of predictors</b> can also be visualized by plotting nomograms. Nomogram plots log odds ratios for each value of each predictor. Lengths of the lines correspond to spans of odds ratios, suggesting importance of the related predictor. It also shows impacts of individual values of the predictor."
            ));
 
-   
   }
-
   public static final class Data {
 
     public final String title;
     public final String imageFilename;
     public final String description;
     
-
- 
     private Data(String title, String imageFilename, String description
                  ) {
       this.title = title;
       this.imageFilename = imageFilename;
       this.description = description;
       
-  
     }
   }
 }

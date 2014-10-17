@@ -56,7 +56,7 @@ public class BayesianRandomQuiz extends Activity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_quiz);
-
+		
 		getActionBar().setBackgroundDrawable(
 				new ColorDrawable(getResources()
 						.getColor(R.color.divider_color)));
@@ -401,9 +401,31 @@ public class BayesianRandomQuiz extends Activity {
 			@Override
 			public void onClick(View InputFragmentView) {
 				// next
-				dialog.dismiss();
+				directionAssess();
+				dialog.cancel();
 			}
 		});
 		dialog.show();
+	}
+
+	public void directionAssess() {
+		final Dialog dialog3 = new Dialog(this);
+		dialog3.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog3.setContentView(R.layout.transparent_popuptext);
+		dialog3.setCancelable(false);
+		dialog3.setCanceledOnTouchOutside(true);
+		dialog3.getWindow().setBackgroundDrawable(
+				new ColorDrawable(android.graphics.Color.TRANSPARENT));
+		final ImageView transpaimage = (ImageView) dialog3
+				.findViewById(R.id.transpaimage2);
+		transpaimage.setVisibility(View.VISIBLE);
+		transpaimage.setImageResource(R.drawable.directionassimage);
+		transpaimage.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View InputFragmentView) {
+				transpaimage.setVisibility(View.GONE);
+				dialog3.cancel();
+			}
+		});
 	}
 }

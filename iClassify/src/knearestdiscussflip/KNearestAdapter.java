@@ -19,8 +19,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.BaseAdapter;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.aphidmobile.utils.AphidLog;
 import com.aphidmobile.utils.IO;
@@ -34,11 +36,11 @@ public class KNearestAdapter extends BaseAdapter {
 	private int repeatCount = 1;
 
 	private List<KNearestData.Data> desctreeData;
-	
-	   private ImageView zoomerImageZoom;
-	   private Matrix matrix = new Matrix();
-	   private float scale = 1f;
-	   private ScaleGestureDetector SGD;
+
+	private ImageView zoomerImageZoom;
+	private Matrix matrix = new Matrix();
+	private float scale = 1f;
+	private ScaleGestureDetector SGD;
 
 	MediaPlayer knnone, knntwo, knnthree, knnfour, knnfive;
 
@@ -109,36 +111,38 @@ public class KNearestAdapter extends BaseAdapter {
 				IO.readBitmap(inflater.getContext().getAssets(),
 						data.imageFilename));
 
-		UI.<ImageView> findViewById(layout, R.id.photo).setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View InputFragmentView)
-            {
-				final Dialog dialog = new Dialog(InputFragmentView.getContext());
-				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-				dialog.setContentView(R.layout.image_zoomer_dialog);
-				dialog.setCancelable(true);
-				dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-			    SGD = new ScaleGestureDetector(InputFragmentView.getContext(),new ScaleListener());
-				zoomerImageZoom = (ImageView) dialog.findViewById(R.id.zoomerImageZoom);
-				
-				zoomerImageZoom.setImageBitmap(
-						IO.readBitmap(inflater.getContext().getAssets(),
-								data.imageFilename));
-				
-				
-				zoomerImageZoom.setOnClickListener(new View.OnClickListener() {
-							@Override
-							public void onClick(
-									View InputFragmentView) {
-								// next
-								
-								dialog.dismiss();
-							}
-						});
-				dialog.show();
-            }
-        });
+		UI.<ImageView> findViewById(layout, R.id.photo).setOnClickListener(
+				new View.OnClickListener() {
+					@Override
+					public void onClick(View InputFragmentView) {
+						final Dialog dialog = new Dialog(InputFragmentView
+								.getContext());
+						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+						dialog.setContentView(R.layout.image_zoomer_dialog);
+						dialog.setCancelable(true);
+						dialog.getWindow().setBackgroundDrawable(
+								new ColorDrawable(
+										android.graphics.Color.TRANSPARENT));
+						SGD = new ScaleGestureDetector(InputFragmentView
+								.getContext(), new ScaleListener());
+						zoomerImageZoom = (ImageView) dialog
+								.findViewById(R.id.zoomerImageZoom);
+
+						zoomerImageZoom.setImageBitmap(IO.readBitmap(inflater
+								.getContext().getAssets(), data.imageFilename));
+
+						zoomerImageZoom
+								.setOnClickListener(new View.OnClickListener() {
+									@Override
+									public void onClick(View InputFragmentView) {
+										// next
+
+										dialog.dismiss();
+									}
+								});
+						dialog.show();
+					}
+				});
 
 		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 				layout, R.id.description).setText(
@@ -150,11 +154,31 @@ public class KNearestAdapter extends BaseAdapter {
 		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 				layout, R.id.description).toggle();
 
-		String toSpeak = UI
+		final String toSpeak = UI
 				.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 						layout, R.id.description).getText().toString();
-		tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
-		
+		UI.<ToggleButton> findViewById(layout, R.id.toggleButton);
+		UI.<ToggleButton> findViewById(layout, R.id.toggleButton)
+				.setOnCheckedChangeListener(
+						new CompoundButton.OnCheckedChangeListener() {
+
+							@Override
+							public void onCheckedChanged(
+									CompoundButton buttonView, boolean isChecked) {
+
+								if (isChecked) {
+									tts.speak(toSpeak,
+											TextToSpeech.QUEUE_FLUSH, null);
+
+								} else {
+
+									tts.stop();
+									tts.shutdown();
+
+								}
+							}
+						});
+
 		return layout;
 	}
 
@@ -170,31 +194,29 @@ public class KNearestAdapter extends BaseAdapter {
 			tts.shutdown();
 		}
 	}
+
 	public void onDestroy() {
 		if (tts != null) {
 			tts.stop();
 			tts.shutdown();
 		}
 	}
-	
-	
-	
-	
-	   public boolean onTouchEvent(MotionEvent ev) {
-		      SGD.onTouchEvent(ev);
-		      return true;
-		   }
 
-		 private class ScaleListener extends ScaleGestureDetector.
-		   SimpleOnScaleGestureListener {
-		   @Override
-		   public boolean onScale(ScaleGestureDetector detector) {
-		      scale *= detector.getScaleFactor();
-		      scale = Math.max(0.1f, Math.min(scale, 5.0f));
-		      matrix.setScale(scale, scale);
-		      zoomerImageZoom.setImageMatrix(matrix);
-		      return true;
-		   }
+	public boolean onTouchEvent(MotionEvent ev) {
+		SGD.onTouchEvent(ev);
+		return true;
+	}
+
+	private class ScaleListener extends
+			ScaleGestureDetector.SimpleOnScaleGestureListener {
+		@Override
+		public boolean onScale(ScaleGestureDetector detector) {
+			scale *= detector.getScaleFactor();
+			scale = Math.max(0.1f, Math.min(scale, 5.0f));
+			matrix.setScale(scale, scale);
+			zoomerImageZoom.setImageMatrix(matrix);
+			return true;
 		}
+	}
 
 }

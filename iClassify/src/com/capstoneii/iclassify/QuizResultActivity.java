@@ -26,6 +26,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop;
 import com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop;
 import com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
@@ -447,7 +448,12 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 							
 							String Message = "Lesson"+ (item +1) +".";
 
-							Toast.makeText(getApplicationContext(), Message, Toast.LENGTH_LONG).show();
+							//Toast.makeText(getApplicationContext(), Message, Toast.LENGTH_LONG).show();
+							
+							Toast.makeText(getApplicationContext(),
+									"We encourage you to read all the chapter again",
+									Toast.LENGTH_SHORT).show();
+							
 							Bundle b = new Bundle();
 							b.putInt("item", item);
 							Intent intent =new Intent(getApplicationContext(), KNearestLayoutActivity.class);
@@ -528,7 +534,7 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 		bCancel.setText("No");
 		TextView question = (TextView) dialog.findViewById(R.id.tvalertmessage);
 
-		question.setText("Would you like to try extra activity?");
+		question.setText("Your score is less than 5.Would you like to try extra activity?");
 
 		bOk.setOnClickListener(new OnClickListener() {
 			@Override
