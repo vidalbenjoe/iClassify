@@ -7,7 +7,7 @@
     <string name="empty" />
     <string name="md__drawerOpenIndicatorDesc">Close drawer</string>
     <string name="md__drawerClosedIndicatorDesc">Open drawer</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="imgdesc">imgdesc</string>
     <string name="goback">Go Back</string>

@@ -139,6 +139,11 @@
         <activity
             android:name="com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz"
             android:theme="@style/Theme.AppCompat.Light" />
+        
+        <activity
+            android:name="com.capstoneii.iclassify.problems.SimpsonQuizProblemResult"
+            android:theme="@style/Theme.AppCompat.Light" />
+        ;
     </application>
 
 </manifest>

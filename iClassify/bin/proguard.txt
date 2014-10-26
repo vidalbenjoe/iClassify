@@ -1,3 +1,4 @@
+# view res/layout/pager_view.xml #generated:2
 # view res/layout/viewpager_main.xml #generated:8
 -keep class android.support.v4.view.ViewPager { <init>(...); }
 
@@ -152,6 +153,9 @@
 # view res/layout/simpson_male_classifier_layout.xml #generated:8
 # view res/layout/simpson_table_fragment.xml #generated:9
 -keep class com.capstoneii.iclassify.library.TypewriterTextView { <init>(...); }
+
+# view AndroidManifest.xml #generated:149
+-keep class com.capstoneii.iclassify.problems.SimpsonQuizProblemResult { <init>(...); }
 
 # view AndroidManifest.xml #generated:124
 -keep class com.capstoneii.iclassify.problems.SimpsonsDecisionTreeFragment { <init>(...); }

@@ -17,7 +17,7 @@ import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.SecretTextView;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
-public class SimpsonTableFragment  extends Fragment {
+public class SimpsonTableFragment extends Fragment {
 	 SecretTextView secretTextView;
 	 ImageView simpsoneTable;
 	 Button nextProcBt;

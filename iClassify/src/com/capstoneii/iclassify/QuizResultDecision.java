@@ -10,6 +10,8 @@ import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz;
 import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.dbclasses.TempQuestion;
+import com.capstoneii.iclassify.problems.SimpsonQuizProblemResult;
+import com.capstoneii.iclassify.problems.SimpsonTableFragment;
 
 import descisiondiscussflip.DescTreeLayoutActivity;
 
@@ -112,7 +114,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 			quizdetails = "Quiz has been taken " + retake + " times";
 		}
 
-		myDb.addjsquiz(1, "Decision Tree 1", quizdetails, quizaverage);
+		myDb.addjsquiz(1, "Decision Tree", quizdetails, quizaverage);
 
 		tvcorrect = (TextView) findViewById(R.id.txtcorrect);
 		tvwrong = (TextView) findViewById(R.id.txtwrong);
@@ -220,7 +222,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 							public void onClick(View v) {
 
 								// delete the record
-								myDb.deleteQuiz("Naive Bayesian");
+								myDb.deleteQuiz("Decision Tree");
 
 								// store last quiz session for
 								// JS and for all the
@@ -232,7 +234,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 								// user wants to
 								// overwrite the first take of
 								// quiz
-								myDb.deletescorerowSet(1, "Naive Bayesian 1");
+								myDb.deletescorerowSet(1, "Decision Tree");
 
 								// get the retake value + 1
 								// sum is 4 so when the user try
@@ -243,7 +245,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 								// will appear
 								// "You have taken this 4 times"
 								int sum = retake + 1;
-								myDb.addjsquiz(1, "Naive Bayesian", "", "0 %");
+								myDb.addjsquiz(1, "Decision Tree", "", "0 %");
 
 								QuizSession.FinishSessionNum1(Integer
 										.toString(sum));
@@ -275,15 +277,15 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 						bYes.setOnClickListener(new OnClickListener() {
 							@Override
 							public void onClick(View v) {
-								myDb.deleteQuiz("Naive Bayesian");
+								myDb.deleteQuiz("Decision Tree");
 
 								QuizSession.StoreFlLastQuizTaken(finalDate);
 								QuizSession.StoreAllLastQuizTaken(finalDate);
 
-								myDb.deletescorerowSet(2, "Naive Bayesian 1");
+								myDb.deletescorerowSet(2, "Decision Tree 2");
 
 								int sum = retake + 1;// 5
-								myDb.addjsquiz(1, "Naive Bayesian", "", "0 %");
+								myDb.addjsquiz(1, "Decision Tree", "", "0 %");
 
 								QuizSession.FinishSessionNum1(Integer
 										.toString(sum));
@@ -315,15 +317,15 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 						bYes.setOnClickListener(new OnClickListener() {
 							@Override
 							public void onClick(View v) {
-								myDb.deleteQuiz("Naive Bayesian");
+								myDb.deleteQuiz("Decision Tree");
 
 								QuizSession.StoreFlLastQuizTaken(finalDate);
 								QuizSession.StoreAllLastQuizTaken(finalDate);
 
-								myDb.deletescorerowSet(2, "Naive Bayesian 1");
+								myDb.deletescorerowSet(2, "Decision Tree 2");
 
 								int sum = retake + 1;// 5
-								myDb.addjsquiz(1, "Naive Bayesian", "", "0 %");
+								myDb.addjsquiz(1, "Decision Tree", "", "0 %");
 
 								QuizSession.FinishSessionNum1(Integer
 										.toString(sum));
@@ -349,12 +351,12 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 					} else {
 						// this condition will use if retake is
 						// value 1 to 2
-						myDb.deleteQuiz("Naive Bayesian");
+						myDb.deleteQuiz("Decision Tree");
 						QuizSession.StoreFlLastQuizTaken(finalDate);
 						QuizSession.StoreAllLastQuizTaken(finalDate);
 
 						int sum = retake + 1;
-						myDb.addjsquiz(1, "Naive Bayesian", "", "0 %");
+						myDb.addjsquiz(1, "Decision Tree", "", "0 %");
 
 						curTotal = prevTotal + 10;
 						QuizSession.StoreTotal1(Integer.toString(curTotal));
@@ -371,7 +373,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 					QuizSession.StoreFlLastQuizTaken(finalDate);
 					QuizSession.StoreAllLastQuizTaken(finalDate);
 					int passVal = Integer.parseInt(initVal);
-					myDb.addjsquiz(1, "Naive Bayesian", initVal, "0 %");
+					myDb.addjsquiz(1, "Decision Tree", initVal, "0 %");
 					curTotal = prevTotal + 10;
 					QuizSession.StoreTotal1(Integer.toString(curTotal));
 					QuizSession.FinishSessionNum1(initVal);
@@ -412,7 +414,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 		TextView tvLastQuiz = (TextView) dialog
 				.findViewById(R.id.tvlastquizhistory);
 		ListView myList = (ListView) dialog.findViewById(R.id.listofhistory);
-		cr = myDb.getAllscorewithChapter("Decision Tree 1");
+		cr = myDb.getAllscorewithChapter("Decision Tree");
 		startManagingCursor(cr);
 
 		tvQuizChapter.setText("" + ncourse + " Chapter 1");
@@ -459,26 +461,18 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 				Cursor cursor = myDb.getRow(id);
 				if (cursor.moveToFirst()) {
 					long idDb = cursor.getLong(DBAdapter.COL_ROWID);
-					int qset = Integer.parseInt(cursor
-							.getString(DBAdapter.COL_SETID));
-					int item = Integer.parseInt(cursor
-							.getString(DBAdapter.COL_REFID));
+					int qset = Integer.parseInt(cursor.getString(DBAdapter.COL_SETID));
+					int item = Integer.parseInt(cursor.getString(DBAdapter.COL_REFID));
 					String qitem = cursor.getString(DBAdapter.COL_QITEM);
 					String qans = cursor.getString(DBAdapter.COL_QANS);
 					String quans = cursor.getString(DBAdapter.COL_QUANS);
-
-					String Message = "Lesson" + (item + 1) + ".";
-
-					/*Toast.makeText(getApplicationContext(), Message,
-							Toast.LENGTH_LONG).show();*/
 					
-					Toast.makeText(getApplicationContext(),
-							"We encourage you to read all the chapter again",
-							Toast.LENGTH_SHORT).show();
+					String Message = "Lesson"+ (item +1) +".";
+
+					Toast.makeText(getApplicationContext(), Message, Toast.LENGTH_LONG).show();
 					Bundle b = new Bundle();
 					b.putInt("item", item);
-					Intent intent = new Intent(getApplicationContext(),
-							DescTreeLayoutActivity.class);
+					Intent intent =new Intent(getApplicationContext(), SimpsonQuizProblemResult.class);
 					intent.putExtras(b);
 					startActivity(intent);
 				}
