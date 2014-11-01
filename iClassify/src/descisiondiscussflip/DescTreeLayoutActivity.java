@@ -162,7 +162,7 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
 
            						// delete the scorerow if the user wants to
            						// overwrite the first take of quiz
-           						myDb.deletescorerowSet(1, "Naive Bayesian 1");
+           						myDb.deletescorerowSet(1, "Decision Tree 1");
 
            						// get the retake value + 1
            						// sum is 4 so when the user try to take the quiz
@@ -207,7 +207,7 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
            						QuizSession.StoreFlLastQuizTaken(finalDate);
            						QuizSession.StoreAllLastQuizTaken(finalDate);
 
-           						myDb.deletescorerowSet(2, "Decision Tree");
+           						myDb.deletescorerowSet(2, "Decision Tree 1");
 
            						int sum = retake + 1;// 5
            						myDb.addjsquiz(1, "Decision Tree", "", "0 %");
@@ -248,7 +248,7 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
            						QuizSession.StoreFlLastQuizTaken(finalDate);
            						QuizSession.StoreAllLastQuizTaken(finalDate);
 
-           						myDb.deletescorerowSet(2, "Decision Tree");
+           						myDb.deletescorerowSet(2, "Decision Tree 1");
 
            						int sum = retake + 1;// 5
            						myDb.addjsquiz(1, "Decision Tree", "", "0 %");

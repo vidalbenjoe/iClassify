@@ -1,11 +1,5 @@
 package com.capstoneii.iclassify.problems;
 
-import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.library.SecretTextView;
-import com.capstoneii.iclassify.library.TypewriterTextView;
-
-import descisiondiscussflip.DescTreeObjectives;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
@@ -16,24 +10,36 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.PopupMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity;
+import com.capstoneii.iclassify.library.SecretTextView;
+import com.capstoneii.iclassify.library.TypewriterTextView;
+
+import descisiondiscussflip.DescTreeObjectives;
 
 public class SimpsonQuizProblemResult extends FragmentActivity {
 
 	ViewPager mViewPager;
 	AppPagerAdapter mAppPageAdapter;
-
+	public static SimulCalculateActivity fragment;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -65,27 +71,27 @@ public class SimpsonQuizProblemResult extends FragmentActivity {
 			case 0:
 				return new SimpsonTableFragment();
 			case 1:
-				return new SimpsonsDecisionTreeFragment();
+				return new SimpsonTableFragment();
 			case 2:
-				return new SimpsonsNextProcedure();
+				return new SimpsonTableFragment();
 			case 3:
-				return new SimpsonMaleClassifier();
+				return new SimpsonTableFragment();
 			case 4:
 				return new SimpsonMaleClassifier();
 			case 5:
-				return new SimpsonsDecisionTreeFragment();
+				return new SimpsonMaleClassifier();
 			case 6:
-				return new SimpsonMaleClassifier();
+				return new SimpsonTableFragment();
 			case 7:
-				return new SimpsonsDecisionTreeFragment();
+				return new SimulDecisionResults();
 			case 8:
-				return new SimpsonMaleClassifier();
+				return new SimulDecisionResults();
 			case 9:
-				return new SimpsonMaleClassifier();
+				return new SimulDecisionResults();
 			case 10:
-				return new SimpsonsDecisionTreeFragment();
+				return new DecisionCalculateDialog();
 			case 11:
-				return new SimpsonMaleClassifier();
+				return new SimulCalculateActivity();
 			case 13:
 				return new SimpsonMaleClassifier();
 			case 14:
@@ -102,7 +108,152 @@ public class SimpsonQuizProblemResult extends FragmentActivity {
 		public int getCount() {
 			return 16;
 		}
+
 	}
+	
+	public static class DecisionCalculateDialog extends Fragment implements
+		android.view.animation.Animation.AnimationListener {
+	private ImageView gainoutlook, gainhumid, gainwind;
+	Animation left, right, leftout, rightout, animFadein, animFadeout;
+	private Button simulnextwithquestion;
+	Button drag;
+	LinearLayout drop;
+	TextView text, sucess;
+	int total, failure = 0;
+	Animation animSideDown;
+	public void onCreate(Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+		}
+		
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View rootView = inflater.inflate(R.layout.simulcalculate_activity,
+				container, false);
+				
+				final Dialog dialog = new Dialog(getActivity());
+				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+				dialog.setContentView(R.layout.custom_dialog);
+				dialog.getWindow().setBackgroundDrawable(
+						new ColorDrawable(android.graphics.Color.TRANSPARENT));
+				dialog.setCancelable(false);
+
+				left = AnimationUtils.loadAnimation(getActivity()
+						.getApplicationContext(), R.anim.left);
+				right = AnimationUtils.loadAnimation(getActivity()
+						.getApplicationContext(), R.anim.right);
+				// load the animation
+
+				final ImageView formulaimg = (ImageView) dialog
+						.findViewById(R.id.formulaimg);
+				final ImageView heirarimg = (ImageView) dialog
+						.findViewById(R.id.heirarimg);
+
+				formulaimg.setImageResource(R.drawable.outlookdragimg);
+				heirarimg.setImageResource(R.drawable.outlookheirar);
+
+				animSideDown = AnimationUtils.loadAnimation(getActivity()
+						.getApplicationContext(), R.anim.slide_down);
+
+				Button windweak = (Button) dialog.findViewById(R.id.windweak);
+				Button windstrong = (Button) dialog
+						.findViewById(R.id.windstrong);
+				windweak.setBackgroundResource(R.drawable.outlookrain);
+				windstrong.setBackgroundResource(R.drawable.outlooksunny);
+
+				windweak.startAnimation(left);
+				windstrong.startAnimation(right);
+
+				TextView entropytitle = (TextView) dialog
+						.findViewById(R.id.entropytitle);
+				entropytitle.setText("Gain(S,Outlook)");
+				final TextView formulatext = (TextView) dialog
+						.findViewById(R.id.formulatext);
+				formulatext.setText(R.string.o1);
+				formulatext.setVisibility(View.INVISIBLE);
+				dialog.show();
+
+				formulaimg.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						heirarimg.setVisibility(View.VISIBLE);
+						heirarimg.startAnimation(animSideDown);
+						formulatext.setVisibility(View.VISIBLE);
+					}
+				});
+
+				windstrong.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						// show popup
+
+						final Dialog dialog = new Dialog(getActivity());
+						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+						dialog.setContentView(R.layout.popup);
+						dialog.getWindow().setBackgroundDrawable(
+								new ColorDrawable(
+										android.graphics.Color.TRANSPARENT));
+						TextView strongtext = (TextView) dialog
+								.findViewById(R.id.occurence);
+						strongtext.setText(R.string.outlookoccurencessunny);
+						dialog.show();
+					}
+				});
+
+				windweak.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						final Dialog dialog = new Dialog(getActivity());
+						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+						dialog.setContentView(R.layout.popup);
+						dialog.getWindow().setBackgroundDrawable(
+								new ColorDrawable(
+										android.graphics.Color.TRANSPARENT));
+						TextView weaktext = (TextView) dialog
+								.findViewById(R.id.occurence);
+						weaktext.setText(R.string.outlookoccurencesrain);
+						dialog.show();
+
+					}
+				});
+
+				Button declineButton = (Button) dialog
+						.findViewById(R.id.cadbtnOk);
+				// if decline button is clicked, close the custom dialog
+				declineButton.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						dialog.dismiss();
+
+					}
+				});
+				return rootView;
+				}
+
+		@Override
+		public void onAnimationStart(Animation animation) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onAnimationEnd(Animation animation) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onAnimationRepeat(Animation animation) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
+	
 
 	public static class SimpsonTableFragment extends Fragment {
 		SecretTextView secretTextView;
@@ -177,6 +328,444 @@ public class SimpsonQuizProblemResult extends FragmentActivity {
 
 		}
 	}
+	
+	
+	public static class SimulCalculateActivity extends Fragment implements
+		android.view.animation.Animation.AnimationListener {
+	private ImageView gainoutlook, gainhumid, gainwind;
+	Animation left, right, leftout, rightout, animFadein, animFadeout;
+	private Button simulnextwithquestion;
+	Button drag;
+	LinearLayout drop;
+	TextView text, sucess;
+	int total, failure = 0;
+	Animation animSideDown;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+	}
+
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View rootView = inflater.inflate(R.layout.simulcalculate_activity,
+				container, false);
+
+		left = AnimationUtils.loadAnimation(getActivity()
+				.getApplicationContext(), R.anim.left);
+		right = AnimationUtils.loadAnimation(getActivity()
+				.getApplicationContext(), R.anim.right);
+		leftout = AnimationUtils.loadAnimation(getActivity()
+				.getApplicationContext(), R.anim.leftout);
+		rightout = AnimationUtils.loadAnimation(getActivity()
+				.getApplicationContext(), R.anim.rightout);
+		animFadein = AnimationUtils.loadAnimation(getActivity()
+				.getApplicationContext(), R.anim.fade_in);
+		animFadeout = AnimationUtils.loadAnimation(getActivity()
+				.getApplicationContext(), R.anim.fade_out);
+
+		left.setAnimationListener(this);
+		right.setAnimationListener(this);
+		// animSideDown.setAnimationListener(this);
+
+		drag = (Button) rootView.findViewById(R.id.one);
+		drop = (LinearLayout) rootView.findViewById(R.id.bottomlinear);
+		text = (TextView) rootView.findViewById(R.id.Total);
+		sucess = (TextView) rootView.findViewById(R.id.Sucess);
+		gainoutlook = (ImageView) rootView.findViewById(R.id.gainid1);
+
+		gainhumid = (ImageView) rootView.findViewById(R.id.gainid3);
+		gainwind = (ImageView) rootView.findViewById(R.id.gainid4);
+		simulnextwithquestion = (Button) rootView
+				.findViewById(R.id.simulnextcalculatebt);
+
+		gainoutlook.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				out();
+				final Dialog dialog = new Dialog(getActivity());
+				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+				dialog.setContentView(R.layout.custom_dialog);
+				dialog.getWindow().setBackgroundDrawable(
+						new ColorDrawable(android.graphics.Color.TRANSPARENT));
+				dialog.setCancelable(false);
+
+				left = AnimationUtils.loadAnimation(getActivity()
+						.getApplicationContext(), R.anim.left);
+				right = AnimationUtils.loadAnimation(getActivity()
+						.getApplicationContext(), R.anim.right);
+				// load the animation
+
+				final ImageView formulaimg = (ImageView) dialog
+						.findViewById(R.id.formulaimg);
+				final ImageView heirarimg = (ImageView) dialog
+						.findViewById(R.id.heirarimg);
+
+				formulaimg.setImageResource(R.drawable.outlookdragimg);
+				heirarimg.setImageResource(R.drawable.outlookheirar);
+
+				animSideDown = AnimationUtils.loadAnimation(getActivity()
+						.getApplicationContext(), R.anim.slide_down);
+
+				Button windweak = (Button) dialog.findViewById(R.id.windweak);
+				Button windstrong = (Button) dialog
+						.findViewById(R.id.windstrong);
+				windweak.setBackgroundResource(R.drawable.outlookrain);
+				windstrong.setBackgroundResource(R.drawable.outlooksunny);
+
+				windweak.startAnimation(left);
+				windstrong.startAnimation(right);
+
+				TextView entropytitle = (TextView) dialog
+						.findViewById(R.id.entropytitle);
+				entropytitle.setText("Gain(S,Outlook)");
+				final TextView formulatext = (TextView) dialog
+						.findViewById(R.id.formulatext);
+				formulatext.setText(R.string.o1);
+				formulatext.setVisibility(View.INVISIBLE);
+				dialog.show();
+
+				formulaimg.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						heirarimg.setVisibility(View.VISIBLE);
+						heirarimg.startAnimation(animSideDown);
+						formulatext.setVisibility(View.VISIBLE);
+					}
+				});
+
+				windstrong.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						// show popup
+
+						final Dialog dialog = new Dialog(getActivity());
+						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+						dialog.setContentView(R.layout.popup);
+						dialog.getWindow().setBackgroundDrawable(
+								new ColorDrawable(
+										android.graphics.Color.TRANSPARENT));
+						TextView strongtext = (TextView) dialog
+								.findViewById(R.id.occurence);
+						strongtext.setText(R.string.outlookoccurencessunny);
+						dialog.show();
+					}
+				});
+
+				windweak.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						final Dialog dialog = new Dialog(getActivity());
+						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+						dialog.setContentView(R.layout.popup);
+						dialog.getWindow().setBackgroundDrawable(
+								new ColorDrawable(
+										android.graphics.Color.TRANSPARENT));
+						TextView weaktext = (TextView) dialog
+								.findViewById(R.id.occurence);
+						weaktext.setText(R.string.outlookoccurencesrain);
+						dialog.show();
+
+					}
+				});
+
+				Button declineButton = (Button) dialog
+						.findViewById(R.id.cadbtnOk);
+				// if decline button is clicked, close the custom dialog
+				declineButton.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						dialog.dismiss();
+
+					}
+				});
+
+			}
+
+		});
+
+		gainhumid.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				out();
+				final Dialog dialog = new Dialog(getActivity());
+				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+				dialog.setContentView(R.layout.custom_dialog);
+				dialog.getWindow().setBackgroundDrawable(
+						new ColorDrawable(android.graphics.Color.TRANSPARENT));
+				dialog.setTitle("Gain Wind Formula");
+				dialog.setCancelable(false);
+
+				left = AnimationUtils.loadAnimation(getActivity()
+						.getApplicationContext(), R.anim.left);
+				right = AnimationUtils.loadAnimation(getActivity()
+						.getApplicationContext(), R.anim.right);
+				// load the animation
+
+				final ImageView formulaimg = (ImageView) dialog
+						.findViewById(R.id.formulaimg);
+				final ImageView heirarimg = (ImageView) dialog
+						.findViewById(R.id.heirarimg);
+
+				formulaimg.setImageResource(R.drawable.humiddragimg);
+				heirarimg.setImageResource(R.drawable.humidityheirar);
+
+				animSideDown = AnimationUtils.loadAnimation(getActivity()
+						.getApplicationContext(), R.anim.slide_down);
+				Button windweak = (Button) dialog.findViewById(R.id.windweak);
+				Button windstrong = (Button) dialog
+						.findViewById(R.id.windstrong);
+				windweak.setBackgroundResource(R.drawable.humidityhighl);
+				windstrong.setBackgroundResource(R.drawable.humiditynormal);
+
+				windweak.startAnimation(left);
+				windstrong.startAnimation(right);
+
+				TextView entropytitle = (TextView) dialog
+						.findViewById(R.id.entropytitle);
+				entropytitle.setText("Gain(S,Humidity)");
+				final TextView formulatext = (TextView) dialog
+						.findViewById(R.id.formulatext);
+				formulatext.setText(R.string.h1);
+				formulatext.setVisibility(View.INVISIBLE);
+				dialog.show();
+
+				formulaimg.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						heirarimg.setVisibility(View.VISIBLE);
+						heirarimg.startAnimation(animSideDown);
+						formulatext.setVisibility(View.VISIBLE);
+					}
+				});
+
+				windstrong.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						// show popup
+
+						final Dialog dialog = new Dialog(getActivity());
+						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+						dialog.setContentView(R.layout.popup);
+						dialog.getWindow().setBackgroundDrawable(
+								new ColorDrawable(
+										android.graphics.Color.TRANSPARENT));
+						TextView strongtext = (TextView) dialog
+								.findViewById(R.id.occurence);
+						strongtext.setText(R.string.humidityoccurencesnormal);
+						dialog.show();
+					}
+				});
+
+				windweak.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						final Dialog dialog = new Dialog(getActivity());
+						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+						dialog.setContentView(R.layout.popup);
+						dialog.getWindow().setBackgroundDrawable(
+								new ColorDrawable(
+										android.graphics.Color.TRANSPARENT));
+						TextView weaktext = (TextView) dialog
+								.findViewById(R.id.occurence);
+						weaktext.setText(R.string.humidityoccurenceshigh);
+						dialog.show();
+					}
+				});
+
+				Button declineButton = (Button) dialog
+						.findViewById(R.id.cadbtnOk);
+				// if decline button is clicked, close the custom dialog
+				declineButton.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						dialog.dismiss();
+
+					}
+				});
+
+			}
+
+		});
+		gainwind.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				out();
+				final Dialog dialog = new Dialog(getActivity());
+				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+				dialog.setContentView(R.layout.custom_dialog);
+				dialog.getWindow().setBackgroundDrawable(
+						new ColorDrawable(android.graphics.Color.TRANSPARENT));
+				dialog.setTitle("Gain Wind Formula");
+				dialog.setCancelable(false);
+
+				left = AnimationUtils.loadAnimation(getActivity()
+						.getApplicationContext(), R.anim.left);
+				right = AnimationUtils.loadAnimation(getActivity()
+						.getApplicationContext(), R.anim.right);
+				// load the animation
+
+				final ImageView formulaimg = (ImageView) dialog
+						.findViewById(R.id.formulaimg);
+				final ImageView heirarimg = (ImageView) dialog
+						.findViewById(R.id.heirarimg);
+
+				formulaimg.setImageResource(R.drawable.winddragimg);
+				heirarimg.setImageResource(R.drawable.windheirar);
+
+				animSideDown = AnimationUtils.loadAnimation(getActivity()
+						.getApplicationContext(), R.anim.slide_down);
+				Button windweak = (Button) dialog.findViewById(R.id.windweak);
+				Button windstrong = (Button) dialog
+						.findViewById(R.id.windstrong);
+				windweak.setBackgroundResource(R.drawable.weakwind);
+				windstrong.setBackgroundResource(R.drawable.strongwind);
+
+				windweak.startAnimation(left);
+				windstrong.startAnimation(right);
+
+				TextView entropytitle = (TextView) dialog
+						.findViewById(R.id.entropytitle);
+				entropytitle.setText("Gain(S,Wind)");
+				final TextView formulatext = (TextView) dialog
+						.findViewById(R.id.formulatext);
+				formulatext.setText(R.string.w1);
+				formulatext.setVisibility(View.INVISIBLE);
+				dialog.show();
+
+				formulaimg.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						heirarimg.setVisibility(View.VISIBLE);
+						heirarimg.startAnimation(animSideDown);
+						formulatext.setVisibility(View.VISIBLE);
+					}
+				});
+
+				windstrong.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						// show popup
+
+						final Dialog dialog = new Dialog(getActivity());
+						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+						dialog.setContentView(R.layout.popup);
+						dialog.getWindow().setBackgroundDrawable(
+								new ColorDrawable(
+										android.graphics.Color.TRANSPARENT));
+						TextView strongtext = (TextView) dialog
+								.findViewById(R.id.occurence);
+						strongtext.setText(R.string.windoccurencesstrong);
+						dialog.show();
+					}
+				});
+
+				windweak.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						final Dialog dialog = new Dialog(getActivity());
+						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+						dialog.setContentView(R.layout.popup);
+						dialog.getWindow().setBackgroundDrawable(
+								new ColorDrawable(
+										android.graphics.Color.TRANSPARENT));
+						TextView weaktext = (TextView) dialog
+								.findViewById(R.id.occurence);
+						weaktext.setText(R.string.windoccurencesweak);
+						dialog.show();
+					}
+				});
+
+				Button declineButton = (Button) dialog
+						.findViewById(R.id.cadbtnOk);
+				// if decline button is clicked, close the custom dialog
+				declineButton.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						dialog.dismiss();
+
+					}
+				});
+
+			}
+
+		});
+		simulnextwithquestion.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				out();
+//				Fragment SimulDragAndDropActivity = new SimulDragAndDropActivity();
+//				FragmentTransaction ft = getFragmentManager()
+//						.beginTransaction();
+//				ft.replace(R.id.frame_container, SimulDragAndDropActivity);
+//				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+//				ft.addToBackStack(SimulDragAndDropActivity.getTag());
+//				ft.commit();
+			}
+		});
+		in();
+		return rootView;
+
+	}
+
+	public void in() {
+		gainoutlook.startAnimation(left);
+		gainhumid.startAnimation(right);
+		gainwind.startAnimation(left);
+	}
+
+	public void out() {
+		gainoutlook.startAnimation(leftout);
+		gainhumid.startAnimation(rightout);
+		gainwind.startAnimation(leftout);
+
+		gainoutlook.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				in();
+			}
+		}, 1000);
+	}
+
+	@Override
+	public void onAnimationEnd(Animation animation) {
+		// Take any action after completing the animation
+
+		// check for zoom in animation
+		if (animation == animSideDown) {
+		}
+
+	}
+
+	@Override
+	public void onAnimationRepeat(Animation animation) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onAnimationStart(Animation animation) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
 
 	public static class SimpsonsDecisionTreeFragment extends Fragment {
 		Button simpsonNextbt;
@@ -367,6 +956,86 @@ public class SimpsonQuizProblemResult extends FragmentActivity {
 
 		}
 	}
+	
+	
+	public static class SimulDecisionResults extends Fragment {
+	public String videoFile;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	}
+
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		View rootView = inflater.inflate(R.layout.simuldecisionresult_layout,
+				container, false);
+
+		Button watchvid = (Button) rootView.findViewById(R.id.watchvideoidr);
+		Button takeassess = (Button) rootView.findViewById(R.id.takeassess);
+
+		final Dialog dialog = new Dialog(getActivity());
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.popup);
+		dialog.getWindow().setBackgroundDrawable(
+				new ColorDrawable(android.graphics.Color.TRANSPARENT));
+		TextView strongtext = (TextView) dialog.findViewById(R.id.occurence);
+		strongtext.setText(R.string.humidityresult);
+		dialog.show();
+
+		watchvid.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View InputFragmentView) {
+
+				final Dialog dialog = new Dialog(getActivity());
+				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+				dialog.setContentView(R.layout.watch_video_popup);
+				dialog.getWindow().setBackgroundDrawable(
+						new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
+				dialog.show();
+
+			}
+		});
+
+		takeassess.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View InputFragmentView) {
+				Intent intent = new Intent(getActivity(),
+						DecisionTreeAssessmentActivity.class);
+				getActivity().startActivity(intent);
+			}
+		});
+
+		return rootView;
+	}
+
+	public void showPopup(View v) {
+		PopupMenu popup = new PopupMenu(getActivity(), v);
+		MenuInflater inflater = popup.getMenuInflater();
+		inflater.inflate(R.menu.menu, popup.getMenu());
+		popup.show();
+	}
+
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		getActivity().getMenuInflater().inflate(R.menu.menu, menu);
+		super.onCreateOptionsMenu(menu, inflater);
+	}
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.action_settings:
+
+			return true;
+
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
+}
+	
 
 	public static class SimpsonMaleClassifier extends Fragment {
 		SecretTextView secretTextView;
@@ -501,3 +1170,6 @@ public class SimpsonQuizProblemResult extends FragmentActivity {
 	}
 
 }
+
+
+

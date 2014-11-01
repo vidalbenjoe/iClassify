@@ -108,7 +108,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 
 		if (retake == 1) {
 			quizdetails = "Quiz has been taken for the first time";
-		} else if (retake == 4) {
+		} else if (retake >= 4) {
 			quizdetails = "Quiz overwrite the first quiz try";
 		} else {
 			quizdetails = "Quiz has been taken " + retake + " times";
@@ -234,7 +234,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 								// user wants to
 								// overwrite the first take of
 								// quiz
-								myDb.deletescorerowSet(1, "Decision Tree");
+								myDb.deletescorerowSet(1, "Decision Tree 1");
 
 								// get the retake value + 1
 								// sum is 4 so when the user try
@@ -468,6 +468,11 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 					String quans = cursor.getString(DBAdapter.COL_QUANS);
 					
 					String Message = "Lesson"+ (item +1) +".";
+					
+					if(qans.contains(qans) == (quans.contains(quans))){
+						view.setEnabled(false);
+					}
+					
 
 					Toast.makeText(getApplicationContext(), Message, Toast.LENGTH_LONG).show();
 					Bundle b = new Bundle();
