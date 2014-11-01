@@ -297,23 +297,23 @@ public class BayesianRandomQuiz extends Activity {
 		myDb.addQuestions2(new Question(
 				"1",
 				"In the picture is Officer Drew. Is Officer Drew a Male or a Female? Based on the table, with names and gender, what is the frequency of the Name DREW as a FEMALE?",
-				"2", "1", "2", "3", "4"));
+				"2", "1", "2", "3", "4"));//2
 
 		myDb.addQuestions2(new Question(
 				"2",
 				"In the picture is Officer Drew. Is Officer Drew a Male or a Female? Based on the table, how many are the total cases?",
-				"8", "2", "4", "6", "8"));
+				"8", "2", "4", "6", "8"));//3
 
 		myDb.addQuestions2(new Question(
 				"3",
 				"In the picture is Officer Drew. Is Officer Drew a Male or a Female? Based on the table, with names and gender, what is the frequency of the Name DREW as a MALE?",
-				"1", "1", "2", "3", "4"));
+				"1", "1", "2", "3", "4"));//4
 
 		myDb.addQuestions2(new Question(
 				"4",
 				"In the picture is Officer Drew. Is Officer Drew a Male or a Female? Based on the table, with names and gender, what is the probability that Drew is a female?",
 				"2 out of 8", "1 out of 8", "2 out of 8", "3 out of 8",
-				"4 out of 8"));
+				"4 out of 8"));//5
 
 		myDb.addQuestions2(new Question(
 				"5",
@@ -322,37 +322,37 @@ public class BayesianRandomQuiz extends Activity {
 				"Female, because a probability of 0.67 is higher than 0.33.",
 				"Male, because a probability of 0.33 is less than 0.67.",
 				"None of the above, because the probabilities are too low to classify.",
-				"Drew is an officer."));
+				"Drew is an officer."));//6
 
 		// JO BAGONG PICTURE NAMAN NA DITO SA MGA SUMUNOD NA QUESTION HA. BAKA
 		// LANG MALITO KA
 
 		myDb.addQuestions2(new Question("6",
 				"How many attributes are there from the given table?", "4",
-				"1", "2", "3", "4"));
+				"1", "2", "3", "4"));//7
 
 		myDb.addQuestions2(new Question(
 				"7",
 				"In these tables we have to note that there are _ cases of not being able to play a game, and _ cases of being able to play a game.",
-				"5, 9", "5, 9", "5, 8", "9, 5", "8, 5"));
+				"5, 9", "5, 9", "5, 8", "9, 5", "8, 5"));//8
 
 		myDb.addQuestions2(new Question("8",
 				"Based on the table, how many frequency of the outlook=sunny?",
-				"5", "4", "5", "6", "7"));
+				"5", "4", "5", "6", "7"));//9
 
 		myDb.addQuestions2(new Question(
 				"9",
 				"Given the following probabilities of the data, can we play a game or not? \n P(Play=Yes | X) = 0.2424 \n P(Play=No | X) = 0.9421",
-				"Since 0.9421 is greater than 0.2424 then the answer is ‘no’, we cannot play a game of tennis today.",
-				"Since 0.9421 is greater than 0.2424 then the answer is ‘no’, we cannot play a game of tennis today.",
-				"Since 0.9421 is less than 0.2424 then the answer is ‘yes’, we can play a game of tennis today.",
+				"Since 0.9421 is greater than 0.2424 then the answer is ï¿½noï¿½, we cannot play a game of tennis today.",
+				"Since 0.9421 is greater than 0.2424 then the answer is ï¿½noï¿½, we cannot play a game of tennis today.",
+				"Since 0.9421 is less than 0.2424 then the answer is ï¿½yesï¿½, we can play a game of tennis today.",
 				"None of the above because the probabilities are too low to classify",
-				"The probabilities of the data are wrong "));
+				"The probabilities of the data are wrong "));//10
 
 		myDb.addQuestions2(new Question(
 				"10",
 				"Are the following probabilities correct?  P(Play=Yes) = 9/14 and P(Play=No) = 5/14",
-				"True", "True", "False", "Maybe", "Unknown"));
+				"True", "True", "False", "Maybe", "Unknown"));//11
 
 		// BAGONG PICTURE ULIT TO
 
@@ -372,9 +372,9 @@ public class BayesianRandomQuiz extends Activity {
 		myDb.addQuestions2(new Question(
 				"14",
 				"Given the following probabilities of the data, is the car stolen or not? \n P(STOLEN=Yes | X) = 0.037 \n P(STOLEN=No | X) = 0.069",
-				"Since 0.069 is greater than 0.037 then the answer is ‘no’, the car is not stolen",
-				"Since 0.069 is greater than 0.037 then the answer is ‘no’, the car is not stolen",
-				"Since 0.069 is less than 0.037 then the answer is ‘yes’, the car is stolen",
+				"Since 0.069 is greater than 0.037 then the answer is ï¿½noï¿½, the car is not stolen",
+				"Since 0.069 is greater than 0.037 then the answer is ï¿½noï¿½, the car is not stolen",
+				"Since 0.069 is less than 0.037 then the answer is ï¿½yesï¿½, the car is stolen",
 				"None of the above because the probabilities are too low to classify",
 				"The probabilities of the data are wrong "));
 

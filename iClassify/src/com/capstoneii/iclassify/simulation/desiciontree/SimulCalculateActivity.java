@@ -81,7 +81,7 @@ public class SimulCalculateActivity extends Fragment implements
 				dialog.setContentView(R.layout.custom_dialog);
 				dialog.getWindow().setBackgroundDrawable(
 						new ColorDrawable(android.graphics.Color.TRANSPARENT));
-				dialog.setCancelable(false);
+				dialog.setCancelable(true);
 
 				left = AnimationUtils.loadAnimation(getActivity()
 						.getApplicationContext(), R.anim.left);
