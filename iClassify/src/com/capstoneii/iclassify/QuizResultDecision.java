@@ -390,8 +390,6 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 		});
 	}
 	
-	
-
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();

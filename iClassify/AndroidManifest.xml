@@ -79,7 +79,7 @@
             android:name="com.capstoneii.iclassify.simulation.desiciontree.SimulProblemActivity"
             android:screenOrientation="portrait" />
         <activity android:name="com.capstoneii.iclassify.simulation.desiciontree.SimulDatasetActivity" />
-     //Video
+     //Video
         <activity
             android:name="com.capstoneii.iclassify.videos.VideoMenuActivity"
             android:label="Videos"
@@ -143,7 +143,10 @@
         <activity
             android:name="com.capstoneii.iclassify.problems.SimpsonQuizProblemResult"
             android:theme="@style/Theme.AppCompat.Light" />
-        ;
+         <activity
+            android:name="com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult"
+            android:theme="@style/Theme.AppCompat.Light" />
+        
     </application>
 
 </manifest>

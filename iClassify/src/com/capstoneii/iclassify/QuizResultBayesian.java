@@ -33,6 +33,7 @@ import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDro
 import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.dbclasses.TempQuestion;
+import com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult;
 
 public class QuizResultBayesian extends Activity implements AnimationListener {
 
@@ -469,14 +470,14 @@ public class QuizResultBayesian extends Activity implements AnimationListener {
 					/*Toast.makeText(getApplicationContext(), Message,
 							Toast.LENGTH_LONG).show();*/
 					
-					Toast.makeText(getApplicationContext(),
-							"We encourage you to read all the chapter again",
-							Toast.LENGTH_SHORT).show();
+//					Toast.makeText(getApplicationContext(),
+//							"We encourage you to read all the chapter again",
+//							Toast.LENGTH_SHORT).show();
 					
 					Bundle b = new Bundle();
 					b.putInt("item", item);
 					Intent intent = new Intent(getApplicationContext(),
-							NativeBayesLayoutActivity.class);
+							NaiveQuizProblemResult.class);
 					intent.putExtras(b);
 					startActivity(intent);
 				}
