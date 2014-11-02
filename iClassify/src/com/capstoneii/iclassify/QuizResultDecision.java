@@ -5,16 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 
-import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity;
-import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz;
-import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
-import com.capstoneii.iclassify.dbclasses.DBAdapter;
-import com.capstoneii.iclassify.dbclasses.TempQuestion;
-import com.capstoneii.iclassify.problems.SimpsonQuizProblemResult;
-import com.capstoneii.iclassify.problems.SimpsonTableFragment;
-
-import descisiondiscussflip.DescTreeLayoutActivity;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
@@ -34,9 +24,19 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity;
+import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord;
+import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz;
+import com.capstoneii.iclassify.dbclasses.DBAdapter;
+import com.capstoneii.iclassify.dbclasses.TempQuestion;
+import com.capstoneii.iclassify.problems.SimpsonQuizProblemResult;
+
+import descisiondiscussflip.DescTreeLayoutActivity;
 
 public class QuizResultDecision extends Activity implements AnimationListener {
 
@@ -469,11 +469,6 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 					
 					String Message = "Lesson"+ (item +1) +".";
 					
-					if(qans.contains(qans) == (quans.contains(quans))){
-						view.setEnabled(false);
-					}
-					
-
 					Toast.makeText(getApplicationContext(), Message, Toast.LENGTH_LONG).show();
 					Bundle b = new Bundle();
 					b.putInt("item", item);

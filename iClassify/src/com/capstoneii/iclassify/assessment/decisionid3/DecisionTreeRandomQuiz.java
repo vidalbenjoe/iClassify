@@ -355,17 +355,17 @@ public class DecisionTreeRandomQuiz extends Activity {
 		myDb.addQuestions3(new Question("10",
 				"Based on the decision tree, what are the 'attributes'",
 				"OUTLOOK, HUMIDITY and WIND", "OUTLOOK, HUMIDITY and WIND",
-				"SUNNY, OVERCAST, RAINY", "STRONG, WEAK", "HIGH, NORMAL"));
+				"SUNNY, OVERCAST, RAINY", "STRONG, WEAK", "HIGH, NORMAL"));//11
 		// TRHID SET
 		myDb.addQuestions3(new Question("11",
 				"Based on the decision tree, what are the ‘attributes’?",
 				"TYPE, DOORS, TIRES", "TYPE, DOORS, TIRES",
 				"CAR, MINI VAN, SUV", "BLACKWALL, WHITEWALL",
-				"ALL OF THE ABOVE"));
+				"ALL OF THE ABOVE"));//12
 
 		myDb.addQuestions3(new Question(
 				"12",
-				"Based on the decision tree, what are the attribute values of '�TYPE'?",
+				"Based on the decision tree, what are the attribute values of 'TYPE'?",
 				"CAR, MINI VAN, SUV", "NEGATIVE, POSITIVE",
 				"CAR, MINI VAN, SUV", "TYPE, DOORS, TIRES", "DOORS, TIRES"));
 

@@ -36,7 +36,7 @@ import com.capstoneii.iclassify.library.TypewriterTextView;
 import descisiondiscussflip.DescTreeObjectives;
 
 public class SimpsonQuizProblemResult extends FragmentActivity {
-
+	int item;
 	ViewPager mViewPager;
 	AppPagerAdapter mAppPageAdapter;
 	public static SimulCalculateActivity fragment;
@@ -53,7 +53,7 @@ public class SimpsonQuizProblemResult extends FragmentActivity {
 		mAppPageAdapter = new AppPagerAdapter(getSupportFragmentManager());
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setAdapter(mAppPageAdapter);
-		int item = getIntent().getExtras().getInt("item");
+		item = getIntent().getExtras().getInt("item");
 		mViewPager.setCurrentItem(item);
 
 	}
@@ -89,16 +89,20 @@ public class SimpsonQuizProblemResult extends FragmentActivity {
 			case 9:
 				return new SimulDecisionResults();
 			case 10:
-				return new DecisionCalculateDialog();
+				return new SimulDecisionResults();
 			case 11:
-				return new SimulCalculateActivity();
+				return new SimulDecisionResults();
+			case 12:
+				return new ImageDialog();
 			case 13:
-				return new SimpsonMaleClassifier();
+				return new ImageDialog2();
 			case 14:
-				return new SimpsonsDecisionTreeFragment();
+				return new ImageDialog3();
 			case 15:
-				return new SimpsonMaleClassifier();
-			
+				return new ImageDialog4();
+			case 16:
+				return new ImageDialog5();
+		
 			default:
 				return null;
 			}
@@ -106,7 +110,7 @@ public class SimpsonQuizProblemResult extends FragmentActivity {
 
 		@Override
 		public int getCount() {
-			return 16;
+			return 17;
 		}
 
 	}
@@ -253,9 +257,116 @@ public class SimpsonQuizProblemResult extends FragmentActivity {
 		
 	}
 	
-	
+public static class ImageDialog extends Fragment  {
 
-	public static class SimpsonTableFragment extends Fragment {
+public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	}
+	
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+		Bundle savedInstanceState) {
+	View rootView = inflater.inflate(R.layout.backgroundfordialog,
+			container, false);
+	ImageView imgaeresult = (ImageView) rootView.findViewById(R.id.imgaeresult);
+	imgaeresult.setImageResource(R.drawable.desresultcarone);
+	
+//	final Dialog dialog = new Dialog(getActivity());
+//	dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//	dialog.setContentView(R.layout.correct_dialog);
+//	dialog.getWindow().setBackgroundDrawable(
+//			new ColorDrawable(android.graphics.Color.TRANSPARENT));
+//	dialog.setCancelable(true);
+//	
+//	
+//	
+//	
+//	ImageView correctcheck = (ImageView) dialog
+//			.findViewById(R.id.correctcheck);
+//	correctcheck.setImageResource(R.drawable.desresultcarone);
+//	
+//	dialog.show();
+			
+			return rootView;
+			}
+
+	
+}
+
+public static class ImageDialog2 extends Fragment  {
+
+public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	}
+	
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+		Bundle savedInstanceState) {
+	View rootView = inflater.inflate(R.layout.backgroundfordialog,
+			container, false);
+	ImageView imgaeresult = (ImageView) rootView.findViewById(R.id.imgaeresult);
+	imgaeresult.setImageResource(R.drawable.desresultcartwo);
+			return rootView;
+			}
+
+	
+}
+
+
+public static class ImageDialog3 extends Fragment  {
+
+public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	}
+	
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+		Bundle savedInstanceState) {
+	View rootView = inflater.inflate(R.layout.backgroundfordialog,
+			container, false);
+	ImageView imgaeresult = (ImageView) rootView.findViewById(R.id.imgaeresult);
+	imgaeresult.setImageResource(R.drawable.desresultcarthree);
+			return rootView;
+			}
+
+	
+}
+
+
+public static class ImageDialog4 extends Fragment  {
+
+public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	}
+	
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+		Bundle savedInstanceState) {
+	View rootView = inflater.inflate(R.layout.backgroundfordialog,
+			container, false);
+	ImageView imgaeresult = (ImageView) rootView.findViewById(R.id.imgaeresult);
+	imgaeresult.setImageResource(R.drawable.desresultcarfour);
+			
+			return rootView;
+			}
+}
+
+
+public static class ImageDialog5 extends Fragment  {
+
+public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	}
+	
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+		Bundle savedInstanceState) {
+	View rootView = inflater.inflate(R.layout.backgroundfordialog,
+			container, false);
+	ImageView imgaeresult = (ImageView) rootView.findViewById(R.id.imgaeresult);
+	imgaeresult.setImageResource(R.drawable.desresultcarfive);
+			return rootView;
+			}
+
+}
+
+
+public static class SimpsonTableFragment extends Fragment {
 		SecretTextView secretTextView;
 		ImageView simpsoneTable;
 		Button nextProcBt;

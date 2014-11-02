@@ -88,10 +88,10 @@ public class MainDrawerActivity extends ActionBarActivity {
 		mDrawerList = (ListView) findViewById(R.id.slider_list);
 		frame = (FrameLayout) findViewById(R.id.frame_container);
 
-		int width = getResources().getDisplayMetrics().widthPixels / 2;
+		//int width = getResources().getDisplayMetrics().widthPixels / 2;
 		DrawerLayout.LayoutParams params = (android.support.v4.widget.DrawerLayout.LayoutParams) mDrawerList
 				.getLayoutParams();
-		params.width = width;
+		//params.width = width;
 		mDrawerList.setLayoutParams(params);
 
 		rowItems = new ArrayList<RowItem>();
