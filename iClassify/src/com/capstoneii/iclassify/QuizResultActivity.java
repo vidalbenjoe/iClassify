@@ -31,6 +31,7 @@ import com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop;
 import com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.dbclasses.TempQuestion;
+import com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult;
 
 public class QuizResultActivity extends Activity implements AnimationListener {
 	ImageButton backbutton;
@@ -456,7 +457,7 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 							
 							Bundle b = new Bundle();
 							b.putInt("item", item);
-							Intent intent =new Intent(getApplicationContext(), KNearestLayoutActivity.class);
+							Intent intent =new Intent(getApplicationContext(), KnnQuizProblemResult.class);
 							intent.putExtras(b);
 							startActivity(intent);
 					}

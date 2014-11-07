@@ -172,6 +172,9 @@
 # view AndroidManifest.xml #generated:74
 -keep class com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity { <init>(...); }
 
+# view AndroidManifest.xml #generated:154
+-keep class com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult { <init>(...); }
+
 # view AndroidManifest.xml #generated:151
 -keep class com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult { <init>(...); }
 

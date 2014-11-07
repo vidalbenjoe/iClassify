@@ -146,7 +146,12 @@
          <activity
             android:name="com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult"
             android:theme="@style/Theme.AppCompat.Light" />
-        
+        <activity
+            android:name="com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult"
+            android:theme="@style/Theme.AppCompat.Light" />
+         
+         
+         
     </application>
 
 </manifest>

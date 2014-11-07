@@ -581,6 +581,21 @@
 </string>
      
       
+
+<string name ="knnlastresultbulletedtop">
+    <![CDATA[
+    •	For each training example < x,f(x) >, add the example to the list of training_examples.\n
+    •	Given a query instance xq to be classified,\n
+    •	Let x1,x2...xk denote the k instances from training_examples that are nearest to xq .\n
+    •	Return the class that represents the maximum of the k instances.\n
+	]]>
+</string>
+
+<string name ="knnbottomtextresultassessment">
+    <![CDATA[
+   If K = 5, then in this case query instance xq will be classified as negative since three of its nearest neighbors are classified as negative. 
+	]]>
+</string>
        
    
     
