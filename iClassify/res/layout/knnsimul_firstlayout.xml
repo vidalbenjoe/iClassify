@@ -6,70 +6,67 @@
     android:background="@drawable/backgroundblurpurple"
     android:orientation="vertical" >
 
-    
     <RelativeLayout
         android:id="@+id/rlmar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp">
-        
-        
+        android:layout_marginTop="80dp" >
+
         <TextView
             android:id="@+id/textknntitle"
-        	android:layout_height="wrap_content"
-        	android:layout_width="match_parent"
-        	android:gravity="left"
-        	android:textAlignment="center"
-        	android:text="Simulation process"
-        	android:textColor="#fff"
-        	android:textSize="25sp"
-        	android:layout_marginTop="10dp"
-        	android:shadowColor="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:shadowColor="@android:color/black"
             android:shadowDx="1"
             android:shadowDy="1"
             android:shadowRadius="2"
-            android:visibility="invisible"/>
-        
+            android:text="Simulation process"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:visibility="invisible" />
+
         <ImageView
-        android:id="@+id/stepknnimg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:layout_marginLeft="40dp"
-        android:background="@drawable/simulimgknn"
-        android:visibility="invisible" />
-      
+            android:id="@+id/stepknnimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/simulimgknn"
+            android:visibility="invisible" />
     </RelativeLayout>
-    
+
     <com.capstoneii.iclassify.library.SecretTextView
         android:id="@+id/knnsecrettext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:background="#26FFFFFF"
         android:layout_centerInParent="true"
+        android:background="#26FFFFFF"
+        android:gravity="center"
+        android:text="K Nearest Neighbor Simulation"
         android:textColor="#fff"
         android:textSize="40sp"
         android:textStyle="bold"
-        android:text="K Nearest Neighbor Simulation"
-        android:visibility="visible"/>
-    
-     <com.capstoneii.iclassify.library.SecretTextView
+        android:visibility="visible" />
+
+    <com.capstoneii.iclassify.library.SecretTextView
         android:id="@+id/knnsecretdesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/knnsecrettext"
-        android:gravity="center"
-        android:layout_centerInParent="true"
         android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="A Step by step KNN Simulation"
         android:textColor="#fff"
         android:textSize="17sp"
         android:textStyle="bold"
-        android:text="A Step by step KNN Simulation"
-        android:visibility="visible"/>
+        android:visibility="visible" />
 
     <ImageView
         android:id="@+id/knnnextbt"

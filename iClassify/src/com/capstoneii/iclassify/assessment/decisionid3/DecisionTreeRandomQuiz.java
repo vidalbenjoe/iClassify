@@ -294,13 +294,19 @@ public class DecisionTreeRandomQuiz extends Activity {
 		myDb.addQuestions3(new Question(
 				"1",
 				"Based on the decision tree, what could be the gender of this Simpson's Character:Marge has a hair length of 10 inches and a weight of 150 lbs.",
-				"Female", "Male", "Female", "Unknown", "None of these")); // 2 ARRAY
+				"Female", "Male", "Female", "Unknown", "None of these")); // 2
+																			// ARRAY
 		// 2
 
 		myDb.addQuestions3(new Question(
 				"2",
 				"Based on the decision tree, what could be the gender of this Simpson's Character:Otto has a hair length of 10 inches and a weight of 180 lbs",
-				"Male", "Male", "Female", "Unknown", "None of these")); // // 3TH IN SCORE ARRAY RESULTS
+				"Male", "Male", "Female", "Unknown", "None of these")); // //
+																		// 3TH
+																		// IN
+																		// SCORE
+																		// ARRAY
+																		// RESULTS
 		// 4
 		myDb.addQuestions3(new Question(
 				"3",
@@ -309,13 +315,16 @@ public class DecisionTreeRandomQuiz extends Activity {
 				"If Weight greater than 160, classify as Female",
 				"If Hair Length less than or equal to 2, classify as Female",
 				"If Weight greater than 160, classify as Male",
-				"If Hair Length less than 160, classify as Male")); // 4TH IN SCORE ARRAY RESULTS
+				"If Hair Length less than 160, classify as Male")); // 4TH IN
+																	// SCORE
+																	// ARRAY
+																	// RESULTS
 
 		myDb.addQuestions3(new Question(
 				"4",
 				"Based on the decision tree, are these decision rules correct?\nIf Weight greater than 160, classify as Male\nElseif Hair Length less than or equal to 2, classify as Male \nElse classify as Female ",
 				"TRUE", "TRUE", "First Statement is True", "FALSE",
-				"Last Statement is True"));  // 5TH IN SCORE ARRAY RESULTS
+				"Last Statement is True")); // 5TH IN SCORE ARRAY RESULTS
 
 		// OTHER SET OF QUESTION IMAGE --- WEATHER OUTLOOK
 		myDb.addQuestions3(new Question("5",
@@ -334,7 +343,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 				"7",
 				"Based on the decision tree, should we play tennis under these circumstances:\nIt is a rainy day with strong winds",
 				"NO, we cannot play tennis.", "YES, we can play tennis",
-				"NO, we cannot play tennis.", "I don�t know", "Maybe"));//8
+				"NO, we cannot play tennis.", "I don't know", "Maybe"));// 8
 
 		myDb.addQuestions3(new Question(
 				"8",
@@ -343,25 +352,25 @@ public class DecisionTreeRandomQuiz extends Activity {
 				"If the outlook is rainy and the wind is weak, then we can play tennis.",
 				"If the outlook is rainy and the wind is strong, then we cannot play tennis.",
 				"If the outlook is sunny and the humidity is high, then we cannot play tennis.",
-				"All of the above.")); //9
+				"All of the above.")); // 9
 
 		myDb.addQuestions3(new Question(
 				"9",
 				"Based on the decision tree, what are the attribute values of OUTLOOK?",
 				"SUNNY, OVERCAST, RAINY", "HIGH, NORMAL",
 				"OUTLOOK, HUMIDITY and WIND", "SUNNY, OVERCAST, RAINY",
-				"STRONG, WEAK"));//10
+				"STRONG, WEAK"));// 10
 
 		myDb.addQuestions3(new Question("10",
 				"Based on the decision tree, what are the 'attributes'",
 				"OUTLOOK, HUMIDITY and WIND", "OUTLOOK, HUMIDITY and WIND",
-				"SUNNY, OVERCAST, RAINY", "STRONG, WEAK", "HIGH, NORMAL"));//11
+				"SUNNY, OVERCAST, RAINY", "STRONG, WEAK", "HIGH, NORMAL"));// 11
 		// TRHID SET
 		myDb.addQuestions3(new Question("11",
 				"Based on the decision tree, what are the ‘attributes’?",
 				"TYPE, DOORS, TIRES", "TYPE, DOORS, TIRES",
 				"CAR, MINI VAN, SUV", "BLACKWALL, WHITEWALL",
-				"ALL OF THE ABOVE"));//12
+				"ALL OF THE ABOVE"));// 12
 
 		myDb.addQuestions3(new Question(
 				"12",
@@ -411,8 +420,8 @@ public class DecisionTreeRandomQuiz extends Activity {
 		});
 		dialog.show();
 	}
-	
-	public void directionAssess(){
+
+	public void directionAssess() {
 		final Dialog dialog2 = new Dialog(this);
 		dialog2.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		dialog2.setContentView(R.layout.transparent_popuptext);

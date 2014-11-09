@@ -54,10 +54,7 @@ public class SimulMainKnnFactoryTissue extends Fragment {
 					tissueimg.startAnimation(animation2);
 					tissueimg.setVisibility(View.VISIBLE);
 					
-					//another timer
-					//after ontouch..move to next activity
 					
-			         
 			         new CountDownTimer(2800, 1000) {
 
 					     public void onTick(long millisUntilFinished) {

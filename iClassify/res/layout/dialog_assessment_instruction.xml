@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#D2d3d6"
+    android:background="#76e3fa"
     android:orientation="vertical">
     
     <LinearLayout 
@@ -29,11 +29,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
-        <View 
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="15dp"
-        android:background="@color/divider_color"/>
+       
      
            <TextView 
             android:id="@+id/instructiondesc"
@@ -46,6 +42,10 @@
             android:layout_marginRight="15dp"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
             android:textStyle="bold"/>
         
     </FrameLayout>

@@ -4,58 +4,57 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgroundblurpurple"
     android:orientation="vertical" >
-    
-     <RelativeLayout
-    android:id="@+id/rls2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center" >
-    
-         
-         
+
+    <RelativeLayout
+        android:id="@+id/rls2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" >
+
         <com.capstoneii.iclassify.library.TypewriterTextView
-    	android:id="@+id/knnthirdext"
-	    android:layout_width="480dp"
-	    android:layout_height="204dp"
-	    android:layout_centerHorizontal="true"
-	    android:gravity="center"
-	    android:layout_marginTop="150dp"
-	    android:shadowColor="@android:color/black"
-	    android:shadowDx="1"
-	    android:shadowDy="1"
-	    android:shadowRadius="2"
-	    android:text="@string/knnsimulexample2"
-	    android:textColor="#fff"
-	    android:textSize="17sp" />
+            android:id="@+id/knnthirdext"
+            android:layout_width="480dp"
+            android:layout_height="204dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:gravity="center"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="@string/knnsimulexample2"
+            android:textColor="#fff"
+            android:textSize="17sp" />
     </RelativeLayout>
 
     <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:layout_gravity="center"
-    android:layout_below="@+id/rls2"
-   	>
-    
-        
-        
-    <ImageView
-    android:id="@+id/factoryimg"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@drawable/factoryimg"
-    android:paddingRight="60dp"
-    android:layout_marginRight="30dp"
-    />
-    <ImageView
-   	android:id="@+id/tissueimg"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingLeft="60dp"
-    android:layout_marginLeft="30dp"
-    android:background="@drawable/tissuepaperimg"/>
-       
-        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" >
+
+        <ImageView
+            android:id="@+id/factoryimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/factoryimg"
+            android:paddingEnd="60dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="60dp"
+            android:paddingStart="4dp" />
+
+        <ImageView
+            android:id="@+id/tissueimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/tissuepaperimg"
+            android:paddingEnd="4dp"
+            android:paddingLeft="60dp"
+            android:paddingRight="4dp"
+            android:paddingStart="60dp" />
     </LinearLayout>
-    
+
 </LinearLayout>

@@ -10,28 +10,41 @@
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         -->
+          <item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
     </style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style>
-    
-   
 
-    <style name="MyTextView">
     </style>
-    
+
+    <!-- Styles -->
+    <style name="OverFlow" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_bulb_overflow</item>
+    </style>
+
+    <style name="MyActionButtonOverflow" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_bulb_overflow</item>
+        <item name="android:background">?android:attr/actionBarItemBackground</item>
+        <item name="android:contentDescription">"Lala"</item>
+    </style>
+
+ 
+
+    <style name="MyTextView"></style>
+
     <style name="DialogAnim" parent="@android:style/Theme.Dialog">
-        <item name="android:windowAnimationStyle">@style/DefaultDialogAnimation</item>        
+        <item name="android:windowAnimationStyle">@style/DefaultDialogAnimation</item>
     </style>
-     <style name="DefaultDialogAnimation">
+
+    <style name="DefaultDialogAnimation">
         <item name="android:windowEnterAnimation">@anim/dialog_in</item>
         <item name="android:windowExitAnimation">@anim/dialog_out</item>
     </style>
-    
+
     <style name="MyTheme.ActionBar.TitleTextStyle" parent="AppBaseTheme">
-    <item name="android:textColor">#fff</item>
-  </style>
+        <item name="android:textColor">#fff</item>
+    </style>
 
 </resources>

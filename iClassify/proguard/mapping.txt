@@ -186,6 +186,7 @@ android.support.v4.app.Fragment -> android.support.v4.app.Fragment:
     android.os.Bundle getArguments() -> b
     android.support.v4.app.FragmentActivity getActivity() -> c
     android.content.res.Resources getResources() -> d
+    java.lang.String getString(int) -> a
     boolean isAdded() -> e
     boolean isDetached() -> f
     boolean isHidden() -> g
@@ -1311,15 +1312,15 @@ android.support.v4.view.ViewPager -> android.support.v4.view.ViewPager:
     boolean mCalledSuper -> U
     int mDecorChildCount -> V
     android.support.v4.view.ViewPager$OnPageChangeListener mOnPageChangeListener -> W
-    android.support.v4.view.ViewPager$OnPageChangeListener mInternalPageChangeListener -> Z
-    android.support.v4.view.ViewPager$OnAdapterChangeListener mAdapterChangeListener -> aa
-    android.support.v4.view.ViewPager$PageTransformer mPageTransformer -> ab
-    java.lang.reflect.Method mSetChildrenDrawingOrderEnabled -> ac
-    int mDrawingOrder -> ad
-    java.util.ArrayList mDrawingOrderedChildren -> ae
-    android.support.v4.view.ViewPager$ViewPositionComparator sPositionComparator -> af
-    java.lang.Runnable mEndScrollRunnable -> ag
-    int mScrollState -> ah
+    android.support.v4.view.ViewPager$OnPageChangeListener mInternalPageChangeListener -> aa
+    android.support.v4.view.ViewPager$OnAdapterChangeListener mAdapterChangeListener -> ab
+    android.support.v4.view.ViewPager$PageTransformer mPageTransformer -> ac
+    java.lang.reflect.Method mSetChildrenDrawingOrderEnabled -> ad
+    int mDrawingOrder -> ae
+    java.util.ArrayList mDrawingOrderedChildren -> af
+    android.support.v4.view.ViewPager$ViewPositionComparator sPositionComparator -> ag
+    java.lang.Runnable mEndScrollRunnable -> ah
+    int mScrollState -> ai
     void initViewPager() -> a
     void onDetachedFromWindow() -> onDetachedFromWindow
     void setScrollState(int) -> setScrollState
@@ -2037,6 +2038,23 @@ android.support.v4.widget.ScrollerCompatGingerbread -> android.support.v4.widget
     void abortAnimation(java.lang.Object) -> e
     int getFinalX(java.lang.Object) -> f
     int getFinalY(java.lang.Object) -> g
+android.support.v4.widget.SimpleCursorAdapter -> android.support.v4.widget.y:
+    int[] mFrom -> j
+    int[] mTo -> k
+    int mStringConversionColumn -> m
+    android.support.v4.widget.SimpleCursorAdapter$CursorToStringConverter mCursorToStringConverter -> n
+    android.support.v4.widget.SimpleCursorAdapter$ViewBinder mViewBinder -> o
+    java.lang.String[] mOriginalFrom -> l
+    void bindView(android.view.View,android.content.Context,android.database.Cursor) -> a
+    void setViewImage(android.widget.ImageView,java.lang.String) -> a
+    void setViewText(android.widget.TextView,java.lang.String) -> a
+    java.lang.CharSequence convertToString(android.database.Cursor) -> c
+    void findColumns(java.lang.String[]) -> a
+    android.database.Cursor swapCursor(android.database.Cursor) -> b
+android.support.v4.widget.SimpleCursorAdapter$CursorToStringConverter -> android.support.v4.widget.z:
+    java.lang.CharSequence convertToString(android.database.Cursor) -> a
+android.support.v4.widget.SimpleCursorAdapter$ViewBinder -> android.support.v4.widget.aa:
+    boolean setViewValue(android.view.View,android.database.Cursor,int) -> a
 android.support.v4.widget.SlidingPaneLayout -> android.support.v4.widget.SlidingPaneLayout:
     int mSliderFadeColor -> b
     int mCoveredFadeColor -> c
@@ -2100,38 +2118,38 @@ android.support.v4.widget.SlidingPaneLayout -> android.support.v4.widget.Sliding
     void onRestoreInstanceState(android.os.Parcelable) -> onRestoreInstanceState
     void access$900(android.support.v4.widget.SlidingPaneLayout,android.view.View) -> a
     java.util.ArrayList access$1000(android.support.v4.widget.SlidingPaneLayout) -> a
-android.support.v4.widget.SlidingPaneLayout$1 -> android.support.v4.widget.y:
-android.support.v4.widget.SlidingPaneLayout$DisableLayerRunnable -> android.support.v4.widget.z:
+android.support.v4.widget.SlidingPaneLayout$1 -> android.support.v4.widget.ab:
+android.support.v4.widget.SlidingPaneLayout$DisableLayerRunnable -> android.support.v4.widget.ac:
     android.view.View mChildView -> a
     android.support.v4.widget.SlidingPaneLayout this$0 -> b
     void run() -> run
-android.support.v4.widget.SlidingPaneLayout$LayoutParams -> android.support.v4.widget.aa:
+android.support.v4.widget.SlidingPaneLayout$LayoutParams -> android.support.v4.widget.ad:
     int[] ATTRS -> e
     float weight -> a
     boolean slideable -> b
     boolean dimWhenOffset -> c
     android.graphics.Paint dimPaint -> d
-android.support.v4.widget.SlidingPaneLayout$PanelSlideListener -> android.support.v4.widget.ab:
+android.support.v4.widget.SlidingPaneLayout$PanelSlideListener -> android.support.v4.widget.ae:
 android.support.v4.widget.SlidingPaneLayout$SavedState -> android.support.v4.widget.SlidingPaneLayout$SavedState:
     boolean isOpen -> a
     android.os.Parcelable$Creator CREATOR -> CREATOR
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
-android.support.v4.widget.SlidingPaneLayout$SavedState$1 -> android.support.v4.widget.ac:
+android.support.v4.widget.SlidingPaneLayout$SavedState$1 -> android.support.v4.widget.af:
     android.support.v4.widget.SlidingPaneLayout$SavedState createFromParcel(android.os.Parcel) -> a
     android.support.v4.widget.SlidingPaneLayout$SavedState[] newArray(int) -> a
     java.lang.Object[] newArray(int) -> newArray
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImpl -> android.support.v4.widget.ad:
+android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImpl -> android.support.v4.widget.ag:
     void invalidateChildRegion(android.support.v4.widget.SlidingPaneLayout,android.view.View) -> a
-android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplBase -> android.support.v4.widget.ae:
+android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplBase -> android.support.v4.widget.ah:
     void invalidateChildRegion(android.support.v4.widget.SlidingPaneLayout,android.view.View) -> a
-android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB -> android.support.v4.widget.af:
+android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJB -> android.support.v4.widget.ai:
     java.lang.reflect.Method mGetDisplayList -> a
     java.lang.reflect.Field mRecreateDisplayList -> b
     void invalidateChildRegion(android.support.v4.widget.SlidingPaneLayout,android.view.View) -> a
-android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJBMR1 -> android.support.v4.widget.ag:
+android.support.v4.widget.SlidingPaneLayout$SlidingPanelLayoutImplJBMR1 -> android.support.v4.widget.aj:
     void invalidateChildRegion(android.support.v4.widget.SlidingPaneLayout,android.view.View) -> a
-android.support.v4.widget.ViewDragHelper -> android.support.v4.widget.ah:
+android.support.v4.widget.ViewDragHelper -> android.support.v4.widget.ak:
     int mDragState -> a
     int mTouchSlop -> b
     int mActivePointerId -> c
@@ -2197,12 +2215,12 @@ android.support.v4.widget.ViewDragHelper -> android.support.v4.widget.ah:
     boolean isViewUnder(android.view.View,int,int) -> b
     android.view.View findTopChildUnder(int,int) -> d
     int getEdgesTouched(int,int) -> e
-android.support.v4.widget.ViewDragHelper$1 -> android.support.v4.widget.ai:
+android.support.v4.widget.ViewDragHelper$1 -> android.support.v4.widget.al:
     float getInterpolation(float) -> getInterpolation
-android.support.v4.widget.ViewDragHelper$2 -> android.support.v4.widget.aj:
+android.support.v4.widget.ViewDragHelper$2 -> android.support.v4.widget.am:
     android.support.v4.widget.ViewDragHelper this$0 -> a
     void run() -> run
-android.support.v4.widget.ViewDragHelper$Callback -> android.support.v4.widget.ak:
+android.support.v4.widget.ViewDragHelper$Callback -> android.support.v4.widget.an:
     void onViewDragStateChanged(int) -> a
     void onViewPositionChanged(android.view.View,int,int,int,int) -> a
     void onViewCaptured(android.view.View,int) -> b
@@ -4698,35 +4716,103 @@ at.technikum.mti.fancycoverflow.R$styleable -> at.technikum.mti.fancycoverflow.e
     int FancyCoverFlow_unselectedSaturation -> FancyCoverFlow_unselectedSaturation
     int FancyCoverFlow_unselectedScale -> FancyCoverFlow_unselectedScale
 bayesdiscussflip.NativeBayesAdapter -> bayesdiscussflip.a:
-    android.view.LayoutInflater inflater -> a
-    int repeatCount -> b
-    java.util.List desctreeData -> c
+    android.view.LayoutInflater inflater -> c
+    int repeatCount -> d
+    java.util.List desctreeData -> e
+    android.speech.tts.TextToSpeech tts -> a
+    com.capstoneii.iclassify.library.TouchImageView zoomerImageZoom -> f
+    java.text.DecimalFormat df -> b
     int getCount() -> getCount
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-bayesdiscussflip.NativeBayesData -> bayesdiscussflip.b:
+    void access$0(bayesdiscussflip.NativeBayesAdapter,com.capstoneii.iclassify.library.TouchImageView) -> a
+    com.capstoneii.iclassify.library.TouchImageView access$1(bayesdiscussflip.NativeBayesAdapter) -> a
+    android.view.LayoutInflater access$2(bayesdiscussflip.NativeBayesAdapter) -> b
+bayesdiscussflip.NativeBayesAdapter$1 -> bayesdiscussflip.b:
+    bayesdiscussflip.NativeBayesAdapter this$0 -> a
+    void onInit(int) -> onInit
+bayesdiscussflip.NativeBayesAdapter$2 -> bayesdiscussflip.c:
+    bayesdiscussflip.NativeBayesAdapter this$0 -> a
+    bayesdiscussflip.NativeBayesData$Data val$data -> b
+    void onClick(android.view.View) -> onClick
+bayesdiscussflip.NativeBayesAdapter$2$1 -> bayesdiscussflip.d:
+    bayesdiscussflip.NativeBayesAdapter$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+bayesdiscussflip.NativeBayesAdapter$3 -> bayesdiscussflip.e:
+    bayesdiscussflip.NativeBayesAdapter this$0 -> a
+    java.lang.String val$toSpeak -> b
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+bayesdiscussflip.NativeBayesData -> bayesdiscussflip.f:
     java.util.List IMG_DESCRIPTIONS -> a
-bayesdiscussflip.NativeBayesData$Data -> bayesdiscussflip.c:
+bayesdiscussflip.NativeBayesData$Data -> bayesdiscussflip.g:
     java.lang.String title -> a
     java.lang.String imageFilename -> b
     java.lang.String description -> c
 bayesdiscussflip.NativeBayesLayoutActivity -> bayesdiscussflip.NativeBayesLayoutActivity:
-    com.aphidmobile.flip.FlipViewController flipView -> o
+    com.capstoneii.iclassify.dbclasses.DBAdapter myDb -> o
+    com.capstoneii.iclassify.SessionCache QuizSession -> p
+    int retake -> q
+    int prevTotal -> r
+    int curTotal -> s
+    java.lang.String finalDate -> t
+    android.content.Intent intent -> u
+    java.lang.String initVal -> v
+    com.aphidmobile.flip.FlipViewController flipView -> w
     void onCreate(android.os.Bundle) -> onCreate
     void onResume() -> onResume
     void onPause() -> onPause
     boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
     boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
-bayesdiscussflip.NativeBayesLayoutActivity$1 -> bayesdiscussflip.d:
+    void openDB() -> j
+bayesdiscussflip.NativeBayesLayoutActivity$1 -> bayesdiscussflip.h:
     bayesdiscussflip.NativeBayesLayoutActivity this$0 -> a
     android.widget.ImageView val$transpaimage -> b
     android.app.Dialog val$dialog -> c
     void onClick(android.view.View) -> onClick
-bayesdiscussflip.NativeBayesLayoutActivity$2 -> bayesdiscussflip.e:
+bayesdiscussflip.NativeBayesLayoutActivity$2 -> bayesdiscussflip.i:
     bayesdiscussflip.NativeBayesLayoutActivity this$0 -> a
     boolean onMenuItemClick(android.view.MenuItem) -> onMenuItemClick
+    bayesdiscussflip.NativeBayesLayoutActivity access$0(bayesdiscussflip.NativeBayesLayoutActivity$2) -> a
+bayesdiscussflip.NativeBayesLayoutActivity$2$1 -> bayesdiscussflip.j:
+    bayesdiscussflip.NativeBayesLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+bayesdiscussflip.NativeBayesLayoutActivity$2$2 -> bayesdiscussflip.k:
+    bayesdiscussflip.NativeBayesLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+bayesdiscussflip.NativeBayesLayoutActivity$2$3 -> bayesdiscussflip.l:
+    bayesdiscussflip.NativeBayesLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+bayesdiscussflip.NativeBayesLayoutActivity$2$4 -> bayesdiscussflip.m:
+    bayesdiscussflip.NativeBayesLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+bayesdiscussflip.NativeBayesLayoutActivity$2$5 -> bayesdiscussflip.n:
+    bayesdiscussflip.NativeBayesLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+bayesdiscussflip.NativeBayesLayoutActivity$2$6 -> bayesdiscussflip.o:
+    bayesdiscussflip.NativeBayesLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+bayesdiscussflip.NativeBayesObjectives -> bayesdiscussflip.NativeBayesObjectives:
+    android.widget.TextView titleobjectives -> o
+    com.capstoneii.iclassify.library.TypewriterTextView objectivedesc -> p
+    android.widget.ImageView startdiscussionbutton -> q
+    android.widget.ImageView watchvideosbutton -> r
+    void onCreate(android.os.Bundle) -> onCreate
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+bayesdiscussflip.NativeBayesObjectives$1 -> bayesdiscussflip.p:
+    bayesdiscussflip.NativeBayesObjectives this$0 -> a
+    void onClick(android.view.View) -> onClick
+bayesdiscussflip.NativeBayesObjectives$2 -> bayesdiscussflip.q:
+    bayesdiscussflip.NativeBayesObjectives this$0 -> a
+    void onClick(android.view.View) -> onClick
 com.aphidmobile.flip.Card -> com.a.a.a:
     float[] cardVertices -> a
     short[] indices -> b
@@ -4969,8 +5055,284 @@ com.capstoneii.iclassify.MainActivityController$ViewGroupExampleAdapter$1 -> com
     com.capstoneii.iclassify.MainActivityController$ViewGroupExampleAdapter this$1 -> a
     int val$i -> b
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.R -> com.capstoneii.iclassify.f:
-com.capstoneii.iclassify.R$styleable -> com.capstoneii.iclassify.g:
+com.capstoneii.iclassify.QuizResultActivity -> com.capstoneii.iclassify.QuizResultActivity:
+    android.widget.TextView correct -> a
+    android.widget.TextView wrong -> b
+    android.widget.TextView mesg -> c
+    android.widget.Button bscorelog -> d
+    android.widget.Button bqresult -> e
+    android.widget.Button retakequiz -> f
+    int wrongans -> g
+    int score -> h
+    int setq -> i
+    java.lang.String ncourse -> j
+    java.lang.String qdetails -> k
+    com.capstoneii.iclassify.dbclasses.DBAdapter myDb -> l
+    com.capstoneii.iclassify.SessionCache QuizSession -> m
+    java.lang.String tdate -> n
+    android.view.animation.Animation push_up_in -> o
+    android.view.animation.Animation bounce_in1 -> p
+    android.view.animation.Animation bounce_in2 -> q
+    android.view.animation.Animation bounce_in3 -> r
+    android.view.animation.Animation fade_in -> s
+    android.widget.TextView tvcorrect -> D
+    android.widget.TextView tvwrong -> E
+    android.database.Cursor cr -> F
+    int totalsumof -> t
+    int sumOf -> u
+    double jsper -> v
+    int retake -> w
+    java.lang.String quizdetails -> x
+    int prevTotal -> y
+    int curTotal -> z
+    java.lang.String finalDate -> A
+    android.content.Intent intent -> B
+    java.lang.String initVal -> C
+    void onCreate(android.os.Bundle) -> onCreate
+    void onDestroy() -> onDestroy
+    void openDB() -> b
+    void populateSwithdb() -> c
+    void populateQwithdb() -> d
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onBackPressed() -> onBackPressed
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    void obtlDialog() -> a
+    void access$0(com.capstoneii.iclassify.QuizResultActivity) -> a
+    void access$1(com.capstoneii.iclassify.QuizResultActivity) -> b
+    void access$2(com.capstoneii.iclassify.QuizResultActivity) -> c
+com.capstoneii.iclassify.QuizResultActivity$1 -> com.capstoneii.iclassify.f:
+    com.capstoneii.iclassify.QuizResultActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultActivity$2 -> com.capstoneii.iclassify.g:
+    com.capstoneii.iclassify.QuizResultActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultActivity$3 -> com.capstoneii.iclassify.h:
+    com.capstoneii.iclassify.QuizResultActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+    com.capstoneii.iclassify.QuizResultActivity access$0(com.capstoneii.iclassify.QuizResultActivity$3) -> a
+com.capstoneii.iclassify.QuizResultActivity$3$1 -> com.capstoneii.iclassify.i:
+    com.capstoneii.iclassify.QuizResultActivity$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultActivity$3$2 -> com.capstoneii.iclassify.j:
+    com.capstoneii.iclassify.QuizResultActivity$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultActivity$3$3 -> com.capstoneii.iclassify.k:
+    com.capstoneii.iclassify.QuizResultActivity$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultActivity$3$4 -> com.capstoneii.iclassify.l:
+    com.capstoneii.iclassify.QuizResultActivity$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultActivity$3$5 -> com.capstoneii.iclassify.m:
+    com.capstoneii.iclassify.QuizResultActivity$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultActivity$3$6 -> com.capstoneii.iclassify.n:
+    com.capstoneii.iclassify.QuizResultActivity$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultActivity$4 -> com.capstoneii.iclassify.o:
+    com.capstoneii.iclassify.QuizResultActivity this$0 -> a
+    void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+com.capstoneii.iclassify.QuizResultActivity$5 -> com.capstoneii.iclassify.p:
+    com.capstoneii.iclassify.QuizResultActivity this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultActivity$6 -> com.capstoneii.iclassify.q:
+    com.capstoneii.iclassify.QuizResultActivity this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultBayesian -> com.capstoneii.iclassify.QuizResultBayesian:
+    android.widget.TextView correct -> a
+    android.widget.TextView wrong -> b
+    android.widget.TextView mesg -> c
+    android.widget.Button bscorelog -> d
+    android.widget.Button bqresult -> e
+    android.widget.Button retakequiz -> f
+    int wrongans -> g
+    int score -> h
+    int setq -> i
+    java.lang.String ncourse -> j
+    java.lang.String qdetails -> k
+    com.capstoneii.iclassify.dbclasses.DBAdapter myDb -> l
+    com.capstoneii.iclassify.SessionCache QuizSession -> m
+    java.lang.String tdate -> n
+    android.view.animation.Animation push_up_in -> o
+    android.view.animation.Animation bounce_in1 -> p
+    android.view.animation.Animation bounce_in2 -> q
+    android.view.animation.Animation bounce_in3 -> r
+    android.view.animation.Animation fade_in -> s
+    android.widget.TextView tvcorrect -> D
+    android.widget.TextView tvwrong -> E
+    android.database.Cursor cr -> F
+    int totalsumof -> t
+    int sumOf -> u
+    double jsper -> v
+    int retake -> w
+    java.lang.String quizdetails -> x
+    int prevTotal -> y
+    int curTotal -> z
+    java.lang.String finalDate -> A
+    android.content.Intent intent -> B
+    java.lang.String initVal -> C
+    void onCreate(android.os.Bundle) -> onCreate
+    void onDestroy() -> onDestroy
+    void openDB() -> b
+    void populateSwithdb() -> c
+    void populateQwithdb() -> d
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+    void obtlDialog() -> a
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onBackPressed() -> onBackPressed
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    void access$0(com.capstoneii.iclassify.QuizResultBayesian) -> a
+    void access$1(com.capstoneii.iclassify.QuizResultBayesian) -> b
+    void access$2(com.capstoneii.iclassify.QuizResultBayesian) -> c
+com.capstoneii.iclassify.QuizResultBayesian$1 -> com.capstoneii.iclassify.r:
+    com.capstoneii.iclassify.QuizResultBayesian this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultBayesian$2 -> com.capstoneii.iclassify.s:
+    com.capstoneii.iclassify.QuizResultBayesian this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultBayesian$3 -> com.capstoneii.iclassify.t:
+    com.capstoneii.iclassify.QuizResultBayesian this$0 -> a
+    void onClick(android.view.View) -> onClick
+    com.capstoneii.iclassify.QuizResultBayesian access$0(com.capstoneii.iclassify.QuizResultBayesian$3) -> a
+com.capstoneii.iclassify.QuizResultBayesian$3$1 -> com.capstoneii.iclassify.u:
+    com.capstoneii.iclassify.QuizResultBayesian$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultBayesian$3$2 -> com.capstoneii.iclassify.v:
+    com.capstoneii.iclassify.QuizResultBayesian$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultBayesian$3$3 -> com.capstoneii.iclassify.w:
+    com.capstoneii.iclassify.QuizResultBayesian$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultBayesian$3$4 -> com.capstoneii.iclassify.x:
+    com.capstoneii.iclassify.QuizResultBayesian$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultBayesian$3$5 -> com.capstoneii.iclassify.y:
+    com.capstoneii.iclassify.QuizResultBayesian$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultBayesian$3$6 -> com.capstoneii.iclassify.z:
+    com.capstoneii.iclassify.QuizResultBayesian$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultBayesian$4 -> com.capstoneii.iclassify.aa:
+    com.capstoneii.iclassify.QuizResultBayesian this$0 -> a
+    void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+com.capstoneii.iclassify.QuizResultBayesian$5 -> com.capstoneii.iclassify.ab:
+    com.capstoneii.iclassify.QuizResultBayesian this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultBayesian$6 -> com.capstoneii.iclassify.ac:
+    com.capstoneii.iclassify.QuizResultBayesian this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultDecision -> com.capstoneii.iclassify.QuizResultDecision:
+    android.widget.TextView correct -> a
+    android.widget.TextView wrong -> b
+    android.widget.TextView mesg -> c
+    android.widget.Button bscorelog -> d
+    android.widget.Button bqresult -> e
+    android.widget.Button retakequiz -> f
+    int wrongans -> g
+    int score -> h
+    int setq -> i
+    java.lang.String ncourse -> j
+    java.lang.String qdetails -> k
+    com.capstoneii.iclassify.dbclasses.DBAdapter myDb -> l
+    com.capstoneii.iclassify.SessionCache QuizSession -> m
+    java.lang.String tdate -> n
+    android.view.animation.Animation push_up_in -> o
+    android.view.animation.Animation bounce_in1 -> p
+    android.view.animation.Animation bounce_in2 -> q
+    android.view.animation.Animation bounce_in3 -> r
+    android.view.animation.Animation fade_in -> s
+    android.widget.TextView tvcorrect -> D
+    android.widget.TextView tvwrong -> E
+    android.database.Cursor cr -> F
+    int totalsumof -> t
+    int sumOf -> u
+    double jsper -> v
+    int retake -> w
+    java.lang.String quizdetails -> x
+    int prevTotal -> y
+    int curTotal -> z
+    java.lang.String finalDate -> A
+    android.content.Intent intent -> B
+    java.lang.String initVal -> C
+    void onCreate(android.os.Bundle) -> onCreate
+    void onDestroy() -> onDestroy
+    void openDB() -> b
+    void populateSwithdb() -> c
+    void populateQwithdb() -> d
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onBackPressed() -> onBackPressed
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    void obtlDialog() -> a
+    void access$0(com.capstoneii.iclassify.QuizResultDecision) -> a
+    void access$1(com.capstoneii.iclassify.QuizResultDecision) -> b
+    void access$2(com.capstoneii.iclassify.QuizResultDecision) -> c
+com.capstoneii.iclassify.QuizResultDecision$1 -> com.capstoneii.iclassify.ad:
+    com.capstoneii.iclassify.QuizResultDecision this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultDecision$2 -> com.capstoneii.iclassify.ae:
+    com.capstoneii.iclassify.QuizResultDecision this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultDecision$3 -> com.capstoneii.iclassify.af:
+    com.capstoneii.iclassify.QuizResultDecision this$0 -> a
+    void onClick(android.view.View) -> onClick
+    com.capstoneii.iclassify.QuizResultDecision access$0(com.capstoneii.iclassify.QuizResultDecision$3) -> a
+com.capstoneii.iclassify.QuizResultDecision$3$1 -> com.capstoneii.iclassify.ag:
+    com.capstoneii.iclassify.QuizResultDecision$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultDecision$3$2 -> com.capstoneii.iclassify.ah:
+    com.capstoneii.iclassify.QuizResultDecision$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultDecision$3$3 -> com.capstoneii.iclassify.ai:
+    com.capstoneii.iclassify.QuizResultDecision$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultDecision$3$4 -> com.capstoneii.iclassify.aj:
+    com.capstoneii.iclassify.QuizResultDecision$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultDecision$3$5 -> com.capstoneii.iclassify.ak:
+    com.capstoneii.iclassify.QuizResultDecision$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultDecision$3$6 -> com.capstoneii.iclassify.al:
+    com.capstoneii.iclassify.QuizResultDecision$3 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultDecision$4 -> com.capstoneii.iclassify.am:
+    com.capstoneii.iclassify.QuizResultDecision this$0 -> a
+    void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+com.capstoneii.iclassify.QuizResultDecision$5 -> com.capstoneii.iclassify.an:
+    com.capstoneii.iclassify.QuizResultDecision this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.QuizResultDecision$6 -> com.capstoneii.iclassify.ao:
+    com.capstoneii.iclassify.QuizResultDecision this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.R -> com.capstoneii.iclassify.ap:
+com.capstoneii.iclassify.R$styleable -> com.capstoneii.iclassify.aq:
     int[] ActionBar -> ActionBar
     int ActionBar_background -> ActionBar_background
     int ActionBar_backgroundSplit -> ActionBar_backgroundSplit
@@ -5119,6 +5481,20 @@ com.capstoneii.iclassify.R$styleable -> com.capstoneii.iclassify.g:
     int View_android_focusable -> View_android_focusable
     int View_paddingEnd -> View_paddingEnd
     int View_paddingStart -> View_paddingStart
+com.capstoneii.iclassify.SessionCache -> com.capstoneii.iclassify.ar:
+    android.content.SharedPreferences qpref -> a
+    android.content.SharedPreferences$Editor editor -> b
+    android.content.Context _context -> c
+    int PRIVATE_MODE -> d
+    void FinishSessionNum1(java.lang.String) -> a
+    void StoreTotal1(java.lang.String) -> b
+    void StoreFlLastQuizTaken(java.lang.String) -> c
+    void StoreAllLastQuizTaken(java.lang.String) -> d
+    void StoredLastScore(java.lang.String,java.lang.String,java.lang.String) -> a
+    java.util.HashMap getTotalSum() -> a
+    boolean hasFlQuiz1() -> b
+    boolean hasFlQuiz2() -> c
+    boolean hasFlQuiz3() -> d
 com.capstoneii.iclassify.SplashScreenActivity -> com.capstoneii.iclassify.SplashScreenActivity:
     java.lang.String TAG -> a
     long SLEEP_TIME -> b
@@ -5126,40 +5502,130 @@ com.capstoneii.iclassify.SplashScreenActivity -> com.capstoneii.iclassify.Splash
     void onCreate(android.os.Bundle) -> onCreate
     long access$0() -> a
     java.lang.String access$1() -> b
-com.capstoneii.iclassify.SplashScreenActivity$IntentLauncher -> com.capstoneii.iclassify.h:
+com.capstoneii.iclassify.SplashScreenActivity$IntentLauncher -> com.capstoneii.iclassify.as:
     com.capstoneii.iclassify.SplashScreenActivity this$0 -> a
     void run() -> run
-com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity -> com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity:
+com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop -> com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop:
     android.widget.Button checkdropbt -> o
-    int numDragged -> p
-    android.widget.TextView option1 -> q
-    android.widget.TextView option2 -> r
-    android.widget.TextView option3 -> s
-    android.widget.TextView choice1 -> t
-    android.widget.TextView choice2 -> u
-    android.widget.TextView choice3 -> v
+    android.widget.Button clearbt -> p
+    int numDragged -> q
+    android.widget.TextView option1 -> s
+    android.widget.TextView option2 -> t
+    android.widget.TextView option3 -> u
+    android.widget.TextView choice1 -> v
+    android.widget.TextView choice2 -> w
+    android.widget.TextView choice3 -> x
+    java.lang.String TAG -> y
+    long SLEEP_TIME -> z
+    java.lang.String initVal -> r
     void onCreate(android.os.Bundle) -> onCreate
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity$1 -> com.capstoneii.iclassify.assessment.bayesian.a:
-    com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity this$0 -> a
+    void CheckDrop() -> j
+    void onBackPressed() -> onBackPressed
+    long access$0() -> k
+    java.lang.String access$1() -> l
+com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop$1 -> com.capstoneii.iclassify.assessment.bayesian.a:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity$ChoiceDragListener -> com.capstoneii.iclassify.assessment.bayesian.b:
-    com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity this$0 -> a
+com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop$2 -> com.capstoneii.iclassify.assessment.bayesian.b:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop$ChoiceDragListener -> com.capstoneii.iclassify.assessment.bayesian.c:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop this$0 -> a
     boolean onDrag(android.view.View,android.view.DragEvent) -> onDrag
-com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity$ChoiceTouchListener -> com.capstoneii.iclassify.assessment.bayesian.c:
-    com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentActivity this$0 -> a
+com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop$ChoiceDragListener$1 -> com.capstoneii.iclassify.assessment.bayesian.d:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop$ChoiceDragListener$2 -> com.capstoneii.iclassify.assessment.bayesian.e:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop$ChoiceTouchListener -> com.capstoneii.iclassify.assessment.bayesian.f:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop this$0 -> a
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop$IntentLauncher -> com.capstoneii.iclassify.assessment.bayesian.g:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop this$0 -> a
+    void run() -> run
+com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz -> com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz:
+    java.util.List quesList -> a
+    int score -> b
+    int page -> c
+    int qid -> d
+    int qset -> e
+    java.lang.String ncourse -> f
+    com.capstoneii.iclassify.dbclasses.Question question -> g
+    android.widget.TextView tvQue -> h
+    android.widget.TextView tvPage -> i
+    android.widget.TextView tvRef -> j
+    android.widget.RadioButton rd1 -> k
+    android.widget.RadioButton rd2 -> l
+    android.widget.RadioButton rd3 -> m
+    android.widget.RadioButton rd4 -> n
+    android.widget.Button bnext -> o
+    com.capstoneii.iclassify.SessionCache QuizSession -> p
+    com.capstoneii.iclassify.dbclasses.DBAdapter myDb -> q
+    java.util.Date date -> u
+    java.lang.String finalDate -> r
+    android.widget.LinearLayout quizlin -> s
+    android.widget.TextView instructiondesc -> t
+    void onCreate(android.os.Bundle) -> onCreate
+    void setQuestionView() -> d
+    void onDestroy() -> onDestroy
+    void openDB() -> e
+    void closeDB() -> f
+    void onBackPressed() -> onBackPressed
+    void addQuestions2() -> a
+    void instructionDialog() -> b
+    void directionAssess() -> c
+    void access$0(com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz) -> a
+    void access$1(com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz,java.util.Date) -> a
+    java.util.Date access$2(com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz) -> b
+    void access$3(com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz) -> c
+com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz$1 -> com.capstoneii.iclassify.assessment.bayesian.h:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz$2 -> com.capstoneii.iclassify.assessment.bayesian.i:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz$3 -> com.capstoneii.iclassify.assessment.bayesian.j:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz$4 -> com.capstoneii.iclassify.assessment.bayesian.k:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz$5 -> com.capstoneii.iclassify.assessment.bayesian.l:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz$6 -> com.capstoneii.iclassify.assessment.bayesian.m:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz$7 -> com.capstoneii.iclassify.assessment.bayesian.n:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz$8 -> com.capstoneii.iclassify.assessment.bayesian.o:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz$9 -> com.capstoneii.iclassify.assessment.bayesian.p:
+    com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz this$0 -> a
+    android.widget.ImageView val$transpaimage -> b
+    android.app.Dialog val$dialog3 -> c
+    void onClick(android.view.View) -> onClick
 com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity -> com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity:
     android.widget.Button checkdropbt -> o
-    int numDragged -> p
-    android.widget.TextView option1 -> q
-    android.widget.TextView option2 -> r
-    android.widget.TextView option3 -> s
-    android.widget.TextView choice1 -> t
-    android.widget.TextView choice2 -> u
-    android.widget.TextView choice3 -> v
-    java.lang.String TAG -> w
-    long SLEEP_TIME -> x
+    android.widget.Button clearbt -> p
+    int numDragged -> q
+    android.widget.TextView option1 -> r
+    android.widget.TextView option2 -> s
+    android.widget.TextView option3 -> t
+    android.widget.TextView choice1 -> u
+    android.widget.TextView choice2 -> v
+    android.widget.TextView choice3 -> w
+    java.lang.String TAG -> x
+    long SLEEP_TIME -> y
     void onCreate(android.os.Bundle) -> onCreate
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
     void CheckDrop() -> j
@@ -5168,13 +5634,24 @@ com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity -
 com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity$1 -> com.capstoneii.iclassify.assessment.decisionid3.a:
     com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity$ChoiceDragListener -> com.capstoneii.iclassify.assessment.decisionid3.b:
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity$2 -> com.capstoneii.iclassify.assessment.decisionid3.b:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity$ChoiceDragListener -> com.capstoneii.iclassify.assessment.decisionid3.c:
     com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity this$0 -> a
     boolean onDrag(android.view.View,android.view.DragEvent) -> onDrag
-com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity$ChoiceTouchListener -> com.capstoneii.iclassify.assessment.decisionid3.c:
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity$ChoiceDragListener$1 -> com.capstoneii.iclassify.assessment.decisionid3.d:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity$ChoiceDragListener$2 -> com.capstoneii.iclassify.assessment.decisionid3.e:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity$ChoiceTouchListener -> com.capstoneii.iclassify.assessment.decisionid3.f:
     com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity this$0 -> a
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity$IntentLauncher -> com.capstoneii.iclassify.assessment.decisionid3.d:
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity$IntentLauncher -> com.capstoneii.iclassify.assessment.decisionid3.g:
     com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentActivity this$0 -> a
     void run() -> run
 com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity -> com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity:
@@ -5185,13 +5662,17 @@ com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFir
     android.widget.TextView option3 -> s
     android.widget.TextView option4 -> t
     android.widget.TextView choice1 -> u
+    java.lang.String TAG -> v
+    long SLEEP_TIME -> w
     void onCreate(android.os.Bundle) -> onCreate
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
     void NextAssess() -> j
-com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$1 -> com.capstoneii.iclassify.assessment.decisionid3.e:
+    long access$0() -> k
+    java.lang.String access$1() -> l
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$1 -> com.capstoneii.iclassify.assessment.decisionid3.h:
     com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$CheckDroped -> com.capstoneii.iclassify.assessment.decisionid3.f:
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$CheckDroped -> com.capstoneii.iclassify.assessment.decisionid3.i:
     android.app.ProgressDialog progress -> b
     com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity this$0 -> a
     java.lang.Void doInBackground(java.lang.Void[]) -> a
@@ -5202,33 +5683,389 @@ com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFir
     void onPostExecute(java.lang.Object) -> onPostExecute
     java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
     void onProgressUpdate(java.lang.Object[]) -> onProgressUpdate
-com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$ChoiceDragListener -> com.capstoneii.iclassify.assessment.decisionid3.g:
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$ChoiceDragListener -> com.capstoneii.iclassify.assessment.decisionid3.j:
     com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity this$0 -> a
     boolean onDrag(android.view.View,android.view.DragEvent) -> onDrag
-com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$ChoiceTouchListener -> com.capstoneii.iclassify.assessment.decisionid3.h:
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$ChoiceDragListener$1 -> com.capstoneii.iclassify.assessment.decisionid3.k:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$ChoiceDragListener$2 -> com.capstoneii.iclassify.assessment.decisionid3.l:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$ChoiceDragListener$3 -> com.capstoneii.iclassify.assessment.decisionid3.m:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$ChoiceTouchListener -> com.capstoneii.iclassify.assessment.decisionid3.n:
     com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity this$0 -> a
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity -> com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity:
-    android.widget.Button checkdropbt -> o
-    int numDragged -> p
-    android.widget.TextView option7 -> q
-    android.widget.TextView option8 -> r
-    android.widget.TextView option9 -> s
-    android.widget.TextView option10 -> t
-    android.widget.TextView option11 -> u
-    android.widget.TextView choice7 -> v
-    android.widget.TextView choice8 -> w
-    android.widget.TextView choice9 -> x
-    android.widget.TextView choice10 -> y
-    android.widget.TextView choice11 -> z
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity$IntentLauncher -> com.capstoneii.iclassify.assessment.decisionid3.o:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity this$0 -> a
+    void run() -> run
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord -> com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord:
+    android.widget.TextView jumblequestionText -> o
+    android.widget.ImageView imgt -> p
+    android.widget.ImageView imgr -> q
+    android.widget.ImageView imgy -> r
+    android.widget.ImageView imgp -> s
+    android.widget.ImageView imgn -> t
+    android.widget.ImageView imge -> u
+    android.widget.ImageView imgo -> v
+    android.widget.EditText jumbleedittext -> w
+    android.widget.Button checkbt -> x
+    android.widget.Button clearbt -> y
+    android.view.animation.Animation animationZoom -> z
+    android.view.animation.Animation zoomOut -> A
+    android.text.TextWatcher watch -> B
     void onCreate(android.os.Bundle) -> onCreate
+    void imgtTimer() -> j
+    void imgrTimer() -> k
+    void imgyTimer() -> l
+    void imgpTimer() -> m
+    void imgnTimer() -> n
+    void imgeTimer() -> o
+    void imgoTimer() -> p
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    void NextAssess() -> q
     void onBackPressed() -> onBackPressed
-com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity$ChoiceDragListener -> com.capstoneii.iclassify.assessment.knn.a:
-    com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity this$0 -> a
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1 -> com.capstoneii.iclassify.assessment.decisionid3.p:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord this$0 -> a
+    void afterTextChanged(android.text.Editable) -> afterTextChanged
+    void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
+    void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord access$0(com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1) -> a
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1$1 -> com.capstoneii.iclassify.assessment.decisionid3.q:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1 this$1 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1$2 -> com.capstoneii.iclassify.assessment.decisionid3.r:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1 this$1 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1$3 -> com.capstoneii.iclassify.assessment.decisionid3.s:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1 this$1 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1$4 -> com.capstoneii.iclassify.assessment.decisionid3.t:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1 this$1 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1$5 -> com.capstoneii.iclassify.assessment.decisionid3.u:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1 this$1 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1$6 -> com.capstoneii.iclassify.assessment.decisionid3.v:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1 this$1 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1$7 -> com.capstoneii.iclassify.assessment.decisionid3.w:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$1 this$1 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$10 -> com.capstoneii.iclassify.assessment.decisionid3.x:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord this$0 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$2 -> com.capstoneii.iclassify.assessment.decisionid3.y:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$2$1 -> com.capstoneii.iclassify.assessment.decisionid3.z:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$3 -> com.capstoneii.iclassify.assessment.decisionid3.aa:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$4 -> com.capstoneii.iclassify.assessment.decisionid3.ab:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord this$0 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$5 -> com.capstoneii.iclassify.assessment.decisionid3.ac:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord this$0 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$6 -> com.capstoneii.iclassify.assessment.decisionid3.ad:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord this$0 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$7 -> com.capstoneii.iclassify.assessment.decisionid3.ae:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord this$0 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$8 -> com.capstoneii.iclassify.assessment.decisionid3.af:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord this$0 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$9 -> com.capstoneii.iclassify.assessment.decisionid3.ag:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord this$0 -> a
+    void onTick(long) -> onTick
+    void onFinish() -> onFinish
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord$CheckDroped -> com.capstoneii.iclassify.assessment.decisionid3.ah:
+    android.app.ProgressDialog progress -> b
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentJumbleWord this$0 -> a
+    java.lang.Void doInBackground(java.lang.Void[]) -> a
+    void onCancelled() -> onCancelled
+    void onPreExecute() -> onPreExecute
+    void onPostExecute(java.lang.Void) -> a
+    void onProgressUpdate(java.lang.Void[]) -> b
+    void onPostExecute(java.lang.Object) -> onPostExecute
+    java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
+    void onProgressUpdate(java.lang.Object[]) -> onProgressUpdate
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz -> com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz:
+    java.util.List quesList -> a
+    int score -> b
+    int page -> c
+    int qid -> d
+    int qset -> e
+    java.lang.String ncourse -> f
+    com.capstoneii.iclassify.dbclasses.Question question -> g
+    android.widget.TextView tvQue -> h
+    android.widget.TextView tvPage -> i
+    android.widget.TextView tvRef -> j
+    android.widget.TextView instructiondesc -> k
+    android.widget.RadioButton rd1 -> l
+    android.widget.RadioButton rd2 -> m
+    android.widget.RadioButton rd3 -> n
+    android.widget.RadioButton rd4 -> o
+    android.widget.Button bnext -> p
+    com.capstoneii.iclassify.SessionCache QuizSession -> q
+    com.capstoneii.iclassify.dbclasses.DBAdapter myDb -> r
+    java.util.Date date -> u
+    java.lang.String finalDate -> s
+    android.widget.LinearLayout quizlin -> t
+    void onCreate(android.os.Bundle) -> onCreate
+    void setQuestionView() -> d
+    void onDestroy() -> onDestroy
+    void openDB() -> e
+    void closeDB() -> f
+    void onBackPressed() -> onBackPressed
+    void addQuestions3() -> a
+    void instructionDialog() -> b
+    void directionAssess() -> c
+    void access$0(com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz) -> a
+    void access$1(com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz,java.util.Date) -> a
+    java.util.Date access$2(com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz) -> b
+    void access$3(com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz) -> c
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz$1 -> com.capstoneii.iclassify.assessment.decisionid3.ai:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz$2 -> com.capstoneii.iclassify.assessment.decisionid3.aj:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz$3 -> com.capstoneii.iclassify.assessment.decisionid3.ak:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz$4 -> com.capstoneii.iclassify.assessment.decisionid3.al:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz$5 -> com.capstoneii.iclassify.assessment.decisionid3.am:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz$6 -> com.capstoneii.iclassify.assessment.decisionid3.an:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz$7 -> com.capstoneii.iclassify.assessment.decisionid3.ao:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz$8 -> com.capstoneii.iclassify.assessment.decisionid3.ap:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz$9 -> com.capstoneii.iclassify.assessment.decisionid3.aq:
+    com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz this$0 -> a
+    android.widget.ImageView val$transpaimage -> b
+    android.app.Dialog val$dialog2 -> c
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop -> com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop:
+    android.widget.Button checkdropbt -> o
+    android.widget.Button clearbt -> p
+    int numDragged -> q
+    android.widget.TextView option1 -> r
+    android.widget.TextView option2 -> s
+    android.widget.TextView option3 -> t
+    android.widget.TextView option4 -> u
+    android.widget.TextView option5 -> v
+    android.widget.TextView choice1 -> w
+    android.widget.TextView choice2 -> x
+    android.widget.TextView choice3 -> y
+    android.widget.TextView choice4 -> z
+    android.widget.TextView choice5 -> A
+    java.lang.String TAG -> B
+    long SLEEP_TIME -> C
+    void onCreate(android.os.Bundle) -> onCreate
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    void CheckDrop() -> j
+    void onBackPressed() -> onBackPressed
+    long access$0() -> k
+    java.lang.String access$1() -> l
+com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop$1 -> com.capstoneii.iclassify.assessment.knn.a:
+    com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop$2 -> com.capstoneii.iclassify.assessment.knn.b:
+    com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop$ChoiceDragListener -> com.capstoneii.iclassify.assessment.knn.c:
+    com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop this$0 -> a
     boolean onDrag(android.view.View,android.view.DragEvent) -> onDrag
-com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity$ChoiceTouchListener -> com.capstoneii.iclassify.assessment.knn.b:
-    com.capstoneii.iclassify.assessment.knn.KnnAssessmentActivity this$0 -> a
+com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop$ChoiceDragListener$1 -> com.capstoneii.iclassify.assessment.knn.d:
+    com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop$ChoiceDragListener$2 -> com.capstoneii.iclassify.assessment.knn.e:
+    com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop$ChoiceDragListener$3 -> com.capstoneii.iclassify.assessment.knn.f:
+    com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop$ChoiceDragListener$4 -> com.capstoneii.iclassify.assessment.knn.g:
+    com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop$ChoiceTouchListener -> com.capstoneii.iclassify.assessment.knn.h:
+    com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop this$0 -> a
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop$IntentLauncher -> com.capstoneii.iclassify.assessment.knn.i:
+    com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop this$0 -> a
+    void run() -> run
+com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz -> com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz:
+    java.util.List quesList -> a
+    int score -> b
+    int page -> c
+    int qid -> d
+    int qset -> e
+    java.lang.String ncourse -> f
+    com.capstoneii.iclassify.dbclasses.Question question -> g
+    android.widget.TextView tvQue -> h
+    android.widget.TextView tvPage -> i
+    android.widget.TextView tvRef -> j
+    android.widget.TextView instructiondesc -> k
+    android.widget.RadioButton rd1 -> l
+    android.widget.RadioButton rd2 -> m
+    android.widget.RadioButton rd3 -> n
+    android.widget.RadioButton rd4 -> o
+    android.widget.Button bnext -> p
+    com.capstoneii.iclassify.SessionCache QuizSession -> q
+    com.capstoneii.iclassify.dbclasses.DBAdapter myDb -> r
+    java.util.Date date -> u
+    java.lang.String finalDate -> s
+    android.widget.LinearLayout quizlin -> t
+    void onCreate(android.os.Bundle) -> onCreate
+    void setQuestionView() -> d
+    void onDestroy() -> onDestroy
+    void openDB() -> e
+    void closeDB() -> f
+    void onBackPressed() -> onBackPressed
+    void addQuestions1() -> a
+    void instructionDialog() -> b
+    void directionAssess() -> c
+    void access$0(com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz) -> a
+    void access$1(com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz,java.util.Date) -> a
+    java.util.Date access$2(com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz) -> b
+    void access$3(com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz) -> c
+com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz$1 -> com.capstoneii.iclassify.assessment.knn.j:
+    com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz$2 -> com.capstoneii.iclassify.assessment.knn.k:
+    com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz$3 -> com.capstoneii.iclassify.assessment.knn.l:
+    com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz$4 -> com.capstoneii.iclassify.assessment.knn.m:
+    com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz$5 -> com.capstoneii.iclassify.assessment.knn.n:
+    com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz$6 -> com.capstoneii.iclassify.assessment.knn.o:
+    com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz$7 -> com.capstoneii.iclassify.assessment.knn.p:
+    com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz$8 -> com.capstoneii.iclassify.assessment.knn.q:
+    com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz this$0 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz$9 -> com.capstoneii.iclassify.assessment.knn.r:
+    com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz this$0 -> a
+    android.widget.ImageView val$transpaimage -> b
+    android.app.Dialog val$dialog1 -> c
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.dbclasses.DBAdapter -> com.capstoneii.iclassify.a.a:
+    java.lang.String[] ALL_USER -> a
+    java.lang.String[] ALL_KEYS -> b
+    java.lang.String[] ALL_JSKEYS -> c
+    java.lang.String[] ALL_TEMPS -> d
+    android.content.Context context -> e
+    com.capstoneii.iclassify.dbclasses.DBAdapter$Dbhandler dbhandler -> f
+    android.database.sqlite.SQLiteDatabase db -> g
+    com.capstoneii.iclassify.dbclasses.DBAdapter open() -> a
+    void close() -> b
+    long addscores(int,int,java.lang.String,java.lang.String,int,java.lang.String) -> a
+    long addjsquiz(int,java.lang.String,java.lang.String,java.lang.String) -> a
+    void deleteQuiz(java.lang.String) -> a
+    android.database.Cursor getAllscorewithChapter(java.lang.String) -> b
+    void deletescorerowSet(long,java.lang.String) -> a
+    void addtempQuestion(com.capstoneii.iclassify.dbclasses.TempQuestion) -> a
+    android.database.Cursor getAlltempRows() -> c
+    boolean delTempRows(long) -> a
+    void delAllTempRows() -> d
+    android.database.Cursor getRow(long) -> b
+    int getallRowswithName(java.lang.String) -> c
+    void addQuestions1(com.capstoneii.iclassify.dbclasses.Question) -> a
+    java.util.List getAllQuestions1() -> e
+    void addQuestions2(com.capstoneii.iclassify.dbclasses.Question) -> b
+    java.util.List getAllQuestions2() -> f
+    void addQuestions3(com.capstoneii.iclassify.dbclasses.Question) -> c
+    java.util.List getAllQuestions3() -> g
+com.capstoneii.iclassify.dbclasses.DBAdapter$Dbhandler -> com.capstoneii.iclassify.a.b:
+    void onCreate(android.database.sqlite.SQLiteDatabase) -> onCreate
+    void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int) -> onUpgrade
+com.capstoneii.iclassify.dbclasses.Question -> com.capstoneii.iclassify.a.c:
+    int qid -> a
+    java.lang.String lid -> b
+    java.lang.String qitem -> c
+    java.lang.String qans -> d
+    java.lang.String opta -> e
+    java.lang.String optb -> f
+    java.lang.String optc -> g
+    java.lang.String optd -> h
+    void setQid(int) -> a
+    java.lang.String getLid() -> a
+    void setLid(java.lang.String) -> a
+    java.lang.String getQitem() -> b
+    void setQitem(java.lang.String) -> b
+    java.lang.String getQans() -> c
+    void setQans(java.lang.String) -> c
+    java.lang.String getOpta() -> d
+    void setOpta(java.lang.String) -> d
+    java.lang.String getOptb() -> e
+    void setOptb(java.lang.String) -> e
+    java.lang.String getOptc() -> f
+    void setOptc(java.lang.String) -> f
+    java.lang.String getOptd() -> g
+    void setOptd(java.lang.String) -> g
+com.capstoneii.iclassify.dbclasses.TempQuestion -> com.capstoneii.iclassify.a.d:
+    int qid -> a
+    java.lang.String qset -> b
+    java.lang.String lid -> c
+    java.lang.String qitem -> d
+    java.lang.String qans -> e
+    java.lang.String quserans -> f
+    java.lang.String getQset() -> a
+    java.lang.String getLid() -> b
+    java.lang.String getQitem() -> c
+    java.lang.String getQans() -> d
+    java.lang.String getQuserans() -> e
 com.capstoneii.iclassify.library.ExpandableButtonMenu -> com.capstoneii.iclassify.library.a:
     int sWidth -> a
     int sHeight -> b
@@ -5418,7 +6255,37 @@ com.capstoneii.iclassify.library.TitanicTextView -> com.capstoneii.iclassify.lib
     void onDraw(android.graphics.Canvas) -> onDraw
 com.capstoneii.iclassify.library.TitanicTextView$AnimationSetupCallback -> com.capstoneii.iclassify.library.n:
     void onSetupAnimation(com.capstoneii.iclassify.library.TitanicTextView) -> a
-com.capstoneii.iclassify.library.Typefaces -> com.capstoneii.iclassify.library.o:
+com.capstoneii.iclassify.library.TouchImageView -> com.capstoneii.iclassify.library.TouchImageView:
+    android.graphics.Matrix matrix -> a
+    int mode -> b
+    android.graphics.PointF last -> c
+    android.graphics.PointF start -> d
+    float minScale -> e
+    float maxScale -> f
+    float[] m -> g
+    int viewWidth -> h
+    int viewHeight -> i
+    float saveScale -> j
+    float origWidth -> k
+    float origHeight -> l
+    int oldMeasuredWidth -> m
+    int oldMeasuredHeight -> n
+    android.view.ScaleGestureDetector mScaleDetector -> o
+    android.content.Context context -> p
+    void sharedConstructing(android.content.Context) -> a
+    void setMaxZoom(float) -> setMaxZoom
+    void fixTrans() -> a
+    float getFixTrans(float,float,float) -> a
+    float getFixDragTrans(float,float,float) -> b
+    void onMeasure(int,int) -> onMeasure
+com.capstoneii.iclassify.library.TouchImageView$1 -> com.capstoneii.iclassify.library.o:
+    com.capstoneii.iclassify.library.TouchImageView this$0 -> a
+    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+com.capstoneii.iclassify.library.TouchImageView$ScaleListener -> com.capstoneii.iclassify.library.p:
+    com.capstoneii.iclassify.library.TouchImageView this$0 -> a
+    boolean onScaleBegin(android.view.ScaleGestureDetector) -> onScaleBegin
+    boolean onScale(android.view.ScaleGestureDetector) -> onScale
+com.capstoneii.iclassify.library.Typefaces -> com.capstoneii.iclassify.library.q:
     java.util.Hashtable cache -> a
     android.graphics.Typeface get(android.content.Context,java.lang.String) -> a
 com.capstoneii.iclassify.library.TypewriterTextView -> com.capstoneii.iclassify.library.TypewriterTextView:
@@ -5440,18 +6307,20 @@ com.capstoneii.iclassify.problems.ChooseProblemActivity$1 -> com.capstoneii.icla
 com.capstoneii.iclassify.problems.ChooseProblemActivity$2 -> com.capstoneii.iclassify.problems.c:
     com.capstoneii.iclassify.problems.ChooseProblemActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.problems.ChooseProblemActivity$3 -> com.capstoneii.iclassify.problems.d:
-    com.capstoneii.iclassify.problems.ChooseProblemActivity this$0 -> a
-    void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.problems.SimpsonFinalResult -> com.capstoneii.iclassify.problems.e:
+com.capstoneii.iclassify.problems.SimpsonFinalResult -> com.capstoneii.iclassify.problems.d:
     android.widget.ImageView simpsoneTable -> a
     android.widget.ImageView comictable -> b
-    android.widget.Button backtomain -> c
+    android.widget.ImageView backtomain -> c
     android.view.animation.Animation animationZoom -> d
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.problems.SimpsonFinalResult$1 -> com.capstoneii.iclassify.problems.f:
+com.capstoneii.iclassify.problems.SimpsonFinalResult$1 -> com.capstoneii.iclassify.problems.e:
     com.capstoneii.iclassify.problems.SimpsonFinalResult this$0 -> a
+    void onClick(android.view.View) -> onClick
+    com.capstoneii.iclassify.problems.SimpsonFinalResult access$0(com.capstoneii.iclassify.problems.SimpsonFinalResult$1) -> a
+com.capstoneii.iclassify.problems.SimpsonFinalResult$1$1 -> com.capstoneii.iclassify.problems.f:
+    com.capstoneii.iclassify.problems.SimpsonFinalResult$1 this$1 -> a
+    android.app.Dialog val$dialog -> b
     void onClick(android.view.View) -> onClick
 com.capstoneii.iclassify.problems.SimpsonMaleClassifier -> com.capstoneii.iclassify.problems.g:
     android.widget.ImageView malesimpsons -> a
@@ -5484,16 +6353,93 @@ com.capstoneii.iclassify.problems.SimpsonMaleClassifier$4 -> com.capstoneii.icla
 com.capstoneii.iclassify.problems.SimpsonMaleClassifier$5 -> com.capstoneii.iclassify.problems.l:
     com.capstoneii.iclassify.problems.SimpsonMaleClassifier this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.problems.SimpsonTableFragment -> com.capstoneii.iclassify.problems.m:
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult -> com.capstoneii.iclassify.problems.SimpsonQuizProblemResult:
+    int item -> n
+    android.support.v4.view.ViewPager mViewPager -> o
+    com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$AppPagerAdapter mAppPageAdapter -> p
+    void onCreate(android.os.Bundle) -> onCreate
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$AppPagerAdapter -> com.capstoneii.iclassify.problems.m:
+    android.support.v4.app.Fragment getItem(int) -> a
+    int getCount() -> b
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$ImageDialog -> com.capstoneii.iclassify.problems.n:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$ImageDialog2 -> com.capstoneii.iclassify.problems.o:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$ImageDialog3 -> com.capstoneii.iclassify.problems.p:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$ImageDialog4 -> com.capstoneii.iclassify.problems.q:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$ImageDialog5 -> com.capstoneii.iclassify.problems.r:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonMaleClassifier -> com.capstoneii.iclassify.problems.s:
+    android.widget.ImageView malesimpsons -> P
+    android.widget.Button weightYes -> Q
+    android.widget.Button weightNo -> R
+    android.widget.Button ishairlenght -> S
+    android.widget.Button hairlengthYes -> T
+    android.widget.Button hairlengthNo -> U
+    android.widget.Button hairlengthMale -> V
+    android.widget.Button hairlengthFemale -> W
+    android.widget.Button maleResult -> X
+    android.widget.Button simpsonNextbt -> Y
+    android.view.animation.Animation animSideDown -> Z
+    android.view.animation.Animation animationZoom -> aa
+    android.view.animation.Animation clock -> ab
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonMaleClassifier$1 -> com.capstoneii.iclassify.problems.t:
+    com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonMaleClassifier this$1 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonMaleClassifier$2 -> com.capstoneii.iclassify.problems.u:
+    com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonMaleClassifier this$1 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonMaleClassifier$3 -> com.capstoneii.iclassify.problems.v:
+    com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonMaleClassifier this$1 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonMaleClassifier$4 -> com.capstoneii.iclassify.problems.w:
+    com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonMaleClassifier this$1 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonMaleClassifier$5 -> com.capstoneii.iclassify.problems.x:
+    com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonMaleClassifier this$1 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonTableFragment -> com.capstoneii.iclassify.problems.y:
+    android.widget.ImageView simpsoneTable -> P
+    android.widget.Button nextProcBt -> Q
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonTableFragment$1 -> com.capstoneii.iclassify.problems.z:
+    com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonTableFragment this$1 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonTableFragment$1$1 -> com.capstoneii.iclassify.problems.aa:
+    com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonTableFragment$1 this$2 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulDecisionResults -> com.capstoneii.iclassify.problems.ab:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+    void onCreateOptionsMenu(android.view.Menu,android.view.MenuInflater) -> a
+    boolean onOptionsItemSelected(android.view.MenuItem) -> a
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulDecisionResults$1 -> com.capstoneii.iclassify.problems.ac:
+    com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulDecisionResults this$1 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulDecisionResults$2 -> com.capstoneii.iclassify.problems.ad:
+    com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulDecisionResults this$1 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.SimpsonTableFragment -> com.capstoneii.iclassify.problems.ae:
     android.widget.ImageView simpsoneTable -> a
     android.widget.Button nextProcBt -> b
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.problems.SimpsonTableFragment$1 -> com.capstoneii.iclassify.problems.n:
+com.capstoneii.iclassify.problems.SimpsonTableFragment$1 -> com.capstoneii.iclassify.problems.af:
     com.capstoneii.iclassify.problems.SimpsonTableFragment this$0 -> a
     void onClick(android.view.View) -> onClick
     com.capstoneii.iclassify.problems.SimpsonTableFragment access$0(com.capstoneii.iclassify.problems.SimpsonTableFragment$1) -> a
-com.capstoneii.iclassify.problems.SimpsonTableFragment$1$1 -> com.capstoneii.iclassify.problems.o:
+com.capstoneii.iclassify.problems.SimpsonTableFragment$1$1 -> com.capstoneii.iclassify.problems.ag:
     com.capstoneii.iclassify.problems.SimpsonTableFragment$1 this$1 -> a
     android.app.Dialog val$dialog -> b
     void onClick(android.view.View) -> onClick
@@ -5511,24 +6457,24 @@ com.capstoneii.iclassify.problems.SimpsonsDecisionTreeFragment -> com.capstoneii
     int buttonNextClick -> k
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.problems.SimpsonsDecisionTreeFragment$1 -> com.capstoneii.iclassify.problems.p:
+com.capstoneii.iclassify.problems.SimpsonsDecisionTreeFragment$1 -> com.capstoneii.iclassify.problems.ah:
     com.capstoneii.iclassify.problems.SimpsonsDecisionTreeFragment this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.problems.SimpsonsNextProcedure -> com.capstoneii.iclassify.problems.q:
+com.capstoneii.iclassify.problems.SimpsonsNextProcedure -> com.capstoneii.iclassify.problems.ai:
     android.widget.ImageView proceduresimpfamily -> a
     android.widget.Button nextProcBt -> b
     android.view.animation.Animation animSideDown -> c
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
     void delayFamAnim() -> a
-com.capstoneii.iclassify.problems.SimpsonsNextProcedure$1 -> com.capstoneii.iclassify.problems.r:
+com.capstoneii.iclassify.problems.SimpsonsNextProcedure$1 -> com.capstoneii.iclassify.problems.aj:
     com.capstoneii.iclassify.problems.SimpsonsNextProcedure this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.problems.SimpsonsNextProcedure$2 -> com.capstoneii.iclassify.problems.s:
+com.capstoneii.iclassify.problems.SimpsonsNextProcedure$2 -> com.capstoneii.iclassify.problems.ak:
     com.capstoneii.iclassify.problems.SimpsonsNextProcedure this$0 -> a
     void onTick(long) -> onTick
     void onFinish() -> onFinish
-com.capstoneii.iclassify.problems.chooseAlgoPatient -> com.capstoneii.iclassify.problems.t:
+com.capstoneii.iclassify.problems.chooseAlgoPatient -> com.capstoneii.iclassify.problems.al:
     android.widget.Button catsheepBT -> a
     android.widget.Button patientBT -> b
     android.widget.Button simpsonBT -> c
@@ -5537,16 +6483,16 @@ com.capstoneii.iclassify.problems.chooseAlgoPatient -> com.capstoneii.iclassify.
     android.widget.TextView headerText -> f
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.problems.chooseAlgoPatient$1 -> com.capstoneii.iclassify.problems.u:
+com.capstoneii.iclassify.problems.chooseAlgoPatient$1 -> com.capstoneii.iclassify.problems.am:
     com.capstoneii.iclassify.problems.chooseAlgoPatient this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.problems.chooseAlgoPatient$2 -> com.capstoneii.iclassify.problems.v:
+com.capstoneii.iclassify.problems.chooseAlgoPatient$2 -> com.capstoneii.iclassify.problems.an:
     com.capstoneii.iclassify.problems.chooseAlgoPatient this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.problems.chooseAlgoPatient$3 -> com.capstoneii.iclassify.problems.w:
+com.capstoneii.iclassify.problems.chooseAlgoPatient$3 -> com.capstoneii.iclassify.problems.ao:
     com.capstoneii.iclassify.problems.chooseAlgoPatient this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.problems.chooseAlgoSimpson -> com.capstoneii.iclassify.problems.x:
+com.capstoneii.iclassify.problems.chooseAlgoSimpson -> com.capstoneii.iclassify.problems.ap:
     android.widget.Button simpsonID3BT -> a
     android.widget.Button simpsonKNNBT -> b
     android.widget.Button simpsonNBBT -> c
@@ -5556,39 +6502,29 @@ com.capstoneii.iclassify.problems.chooseAlgoSimpson -> com.capstoneii.iclassify.
     android.widget.ImageView problemimage -> g
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.problems.chooseAlgoSimpson$1 -> com.capstoneii.iclassify.problems.y:
+com.capstoneii.iclassify.problems.chooseAlgoSimpson$1 -> com.capstoneii.iclassify.problems.aq:
     com.capstoneii.iclassify.problems.chooseAlgoSimpson this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.problems.chooseAlgoSimpson$2 -> com.capstoneii.iclassify.problems.z:
+com.capstoneii.iclassify.problems.chooseAlgoSimpson$2 -> com.capstoneii.iclassify.problems.ar:
     com.capstoneii.iclassify.problems.chooseAlgoSimpson this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.problems.chooseAlgoSimpson$3 -> com.capstoneii.iclassify.problems.aa:
+com.capstoneii.iclassify.problems.chooseAlgoSimpson$3 -> com.capstoneii.iclassify.problems.as:
     com.capstoneii.iclassify.problems.chooseAlgoSimpson this$0 -> a
-    void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.problems.chooseAlgocatSheep -> com.capstoneii.iclassify.problems.ab:
-    android.widget.Button catsheepBT -> a
-    android.widget.Button patientBT -> b
-    android.widget.Button simpsonBT -> c
-    android.widget.Button chooseTopic -> d
-    android.widget.TextView headerText -> e
-    void onCreate(android.os.Bundle) -> onCreate
-    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.problems.chooseAlgocatSheep$1 -> com.capstoneii.iclassify.problems.ac:
-    com.capstoneii.iclassify.problems.chooseAlgocatSheep this$0 -> a
-    void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.problems.chooseAlgocatSheep$2 -> com.capstoneii.iclassify.problems.ad:
-    com.capstoneii.iclassify.problems.chooseAlgocatSheep this$0 -> a
     void onClick(android.view.View) -> onClick
 com.capstoneii.iclassify.problems.patient.MainFragmentPatient -> com.capstoneii.iclassify.problems.a.a:
-    android.widget.TextView textHead -> a
-    android.widget.TextView textFlu -> b
+    com.capstoneii.iclassify.library.SecretTextView textHead -> a
+    com.capstoneii.iclassify.library.SecretTextView textFlu -> b
     android.widget.TextView textFluNo -> c
     android.widget.TextView ClickmeText -> d
     android.widget.EditText textFluNoTextBox -> e
     android.widget.EditText textFluTextBox -> f
     android.widget.ImageView adamImage -> g
-    android.widget.Button lookupbt -> h
-    int nextButton -> i
+    android.widget.ImageView imageView_close -> h
+    android.widget.ImageView tableflu -> i
+    android.widget.ImageView table_img -> j
+    android.widget.Button lookupbt -> k
+    int nextButton -> l
+    android.view.animation.Animation animation -> m
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
     void case2() -> a
@@ -5610,6 +6546,152 @@ com.capstoneii.iclassify.problems.patient.MainFragmentPatient$1$1$1$1 -> com.cap
     void onClick(android.view.View) -> onClick
 com.capstoneii.iclassify.problems.patient.MainFragmentPatient$2 -> com.capstoneii.iclassify.problems.a.f:
     com.capstoneii.iclassify.problems.patient.MainFragmentPatient this$0 -> a
+    void onClick(android.view.View) -> onClick
+    com.capstoneii.iclassify.problems.patient.MainFragmentPatient access$0(com.capstoneii.iclassify.problems.patient.MainFragmentPatient$2) -> a
+com.capstoneii.iclassify.problems.patient.MainFragmentPatient$2$1 -> com.capstoneii.iclassify.problems.a.g:
+    com.capstoneii.iclassify.problems.patient.MainFragmentPatient$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.patient.MainFragmentPatient$2$2 -> com.capstoneii.iclassify.problems.a.h:
+    com.capstoneii.iclassify.problems.patient.MainFragmentPatient$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment -> com.capstoneii.iclassify.problems.a.i:
+    android.widget.ImageView computationprobability -> a
+    android.widget.ImageView patientnextbt -> b
+    android.view.animation.Animation animation -> c
+    int counter -> d
+    android.graphics.Matrix matrix -> e
+    android.graphics.Matrix savedMatrix -> f
+    android.graphics.PointF startPoint -> g
+    android.graphics.PointF midPoint -> h
+    float oldDist -> i
+    int mode -> j
+    void onCreate(android.os.Bundle) -> onCreate
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment$1 -> com.capstoneii.iclassify.problems.a.j:
+    com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment this$0 -> a
+    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+    float spacing(android.view.MotionEvent) -> a
+    void midPoint(android.graphics.PointF,android.view.MotionEvent) -> a
+com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment$2 -> com.capstoneii.iclassify.problems.a.k:
+    com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment this$0 -> a
+    com.capstoneii.iclassify.library.SecretTextView val$patientprobatext -> b
+    void onClick(android.view.View) -> onClick
+    com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment access$0(com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment$2) -> a
+com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment$2$1 -> com.capstoneii.iclassify.problems.a.l:
+    com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment$2 this$1 -> a
+    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+    float spacing(android.view.MotionEvent) -> a
+    void midPoint(android.graphics.PointF,android.view.MotionEvent) -> a
+com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment$2$2 -> com.capstoneii.iclassify.problems.a.m:
+    com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.patientdectree.PAtientProblemDecTreeComputation -> com.capstoneii.iclassify.problems.b.a:
+    com.capstoneii.iclassify.library.SecretTextView textcompute2 -> a
+    android.widget.ImageView treepatient -> b
+    android.widget.ImageView patientnextbt -> c
+    int counter -> d
+    android.view.animation.Animation animZoom -> e
+    void onCreate(android.os.Bundle) -> onCreate
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+com.capstoneii.iclassify.problems.patientdectree.PAtientProblemDecTreeComputation$1 -> com.capstoneii.iclassify.problems.b.b:
+    com.capstoneii.iclassify.problems.patientdectree.PAtientProblemDecTreeComputation this$0 -> a
+    com.capstoneii.iclassify.library.TypewriterTextView val$textcomputehaha -> b
+    void onClick(android.view.View) -> onClick
+    com.capstoneii.iclassify.problems.patientdectree.PAtientProblemDecTreeComputation access$0(com.capstoneii.iclassify.problems.patientdectree.PAtientProblemDecTreeComputation$1) -> a
+com.capstoneii.iclassify.problems.patientdectree.PAtientProblemDecTreeComputation$1$1 -> com.capstoneii.iclassify.problems.b.c:
+    com.capstoneii.iclassify.problems.patientdectree.PAtientProblemDecTreeComputation$1 this$1 -> a
+    void onClick(android.view.View) -> onClick
+    com.capstoneii.iclassify.problems.patientdectree.PAtientProblemDecTreeComputation$1 access$0(com.capstoneii.iclassify.problems.patientdectree.PAtientProblemDecTreeComputation$1$1) -> a
+com.capstoneii.iclassify.problems.patientdectree.PAtientProblemDecTreeComputation$1$1$1 -> com.capstoneii.iclassify.problems.b.d:
+    com.capstoneii.iclassify.problems.patientdectree.PAtientProblemDecTreeComputation$1$1 this$2 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment -> com.capstoneii.iclassify.problems.b.e:
+    com.capstoneii.iclassify.library.SecretTextView textHead -> a
+    com.capstoneii.iclassify.library.SecretTextView textFlu -> b
+    android.widget.TextView textFluNo -> c
+    android.widget.TextView ClickmeText -> d
+    android.widget.EditText textFluNoTextBox -> e
+    android.widget.EditText textFluTextBox -> f
+    android.widget.ImageView adamImage -> g
+    android.widget.ImageView imageView_close -> h
+    android.widget.ImageView tableflu -> i
+    android.widget.ImageView table_img -> j
+    android.widget.Button lookupbt -> k
+    int nextButton -> l
+    android.view.animation.Animation animation -> m
+    void onCreate(android.os.Bundle) -> onCreate
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    void case2() -> a
+com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment$1 -> com.capstoneii.iclassify.problems.b.f:
+    com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment this$0 -> a
+    void onClick(android.view.View) -> onClick
+    com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment access$0(com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment$1) -> a
+com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment$1$1 -> com.capstoneii.iclassify.problems.b.g:
+    com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment$1 this$1 -> a
+    void onClick(android.view.View) -> onClick
+    com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment$1 access$0(com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment$1$1) -> a
+com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment$1$1$1 -> com.capstoneii.iclassify.problems.b.h:
+    com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment$1$1 this$2 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+    com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment$1$1 access$0(com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment$1$1$1) -> a
+com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment$1$1$1$1 -> com.capstoneii.iclassify.problems.b.i:
+    com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment$1$1$1 this$3 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.simpsonsknn.SimpsonChartFragment -> com.capstoneii.iclassify.problems.c.a:
+    android.widget.ImageView simpsonschartimage -> a
+    android.widget.ImageView knnnextbt -> b
+    android.view.animation.Animation zoomIn -> c
+    android.view.animation.Animation zoomOut -> d
+    int counter -> e
+    android.graphics.Matrix matrix -> f
+    android.graphics.Matrix savedMatrix -> g
+    android.graphics.PointF startPoint -> h
+    android.graphics.PointF midPoint -> i
+    float oldDist -> j
+    int mode -> k
+    void onCreate(android.os.Bundle) -> onCreate
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+com.capstoneii.iclassify.problems.simpsonsknn.SimpsonChartFragment$1 -> com.capstoneii.iclassify.problems.c.b:
+    com.capstoneii.iclassify.problems.simpsonsknn.SimpsonChartFragment this$0 -> a
+    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+    float spacing(android.view.MotionEvent) -> a
+    void midPoint(android.graphics.PointF,android.view.MotionEvent) -> a
+com.capstoneii.iclassify.problems.simpsonsknn.SimpsonChartFragment$2 -> com.capstoneii.iclassify.problems.c.c:
+    com.capstoneii.iclassify.problems.simpsonsknn.SimpsonChartFragment this$0 -> a
+    com.capstoneii.iclassify.library.TypewriterTextView val$simpsonAnimatedTextViewChart -> b
+    void onClick(android.view.View) -> onClick
+    com.capstoneii.iclassify.problems.simpsonsknn.SimpsonChartFragment access$0(com.capstoneii.iclassify.problems.simpsonsknn.SimpsonChartFragment$2) -> a
+com.capstoneii.iclassify.problems.simpsonsknn.SimpsonChartFragment$2$1 -> com.capstoneii.iclassify.problems.c.d:
+    com.capstoneii.iclassify.problems.simpsonsknn.SimpsonChartFragment$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.simpsonsknn.SimpsonKnnStep -> com.capstoneii.iclassify.problems.c.e:
+    com.capstoneii.iclassify.library.SecretTextView secretTextView -> a
+    com.capstoneii.iclassify.library.SecretTextView secretTextViewDesc -> b
+    int counter -> c
+    void onCreate(android.os.Bundle) -> onCreate
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+com.capstoneii.iclassify.problems.simpsonsknn.SimpsonKnnStep$1 -> com.capstoneii.iclassify.problems.c.f:
+    com.capstoneii.iclassify.problems.simpsonsknn.SimpsonKnnStep this$0 -> a
+    android.widget.ImageView val$knnnextbt -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.problems.simpsonsknn.SimpsonTableFragmentKNN -> com.capstoneii.iclassify.problems.c.g:
+    android.widget.ImageView simpsoneTable -> a
+    android.widget.Button nextProcBt -> b
+    void onCreate(android.os.Bundle) -> onCreate
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+com.capstoneii.iclassify.problems.simpsonsknn.SimpsonTableFragmentKNN$1 -> com.capstoneii.iclassify.problems.c.h:
+    com.capstoneii.iclassify.problems.simpsonsknn.SimpsonTableFragmentKNN this$0 -> a
+    void onClick(android.view.View) -> onClick
+    com.capstoneii.iclassify.problems.simpsonsknn.SimpsonTableFragmentKNN access$0(com.capstoneii.iclassify.problems.simpsonsknn.SimpsonTableFragmentKNN$1) -> a
+com.capstoneii.iclassify.problems.simpsonsknn.SimpsonTableFragmentKNN$1$1 -> com.capstoneii.iclassify.problems.c.i:
+    com.capstoneii.iclassify.problems.simpsonsknn.SimpsonTableFragmentKNN$1 this$1 -> a
+    android.app.Dialog val$dialog -> b
     void onClick(android.view.View) -> onClick
 com.capstoneii.iclassify.simulation.desiciontree.SimulCalculateActivity -> com.capstoneii.iclassify.simulation.desiciontree.a:
     android.widget.ImageView gainoutlook -> m
@@ -5726,31 +6808,35 @@ com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity -> com
     android.widget.TextView text -> g
     android.widget.TextView sucess -> h
     android.widget.EditText getcorrect -> i
-    int total -> j
+    int numDragged -> j
     int failure -> k
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$1 -> com.capstoneii.iclassify.simulation.desiciontree.x:
+com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$ChoiceDragListener -> com.capstoneii.iclassify.simulation.desiciontree.x:
     com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity this$0 -> a
     boolean onDrag(android.view.View,android.view.DragEvent) -> onDrag
-    com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity access$0(com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$1) -> a
-com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$1$1 -> com.capstoneii.iclassify.simulation.desiciontree.y:
-    com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$1 this$1 -> a
-    void run() -> run
-com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$1$2 -> com.capstoneii.iclassify.simulation.desiciontree.z:
-    com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$1 this$1 -> a
+    com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity access$0(com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$ChoiceDragListener) -> a
+com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$ChoiceDragListener$1 -> com.capstoneii.iclassify.simulation.desiciontree.y:
+    com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$ChoiceDragListener this$1 -> a
     android.app.Dialog val$dialog -> b
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$2 -> com.capstoneii.iclassify.simulation.desiciontree.aa:
-    com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity this$0 -> a
-    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$3 -> com.capstoneii.iclassify.simulation.desiciontree.ab:
-    com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity this$0 -> a
-    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$4 -> com.capstoneii.iclassify.simulation.desiciontree.ac:
-    com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity this$0 -> a
-    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$5 -> com.capstoneii.iclassify.simulation.desiciontree.ad:
+com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$ChoiceDragListener$2 -> com.capstoneii.iclassify.simulation.desiciontree.z:
+    com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$ChoiceDragListener$3 -> com.capstoneii.iclassify.simulation.desiciontree.aa:
+    com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$ChoiceDragListener$4 -> com.capstoneii.iclassify.simulation.desiciontree.ab:
+    com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$ChoiceDragListener$5 -> com.capstoneii.iclassify.simulation.desiciontree.ac:
+    com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$ChoiceDragListener this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity$ChoiceTouchListener -> com.capstoneii.iclassify.simulation.desiciontree.ad:
     com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity this$0 -> a
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
 com.capstoneii.iclassify.simulation.desiciontree.SimulProblemActivity -> com.capstoneii.iclassify.simulation.desiciontree.SimulProblemActivity:
@@ -5775,89 +6861,141 @@ com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity -> com.capst
 com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity$1 -> com.capstoneii.iclassify.simulation.desiciontree.ag:
     com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity -> com.capstoneii.iclassify.simulation.a.a:
+com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult -> com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult:
+    int item -> n
+    android.support.v4.view.ViewPager mViewPager -> o
+    com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult$AppPagerAdapter mAppPageAdapter -> p
+    void onCreate(android.os.Bundle) -> onCreate
+com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult$AppPagerAdapter -> com.capstoneii.iclassify.simulation.knn.a:
+    android.support.v4.app.Fragment getItem(int) -> a
+    int getCount() -> b
+com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult$KnnImageResultFirstSet -> com.capstoneii.iclassify.simulation.knn.b:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult$KnnImageResultFirstSetNext -> com.capstoneii.iclassify.simulation.knn.c:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult$KnnImageResultSecondSet -> com.capstoneii.iclassify.simulation.knn.d:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult$KnnImageResultThirdSet -> com.capstoneii.iclassify.simulation.knn.e:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity -> com.capstoneii.iclassify.simulation.knn.f:
     com.capstoneii.iclassify.library.SecretTextView secretTextView -> a
     com.capstoneii.iclassify.library.SecretTextView secretTextViewDesc -> b
     int counter -> c
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity$1 -> com.capstoneii.iclassify.simulation.a.b:
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity$1 -> com.capstoneii.iclassify.simulation.knn.g:
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity this$0 -> a
     android.widget.ImageView val$knnnextbt -> b
     android.widget.ImageView val$stepknnimg -> c
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset -> com.capstoneii.iclassify.simulation.a.c:
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset -> com.capstoneii.iclassify.simulation.knn.h:
     android.app.Dialog dialog -> a
     android.widget.ImageView knnnextbt -> b
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset$1 -> com.capstoneii.iclassify.simulation.a.d:
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset$1 -> com.capstoneii.iclassify.simulation.knn.i:
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset this$0 -> a
     void onTick(long) -> onTick
     void onFinish() -> onFinish
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset access$0(com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset$1) -> a
-com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset$1$1 -> com.capstoneii.iclassify.simulation.a.e:
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset$1$1 -> com.capstoneii.iclassify.simulation.knn.j:
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset$1 this$1 -> a
     void onTick(long) -> onTick
     void onFinish() -> onFinish
-com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset$2 -> com.capstoneii.iclassify.simulation.a.f:
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset$2 -> com.capstoneii.iclassify.simulation.knn.k:
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue -> com.capstoneii.iclassify.simulation.a.g:
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue -> com.capstoneii.iclassify.simulation.knn.l:
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1 -> com.capstoneii.iclassify.simulation.a.h:
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1 -> com.capstoneii.iclassify.simulation.knn.m:
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue this$0 -> a
     android.widget.ImageView val$factoryimg -> b
     android.widget.ImageView val$tissueimg -> c
     void onTick(long) -> onTick
     void onFinish() -> onFinish
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue access$0(com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1) -> a
-com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1 -> com.capstoneii.iclassify.simulation.a.i:
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1 -> com.capstoneii.iclassify.simulation.knn.n:
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1 this$1 -> a
     android.widget.ImageView val$tissueimg -> b
     void onTick(long) -> onTick
     void onFinish() -> onFinish
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1 access$0(com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1) -> a
-com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1$1 -> com.capstoneii.iclassify.simulation.a.j:
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1$1 -> com.capstoneii.iclassify.simulation.knn.o:
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1 this$2 -> a
     void onTick(long) -> onTick
     void onFinish() -> onFinish
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1 access$0(com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1$1) -> a
-com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1$1$1 -> com.capstoneii.iclassify.simulation.a.k:
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1$1$1 -> com.capstoneii.iclassify.simulation.knn.p:
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1$1 this$3 -> a
     void onTick(long) -> onTick
     void onFinish() -> onFinish
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1$1 access$0(com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1$1$1) -> a
-com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1$1$1$1 -> com.capstoneii.iclassify.simulation.a.l:
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1$1$1$1 -> com.capstoneii.iclassify.simulation.knn.q:
     com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue$1$1$1$1 this$4 -> a
     android.app.Dialog val$dialog -> b
     void onTick(long) -> onTick
     void onFinish() -> onFinish
-com.capstoneii.iclassify.simulation.knn.SimulMainKnnStepProcess -> com.capstoneii.iclassify.simulation.a.m:
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnStepProcess -> com.capstoneii.iclassify.simulation.knn.r:
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment -> com.capstoneii.iclassify.simulation.b.a:
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult -> com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult:
+    int item -> n
+    android.support.v4.view.ViewPager mViewPager -> o
+    com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$AppPagerAdapter mAppPageAdapter -> p
+    void onCreate(android.os.Bundle) -> onCreate
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$AppPagerAdapter -> com.capstoneii.iclassify.simulation.naivebayes.a:
+    android.support.v4.app.Fragment getItem(int) -> a
+    int getCount() -> b
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult -> com.capstoneii.iclassify.simulation.naivebayes.b:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult2 -> com.capstoneii.iclassify.simulation.naivebayes.c:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult3 -> com.capstoneii.iclassify.simulation.naivebayes.d:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult4 -> com.capstoneii.iclassify.simulation.naivebayes.e:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult7 -> com.capstoneii.iclassify.simulation.naivebayes.f:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$naivebayesquestiondomestic -> com.capstoneii.iclassify.simulation.naivebayes.g:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$naivecom -> com.capstoneii.iclassify.simulation.naivebayes.h:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$naiveexample -> com.capstoneii.iclassify.simulation.naivebayes.i:
+    void onCreate(android.os.Bundle) -> d
+    android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment -> com.capstoneii.iclassify.simulation.naivebayes.j:
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment$1 -> com.capstoneii.iclassify.simulation.b.b:
+com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment$1 -> com.capstoneii.iclassify.simulation.naivebayes.k:
     com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesStepFragment -> com.capstoneii.iclassify.simulation.b.c:
+com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesStepFragment -> com.capstoneii.iclassify.simulation.naivebayes.l:
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesStepFragment$1 -> com.capstoneii.iclassify.simulation.b.d:
+com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesStepFragment$1 -> com.capstoneii.iclassify.simulation.naivebayes.m:
     com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesStepFragment this$0 -> a
     android.widget.ImageView val$stepnaiveimg -> b
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment -> com.capstoneii.iclassify.simulation.b.e:
+com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment -> com.capstoneii.iclassify.simulation.naivebayes.n:
     int counter -> a
     void onCreate(android.os.Bundle) -> onCreate
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$1 -> com.capstoneii.iclassify.simulation.b.f:
+com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$1 -> com.capstoneii.iclassify.simulation.naivebayes.o:
     com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2 -> com.capstoneii.iclassify.simulation.b.g:
+com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2 -> com.capstoneii.iclassify.simulation.naivebayes.p:
     com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment this$0 -> a
     android.widget.Button val$viewproblemnext -> b
     android.widget.Button val$viewdatasetnaive -> c
@@ -5870,16 +7008,16 @@ com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2 ->
     android.widget.ImageView val$imageView2 -> j
     void onClick(android.view.View) -> onClick
     com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment access$0(com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2) -> a
-com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2$1 -> com.capstoneii.iclassify.simulation.b.h:
+com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2$1 -> com.capstoneii.iclassify.simulation.naivebayes.q:
     com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2 this$1 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2$2 -> com.capstoneii.iclassify.simulation.b.i:
+com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2$2 -> com.capstoneii.iclassify.simulation.naivebayes.r:
     com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2 this$1 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2$3 -> com.capstoneii.iclassify.simulation.b.j:
+com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2$3 -> com.capstoneii.iclassify.simulation.naivebayes.s:
     com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2 this$1 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2$4 -> com.capstoneii.iclassify.simulation.b.k:
+com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2$4 -> com.capstoneii.iclassify.simulation.naivebayes.t:
     com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesTableFragment$2 this$1 -> a
     void onClick(android.view.View) -> onClick
 com.capstoneii.iclassify.videos.IntroductionVideo -> com.capstoneii.iclassify.videos.IntroductionVideo:
@@ -5900,7 +7038,6 @@ com.capstoneii.iclassify.videos.VideoMenuActivity -> com.capstoneii.iclassify.vi
     void onCreate(android.os.Bundle) -> onCreate
     boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
     void onBackPressed() -> onBackPressed
     com.capstoneii.iclassify.library.ExpandableMenuOverlay access$0(com.capstoneii.iclassify.videos.VideoMenuActivity) -> a
     android.widget.VideoView access$1(com.capstoneii.iclassify.videos.VideoMenuActivity) -> b
@@ -5911,30 +7048,49 @@ com.capstoneii.iclassify.videos.VideoMenuActivity$1 -> com.capstoneii.iclassify.
     int[] $SWITCH_TABLE$com$capstoneii$iclassify$library$ExpandableButtonMenu$MenuButton() -> a
 com.capstoneii.iclassify.viewpager.FifthFragment -> com.capstoneii.iclassify.viewpager.a:
     android.widget.Button startbuttoncircle -> P
+    android.widget.Button viewpagerabout -> Q
+    android.widget.Button viewpagerhelp -> R
+    android.widget.Button viewpagerexit -> S
+    android.app.AlertDialog alertDialog -> T
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
     com.capstoneii.iclassify.viewpager.FifthFragment newInstance(java.lang.String) -> a
+    void showAlertDialog(android.content.Context,java.lang.String,java.lang.String,java.lang.Boolean) -> a
+    void dismissDialog() -> A
+    void access$0(com.capstoneii.iclassify.viewpager.FifthFragment) -> a
 com.capstoneii.iclassify.viewpager.FifthFragment$1 -> com.capstoneii.iclassify.viewpager.b:
     com.capstoneii.iclassify.viewpager.FifthFragment this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.viewpager.FirstFragment -> com.capstoneii.iclassify.viewpager.c:
+com.capstoneii.iclassify.viewpager.FifthFragment$2 -> com.capstoneii.iclassify.viewpager.c:
+    com.capstoneii.iclassify.viewpager.FifthFragment this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.viewpager.FifthFragment$3 -> com.capstoneii.iclassify.viewpager.d:
+    com.capstoneii.iclassify.viewpager.FifthFragment this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.viewpager.FifthFragment$4 -> com.capstoneii.iclassify.viewpager.e:
+    com.capstoneii.iclassify.viewpager.FifthFragment this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.capstoneii.iclassify.viewpager.FifthFragment$5 -> com.capstoneii.iclassify.viewpager.f:
+    com.capstoneii.iclassify.viewpager.FifthFragment this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.capstoneii.iclassify.viewpager.FirstFragment -> com.capstoneii.iclassify.viewpager.g:
     android.widget.Button skipbt -> P
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
     com.capstoneii.iclassify.viewpager.FirstFragment newInstance(java.lang.String) -> a
-com.capstoneii.iclassify.viewpager.FirstFragment$1 -> com.capstoneii.iclassify.viewpager.d:
+com.capstoneii.iclassify.viewpager.FirstFragment$1 -> com.capstoneii.iclassify.viewpager.h:
     com.capstoneii.iclassify.viewpager.FirstFragment this$0 -> a
     void onClick(android.view.View) -> onClick
-com.capstoneii.iclassify.viewpager.FourthFragment -> com.capstoneii.iclassify.viewpager.e:
+com.capstoneii.iclassify.viewpager.FourthFragment -> com.capstoneii.iclassify.viewpager.i:
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
     com.capstoneii.iclassify.viewpager.FourthFragment newInstance(java.lang.String) -> a
-com.capstoneii.iclassify.viewpager.SecondFragment -> com.capstoneii.iclassify.viewpager.f:
+com.capstoneii.iclassify.viewpager.SecondFragment -> com.capstoneii.iclassify.viewpager.j:
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
     com.capstoneii.iclassify.viewpager.SecondFragment newInstance(java.lang.String) -> a
-com.capstoneii.iclassify.viewpager.ThirdFragment -> com.capstoneii.iclassify.viewpager.g:
+com.capstoneii.iclassify.viewpager.ThirdFragment -> com.capstoneii.iclassify.viewpager.k:
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
     com.capstoneii.iclassify.viewpager.ThirdFragment newInstance(java.lang.String) -> a
 com.capstoneii.iclassify.viewpager.ViewPagerIntro -> com.capstoneii.iclassify.viewpager.ViewPagerIntro:
     void onCreate(android.os.Bundle) -> onCreate
-com.capstoneii.iclassify.viewpager.ViewPagerIntro$MyPagerAdapter -> com.capstoneii.iclassify.viewpager.h:
+com.capstoneii.iclassify.viewpager.ViewPagerIntro$MyPagerAdapter -> com.capstoneii.iclassify.viewpager.l:
     com.capstoneii.iclassify.viewpager.ViewPagerIntro this$0 -> a
     android.support.v4.app.Fragment getItem(int) -> a
     int getCount() -> b
@@ -6397,15 +7553,57 @@ com.nineoldandroids.view.animation.AnimatorProxy -> com.b.c.a.a:
     void transformMatrix(android.graphics.Matrix,android.view.View) -> a
     void applyTransformation(float,android.view.animation.Transformation) -> applyTransformation
 descisiondiscussflip.DescTreeAdapter -> descisiondiscussflip.a:
-    android.view.LayoutInflater inflater -> a
-    int repeatCount -> b
-    java.util.List desctreeData -> c
+    android.speech.tts.TextToSpeech tts -> a
+    android.view.LayoutInflater inflater -> f
+    int repeatCount -> g
+    java.util.List desctreeData -> h
+    android.widget.ImageView zoomerImageZoom -> i
+    android.graphics.Matrix matrix -> j
+    float scale -> k
+    android.view.ScaleGestureDetector SGD -> l
+    android.media.MediaPlayer dtone -> b
+    android.media.MediaPlayer dttwo -> c
+    android.media.MediaPlayer dtthree -> d
+    android.media.MediaPlayer dtfour -> e
     int getCount() -> getCount
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    float access$0(descisiondiscussflip.DescTreeAdapter) -> a
+    void access$1(descisiondiscussflip.DescTreeAdapter,float) -> a
+    android.graphics.Matrix access$2(descisiondiscussflip.DescTreeAdapter) -> b
+    android.widget.ImageView access$3(descisiondiscussflip.DescTreeAdapter) -> c
+    void access$4(descisiondiscussflip.DescTreeAdapter,android.view.ScaleGestureDetector) -> a
+    void access$5(descisiondiscussflip.DescTreeAdapter,android.widget.ImageView) -> a
+    android.view.LayoutInflater access$6(descisiondiscussflip.DescTreeAdapter) -> d
+descisiondiscussflip.DescTreeAdapter$1 -> descisiondiscussflip.b:
+    descisiondiscussflip.DescTreeAdapter this$0 -> a
+    void onInit(int) -> onInit
+descisiondiscussflip.DescTreeAdapter$2 -> descisiondiscussflip.c:
+    descisiondiscussflip.DescTreeAdapter this$0 -> a
+    descisiondiscussflip.TopicData$Data val$data -> b
+    void onClick(android.view.View) -> onClick
+descisiondiscussflip.DescTreeAdapter$2$1 -> descisiondiscussflip.d:
+    descisiondiscussflip.DescTreeAdapter$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+descisiondiscussflip.DescTreeAdapter$3 -> descisiondiscussflip.e:
+    descisiondiscussflip.DescTreeAdapter this$0 -> a
+    java.lang.String val$toSpeak -> b
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+descisiondiscussflip.DescTreeAdapter$ScaleListener -> descisiondiscussflip.f:
+    descisiondiscussflip.DescTreeAdapter this$0 -> a
+    boolean onScale(android.view.ScaleGestureDetector) -> onScale
 descisiondiscussflip.DescTreeLayoutActivity -> descisiondiscussflip.DescTreeLayoutActivity:
-    com.aphidmobile.flip.FlipViewController flipView -> o
+    com.aphidmobile.flip.FlipViewController flipView -> w
+    com.capstoneii.iclassify.dbclasses.DBAdapter myDb -> o
+    com.capstoneii.iclassify.SessionCache QuizSession -> p
+    int retake -> q
+    int prevTotal -> r
+    int curTotal -> s
+    java.lang.String finalDate -> t
+    android.content.Intent intent -> u
+    java.lang.String initVal -> v
     void onCreate(android.os.Bundle) -> onCreate
     void onResume() -> onResume
     void onPause() -> onPause
@@ -6413,17 +7611,56 @@ descisiondiscussflip.DescTreeLayoutActivity -> descisiondiscussflip.DescTreeLayo
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
     boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
     void onBackPressed() -> onBackPressed
-descisiondiscussflip.DescTreeLayoutActivity$1 -> descisiondiscussflip.b:
+    void openDB() -> j
+descisiondiscussflip.DescTreeLayoutActivity$1 -> descisiondiscussflip.g:
     descisiondiscussflip.DescTreeLayoutActivity this$0 -> a
     android.widget.ImageView val$transpaimage -> b
     android.app.Dialog val$dialog -> c
     void onClick(android.view.View) -> onClick
-descisiondiscussflip.DescTreeLayoutActivity$2 -> descisiondiscussflip.c:
+descisiondiscussflip.DescTreeLayoutActivity$2 -> descisiondiscussflip.h:
     descisiondiscussflip.DescTreeLayoutActivity this$0 -> a
     boolean onMenuItemClick(android.view.MenuItem) -> onMenuItemClick
-descisiondiscussflip.TopicData -> descisiondiscussflip.d:
+    descisiondiscussflip.DescTreeLayoutActivity access$0(descisiondiscussflip.DescTreeLayoutActivity$2) -> a
+descisiondiscussflip.DescTreeLayoutActivity$2$1 -> descisiondiscussflip.i:
+    descisiondiscussflip.DescTreeLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+descisiondiscussflip.DescTreeLayoutActivity$2$2 -> descisiondiscussflip.j:
+    descisiondiscussflip.DescTreeLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+descisiondiscussflip.DescTreeLayoutActivity$2$3 -> descisiondiscussflip.k:
+    descisiondiscussflip.DescTreeLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+descisiondiscussflip.DescTreeLayoutActivity$2$4 -> descisiondiscussflip.l:
+    descisiondiscussflip.DescTreeLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+descisiondiscussflip.DescTreeLayoutActivity$2$5 -> descisiondiscussflip.m:
+    descisiondiscussflip.DescTreeLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+descisiondiscussflip.DescTreeLayoutActivity$2$6 -> descisiondiscussflip.n:
+    descisiondiscussflip.DescTreeLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+descisiondiscussflip.DescTreeObjectives -> descisiondiscussflip.DescTreeObjectives:
+    android.widget.TextView titleobjectives -> o
+    com.capstoneii.iclassify.library.TypewriterTextView objectivedesc -> p
+    android.widget.ImageView startdiscussionbutton -> q
+    android.widget.ImageView watchvideosbutton -> r
+    void onCreate(android.os.Bundle) -> onCreate
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+descisiondiscussflip.DescTreeObjectives$1 -> descisiondiscussflip.o:
+    descisiondiscussflip.DescTreeObjectives this$0 -> a
+    void onClick(android.view.View) -> onClick
+descisiondiscussflip.DescTreeObjectives$2 -> descisiondiscussflip.p:
+    descisiondiscussflip.DescTreeObjectives this$0 -> a
+    void onClick(android.view.View) -> onClick
+descisiondiscussflip.TopicData -> descisiondiscussflip.q:
     java.util.List IMG_DESCRIPTIONS -> a
-descisiondiscussflip.TopicData$Data -> descisiondiscussflip.e:
+descisiondiscussflip.TopicData$Data -> descisiondiscussflip.r:
     java.lang.String title -> a
     java.lang.String imageFilename -> b
     java.lang.String description -> c
@@ -6453,9 +7690,7 @@ drawer.MainDrawerActivity -> drawer.MainDrawerActivity:
     void onCreate(android.os.Bundle) -> onCreate
     void updateDisplay(int) -> b
     void setTitle(java.lang.CharSequence) -> setTitle
-    boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
     void onPostCreate(android.os.Bundle) -> onPostCreate
     void onConfigurationChanged(android.content.res.Configuration) -> onConfigurationChanged
     void iniData() -> j
@@ -6487,32 +7722,114 @@ drawer.RowItem -> drawer.e:
     java.lang.String getTitle() -> a
     int getIcon() -> b
 knearestdiscussflip.KNearestAdapter -> knearestdiscussflip.a:
-    android.view.LayoutInflater inflater -> a
-    int repeatCount -> b
-    java.util.List desctreeData -> c
+    android.speech.tts.TextToSpeech tts -> a
+    android.view.LayoutInflater inflater -> g
+    int repeatCount -> h
+    java.util.List desctreeData -> i
+    android.widget.ImageView zoomerImageZoom -> j
+    android.graphics.Matrix matrix -> k
+    float scale -> l
+    android.view.ScaleGestureDetector SGD -> m
+    android.media.MediaPlayer knnone -> b
+    android.media.MediaPlayer knntwo -> c
+    android.media.MediaPlayer knnthree -> d
+    android.media.MediaPlayer knnfour -> e
+    android.media.MediaPlayer knnfive -> f
     int getCount() -> getCount
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-knearestdiscussflip.KNearestData -> knearestdiscussflip.b:
+    float access$0(knearestdiscussflip.KNearestAdapter) -> a
+    void access$1(knearestdiscussflip.KNearestAdapter,float) -> a
+    android.graphics.Matrix access$2(knearestdiscussflip.KNearestAdapter) -> b
+    android.widget.ImageView access$3(knearestdiscussflip.KNearestAdapter) -> c
+    void access$4(knearestdiscussflip.KNearestAdapter,android.view.ScaleGestureDetector) -> a
+    void access$5(knearestdiscussflip.KNearestAdapter,android.widget.ImageView) -> a
+    android.view.LayoutInflater access$6(knearestdiscussflip.KNearestAdapter) -> d
+knearestdiscussflip.KNearestAdapter$1 -> knearestdiscussflip.b:
+    knearestdiscussflip.KNearestAdapter this$0 -> a
+    void onInit(int) -> onInit
+knearestdiscussflip.KNearestAdapter$2 -> knearestdiscussflip.c:
+    knearestdiscussflip.KNearestAdapter this$0 -> a
+    knearestdiscussflip.KNearestData$Data val$data -> b
+    void onClick(android.view.View) -> onClick
+knearestdiscussflip.KNearestAdapter$2$1 -> knearestdiscussflip.d:
+    knearestdiscussflip.KNearestAdapter$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+knearestdiscussflip.KNearestAdapter$3 -> knearestdiscussflip.e:
+    knearestdiscussflip.KNearestAdapter this$0 -> a
+    java.lang.String val$toSpeak -> b
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+knearestdiscussflip.KNearestAdapter$ScaleListener -> knearestdiscussflip.f:
+    knearestdiscussflip.KNearestAdapter this$0 -> a
+    boolean onScale(android.view.ScaleGestureDetector) -> onScale
+knearestdiscussflip.KNearestData -> knearestdiscussflip.g:
     java.util.List IMG_DESCRIPTIONS -> a
-knearestdiscussflip.KNearestData$Data -> knearestdiscussflip.c:
+knearestdiscussflip.KNearestData$Data -> knearestdiscussflip.h:
     java.lang.String title -> a
     java.lang.String imageFilename -> b
     java.lang.String description -> c
 knearestdiscussflip.KNearestLayoutActivity -> knearestdiscussflip.KNearestLayoutActivity:
-    com.aphidmobile.flip.FlipViewController flipView -> o
+    com.aphidmobile.flip.FlipViewController flipView -> w
+    com.capstoneii.iclassify.dbclasses.DBAdapter myDb -> o
+    com.capstoneii.iclassify.SessionCache QuizSession -> p
+    int retake -> q
+    int prevTotal -> r
+    int curTotal -> s
+    java.lang.String finalDate -> t
+    android.content.Intent intent -> u
+    java.lang.String initVal -> v
     void onCreate(android.os.Bundle) -> onCreate
     void onResume() -> onResume
     void onPause() -> onPause
     boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
     boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
     boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
-knearestdiscussflip.KNearestLayoutActivity$1 -> knearestdiscussflip.d:
+    void openDB() -> j
+knearestdiscussflip.KNearestLayoutActivity$1 -> knearestdiscussflip.i:
     knearestdiscussflip.KNearestLayoutActivity this$0 -> a
     android.widget.ImageView val$transpaimage -> b
     android.app.Dialog val$dialog -> c
     void onClick(android.view.View) -> onClick
-knearestdiscussflip.KNearestLayoutActivity$2 -> knearestdiscussflip.e:
+knearestdiscussflip.KNearestLayoutActivity$2 -> knearestdiscussflip.j:
     knearestdiscussflip.KNearestLayoutActivity this$0 -> a
     boolean onMenuItemClick(android.view.MenuItem) -> onMenuItemClick
+    knearestdiscussflip.KNearestLayoutActivity access$0(knearestdiscussflip.KNearestLayoutActivity$2) -> a
+knearestdiscussflip.KNearestLayoutActivity$2$1 -> knearestdiscussflip.k:
+    knearestdiscussflip.KNearestLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+knearestdiscussflip.KNearestLayoutActivity$2$2 -> knearestdiscussflip.l:
+    knearestdiscussflip.KNearestLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+knearestdiscussflip.KNearestLayoutActivity$2$3 -> knearestdiscussflip.m:
+    knearestdiscussflip.KNearestLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+knearestdiscussflip.KNearestLayoutActivity$2$4 -> knearestdiscussflip.n:
+    knearestdiscussflip.KNearestLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+knearestdiscussflip.KNearestLayoutActivity$2$5 -> knearestdiscussflip.o:
+    knearestdiscussflip.KNearestLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+knearestdiscussflip.KNearestLayoutActivity$2$6 -> knearestdiscussflip.p:
+    knearestdiscussflip.KNearestLayoutActivity$2 this$1 -> a
+    android.app.Dialog val$dialog -> b
+    void onClick(android.view.View) -> onClick
+knearestdiscussflip.KNearestObjectives -> knearestdiscussflip.KNearestObjectives:
+    android.widget.TextView titleobjectives -> o
+    com.capstoneii.iclassify.library.TypewriterTextView objectivedesc -> p
+    android.widget.ImageView startdiscussionbutton -> q
+    android.widget.ImageView watchvideosbutton -> r
+    void onCreate(android.os.Bundle) -> onCreate
+    boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+knearestdiscussflip.KNearestObjectives$1 -> knearestdiscussflip.q:
+    knearestdiscussflip.KNearestObjectives this$0 -> a
+    void onClick(android.view.View) -> onClick
+knearestdiscussflip.KNearestObjectives$2 -> knearestdiscussflip.r:
+    knearestdiscussflip.KNearestObjectives this$0 -> a
+    void onClick(android.view.View) -> onClick

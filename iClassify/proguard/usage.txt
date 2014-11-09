@@ -79,7 +79,6 @@ android.support.v4.app.Fragment:
     579:579:public final android.support.v4.app.Fragment getTargetFragment()
     586:586:public final int getTargetRequestCode()
     613:613:public final java.lang.CharSequence getText(int)
-    623:623:public final java.lang.String getString(int)
     636:636:public final varargs java.lang.String getString(int,java.lang.Object[])
     650:650:public final android.support.v4.app.FragmentManager getFragmentManager()
     658:670:public final android.support.v4.app.FragmentManager getChildFragmentManager()
@@ -1267,7 +1266,6 @@ android.support.v4.widget.ContentLoadingProgressBar$2
 android.support.v4.widget.CursorAdapter:
     public static final int FLAG_AUTO_REQUERY
     public static final int FLAG_REGISTER_CONTENT_OBSERVER
-    121:123:public CursorAdapter(android.content.Context,android.database.Cursor)
     150:152:public CursorAdapter(android.content.Context,android.database.Cursor,int)
     160:161:protected void init(android.content.Context,android.database.Cursor,boolean)
     420:420:public android.widget.FilterQueryProvider getFilterQueryProvider()
@@ -1321,7 +1319,6 @@ android.support.v4.widget.PopupMenuCompat$KitKatPopupMenuImpl
 android.support.v4.widget.PopupMenuCompat$PopupMenuImpl
 android.support.v4.widget.PopupMenuCompatKitKat
 android.support.v4.widget.ResourceCursorAdapter:
-    54:57:public ResourceCursorAdapter(android.content.Context,int,android.database.Cursor)
     93:96:public ResourceCursorAdapter(android.content.Context,int,android.database.Cursor,int)
     120:121:public void setViewResource(int)
     129:130:public void setDropDownViewResource(int)
@@ -1385,9 +1382,15 @@ android.support.v4.widget.SearchViewCompatHoneycomb$OnCloseListenerCompatBridge
 android.support.v4.widget.SearchViewCompatHoneycomb$OnQueryTextListenerCompatBridge
 android.support.v4.widget.SearchViewCompatIcs
 android.support.v4.widget.SearchViewCompatIcs$MySearchView
-android.support.v4.widget.SimpleCursorAdapter
-android.support.v4.widget.SimpleCursorAdapter$CursorToStringConverter
-android.support.v4.widget.SimpleCursorAdapter$ViewBinder
+android.support.v4.widget.SimpleCursorAdapter:
+    89:93:public SimpleCursorAdapter(android.content.Context,int,android.database.Cursor,java.lang.String[],int[],int)
+    162:162:public android.support.v4.widget.SimpleCursorAdapter$ViewBinder getViewBinder()
+    175:176:public void setViewBinder(android.support.v4.widget.SimpleCursorAdapter$ViewBinder)
+    228:228:public int getStringConversionColumn()
+    246:247:public void setStringConversionColumn(int)
+    262:262:public android.support.v4.widget.SimpleCursorAdapter$CursorToStringConverter getCursorToStringConverter()
+    278:279:public void setCursorToStringConverter(android.support.v4.widget.SimpleCursorAdapter$CursorToStringConverter)
+    344:348:public void changeCursorAndColumns(android.database.Cursor,java.lang.String[],int[])
 android.support.v4.widget.SlidingPaneLayout:
     private static final java.lang.String TAG
     private static final int DEFAULT_OVERHANG_SIZE
@@ -2222,11 +2225,15 @@ at.technikum.mti.fancycoverflow.R$string
 at.technikum.mti.fancycoverflow.R$styleable:
     24:24:public R$styleable()
 bayesdiscussflip.NativeBayesAdapter:
-    40:40:public int getRepeatCount()
-    44:45:public void setRepeatCount(int)
-    82:85:public void removeData(int)
+    boolean isChecked
+    android.widget.ToggleButton toggleButton
+    69:69:public int getRepeatCount()
+    73:74:public void setRepeatCount(int)
+    176:179:public void removeData(int)
+    182:186:public void onPause()
+    189:194:public void onDestroy()
 bayesdiscussflip.NativeBayesData:
-    9:9:public NativeBayesData()
+    6:6:public NativeBayesData()
 com.aphidmobile.flip.Card:
     public static final int AXIS_TOP
     public static final int AXIS_BOTTOM
@@ -2297,9 +2304,25 @@ com.aphidmobile.utils.UI:
     73:73:public static java.lang.Object findViewById(android.app.Activity,int)
 com.capstoneii.iclassify.ActivityAnimator:
     7:8:public void unzoomAnimation(android.app.Activity)
+com.capstoneii.iclassify.BayesianZoomImage
 com.capstoneii.iclassify.BuildConfig
 com.capstoneii.iclassify.MainActivityController:
     android.widget.Button first_bt
+com.capstoneii.iclassify.QuizResultActivity:
+    android.widget.ImageButton backbutton
+    int correctans
+    java.lang.String me
+    com.capstoneii.iclassify.dbclasses.TempQuestion tquestion
+com.capstoneii.iclassify.QuizResultBayesian:
+    android.widget.ImageButton backbutton
+    int correctans
+    java.lang.String me
+    com.capstoneii.iclassify.dbclasses.TempQuestion tquestion
+com.capstoneii.iclassify.QuizResultDecision:
+    android.widget.ImageButton backbutton
+    int correctans
+    java.lang.String me
+    com.capstoneii.iclassify.dbclasses.TempQuestion tquestion
 com.capstoneii.iclassify.R:
     10:10:public R()
 com.capstoneii.iclassify.R$anim
@@ -2317,11 +2340,171 @@ com.capstoneii.iclassify.R$raw
 com.capstoneii.iclassify.R$string
 com.capstoneii.iclassify.R$style
 com.capstoneii.iclassify.R$styleable:
-    2406:2406:public R$styleable()
+    2680:2680:public R$styleable()
+com.capstoneii.iclassify.SessionCache:
+    private static final java.lang.String PREF_NAME
+    public static final java.lang.String IS_TAKEN1
+    public static final java.lang.String IS_TAKEN2
+    public static final java.lang.String IS_TAKEN3
+    public static final java.lang.String IS_TAKEN4
+    public static final java.lang.String IS_TAKEN5
+    public static final java.lang.String JS_MAX_ITEM1
+    public static final java.lang.String JS_MAX_ITEM2
+    public static final java.lang.String JS_MAX_ITEM3
+    public static final java.lang.String JS_MAX_ITEM4
+    public static final java.lang.String JS_MAX_ITEM5
+    public static final java.lang.String JS_QUIZ_TAKE
+    public static final java.lang.String PHP_QUIZ_TAKE
+    public static final java.lang.String FL_QUIZ_TAKE
+    public static final java.lang.String FW_QUIZ_TAKE
+    public static final java.lang.String PS_QUIZ_TAKE
+    public static final java.lang.String ALL_QUIZ_TAKE
+    public static final java.lang.String SEECOVER
+    public static final java.lang.String REPEATING1
+    public static final java.lang.String REPEATING2
+    public static final java.lang.String REPEATING3
+    public static final java.lang.String REPEATING4
+    public static final java.lang.String REPEATING5
+    public static final java.lang.String _LASTSCORE
+    public static final java.lang.String _LASTQUIZNAME
+    public static final java.lang.String _LASTQDETAILS
+    80:82:public void tapCover()
+    85:85:public boolean ifSeeCover()
+    97:100:public void FinishSessionNum2(java.lang.String)
+    103:106:public void FinishSessionNum3(java.lang.String)
+    109:112:public void FinishSessionNum4(java.lang.String)
+    115:118:public void FinishSessionNum5(java.lang.String)
+    122:124:public void RemoveQuizHistory(java.lang.String)
+    133:135:public void StoreTotal2(java.lang.String)
+    138:140:public void StoreTotal3(java.lang.String)
+    143:145:public void StoreTotal4(java.lang.String)
+    148:150:public void StoreTotal5(java.lang.String)
+    153:155:public void StoreJsLastQuizTaken(java.lang.String)
+    157:159:public void StoreFwLastQuizTaken(java.lang.String)
+    165:167:public void StorePhpLastQuizTaken(java.lang.String)
+    169:171:public void StorePsLastQuizTaken(java.lang.String)
+    235:235:public boolean hasFlQuiz4()
+    239:239:public boolean hasFlQuiz5()
+com.capstoneii.iclassify.SessionManager
 com.capstoneii.iclassify.SplashScreenActivity:
     android.graphics.drawable.AnimationDrawable frameAnimation
-com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeAssessmentDynamicFirstQuestionActivity:
-    209:211:public void CheckDrop()
+com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop:
+    com.capstoneii.iclassify.dbclasses.DBAdapter myDb
+    com.capstoneii.iclassify.SessionCache QuizSession
+    int retake
+    int prevTotal
+    int curTotal
+    java.lang.String finalDate
+    android.content.Intent intent
+com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz:
+    android.database.sqlite.SQLiteDatabase mdb
+    android.widget.TextView headerte
+com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz:
+    android.database.sqlite.SQLiteDatabase mdb
+com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop:
+    protected int pages
+com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz:
+    android.database.sqlite.SQLiteDatabase mdb
+com.capstoneii.iclassify.dbclasses.AlertDialogManager
+com.capstoneii.iclassify.dbclasses.AlertDialogManager$1
+com.capstoneii.iclassify.dbclasses.DBAdapter:
+    public static final int DATABASE_VERSION
+    public static final java.lang.String DATABASE_NAME
+    public static final java.lang.String USER_TABLE
+    public static final java.lang.String USER_ID
+    public static final java.lang.String USER_NAME
+    public static final java.lang.String USER_FNAME
+    public static final java.lang.String USER_LNAME
+    public static final java.lang.String USER_AGE
+    public static final java.lang.String USER_SEX
+    public static final java.lang.String USER_TABLE_SQL
+    public static final java.lang.String SCORE_TABLE
+    public static final java.lang.String _ID
+    public static final java.lang.String _RID
+    public static final java.lang.String _CCID
+    public static final java.lang.String _NAME
+    public static final java.lang.String _QDETAILS
+    public static final java.lang.String _SCORE
+    public static final java.lang.String _DATE
+    public static final java.lang.String SCORE_TABLE_SQL
+    public static final java.lang.String _JSID
+    public static final java.lang.String _CHID
+    public static final java.lang.String _JSNAME
+    public static final java.lang.String _JSRETAKE
+    public static final java.lang.String _JSAVERAGE
+    public static final java.lang.String JSQUIZ_TABLE
+    public static final java.lang.String JSQUIZ_TABLE_SQL
+    public static final java.lang.String JS1_TABLE
+    public static final java.lang.String QUE_ID
+    public static final java.lang.String QUE_LESSON
+    public static final java.lang.String QUE_ITEM
+    public static final java.lang.String QUE_ANS
+    public static final java.lang.String QUE_OPT1
+    public static final java.lang.String QUE_OPT2
+    public static final java.lang.String QUE_OPT3
+    public static final java.lang.String QUE_OPT4
+    public static final java.lang.String JS1_TABLE_SQL
+    public static final java.lang.String JS2_TABLE
+    public static final java.lang.String JS2_TABLE_SQL
+    public static final java.lang.String JS3_TABLE
+    public static final java.lang.String JS3_TABLE_SQL
+    public static final java.lang.String JS4_TABLE
+    public static final java.lang.String JS4_TABLE_SQL
+    public static final java.lang.String JS5_TABLE
+    public static final java.lang.String JS5_TABLE_SQL
+    public static final java.lang.String TEMP_QUE_TABLE
+    public static final java.lang.String TEMP_ID
+    public static final java.lang.String TEMP_SET
+    public static final java.lang.String TEMP_LESSON
+    public static final java.lang.String TEMP_Q_ITEM
+    public static final java.lang.String TEMP_ANS
+    public static final java.lang.String TEMP_UANS
+    public static final java.lang.String TEMP_TABLE_SQL
+    public static final int COL_ROWID
+    public static final int COL_SETID
+    public static final int COL_REFID
+    public static final int COL_QITEM
+    public static final int COL_QANS
+    public static final int COL_QUANS
+    public static final int COL_ID
+    public static final int COL_JSNAME
+    public static final int COL_JSRETAKE
+    public static final int COL_JSAVERAGE
+    public static final int COL_ALIAS
+    public static final int COL_FNAME
+    public static final int COL_LNAME
+    public static final int COL_AGE
+    public static final int COL_SEX
+    196:201:public android.database.Cursor getAllrows()
+    206:212:public android.database.Cursor getAllScoreWith(long)
+    227:232:public android.database.Cursor getAllquiz()
+    243:249:public android.database.Cursor getAllChapterRow(long)
+    273:274:public boolean deleteScoreRow(long)
+    280:281:public void deleteScoreRowSet(java.lang.String)
+    289:290:public void deleteallquizset(java.lang.String)
+    294:302:public void deleteAllScoreRow()
+    306:312:public long addUser(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    316:321:public android.database.Cursor getAllUsers()
+    325:332:public boolean Login(java.lang.String)
+    336:341:public android.database.Cursor getUserWith(java.lang.String)
+    346:347:public boolean deleteUserRow(long)
+    352:360:public void deleteAllUserRow()
+    366:371:public long addTempQuestion(java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+    578:588:public void addQuestions4(com.capstoneii.iclassify.dbclasses.Question)
+    592:612:public java.util.List getAllQuestions4()
+    620:630:public void addQuestions5(com.capstoneii.iclassify.dbclasses.Question)
+    634:654:public java.util.List getAllQuestions5()
+com.capstoneii.iclassify.dbclasses.Question:
+    36:36:public int getQid()
+com.capstoneii.iclassify.dbclasses.ScoreItem
+com.capstoneii.iclassify.dbclasses.TempQuestion:
+    30:30:public int getQid()
+    33:34:public void setQid(int)
+    39:40:public void setQset(java.lang.String)
+    45:46:public void setLid(java.lang.String)
+    51:52:public void setQitem(java.lang.String)
+    57:58:public void setQans(java.lang.String)
+    63:64:public void setQuserans(java.lang.String)
 com.capstoneii.iclassify.library.ExpandableButtonMenu:
     private static final java.lang.String TAG
     private static final float DEFAULT_BOTTOM_PADDING
@@ -2353,6 +2536,11 @@ com.capstoneii.iclassify.library.Titanic:
     104:107:public void cancel()
 com.capstoneii.iclassify.library.TitanicTextView:
     87:87:public boolean isSinking()
+com.capstoneii.iclassify.library.TouchImageView:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+    static final int CLICK
 com.capstoneii.iclassify.library.TypeWriter
 com.capstoneii.iclassify.library.TypeWriter$1
 com.capstoneii.iclassify.library.Typefaces:
@@ -2364,23 +2552,91 @@ com.capstoneii.iclassify.library.TypewriterTextView:
     39:40:public void snapToEnd()
 com.capstoneii.iclassify.problems.SimpsonFinalResult:
     com.capstoneii.iclassify.library.SecretTextView secretTextView
-    68:68:public void onBackPressed()
+    95:95:public void onBackPressed()
 com.capstoneii.iclassify.problems.SimpsonMaleClassifier:
     com.capstoneii.iclassify.library.SecretTextView secretTextView
     android.view.animation.Animation animSideUp
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult:
+    public static com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity fragment
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$DecisionCalculateDialog
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$DecisionCalculateDialog$1
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$DecisionCalculateDialog$2
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$DecisionCalculateDialog$3
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$DecisionCalculateDialog$4
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonMaleClassifier:
+    com.capstoneii.iclassify.library.SecretTextView secretTextView
+    android.view.animation.Animation animSideUp
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonTableFragment:
+    com.capstoneii.iclassify.library.SecretTextView secretTextView
+    440:440:public void onBackPressed()
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonsDecisionTreeFragment
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonsDecisionTreeFragment$1
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonsNextProcedure
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonsNextProcedure$1
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonsNextProcedure$2
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$1
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$1$1
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$1$2
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$1$3
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$1$4
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$2
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$2$1
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$2$2
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$2$3
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$2$4
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$3
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$3$1
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$3$2
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$3$3
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$3$4
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$4
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$5
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulDecisionResults:
+    public java.lang.String videoFile
+    1125:1129:public void showPopup(android.view.View)
 com.capstoneii.iclassify.problems.SimpsonTableFragment:
     com.capstoneii.iclassify.library.SecretTextView secretTextView
     80:80:public void onBackPressed()
+com.capstoneii.iclassify.problems.SimpsonforQuizResult
 com.capstoneii.iclassify.problems.SimpsonsDecisionTreeFragment:
-    116:116:public void onBackPressed()
+    119:119:public void onBackPressed()
 com.capstoneii.iclassify.problems.SimpsonsNextProcedure:
     com.capstoneii.iclassify.library.SecretTextView secretTextView
-    72:72:public void onBackPressed()
+    74:74:public void onBackPressed()
 com.capstoneii.iclassify.problems.chooseAlgoSimpson:
-    283:283:public void onBackPressed()
+    226:226:public void onBackPressed()
 com.capstoneii.iclassify.problems.patient.MainFragmentPatient:
     android.view.animation.Animation clock
-    219:219:public void onBackPressed()
+    294:294:public void onBackPressed()
+com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+com.capstoneii.iclassify.problems.patientdectree.PatientProblemsDecisionTreeFragment:
+    android.view.animation.Animation clock
+com.capstoneii.iclassify.problems.simpsonsknn.SimpsonChartFragment:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+    205:205:public void onBackPressed()
+com.capstoneii.iclassify.problems.simpsonsknn.SimpsonKnnStep:
+    android.view.animation.Animation left
+    android.view.animation.Animation right
+    android.view.animation.Animation leftout
+    android.view.animation.Animation rightout
+    android.view.animation.Animation animFadein
+    android.view.animation.Animation animFadeout
+    android.widget.TextView simulprocess1
+    android.widget.TextView simulprocess2
+    android.widget.TextView simulprocess3
+    android.widget.TextView simulprocess4
+    android.widget.TextView simulprocess5
+    android.view.animation.Animation animSideDown
+    91:91:public void onBackPressed()
+com.capstoneii.iclassify.problems.simpsonsknn.SimpsonTableFragmentKNN:
+    com.capstoneii.iclassify.library.SecretTextView secretTextView
+    81:81:public void onBackPressed()
 com.capstoneii.iclassify.simulation.desiciontree.SimulCalculateActivity:
     int total
 com.capstoneii.iclassify.simulation.desiciontree.SimulDatasetActivity:
@@ -2388,6 +2644,8 @@ com.capstoneii.iclassify.simulation.desiciontree.SimulDatasetActivity:
 com.capstoneii.iclassify.simulation.desiciontree.SimulDecisionResults:
     public java.lang.String videoFile
     77:81:public void showPopup(android.view.View)
+com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity:
+    int total
 com.capstoneii.iclassify.simulation.desiciontree.SimulHeirarchyDataActivity
 com.capstoneii.iclassify.simulation.desiciontree.SimulProblemActivity:
     64:72:public void onBackPressed()
@@ -2395,6 +2653,8 @@ com.capstoneii.iclassify.simulation.desiciontree.SimulProcessIntroActivity:
     66:75:public void onBackPressed()
 com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity:
     62:71:public void onBackPressed()
+com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult:
+    public static com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity fragment
 com.capstoneii.iclassify.simulation.knn.SimulKnnPlotDataFragment
 com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity:
     android.view.animation.Animation left
@@ -2413,17 +2673,21 @@ com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity:
 com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset:
     android.widget.ImageView factoryimg
     android.widget.ImageView tissueimg
-    94:97:public boolean onTouchEvent(android.view.MotionEvent)
+    93:96:public boolean onTouchEvent(android.view.MotionEvent)
 com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue:
     android.widget.ImageView factoryimg
     android.widget.ImageView tissueimg
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult:
+    public static com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity fragment
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult5
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult6
 com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesCalculateFragment
 com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment:
-    48:48:public void onBackPressed()
+    52:52:public void onBackPressed()
 com.capstoneii.iclassify.videos.IntroductionVideo:
     51:54:public void onCompletion(android.media.MediaPlayer)
 com.capstoneii.iclassify.videos.VideoMenuActivity:
-    118:121:public void onCompletion(android.media.MediaPlayer)
+    116:119:public void onCompletion(android.media.MediaPlayer)
 com.inqbarna.tablefixheaders.adapters.BaseTableAdapter:
     30:31:public void notifyDataSetChanged()
     39:40:public void notifyDataSetInvalidated()
@@ -2780,18 +3044,24 @@ com.openaphid.flip.R$style
 com.openaphid.flip.R$styleable
 coverflow.ClassifyFancyCoverFlowAdapter
 descisiondiscussflip.DescTreeAdapter:
-    42:42:public int getRepeatCount()
-    46:47:public void setRepeatCount(int)
-    87:91:public void removeData(int)
+    72:72:public int getRepeatCount()
+    76:77:public void setRepeatCount(int)
+    174:178:public void removeData(int)
+    181:185:public void onPause()
+    188:192:public void onDestroy()
+    195:196:public boolean onTouchEvent(android.view.MotionEvent)
 descisiondiscussflip.TopicData:
     10:10:public TopicData()
 drawer.RowItem:
     18:19:public void setTitle(java.lang.String)
     26:27:public void setIcon(int)
 knearestdiscussflip.KNearestAdapter:
-    39:39:public int getRepeatCount()
-    43:44:public void setRepeatCount(int)
-    82:85:public void removeData(int)
+    75:75:public int getRepeatCount()
+    79:80:public void setRepeatCount(int)
+    186:189:public void removeData(int)
+    192:196:public void onPause()
+    199:203:public void onDestroy()
+    206:207:public boolean onTouchEvent(android.view.MotionEvent)
 knearestdiscussflip.KNearestData:
     10:10:public KNearestData()
 org.achartengine.ChartFactory
