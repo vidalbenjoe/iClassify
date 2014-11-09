@@ -187,9 +187,7 @@ public class KNearestLayoutActivity extends ActionBarActivity {
 												// will appear
 												// "You have taken this 4 times"
 												int sum = retake + 1;
-												myDb.addjsquiz(1,
-														"K Nearest Neighbor",
-														"", "0 %");
+												myDb.addjsquiz(1,"K Nearest Neighbor","", "0 %");
 
 												QuizSession
 														.FinishSessionNum1(Integer
@@ -318,7 +316,7 @@ public class KNearestLayoutActivity extends ActionBarActivity {
 									} else {
 										// this condition will use if retake is
 										// value 1 to 2
-										myDb.deleteQuiz("Naive Bayesian");
+										myDb.deleteQuiz("K Nearest Neighbor");
 										QuizSession
 												.StoreFlLastQuizTaken(finalDate);
 										QuizSession

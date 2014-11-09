@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.TypewriterTextView;
+import com.capstoneii.iclassify.videos.NaiveVideo;
 import com.capstoneii.iclassify.videos.VideoMenuActivity;
 
 import drawer.MainDrawerActivity;
@@ -53,7 +54,7 @@ public class NativeBayesObjectives extends ActionBarActivity {
 			@Override
 			public void onClick(View InputFragmentView) {
 				Intent intent = new Intent(NativeBayesObjectives.this,
-						VideoMenuActivity.class);
+						NaiveVideo.class);
 				NativeBayesObjectives.this.startActivity(intent);
 				NativeBayesObjectives.this.finish();
 			}

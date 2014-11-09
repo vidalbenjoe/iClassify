@@ -26,7 +26,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop;
+
 import com.capstoneii.iclassify.assessment.knn.KNNAssessmentDragAndDrop;
 import com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
@@ -108,7 +108,7 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 	        	quizdetails = "Quiz has been taken "+retake+" times";
 	        }
 	        
-	        myDb.addjsquiz(1,"K Nearest Neighbor 1", quizdetails, quizaverage);
+	        myDb.addjsquiz(1,"K Nearest Neighbor", quizdetails, quizaverage);
 		    
 			tvcorrect = (TextView) findViewById(R.id.txtcorrect);
 			tvwrong = (TextView) findViewById(R.id.txtwrong);		
@@ -329,7 +329,7 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 	       					dialog.show();
 	       				} else {
 	       					// this condition will use if retake is value 1 to 2
-	       					myDb.deleteQuiz("Naive Bayesian");
+	       					myDb.deleteQuiz("K Nearest Neighbor");
 	       					QuizSession.StoreFlLastQuizTaken(finalDate);
 	       					QuizSession.StoreAllLastQuizTaken(finalDate);
 

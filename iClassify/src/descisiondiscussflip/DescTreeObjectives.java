@@ -14,6 +14,7 @@ import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 import com.capstoneii.iclassify.problems.SimpsonQuizProblemResult;
 import com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult;
+import com.capstoneii.iclassify.videos.DescTreeVideo;
 import com.capstoneii.iclassify.videos.VideoMenuActivity;
 
 import drawer.MainDrawerActivity;
@@ -54,11 +55,7 @@ public class DescTreeObjectives extends ActionBarActivity {
 		watchvideosbutton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View InputFragmentView) {
-				
-				Bundle b = new Bundle();
-				b.putInt("vid", vid);
-				Intent intent =new Intent(DescTreeObjectives.this, VideoMenuActivity.class);
-				intent.putExtras(b);
+				Intent intent =new Intent(DescTreeObjectives.this, DescTreeVideo.class);
 				startActivity(intent);
 				DescTreeObjectives.this.finish();
 			}

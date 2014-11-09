@@ -412,7 +412,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 		TextView tvLastQuiz = (TextView) dialog
 				.findViewById(R.id.tvlastquizhistory);
 		ListView myList = (ListView) dialog.findViewById(R.id.listofhistory);
-		cr = myDb.getAllscorewithChapter("Decision Tree");
+		cr = myDb.getAllscorewithChapter("Decision Tree 1");
 		startManagingCursor(cr);
 
 		tvQuizChapter.setText("" + ncourse + " Chapter 1");

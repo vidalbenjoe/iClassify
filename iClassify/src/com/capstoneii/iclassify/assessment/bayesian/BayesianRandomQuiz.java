@@ -343,9 +343,9 @@ public class BayesianRandomQuiz extends Activity {
 		myDb.addQuestions2(new Question(
 				"9",
 				"Given the following probabilities of the data, can we play a game or not? \n P(Play=Yes | X) = 0.2424 \n P(Play=No | X) = 0.9421",
-				"Since 0.9421 is greater than 0.2424 then the answer is no, we cannot play a game of tennis today.",
-				"Since 0.9421 is greater than 0.2424 then the answer is no, we cannot play a game of tennis today.",
-				"Since 0.9421 is less than 0.2424 then the answer is yes, we can play a game of tennis today.",
+				"Since 0.9421 is greater than 0.2424 then the answer is No, we cannot play a game of tennis today.",
+				"Since 0.9421 is greater than 0.2424 then the answer is No, we cannot play a game of tennis today.",
+				"Since 0.9421 is less than 0.2424 then the answer is Yes, we can play a game of tennis today.",
 				"None of the above because the probabilities are too low to classify",
 				"The probabilities of the data are wrong "));//10
 

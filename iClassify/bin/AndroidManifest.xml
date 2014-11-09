@@ -84,9 +84,21 @@
             android:name="com.capstoneii.iclassify.videos.VideoMenuActivity"
             android:label="Videos"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name="com.capstoneii.iclassify.videos.VideoDecisionTree" />
-        <activity android:name="com.capstoneii.iclassify.videos.VideoKNearestActivity" />
-        <activity android:name="com.capstoneii.iclassify.videos.VideoNAtiveBayesianActivity" />
+        
+        
+        
+          <activity
+            android:name="com.capstoneii.iclassify.videos.NaiveVideo"
+            android:label="Naive Bayesian"
+            android:theme="@style/Theme.AppCompat.Light" />
+          
+          <activity
+            android:name="com.capstoneii.iclassify.videos.DescTreeVideo"
+            android:label="Decision Tree"
+            android:theme="@style/Theme.AppCompat.Light" />
+          
+          
+        
         <activity
             android:name="com.capstoneii.iclassify.videos.IntroductionVideo"
             android:theme="@style/Theme.AppCompat.Light" />

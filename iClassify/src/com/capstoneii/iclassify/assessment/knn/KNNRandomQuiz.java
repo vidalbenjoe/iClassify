@@ -327,11 +327,11 @@ public class KNNRandomQuiz extends Activity {
 				"3", "1", "2", "3", "4"));
 
 		myDb.addQuestions1(new Question("9",
-				"In Figure C, the unknown record ‘x’ can be classified as?",
+				"In Figure C, the unknown record x can be classified as?",
 				"Positive", "Male", "Negative", "Female", "Positive"));
 
 		myDb.addQuestions1(new Question("10",
-				"In Figure A, the unknown record ‘x’ can be classified as?",
+				"In Figure A, the unknown record x can be classified as?",
 				"Positive", "Male", "Negative", "Female", "Positive"));
 
 		// BAGONG PICTURE
@@ -351,7 +351,7 @@ public class KNNRandomQuiz extends Activity {
 
 		myDb.addQuestions1(new Question(
 				"14",
-				"According to the illustration, if k=5, the unknown record ‘Xq’ can be classified as?",
+				"According to the illustration, if k=5, the unknown record X can be classified as?",
 				"Negative", "Male", "Female", "Positive", "Negative"));
 
 		myDb.addQuestions1(new Question(
