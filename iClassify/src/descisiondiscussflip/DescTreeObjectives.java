@@ -10,7 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.library.TypewriterTextView;
+import com.capstoneii.iclassify.problems.SimpsonQuizProblemResult;
+import com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult;
 import com.capstoneii.iclassify.videos.VideoMenuActivity;
 
 import drawer.MainDrawerActivity;
@@ -19,7 +22,7 @@ public class DescTreeObjectives extends ActionBarActivity {
 	TextView titleobjectives;
 	TypewriterTextView objectivedesc;
 	ImageView startdiscussionbutton,watchvideosbutton;
-	
+	int vid = 2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,6 @@ public class DescTreeObjectives extends ActionBarActivity {
 		titleobjectives.setText("Decision Tree");
 		objectivedesc = (TypewriterTextView) findViewById(R.id.objectivedesc);
 		objectivedesc.setTypewriterText(getString(R.string.decisiontreeonjectives));
-		
 		
 		startdiscussionbutton= (ImageView) findViewById(R.id.startdiscussionbutton);
 		watchvideosbutton= (ImageView) findViewById(R.id.watchvideosbutton);
@@ -52,13 +54,15 @@ public class DescTreeObjectives extends ActionBarActivity {
 		watchvideosbutton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View InputFragmentView) {
-				Intent intent = new Intent(DescTreeObjectives.this,
-						VideoMenuActivity.class);
-				DescTreeObjectives.this.startActivity(intent);
+				
+				Bundle b = new Bundle();
+				b.putInt("vid", vid);
+				Intent intent =new Intent(DescTreeObjectives.this, VideoMenuActivity.class);
+				intent.putExtras(b);
+				startActivity(intent);
 				DescTreeObjectives.this.finish();
 			}
 		});
-		
 	}
 	
 	@Override

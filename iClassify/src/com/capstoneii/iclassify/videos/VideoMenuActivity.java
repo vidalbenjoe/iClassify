@@ -26,7 +26,7 @@ public class VideoMenuActivity extends ActionBarActivity {
 	private VideoView vv;
 	public String videoFile1, videoFile2,videoFile3;
 	public TextView setvideoDesc;
-	
+	int vid;
     private ExpandableMenuOverlay menuOverlay;
 
     @Override
@@ -35,6 +35,8 @@ public class VideoMenuActivity extends ActionBarActivity {
         setContentView(R.layout.choose_video_layout);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.divider_color)));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        
+        vid = getIntent().getExtras().getInt("vid");
         
         vv = (VideoView) findViewById(R.id.videoView1);
 		videoFile1 = "android.resource://" + getPackageName() + "/" + R.raw.videoknn;
@@ -55,6 +57,55 @@ public class VideoMenuActivity extends ActionBarActivity {
         vv.setVideoURI(uri);
         vv.requestFocus();
         vv.start();
+        
+        
+        
+        if(vid == 1){
+        	menuOverlay.getButtonMenu().toggle();
+            MediaController mc1 = new MediaController(VideoMenuActivity.this);
+    	    mc1.setAnchorView(vv);
+            mc1.setMediaPlayer(vv);
+            Uri vidknn = Uri.parse(videoFile1);
+            vv.setMediaController(mc1);
+            vv.setVideoURI(vidknn);
+            vv.requestFocus();
+            vv.start();
+            setvideoDesc = (TextView) findViewById(R.id.videoDesc);
+            setvideoDesc.setMovementMethod(new ScrollingMovementMethod());
+            setvideoDesc.setText(R.string.knnvideodesc);
+        	
+        }else if(vid == 2){
+        	menuOverlay.getButtonMenu().toggle();
+        	MediaController mc2 = new MediaController(VideoMenuActivity.this);
+    	    mc2.setAnchorView(vv);
+            mc2.setMediaPlayer(vv);
+            Uri vidtree = Uri.parse(videoFile2);
+            vv.setMediaController(mc2);
+            vv.setVideoURI(vidtree);
+            vv.requestFocus();
+            vv.start();
+            setvideoDesc = (TextView) findViewById(R.id.videoDesc);
+            setvideoDesc.setMovementMethod(new ScrollingMovementMethod());
+            setvideoDesc.setText(R.string.treevideodesc);
+        }
+        else if(vid == 3){
+        	menuOverlay.getButtonMenu().toggle();
+        	MediaController mc3 = new MediaController(VideoMenuActivity.this);
+    	    mc3.setAnchorView(vv);
+            mc3.setMediaPlayer(vv);
+            Uri naivevid = Uri.parse(videoFile3);
+            vv.setMediaController(mc3);
+            vv.setVideoURI(naivevid);
+            vv.requestFocus();
+            vv.start();
+            setvideoDesc = (TextView) findViewById(R.id.videoDesc);
+            setvideoDesc.setMovementMethod(new ScrollingMovementMethod());
+            setvideoDesc.setText(R.string.naivevideodesc);
+        }
+        
+        
+        
+        
         
         menuOverlay = (ExpandableMenuOverlay) findViewById(R.id.button_menu);
         menuOverlay.setOnMenuButtonClickListener(new ExpandableButtonMenu.OnMenuButtonClick() {
