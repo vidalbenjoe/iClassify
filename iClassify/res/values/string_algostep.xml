@@ -35,4 +35,19 @@
 	<string name="decisionquestionchoice3">I’ll go shopping</string>
 	<string name="decisionquestionchoice4">I’ll stay in</string>
 	
+	
+	<string name="knnsimulationsecondalgostep">
+	   2. Calculate the distance between the query-instance and all the training samples\n
+
+	Coordinaes of query instance is (3, 7), instead of calculating the distance we compute square distance which is faster to calcualte(Without square root)
+	</string>
+	
+	
+		<string name="knnsimulationsixthalgostep">
+	   5. Use simple majority of the category of nearest neighbor as the prediction value of the query instance
+
+We have 2 good and 1 bad, since 2 > 1 then we conclude that a new paper tissue that pass laboratory test with
+X1 = 3 and X2 = 7 is included on Good category.
+	</string>
+	
 </resources>
