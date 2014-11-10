@@ -35,7 +35,7 @@ public class KNNRandomQuiz extends Activity {
 	int page = 1;
 	int qid = 0;
 	int qset = 1;
-	String ncourse = "Naive Bayesian";
+	String ncourse = "K Nearest Neighbor";
 	Question question;
 	SQLiteDatabase mdb;
 	TextView tvQue, tvPage, tvRef, instructiondesc;

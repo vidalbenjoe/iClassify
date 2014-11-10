@@ -113,7 +113,7 @@ public class QuizResultBayesian extends Activity implements AnimationListener {
 			quizdetails = "Quiz has been taken " + retake + " times";
 		}
 
-		myDb.addjsquiz(1, "Naive Bayesian 1", quizdetails, quizaverage);
+		myDb.addjsquiz(1, "Naive Bayesian", quizdetails, quizaverage);
 
 		tvcorrect = (TextView) findViewById(R.id.txtcorrect);
 		tvwrong = (TextView) findViewById(R.id.txtwrong);
@@ -413,7 +413,7 @@ public class QuizResultBayesian extends Activity implements AnimationListener {
 		cr = myDb.getAllscorewithChapter("Naive Bayesian 1");
 		startManagingCursor(cr);
 
-		tvQuizChapter.setText("" + ncourse + " Chapter 1");
+		tvQuizChapter.setText("" + ncourse + " Assessment");
 		tvLastQuiz.setText(" " + tdate + "");
 
 		String[] fromFieldNames = new String[] { DBAdapter._NAME,

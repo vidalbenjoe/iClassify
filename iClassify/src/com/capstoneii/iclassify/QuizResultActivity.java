@@ -98,7 +98,7 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 	        DecimalFormat df = new DecimalFormat("00.00");
 	        String quizaverage = df.format(jsper)+"%";
 	        
-	        if(retake == 1){
+	        if(retake == 0){
 	        	quizdetails = "Quiz has been taken for the first time";
 	        }
 	        else if(retake == 4){
@@ -390,7 +390,7 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 			cr = myDb.getAllscorewithChapter("K Nearest Neighbor 1");
 			startManagingCursor(cr);
 			
-			tvQuizChapter.setText(""+ncourse+" Chapter 1");
+			tvQuizChapter.setText(""+ncourse+" Assessment");
 			tvLastQuiz.setText(" "+tdate+"");
 			
 			String [] fromFieldNames = 

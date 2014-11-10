@@ -415,7 +415,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 		cr = myDb.getAllscorewithChapter("Decision Tree 1");
 		startManagingCursor(cr);
 
-		tvQuizChapter.setText("" + ncourse + " Chapter 1");
+		tvQuizChapter.setText("" + ncourse + " Assessment");
 		tvLastQuiz.setText(" " + tdate + "");
 
 		String[] fromFieldNames = new String[] { DBAdapter._NAME,
