@@ -190,8 +190,8 @@ public class MainDrawerActivity extends ActionBarActivity {
 			break;
 
 		case 4:// assessment
-
-			finish();
+			System.exit(0);
+			MainDrawerActivity.this.finish();
 			break;
 		default:
 			break;

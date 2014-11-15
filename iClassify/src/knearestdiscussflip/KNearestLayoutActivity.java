@@ -28,6 +28,8 @@ import com.capstoneii.iclassify.SessionCache;
 import com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 
+import descisiondiscussflip.DescTreeAdapter;
+
 @SuppressLint({ "NewApi", "SimpleDateFormat" })
 public class KNearestLayoutActivity extends ActionBarActivity {
 	private FlipViewController flipView;
@@ -40,12 +42,16 @@ public class KNearestLayoutActivity extends ActionBarActivity {
 	String finalDate;
 	Intent intent;
 	String initVal = "1";
+	KNearestAdapter newadapter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		intent = new Intent();
 		QuizSession = new SessionCache(KNearestLayoutActivity.this);
+
+		newadapter = new KNearestAdapter(this);
+
 		openDB();
 
 		Date date = new Date();
@@ -101,6 +107,25 @@ public class KNearestLayoutActivity extends ActionBarActivity {
 	}
 
 	@Override
+	public void onBackPressed() {
+		stodAudio();
+		super.onBackPressed();
+
+	}
+
+	@Override
+	protected void onDestroy() {
+		stodAudio();
+		super.onDestroy();
+	}
+	
+	@Override
+	protected void onStop(){
+		stodAudio();
+		super.onStop();
+	}
+
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.menu, menu);
@@ -113,8 +138,12 @@ public class KNearestLayoutActivity extends ActionBarActivity {
 		case android.R.id.home:
 			Intent intent2 = new Intent(this, KNearestObjectives.class);
 			intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
 			startActivity(intent2);
-			this.finish();
+			stodAudio();
+			super.onStop();
+			android.os.Process.killProcess(android.os.Process.myPid());
+			KNearestLayoutActivity.this.finish();
 			// app icon in action bar clicked; go home
 			return true;
 
@@ -187,7 +216,9 @@ public class KNearestLayoutActivity extends ActionBarActivity {
 												// will appear
 												// "You have taken this 4 times"
 												int sum = retake + 1;
-												myDb.addjsquiz(1,"K Nearest Neighbor","", "0 %");
+												myDb.addjsquiz(1,
+														"K Nearest Neighbor",
+														"", "0 %");
 
 												QuizSession
 														.FinishSessionNum1(Integer
@@ -404,6 +435,19 @@ public class KNearestLayoutActivity extends ActionBarActivity {
 
 		myDb = new DBAdapter(KNearestLayoutActivity.this);
 		myDb.open();
+	}
+
+	void stodAudio() {
+		if ((newadapter.knnone.isPlaying()) || (newadapter.knntwo.isPlaying())
+				|| (newadapter.knnthree.isPlaying())
+				|| (newadapter.knnfour.isPlaying())
+				|| (newadapter.knnfive.isPlaying())) {
+			newadapter.knnone.stop();
+			newadapter.knntwo.stop();
+			newadapter.knnthree.stop();
+			newadapter.knnfour.stop();
+			newadapter.knnfive.stop();
+		}
 	}
 
 }

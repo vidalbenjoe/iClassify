@@ -41,7 +41,7 @@ public class DescTreeAdapter extends BaseAdapter {
 	private Matrix matrix = new Matrix();
 	private float scale = 1f;
 	private ScaleGestureDetector SGD;
-
+	public String toSpeak;
 	MediaPlayer dtone, dttwo, dtthree, dtfour;
 
 	public DescTreeAdapter(Context context) {
@@ -57,12 +57,10 @@ public class DescTreeAdapter extends BaseAdapter {
 			}
 		});
 
-		dtone = MediaPlayer.create(context, R.raw.dtone);
-		dttwo = MediaPlayer.create(context, R.raw.dttwo);
-		dtthree = MediaPlayer.create(context, R.raw.dtthree);
-		dtfour = MediaPlayer.create(context, R.raw.dtfour);
+		
+		
 	}
-
+	
 	@Override
 	public int getCount() {
 		return desctreeData.size() * repeatCount;
@@ -145,7 +143,7 @@ public class DescTreeAdapter extends BaseAdapter {
 		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 				layout, R.id.description).toggle();
 
-		final String toSpeak = UI
+		toSpeak = UI
 				.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 						layout, R.id.description).getText().toString();
 		UI.<ToggleButton>findViewById(layout, R.id.toggleButton);
@@ -156,13 +154,12 @@ public class DescTreeAdapter extends BaseAdapter {
 	                                         boolean isChecked) {
 
 	                if(isChecked){
-	                	tts.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+	                	tts.speak(toSpeak, TextToSpeech.QUEUE_ADD, null);
 	                	
 	                }else{
 	                	
 	            			tts.stop();
 	            			tts.shutdown();
-	            		
 	                }
 	            }
 		 });
@@ -176,6 +173,8 @@ public class DescTreeAdapter extends BaseAdapter {
 
 		}
 	}
+	
+	
 
 	public void onPause() {
 		if (tts != null) {
@@ -184,11 +183,28 @@ public class DescTreeAdapter extends BaseAdapter {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	public void onDestroy() {
+		tts.stop();
+		tts.shutdown();
+		tts.speak(toSpeak, TextToSpeech.STOPPED, null);
+	
+	}
+	
+
+	public void onBackPressed(){
+		tts.stop();
+		tts.shutdown();
+		
+	}
+	
+
+	public void onStop(){
 		if (tts != null) {
 			tts.stop();
 			tts.shutdown();
 		}
+		
 	}
 
 	public boolean onTouchEvent(MotionEvent ev) {
@@ -207,4 +223,7 @@ public class DescTreeAdapter extends BaseAdapter {
 			return true;
 		}
 	}
+
+
+	
 }

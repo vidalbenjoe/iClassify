@@ -48,6 +48,11 @@ public class KNearestAdapter extends BaseAdapter {
 		inflater = LayoutInflater.from(context);
 		desctreeData = new ArrayList<KNearestData.Data>(
 				KNearestData.IMG_DESCRIPTIONS);
+		knnone = MediaPlayer.create(context, R.raw.knnone);
+		knntwo = MediaPlayer.create(context, R.raw.knntwo);
+		knnthree = MediaPlayer.create(context, R.raw.knnthree);
+		knnfour = MediaPlayer.create(context, R.raw.knnfour);
+		knnfive = MediaPlayer.create(context, R.raw.knnfive);
 
 		tts = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
 			@Override
@@ -57,12 +62,6 @@ public class KNearestAdapter extends BaseAdapter {
 				}
 			}
 		});
-
-		knnone = MediaPlayer.create(context, R.raw.knnone);
-		knntwo = MediaPlayer.create(context, R.raw.knntwo);
-		knnthree = MediaPlayer.create(context, R.raw.knnthree);
-		knnfour = MediaPlayer.create(context, R.raw.knnfour);
-		knnfive = MediaPlayer.create(context, R.raw.knnfive);
 
 	}
 
@@ -92,7 +91,7 @@ public class KNearestAdapter extends BaseAdapter {
 
 	@SuppressLint({ "FloatMath", "InflateParams", "ClickableViewAccessibility" })
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) {
 		View layout = convertView;
 		if (convertView == null) {
 			layout = inflater.inflate(R.layout.discusstopic_layout, null);
@@ -167,15 +166,56 @@ public class KNearestAdapter extends BaseAdapter {
 									CompoundButton buttonView, boolean isChecked) {
 
 								if (isChecked) {
-									tts.speak(toSpeak,
-											TextToSpeech.QUEUE_FLUSH, null);
+									if (position == 0) {
+										knnone.start();
+										knntwo.stop();
+										knnthree.stop();
+										knnfour.stop();
+										knnfive.stop();
 
-								} else {
-
-									tts.stop();
-									tts.shutdown();
+									} else if (position == 1) {
+										knnone.stop();
+										knntwo.start();
+										knnthree.stop();
+										knnfour.stop();
+										knnfive.stop();
+									} else if (position == 2) {
+										knnone.stop();
+										knntwo.stop();
+										knnthree.start();
+										knnfour.stop();
+										knnfive.stop();
+									} else if (position == 3) {
+										knnone.stop();
+										knntwo.stop();
+										knnthree.stop();
+										knnfour.start();
+										knnfive.stop();
+									} else if (position == 4) {
+										knnone.stop();
+										knntwo.stop();
+										knnthree.stop();
+										knnfour.stop();
+										knnfive.start();
+									}
 
 								}
+								if (!isChecked) {
+
+									if ((knnone.isPlaying())
+											|| (knntwo.isPlaying())
+											|| (knnthree.isPlaying())
+											|| (knnfour.isPlaying())
+											|| (knnfive.isPlaying())) {
+										knnone.stop();
+										knntwo.stop();
+										knnthree.stop();
+										knnfour.stop();
+										knnfive.stop();
+									}
+
+								}
+
 							}
 						});
 
@@ -196,10 +236,18 @@ public class KNearestAdapter extends BaseAdapter {
 	}
 
 	public void onDestroy() {
-		if (tts != null) {
-			tts.stop();
-			tts.shutdown();
+		if ((knnone.isPlaying())
+				|| (knntwo.isPlaying())
+				|| (knnthree.isPlaying())
+				|| (knnfour.isPlaying())
+				|| (knnfive.isPlaying())) {
+			knnone.stop();
+			knntwo.stop();
+			knnthree.stop();
+			knnfour.stop();
+			knnfive.stop();
 		}
+
 	}
 
 	public boolean onTouchEvent(MotionEvent ev) {
