@@ -35,7 +35,7 @@ public class DescTreeAdapter extends BaseAdapter {
 	private LayoutInflater inflater;
 
 	private int repeatCount = 1;
-
+	View layout;
 	private List<TopicData.Data> desctreeData;
 	private ImageView zoomerImageZoom;
 	private Matrix matrix = new Matrix();
@@ -47,7 +47,7 @@ public class DescTreeAdapter extends BaseAdapter {
 	public DescTreeAdapter(Context context) {
 		inflater = LayoutInflater.from(context);
 		desctreeData = new ArrayList<TopicData.Data>(TopicData.IMG_DESCRIPTIONS);
-	
+
 		tts = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
 			@Override
 			public void onInit(int status) {
@@ -57,10 +57,13 @@ public class DescTreeAdapter extends BaseAdapter {
 			}
 		});
 
-		
-		
+		dtone = MediaPlayer.create(context, R.raw.dtone);
+		dttwo = MediaPlayer.create(context, R.raw.dttwo);
+		dtthree = MediaPlayer.create(context, R.raw.dtthree);
+		dtfour = MediaPlayer.create(context, R.raw.dtfour);
+
 	}
-	
+
 	@Override
 	public int getCount() {
 		return desctreeData.size() * repeatCount;
@@ -85,11 +88,25 @@ public class DescTreeAdapter extends BaseAdapter {
 	}
 
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		View layout = convertView;
+	public View getView(final int position, View convertView, ViewGroup parent) {
+		layout = convertView;
 		if (convertView == null) {
 			layout = inflater.inflate(R.layout.discusstopic_layout, null);
 			AphidLog.d("created new view from adapter: %d", position);
+
+			if (position == 1 || position == 2 || position == 3
+					|| position == 4 || position == 5) {
+				if ((dtone.isPlaying()) || (dttwo.isPlaying())
+						|| (dtthree.isPlaying()) || (dtfour.isPlaying())) {
+					dtone.stop();
+					dttwo.stop();
+					dtthree.stop();
+					dtfour.stop();
+
+				}
+				UI.<ToggleButton> findViewById(layout, R.id.toggleButton)
+						.setChecked(false);
+			}
 		}
 
 		final TopicData.Data data = desctreeData.get(position
@@ -146,23 +163,61 @@ public class DescTreeAdapter extends BaseAdapter {
 		toSpeak = UI
 				.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 						layout, R.id.description).getText().toString();
-		UI.<ToggleButton>findViewById(layout, R.id.toggleButton);
-		UI.<ToggleButton>findViewById(layout, R.id.toggleButton).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+		UI.<ToggleButton> findViewById(layout, R.id.toggleButton);
+		UI.<ToggleButton> findViewById(layout, R.id.toggleButton)
+				.setOnCheckedChangeListener(
+						new CompoundButton.OnCheckedChangeListener() {
 
-	            @Override
-	            public void onCheckedChanged(CompoundButton buttonView,
-	                                         boolean isChecked) {
+							@Override
+							public void onCheckedChanged(
+									CompoundButton buttonView, boolean isChecked) {
 
-	                if(isChecked){
-	                	tts.speak(toSpeak, TextToSpeech.QUEUE_ADD, null);
-	                	
-	                }else{
-	                	
-	            			tts.stop();
-	            			tts.shutdown();
-	                }
-	            }
-		 });
+								if (isChecked) {
+
+									UI.<ToggleButton> findViewById(layout,
+											R.id.toggleButton)
+											.setChecked(false);
+									if (position == 0) {
+										dtone.start();
+										dttwo.stop();
+										dtthree.stop();
+										dtfour.stop();
+
+									} else if (position == 1) {
+										dtone.stop();
+										dttwo.start();
+										dtthree.stop();
+										dtfour.stop();
+
+									} else if (position == 2) {
+										dtone.stop();
+										dttwo.stop();
+										dtthree.start();
+										dtfour.stop();
+									} else if (position == 3) {
+										dtone.stop();
+										dttwo.stop();
+										dtthree.stop();
+										dtfour.start();
+									}
+
+								}
+								if (!isChecked) {
+									UI.<ToggleButton> findViewById(layout,
+											R.id.toggleButton).setChecked(true);
+									if ((dtone.isPlaying())
+											|| (dttwo.isPlaying())
+											|| (dtthree.isPlaying() || (dtfour
+													.isPlaying()))) {
+										dtone.stop();
+										dttwo.stop();
+										dtthree.stop();
+										dtfour.stop();
+									}
+
+								}
+							}
+						});
 
 		return layout;
 	}
@@ -173,8 +228,6 @@ public class DescTreeAdapter extends BaseAdapter {
 
 		}
 	}
-	
-	
 
 	public void onPause() {
 		if (tts != null) {
@@ -188,23 +241,21 @@ public class DescTreeAdapter extends BaseAdapter {
 		tts.stop();
 		tts.shutdown();
 		tts.speak(toSpeak, TextToSpeech.STOPPED, null);
-	
-	}
-	
 
-	public void onBackPressed(){
+	}
+
+	public void onBackPressed() {
 		tts.stop();
 		tts.shutdown();
-		
-	}
-	
 
-	public void onStop(){
+	}
+
+	public void onStop() {
 		if (tts != null) {
 			tts.stop();
 			tts.shutdown();
 		}
-		
+
 	}
 
 	public boolean onTouchEvent(MotionEvent ev) {
@@ -224,6 +275,4 @@ public class DescTreeAdapter extends BaseAdapter {
 		}
 	}
 
-
-	
 }

@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.speech.tts.TextToSpeech;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -41,9 +42,9 @@ public class NativeBayesAdapter extends BaseAdapter {
 	public TextToSpeech tts;
 
 	private TouchImageView zoomerImageZoom;
-
+	View layout;
 	public DecimalFormat df;
-
+	MediaPlayer nbone, nbtwo, nbthree, nbfour;
 	public NativeBayesAdapter(Context context) {
 		inflater = LayoutInflater.from(context);
 		desctreeData = new ArrayList<NativeBayesData.Data>(
@@ -57,7 +58,11 @@ public class NativeBayesAdapter extends BaseAdapter {
 				}
 			}
 		});
-
+		
+		nbone = MediaPlayer.create(context, R.raw.nbone);
+		nbtwo = MediaPlayer.create(context, R.raw.nbtwo);
+		nbthree = MediaPlayer.create(context, R.raw.nbthree);
+		nbfour = MediaPlayer.create(context, R.raw.nbfour);
 	}
 
 	@Override
@@ -86,10 +91,24 @@ public class NativeBayesAdapter extends BaseAdapter {
 	@SuppressLint({ "InflateParams", "ClickableViewAccessibility", "FloatMath" })
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
-		View layout = convertView;
+		layout = convertView;
 		if (convertView == null) {
 			layout = inflater.inflate(R.layout.discusstopic_layout, null);
 			AphidLog.d("created new view from adapter: %d", position);
+			
+			if(position == 1 || position == 2 || position == 3 || position == 4 || position == 5){
+				if ((nbone.isPlaying())
+						|| (nbtwo.isPlaying())
+						|| (nbthree.isPlaying())
+						|| (nbfour.isPlaying())) {
+					nbone.stop();
+					nbtwo.stop();
+					nbthree.stop();
+					nbfour.stop();
+					
+				}
+				UI.<ToggleButton> findViewById(layout, R.id.toggleButton).setChecked(false);		
+			}
 		}
 
 		final NativeBayesData.Data data = desctreeData.get(position
@@ -109,6 +128,7 @@ public class NativeBayesAdapter extends BaseAdapter {
 						final Dialog dialog = new Dialog(InputFragmentView
 								.getContext());
 						dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+			
 						dialog.setContentView(R.layout.image_zoomer_dialog);
 						dialog.setCancelable(true);
 						dialog.getWindow().setBackgroundDrawable(
@@ -142,6 +162,7 @@ public class NativeBayesAdapter extends BaseAdapter {
 		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 				layout, R.id.description).toggle();
 
+		@SuppressWarnings("unused")
 		final String toSpeak = UI
 				.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
 						layout, R.id.description).getText().toString();
@@ -157,13 +178,41 @@ public class NativeBayesAdapter extends BaseAdapter {
 
 								if (isChecked) {
 									
-									tts.speak(toSpeak,
-											TextToSpeech.QUEUE_ADD, null);
+									UI.<ToggleButton> findViewById(layout, R.id.toggleButton).setChecked(false);
+									if (position == 0) {
+										nbone.start();
+										nbtwo.stop();
+										nbthree.stop();
+										nbfour.stop();
+										
+									} else if (position == 1) {
+										nbone.stop();
+										nbtwo.start();
+										nbthree.stop();
+										nbfour.stop();
+										
+									} else if (position == 2) {
+										nbone.stop();
+										nbtwo.stop();
+										nbthree.start();
+										nbfour.stop();
+									}else if (position == 3) {
+										nbone.stop();
+										nbtwo.stop();
+										nbthree.stop();
+										nbfour.start();
+									}
 
-								} else {
-
-									tts.stop();
-									tts.shutdown();
+								} if (!isChecked) {
+									UI.<ToggleButton> findViewById(layout, R.id.toggleButton).setChecked(true);		
+									if ((nbone.isPlaying())
+											|| (nbtwo.isPlaying())
+											|| (nbthree.isPlaying())) {
+										nbone.stop();
+										nbtwo.stop();
+										nbthree.stop();
+										nbfour.stop();
+									}
 
 								}
 							}

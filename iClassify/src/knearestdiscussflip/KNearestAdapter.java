@@ -41,7 +41,7 @@ public class KNearestAdapter extends BaseAdapter {
 	private Matrix matrix = new Matrix();
 	private float scale = 1f;
 	private ScaleGestureDetector SGD;
-
+	public View layout;
 	MediaPlayer knnone, knntwo, knnthree, knnfour, knnfive;
 
 	public KNearestAdapter(Context context) {
@@ -92,11 +92,27 @@ public class KNearestAdapter extends BaseAdapter {
 	@SuppressLint({ "FloatMath", "InflateParams", "ClickableViewAccessibility" })
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
-		View layout = convertView;
+		layout = convertView;
 		if (convertView == null) {
 			layout = inflater.inflate(R.layout.discusstopic_layout, null);
 			AphidLog.d("created new view from adapter: %d", position);
 			System.out.printf("Position: %d", position);
+			
+			
+			if(position == 1 || position == 2 || position == 3 || position == 4 || position == 5){
+				if ((knnone.isPlaying())
+						|| (knntwo.isPlaying())
+						|| (knnthree.isPlaying())
+						|| (knnfour.isPlaying())
+						|| (knnfive.isPlaying())) {
+					knnone.stop();
+					knntwo.stop();
+					knnthree.stop();
+					knnfour.stop();
+					knnfive.stop();
+				}
+			}
+				
 
 		}
 
@@ -165,7 +181,11 @@ public class KNearestAdapter extends BaseAdapter {
 							public void onCheckedChanged(
 									CompoundButton buttonView, boolean isChecked) {
 
+								
+								
 								if (isChecked) {
+								
+									UI.<ToggleButton> findViewById(layout, R.id.toggleButton).setChecked(false);
 									if (position == 0) {
 										knnone.start();
 										knntwo.stop();
@@ -179,6 +199,7 @@ public class KNearestAdapter extends BaseAdapter {
 										knnthree.stop();
 										knnfour.stop();
 										knnfive.stop();
+										
 									} else if (position == 2) {
 										knnone.stop();
 										knntwo.stop();
@@ -201,7 +222,7 @@ public class KNearestAdapter extends BaseAdapter {
 
 								}
 								if (!isChecked) {
-
+									UI.<ToggleButton> findViewById(layout, R.id.toggleButton).setChecked(true);		
 									if ((knnone.isPlaying())
 											|| (knntwo.isPlaying())
 											|| (knnthree.isPlaying())
@@ -212,6 +233,7 @@ public class KNearestAdapter extends BaseAdapter {
 										knnthree.stop();
 										knnfour.stop();
 										knnfive.stop();
+										
 									}
 
 								}

@@ -52,8 +52,8 @@ public class MainActivityController extends Fragment {
 		// Private members
 		// =============================================================================
 
-		private int[] images = { R.drawable.chooseintro, R.drawable.choosedt,
-				R.drawable.chooseknn, R.drawable.choosenb, };
+		private int[] images = { R.drawable.chooseintro,
+				R.drawable.chooseknn,R.drawable.choosedt, R.drawable.choosenb, };
 
 		// =============================================================================
 		// Supertype overrides
@@ -101,15 +101,16 @@ public class MainActivityController extends Fragment {
 						break;
 
 					case 1:
-						Intent intent1 = new Intent(InputFragmentView
-								.getContext(), DescTreeObjectives.class);
-						InputFragmentView.getContext().startActivity(intent1);
-						break;
-
-					case 2:
 						Intent intent2 = new Intent(InputFragmentView
 								.getContext(), KNearestObjectives.class);
 						InputFragmentView.getContext().startActivity(intent2);
+						break;
+
+					case 2:
+						Intent intent1 = new Intent(InputFragmentView
+								.getContext(), DescTreeObjectives.class);
+						InputFragmentView.getContext().startActivity(intent1);
+						
 						break;
 
 					case 3:

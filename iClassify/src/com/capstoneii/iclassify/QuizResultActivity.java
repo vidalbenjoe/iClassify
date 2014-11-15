@@ -155,17 +155,6 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 				@Override
 				public void onClick(View v) {
 					
-					/*
-					Bundle b =new Bundle();
-					b.putInt("refID", 3);
-					//b.putString("showScore",ncourse);
-					b.putString("Course", "JavaScript");
-					b.putString("lastdate", tdate);
-					Intent intent = new Intent(JsResult1Activity.this, ListCourseScoreActivity2.class);
-					intent.putExtras(b);
-					startActivity(intent);
-					overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
-					*/
 					openDB();
 					populateSwithdb();
 				}

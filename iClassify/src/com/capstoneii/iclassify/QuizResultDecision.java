@@ -282,7 +282,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 								QuizSession.StoreFlLastQuizTaken(finalDate);
 								QuizSession.StoreAllLastQuizTaken(finalDate);
 
-								myDb.deletescorerowSet(2, "Decision Tree 2");
+								myDb.deletescorerowSet(2, "Decision Tree 1");
 
 								int sum = retake + 1;// 5
 								myDb.addjsquiz(1, "Decision Tree", "", "0 %");
@@ -322,7 +322,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 								QuizSession.StoreFlLastQuizTaken(finalDate);
 								QuizSession.StoreAllLastQuizTaken(finalDate);
 
-								myDb.deletescorerowSet(2, "Decision Tree 2");
+								myDb.deletescorerowSet(2, "Decision Tree 1");
 
 								int sum = retake + 1;// 5
 								myDb.addjsquiz(1, "Decision Tree", "", "0 %");

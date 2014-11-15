@@ -128,7 +128,7 @@
 # view res/layout/splash_screen.xml #generated:14
 -keep class com.capstoneii.iclassify.library.TitanicTextView { <init>(...); }
 
-# view res/layout/image_zoomer_dialog.xml #generated:10
+# view res/layout/image_zoomer_dialog.xml #generated:11
 -keep class com.capstoneii.iclassify.library.TouchImageView { <init>(...); }
 
 # view res/layout/assessment_bayes_drag.xml #generated:10

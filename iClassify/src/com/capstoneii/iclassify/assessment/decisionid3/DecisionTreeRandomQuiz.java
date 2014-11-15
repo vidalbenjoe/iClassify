@@ -158,7 +158,7 @@ public class DecisionTreeRandomQuiz extends Activity {
 							"MMM dd, yyyy");
 					finalDate = timeFormat.format(date);
 					String subj = ncourse + " " + qset;
-					String qdetails = "Quiz Retake " + retake;
+					String qdetails = "Quiz Retake" + retake;
 					myDb.addscores(3, retake, subj, qdetails, score, finalDate);
 					// myDb.addScores(3, subj , score, finalDate);
 

@@ -321,7 +321,7 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
 									} else {
 										// this condition will use if retake is
 										// value 1 to 2
-										myDb.deleteQuiz("Naive Bayesian");
+										myDb.deleteQuiz("Decision Tree");
 										QuizSession
 												.StoreFlLastQuizTaken(finalDate);
 										QuizSession
@@ -370,14 +370,7 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
 									DescTreeLayoutActivity.this.finish();
 
 								}
-								/*
-								 * Intent intent = new
-								 * Intent(DescTreeLayoutActivity.this,
-								 * DecisionTreeAssessmentActivity.class);
-								 * DescTreeLayoutActivity
-								 * .this.startActivity(intent);
-								 * DescTreeLayoutActivity.this.finish();
-								 */
+								
 								return true;
 							}
 							return true;

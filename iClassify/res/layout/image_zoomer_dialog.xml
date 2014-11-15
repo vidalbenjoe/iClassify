@@ -4,16 +4,15 @@
     android:id="@+id/imagezoomerlinear"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="25dp"
-    android:layout_marginRight="25dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
     android:orientation="vertical" >
+    
         <com.capstoneii.iclassify.library.TouchImageView
             android:id="@+id/zoomerImageZoom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:scaleType="matrix"
+            android:scaleType="fitXY"
             android:clickable="true"
             tools:ignore="ContentDescription" />
  
