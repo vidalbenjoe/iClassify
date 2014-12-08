@@ -35,9 +35,9 @@ public class PAtientProblemDecTreeComputation extends Fragment {
 				container, false);
 		animZoom = AnimationUtils
 				.loadAnimation(getActivity(), R.anim.unzoom_in);
-		final TypewriterTextView textcomputehaha = (TypewriterTextView) rootView.findViewById(R.id.textcomputehaha);
+		final com.capstoneii.iclassify.library.JustifyTextView textcomputehaha = (com.capstoneii.iclassify.library.JustifyTextView) rootView.findViewById(R.id.textcomputehaha);
 		textcomputehaha.setText(R.string.patientprobid31);
-
+		
 		textcompute2 = (SecretTextView) rootView.findViewById(R.id.textcompute2);
 		textcomputehaha.setVisibility(View.VISIBLE);
 
@@ -87,6 +87,7 @@ public class PAtientProblemDecTreeComputation extends Fragment {
 				case 5:
 					textcomputehaha.setVisibility(View.VISIBLE);
 					textcompute2.setVisibility(View.GONE);
+					
 					textcomputehaha
 							.setText(R.string.thismeans);
 

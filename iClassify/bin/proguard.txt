@@ -114,10 +114,13 @@
 -keep class com.capstoneii.iclassify.library.ExpandableMenuOverlay { <init>(...); }
 
 # view res/layout/discusstopic_layout.xml #generated:62
+# view res/layout/patient_decision_tree_layout.xml #generated:28
+# view res/layout/patient_dectree_compute.xml #generated:17
+-keep class com.capstoneii.iclassify.library.JustifyTextView { <init>(...); }
+
 # view res/layout/knnsimul_firstlayout.xml #generated:43
 # view res/layout/knnsimul_firstlayout.xml #generated:58
 # view res/layout/patient_decision_tree_layout.xml #generated:10
-# view res/layout/patient_decision_tree_layout.xml #generated:28
 # view res/layout/patient_dectree_compute.xml #generated:34
 # view res/layout/patient_main_layout.xml #generated:26
 # view res/layout/patient_main_layout.xml #generated:9
@@ -145,7 +148,6 @@
 # view res/layout/naivesimul_secondlayout.xml #generated:44
 # view res/layout/naivesimul_thirdlayout.xml #generated:45
 # view res/layout/objective_layout_menu.xml #generated:40
-# view res/layout/patient_dectree_compute.xml #generated:17
 # view res/layout/quiz_multiple_question_layout.xml #generated:7
 # view res/layout/quiz_result_layout.xml #generated:40
 # view res/layout/simpson_chart_layout.xml #generated:17

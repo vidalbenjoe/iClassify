@@ -17,10 +17,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.JustifyTextView;
 import com.capstoneii.iclassify.library.SecretTextView;
 
 public class PatientProblemsDecisionTreeFragment extends Fragment {
-	SecretTextView textHead, textFlu;
+	SecretTextView textHead;
+	JustifyTextView textFlu;
 	TextView textFluNo, ClickmeText;
 	EditText textFluNoTextBox, textFluTextBox;
 	ImageView adamImage, imageView_close, tableflu,table_img;
@@ -46,7 +48,7 @@ public class PatientProblemsDecisionTreeFragment extends Fragment {
 
 		textHead = (SecretTextView) rootView.findViewById(R.id.textHead);
 
-		textFlu = (SecretTextView) rootView.findViewById(R.id.textFlu);
+		textFlu = (com.capstoneii.iclassify.library.JustifyTextView) rootView.findViewById(R.id.textFlu);
 
 		textFluNo = (TextView) rootView.findViewById(R.id.textFluNo);
 		textHead.setVisibility(View.VISIBLE);
@@ -58,9 +60,7 @@ public class PatientProblemsDecisionTreeFragment extends Fragment {
 		textHead.toggle();
 
 		textFlu.setText("Flu?");
-		textFlu.setmDuration(1200);
-		textFlu.setIsVisible(false);
-		textFlu.toggle();
+		
 
 		tableflu = (ImageView) rootView.findViewById(R.id.tableflu);
 		tableflu.setImageResource(R.drawable.patientguesslookuptabe);
@@ -83,6 +83,7 @@ public class PatientProblemsDecisionTreeFragment extends Fragment {
 				case 1:
 					textHead.setText("Lookup Table");
 					textFlu.setText(R.string.lookuptextpatient);
+					
 					textHead.setVisibility(View.VISIBLE);
 					adamImage.setVisibility(View.INVISIBLE);
 					tableflu.setVisibility(View.GONE);

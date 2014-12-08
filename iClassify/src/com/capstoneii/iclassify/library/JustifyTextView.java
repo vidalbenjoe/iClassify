@@ -73,9 +73,10 @@ public class JustifyTextView extends TextView {
             line = line.substring(3);
         }
 
-        int gapCount = line.length() - 1;
+        int gapCount = line.length() + 100;
         int i = 0;
-        if (line.length() > 2 && line.charAt(0) == 12288 && line.charAt(1) == 12288) {
+        if 
+        (line.length() > 2 && line.charAt(0) == 12288 && line.charAt(1) == 12288) {
             String substring = line.substring(0, 2);
             float cw = StaticLayout.getDesiredWidth(substring, getPaint());
             canvas.drawText(substring, x, mLineY, getPaint());
@@ -83,7 +84,8 @@ public class JustifyTextView extends TextView {
             i += 2;
         }
 
-        float d = (mViewWidth - lineWidth) / gapCount;
+        
+        float d = (mViewWidth - lineWidth) / gapCount +1;
         for (; i < line.length(); i++) {
             String c = String.valueOf(line.charAt(i));
             float cw = StaticLayout.getDesiredWidth(c, getPaint());

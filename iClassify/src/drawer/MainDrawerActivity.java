@@ -7,6 +7,7 @@ import java.util.Map;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -23,13 +24,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
 import android.view.animation.TranslateAnimation;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.capstoneii.iclassify.MainActivityController;
 import com.capstoneii.iclassify.R;
@@ -190,8 +195,42 @@ public class MainDrawerActivity extends ActionBarActivity {
 			break;
 
 		case 4:// assessment
-			System.exit(0);
-			MainDrawerActivity.this.finish();
+			
+				final Dialog dialog = new Dialog(MainDrawerActivity.this,
+						R.style.DialogAnim);
+
+				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+				dialog.setContentView(R.layout.validate_message);
+
+
+				Button bOk = (Button) dialog.findViewById(R.id.buttonOk);
+				Button bCancel = (Button) dialog.findViewById(R.id.buttonCancel);
+				TextView question = (TextView) dialog.findViewById(R.id.tvalertmessage);
+
+				question.setText("Are you sure? You want to Exit?");
+
+				bOk.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						System.exit(0);
+						MainDrawerActivity.this.finish();
+						
+						dialog.dismiss();
+					}
+				});
+
+				bCancel.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						dialog.dismiss();
+					}
+				});
+
+				dialog.show();
+			
+
+		
 			break;
 		default:
 			break;
