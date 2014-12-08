@@ -18,6 +18,7 @@ import android.widget.VideoView;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.ExpandableButtonMenu;
 import com.capstoneii.iclassify.library.ExpandableMenuOverlay;
+import com.capstoneii.iclassify.library.JustifyTextView;
 
 import drawer.MainDrawerActivity;
 
@@ -25,7 +26,7 @@ import drawer.MainDrawerActivity;
 public class VideoMenuActivity extends ActionBarActivity {
 	private VideoView vv;
 	public String videoFile1, videoFile2,videoFile3;
-	public TextView setvideoDesc;
+	public JustifyTextView setvideoDesc;
 	int vid;
     private ExpandableMenuOverlay menuOverlay;
 
@@ -45,7 +46,7 @@ public class VideoMenuActivity extends ActionBarActivity {
 		 
 		videoFile3 = "android.resource://" + getPackageName() + "/" + R.raw.videonaive;
 		 
-		setvideoDesc = (TextView) findViewById(R.id.videoDesc);
+		setvideoDesc = (JustifyTextView) findViewById(R.id.videoDesc);
 		setvideoDesc.setMovementMethod(new ScrollingMovementMethod());
 		setvideoDesc.setText(R.string.knnvideodesc);
 		
@@ -73,7 +74,7 @@ public class VideoMenuActivity extends ActionBarActivity {
                         vv.setVideoURI(uri);
                         vv.requestFocus();
                         vv.start();
-                        setvideoDesc = (TextView) findViewById(R.id.videoDesc);
+                        setvideoDesc = (JustifyTextView) findViewById(R.id.videoDesc);
                         setvideoDesc.setMovementMethod(new ScrollingMovementMethod());
                         setvideoDesc.setText(R.string.knnvideodesc);
                         break;
@@ -88,7 +89,7 @@ public class VideoMenuActivity extends ActionBarActivity {
                         vv.setVideoURI(uri2);
                         vv.requestFocus();
                         vv.start();
-                        setvideoDesc = (TextView) findViewById(R.id.videoDesc);
+                        setvideoDesc = (JustifyTextView) findViewById(R.id.videoDesc);
                         setvideoDesc.setMovementMethod(new ScrollingMovementMethod());
                         setvideoDesc.setText(R.string.treevideodesc);
                     	
@@ -103,7 +104,7 @@ public class VideoMenuActivity extends ActionBarActivity {
                         vv.setVideoURI(uri3);
                         vv.requestFocus();
                         vv.start();
-                        setvideoDesc = (TextView) findViewById(R.id.videoDesc);
+                        setvideoDesc = (JustifyTextView) findViewById(R.id.videoDesc);
                         setvideoDesc.setMovementMethod(new ScrollingMovementMethod());
                         setvideoDesc.setText(R.string.naivevideodesc);
                         break;

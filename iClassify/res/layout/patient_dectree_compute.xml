@@ -16,7 +16,7 @@
 
     <com.capstoneii.iclassify.library.JustifyTextView
         android:id="@+id/textcomputehaha"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
@@ -31,7 +31,7 @@
         android:textSize="30sp"
         android:textStyle="bold" />
 
-    <com.capstoneii.iclassify.library.SecretTextView
+    <com.capstoneii.iclassify.library.JustifyTextView
         android:id="@+id/textcompute2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

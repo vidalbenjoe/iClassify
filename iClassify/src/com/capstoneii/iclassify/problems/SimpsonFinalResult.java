@@ -15,6 +15,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.JustifyTextView;
 import com.capstoneii.iclassify.library.SecretTextView;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 
@@ -63,7 +64,7 @@ public class SimpsonFinalResult extends Fragment {
 				dialog.getWindow().setBackgroundDrawable(
 						new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
-				final TypewriterTextView customtextindialog = (TypewriterTextView) dialog
+				final JustifyTextView customtextindialog = (JustifyTextView) dialog
 						.findViewById(R.id.customtextindialog);
 				customtextindialog.setText(R.string.whydecisiontree);
 				customtextindialog.setMovementMethod(new ScrollingMovementMethod());

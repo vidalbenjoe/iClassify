@@ -14,13 +14,14 @@ import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.JustifyTextView;
 
 import drawer.MainDrawerActivity;
 
 public class IntroductionVideo extends ActionBarActivity {
 	private VideoView vv;
 	public String videoFile1;
-	public TextView setvideoDesc;
+	public JustifyTextView setvideoDesc;
 	
 	 protected void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
@@ -31,7 +32,7 @@ public class IntroductionVideo extends ActionBarActivity {
 	        vv = (VideoView) findViewById(R.id.videoView1);
 			videoFile1 = "android.resource://" + getPackageName() + "/" + R.raw.videointro;
 			
-			setvideoDesc = (TextView) findViewById(R.id.videoDesc);
+			setvideoDesc = (JustifyTextView) findViewById(R.id.videoDesc);
 			setvideoDesc.setMovementMethod(new ScrollingMovementMethod());
 			setvideoDesc.setText(R.string.introvideodesc);
 			

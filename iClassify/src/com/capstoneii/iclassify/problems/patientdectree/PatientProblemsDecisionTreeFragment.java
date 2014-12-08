@@ -48,7 +48,7 @@ public class PatientProblemsDecisionTreeFragment extends Fragment {
 
 		textHead = (SecretTextView) rootView.findViewById(R.id.textHead);
 
-		textFlu = (com.capstoneii.iclassify.library.JustifyTextView) rootView.findViewById(R.id.textFlu);
+		textFlu = (JustifyTextView) rootView.findViewById(R.id.textFlu);
 
 		textFluNo = (TextView) rootView.findViewById(R.id.textFluNo);
 		textHead.setVisibility(View.VISIBLE);

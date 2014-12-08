@@ -15,12 +15,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.library.SecretTextView;
-import com.capstoneii.iclassify.library.TypewriterTextView;
+import com.capstoneii.iclassify.library.JustifyTextView;
 import com.capstoneii.iclassify.problems.ChooseProblemActivity;
 
 public class PAtientProblemDecTreeComputation extends Fragment {
-	SecretTextView textcompute2;
+	JustifyTextView textcompute2;
 	ImageView treepatient, patientnextbt;
 	int counter = 0;
 	Animation animZoom;
@@ -35,10 +34,10 @@ public class PAtientProblemDecTreeComputation extends Fragment {
 				container, false);
 		animZoom = AnimationUtils
 				.loadAnimation(getActivity(), R.anim.unzoom_in);
-		final com.capstoneii.iclassify.library.JustifyTextView textcomputehaha = (com.capstoneii.iclassify.library.JustifyTextView) rootView.findViewById(R.id.textcomputehaha);
+		final JustifyTextView textcomputehaha = (JustifyTextView) rootView.findViewById(R.id.textcomputehaha);
 		textcomputehaha.setText(R.string.patientprobid31);
 		
-		textcompute2 = (SecretTextView) rootView.findViewById(R.id.textcompute2);
+		textcompute2 = (JustifyTextView) rootView.findViewById(R.id.textcompute2);
 		textcomputehaha.setVisibility(View.VISIBLE);
 
 		treepatient = (ImageView) rootView.findViewById(R.id.treepatient);
@@ -59,9 +58,7 @@ public class PAtientProblemDecTreeComputation extends Fragment {
 					textcomputehaha.setVisibility(View.GONE);
 					textcompute2.setVisibility(View.VISIBLE);
 					textcompute2.setText(R.string.patientprobid32);
-					textcompute2.setmDuration(2200);
-					textcompute2.setIsVisible(false);
-					textcompute2.toggle();
+					
 					break;
 
 				case 2:
@@ -79,9 +76,7 @@ public class PAtientProblemDecTreeComputation extends Fragment {
 					textcomputehaha.setVisibility(View.GONE);
 					textcompute2.setVisibility(View.VISIBLE);
 					textcompute2.setText(R.string.patientprobid35);
-					textcompute2.setmDuration(1200);
-					textcompute2.setIsVisible(false);
-					textcompute2.toggle();
+					
 					break;
 
 				case 5:
@@ -106,7 +101,7 @@ public class PAtientProblemDecTreeComputation extends Fragment {
 									dialog.setCancelable(true);
 									dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
-									final TypewriterTextView customtextindialog = (TypewriterTextView) dialog.findViewById(R.id.customtextindialog);
+									final JustifyTextView customtextindialog = (JustifyTextView) dialog.findViewById(R.id.customtextindialog);
 									customtextindialog.setText(R.string.whydecisiontree);
 									customtextindialog.setMovementMethod(new ScrollingMovementMethod());
 

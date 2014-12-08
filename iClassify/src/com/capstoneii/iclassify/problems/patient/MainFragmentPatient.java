@@ -1,6 +1,7 @@
 package com.capstoneii.iclassify.problems.patient;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.JustifyTextView;
 import com.capstoneii.iclassify.library.SecretTextView;
 
 import android.annotation.SuppressLint;
@@ -26,7 +27,8 @@ import android.widget.Toast;
 
 @SuppressLint("NewApi")
 public class MainFragmentPatient extends Fragment {
-	SecretTextView textHead, textFlu;
+	SecretTextView textHead;
+	JustifyTextView textFlu;
 	TextView textFluNo, ClickmeText;
 	EditText textFluNoTextBox, textFluTextBox;
 	ImageView adamImage, imageView_close, tableflu,table_img;
@@ -52,7 +54,7 @@ public class MainFragmentPatient extends Fragment {
 
 		textHead = (SecretTextView) rootView.findViewById(R.id.textHead);
 
-		textFlu = (SecretTextView) rootView.findViewById(R.id.textFlu);
+		textFlu = (JustifyTextView) rootView.findViewById(R.id.textFlu);
 
 		textFluNo = (TextView) rootView.findViewById(R.id.textFluNo);
 		textHead.setVisibility(View.VISIBLE);
@@ -64,9 +66,7 @@ public class MainFragmentPatient extends Fragment {
 		textHead.toggle();
 
 		textFlu.setText("Flu?");
-		textFlu.setmDuration(1000);
-		textFlu.setIsVisible(false);
-		textFlu.toggle();
+		
 
 		tableflu = (ImageView) rootView.findViewById(R.id.tableflu);
 		tableflu.setImageResource(R.drawable.patientguesslookuptabe);

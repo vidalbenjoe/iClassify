@@ -25,7 +25,7 @@
     android:layout_marginTop="30dp" >  
         
 
-<TextView
+<com.capstoneii.iclassify.library.JustifyTextView
     android:id="@+id/videoDesc"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
