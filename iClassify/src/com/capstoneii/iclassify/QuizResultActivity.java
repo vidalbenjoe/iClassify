@@ -453,7 +453,6 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 								startActivity(intent);
 							}
 							
-							
 					}
 					cursor.close();
 				}
