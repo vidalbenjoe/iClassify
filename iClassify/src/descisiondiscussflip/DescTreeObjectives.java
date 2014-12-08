@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
+import com.capstoneii.iclassify.library.JustifyTextView;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 import com.capstoneii.iclassify.problems.SimpsonQuizProblemResult;
 import com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult;
@@ -22,7 +23,7 @@ import drawer.MainDrawerActivity;
 
 public class DescTreeObjectives extends ActionBarActivity {
 	TextView titleobjectives;
-	TypewriterTextView objectivedesc;
+	JustifyTextView objectivedesc;
 	ImageView startdiscussionbutton,watchvideosbutton;
 	int vid = 2;
 	 public String testName;
@@ -37,8 +38,9 @@ public class DescTreeObjectives extends ActionBarActivity {
 
 		titleobjectives = (TextView) findViewById(R.id.titleobjectives);
 		titleobjectives.setText("Decision Tree");
-		objectivedesc = (TypewriterTextView) findViewById(R.id.objectivedesc);
-		objectivedesc.setTypewriterText(getString(R.string.decisiontreeonjectives));
+		objectivedesc = (JustifyTextView) findViewById(R.id.objectivedesc);
+		//objectivedesc.setTypewriterText(getString(R.string.decisiontreeonjectives));
+		objectivedesc.setText(R.string.decisiontreeonjectives);
 		
 		startdiscussionbutton= (ImageView) findViewById(R.id.startdiscussionbutton);
 		watchvideosbutton= (ImageView) findViewById(R.id.watchvideosbutton);

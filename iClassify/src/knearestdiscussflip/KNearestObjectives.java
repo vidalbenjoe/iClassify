@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.JustifyTextView;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 import com.capstoneii.iclassify.videos.VideoMenuActivity;
 
@@ -18,7 +19,7 @@ import drawer.MainDrawerActivity;
 
 public class KNearestObjectives extends ActionBarActivity {
 	TextView titleobjectives;
-	TypewriterTextView objectivedesc;
+	JustifyTextView objectivedesc;
 	ImageView startdiscussionbutton,watchvideosbutton;
 	
 
@@ -33,9 +34,9 @@ public class KNearestObjectives extends ActionBarActivity {
 		
 		titleobjectives = (TextView) findViewById(R.id.titleobjectives);
 		titleobjectives.setText("K- Nearest Neighbor");
-		objectivedesc = (TypewriterTextView) findViewById(R.id.objectivedesc);
-		objectivedesc.setTypewriterText(getString(R.string.knearestobjectives));
-		
+		objectivedesc = (JustifyTextView) findViewById(R.id.objectivedesc);
+		//objectivedesc.setTypewriterText(getString(R.string.knearestobjectives));
+		objectivedesc.setText(R.string.knearestobjectives);
 		
 		startdiscussionbutton= (ImageView) findViewById(R.id.startdiscussionbutton);
 		watchvideosbutton= (ImageView) findViewById(R.id.watchvideosbutton);

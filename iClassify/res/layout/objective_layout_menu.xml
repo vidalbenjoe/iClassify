@@ -9,45 +9,45 @@
         android:id="@+id/t"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-         android:layout_centerHorizontal="true"
-         android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:shadowColor="@android:color/black"
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="2"
+        android:text="Objectives"
         android:textColor="#fff"
-        android:textSize="30sp" 
-        android:text="Objectives" 
-        android:textStyle="bold" />
-    
-      <TextView
-          android:id="@+id/titleobjectives"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         android:layout_marginTop="10dp"
-         android:layout_marginLeft="20dp"
-        android:gravity="center"
-        android:shadowColor="@android:color/black"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="2"
-        android:layout_below="@+id/t"
-        android:textColor="#fff"
-        android:textSize="30sp" 
+        android:textSize="30sp"
         android:textStyle="bold" />
 
-    <com.capstoneii.iclassify.library.TypewriterTextView
+    <TextView
+        android:id="@+id/titleobjectives"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/t"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <com.capstoneii.iclassify.library.JustifyTextView
         android:id="@+id/objectivedesc"
         android:layout_width="480dp"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/titleobjectives"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:gravity="left"
+        android:gravity="start"
         android:shadowColor="@android:color/black"
         android:shadowDx="1"
         android:shadowDy="1"
-        android:layout_below="@+id/titleobjectives"
         android:shadowRadius="2"
         android:textColor="#fff"
         android:textSize="23sp" />
@@ -59,7 +59,8 @@
         android:layout_above="@+id/watchvideosbutton"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/startdiscussionbutton" />
+        android:background="@drawable/startdiscussionbutton"
+        android:contentDescription="@string/app_name" />
 
     <ImageView
         android:id="@+id/watchvideosbutton"

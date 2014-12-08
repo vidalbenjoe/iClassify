@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.JustifyTextView;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 import com.capstoneii.iclassify.videos.NaiveVideo;
 import com.capstoneii.iclassify.videos.VideoMenuActivity;
@@ -18,7 +19,7 @@ import drawer.MainDrawerActivity;
 
 public class NativeBayesObjectives extends ActionBarActivity {
 	TextView titleobjectives;
-	TypewriterTextView objectivedesc;
+	JustifyTextView objectivedesc;
 	ImageView startdiscussionbutton,watchvideosbutton;
 	
 
@@ -33,9 +34,9 @@ public class NativeBayesObjectives extends ActionBarActivity {
 		
 		titleobjectives = (TextView) findViewById(R.id.titleobjectives);
 		titleobjectives.setText("Naive Bayesian");
-		objectivedesc = (TypewriterTextView) findViewById(R.id.objectivedesc);
-		objectivedesc.setTypewriterText(getString(R.string.naivebayesobjectives));
-		
+		objectivedesc = (JustifyTextView) findViewById(R.id.objectivedesc);
+		//objectivedesc.setTypewriterText(getString(R.string.naivebayesobjectives));
+		objectivedesc.setText(R.string.naivebayesobjectives);
 		
 		startdiscussionbutton= (ImageView) findViewById(R.id.startdiscussionbutton);
 		watchvideosbutton= (ImageView) findViewById(R.id.watchvideosbutton);
