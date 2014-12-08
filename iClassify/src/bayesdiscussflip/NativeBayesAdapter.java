@@ -152,19 +152,13 @@ public class NativeBayesAdapter extends BaseAdapter {
 					}
 				});
 
-		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+		UI.<com.capstoneii.iclassify.library.JustifyTextView> findViewById(
 				layout, R.id.description).setText(
 				Html.fromHtml(data.description));
-		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
-				layout, R.id.description).setmDuration(500);
-		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
-				layout, R.id.description).setIsVisible(false);
-		UI.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
-				layout, R.id.description).toggle();
+	
 
-		@SuppressWarnings("unused")
 		final String toSpeak = UI
-				.<com.capstoneii.iclassify.library.SecretTextView> findViewById(
+				.<com.capstoneii.iclassify.library.JustifyTextView> findViewById(
 						layout, R.id.description).getText().toString();
 
 		UI.<ToggleButton> findViewById(layout, R.id.toggleButton);

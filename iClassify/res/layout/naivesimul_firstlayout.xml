@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/greenbackgroundblur"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:id="@+id/justifyrelative">
     <ImageView
         android:id="@+id/intronaiveskipbt"
         android:layout_width="wrap_content"
@@ -37,6 +38,6 @@
     android:text="@string/naivebayes1"
     android:textColor="#fff"
     android:textSize="16sp"
-    android:layout_weight="1"  />
+     android:layout_gravity="center_vertical|end"/>
 
 </RelativeLayout>

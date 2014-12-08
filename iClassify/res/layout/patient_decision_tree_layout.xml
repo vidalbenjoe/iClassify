@@ -19,6 +19,7 @@
         android:shadowColor="@android:color/black"
 	    android:shadowDx="1"
 	    android:shadowDy="1"
+	    android:layout_gravity="center_vertical|end"
 	    android:shadowRadius="2"
 	    android:textColor="#fff"
         android:layout_centerHorizontal="true"

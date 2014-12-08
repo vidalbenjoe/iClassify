@@ -115,12 +115,12 @@
 
 # view res/layout/discusstopic_layout.xml #generated:62
 # view res/layout/knnsimul_firstlayout.xml #generated:43
-# view res/layout/knnsimul_firstlayout.xml #generated:57
+# view res/layout/knnsimul_firstlayout.xml #generated:58
 # view res/layout/patient_decision_tree_layout.xml #generated:10
-# view res/layout/patient_decision_tree_layout.xml #generated:27
-# view res/layout/patient_dectree_compute.xml #generated:33
-# view res/layout/patient_main_layout.xml #generated:25
-# view res/layout/patient_main_layout.xml #generated:8
+# view res/layout/patient_decision_tree_layout.xml #generated:28
+# view res/layout/patient_dectree_compute.xml #generated:34
+# view res/layout/patient_main_layout.xml #generated:26
+# view res/layout/patient_main_layout.xml #generated:9
 # view res/layout/patient_probability_layout.xml #generated:8
 # view res/layout/secretetext_layout.xml #generated:11
 -keep class com.capstoneii.iclassify.library.SecretTextView { <init>(...); }
@@ -141,7 +141,7 @@
 # view res/layout/knnsimul_secondlayout.xml #generated:25
 # view res/layout/knnsimul_sixthlayout.xml #generated:8
 # view res/layout/knnsimul_thirdlayout.xml #generated:14
-# view res/layout/naivesimul_firstlayout.xml #generated:26
+# view res/layout/naivesimul_firstlayout.xml #generated:27
 # view res/layout/naivesimul_secondlayout.xml #generated:44
 # view res/layout/naivesimul_thirdlayout.xml #generated:45
 # view res/layout/objective_layout_menu.xml #generated:40

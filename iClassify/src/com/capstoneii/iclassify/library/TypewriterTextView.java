@@ -1,5 +1,6 @@
 package com.capstoneii.iclassify.library;
 
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.os.SystemClock;
@@ -15,7 +16,10 @@ public class TypewriterTextView extends TextView {
     private long mLastTime;
     private CharSequence mText;
 
-    
+    /**
+     * If any settings have changed.
+     */
+    protected boolean changed = false;
     public TypewriterTextView(Context context) {
         super(context);
     }
@@ -55,5 +59,8 @@ public class TypewriterTextView extends TextView {
         }
         super.onDraw(canvas);
     }
+
+
+
 }
 

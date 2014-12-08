@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -19,6 +20,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -118,6 +120,7 @@ public class MainFragmentPatient extends Fragment {
 											dialog.dismiss();
 											textHead.setText("TESTING");
 											textFlu.setText(R.string.patienttesting);
+											
 											textFlu.startAnimation(animation);
 											tableflu.setVisibility(View.VISIBLE);
 
@@ -289,10 +292,13 @@ public class MainFragmentPatient extends Fragment {
 		}
 	}
 
+	 
+	
 	public void onBackPressed() {
 
 	}
 }
+
 
 // another Fragment(Testing)
 /*

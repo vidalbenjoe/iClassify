@@ -1,6 +1,7 @@
 package descisiondiscussflip;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -24,7 +25,7 @@ public class DescTreeObjectives extends ActionBarActivity {
 	TypewriterTextView objectivedesc;
 	ImageView startdiscussionbutton,watchvideosbutton;
 	int vid = 2;
-
+	 public String testName;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -33,7 +34,7 @@ public class DescTreeObjectives extends ActionBarActivity {
 				new ColorDrawable(getResources()
 						.getColor(R.color.divider_color)));
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		
+
 		titleobjectives = (TextView) findViewById(R.id.titleobjectives);
 		titleobjectives.setText("Decision Tree");
 		objectivedesc = (TypewriterTextView) findViewById(R.id.objectivedesc);
@@ -76,4 +77,6 @@ public class DescTreeObjectives extends ActionBarActivity {
 	    }
 	    return true;
 	}
+	
+
 }

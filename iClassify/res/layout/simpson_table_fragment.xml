@@ -17,6 +17,7 @@
 	    android:shadowDy="1"
 	    android:shadowRadius="2"
 	    android:textColor="#fff"
+	    android:layout_gravity="center_vertical|end"
 	    android:layout_centerHorizontal="true"
 	    android:textSize="23sp" />
     <!-- table -->

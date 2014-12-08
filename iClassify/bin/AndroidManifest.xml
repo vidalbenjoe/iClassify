@@ -7,7 +7,7 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
- 	
+ 	<!-- https://github.com/bluejamesbond/TextJustify-Android/tree/master/app/src/main/java/com/bluejamesbond/text -->
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="false"

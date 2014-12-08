@@ -3,11 +3,15 @@ package com.capstoneii.iclassify.simulation.naivebayes;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.TypewriterTextView;
@@ -29,8 +33,9 @@ public class SimulNaiveBayesIntroFragment extends Fragment {
 		final TypewriterTextView naivetextfirst = (TypewriterTextView) rootView
 				.findViewById(R.id.naivetextfirst);
 		naivetextfirst
-				.setTypewriterText(getString(R.string.naivebayesobjectives));
-
+				.setTypewriterText(getString(R.string.naivebayesobjectives, true));
+		
+	
 		intronaiveskipbt.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View InputFragmentView) {
@@ -50,5 +55,6 @@ public class SimulNaiveBayesIntroFragment extends Fragment {
 	public void onBackPressed() {
 
 	}
-
+	
+	 
 }
