@@ -201,8 +201,8 @@ public class DescTreeAdapter extends BaseAdapter {
 									UI.<ToggleButton> findViewById(layout,
 											R.id.toggleButton).setChecked(true);
 									if ((dtone.isPlaying())
-											|| (dttwo.isPlaying())
-											|| (dtthree.isPlaying() || (dtfour
+											&& (dttwo.isPlaying())
+											&& (dtthree.isPlaying() && (dtfour
 													.isPlaying()))) {
 										dtone.stop();
 										dttwo.stop();

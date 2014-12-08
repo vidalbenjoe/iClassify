@@ -461,13 +461,6 @@ public class QuizResultBayesian extends Activity implements AnimationListener {
 
 					String Message = "Lesson" + (item + 1) + ".";
 
-					/*Toast.makeText(getApplicationContext(), Message,
-							Toast.LENGTH_LONG).show();*/
-					
-//					Toast.makeText(getApplicationContext(),
-//							"We encourage you to read all the chapter again",
-//							Toast.LENGTH_SHORT).show();
-					
 					
 					if(qans.equals(quans)){
 						Toast.makeText(getApplicationContext(),
