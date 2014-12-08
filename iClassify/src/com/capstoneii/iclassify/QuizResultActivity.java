@@ -439,16 +439,21 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 							String Message = "Lesson"+ (item +1) +".";
 
 							//Toast.makeText(getApplicationContext(), Message, Toast.LENGTH_LONG).show();
+						
 							
-							Toast.makeText(getApplicationContext(),
-									"We encourage you to read all the chapter again",
-									Toast.LENGTH_SHORT).show();
+							if(qans.contentEquals(quans)){
+								Toast.makeText(getApplicationContext(),
+										"You've got the correct Answer!",
+										Toast.LENGTH_SHORT).show();
+							}else{
+								Bundle b = new Bundle();
+								b.putInt("item", item);
+								Intent intent =new Intent(getApplicationContext(), KnnQuizProblemResult.class);
+								intent.putExtras(b);
+								startActivity(intent);
+							}
 							
-							Bundle b = new Bundle();
-							b.putInt("item", item);
-							Intent intent =new Intent(getApplicationContext(), KnnQuizProblemResult.class);
-							intent.putExtras(b);
-							startActivity(intent);
+							
 					}
 					cursor.close();
 				}

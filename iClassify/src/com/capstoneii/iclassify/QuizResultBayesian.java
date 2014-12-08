@@ -438,7 +438,11 @@ public class QuizResultBayesian extends Activity implements AnimationListener {
 				fromFieldNames, // DB Column names
 				toViewIDs // View IDs to put information in
 		);
+		
 		myList.setAdapter(myCursorAdapter);
+		
+		
+		
 		myList.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
@@ -464,14 +468,27 @@ public class QuizResultBayesian extends Activity implements AnimationListener {
 //							"We encourage you to read all the chapter again",
 //							Toast.LENGTH_SHORT).show();
 					
-					Bundle b = new Bundle();
-					b.putInt("item", item);
-					Intent intent = new Intent(getApplicationContext(),
-							NaiveQuizProblemResult.class);
-					intent.putExtras(b);
-					startActivity(intent);
+					
+					if(qans.equals(quans)){
+						Toast.makeText(getApplicationContext(),
+								"You've got the correct Answer!",
+								Toast.LENGTH_SHORT).show();
+					}else{
+						Bundle b = new Bundle();
+						b.putInt("item", item);
+						Intent intent = new Intent(getApplicationContext(),
+								NaiveQuizProblemResult.class);
+						intent.putExtras(b);
+						startActivity(intent);
+					}
+					
+					
 				}
 				cursor.close();
+				
+				
+				
+				
 			}
 		});
 		dialog.show();

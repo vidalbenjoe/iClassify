@@ -114,18 +114,19 @@
 -keep class com.capstoneii.iclassify.library.ExpandableMenuOverlay { <init>(...); }
 
 # view res/layout/choose_video_layout.xml #generated:28
+# view res/layout/custom_dialog_text.xml #generated:51
 # view res/layout/discusstopic_layout.xml #generated:64
 # view res/layout/introduction_video_layout.xml #generated:28
 # view res/layout/objective_layout_menu.xml #generated:40
 # view res/layout/patient_decision_tree_layout.xml #generated:28
 # view res/layout/patient_dectree_compute.xml #generated:17
+# view res/layout/patient_dectree_compute.xml #generated:34
 # view res/layout/patient_main_layout.xml #generated:26
 -keep class com.capstoneii.iclassify.library.JustifyTextView { <init>(...); }
 
 # view res/layout/knnsimul_firstlayout.xml #generated:43
 # view res/layout/knnsimul_firstlayout.xml #generated:58
 # view res/layout/patient_decision_tree_layout.xml #generated:10
-# view res/layout/patient_dectree_compute.xml #generated:34
 # view res/layout/patient_main_layout.xml #generated:9
 # view res/layout/patient_probability_layout.xml #generated:8
 # view res/layout/secretetext_layout.xml #generated:11
@@ -142,7 +143,6 @@
 # view res/layout/assessmentbayesian_layout.xml #generated:10
 # view res/layout/assessmentdecision_tree_layout.xml #generated:11
 # view res/layout/assessmentdiscuss_layout.xml #generated:10
-# view res/layout/custom_dialog_text.xml #generated:51
 # view res/layout/knnsimul_fourthlayout.xml #generated:40
 # view res/layout/knnsimul_secondlayout.xml #generated:25
 # view res/layout/knnsimul_sixthlayout.xml #generated:8

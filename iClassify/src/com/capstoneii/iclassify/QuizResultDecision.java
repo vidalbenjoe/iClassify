@@ -467,12 +467,20 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 					
 					String Message = "Lesson"+ (item +1) +".";
 					
-					Toast.makeText(getApplicationContext(), Message, Toast.LENGTH_LONG).show();
-					Bundle b = new Bundle();
-					b.putInt("item", item);
-					Intent intent =new Intent(getApplicationContext(), SimpsonQuizProblemResult.class);
-					intent.putExtras(b);
-					startActivity(intent);
+					if(qans.equals(quans)){
+						Toast.makeText(getApplicationContext(),
+								"You've got the correct Answer!",
+								Toast.LENGTH_SHORT).show();
+					}else{
+						Toast.makeText(getApplicationContext(), Message, Toast.LENGTH_LONG).show();
+						Bundle b = new Bundle();
+						b.putInt("item", item);
+						Intent intent =new Intent(getApplicationContext(), SimpsonQuizProblemResult.class);
+						intent.putExtras(b);
+						startActivity(intent);
+					}
+					
+					
 				}
 				cursor.close();
 			}
