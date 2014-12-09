@@ -115,7 +115,7 @@
 
 # view res/layout/choose_video_layout.xml #generated:28
 # view res/layout/custom_dialog_text.xml #generated:51
-# view res/layout/discusstopic_layout.xml #generated:64
+# view res/layout/discusstopic_layout.xml #generated:63
 # view res/layout/introduction_video_layout.xml #generated:28
 # view res/layout/objective_layout_menu.xml #generated:40
 # view res/layout/patient_decision_tree_layout.xml #generated:28

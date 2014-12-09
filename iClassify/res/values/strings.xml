@@ -362,15 +362,14 @@
     </string>
     <string name="lookuptextpatient">
 <![CDATA[
-  	So here we have 4 attributes. What we need to do is to create “look-up tables” for each of these attributes,\n
+  	So here we have 4 attributes. What we need to do is to create “look-up tables” for each of these attributes,
   	 and write in the probability that the patient has flu based on this attribute. In these tables we have to 
-  	 note that there are 5 cases of a patient having flu,\n
-	 and 3 cases of a patient not having a flu.
+  	 note that there are 5 cases of a patient having flu, and 3 cases of a patient not having a flu.
 	]]>
     </string>
     <string name="patienttesting">
 <![CDATA[
-  	There is a new patient, and we want to know if the patient has flu or not, based on the patient’s \n
+  	There is a new patient, and we want to know if the patient has flu or not, based on the patient’s
   	symptoms and the previous cases.\n\n\n
   	
   	So, this new instance is:
@@ -519,7 +518,7 @@
 
     <!-- PATIENT DECISION TREE PROBLEM SOLUTION -->
 
-    <string name="patientprobid31">  	The first thing we need to do is work out which attribute will be put into the node at the top of our tree: either fever, chills, runny nose or headache. To do this, we need to calculate:\n
+    <string name="patientprobid31">The first thing we need to do is work out which attribute will be put into the node at the top of our tree: either fever, chills, runny nose or headache. To do this, we need to calculate:\n
 	Entropy(S) = -(5/8)*log2(5/8)-(3/8)*log2(3/8)\n
     	=   0.955</string>
     <string name="patientprobid32">

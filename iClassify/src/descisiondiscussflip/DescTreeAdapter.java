@@ -1,5 +1,6 @@
 package descisiondiscussflip;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -56,12 +57,31 @@ public class DescTreeAdapter extends BaseAdapter {
 				}
 			}
 		});
-
-		dtone = MediaPlayer.create(context, R.raw.dtone);
-		dttwo = MediaPlayer.create(context, R.raw.dttwo);
-		dtthree = MediaPlayer.create(context, R.raw.dtthree);
-		dtfour = MediaPlayer.create(context, R.raw.dtfour);
-
+		    try {
+		    	dtone = MediaPlayer.create(context, R.raw.dtone);
+				dttwo = MediaPlayer.create(context, R.raw.dttwo);
+				dtthree = MediaPlayer.create(context, R.raw.dtthree);
+				dtfour = MediaPlayer.create(context, R.raw.dtfour);
+		    } catch (IllegalArgumentException e) {
+		        e.printStackTrace();
+		    } catch (SecurityException e) {
+		        e.printStackTrace();
+		    } catch (IllegalStateException e) {
+		        e.printStackTrace();
+		    }
+		    try {
+		    	dtone.prepare();
+		    	dttwo.prepare();
+		    	dtthree.prepare();
+		    	dtfour.prepare();
+		    	
+		    
+		    } catch (IllegalStateException e) {
+		        e.printStackTrace();
+		    } catch (IOException e) {
+		        e.printStackTrace();
+		    }
+		   
 	}
 
 	@Override
@@ -118,6 +138,9 @@ public class DescTreeAdapter extends BaseAdapter {
 		UI.<ImageView> findViewById(layout, R.id.photo).setImageBitmap(
 				IO.readBitmap(inflater.getContext().getAssets(),
 						data.imageFilename));
+		
+		
+		
 		UI.<ImageView> findViewById(layout, R.id.photo).setOnClickListener(
 				new View.OnClickListener() {
 					@Override
@@ -172,27 +195,30 @@ public class DescTreeAdapter extends BaseAdapter {
 									UI.<ToggleButton> findViewById(layout,
 											R.id.toggleButton)
 											.setChecked(false);
+									UI.<ToggleButton> findViewById(layout,
+											R.id.toggleButton).isActivated();
 									if (position == 0) {
 										dtone.start();
-										dttwo.stop();
-										dtthree.stop();
-										dtfour.stop();
-
+										dttwo.reset();
+										dtthree.reset();
+										dtfour.reset();
+										
+										
 									} else if (position == 1) {
-										dtone.stop();
+										dtone.reset();
 										dttwo.start();
-										dtthree.stop();
-										dtfour.stop();
-
+										dtthree.reset();
+										dtfour.reset();
+										
 									} else if (position == 2) {
-										dtone.stop();
-										dttwo.stop();
+										dtone.reset();
+										dttwo.reset();
 										dtthree.start();
-										dtfour.stop();
+										dtfour.reset();
 									} else if (position == 3) {
-										dtone.stop();
-										dttwo.stop();
-										dtthree.stop();
+										dtone.reset();
+										dttwo.reset();
+										dtthree.reset();
 										dtfour.start();
 									}
 
@@ -204,19 +230,31 @@ public class DescTreeAdapter extends BaseAdapter {
 											&& (dttwo.isPlaying())
 											&& (dtthree.isPlaying() && (dtfour
 													.isPlaying()))) {
-										dtone.stop();
-										dttwo.stop();
-										dtthree.stop();
-										dtfour.stop();
+//										dtone.stop();
+//										dttwo.stop();
+//										dtthree.stop();
+//										dtfour.stop();
+//									
+										
+										dtone.reset();
+										dttwo.reset();
+										dtthree.reset();
+										dtfour.reset();
+										
+										dtone.release();
+										dttwo.release();
+										dtthree.release();
+										dtfour.release();
 									}
-
 								}
 							}
 						});
 
 		return layout;
 	}
-
+	public void onPrepared(MediaPlayer player) {
+	    player.start();
+	}
 	public void removeData(int index) {
 		if (desctreeData.size() > 1) {
 			desctreeData.remove(index);

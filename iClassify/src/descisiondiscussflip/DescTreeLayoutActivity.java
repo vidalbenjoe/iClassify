@@ -10,7 +10,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -41,6 +40,7 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
 	String finalDate;
 	Intent intent;
 	String initVal = "1";
+	DescTreeAdapter desctreeadapter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
 		QuizSession = new SessionCache(DescTreeLayoutActivity.this);
 		openDB();
 
+		desctreeadapter = new DescTreeAdapter(this);
 		Date date = new Date();
 		SimpleDateFormat timeFormat = new SimpleDateFormat("MMM dd, yyyy");
 		finalDate = timeFormat.format(date);
@@ -64,6 +65,8 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
 		// it's up to you to choose the best bitmap format
 		flipView.setAnimationBitmapFormat(Bitmap.Config.RGB_565);
 		flipView.setAdapter(new DescTreeAdapter(this));
+		
+		
 
 		setContentView(flipView);
 		final Dialog dialog = new Dialog(this);
@@ -101,6 +104,24 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
 		flipView.onPause();
 	}
 
+	@Override
+	public void onBackPressed() {
+		stodAudio();
+		super.onBackPressed();
+
+	}
+
+	@Override
+	protected void onDestroy() {
+		stodAudio();
+		super.onDestroy();
+	}
+	
+	@Override
+	protected void onStop(){
+		stodAudio();
+		super.onStop();
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
@@ -396,6 +417,17 @@ public class DescTreeLayoutActivity extends ActionBarActivity {
 	private void openDB() {
 		myDb = new DBAdapter(DescTreeLayoutActivity.this);
 		myDb.open();
+	}
+	
+	void stodAudio() {
+		if ((desctreeadapter.dtone.isPlaying()) || (desctreeadapter.dttwo.isPlaying())
+				|| (desctreeadapter.dtthree.isPlaying())
+				|| (desctreeadapter.dtfour.isPlaying())) {
+			desctreeadapter.dtone.stop();
+			desctreeadapter.dttwo.stop();
+			desctreeadapter.dtthree.stop();
+			desctreeadapter.dtfour.stop();
+		}
 	}
 
 }
