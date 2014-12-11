@@ -114,8 +114,9 @@
 -keep class com.capstoneii.iclassify.library.ExpandableMenuOverlay { <init>(...); }
 
 # view res/layout/choose_video_layout.xml #generated:28
+# view res/layout/custom_dialog_text.xml #generated:30
 # view res/layout/custom_dialog_text.xml #generated:51
-# view res/layout/discusstopic_layout.xml #generated:63
+# view res/layout/discusstopic_layout.xml #generated:60
 # view res/layout/introduction_video_layout.xml #generated:28
 # view res/layout/objective_layout_menu.xml #generated:40
 # view res/layout/patient_decision_tree_layout.xml #generated:28
@@ -209,6 +210,9 @@
 
 # view AndroidManifest.xml #generated:38
 -keep class drawer.MainDrawerActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:171
+-keep class knearestdiscussflip.KNearestDiscussionContent { <init>(...); }
 
 # view AndroidManifest.xml #generated:55
 -keep class knearestdiscussflip.KNearestLayoutActivity { <init>(...); }

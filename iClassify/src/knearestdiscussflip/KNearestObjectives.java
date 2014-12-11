@@ -1,5 +1,6 @@
 package knearestdiscussflip;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.ActivityAnimator;
 import com.capstoneii.iclassify.library.JustifyTextView;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 import com.capstoneii.iclassify.videos.VideoMenuActivity;
@@ -45,7 +47,7 @@ public class KNearestObjectives extends ActionBarActivity {
 			@Override
 			public void onClick(View InputFragmentView) {
 				Intent intent = new Intent(KNearestObjectives.this,
-						KNearestLayoutActivity.class);
+						KNearestDiscussionContent.class);
 				KNearestObjectives.this.startActivity(intent);
 				KNearestObjectives.this.finish();
 			}
@@ -56,6 +58,15 @@ public class KNearestObjectives extends ActionBarActivity {
 		watchvideosbutton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View InputFragmentView) {
+				try
+				{
+					ActivityAnimator anim = new ActivityAnimator();
+					anim.getClass().getMethod(this + "Animation", Activity.class).invoke(anim, this);
+					
+				}
+				catch (Exception e) { 
+					 }
+				
 				Intent intent = new Intent(KNearestObjectives.this,
 						VideoMenuActivity.class);
 				KNearestObjectives.this.startActivity(intent);

@@ -27,9 +27,9 @@
         android:textSize="33sp"
         android:textStyle="bold" />
 
-    <TextView
+    <com.capstoneii.iclassify.library.JustifyTextView
         android:id="@+id/desccomparison"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="20dp"
@@ -45,7 +45,7 @@
         android:textStyle="bold" />
 
     <FrameLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <com.capstoneii.iclassify.library.JustifyTextView
@@ -54,8 +54,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_marginTop="40dp"
             android:maxLines="10"
             android:scrollbars="vertical"

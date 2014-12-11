@@ -162,6 +162,10 @@
             android:name="com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult"
             android:theme="@style/Theme.AppCompat.Light" />
          
+        
+        <activity
+            android:name="knearestdiscussflip.KNearestDiscussionContent"
+            android:theme="@style/Theme.AppCompat.Light" />
          
          
     </application>
