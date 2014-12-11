@@ -4,7 +4,6 @@ package com.capstoneii.iclassify.problems;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +14,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.library.SecretTextView;
-import com.capstoneii.iclassify.library.TypewriterTextView;
 
 public class SimpsonsDecisionTreeFragment extends Fragment {
 	Button simpsonNextbt;
@@ -52,9 +49,6 @@ public class SimpsonsDecisionTreeFragment extends Fragment {
 		            		buttonNextClick++;	
 		            	}
 		            	switch(buttonNextClick){
-		            	case 0:
-		            		
-		            		break;
 		            	case 1:
 		            		gainimage.setVisibility(View.VISIBLE);
 		            		animSideDown = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),

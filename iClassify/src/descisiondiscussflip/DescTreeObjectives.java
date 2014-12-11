@@ -49,7 +49,7 @@ public class DescTreeObjectives extends ActionBarActivity {
 			@Override
 			public void onClick(View InputFragmentView) {
 				Intent intent = new Intent(DescTreeObjectives.this,
-						DescTreeLayoutActivity.class);
+						DescTreeDiscussionContent.class);
 				DescTreeObjectives.this.startActivity(intent);
 				DescTreeObjectives.this.finish();
 			}

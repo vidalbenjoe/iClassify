@@ -19,6 +19,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.JustifyTextView;
 import com.capstoneii.iclassify.library.SecretTextView;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 import com.capstoneii.iclassify.problems.ChooseProblemActivity;
@@ -256,11 +257,10 @@ public class PatientProbabilityComputationFragment extends Fragment {
 							new ColorDrawable(
 									android.graphics.Color.TRANSPARENT));
 
-					final TypewriterTextView customtextindialog = (TypewriterTextView) dialog
+					final JustifyTextView customtextindialog = (JustifyTextView) dialog
 							.findViewById(R.id.customtextindialog);
 					customtextindialog.setText(R.string.whynaive);
-					customtextindialog
-							.setMovementMethod(new ScrollingMovementMethod());
+					customtextindialog.setMovementMethod(new ScrollingMovementMethod());
 
 					ImageView cadbtnNext = (ImageView) dialog
 							.findViewById(R.id.cadbtnNext);
@@ -278,6 +278,7 @@ public class PatientProbabilityComputationFragment extends Fragment {
 							dialog.dismiss();
 						}
 					});
+					
 					dialog.show();
 					break;
 				default:

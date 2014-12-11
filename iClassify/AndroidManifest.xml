@@ -166,6 +166,10 @@
         <activity
             android:name="knearestdiscussflip.KNearestDiscussionContent"
             android:theme="@style/Theme.AppCompat.Light" />
+        
+        <activity
+            android:name="descisiondiscussflip.DescTreeDiscussionContent"
+            android:theme="@style/Theme.AppCompat.Light" />
          
          
     </application>

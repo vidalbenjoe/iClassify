@@ -116,13 +116,14 @@
 # view res/layout/choose_video_layout.xml #generated:28
 # view res/layout/custom_dialog_text.xml #generated:30
 # view res/layout/custom_dialog_text.xml #generated:51
-# view res/layout/discusstopic_layout.xml #generated:60
+# view res/layout/discusstopic_layout.xml #generated:58
 # view res/layout/introduction_video_layout.xml #generated:28
 # view res/layout/objective_layout_menu.xml #generated:40
 # view res/layout/patient_decision_tree_layout.xml #generated:28
 # view res/layout/patient_dectree_compute.xml #generated:17
 # view res/layout/patient_dectree_compute.xml #generated:34
 # view res/layout/patient_main_layout.xml #generated:26
+# view res/layout/simpson_chart_layout.xml #generated:17
 -keep class com.capstoneii.iclassify.library.JustifyTextView { <init>(...); }
 
 # view res/layout/knnsimul_firstlayout.xml #generated:43
@@ -153,7 +154,6 @@
 # view res/layout/naivesimul_thirdlayout.xml #generated:45
 # view res/layout/quiz_multiple_question_layout.xml #generated:7
 # view res/layout/quiz_result_layout.xml #generated:40
-# view res/layout/simpson_chart_layout.xml #generated:17
 # view res/layout/simpson_dt_next_proc_layout.xml #generated:8
 # view res/layout/simpson_final_result_layout.xml #generated:8
 # view res/layout/simpson_male_classifier_layout.xml #generated:8
@@ -201,6 +201,9 @@
 
 # view res/layout/table.xml #generated:43
 -keep class com.inqbarna.tablefixheaders.TableFixHeaders { <init>(...); }
+
+# view AndroidManifest.xml #generated:175
+-keep class descisiondiscussflip.DescTreeDiscussionContent { <init>(...); }
 
 # view AndroidManifest.xml #generated:44
 -keep class descisiondiscussflip.DescTreeLayoutActivity { <init>(...); }

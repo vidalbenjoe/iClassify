@@ -20,6 +20,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.library.JustifyTextView;
 import com.capstoneii.iclassify.library.TypewriterTextView;
 import com.capstoneii.iclassify.problems.ChooseProblemActivity;
 
@@ -52,9 +53,8 @@ public class SimpsonChartFragment extends Fragment {
 			 zoomOut = AnimationUtils.loadAnimation(getActivity(),
 						R.anim.unzoom_out);
 			 
-			 
-			 final TypewriterTextView simpsonAnimatedTextViewChart = (TypewriterTextView)rootView.findViewById(R.id.simpsonAnimatedTextViewChart);
-			 simpsonAnimatedTextViewChart.setTypewriterText(getString(R.string.problemsimpson));
+			 final JustifyTextView simpsonAnimatedTextViewChart = (JustifyTextView)rootView.findViewById(R.id.simpsonAnimatedTextViewChart);
+			 simpsonAnimatedTextViewChart.setText(R.string.problemsimpson);
 			 
 			 
 			 simpsonschartimage = (ImageView) rootView.findViewById(R.id.simpsonschartimage);
@@ -164,7 +164,7 @@ public class SimpsonChartFragment extends Fragment {
 		    				dialog.getWindow().setBackgroundDrawable(
 		    						new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
-		    				final TypewriterTextView customtextindialog = (TypewriterTextView) dialog
+		    				final JustifyTextView customtextindialog = (JustifyTextView) dialog
 		    						.findViewById(R.id.customtextindialog);
 		    				customtextindialog.setText(R.string.whyknn);
 		    				customtextindialog.setMovementMethod(new ScrollingMovementMethod());

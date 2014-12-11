@@ -14,7 +14,7 @@
         android:layout_marginRight="20dp" >
 
         
-       <com.capstoneii.iclassify.library.TypewriterTextView
+       <com.capstoneii.iclassify.library.JustifyTextView
         android:id="@+id/simpsonAnimatedTextViewChart"
         android:layout_width="480dp"
         android:layout_height="wrap_content"

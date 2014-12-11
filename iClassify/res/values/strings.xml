@@ -633,7 +633,86 @@ Consider the following data concerning credit default. Age and Loan are two nume
 
 <string name="discussionknnfive">
     <![CDATA[
-<b>D = Sqrt[(48-33)^2 + (142000-150000)^2] = 8000.01  >> Default=Y</b><br><br>We can now use the training set to classify an unknown case (Age=48 and Loan=$142,000) using Euclidean distance. If K=1 then the nearest neighbor is the last case in the training set with Default=Y.<br><br><br>With K=3, there are two Default=Y and one Default=N out of three closest neighbors. The prediction for the unknown case is again Default=Y.
+D = Sqrt[(48-33)^2 + (142000-150000)^2] = 8000.01  Default=Y We can now use the training set to classify an unknown case (Age=48 and Loan=$142,000) using Euclidean distance. If K=1 then the nearest neighbor is the last case in the training set with Default=Y.<br><br><br>With K=3, there are two Default=Y and one Default=N out of three closest neighbors. The prediction for the unknown case is again Default=Y.
  ]]>
 </string>
+
+
+
+<string name="discussiondesczero">
+    <![CDATA[
+Decision tree </b> builds classification or regression models in the form of a tree structure. It breaks down a dataset into smaller and smaller subsets while at the same time an associated decision tree is incrementally developed. The final result is a tree with decision nodes and leaf nodes. A decision node (e.g., Outlook) has two or more branches (e.g., Sunny, Overcast and Rainy). Leaf node (e.g., Play) represents a classification or decision. The topmost decision node in a tree which corresponds to the best predictor called root node. Decision trees can handle both categorical and numerical data.
+ ]]>
+</string>
+
+
+<string name="discussiondescone">
+    <![CDATA[
+A decision tree is built top-down from a root node and involves partitioning the data into subsets that contain instances with similar values (homogenous). ID3 algorithm uses entropy to calculate the homogeneity of a sample. If the sample is completely homogeneous the entropy is zero and if the sample is an equally divided it has entropy of one.
+ ]]>
+</string>
+
+<string name="discussiondesctwo">
+    <![CDATA[
+To build a decision tree, we need to calculate two types of entropy using frequency tables as follows: \na.) Entropy using the frequency table of one attribute.
+ ]]>
+</string>
+
+<string name="discussiondescthree">
+    <![CDATA[
+ "The information gain is based on the decrease in entropy after a dataset is split on an attribute. Constructing a decision tree is all about finding attribute that returns the highest information gain (i.e., the most homogeneous branches)."
+ ]]>
+</string>
+
+<string name="discussiondescfour">
+    <![CDATA[
+    b.)Entropy using the frequency table of two attributes
+     ]]>
+</string>
+
+<string name="discussiondescfive">
+    <![CDATA[
+    The information gain is based on the decrease in entropy after a dataset is split on an attribute. Constructing a decision tree is all about finding attribute that returns the highest information gain (i.e., the most homogeneous branches).
+     ]]>
+</string>
+
+<string name="discussiondescsix">
+    <![CDATA[
+		Calculate entropy of the target.
+     ]]>
+     </string>
+     <string name="discussiondescseven">
+    <![CDATA[
+		The dataset is then split on the different attributes. The entropy for each branch is calculated. Then it is added proportionally, to get total entropy for the split. The resulting entropy is subtracted from the entropy before the split. The result is the Information Gain, or decrease in entropy. 
+     ]]>
+</string>
+   <string name="discussiondesceight">
+    <![CDATA[
+     Choose attribute with the largest information gain as the decision node.
+  ]]>
+</string>
+
+   <string name="discussiondescnine">
+    <![CDATA[
+    A branch with entropy of 0 is a leaf node.
+  ]]>
+  </string>
+  <string name="discussiondescten">
+    <![CDATA[
+   A branch with entropy more than 0 needs further splitting.
+  ]]>
+</string>
+
+  <string name="discussiondesceleven">
+    <![CDATA[
+   The ID3 algorithm is run recursively on the non-leaf branches, until all data is classified.
+  ]]>
+</string>
+
+    <string name="discussiondesctwelve">
+    <![CDATA[
+  decision tree can easily be transformed to a set of rules by mappingfrom the root node to the leaf nodes one by one.
+  ]]>
+</string>
+   
 </resources>
