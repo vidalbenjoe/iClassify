@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBAdapter {
-	public static final int DATABASE_VERSION = 15;
+	public static final int DATABASE_VERSION = 16;
 	//public static final String DATABASE_NAME = "itdb";
 	public static final String DATABASE_NAME = "iclassifydb";
 	public static final String USER_TABLE = "user_info";

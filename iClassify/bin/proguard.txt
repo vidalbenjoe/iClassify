@@ -56,6 +56,9 @@
 # view res/layout/layout_inflate.xml #generated:11
 -keep class at.technikum.mti.fancycoverflow.FancyCoverFlow { <init>(...); }
 
+# view AndroidManifest.xml #generated:178
+-keep class bayesdiscussflip.NativeBayesDiscussContent { <init>(...); }
+
 # view AndroidManifest.xml #generated:63
 -keep class bayesdiscussflip.NativeBayesLayoutActivity { <init>(...); }
 
@@ -116,7 +119,7 @@
 # view res/layout/choose_video_layout.xml #generated:28
 # view res/layout/custom_dialog_text.xml #generated:30
 # view res/layout/custom_dialog_text.xml #generated:51
-# view res/layout/discusstopic_layout.xml #generated:58
+# view res/layout/discusstopic_layout.xml #generated:60
 # view res/layout/introduction_video_layout.xml #generated:28
 # view res/layout/objective_layout_menu.xml #generated:40
 # view res/layout/patient_decision_tree_layout.xml #generated:28
@@ -202,7 +205,7 @@
 # view res/layout/table.xml #generated:43
 -keep class com.inqbarna.tablefixheaders.TableFixHeaders { <init>(...); }
 
-# view AndroidManifest.xml #generated:175
+# view AndroidManifest.xml #generated:174
 -keep class descisiondiscussflip.DescTreeDiscussionContent { <init>(...); }
 
 # view AndroidManifest.xml #generated:44
@@ -214,7 +217,7 @@
 # view AndroidManifest.xml #generated:38
 -keep class drawer.MainDrawerActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:171
+# view AndroidManifest.xml #generated:170
 -keep class knearestdiscussflip.KNearestDiscussionContent { <init>(...); }
 
 # view AndroidManifest.xml #generated:55

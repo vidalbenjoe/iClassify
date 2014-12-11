@@ -45,7 +45,7 @@ public class NativeBayesObjectives extends ActionBarActivity {
 			@Override
 			public void onClick(View InputFragmentView) {
 				Intent intent = new Intent(NativeBayesObjectives.this,
-						NativeBayesLayoutActivity.class);
+						NativeBayesDiscussContent.class);
 				NativeBayesObjectives.this.startActivity(intent);
 				NativeBayesObjectives.this.finish();
 			}

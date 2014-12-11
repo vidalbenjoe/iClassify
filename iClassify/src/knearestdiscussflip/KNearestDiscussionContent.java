@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Matrix;
@@ -14,15 +15,13 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.ActionBarActivity;
 import android.util.FloatMath;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -30,16 +29,13 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import com.aphidmobile.utils.UI;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.SessionCache;
 import com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.library.JustifyTextView;
 
-import drawer.MainDrawerActivity;
-
-public class KNearestDiscussionContent extends ActionBarActivity {
+@SuppressLint("ClickableViewAccessibility") public class KNearestDiscussionContent extends ActionBarActivity {
 
 	int counter;
 	Button previousdiscussbt,nextdiscussbt;
@@ -50,8 +46,6 @@ public class KNearestDiscussionContent extends ActionBarActivity {
 	public TextToSpeech tts;
 	String toSpeak;
 	private Matrix matrix = new Matrix();
-	private float scale = 1f;
-	private ScaleGestureDetector SGD;
 	
 	DBAdapter myDb;
 	SessionCache QuizSession;
@@ -219,9 +213,7 @@ public class KNearestDiscussionContent extends ActionBarActivity {
 					}
 				}
 				
-				if(counter > 5){
-					
-				}else{
+				
 				switch(counter){
 				
 				case 0:
@@ -272,7 +264,7 @@ public class KNearestDiscussionContent extends ActionBarActivity {
 				}
 				}
 				
-			}
+			
 		});
 		
 		previousdiscussbt.setOnClickListener(new View.OnClickListener() {
@@ -328,6 +320,7 @@ public class KNearestDiscussionContent extends ActionBarActivity {
 					title.setText("K Nearest Neighbors - Classification");
 					description.setText(R.string.discussionknnzero);
 					previousdiscussbt.setVisibility(View.INVISIBLE);
+					nextdiscussbt.setVisibility(View.VISIBLE);
 					break;
 					default:
 						break;

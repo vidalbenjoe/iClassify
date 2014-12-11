@@ -86,8 +86,8 @@
             android:layout_marginBottom="60dp"
             android:layout_marginLeft="40dp"
             android:layout_marginStart="40dp"
-            android:visibility="invisible"
-            android:text="Previous" />
+            android:visibility="invisible" 
+            android:background="@drawable/prevbtred"/>
 
         <Button
             android:id="@+id/nextdiscussbt"
@@ -99,7 +99,7 @@
             android:layout_marginBottom="60dp"
             android:layout_marginRight="40dp"
             android:layout_marginEnd="40dp"
-            android:text="Next" />
+            android:background="@drawable/simulnextbt"/>
     </RelativeLayout>
 
 </LinearLayout>
