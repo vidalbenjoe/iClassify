@@ -27,6 +27,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import bayesdiscussflip.NativeBayesDiscussContent;
 import bayesdiscussflip.NativeBayesLayoutActivity;
 
 import com.capstoneii.iclassify.assessment.bayesian.BayesianAssessmentDragAndDrop;
@@ -569,7 +570,7 @@ public class QuizResultBayesian extends Activity implements AnimationListener {
 		switch (item.getItemId()) {
 		case android.R.id.home:
 			Intent i = new Intent(QuizResultBayesian.this,
-					NativeBayesLayoutActivity.class);
+					NativeBayesDiscussContent.class);
 			startActivity(i);
 			overridePendingTransition(R.anim.slide_in_right,
 					R.anim.slide_out_right);

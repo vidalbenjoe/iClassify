@@ -3,6 +3,7 @@ package com.capstoneii.iclassify;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 
+import knearestdiscussflip.KNearestDiscussionContent;
 import knearestdiscussflip.KNearestLayoutActivity;
 import android.app.Activity;
 import android.app.Dialog;
@@ -505,7 +506,7 @@ public class QuizResultActivity extends Activity implements AnimationListener {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case android.R.id.home:
-			Intent i = new Intent(QuizResultActivity.this, KNearestLayoutActivity.class);
+			Intent i = new Intent(QuizResultActivity.this, KNearestDiscussionContent.class);
 			startActivity(i);
 			overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
 			finish();	

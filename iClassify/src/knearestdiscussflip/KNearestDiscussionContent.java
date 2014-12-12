@@ -643,7 +643,32 @@ import com.capstoneii.iclassify.library.JustifyTextView;
 		myDb.open();
 	}
 
+	@Override
+	protected void onPause(){
+		if(tts!=null){
+			tts.stop();
+		}
+		
+		super.onPause();
+	}
 	
+	@Override
+	protected void onDestroy(){
+		if(tts!=null){
+			tts.stop();
+		}
+		
+		super.onDestroy();
+	}
+	
+	@Override
+	protected void onStop(){
+		if(tts!=null){
+			tts.stop();
+		}
+		
+		super.onStop();
+	}
 	
 	
 }

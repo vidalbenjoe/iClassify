@@ -36,6 +36,7 @@ import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.dbclasses.TempQuestion;
 import com.capstoneii.iclassify.problems.SimpsonQuizProblemResult;
 
+import descisiondiscussflip.DescTreeDiscussionContent;
 import descisiondiscussflip.DescTreeLayoutActivity;
 
 public class QuizResultDecision extends Activity implements AnimationListener {
@@ -534,7 +535,7 @@ public class QuizResultDecision extends Activity implements AnimationListener {
 		switch (item.getItemId()) {
 		case android.R.id.home:
 			Intent i = new Intent(QuizResultDecision.this,
-					DescTreeLayoutActivity.class);
+					DescTreeDiscussionContent.class);
 			startActivity(i);
 			overridePendingTransition(R.anim.slide_in_right,
 					R.anim.slide_out_right);
