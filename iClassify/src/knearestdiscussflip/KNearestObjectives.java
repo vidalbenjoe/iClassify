@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.ActivityAnimator;
 import com.capstoneii.iclassify.library.JustifyTextView;
-import com.capstoneii.iclassify.library.TypewriterTextView;
 import com.capstoneii.iclassify.videos.VideoMenuActivity;
 
 import drawer.MainDrawerActivity;

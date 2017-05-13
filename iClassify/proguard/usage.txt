@@ -2227,13 +2227,17 @@ at.technikum.mti.fancycoverflow.R$styleable:
 bayesdiscussflip.NativeBayesAdapter:
     boolean isChecked
     android.widget.ToggleButton toggleButton
-    69:69:public int getRepeatCount()
-    73:74:public void setRepeatCount(int)
-    176:179:public void removeData(int)
-    182:186:public void onPause()
-    189:194:public void onDestroy()
+    74:74:public int getRepeatCount()
+    78:79:public void setRepeatCount(int)
+    214:217:public void removeData(int)
+    220:224:public void onPause()
+    227:232:public void onDestroy()
 bayesdiscussflip.NativeBayesData:
     6:6:public NativeBayesData()
+bayesdiscussflip.NativeBayesDiscussContent:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
 com.aphidmobile.flip.Card:
     public static final int AXIS_TOP
     public static final int AXIS_BOTTOM
@@ -2340,7 +2344,7 @@ com.capstoneii.iclassify.R$raw
 com.capstoneii.iclassify.R$string
 com.capstoneii.iclassify.R$style
 com.capstoneii.iclassify.R$styleable:
-    2680:2680:public R$styleable()
+    2749:2749:public R$styleable()
 com.capstoneii.iclassify.SessionCache:
     private static final java.lang.String PREF_NAME
     public static final java.lang.String IS_TAKEN1
@@ -2505,6 +2509,8 @@ com.capstoneii.iclassify.dbclasses.TempQuestion:
     51:52:public void setQitem(java.lang.String)
     57:58:public void setQans(java.lang.String)
     63:64:public void setQuserans(java.lang.String)
+com.capstoneii.iclassify.library.ActivityAnimator:
+    10:11:public void flipHorizontalAnimation(android.app.Activity)
 com.capstoneii.iclassify.library.ExpandableButtonMenu:
     private static final java.lang.String TAG
     private static final float DEFAULT_BOTTOM_PADDING
@@ -2525,6 +2531,12 @@ com.capstoneii.iclassify.library.ExpandableButtonMenu:
     42:42:static synthetic int[] $SWITCH_TABLE$com$capstoneii$iclassify$library$ExpandableButtonMenu$MenuButton()
 com.capstoneii.iclassify.library.ExpandableMenuOverlay:
     private static final float DEFAULT_DIM_AMOUNT
+com.capstoneii.iclassify.library.Justify:
+    static final float DEFAULT_MAX_PROPORTION
+com.capstoneii.iclassify.library.JustifyTextView:
+    private static final int MAX_SPANS
+com.capstoneii.iclassify.library.NotNull
+com.capstoneii.iclassify.library.Nullable
 com.capstoneii.iclassify.library.PopupHelper
 com.capstoneii.iclassify.library.PopupHelper$1
 com.capstoneii.iclassify.library.ScreenHelper:
@@ -2549,10 +2561,10 @@ com.capstoneii.iclassify.library.Typefaces:
 com.capstoneii.iclassify.library.TypewriterTextView:
     private static final float TEXT_CHARACTER_DELAY
     private static final int TEXT_CHARACTER_DELAY_MS
-    39:40:public void snapToEnd()
+    43:44:public void snapToEnd()
 com.capstoneii.iclassify.problems.SimpsonFinalResult:
     com.capstoneii.iclassify.library.SecretTextView secretTextView
-    95:95:public void onBackPressed()
+    96:96:public void onBackPressed()
 com.capstoneii.iclassify.problems.SimpsonMaleClassifier:
     com.capstoneii.iclassify.library.SecretTextView secretTextView
     android.view.animation.Animation animSideUp
@@ -2563,17 +2575,43 @@ com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$DecisionCalculateDial
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$DecisionCalculateDialog$2
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$DecisionCalculateDialog$3
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$DecisionCalculateDialog$4
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$DecisionCalculateDialog$5
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$DecisionCalculateDialog$6
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$ImageDialog:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$ImageDialog2:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$ImageDialog3:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$ImageDialog4:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$ImageDialog5:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonMaleClassifier:
     com.capstoneii.iclassify.library.SecretTextView secretTextView
     android.view.animation.Animation animSideUp
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonTableFragment:
     com.capstoneii.iclassify.library.SecretTextView secretTextView
-    440:440:public void onBackPressed()
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+    1075:1075:public void onBackPressed()
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonsDecisionTreeFragment
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonsDecisionTreeFragment$1
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonsNextProcedure
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonsNextProcedure$1
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonsNextProcedure$2
+com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimpsonsNextProcedure$3
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$1
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$1$1
@@ -2594,13 +2632,13 @@ com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivit
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity$5
 com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulDecisionResults:
     public java.lang.String videoFile
-    1125:1129:public void showPopup(android.view.View)
+    1843:1847:public void showPopup(android.view.View)
 com.capstoneii.iclassify.problems.SimpsonTableFragment:
     com.capstoneii.iclassify.library.SecretTextView secretTextView
     80:80:public void onBackPressed()
 com.capstoneii.iclassify.problems.SimpsonforQuizResult
 com.capstoneii.iclassify.problems.SimpsonsDecisionTreeFragment:
-    119:119:public void onBackPressed()
+    113:113:public void onBackPressed()
 com.capstoneii.iclassify.problems.SimpsonsNextProcedure:
     com.capstoneii.iclassify.library.SecretTextView secretTextView
     74:74:public void onBackPressed()
@@ -2608,7 +2646,7 @@ com.capstoneii.iclassify.problems.chooseAlgoSimpson:
     226:226:public void onBackPressed()
 com.capstoneii.iclassify.problems.patient.MainFragmentPatient:
     android.view.animation.Animation clock
-    294:294:public void onBackPressed()
+    299:299:public void onBackPressed()
 com.capstoneii.iclassify.problems.patient.PatientProbabilityComputationFragment:
     static final int NONE
     static final int DRAG
@@ -2619,7 +2657,7 @@ com.capstoneii.iclassify.problems.simpsonsknn.SimpsonChartFragment:
     static final int NONE
     static final int DRAG
     static final int ZOOM
-    205:205:public void onBackPressed()
+    204:204:public void onBackPressed()
 com.capstoneii.iclassify.problems.simpsonsknn.SimpsonKnnStep:
     android.view.animation.Animation left
     android.view.animation.Animation right
@@ -2648,14 +2686,29 @@ com.capstoneii.iclassify.simulation.desiciontree.SimulDragAndDropActivity:
     int total
 com.capstoneii.iclassify.simulation.desiciontree.SimulHeirarchyDataActivity
 com.capstoneii.iclassify.simulation.desiciontree.SimulProblemActivity:
-    64:72:public void onBackPressed()
+    68:76:public void onBackPressed()
 com.capstoneii.iclassify.simulation.desiciontree.SimulProcessIntroActivity:
     66:75:public void onBackPressed()
 com.capstoneii.iclassify.simulation.desiciontree.SimulStartActivity:
     62:71:public void onBackPressed()
 com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult:
     public static com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity fragment
-com.capstoneii.iclassify.simulation.knn.SimulKnnPlotDataFragment
+com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult$KnnImageResultFirstSet:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult$KnnImageResultFirstSetNext:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult$KnnImageResultSecondSet:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult$KnnImageResultThirdSet:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
 com.capstoneii.iclassify.simulation.knn.SimulMainKnnActivity:
     android.view.animation.Animation left
     android.view.animation.Animation right
@@ -2677,17 +2730,52 @@ com.capstoneii.iclassify.simulation.knn.SimulMainKnnDataset:
 com.capstoneii.iclassify.simulation.knn.SimulMainKnnFactoryTissue:
     android.widget.ImageView factoryimg
     android.widget.ImageView tissueimg
+com.capstoneii.iclassify.simulation.knn.SimulMainKnnLastFragment:
+    android.view.animation.Animation animation
 com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult:
     public static com.capstoneii.iclassify.problems.SimpsonQuizProblemResult$SimulCalculateActivity fragment
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult2:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult3:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
 com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult5
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult5$1
 com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult6
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult6$1
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$NaiveImageResult7:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$naivecom:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult$naiveexample:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
 com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesCalculateFragment
 com.capstoneii.iclassify.simulation.naivebayes.SimulNaiveBayesIntroFragment:
-    52:52:public void onBackPressed()
+    57:57:public void onBackPressed()
+com.capstoneii.iclassify.videos.DescTreeVideo:
+    int vid
+    127:130:public void onCompletion(android.media.MediaPlayer)
 com.capstoneii.iclassify.videos.IntroductionVideo:
     51:54:public void onCompletion(android.media.MediaPlayer)
+com.capstoneii.iclassify.videos.NaiveVideo:
+    int vid
+    129:132:public void onCompletion(android.media.MediaPlayer)
 com.capstoneii.iclassify.videos.VideoMenuActivity:
-    116:119:public void onCompletion(android.media.MediaPlayer)
+    int vid
+    118:121:public void onCompletion(android.media.MediaPlayer)
 com.inqbarna.tablefixheaders.adapters.BaseTableAdapter:
     30:31:public void notifyDataSetChanged()
     39:40:public void notifyDataSetInvalidated()
@@ -3044,26 +3132,39 @@ com.openaphid.flip.R$style
 com.openaphid.flip.R$styleable
 coverflow.ClassifyFancyCoverFlowAdapter
 descisiondiscussflip.DescTreeAdapter:
-    72:72:public int getRepeatCount()
-    76:77:public void setRepeatCount(int)
-    174:178:public void removeData(int)
-    181:185:public void onPause()
-    188:192:public void onDestroy()
-    195:196:public boolean onTouchEvent(android.view.MotionEvent)
+    93:93:public int getRepeatCount()
+    97:98:public void setRepeatCount(int)
+    256:257:public void onPrepared(android.media.MediaPlayer)
+    259:263:public void removeData(int)
+    266:270:public void onPause()
+    274:278:public void onDestroy()
+    281:284:public void onBackPressed()
+    287:292:public void onStop()
+    295:296:public boolean onTouchEvent(android.view.MotionEvent)
+descisiondiscussflip.DescTreeDiscussionContent:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
+descisiondiscussflip.DescTreeObjectives:
+    public java.lang.String testName
 descisiondiscussflip.TopicData:
     10:10:public TopicData()
 drawer.RowItem:
     18:19:public void setTitle(java.lang.String)
     26:27:public void setIcon(int)
 knearestdiscussflip.KNearestAdapter:
-    75:75:public int getRepeatCount()
-    79:80:public void setRepeatCount(int)
-    186:189:public void removeData(int)
-    192:196:public void onPause()
-    199:203:public void onDestroy()
-    206:207:public boolean onTouchEvent(android.view.MotionEvent)
+    74:74:public int getRepeatCount()
+    78:79:public void setRepeatCount(int)
+    245:248:public void removeData(int)
+    251:255:public void onPause()
+    258:270:public void onDestroy()
+    273:274:public boolean onTouchEvent(android.view.MotionEvent)
 knearestdiscussflip.KNearestData:
     10:10:public KNearestData()
+knearestdiscussflip.KNearestDiscussionContent:
+    static final int NONE
+    static final int DRAG
+    static final int ZOOM
 org.achartengine.ChartFactory
 org.achartengine.GraphicalActivity
 org.achartengine.GraphicalView

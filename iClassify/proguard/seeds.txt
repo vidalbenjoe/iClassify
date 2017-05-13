@@ -860,6 +860,8 @@ at.technikum.mti.fancycoverflow.R$styleable: int FancyCoverFlow_scaleDownGravity
 at.technikum.mti.fancycoverflow.R$styleable: int FancyCoverFlow_unselectedAlpha
 at.technikum.mti.fancycoverflow.R$styleable: int FancyCoverFlow_unselectedSaturation
 at.technikum.mti.fancycoverflow.R$styleable: int FancyCoverFlow_unselectedScale
+bayesdiscussflip.NativeBayesDiscussContent
+bayesdiscussflip.NativeBayesDiscussContent: NativeBayesDiscussContent()
 bayesdiscussflip.NativeBayesLayoutActivity
 bayesdiscussflip.NativeBayesLayoutActivity: NativeBayesLayoutActivity()
 bayesdiscussflip.NativeBayesObjectives
@@ -900,6 +902,8 @@ com.capstoneii.iclassify.R$anim: int dialog_in
 com.capstoneii.iclassify.R$anim: int dialog_out
 com.capstoneii.iclassify.R$anim: int fade_in
 com.capstoneii.iclassify.R$anim: int fade_out
+com.capstoneii.iclassify.R$anim: int flip_horizontal_in
+com.capstoneii.iclassify.R$anim: int flip_horizontal_out
 com.capstoneii.iclassify.R$anim: int grow_from_bottomright_to_topleft
 com.capstoneii.iclassify.R$anim: int left
 com.capstoneii.iclassify.R$anim: int leftout
@@ -1240,6 +1244,11 @@ com.capstoneii.iclassify.R$drawable: int backgroundblurpurple
 com.capstoneii.iclassify.R$drawable: int backtomainmenu
 com.capstoneii.iclassify.R$drawable: int bartavatar
 com.capstoneii.iclassify.R$drawable: int baseballplayer
+com.capstoneii.iclassify.R$drawable: int bayesimg1
+com.capstoneii.iclassify.R$drawable: int bayesimg2
+com.capstoneii.iclassify.R$drawable: int bayesimg3
+com.capstoneii.iclassify.R$drawable: int bayesimg4
+com.capstoneii.iclassify.R$drawable: int bayesimg5
 com.capstoneii.iclassify.R$drawable: int bg_popupwindow
 com.capstoneii.iclassify.R$drawable: int blue_button
 com.capstoneii.iclassify.R$drawable: int bluebutton
@@ -1297,6 +1306,16 @@ com.capstoneii.iclassify.R$drawable: int decisiontreequestion1img
 com.capstoneii.iclassify.R$drawable: int decisiontreequestionimage
 com.capstoneii.iclassify.R$drawable: int decisiontreequestionimageoutlook
 com.capstoneii.iclassify.R$drawable: int decisiontreequestiontypecardoor
+com.capstoneii.iclassify.R$drawable: int desctreeimg1
+com.capstoneii.iclassify.R$drawable: int desctreeimg10
+com.capstoneii.iclassify.R$drawable: int desctreeimg2
+com.capstoneii.iclassify.R$drawable: int desctreeimg3
+com.capstoneii.iclassify.R$drawable: int desctreeimg4
+com.capstoneii.iclassify.R$drawable: int desctreeimg5
+com.capstoneii.iclassify.R$drawable: int desctreeimg6
+com.capstoneii.iclassify.R$drawable: int desctreeimg7
+com.capstoneii.iclassify.R$drawable: int desctreeimg8
+com.capstoneii.iclassify.R$drawable: int desctreeimg9
 com.capstoneii.iclassify.R$drawable: int desresultcarfive
 com.capstoneii.iclassify.R$drawable: int desresultcarfour
 com.capstoneii.iclassify.R$drawable: int desresultcarone
@@ -1366,6 +1385,10 @@ com.capstoneii.iclassify.R$drawable: int knnaciddata
 com.capstoneii.iclassify.R$drawable: int knnchart
 com.capstoneii.iclassify.R$drawable: int knnchart2
 com.capstoneii.iclassify.R$drawable: int knndata
+com.capstoneii.iclassify.R$drawable: int knnimg1
+com.capstoneii.iclassify.R$drawable: int knnimg2
+com.capstoneii.iclassify.R$drawable: int knnimg3
+com.capstoneii.iclassify.R$drawable: int knnimg4
 com.capstoneii.iclassify.R$drawable: int knnquestionimage
 com.capstoneii.iclassify.R$drawable: int knnquestionlast
 com.capstoneii.iclassify.R$drawable: int knnquestionsix
@@ -1373,6 +1396,9 @@ com.capstoneii.iclassify.R$drawable: int knnquizresultimage1
 com.capstoneii.iclassify.R$drawable: int knnquizresultimage2
 com.capstoneii.iclassify.R$drawable: int knnquizresultimage3
 com.capstoneii.iclassify.R$drawable: int knnquizresultimage4
+com.capstoneii.iclassify.R$drawable: int knnsimulateformula1
+com.capstoneii.iclassify.R$drawable: int knnsimulimagefouth
+com.capstoneii.iclassify.R$drawable: int knnsimulthirdimage
 com.capstoneii.iclassify.R$drawable: int krustyavatar
 com.capstoneii.iclassify.R$drawable: int lisaavatar
 com.capstoneii.iclassify.R$drawable: int lookupgreen
@@ -1422,6 +1448,8 @@ com.capstoneii.iclassify.R$drawable: int patientnblookuptable
 com.capstoneii.iclassify.R$drawable: int patienttree
 com.capstoneii.iclassify.R$drawable: int peoplesimg
 com.capstoneii.iclassify.R$drawable: int popup9
+com.capstoneii.iclassify.R$drawable: int prevbtred
+com.capstoneii.iclassify.R$drawable: int prevbtred_pressed
 com.capstoneii.iclassify.R$drawable: int probabcomputation
 com.capstoneii.iclassify.R$drawable: int probabcomputation2
 com.capstoneii.iclassify.R$drawable: int probablookup1
@@ -1563,6 +1591,7 @@ com.capstoneii.iclassify.R$id: int bottomtext
 com.capstoneii.iclassify.R$id: int button1
 com.capstoneii.iclassify.R$id: int button2
 com.capstoneii.iclassify.R$id: int button3
+com.capstoneii.iclassify.R$id: int button4
 com.capstoneii.iclassify.R$id: int buttonA
 com.capstoneii.iclassify.R$id: int buttonB
 com.capstoneii.iclassify.R$id: int buttonCancel
@@ -1629,6 +1658,7 @@ com.capstoneii.iclassify.R$id: int factoryimg
 com.capstoneii.iclassify.R$id: int familyformula
 com.capstoneii.iclassify.R$id: int fancyCoverFlow
 com.capstoneii.iclassify.R$id: int first_bt
+com.capstoneii.iclassify.R$id: int firstknnform
 com.capstoneii.iclassify.R$id: int flChapter1
 com.capstoneii.iclassify.R$id: int flChapter2
 com.capstoneii.iclassify.R$id: int flChapter3
@@ -1639,14 +1669,14 @@ com.capstoneii.iclassify.R$id: int formulaimg
 com.capstoneii.iclassify.R$id: int formulas1
 com.capstoneii.iclassify.R$id: int formulatext
 com.capstoneii.iclassify.R$id: int four
+com.capstoneii.iclassify.R$id: int fourthknndescsimul
+com.capstoneii.iclassify.R$id: int fourthsimulknnimage
 com.capstoneii.iclassify.R$id: int frame_container
 com.capstoneii.iclassify.R$id: int gainid1
 com.capstoneii.iclassify.R$id: int gainid3
 com.capstoneii.iclassify.R$id: int gainid4
 com.capstoneii.iclassify.R$id: int gainimage
 com.capstoneii.iclassify.R$id: int gethumidityands
-com.capstoneii.iclassify.R$id: int getknnplot
-com.capstoneii.iclassify.R$id: int graphimg
 com.capstoneii.iclassify.R$id: int h1
 com.capstoneii.iclassify.R$id: int h12
 com.capstoneii.iclassify.R$id: int h2
@@ -1693,8 +1723,11 @@ com.capstoneii.iclassify.R$id: int isweight
 com.capstoneii.iclassify.R$id: int item
 com.capstoneii.iclassify.R$id: int jumbleedittext
 com.capstoneii.iclassify.R$id: int jumblequestionText
+com.capstoneii.iclassify.R$id: int justifyrelative
 com.capstoneii.iclassify.R$id: int knnfourthext
 com.capstoneii.iclassify.R$id: int knnnextbt
+com.capstoneii.iclassify.R$id: int knnsecondfactorybt
+com.capstoneii.iclassify.R$id: int knnsecondsimul
 com.capstoneii.iclassify.R$id: int knnsecondtext
 com.capstoneii.iclassify.R$id: int knnsecretdesc
 com.capstoneii.iclassify.R$id: int knnsecrettext
@@ -1732,6 +1765,7 @@ com.capstoneii.iclassify.R$id: int naivetextsecond
 com.capstoneii.iclassify.R$id: int nameof
 com.capstoneii.iclassify.R$id: int never
 com.capstoneii.iclassify.R$id: int nextProcBt
+com.capstoneii.iclassify.R$id: int nextdiscussbt
 com.capstoneii.iclassify.R$id: int none
 com.capstoneii.iclassify.R$id: int normal
 com.capstoneii.iclassify.R$id: int objectivedesc
@@ -1753,8 +1787,10 @@ com.capstoneii.iclassify.R$id: int peopleimg
 com.capstoneii.iclassify.R$id: int photo
 com.capstoneii.iclassify.R$id: int popupid
 com.capstoneii.iclassify.R$id: int popupvideo
+com.capstoneii.iclassify.R$id: int previousdiscussbt
 com.capstoneii.iclassify.R$id: int problemDesc
 com.capstoneii.iclassify.R$id: int problemimage
+com.capstoneii.iclassify.R$id: int problempatientrelative
 com.capstoneii.iclassify.R$id: int problemtextattrib
 com.capstoneii.iclassify.R$id: int problemtextdesc
 com.capstoneii.iclassify.R$id: int problemtextid
@@ -1812,6 +1848,7 @@ com.capstoneii.iclassify.R$id: int search_mag_icon
 com.capstoneii.iclassify.R$id: int search_plate
 com.capstoneii.iclassify.R$id: int search_src_text
 com.capstoneii.iclassify.R$id: int search_voice_btn
+com.capstoneii.iclassify.R$id: int secondknnsimulformula
 com.capstoneii.iclassify.R$id: int shortcut
 com.capstoneii.iclassify.R$id: int showCustom
 com.capstoneii.iclassify.R$id: int showHome
@@ -1827,10 +1864,11 @@ com.capstoneii.iclassify.R$id: int simpsonNextbt
 com.capstoneii.iclassify.R$id: int simpsonRelative
 com.capstoneii.iclassify.R$id: int simpsoneTable
 com.capstoneii.iclassify.R$id: int simpsonschartimage
-com.capstoneii.iclassify.R$id: int simul5
 com.capstoneii.iclassify.R$id: int simulbt
+com.capstoneii.iclassify.R$id: int simulknnfifthnextbt
 com.capstoneii.iclassify.R$id: int simulnextcalculatebt
 com.capstoneii.iclassify.R$id: int simultextcalcu
+com.capstoneii.iclassify.R$id: int sixthdesckknn
 com.capstoneii.iclassify.R$id: int slideimgid
 com.capstoneii.iclassify.R$id: int slider_list
 com.capstoneii.iclassify.R$id: int split_action_bar
@@ -1866,6 +1904,8 @@ com.capstoneii.iclassify.R$id: int textcompute2
 com.capstoneii.iclassify.R$id: int textcomputehaha
 com.capstoneii.iclassify.R$id: int textknntitle
 com.capstoneii.iclassify.R$id: int textview
+com.capstoneii.iclassify.R$id: int thirdd
+com.capstoneii.iclassify.R$id: int thirdsimulknnimage
 com.capstoneii.iclassify.R$id: int three
 com.capstoneii.iclassify.R$id: int tissueimg
 com.capstoneii.iclassify.R$id: int titanictext
@@ -1993,10 +2033,11 @@ com.capstoneii.iclassify.R$layout: int history_layout
 com.capstoneii.iclassify.R$layout: int image_zoomer_dialog
 com.capstoneii.iclassify.R$layout: int introduction_video_layout
 com.capstoneii.iclassify.R$layout: int knn_last_set_result_layout
-com.capstoneii.iclassify.R$layout: int knnsimul_fifthlayout
 com.capstoneii.iclassify.R$layout: int knnsimul_firstlayout
 com.capstoneii.iclassify.R$layout: int knnsimul_fourthlayout
+com.capstoneii.iclassify.R$layout: int knnsimul_layoutfifth
 com.capstoneii.iclassify.R$layout: int knnsimul_secondlayout
+com.capstoneii.iclassify.R$layout: int knnsimul_sixthlayout
 com.capstoneii.iclassify.R$layout: int knnsimul_thirdlayout
 com.capstoneii.iclassify.R$layout: int layout_inflate
 com.capstoneii.iclassify.R$layout: int list_item
@@ -2104,6 +2145,31 @@ com.capstoneii.iclassify.R$string: int decisionquestionchoice2
 com.capstoneii.iclassify.R$string: int decisionquestionchoice3
 com.capstoneii.iclassify.R$string: int decisionquestionchoice4
 com.capstoneii.iclassify.R$string: int decisiontreeonjectives
+com.capstoneii.iclassify.R$string: int discussionbayesfive
+com.capstoneii.iclassify.R$string: int discussionbayesfour
+com.capstoneii.iclassify.R$string: int discussionbayesone
+com.capstoneii.iclassify.R$string: int discussionbayesthree
+com.capstoneii.iclassify.R$string: int discussionbayestwo
+com.capstoneii.iclassify.R$string: int discussionbayeszero
+com.capstoneii.iclassify.R$string: int discussiondesceight
+com.capstoneii.iclassify.R$string: int discussiondesceleven
+com.capstoneii.iclassify.R$string: int discussiondescfive
+com.capstoneii.iclassify.R$string: int discussiondescfour
+com.capstoneii.iclassify.R$string: int discussiondescnine
+com.capstoneii.iclassify.R$string: int discussiondescone
+com.capstoneii.iclassify.R$string: int discussiondescseven
+com.capstoneii.iclassify.R$string: int discussiondescsix
+com.capstoneii.iclassify.R$string: int discussiondescten
+com.capstoneii.iclassify.R$string: int discussiondescthree
+com.capstoneii.iclassify.R$string: int discussiondesctwelve
+com.capstoneii.iclassify.R$string: int discussiondesctwo
+com.capstoneii.iclassify.R$string: int discussiondesczero
+com.capstoneii.iclassify.R$string: int discussionknnfive
+com.capstoneii.iclassify.R$string: int discussionknnfour
+com.capstoneii.iclassify.R$string: int discussionknnone
+com.capstoneii.iclassify.R$string: int discussionknnthree
+com.capstoneii.iclassify.R$string: int discussionknntwo
+com.capstoneii.iclassify.R$string: int discussionknnzero
 com.capstoneii.iclassify.R$string: int doibelieve
 com.capstoneii.iclassify.R$string: int empty
 com.capstoneii.iclassify.R$string: int example2desc
@@ -2142,6 +2208,8 @@ com.capstoneii.iclassify.R$string: int knnoption_11
 com.capstoneii.iclassify.R$string: int knnoption_7
 com.capstoneii.iclassify.R$string: int knnoption_8
 com.capstoneii.iclassify.R$string: int knnoption_9
+com.capstoneii.iclassify.R$string: int knnsimulationsecondalgostep
+com.capstoneii.iclassify.R$string: int knnsimulationsixthalgostep
 com.capstoneii.iclassify.R$string: int knnsimulexample1
 com.capstoneii.iclassify.R$string: int knnsimulexample2
 com.capstoneii.iclassify.R$string: int knnsimulexample3
@@ -2533,6 +2601,12 @@ com.capstoneii.iclassify.library.ExpandableMenuOverlay: ExpandableMenuOverlay(an
 com.capstoneii.iclassify.library.ExpandableMenuOverlay: ExpandableMenuOverlay(android.content.Context,android.util.AttributeSet,int)
 com.capstoneii.iclassify.library.ExpandableMenuOverlay: void setOnMenuButtonClickListener(com.capstoneii.iclassify.library.ExpandableButtonMenu$OnMenuButtonClick)
 com.capstoneii.iclassify.library.ExpandableMenuOverlay: com.capstoneii.iclassify.library.ExpandableButtonMenu getButtonMenu()
+com.capstoneii.iclassify.library.JustifyTextView
+com.capstoneii.iclassify.library.JustifyTextView: JustifyTextView(android.content.Context)
+com.capstoneii.iclassify.library.JustifyTextView: JustifyTextView(android.content.Context,android.util.AttributeSet)
+com.capstoneii.iclassify.library.JustifyTextView: JustifyTextView(android.content.Context,android.util.AttributeSet,int)
+com.capstoneii.iclassify.library.JustifyTextView: android.widget.TextView getTextView()
+com.capstoneii.iclassify.library.JustifyTextView: float getMaxProportion()
 com.capstoneii.iclassify.library.SecretTextView
 com.capstoneii.iclassify.library.SecretTextView: SecretTextView(android.content.Context)
 com.capstoneii.iclassify.library.SecretTextView: SecretTextView(android.content.Context,android.util.AttributeSet)
@@ -2579,8 +2653,12 @@ com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult
 com.capstoneii.iclassify.simulation.knn.KnnQuizProblemResult: KnnQuizProblemResult()
 com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult
 com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult: NaiveQuizProblemResult()
+com.capstoneii.iclassify.videos.DescTreeVideo
+com.capstoneii.iclassify.videos.DescTreeVideo: DescTreeVideo()
 com.capstoneii.iclassify.videos.IntroductionVideo
 com.capstoneii.iclassify.videos.IntroductionVideo: IntroductionVideo()
+com.capstoneii.iclassify.videos.NaiveVideo
+com.capstoneii.iclassify.videos.NaiveVideo: NaiveVideo()
 com.capstoneii.iclassify.videos.VideoMenuActivity
 com.capstoneii.iclassify.videos.VideoMenuActivity: VideoMenuActivity()
 com.capstoneii.iclassify.viewpager.ViewPagerIntro
@@ -2610,12 +2688,16 @@ com.openaphid.flip.R$style: int AppTheme
 com.openaphid.flip.R$styleable: int[] FlipViewController
 com.openaphid.flip.R$styleable: int FlipViewController_animationBitmapFormat
 com.openaphid.flip.R$styleable: int FlipViewController_orientation
+descisiondiscussflip.DescTreeDiscussionContent
+descisiondiscussflip.DescTreeDiscussionContent: DescTreeDiscussionContent()
 descisiondiscussflip.DescTreeLayoutActivity
 descisiondiscussflip.DescTreeLayoutActivity: DescTreeLayoutActivity()
 descisiondiscussflip.DescTreeObjectives
 descisiondiscussflip.DescTreeObjectives: DescTreeObjectives()
 drawer.MainDrawerActivity
 drawer.MainDrawerActivity: MainDrawerActivity()
+knearestdiscussflip.KNearestDiscussionContent
+knearestdiscussflip.KNearestDiscussionContent: KNearestDiscussionContent()
 knearestdiscussflip.KNearestLayoutActivity
 knearestdiscussflip.KNearestLayoutActivity: KNearestLayoutActivity()
 knearestdiscussflip.KNearestObjectives

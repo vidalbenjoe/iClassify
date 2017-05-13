@@ -155,11 +155,6 @@ public class NativeBayesAdapter extends BaseAdapter {
 		UI.<com.capstoneii.iclassify.library.JustifyTextView> findViewById(
 				layout, R.id.description).setText(
 				Html.fromHtml(data.description));
-	
-
-		final String toSpeak = UI
-				.<com.capstoneii.iclassify.library.JustifyTextView> findViewById(
-						layout, R.id.description).getText().toString();
 
 		UI.<ToggleButton> findViewById(layout, R.id.toggleButton);
 		UI.<ToggleButton> findViewById(layout, R.id.toggleButton)

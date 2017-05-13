@@ -5,14 +5,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 
-import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.SessionCache;
-import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz;
-import com.capstoneii.iclassify.dbclasses.DBAdapter;
-import com.capstoneii.iclassify.library.JustifyTextView;
-
-import drawer.MainDrawerActivity;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Matrix;
@@ -27,14 +19,20 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+
+import com.capstoneii.iclassify.R;
+import com.capstoneii.iclassify.SessionCache;
+import com.capstoneii.iclassify.assessment.decisionid3.DecisionTreeRandomQuiz;
+import com.capstoneii.iclassify.dbclasses.DBAdapter;
+import com.capstoneii.iclassify.library.JustifyTextView;
 
 public class DescTreeDiscussionContent extends ActionBarActivity {
 
@@ -109,6 +107,7 @@ public class DescTreeDiscussionContent extends ActionBarActivity {
 		toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
 		toggleButton
 				.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+					@SuppressWarnings("deprecation")
 					@Override
 					public void onCheckedChanged(CompoundButton buttonView,
 							boolean isChecked) {
@@ -128,6 +127,7 @@ public class DescTreeDiscussionContent extends ActionBarActivity {
 				});
 		nextdiscussbt.setOnClickListener(new View.OnClickListener() {
 
+			@SuppressWarnings("deprecation")
 			@Override
 			public void onClick(View v) {
 				if (v == nextdiscussbt) {
@@ -231,6 +231,7 @@ public class DescTreeDiscussionContent extends ActionBarActivity {
 			}
 		});
 		previousdiscussbt.setOnClickListener(new View.OnClickListener() {
+			@SuppressWarnings("deprecation")
 			@Override
 			public void onClick(View v) {
 				if (v == previousdiscussbt) {

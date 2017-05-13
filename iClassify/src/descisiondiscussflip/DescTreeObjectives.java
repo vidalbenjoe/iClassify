@@ -1,7 +1,6 @@
 package descisiondiscussflip;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -11,13 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.capstoneii.iclassify.R;
-import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.library.JustifyTextView;
-import com.capstoneii.iclassify.library.TypewriterTextView;
-import com.capstoneii.iclassify.problems.SimpsonQuizProblemResult;
-import com.capstoneii.iclassify.simulation.naivebayes.NaiveQuizProblemResult;
 import com.capstoneii.iclassify.videos.DescTreeVideo;
-import com.capstoneii.iclassify.videos.VideoMenuActivity;
 
 import drawer.MainDrawerActivity;
 

@@ -10,7 +10,6 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.widget.MediaController;
-import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.capstoneii.iclassify.R;

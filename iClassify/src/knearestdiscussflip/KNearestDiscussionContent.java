@@ -35,7 +35,7 @@ import com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.library.JustifyTextView;
 
-@SuppressLint("ClickableViewAccessibility") public class KNearestDiscussionContent extends ActionBarActivity {
+@SuppressLint({ "ClickableViewAccessibility", "FloatMath" }) public class KNearestDiscussionContent extends ActionBarActivity {
 
 	int counter;
 	Button previousdiscussbt,nextdiscussbt;
@@ -68,7 +68,7 @@ import com.capstoneii.iclassify.library.JustifyTextView;
 	 int mode = NONE;
 
 	
-	@Override
+	@SuppressLint("SimpleDateFormat") @Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		intent = new Intent();
@@ -181,6 +181,7 @@ import com.capstoneii.iclassify.library.JustifyTextView;
 		toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
 		toggleButton.setOnCheckedChangeListener(
 				new CompoundButton.OnCheckedChangeListener() {
+					@SuppressWarnings("deprecation")
 					@Override
 					public void onCheckedChanged(
 							CompoundButton buttonView, boolean isChecked) {
@@ -201,6 +202,7 @@ import com.capstoneii.iclassify.library.JustifyTextView;
 		
 		nextdiscussbt.setOnClickListener(new View.OnClickListener() {
 			
+			@SuppressWarnings("deprecation")
 			@Override
 			public void onClick(View v) {
 				if (v == nextdiscussbt) {
@@ -268,6 +270,7 @@ import com.capstoneii.iclassify.library.JustifyTextView;
 		});
 		
 		previousdiscussbt.setOnClickListener(new View.OnClickListener() {
+			@SuppressWarnings("deprecation")
 			@Override
 			public void onClick(View v) {
 				if (v == previousdiscussbt) {

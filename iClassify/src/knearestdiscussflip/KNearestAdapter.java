@@ -164,6 +164,7 @@ public class KNearestAdapter extends BaseAdapter {
 				Html.fromHtml(data.description));
 	
 
+		@SuppressWarnings("unused")
 		final String toSpeak = UI
 				.<com.capstoneii.iclassify.library.JustifyTextView> findViewById(
 						layout, R.id.description).getText().toString();

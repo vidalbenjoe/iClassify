@@ -12,6 +12,7 @@ import com.capstoneii.iclassify.assessment.bayesian.BayesianRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 import com.capstoneii.iclassify.library.JustifyTextView;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Matrix;
@@ -35,7 +36,7 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-public class NativeBayesDiscussContent extends ActionBarActivity {
+@SuppressLint({ "FloatMath", "ClickableViewAccessibility", "SimpleDateFormat" }) public class NativeBayesDiscussContent extends ActionBarActivity {
 	int counter;
 	Button previousdiscussbt, nextdiscussbt;
 	ToggleButton toggleButton;
@@ -169,6 +170,7 @@ public class NativeBayesDiscussContent extends ActionBarActivity {
 		toggleButton = (ToggleButton) findViewById(R.id.toggleButton);
 		toggleButton
 				.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+					@SuppressWarnings("deprecation")
 					@Override
 					public void onCheckedChanged(CompoundButton buttonView,
 							boolean isChecked) {
@@ -189,6 +191,7 @@ public class NativeBayesDiscussContent extends ActionBarActivity {
 
 		nextdiscussbt.setOnClickListener(new View.OnClickListener() {
 
+			@SuppressWarnings("deprecation")
 			@Override
 			public void onClick(View v) {
 				if (v == nextdiscussbt) {
@@ -258,6 +261,7 @@ public class NativeBayesDiscussContent extends ActionBarActivity {
 		});
 
 		previousdiscussbt.setOnClickListener(new View.OnClickListener() {
+			@SuppressWarnings("deprecation")
 			@Override
 			public void onClick(View v) {
 				if (v == previousdiscussbt) {

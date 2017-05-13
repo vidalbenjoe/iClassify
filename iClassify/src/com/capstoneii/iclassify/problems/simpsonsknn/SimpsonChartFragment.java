@@ -21,7 +21,6 @@ import android.widget.ImageView;
 
 import com.capstoneii.iclassify.R;
 import com.capstoneii.iclassify.library.JustifyTextView;
-import com.capstoneii.iclassify.library.TypewriterTextView;
 import com.capstoneii.iclassify.problems.ChooseProblemActivity;
 
 public class SimpsonChartFragment extends Fragment {

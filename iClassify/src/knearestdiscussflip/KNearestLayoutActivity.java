@@ -28,7 +28,6 @@ import com.capstoneii.iclassify.SessionCache;
 import com.capstoneii.iclassify.assessment.knn.KNNRandomQuiz;
 import com.capstoneii.iclassify.dbclasses.DBAdapter;
 
-import descisiondiscussflip.DescTreeAdapter;
 
 @SuppressLint({ "NewApi", "SimpleDateFormat" })
 public class KNearestLayoutActivity extends ActionBarActivity {
